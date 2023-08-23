@@ -51,9 +51,9 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.SetWorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] ushort* workingDirectory)
+    public HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] char* workingDirectory)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, ushort*, int>)(lpVtbl[3]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), workingDirectory);
+        return ((delegate* unmanaged<IAppxPackageEditor*, char*, int>)(lpVtbl[3]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), workingDirectory);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackage"]/*' />
@@ -67,9 +67,9 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackageUsingBaselineBlockMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] ushort* baselinePackageFullName, IStream* deltaPackageStream)
+    public HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] char* baselinePackageFullName, IStream* deltaPackageStream)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, ushort*, IStream*, int>)(lpVtbl[5]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselineBlockMapStream, baselinePackageFullName, deltaPackageStream);
+        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, char*, IStream*, int>)(lpVtbl[5]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselineBlockMapStream, baselinePackageFullName, deltaPackageStream);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdatePackage"]/*' />
@@ -99,13 +99,13 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] ushort* workingDirectory);
+        HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] char* workingDirectory);
 
         [VtblIndex(4)]
         HRESULT CreateDeltaPackage(IStream* updatedPackageStream, IStream* baselinePackageStream, IStream* deltaPackageStream);
 
         [VtblIndex(5)]
-        HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] ushort* baselinePackageFullName, IStream* deltaPackageStream);
+        HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] char* baselinePackageFullName, IStream* deltaPackageStream);
 
         [VtblIndex(6)]
         HRESULT UpdatePackage(IStream* baselinePackageStream, IStream* deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption);
@@ -130,13 +130,13 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetWorkingDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> SetWorkingDirectory;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, IStream *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, IStream*, IStream*, int> CreateDeltaPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, ushort*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, char*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int> UpdatePackage;

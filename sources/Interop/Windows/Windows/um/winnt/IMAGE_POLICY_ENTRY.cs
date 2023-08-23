@@ -82,6 +82,6 @@ public partial struct IMAGE_POLICY_ENTRY
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.UnicodeStringValue"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* UnicodeStringValue;
+        public char* UnicodeStringValue;
     }
 }

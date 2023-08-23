@@ -65,9 +65,9 @@ public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2Data*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDiscFormat2Data*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -265,17 +265,17 @@ public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface, INat
     /// <include file='IDiscFormat2Data.xml' path='doc/member[@name="IDiscFormat2Data.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_ClientName([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2Data*, ushort*, int>)(lpVtbl[30]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2Data*, char*, int>)(lpVtbl[30]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2Data.xml' path='doc/member[@name="IDiscFormat2Data.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2Data*, ushort**, int>)(lpVtbl[31]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2Data*, char**, int>)(lpVtbl[31]))((IDiscFormat2Data*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2Data.xml' path='doc/member[@name="IDiscFormat2Data.get_RequestedWriteSpeed"]/*' />
@@ -431,10 +431,10 @@ public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface, INat
         HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
 
         [VtblIndex(30)]
-        HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_ClientName([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(31)]
-        HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(32)]
         HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
@@ -492,7 +492,7 @@ public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -567,10 +567,10 @@ public unsafe partial struct IDiscFormat2Data : IDiscFormat2Data.Interface, INat
         public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_ClientName;
+        public delegate* unmanaged<TSelf*, char*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ClientName;
+        public delegate* unmanaged<TSelf*, char**, int> get_ClientName;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_RequestedWriteSpeed;

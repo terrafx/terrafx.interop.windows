@@ -49,25 +49,25 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetWallpaper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPCWSTR")] ushort* wallpaper)
+    public HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] char* monitorID, [NativeTypeName("LPCWSTR")] char* wallpaper)
     {
-        return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort*, int>)(lpVtbl[3]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
+        return ((delegate* unmanaged<IDesktopWallpaper*, char*, char*, int>)(lpVtbl[3]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
     }
 
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetWallpaper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPWSTR *")] ushort** wallpaper)
+    public HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] char* monitorID, [NativeTypeName("LPWSTR *")] char** wallpaper)
     {
-        return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort**, int>)(lpVtbl[4]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
+        return ((delegate* unmanaged<IDesktopWallpaper*, char*, char**, int>)(lpVtbl[4]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
     }
 
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorDevicePathAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] ushort** monitorID)
+    public HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] char** monitorID)
     {
-        return ((delegate* unmanaged<IDesktopWallpaper*, uint, ushort**, int>)(lpVtbl[5]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorIndex, monitorID);
+        return ((delegate* unmanaged<IDesktopWallpaper*, uint, char**, int>)(lpVtbl[5]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorIndex, monitorID);
     }
 
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorDevicePathCount"]/*' />
@@ -81,9 +81,9 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorRECT"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] ushort* monitorID, RECT* displayRect)
+    public HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] char* monitorID, RECT* displayRect)
     {
-        return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, RECT*, int>)(lpVtbl[7]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, displayRect);
+        return ((delegate* unmanaged<IDesktopWallpaper*, char*, RECT*, int>)(lpVtbl[7]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, displayRect);
     }
 
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetBackgroundColor"]/*' />
@@ -153,9 +153,9 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.AdvanceSlideshow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] ushort* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction)
+    public HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] char* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction)
     {
-        return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int>)(lpVtbl[16]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, direction);
+        return ((delegate* unmanaged<IDesktopWallpaper*, char*, DESKTOP_SLIDESHOW_DIRECTION, int>)(lpVtbl[16]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, direction);
     }
 
     /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetStatus"]/*' />
@@ -177,19 +177,19 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPCWSTR")] ushort* wallpaper);
+        HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] char* monitorID, [NativeTypeName("LPCWSTR")] char* wallpaper);
 
         [VtblIndex(4)]
-        HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPWSTR *")] ushort** wallpaper);
+        HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] char* monitorID, [NativeTypeName("LPWSTR *")] char** wallpaper);
 
         [VtblIndex(5)]
-        HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] ushort** monitorID);
+        HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] char** monitorID);
 
         [VtblIndex(6)]
         HRESULT GetMonitorDevicePathCount(uint* count);
 
         [VtblIndex(7)]
-        HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] ushort* monitorID, RECT* displayRect);
+        HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] char* monitorID, RECT* displayRect);
 
         [VtblIndex(8)]
         HRESULT SetBackgroundColor(COLORREF color);
@@ -216,7 +216,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
         HRESULT GetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS* options, uint* slideshowTick);
 
         [VtblIndex(16)]
-        HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] ushort* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction);
+        HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] char* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction);
 
         [VtblIndex(17)]
         HRESULT GetStatus(DESKTOP_SLIDESHOW_STATE* state);
@@ -238,19 +238,19 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetWallpaper;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetWallpaper;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetWallpaper;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetWallpaper;
 
         [NativeTypeName("HRESULT (UINT, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetMonitorDevicePathAt;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetMonitorDevicePathAt;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetMonitorDevicePathCount;
 
         [NativeTypeName("HRESULT (LPCWSTR, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, RECT*, int> GetMonitorRECT;
+        public delegate* unmanaged<TSelf*, char*, RECT*, int> GetMonitorRECT;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, COLORREF, int> SetBackgroundColor;
@@ -277,7 +277,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, IN
         public delegate* unmanaged<TSelf*, DESKTOP_SLIDESHOW_OPTIONS*, uint*, int> GetSlideshowOptions;
 
         [NativeTypeName("HRESULT (LPCWSTR, DESKTOP_SLIDESHOW_DIRECTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int> AdvanceSlideshow;
+        public delegate* unmanaged<TSelf*, char*, DESKTOP_SLIDESHOW_DIRECTION, int> AdvanceSlideshow;
 
         [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_STATE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DESKTOP_SLIDESHOW_STATE*, int> GetStatus;

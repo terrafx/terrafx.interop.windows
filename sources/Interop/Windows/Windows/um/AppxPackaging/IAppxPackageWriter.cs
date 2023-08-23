@@ -51,9 +51,9 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface, 
     /// <include file='IAppxPackageWriter.xml' path='doc/member[@name="IAppxPackageWriter.AddPayloadFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("LPCWSTR")] ushort* contentType, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
+    public HRESULT AddPayloadFile([NativeTypeName("LPCWSTR")] char* fileName, [NativeTypeName("LPCWSTR")] char* contentType, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxPackageWriter*, ushort*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this), fileName, contentType, compressionOption, inputStream);
+        return ((delegate* unmanaged<IAppxPackageWriter*, char*, char*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this), fileName, contentType, compressionOption, inputStream);
     }
 
     /// <include file='IAppxPackageWriter.xml' path='doc/member[@name="IAppxPackageWriter.Close"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("LPCWSTR")] ushort* contentType, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
+        HRESULT AddPayloadFile([NativeTypeName("LPCWSTR")] char* fileName, [NativeTypeName("LPCWSTR")] char* contentType, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
 
         [VtblIndex(4)]
         HRESULT Close(IStream* manifest);
@@ -86,7 +86,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, APPX_COMPRESSION_OPTION, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFile;
+        public delegate* unmanaged<TSelf*, char*, char*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFile;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, int> Close;

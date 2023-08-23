@@ -89,9 +89,9 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     /// <inheritdoc cref="IOleInPlaceUIWindow.SetActiveObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName)
+    public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] char* pszObjName)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, IOleInPlaceActiveObject*, ushort*, int>)(lpVtbl[8]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
+        return ((delegate* unmanaged<IOleInPlaceFrame*, IOleInPlaceActiveObject*, char*, int>)(lpVtbl[8]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.InsertMenus"]/*' />
@@ -121,9 +121,9 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.SetStatusText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
+    public HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, ushort*, int>)(lpVtbl[12]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged<IOleInPlaceFrame*, char*, int>)(lpVtbl[12]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.EnableModeless"]/*' />
@@ -154,7 +154,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
         HRESULT RemoveMenus(HMENU hmenuShared);
 
         [VtblIndex(12)]
-        HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+        HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] char* pszStatusText);
 
         [VtblIndex(13)]
         HRESULT EnableModeless(BOOL fEnable);
@@ -191,7 +191,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
         public delegate* unmanaged<TSelf*, RECT*, int> SetBorderSpace;
 
         [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
+        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, char*, int> SetActiveObject;
 
         [NativeTypeName("HRESULT (HMENU, LPOLEMENUGROUPWIDTHS) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenus;
@@ -203,7 +203,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
         public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenus;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusText;
+        public delegate* unmanaged<TSelf*, char*, int> SetStatusText;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;

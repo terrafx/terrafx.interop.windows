@@ -49,15 +49,15 @@ public unsafe partial struct IErrorLog : IErrorLog.Interface, INativeGuid
     /// <include file='IErrorLog.xml' path='doc/member[@name="IErrorLog.AddError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddError([NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo)
+    public HRESULT AddError([NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo)
     {
-        return ((delegate* unmanaged<IErrorLog*, ushort*, EXCEPINFO*, int>)(lpVtbl[3]))((IErrorLog*)Unsafe.AsPointer(ref this), pszPropName, pExcepInfo);
+        return ((delegate* unmanaged<IErrorLog*, char*, EXCEPINFO*, int>)(lpVtbl[3]))((IErrorLog*)Unsafe.AsPointer(ref this), pszPropName, pExcepInfo);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddError([NativeTypeName("LPCOLESTR")] ushort* pszPropName, EXCEPINFO* pExcepInfo);
+        HRESULT AddError([NativeTypeName("LPCOLESTR")] char* pszPropName, EXCEPINFO* pExcepInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IErrorLog : IErrorLog.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, EXCEPINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, EXCEPINFO*, int> AddError;
+        public delegate* unmanaged<TSelf*, char*, EXCEPINFO*, int> AddError;
     }
 }

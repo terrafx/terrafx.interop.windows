@@ -51,17 +51,17 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.CreateSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
+    public HRESULT CreateSession([NativeTypeName("BSTR")] char* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
+        return ((delegate* unmanaged<IMFMediaKeys*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.get_KeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
+    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, ushort**, int>)(lpVtbl[4]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged<IMFMediaKeys*, char**, int>)(lpVtbl[4]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.Shutdown"]/*' />
@@ -83,10 +83,10 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession);
+        HRESULT CreateSession([NativeTypeName("BSTR")] char* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession);
 
         [VtblIndex(4)]
-        HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem);
+        HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem);
 
         [VtblIndex(5)]
         HRESULT Shutdown();
@@ -108,10 +108,10 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD, const BYTE *, DWORD, IMFMediaKeySessionNotify *, IMFMediaKeySession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
+        public delegate* unmanaged<TSelf*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged<TSelf*, char**, int> get_KeySystem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Shutdown;

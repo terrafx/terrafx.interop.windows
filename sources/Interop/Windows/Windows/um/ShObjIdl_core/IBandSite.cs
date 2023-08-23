@@ -65,9 +65,9 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.QueryBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] ushort* pszName, int cchName)
+    public HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] char* pszName, int cchName)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, ushort*, int, int>)(lpVtbl[5]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, ppstb, pdwState, pszName, cchName);
+        return ((delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, char*, int, int>)(lpVtbl[5]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, ppstb, pdwState, pszName, cchName);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.SetBandState"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
         HRESULT EnumBands(uint uBand, [NativeTypeName("DWORD *")] uint* pdwBandID);
 
         [VtblIndex(5)]
-        HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] ushort* pszName, int cchName);
+        HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] char* pszName, int cchName);
 
         [VtblIndex(6)]
         HRESULT SetBandState([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwState);
@@ -156,7 +156,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint*, int> EnumBands;
 
         [NativeTypeName("HRESULT (DWORD, IDeskBand **, DWORD *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDeskBand**, uint*, ushort*, int, int> QueryBand;
+        public delegate* unmanaged<TSelf*, uint, IDeskBand**, uint*, char*, int, int> QueryBand;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetBandState;

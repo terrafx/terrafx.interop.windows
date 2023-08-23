@@ -16,14 +16,14 @@ public unsafe partial struct LVGROUP
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszHeader"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszHeader;
+    public char* pszHeader;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchHeader"]/*' />
     public int cchHeader;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszFooter"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszFooter;
+    public char* pszFooter;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchFooter"]/*' />
     public int cchFooter;
@@ -42,28 +42,28 @@ public unsafe partial struct LVGROUP
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszSubtitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSubtitle;
+    public char* pszSubtitle;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchSubtitle"]/*' />
     public uint cchSubtitle;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszTask"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszTask;
+    public char* pszTask;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchTask"]/*' />
     public uint cchTask;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszDescriptionTop"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDescriptionTop;
+    public char* pszDescriptionTop;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchDescriptionTop"]/*' />
     public uint cchDescriptionTop;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszDescriptionBottom"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDescriptionBottom;
+    public char* pszDescriptionBottom;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchDescriptionBottom"]/*' />
     public uint cchDescriptionBottom;
@@ -82,7 +82,7 @@ public unsafe partial struct LVGROUP
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.pszSubsetTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSubsetTitle;
+    public char* pszSubsetTitle;
 
     /// <include file='LVGROUP.xml' path='doc/member[@name="LVGROUP.cchSubsetTitle"]/*' />
     public uint cchSubsetTitle;

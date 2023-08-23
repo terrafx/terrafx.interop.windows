@@ -10,7 +10,7 @@ public unsafe partial struct SPPROPERTYINFO
 {
     /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.ulId"]/*' />
     [NativeTypeName("ULONG")]
@@ -18,7 +18,7 @@ public unsafe partial struct SPPROPERTYINFO
 
     /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.pszValue"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszValue;
+    public char* pszValue;
 
     /// <include file='SPPROPERTYINFO.xml' path='doc/member[@name="SPPROPERTYINFO.vValue"]/*' />
     public VARIANT vValue;

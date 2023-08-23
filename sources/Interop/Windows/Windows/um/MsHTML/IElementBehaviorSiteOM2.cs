@@ -49,17 +49,17 @@ public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.I
     /// <inheritdoc cref="IElementBehaviorSiteOM.RegisterEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
+    public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, char*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
     }
 
     /// <inheritdoc cref="IElementBehaviorSiteOM.GetEventCookie" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
+    public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, char*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
     }
 
     /// <inheritdoc cref="IElementBehaviorSiteOM.FireEvent" />
@@ -81,17 +81,17 @@ public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.I
     /// <inheritdoc cref="IElementBehaviorSiteOM.RegisterName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName)
+    public HRESULT RegisterName([NativeTypeName("LPOLESTR")] char* pchName)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchName);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, char*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchName);
     }
 
     /// <inheritdoc cref="IElementBehaviorSiteOM.RegisterUrn" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)
+    public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] char* pchUrn)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, ushort*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchUrn);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM2*, char*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM2*)Unsafe.AsPointer(ref this), pchUrn);
     }
 
     /// <include file='IElementBehaviorSiteOM2.xml' path='doc/member[@name="IElementBehaviorSiteOM2.GetDefaults"]/*' />
@@ -121,10 +121,10 @@ public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> RegisterEvent;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> RegisterEvent;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetEventCookie;
+        public delegate* unmanaged<TSelf*, char*, int*, int> GetEventCookie;
 
         [NativeTypeName("HRESULT (LONG, IHTMLEventObj *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> FireEvent;
@@ -133,10 +133,10 @@ public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.I
         public delegate* unmanaged<TSelf*, IHTMLEventObj**, int> CreateEventObject;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RegisterName;
+        public delegate* unmanaged<TSelf*, char*, int> RegisterName;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RegisterUrn;
+        public delegate* unmanaged<TSelf*, char*, int> RegisterUrn;
 
         [NativeTypeName("HRESULT (IHTMLElementDefaults **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLElementDefaults**, int> GetDefaults;

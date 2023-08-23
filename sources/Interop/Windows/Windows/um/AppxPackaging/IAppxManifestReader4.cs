@@ -97,9 +97,9 @@ public unsafe partial struct IAppxManifestReader4 : IAppxManifestReader4.Interfa
     /// <inheritdoc cref="IAppxManifestReader.GetPrerequisite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
+    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("UINT64 *")] ulong* value)
     {
-        return ((delegate* unmanaged<IAppxManifestReader4*, ushort*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IAppxManifestReader4*, char*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader4*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <inheritdoc cref="IAppxManifestReader.GetApplications" />
@@ -187,7 +187,7 @@ public unsafe partial struct IAppxManifestReader4 : IAppxManifestReader4.Interfa
         public delegate* unmanaged<TSelf*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong*, int> GetPrerequisite;
+        public delegate* unmanaged<TSelf*, char*, ulong*, int> GetPrerequisite;
 
         [NativeTypeName("HRESULT (IAppxManifestApplicationsEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxManifestApplicationsEnumerator**, int> GetApplications;

@@ -65,9 +65,9 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
     /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetTitle([NativeTypeName("PCWSTR")] ushort* pwzTitle)
+    public HRESULT SetTitle([NativeTypeName("PCWSTR")] char* pwzTitle)
     {
-        return ((delegate* unmanaged<IProgressDialog*, ushort*, int>)(lpVtbl[5]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzTitle);
+        return ((delegate* unmanaged<IProgressDialog*, char*, int>)(lpVtbl[5]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzTitle);
     }
 
     /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetAnimation"]/*' />
@@ -105,17 +105,17 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
     /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered)
+    public HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] char* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered)
     {
-        return ((delegate* unmanaged<IProgressDialog*, uint, ushort*, BOOL, void*, int>)(lpVtbl[10]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwLineNum, pwzString, fCompactPath, pvResevered);
+        return ((delegate* unmanaged<IProgressDialog*, uint, char*, BOOL, void*, int>)(lpVtbl[10]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwLineNum, pwzString, fCompactPath, pvResevered);
     }
 
     /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetCancelMsg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] ushort* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered)
+    public HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] char* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered)
     {
-        return ((delegate* unmanaged<IProgressDialog*, ushort*, void*, int>)(lpVtbl[11]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzCancelMsg, pvResevered);
+        return ((delegate* unmanaged<IProgressDialog*, char*, void*, int>)(lpVtbl[11]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzCancelMsg, pvResevered);
     }
 
     /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.Timer"]/*' />
@@ -135,7 +135,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
         HRESULT StopProgressDialog();
 
         [VtblIndex(5)]
-        HRESULT SetTitle([NativeTypeName("PCWSTR")] ushort* pwzTitle);
+        HRESULT SetTitle([NativeTypeName("PCWSTR")] char* pwzTitle);
 
         [VtblIndex(6)]
         HRESULT SetAnimation(HINSTANCE hInstAnimation, uint idAnimation);
@@ -150,10 +150,10 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
         HRESULT SetProgress64([NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal);
 
         [VtblIndex(10)]
-        HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered);
+        HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] char* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered);
 
         [VtblIndex(11)]
-        HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] ushort* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered);
+        HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] char* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered);
 
         [VtblIndex(12)]
         HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered);
@@ -178,7 +178,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
         public delegate* unmanaged<TSelf*, int> StopProgressDialog;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (HINSTANCE, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HINSTANCE, uint, int> SetAnimation;
@@ -193,10 +193,10 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface, INativ
         public delegate* unmanaged<TSelf*, ulong, ulong, int> SetProgress64;
 
         [NativeTypeName("HRESULT (DWORD, PCWSTR, BOOL, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, BOOL, void*, int> SetLine;
+        public delegate* unmanaged<TSelf*, uint, char*, BOOL, void*, int> SetLine;
 
         [NativeTypeName("HRESULT (PCWSTR, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*, int> SetCancelMsg;
+        public delegate* unmanaged<TSelf*, char*, void*, int> SetCancelMsg;
 
         [NativeTypeName("HRESULT (DWORD, LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, void*, int> Timer;

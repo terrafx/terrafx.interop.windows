@@ -51,9 +51,9 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.RegisterThreadsEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("LONG")] int lBasePriority)
+    public HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] char* wszClassName, [NativeTypeName("LONG")] int lBasePriority)
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint*, ushort*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
+        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint*, char*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
     }
 
     /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.UnregisterThreads"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("LONG")] int lBasePriority);
+        HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] char* wszClassName, [NativeTypeName("LONG")] int lBasePriority);
 
         [VtblIndex(4)]
         HRESULT UnregisterThreads();
@@ -97,7 +97,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort*, int, int> RegisterThreadsEx;
+        public delegate* unmanaged<TSelf*, uint*, char*, int, int> RegisterThreadsEx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> UnregisterThreads;

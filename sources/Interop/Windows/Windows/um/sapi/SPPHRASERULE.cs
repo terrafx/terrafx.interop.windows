@@ -10,7 +10,7 @@ public unsafe partial struct SPPHRASERULE
 {
     /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.ulId"]/*' />
     [NativeTypeName("ULONG")]

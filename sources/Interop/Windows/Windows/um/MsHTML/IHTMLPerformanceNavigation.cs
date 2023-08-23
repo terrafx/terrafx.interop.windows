@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNaviga
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLPerformanceNavigation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPerformanceNavigation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLPerformanceNavigation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPerformanceNavigation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNaviga
     /// <include file='IHTMLPerformanceNavigation.xml' path='doc/member[@name="IHTMLPerformanceNavigation.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** @string)
     {
-        return ((delegate* unmanaged<IHTMLPerformanceNavigation*, ushort**, int>)(lpVtbl[9]))((IHTMLPerformanceNavigation*)Unsafe.AsPointer(ref this), @string);
+        return ((delegate* unmanaged<IHTMLPerformanceNavigation*, char**, int>)(lpVtbl[9]))((IHTMLPerformanceNavigation*)Unsafe.AsPointer(ref this), @string);
     }
 
     /// <include file='IHTMLPerformanceNavigation.xml' path='doc/member[@name="IHTMLPerformanceNavigation.toJSON"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNaviga
         HRESULT get_redirectCount([NativeTypeName("ULONG *")] uint* p);
 
         [VtblIndex(9)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+        HRESULT toString([NativeTypeName("BSTR *")] char** @string);
 
         [VtblIndex(10)]
         HRESULT toJSON(VARIANT* pVar);
@@ -144,7 +144,7 @@ public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNaviga
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -156,7 +156,7 @@ public unsafe partial struct IHTMLPerformanceNavigation : IHTMLPerformanceNaviga
         public delegate* unmanaged<TSelf*, uint*, int> get_redirectCount;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> toJSON;

@@ -73,26 +73,26 @@ public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
     /// <include file='IWebWizardExtension.xml' path='doc/member[@name="IWebWizardExtension.SetInitialURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL)
+    public HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] char* pszURL)
     {
-        return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[6]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszURL);
+        return ((delegate* unmanaged<IWebWizardExtension*, char*, int>)(lpVtbl[6]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszURL);
     }
 
     /// <include file='IWebWizardExtension.xml' path='doc/member[@name="IWebWizardExtension.SetErrorURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL)
+    public HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] char* pszErrorURL)
     {
-        return ((delegate* unmanaged<IWebWizardExtension*, ushort*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
+        return ((delegate* unmanaged<IWebWizardExtension*, char*, int>)(lpVtbl[7]))((IWebWizardExtension*)Unsafe.AsPointer(ref this), pszErrorURL);
     }
 
     public interface Interface : IWizardExtension.Interface
     {
         [VtblIndex(6)]
-        HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] ushort* pszURL);
+        HRESULT SetInitialURL([NativeTypeName("LPCWSTR")] char* pszURL);
 
         [VtblIndex(7)]
-        HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL);
+        HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] char* pszErrorURL);
     }
 
     public partial struct Vtbl<TSelf>
@@ -117,9 +117,9 @@ public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
         public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetInitialURL;
+        public delegate* unmanaged<TSelf*, char*, int> SetInitialURL;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetErrorURL;
+        public delegate* unmanaged<TSelf*, char*, int> SetErrorURL;
     }
 }

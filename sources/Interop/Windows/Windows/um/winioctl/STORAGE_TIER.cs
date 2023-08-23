@@ -15,11 +15,11 @@ public unsafe partial struct STORAGE_TIER
 
     /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Name"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort Name[256];
+    public fixed char Name[256];
 
     /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Description"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort Description[256];
+    public fixed char Description[256];
 
     /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Flags"]/*' />
     [NativeTypeName("DWORDLONG")]

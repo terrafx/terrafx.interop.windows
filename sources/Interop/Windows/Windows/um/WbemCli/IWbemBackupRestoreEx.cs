@@ -49,17 +49,17 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
     /// <inheritdoc cref="IWbemBackupRestore.Backup" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Backup([NativeTypeName("LPCWSTR")] char* strBackupToFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[3]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
+        return ((delegate* unmanaged<IWbemBackupRestoreEx*, char*, int, int>)(lpVtbl[3]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
     }
 
     /// <inheritdoc cref="IWbemBackupRestore.Restore" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Restore([NativeTypeName("LPCWSTR")] char* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestoreEx*, ushort*, int, int>)(lpVtbl[4]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
+        return ((delegate* unmanaged<IWbemBackupRestoreEx*, char*, int, int>)(lpVtbl[4]))((IWbemBackupRestoreEx*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
     }
 
     /// <include file='IWbemBackupRestoreEx.xml' path='doc/member[@name="IWbemBackupRestoreEx.Pause"]/*' />
@@ -100,10 +100,10 @@ public unsafe partial struct IWbemBackupRestoreEx : IWbemBackupRestoreEx.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Backup;
+        public delegate* unmanaged<TSelf*, char*, int, int> Backup;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Restore;
+        public delegate* unmanaged<TSelf*, char*, int, int> Restore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Pause;

@@ -49,17 +49,17 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
     /// <inheritdoc cref="ICreateTypeLib.CreateTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo)
+    public HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] char* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, TYPEKIND, ICreateTypeInfo**, int>)(lpVtbl[3]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName, tkind, ppCTInfo);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, TYPEKIND, ICreateTypeInfo**, int>)(lpVtbl[3]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName, tkind, ppCTInfo);
     }
 
     /// <inheritdoc cref="ICreateTypeLib.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
+    public HRESULT SetName([NativeTypeName("LPOLESTR")] char* szName)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[4]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, int>)(lpVtbl[4]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName);
     }
 
     /// <inheritdoc cref="ICreateTypeLib.SetVersion" />
@@ -81,17 +81,17 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
     /// <inheritdoc cref="ICreateTypeLib.SetDocString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc)
+    public HRESULT SetDocString([NativeTypeName("LPOLESTR")] char* szDoc)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[7]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szDoc);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, int>)(lpVtbl[7]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szDoc);
     }
 
     /// <inheritdoc cref="ICreateTypeLib.SetHelpFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName)
+    public HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] char* szHelpFileName)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[8]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szHelpFileName);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, int>)(lpVtbl[8]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szHelpFileName);
     }
 
     /// <inheritdoc cref="ICreateTypeLib.SetHelpContext" />
@@ -129,9 +129,9 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
     /// <include file='ICreateTypeLib2.xml' path='doc/member[@name="ICreateTypeLib2.DeleteTypeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT DeleteTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName)
+    public HRESULT DeleteTypeInfo([NativeTypeName("LPOLESTR")] char* szName)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[13]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, int>)(lpVtbl[13]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szName);
     }
 
     /// <include file='ICreateTypeLib2.xml' path='doc/member[@name="ICreateTypeLib2.SetCustData"]/*' />
@@ -153,15 +153,15 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
     /// <include file='ICreateTypeLib2.xml' path='doc/member[@name="ICreateTypeLib2.SetHelpStringDll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] ushort* szFileName)
+    public HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] char* szFileName)
     {
-        return ((delegate* unmanaged<ICreateTypeLib2*, ushort*, int>)(lpVtbl[16]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szFileName);
+        return ((delegate* unmanaged<ICreateTypeLib2*, char*, int>)(lpVtbl[16]))((ICreateTypeLib2*)Unsafe.AsPointer(ref this), szFileName);
     }
 
     public interface Interface : ICreateTypeLib.Interface
     {
         [VtblIndex(13)]
-        HRESULT DeleteTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName);
+        HRESULT DeleteTypeInfo([NativeTypeName("LPOLESTR")] char* szName);
 
         [VtblIndex(14)]
         HRESULT SetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal);
@@ -170,7 +170,7 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
         HRESULT SetHelpStringContext([NativeTypeName("ULONG")] uint dwHelpStringContext);
 
         [VtblIndex(16)]
-        HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] ushort* szFileName);
+        HRESULT SetHelpStringDll([NativeTypeName("LPOLESTR")] char* szFileName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -186,10 +186,10 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, TYPEKIND, ICreateTypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
+        public delegate* unmanaged<TSelf*, char*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort, ushort, int> SetVersion;
@@ -198,10 +198,10 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
         public delegate* unmanaged<TSelf*, Guid*, int> SetGuid;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDocString;
+        public delegate* unmanaged<TSelf*, char*, int> SetDocString;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetHelpFileName;
+        public delegate* unmanaged<TSelf*, char*, int> SetHelpFileName;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;
@@ -216,7 +216,7 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
         public delegate* unmanaged<TSelf*, int> SaveAllChanges;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteTypeInfo;
+        public delegate* unmanaged<TSelf*, char*, int> DeleteTypeInfo;
 
         [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> SetCustData;
@@ -225,6 +225,6 @@ public unsafe partial struct ICreateTypeLib2 : ICreateTypeLib2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, int> SetHelpStringContext;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetHelpStringDll;
+        public delegate* unmanaged<TSelf*, char*, int> SetHelpStringDll;
     }
 }

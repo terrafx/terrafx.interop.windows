@@ -23,19 +23,19 @@ public unsafe partial struct MFP_ACQUIRE_USER_CREDENTIAL_EVENT
 
     /// <include file='MFP_ACQUIRE_USER_CREDENTIAL_EVENT.xml' path='doc/member[@name="MFP_ACQUIRE_USER_CREDENTIAL_EVENT.pwszURL"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszURL;
+    public char* pwszURL;
 
     /// <include file='MFP_ACQUIRE_USER_CREDENTIAL_EVENT.xml' path='doc/member[@name="MFP_ACQUIRE_USER_CREDENTIAL_EVENT.pwszSite"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszSite;
+    public char* pwszSite;
 
     /// <include file='MFP_ACQUIRE_USER_CREDENTIAL_EVENT.xml' path='doc/member[@name="MFP_ACQUIRE_USER_CREDENTIAL_EVENT.pwszRealm"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszRealm;
+    public char* pwszRealm;
 
     /// <include file='MFP_ACQUIRE_USER_CREDENTIAL_EVENT.xml' path='doc/member[@name="MFP_ACQUIRE_USER_CREDENTIAL_EVENT.pwszPackage"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszPackage;
+    public char* pwszPackage;
 
     /// <include file='MFP_ACQUIRE_USER_CREDENTIAL_EVENT.xml' path='doc/member[@name="MFP_ACQUIRE_USER_CREDENTIAL_EVENT.nRetries"]/*' />
     [NativeTypeName("LONG")]

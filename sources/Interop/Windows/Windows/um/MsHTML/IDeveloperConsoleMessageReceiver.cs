@@ -49,48 +49,48 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.Write"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Write([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText)
+    public HRESULT Write([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, int>)(lpVtbl[3]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText);
+        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int>)(lpVtbl[3]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT WriteWithUrl([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl)
+    public HRESULT WriteWithUrl([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, int>)(lpVtbl[4]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl);
+        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int>)(lpVtbl[4]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrlAndLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT WriteWithUrlAndLine([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl, [NativeTypeName("ULONG")] uint line)
+    public HRESULT WriteWithUrlAndLine([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, int>)(lpVtbl[5]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line);
+        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int>)(lpVtbl[5]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrlLineAndColumn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column)
+    public HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, uint, int>)(lpVtbl[6]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line, column);
+        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int>)(lpVtbl[6]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line, column);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Write([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText);
+        HRESULT Write([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText);
 
         [VtblIndex(4)]
-        HRESULT WriteWithUrl([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl);
+        HRESULT WriteWithUrl([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl);
 
         [VtblIndex(5)]
-        HRESULT WriteWithUrlAndLine([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl, [NativeTypeName("ULONG")] uint line);
+        HRESULT WriteWithUrlAndLine([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line);
 
         [VtblIndex(6)]
-        HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column);
+        HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column);
     }
 
     public partial struct Vtbl<TSelf>
@@ -106,15 +106,15 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, int> Write;
+        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int> Write;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, int> WriteWithUrl;
+        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int> WriteWithUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, int> WriteWithUrlAndLine;
+        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int> WriteWithUrlAndLine;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, uint, int> WriteWithUrlLineAndColumn;
+        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int> WriteWithUrlLineAndColumn;
     }
 }

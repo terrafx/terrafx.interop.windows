@@ -93,9 +93,9 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
     /// <include file='IDWriteFontSet.xml' path='doc/member[@name="IDWriteFontSet.GetPropertyValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] ushort* preferredLocaleNames, IDWriteStringList** values)
+    public HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] char* preferredLocaleNames, IDWriteStringList** values)
     {
-        return ((delegate* unmanaged<IDWriteFontSet*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int>)(lpVtbl[8]))((IDWriteFontSet*)Unsafe.AsPointer(ref this), propertyID, preferredLocaleNames, values);
+        return ((delegate* unmanaged<IDWriteFontSet*, DWRITE_FONT_PROPERTY_ID, char*, IDWriteStringList**, int>)(lpVtbl[8]))((IDWriteFontSet*)Unsafe.AsPointer(ref this), propertyID, preferredLocaleNames, values);
     }
 
     /// <include file='IDWriteFontSet.xml' path='doc/member[@name="IDWriteFontSet.GetPropertyValues"]/*' />
@@ -117,9 +117,9 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
     /// <include file='IDWriteFontSet.xml' path='doc/member[@name="IDWriteFontSet.GetMatchingFonts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] ushort* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
+    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
     {
-        return ((delegate* unmanaged<IDWriteFontSet*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteFontSet*)Unsafe.AsPointer(ref this), familyName, fontWeight, fontStretch, fontStyle, filteredSet);
+        return ((delegate* unmanaged<IDWriteFontSet*, char*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteFontSet*)Unsafe.AsPointer(ref this), familyName, fontWeight, fontStretch, fontStyle, filteredSet);
     }
 
     /// <include file='IDWriteFontSet.xml' path='doc/member[@name="IDWriteFontSet.GetMatchingFonts"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
         HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, IDWriteStringList** values);
 
         [VtblIndex(8)]
-        HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] ushort* preferredLocaleNames, IDWriteStringList** values);
+        HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] char* preferredLocaleNames, IDWriteStringList** values);
 
         [VtblIndex(9)]
         HRESULT GetPropertyValues([NativeTypeName("UINT32")] uint listIndex, DWRITE_FONT_PROPERTY_ID propertyId, BOOL* exists, IDWriteLocalizedStrings** values);
@@ -158,7 +158,7 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
         HRESULT GetPropertyOccurrenceCount([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* property, [NativeTypeName("UINT32 *")] uint* propertyOccurrenceCount);
 
         [VtblIndex(11)]
-        HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] ushort* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet);
+        HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet);
 
         [VtblIndex(12)]
         HRESULT GetMatchingFonts([NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount, IDWriteFontSet** filteredSet);
@@ -192,7 +192,7 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, IDWriteStringList**, int> GetPropertyValues;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_PROPERTY_ID, const WCHAR *, IDWriteStringList **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int> GetPropertyValues1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, char*, IDWriteStringList**, int> GetPropertyValues1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_PROPERTY_ID, BOOL *, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_PROPERTY_ID, BOOL*, IDWriteLocalizedStrings**, int> GetPropertyValues2;
@@ -201,7 +201,7 @@ public unsafe partial struct IDWriteFontSet : IDWriteFontSet.Interface, INativeG
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint*, int> GetPropertyOccurrenceCount;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
+        public delegate* unmanaged<TSelf*, char*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint, IDWriteFontSet**, int> GetMatchingFonts1;

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLScriptElement4 : IHTMLScriptElement4.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLScriptElement4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLScriptElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLScriptElement4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLScriptElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IHTMLScriptElement4 : IHTMLScriptElement4.Interface
     /// <include file='IHTMLScriptElement4.xml' path='doc/member[@name="IHTMLScriptElement4.get_usedCharset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_usedCharset([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_usedCharset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLScriptElement4*, ushort**, int>)(lpVtbl[7]))((IHTMLScriptElement4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLScriptElement4*, char**, int>)(lpVtbl[7]))((IHTMLScriptElement4*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_usedCharset([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_usedCharset([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IHTMLScriptElement4 : IHTMLScriptElement4.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_usedCharset;
+        public delegate* unmanaged<TSelf*, char**, int> get_usedCharset;
     }
 }

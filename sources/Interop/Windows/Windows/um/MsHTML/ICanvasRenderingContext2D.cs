@@ -65,9 +65,9 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,17 +161,17 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_globalCompositeOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[17]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[17]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_globalCompositeOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[18]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[18]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_fillStyle"]/*' />
@@ -233,33 +233,33 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT put_lineCap([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lineCap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[26]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[26]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_lineCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT get_lineCap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lineCap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[27]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[27]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineJoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT put_lineJoin([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lineJoin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[28]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[28]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_lineJoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_lineJoin([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lineJoin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[29]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[29]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineWidth"]/*' />
@@ -313,17 +313,17 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT put_shadowColor([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_shadowColor([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[36]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[36]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_shadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT get_shadowColor([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_shadowColor([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[37]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[37]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowOffsetX"]/*' />
@@ -489,73 +489,73 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
-    public HRESULT put_font([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_font([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[58]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[58]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
-    public HRESULT get_font([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_font([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[59]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[59]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
-    public HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[60]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[60]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(61)]
-    public HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[61]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[61]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_textBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
-    public HRESULT put_textBaseline([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textBaseline([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[62]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, int>)(lpVtbl[62]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_textBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
-    public HRESULT get_textBaseline([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textBaseline([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[63]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char**, int>)(lpVtbl[63]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.fillText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
-    public HRESULT fillText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth)
+    public HRESULT fillText([NativeTypeName("BSTR")] char* text, float x, float y, VARIANT maxWidth)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int>)(lpVtbl[64]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, float, float, VARIANT, int>)(lpVtbl[64]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.measureText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
-    public HRESULT measureText([NativeTypeName("BSTR")] ushort* text, ICanvasTextMetrics** ppCanvasTextMetrics)
+    public HRESULT measureText([NativeTypeName("BSTR")] char* text, ICanvasTextMetrics** ppCanvasTextMetrics)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, ICanvasTextMetrics**, int>)(lpVtbl[65]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, ppCanvasTextMetrics);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, ICanvasTextMetrics**, int>)(lpVtbl[65]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, ppCanvasTextMetrics);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.strokeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
-    public HRESULT strokeText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth)
+    public HRESULT strokeText([NativeTypeName("BSTR")] char* text, float x, float y, VARIANT maxWidth)
     {
-        return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int>)(lpVtbl[66]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
+        return ((delegate* unmanaged<ICanvasRenderingContext2D*, char*, float, float, VARIANT, int>)(lpVtbl[66]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
     }
 
     /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.drawImage"]/*' />
@@ -623,10 +623,10 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         HRESULT get_globalAlpha(float* p);
 
         [VtblIndex(17)]
-        HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(18)]
-        HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
         HRESULT put_fillStyle(VARIANT v);
@@ -650,16 +650,16 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         HRESULT createPattern(IDispatch* image, VARIANT repetition, ICanvasPattern** ppCanvasPattern);
 
         [VtblIndex(26)]
-        HRESULT put_lineCap([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lineCap([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(27)]
-        HRESULT get_lineCap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lineCap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(28)]
-        HRESULT put_lineJoin([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lineJoin([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(29)]
-        HRESULT get_lineJoin([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lineJoin([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(30)]
         HRESULT put_lineWidth(float v);
@@ -680,10 +680,10 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         HRESULT get_shadowBlur(float* p);
 
         [VtblIndex(36)]
-        HRESULT put_shadowColor([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_shadowColor([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(37)]
-        HRESULT get_shadowColor([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_shadowColor([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(38)]
         HRESULT put_shadowOffsetX(float v);
@@ -746,31 +746,31 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         HRESULT isPointInPath(float x, float y, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
 
         [VtblIndex(58)]
-        HRESULT put_font([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_font([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(59)]
-        HRESULT get_font([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_font([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(60)]
-        HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAlign([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(61)]
-        HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAlign([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(62)]
-        HRESULT put_textBaseline([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textBaseline([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(63)]
-        HRESULT get_textBaseline([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textBaseline([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(64)]
-        HRESULT fillText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth);
+        HRESULT fillText([NativeTypeName("BSTR")] char* text, float x, float y, VARIANT maxWidth);
 
         [VtblIndex(65)]
-        HRESULT measureText([NativeTypeName("BSTR")] ushort* text, ICanvasTextMetrics** ppCanvasTextMetrics);
+        HRESULT measureText([NativeTypeName("BSTR")] char* text, ICanvasTextMetrics** ppCanvasTextMetrics);
 
         [VtblIndex(66)]
-        HRESULT strokeText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth);
+        HRESULT strokeText([NativeTypeName("BSTR")] char* text, float x, float y, VARIANT maxWidth);
 
         [VtblIndex(67)]
         HRESULT drawImage(IDispatch* pSrc, VARIANT a1, VARIANT a2, VARIANT a3, VARIANT a4, VARIANT a5, VARIANT a6, VARIANT a7, VARIANT a8);
@@ -804,7 +804,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -840,10 +840,10 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         public delegate* unmanaged<TSelf*, float*, int> get_globalAlpha;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_globalCompositeOperation;
+        public delegate* unmanaged<TSelf*, char*, int> put_globalCompositeOperation;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_globalCompositeOperation;
+        public delegate* unmanaged<TSelf*, char**, int> get_globalCompositeOperation;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_fillStyle;
@@ -867,16 +867,16 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         public delegate* unmanaged<TSelf*, IDispatch*, VARIANT, ICanvasPattern**, int> createPattern;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lineCap;
+        public delegate* unmanaged<TSelf*, char*, int> put_lineCap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lineCap;
+        public delegate* unmanaged<TSelf*, char**, int> get_lineCap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lineJoin;
+        public delegate* unmanaged<TSelf*, char*, int> put_lineJoin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lineJoin;
+        public delegate* unmanaged<TSelf*, char**, int> get_lineJoin;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, int> put_lineWidth;
@@ -897,10 +897,10 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         public delegate* unmanaged<TSelf*, float*, int> get_shadowBlur;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_shadowColor;
+        public delegate* unmanaged<TSelf*, char*, int> put_shadowColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_shadowColor;
+        public delegate* unmanaged<TSelf*, char**, int> get_shadowColor;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, int> put_shadowOffsetX;
@@ -963,31 +963,31 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         public delegate* unmanaged<TSelf*, float, float, short*, int> isPointInPath;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_font;
+        public delegate* unmanaged<TSelf*, char*, int> put_font;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_font;
+        public delegate* unmanaged<TSelf*, char**, int> get_font;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlign;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlign;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textBaseline;
+        public delegate* unmanaged<TSelf*, char*, int> put_textBaseline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textBaseline;
+        public delegate* unmanaged<TSelf*, char**, int> get_textBaseline;
 
         [NativeTypeName("HRESULT (BSTR, float, float, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, float, float, VARIANT, int> fillText;
+        public delegate* unmanaged<TSelf*, char*, float, float, VARIANT, int> fillText;
 
         [NativeTypeName("HRESULT (BSTR, ICanvasTextMetrics **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ICanvasTextMetrics**, int> measureText;
+        public delegate* unmanaged<TSelf*, char*, ICanvasTextMetrics**, int> measureText;
 
         [NativeTypeName("HRESULT (BSTR, float, float, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, float, float, VARIANT, int> strokeText;
+        public delegate* unmanaged<TSelf*, char*, float, float, VARIANT, int> strokeText;
 
         [NativeTypeName("HRESULT (IDispatch *, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> drawImage;

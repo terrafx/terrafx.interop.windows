@@ -49,17 +49,17 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     /// <inheritdoc cref="IFileSinkFilter.SetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
+        return ((delegate* unmanaged<IFileSinkFilter2*, char*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
     }
 
     /// <inheritdoc cref="IFileSinkFilter.GetCurFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
+    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName, AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+        return ((delegate* unmanaged<IFileSinkFilter2*, char**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
     }
 
     /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.SetMode"]/*' />
@@ -100,10 +100,10 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+        public delegate* unmanaged<TSelf*, char*, AM_MEDIA_TYPE*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
+        public delegate* unmanaged<TSelf*, char**, AM_MEDIA_TYPE*, int> GetCurFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetMode;

@@ -50,18 +50,18 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderIdentifier"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] ushort* pExportName)
+    public void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] char* pExportName)
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, void*>)(lpVtbl[3]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+        return ((delegate* unmanaged<ID3D12StateObjectProperties*, char*, void*>)(lpVtbl[3]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderStackSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT64")]
-    public ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] ushort* pExportName)
+    public ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] char* pExportName)
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, ulong>)(lpVtbl[4]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+        return ((delegate* unmanaged<ID3D12StateObjectProperties*, char*, ulong>)(lpVtbl[4]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetPipelineStackSize"]/*' />
@@ -84,11 +84,11 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] ushort* pExportName);
+        void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] char* pExportName);
 
         [VtblIndex(4)]
         [return: NativeTypeName("UINT64")]
-        ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] ushort* pExportName);
+        ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] char* pExportName);
 
         [VtblIndex(5)]
         [return: NativeTypeName("UINT64")]
@@ -111,10 +111,10 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void *(LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*> GetShaderIdentifier;
+        public delegate* unmanaged<TSelf*, char*, void*> GetShaderIdentifier;
 
         [NativeTypeName("UINT64 (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong> GetShaderStackSize;
+        public delegate* unmanaged<TSelf*, char*, ulong> GetShaderStackSize;
 
         [NativeTypeName("UINT64 () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong> GetPipelineStackSize;

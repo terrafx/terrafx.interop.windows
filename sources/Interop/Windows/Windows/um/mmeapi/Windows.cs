@@ -41,7 +41,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.waveOutGetErrorTextW"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
-    public static extern uint waveOutGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] ushort* pszText, uint cchText);
+    public static extern uint waveOutGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] char* pszText, uint cchText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.waveOutOpen"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
@@ -145,7 +145,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.waveInGetErrorTextW"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
-    public static extern uint waveInGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] ushort* pszText, uint cchText);
+    public static extern uint waveInGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] char* pszText, uint cchText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.waveInOpen"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
@@ -284,7 +284,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.midiOutGetErrorTextW"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
-    public static extern uint midiOutGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] ushort* pszText, uint cchText);
+    public static extern uint midiOutGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] char* pszText, uint cchText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.midiOutOpen"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
@@ -363,7 +363,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.midiInGetErrorTextW"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
-    public static extern uint midiInGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] ushort* pszText, uint cchText);
+    public static extern uint midiInGetErrorTextW([NativeTypeName("MMRESULT")] uint mmrError, [NativeTypeName("LPWSTR")] char* pszText, uint cchText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.midiInOpen"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
@@ -583,13 +583,13 @@ public static unsafe partial class Windows
     public static delegate*<nuint, WAVEOUTCAPSW*, uint, uint> waveOutGetDevCaps => &waveOutGetDevCapsW;
 
     [NativeTypeName("#define waveOutGetErrorText waveOutGetErrorTextW")]
-    public static delegate*<uint, ushort*, uint, uint> waveOutGetErrorText => &waveOutGetErrorTextW;
+    public static delegate*<uint, char*, uint, uint> waveOutGetErrorText => &waveOutGetErrorTextW;
 
     [NativeTypeName("#define waveInGetDevCaps waveInGetDevCapsW")]
     public static delegate*<nuint, WAVEINCAPSW*, uint, uint> waveInGetDevCaps => &waveInGetDevCapsW;
 
     [NativeTypeName("#define waveInGetErrorText waveInGetErrorTextW")]
-    public static delegate*<uint, ushort*, uint, uint> waveInGetErrorText => &waveInGetErrorTextW;
+    public static delegate*<uint, char*, uint, uint> waveInGetErrorText => &waveInGetErrorTextW;
 
     [NativeTypeName("#define MIDIPATCHSIZE 128")]
     public const int MIDIPATCHSIZE = 128;
@@ -697,13 +697,13 @@ public static unsafe partial class Windows
     public static delegate*<nuint, MIDIOUTCAPSW*, uint, uint> midiOutGetDevCaps => &midiOutGetDevCapsW;
 
     [NativeTypeName("#define midiOutGetErrorText midiOutGetErrorTextW")]
-    public static delegate*<uint, ushort*, uint, uint> midiOutGetErrorText => &midiOutGetErrorTextW;
+    public static delegate*<uint, char*, uint, uint> midiOutGetErrorText => &midiOutGetErrorTextW;
 
     [NativeTypeName("#define midiInGetDevCaps midiInGetDevCapsW")]
     public static delegate*<nuint, MIDIINCAPSW*, uint, uint> midiInGetDevCaps => &midiInGetDevCapsW;
 
     [NativeTypeName("#define midiInGetErrorText midiInGetErrorTextW")]
-    public static delegate*<uint, ushort*, uint, uint> midiInGetErrorText => &midiInGetErrorTextW;
+    public static delegate*<uint, char*, uint, uint> midiInGetErrorText => &midiInGetErrorTextW;
 
     [NativeTypeName("#define AUX_MAPPER ((UINT)-1)")]
     public const uint AUX_MAPPER = unchecked((uint)(-1));

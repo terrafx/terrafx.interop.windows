@@ -57,17 +57,17 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface, IN
     /// <inheritdoc cref="IDiaLoadCallback.NotifyOpenDBG" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] ushort* dbgPath, HRESULT resultCode)
+    public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] char* dbgPath, HRESULT resultCode)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
+        return ((delegate* unmanaged<IDiaLoadCallback2*, char*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
     }
 
     /// <inheritdoc cref="IDiaLoadCallback.NotifyOpenPDB" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] ushort* pdbPath, HRESULT resultCode)
+    public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] char* pdbPath, HRESULT resultCode)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
+        return ((delegate* unmanaged<IDiaLoadCallback2*, char*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
     }
 
     /// <inheritdoc cref="IDiaLoadCallback.RestrictRegistryAccess" />
@@ -149,10 +149,10 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface, IN
         public delegate* unmanaged<TSelf*, BOOL, uint, byte*, int> NotifyDebugDir;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenDBG;
+        public delegate* unmanaged<TSelf*, char*, HRESULT, int> NotifyOpenDBG;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenPDB;
+        public delegate* unmanaged<TSelf*, char*, HRESULT, int> NotifyOpenPDB;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> RestrictRegistryAccess;

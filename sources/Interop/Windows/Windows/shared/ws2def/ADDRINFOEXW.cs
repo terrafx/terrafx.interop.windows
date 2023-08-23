@@ -28,7 +28,7 @@ public unsafe partial struct ADDRINFOEXW
 
     /// <include file='ADDRINFOEXW.xml' path='doc/member[@name="ADDRINFOEXW.ai_canonname"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* ai_canonname;
+    public char* ai_canonname;
 
     /// <include file='ADDRINFOEXW.xml' path='doc/member[@name="ADDRINFOEXW.ai_addr"]/*' />
     [NativeTypeName("struct sockaddr *")]

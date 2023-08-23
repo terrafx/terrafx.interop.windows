@@ -26,11 +26,11 @@ public unsafe partial struct SecPkgContext_CipherInfo
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCipherSuite"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szCipherSuite[64];
+    public fixed char szCipherSuite[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCipher"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szCipher[64];
+    public fixed char szCipher[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwCipherLen"]/*' />
     [NativeTypeName("DWORD")]
@@ -42,7 +42,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szHash"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szHash[64];
+    public fixed char szHash[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwHashLen"]/*' />
     [NativeTypeName("DWORD")]
@@ -50,7 +50,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szExchange"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szExchange[64];
+    public fixed char szExchange[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwMinExchangeLen"]/*' />
     [NativeTypeName("DWORD")]
@@ -62,7 +62,7 @@ public unsafe partial struct SecPkgContext_CipherInfo
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.szCertificate"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szCertificate[64];
+    public fixed char szCertificate[64];
 
     /// <include file='SecPkgContext_CipherInfo.xml' path='doc/member[@name="SecPkgContext_CipherInfo.dwKeyType"]/*' />
     [NativeTypeName("DWORD")]

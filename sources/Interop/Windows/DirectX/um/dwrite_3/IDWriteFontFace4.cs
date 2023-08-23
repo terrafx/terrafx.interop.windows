@@ -406,9 +406,9 @@ public unsafe partial struct IDWriteFontFace4 : IDWriteFontFace4.Interface, INat
     /// <inheritdoc cref="IDWriteFontFace3.AreCharactersLocal" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
-    public HRESULT AreCharactersLocal([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal)
+    public HRESULT AreCharactersLocal([NativeTypeName("const WCHAR *")] char* characters, [NativeTypeName("UINT32")] uint characterCount, BOOL enqueueIfNotLocal, BOOL* isLocal)
     {
-        return ((delegate* unmanaged<IDWriteFontFace4*, ushort*, uint, BOOL, BOOL*, int>)(lpVtbl[47]))((IDWriteFontFace4*)Unsafe.AsPointer(ref this), characters, characterCount, enqueueIfNotLocal, isLocal);
+        return ((delegate* unmanaged<IDWriteFontFace4*, char*, uint, BOOL, BOOL*, int>)(lpVtbl[47]))((IDWriteFontFace4*)Unsafe.AsPointer(ref this), characters, characterCount, enqueueIfNotLocal, isLocal);
     }
 
     /// <inheritdoc cref="IDWriteFontFace3.AreGlyphsLocal" />
@@ -611,7 +611,7 @@ public unsafe partial struct IDWriteFontFace4 : IDWriteFontFace4.Interface, INat
         public delegate* unmanaged<TSelf*, ushort, int> IsGlyphLocal;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32, BOOL, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, BOOL, BOOL*, int> AreCharactersLocal;
+        public delegate* unmanaged<TSelf*, char*, uint, BOOL, BOOL*, int> AreCharactersLocal;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32, BOOL, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, uint, BOOL, BOOL*, int> AreGlyphsLocal;

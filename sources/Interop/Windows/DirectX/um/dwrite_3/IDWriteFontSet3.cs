@@ -91,9 +91,9 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
     /// <inheritdoc cref="IDWriteFontSet.GetPropertyValues" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] ushort* preferredLocaleNames, IDWriteStringList** values)
+    public HRESULT GetPropertyValues(DWRITE_FONT_PROPERTY_ID propertyID, [NativeTypeName("const WCHAR *")] char* preferredLocaleNames, IDWriteStringList** values)
     {
-        return ((delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int>)(lpVtbl[8]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), propertyID, preferredLocaleNames, values);
+        return ((delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY_ID, char*, IDWriteStringList**, int>)(lpVtbl[8]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), propertyID, preferredLocaleNames, values);
     }
 
     /// <inheritdoc cref="IDWriteFontSet.GetPropertyValues" />
@@ -115,9 +115,9 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
     /// <inheritdoc cref="IDWriteFontSet.GetMatchingFonts" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] ushort* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
+    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, DWRITE_FONT_WEIGHT fontWeight, DWRITE_FONT_STRETCH fontStretch, DWRITE_FONT_STYLE fontStyle, IDWriteFontSet** filteredSet)
     {
-        return ((delegate* unmanaged<IDWriteFontSet3*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), familyName, fontWeight, fontStretch, fontStyle, filteredSet);
+        return ((delegate* unmanaged<IDWriteFontSet3*, char*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), familyName, fontWeight, fontStretch, fontStyle, filteredSet);
     }
 
     /// <inheritdoc cref="IDWriteFontSet.GetMatchingFonts" />
@@ -260,9 +260,9 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
     /// <include file='IDWriteFontSet3.xml' path='doc/member[@name="IDWriteFontSet3.GetFontSourceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT GetFontSourceName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
+    public HRESULT GetFontSourceName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
     {
-        return ((delegate* unmanaged<IDWriteFontSet3*, uint, ushort*, uint, int>)(lpVtbl[29]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), listIndex, stringBuffer, stringBufferSize);
+        return ((delegate* unmanaged<IDWriteFontSet3*, uint, char*, uint, int>)(lpVtbl[29]))((IDWriteFontSet3*)Unsafe.AsPointer(ref this), listIndex, stringBuffer, stringBufferSize);
     }
 
     public interface Interface : IDWriteFontSet2.Interface
@@ -275,7 +275,7 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
         uint GetFontSourceNameLength([NativeTypeName("UINT32")] uint listIndex);
 
         [VtblIndex(29)]
-        HRESULT GetFontSourceName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
+        HRESULT GetFontSourceName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -306,7 +306,7 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, IDWriteStringList**, int> GetPropertyValues;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_PROPERTY_ID, const WCHAR *, IDWriteStringList **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int> GetPropertyValues1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, char*, IDWriteStringList**, int> GetPropertyValues1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_PROPERTY_ID, BOOL *, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_PROPERTY_ID, BOOL*, IDWriteLocalizedStrings**, int> GetPropertyValues2;
@@ -315,7 +315,7 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint*, int> GetPropertyOccurrenceCount;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
+        public delegate* unmanaged<TSelf*, char*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint, IDWriteFontSet**, int> GetMatchingFonts1;
@@ -369,6 +369,6 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint> GetFontSourceNameLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetFontSourceName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetFontSourceName;
     }
 }

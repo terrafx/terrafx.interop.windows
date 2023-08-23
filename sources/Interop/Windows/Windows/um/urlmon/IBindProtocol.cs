@@ -49,15 +49,15 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface, INativeGui
     /// <include file='IBindProtocol.xml' path='doc/member[@name="IBindProtocol.CreateBinding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateBinding([NativeTypeName("LPCWSTR")] ushort* szUrl, IBindCtx* pbc, IBinding** ppb)
+    public HRESULT CreateBinding([NativeTypeName("LPCWSTR")] char* szUrl, IBindCtx* pbc, IBinding** ppb)
     {
-        return ((delegate* unmanaged<IBindProtocol*, ushort*, IBindCtx*, IBinding**, int>)(lpVtbl[3]))((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
+        return ((delegate* unmanaged<IBindProtocol*, char*, IBindCtx*, IBinding**, int>)(lpVtbl[3]))((IBindProtocol*)Unsafe.AsPointer(ref this), szUrl, pbc, ppb);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateBinding([NativeTypeName("LPCWSTR")] ushort* szUrl, IBindCtx* pbc, IBinding** ppb);
+        HRESULT CreateBinding([NativeTypeName("LPCWSTR")] char* szUrl, IBindCtx* pbc, IBinding** ppb);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IBindProtocol : IBindProtocol.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IBindCtx *, IBinding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IBindCtx*, IBinding**, int> CreateBinding;
+        public delegate* unmanaged<TSelf*, char*, IBindCtx*, IBinding**, int> CreateBinding;
     }
 }

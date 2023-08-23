@@ -73,9 +73,9 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     /// <include file='IHTMLPainterEventInfo.xml' path='doc/member[@name="IHTMLPainterEventInfo.StringFromPartID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] ushort** pbstrPart)
+    public HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] char** pbstrPart)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, int, ushort**, int>)(lpVtbl[6]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID, pbstrPart);
+        return ((delegate* unmanaged<IHTMLPainterEventInfo*, int, char**, int>)(lpVtbl[6]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID, pbstrPart);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,7 +90,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
         HRESULT SetCursor([NativeTypeName("LONG")] int lPartID);
 
         [VtblIndex(6)]
-        HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] ushort** pbstrPart);
+        HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] char** pbstrPart);
     }
 
     public partial struct Vtbl<TSelf>
@@ -115,6 +115,6 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
         public delegate* unmanaged<TSelf*, int, int> SetCursor;
 
         [NativeTypeName("HRESULT (LONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> StringFromPartID;
+        public delegate* unmanaged<TSelf*, int, char**, int> StringFromPartID;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDocument5*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
     /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.createAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute)
+    public HRESULT createAttribute([NativeTypeName("BSTR")] char* bstrattrName, IHTMLDOMAttribute** ppattribute)
     {
-        return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[11]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrattrName, ppattribute);
+        return ((delegate* unmanaged<IHTMLDocument5*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[11]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrattrName, ppattribute);
     }
 
     /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.createComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode)
+    public HRESULT createComment([NativeTypeName("BSTR")] char* bstrdata, IHTMLDOMNode** ppRetNode)
     {
-        return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrdata, ppRetNode);
+        return ((delegate* unmanaged<IHTMLDocument5*, char*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrdata, ppRetNode);
     }
 
     /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.put_onfocusin"]/*' />
@@ -225,9 +225,9 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
     /// <include file='IHTMLDocument5.xml' path='doc/member[@name="IHTMLDocument5.get_compatMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_compatMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument5*, ushort**, int>)(lpVtbl[25]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument5*, char**, int>)(lpVtbl[25]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -245,10 +245,10 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
         HRESULT get_implementation(IHTMLDOMImplementation** p);
 
         [VtblIndex(11)]
-        HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute);
+        HRESULT createAttribute([NativeTypeName("BSTR")] char* bstrattrName, IHTMLDOMAttribute** ppattribute);
 
         [VtblIndex(12)]
-        HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode);
+        HRESULT createComment([NativeTypeName("BSTR")] char* bstrdata, IHTMLDOMNode** ppRetNode);
 
         [VtblIndex(13)]
         HRESULT put_onfocusin(VARIANT v);
@@ -287,7 +287,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
         HRESULT get_onbeforedeactivate(VARIANT* p);
 
         [VtblIndex(25)]
-        HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_compatMode([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -309,7 +309,7 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -327,10 +327,10 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
         public delegate* unmanaged<TSelf*, IHTMLDOMImplementation**, int> get_implementation;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMAttribute**, int> createAttribute;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMNode**, int> createComment;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMNode**, int> createComment;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onfocusin;
@@ -369,6 +369,6 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface, INativeG
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforedeactivate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_compatMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_compatMode;
     }
 }

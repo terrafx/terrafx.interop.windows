@@ -49,26 +49,26 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
     /// <include file='IWbemStatusCodeText.xml' path='doc/member[@name="IWbemStatusCodeText.GetErrorCodeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)
+    public HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** MessageText)
     {
-        return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int>)(lpVtbl[3]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
+        return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, char**, int>)(lpVtbl[3]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
     }
 
     /// <include file='IWbemStatusCodeText.xml' path='doc/member[@name="IWbemStatusCodeText.GetFacilityCodeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText)
+    public HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** MessageText)
     {
-        return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int>)(lpVtbl[4]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
+        return ((delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, char**, int>)(lpVtbl[4]))((IWbemStatusCodeText*)Unsafe.AsPointer(ref this), hRes, LocaleId, lFlags, MessageText);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
+        HRESULT GetErrorCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** MessageText);
 
         [VtblIndex(4)]
-        HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
+        HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** MessageText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, uint, int, ushort**, int> GetErrorCodeText;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int, char**, int> GetErrorCodeText;
 
         [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, uint, int, ushort**, int> GetFacilityCodeText;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int, char**, int> GetFacilityCodeText;
     }
 }

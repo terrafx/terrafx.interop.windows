@@ -65,17 +65,17 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.SetScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetScheme([NativeTypeName("PCWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT SetScheme([NativeTypeName("PCWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, ushort*, uint, int>)(lpVtbl[5]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, dwFlags);
+        return ((delegate* unmanaged<IActiveDesktopP*, char*, uint, int>)(lpVtbl[5]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, dwFlags);
     }
 
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.GetScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT GetScheme([NativeTypeName("PWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, ushort*, uint*, uint, int>)(lpVtbl[6]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, pdwcchBuffer, dwFlags);
+        return ((delegate* unmanaged<IActiveDesktopP*, char*, uint*, uint, int>)(lpVtbl[6]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, pdwcchBuffer, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,10 +87,10 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
         HRESULT EnsureUpdateHTML();
 
         [VtblIndex(5)]
-        HRESULT SetScheme([NativeTypeName("PCWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags);
+        HRESULT SetScheme([NativeTypeName("PCWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags);
 
         [VtblIndex(6)]
-        HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags);
+        HRESULT GetScheme([NativeTypeName("PWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -112,9 +112,9 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
         public delegate* unmanaged<TSelf*, int> EnsureUpdateHTML;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetScheme;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetScheme;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, uint, int> GetScheme;
+        public delegate* unmanaged<TSelf*, char*, uint*, uint, int> GetScheme;
     }
 }

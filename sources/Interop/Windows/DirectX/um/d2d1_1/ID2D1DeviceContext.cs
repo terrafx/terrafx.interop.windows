@@ -389,9 +389,9 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface, 
     /// <inheritdoc cref="ID2D1RenderTarget.DrawText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public void DrawText([NativeTypeName("const WCHAR *")] ushort* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
+    public void DrawText([NativeTypeName("const WCHAR *")] char* @string, [NativeTypeName("UINT32")] uint stringLength, IDWriteTextFormat* textFormat, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* layoutRect, ID2D1Brush* defaultFillBrush, D2D1_DRAW_TEXT_OPTIONS options = D2D1_DRAW_TEXT_OPTIONS_NONE, DWRITE_MEASURING_MODE measuringMode = DWRITE_MEASURING_MODE_NATURAL)
     {
-        ((delegate* unmanaged<ID2D1DeviceContext*, ushort*, uint, IDWriteTextFormat*, D2D_RECT_F*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE, void>)(lpVtbl[27]))((ID2D1DeviceContext*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
+        ((delegate* unmanaged<ID2D1DeviceContext*, char*, uint, IDWriteTextFormat*, D2D_RECT_F*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE, void>)(lpVtbl[27]))((ID2D1DeviceContext*)Unsafe.AsPointer(ref this), @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
     }
 
     /// <inheritdoc cref="ID2D1RenderTarget.DrawTextLayout" />
@@ -659,9 +659,9 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface, 
     /// <include file='ID2D1DeviceContext.xml' path='doc/member[@name="ID2D1DeviceContext.CreateColorContextFromFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
-    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext)
+    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext)
     {
-        return ((delegate* unmanaged<ID2D1DeviceContext*, ushort*, ID2D1ColorContext**, int>)(lpVtbl[60]))((ID2D1DeviceContext*)Unsafe.AsPointer(ref this), filename, colorContext);
+        return ((delegate* unmanaged<ID2D1DeviceContext*, char*, ID2D1ColorContext**, int>)(lpVtbl[60]))((ID2D1DeviceContext*)Unsafe.AsPointer(ref this), filename, colorContext);
     }
 
     /// <include file='ID2D1DeviceContext.xml' path='doc/member[@name="ID2D1DeviceContext.CreateColorContextFromWicColorContext"]/*' />
@@ -924,7 +924,7 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface, 
         HRESULT CreateColorContext(D2D1_COLOR_SPACE space, [NativeTypeName("const BYTE *")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext);
 
         [VtblIndex(60)]
-        HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext);
+        HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext);
 
         [VtblIndex(61)]
         HRESULT CreateColorContextFromWicColorContext(IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext);
@@ -1105,7 +1105,7 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface, 
         public delegate* unmanaged<TSelf*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_BITMAP_INTERPOLATION_MODE, D2D_RECT_F*, void> DrawBitmap;
 
         [NativeTypeName("void (const WCHAR *, UINT32, IDWriteTextFormat *, const D2D1_RECT_F *, ID2D1Brush *, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IDWriteTextFormat*, D2D_RECT_F*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE, void> DrawText;
+        public delegate* unmanaged<TSelf*, char*, uint, IDWriteTextFormat*, D2D_RECT_F*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, DWRITE_MEASURING_MODE, void> DrawText;
 
         [NativeTypeName("void (D2D1_POINT_2F, IDWriteTextLayout *, ID2D1Brush *, D2D1_DRAW_TEXT_OPTIONS) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D_POINT_2F, IDWriteTextLayout*, ID2D1Brush*, D2D1_DRAW_TEXT_OPTIONS, void> DrawTextLayout;
@@ -1204,7 +1204,7 @@ public unsafe partial struct ID2D1DeviceContext : ID2D1DeviceContext.Interface, 
         public delegate* unmanaged<TSelf*, D2D1_COLOR_SPACE, byte*, uint, ID2D1ColorContext**, int> CreateColorContext;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
+        public delegate* unmanaged<TSelf*, char*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
 
         [NativeTypeName("HRESULT (IWICColorContext *, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IWICColorContext*, ID2D1ColorContext**, int> CreateColorContextFromWicColorContext;

@@ -49,25 +49,25 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.Get"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Get([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor)
+    public HRESULT Get([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor)
     {
-        return ((delegate* unmanaged<IWbemQualifierSet*, ushort*, int, VARIANT*, int*, int>)(lpVtbl[3]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, plFlavor);
+        return ((delegate* unmanaged<IWbemQualifierSet*, char*, int, VARIANT*, int*, int>)(lpVtbl[3]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, plFlavor);
     }
 
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.Put"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Put([NativeTypeName("LPCWSTR")] ushort* wszName, VARIANT* pVal, [NativeTypeName("long")] int lFlavor)
+    public HRESULT Put([NativeTypeName("LPCWSTR")] char* wszName, VARIANT* pVal, [NativeTypeName("long")] int lFlavor)
     {
-        return ((delegate* unmanaged<IWbemQualifierSet*, ushort*, VARIANT*, int, int>)(lpVtbl[4]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName, pVal, lFlavor);
+        return ((delegate* unmanaged<IWbemQualifierSet*, char*, VARIANT*, int, int>)(lpVtbl[4]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName, pVal, lFlavor);
     }
 
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.Delete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT Delete([NativeTypeName("LPCWSTR")] ushort* wszName)
+    public HRESULT Delete([NativeTypeName("LPCWSTR")] char* wszName)
     {
-        return ((delegate* unmanaged<IWbemQualifierSet*, ushort*, int>)(lpVtbl[5]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName);
+        return ((delegate* unmanaged<IWbemQualifierSet*, char*, int>)(lpVtbl[5]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), wszName);
     }
 
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.GetNames"]/*' />
@@ -89,9 +89,9 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor)
+    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor)
     {
-        return ((delegate* unmanaged<IWbemQualifierSet*, int, ushort**, VARIANT*, int*, int>)(lpVtbl[8]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), lFlags, pstrName, pVal, plFlavor);
+        return ((delegate* unmanaged<IWbemQualifierSet*, int, char**, VARIANT*, int*, int>)(lpVtbl[8]))((IWbemQualifierSet*)Unsafe.AsPointer(ref this), lFlags, pstrName, pVal, plFlavor);
     }
 
     /// <include file='IWbemQualifierSet.xml' path='doc/member[@name="IWbemQualifierSet.EndEnumeration"]/*' />
@@ -105,13 +105,13 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Get([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
+        HRESULT Get([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
 
         [VtblIndex(4)]
-        HRESULT Put([NativeTypeName("LPCWSTR")] ushort* wszName, VARIANT* pVal, [NativeTypeName("long")] int lFlavor);
+        HRESULT Put([NativeTypeName("LPCWSTR")] char* wszName, VARIANT* pVal, [NativeTypeName("long")] int lFlavor);
 
         [VtblIndex(5)]
-        HRESULT Delete([NativeTypeName("LPCWSTR")] ushort* wszName);
+        HRESULT Delete([NativeTypeName("LPCWSTR")] char* wszName);
 
         [VtblIndex(6)]
         HRESULT GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames);
@@ -120,7 +120,7 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
         HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags);
 
         [VtblIndex(8)]
-        HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
+        HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, VARIANT* pVal, [NativeTypeName("long *")] int* plFlavor);
 
         [VtblIndex(9)]
         HRESULT EndEnumeration();
@@ -139,13 +139,13 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int*, int> Get;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int*, int> Get;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int, int> Put;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int, int> Put;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Delete;
+        public delegate* unmanaged<TSelf*, char*, int> Delete;
 
         [NativeTypeName("HRESULT (long, SAFEARRAY **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, SAFEARRAY**, int> GetNames;
@@ -154,7 +154,7 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface, IN
         public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, VARIANT*, int*, int> Next;
+        public delegate* unmanaged<TSelf*, int, char**, VARIANT*, int*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndEnumeration;

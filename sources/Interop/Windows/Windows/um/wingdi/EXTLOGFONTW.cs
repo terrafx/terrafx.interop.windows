@@ -13,11 +13,11 @@ public unsafe partial struct EXTLOGFONTW
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfFullName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort elfFullName[64];
+    public fixed char elfFullName[64];
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfStyle"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort elfStyle[32];
+    public fixed char elfStyle[32];
 
     /// <include file='EXTLOGFONTW.xml' path='doc/member[@name="EXTLOGFONTW.elfVersion"]/*' />
     [NativeTypeName("DWORD")]

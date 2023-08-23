@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLWindow2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,41 +105,41 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.put_defaultStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_defaultStatus([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_defaultStatus([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int>)(lpVtbl[10]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int>)(lpVtbl[10]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_defaultStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_defaultStatus([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_defaultStatus([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort**, int>)(lpVtbl[11]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLWindow2*, char**, int>)(lpVtbl[11]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.put_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_status([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_status([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int>)(lpVtbl[12]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int>)(lpVtbl[12]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_status([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_status([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort**, int>)(lpVtbl[13]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLWindow2*, char**, int>)(lpVtbl[13]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.setTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT setTimeout([NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
+    public HRESULT setTimeout([NativeTypeName("BSTR")] char* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int, VARIANT*, int*, int>)(lpVtbl[14]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int, VARIANT*, int*, int>)(lpVtbl[14]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.clearTimeout"]/*' />
@@ -153,25 +153,25 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.alert"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT alert([NativeTypeName("BSTR")] ushort* message = null)
+    public HRESULT alert([NativeTypeName("BSTR")] char* message = null)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int>)(lpVtbl[16]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int>)(lpVtbl[16]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.confirm"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT confirm([NativeTypeName("BSTR")] ushort* message, [NativeTypeName("VARIANT_BOOL *")] short* confirmed)
+    public HRESULT confirm([NativeTypeName("BSTR")] char* message, [NativeTypeName("VARIANT_BOOL *")] short* confirmed)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, short*, int>)(lpVtbl[17]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message, confirmed);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, short*, int>)(lpVtbl[17]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message, confirmed);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.prompt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT prompt([NativeTypeName("BSTR")] ushort* message, [NativeTypeName("BSTR")] ushort* defstr, VARIANT* textdata)
+    public HRESULT prompt([NativeTypeName("BSTR")] char* message, [NativeTypeName("BSTR")] char* defstr, VARIANT* textdata)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[18]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message, defstr, textdata);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, char*, VARIANT*, int>)(lpVtbl[18]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), message, defstr, textdata);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_Image"]/*' />
@@ -233,17 +233,17 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int>)(lpVtbl[26]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int>)(lpVtbl[26]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort**, int>)(lpVtbl[27]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLWindow2*, char**, int>)(lpVtbl[27]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_parent"]/*' />
@@ -257,9 +257,9 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT open([NativeTypeName("BSTR")] ushort* url, [NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* features, [NativeTypeName("VARIANT_BOOL")] short replace, IHTMLWindow2** pomWindowResult)
+    public HRESULT open([NativeTypeName("BSTR")] char* url, [NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* features, [NativeTypeName("VARIANT_BOOL")] short replace, IHTMLWindow2** pomWindowResult)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, ushort*, ushort*, short, IHTMLWindow2**, int>)(lpVtbl[29]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), url, name, features, replace, pomWindowResult);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, char*, char*, short, IHTMLWindow2**, int>)(lpVtbl[29]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), url, name, features, replace, pomWindowResult);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_self"]/*' />
@@ -289,9 +289,9 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.navigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT navigate([NativeTypeName("BSTR")] ushort* url)
+    public HRESULT navigate([NativeTypeName("BSTR")] char* url)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int>)(lpVtbl[33]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), url);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int>)(lpVtbl[33]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), url);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.put_onfocus"]/*' />
@@ -465,17 +465,17 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.showModalDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
-    public HRESULT showModalDialog([NativeTypeName("BSTR")] ushort* dialog, VARIANT* varArgIn, VARIANT* varOptions, VARIANT* varArgOut)
+    public HRESULT showModalDialog([NativeTypeName("BSTR")] char* dialog, VARIANT* varArgIn, VARIANT* varOptions, VARIANT* varArgOut)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[55]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), dialog, varArgIn, varOptions, varArgOut);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[55]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), dialog, varArgIn, varOptions, varArgOut);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.showHelp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
-    public HRESULT showHelp([NativeTypeName("BSTR")] ushort* helpURL, VARIANT helpArg, [NativeTypeName("BSTR")] ushort* features = null)
+    public HRESULT showHelp([NativeTypeName("BSTR")] char* helpURL, VARIANT helpArg, [NativeTypeName("BSTR")] char* features = null)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, VARIANT, ushort*, int>)(lpVtbl[56]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), helpURL, helpArg, features);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, VARIANT, char*, int>)(lpVtbl[56]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), helpURL, helpArg, features);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.get_screen"]/*' />
@@ -537,9 +537,9 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.setInterval"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
-    public HRESULT setInterval([NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
+    public HRESULT setInterval([NativeTypeName("BSTR")] char* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, int, VARIANT*, int*, int>)(lpVtbl[64]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, int, VARIANT*, int*, int>)(lpVtbl[64]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), expression, msec, language, timerID);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.clearInterval"]/*' />
@@ -569,17 +569,17 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.execScript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
-    public HRESULT execScript([NativeTypeName("BSTR")] ushort* code, [NativeTypeName("BSTR")] ushort* language, VARIANT* pvarRet)
+    public HRESULT execScript([NativeTypeName("BSTR")] char* code, [NativeTypeName("BSTR")] char* language, VARIANT* pvarRet)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort*, ushort*, VARIANT*, int>)(lpVtbl[68]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), code, language, pvarRet);
+        return ((delegate* unmanaged<IHTMLWindow2*, char*, char*, VARIANT*, int>)(lpVtbl[68]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), code, language, pvarRet);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** String)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** String)
     {
-        return ((delegate* unmanaged<IHTMLWindow2*, ushort**, int>)(lpVtbl[69]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), String);
+        return ((delegate* unmanaged<IHTMLWindow2*, char**, int>)(lpVtbl[69]))((IHTMLWindow2*)Unsafe.AsPointer(ref this), String);
     }
 
     /// <include file='IHTMLWindow2.xml' path='doc/member[@name="IHTMLWindow2.scrollBy"]/*' />
@@ -644,31 +644,31 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get_frames(IHTMLFramesCollection2** p);
 
         [VtblIndex(10)]
-        HRESULT put_defaultStatus([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_defaultStatus([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(11)]
-        HRESULT get_defaultStatus([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_defaultStatus([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
-        HRESULT put_status([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_status([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(13)]
-        HRESULT get_status([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_status([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(14)]
-        HRESULT setTimeout([NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+        HRESULT setTimeout([NativeTypeName("BSTR")] char* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
 
         [VtblIndex(15)]
         HRESULT clearTimeout([NativeTypeName("long")] int timerID);
 
         [VtblIndex(16)]
-        HRESULT alert([NativeTypeName("BSTR")] ushort* message = null);
+        HRESULT alert([NativeTypeName("BSTR")] char* message = null);
 
         [VtblIndex(17)]
-        HRESULT confirm([NativeTypeName("BSTR")] ushort* message, [NativeTypeName("VARIANT_BOOL *")] short* confirmed);
+        HRESULT confirm([NativeTypeName("BSTR")] char* message, [NativeTypeName("VARIANT_BOOL *")] short* confirmed);
 
         [VtblIndex(18)]
-        HRESULT prompt([NativeTypeName("BSTR")] ushort* message, [NativeTypeName("BSTR")] ushort* defstr, VARIANT* textdata);
+        HRESULT prompt([NativeTypeName("BSTR")] char* message, [NativeTypeName("BSTR")] char* defstr, VARIANT* textdata);
 
         [VtblIndex(19)]
         HRESULT get_Image(IHTMLImageElementFactory** p);
@@ -692,16 +692,16 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get_navigator(IOmNavigator** p);
 
         [VtblIndex(26)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(27)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(28)]
         HRESULT get_parent(IHTMLWindow2** p);
 
         [VtblIndex(29)]
-        HRESULT open([NativeTypeName("BSTR")] ushort* url, [NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* features, [NativeTypeName("VARIANT_BOOL")] short replace, IHTMLWindow2** pomWindowResult);
+        HRESULT open([NativeTypeName("BSTR")] char* url, [NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* features, [NativeTypeName("VARIANT_BOOL")] short replace, IHTMLWindow2** pomWindowResult);
 
         [VtblIndex(30)]
         HRESULT get_self(IHTMLWindow2** p);
@@ -713,7 +713,7 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get_window(IHTMLWindow2** p);
 
         [VtblIndex(33)]
-        HRESULT navigate([NativeTypeName("BSTR")] ushort* url);
+        HRESULT navigate([NativeTypeName("BSTR")] char* url);
 
         [VtblIndex(34)]
         HRESULT put_onfocus(VARIANT v);
@@ -779,10 +779,10 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get__newEnum(IUnknown** p);
 
         [VtblIndex(55)]
-        HRESULT showModalDialog([NativeTypeName("BSTR")] ushort* dialog, VARIANT* varArgIn, VARIANT* varOptions, VARIANT* varArgOut);
+        HRESULT showModalDialog([NativeTypeName("BSTR")] char* dialog, VARIANT* varArgIn, VARIANT* varOptions, VARIANT* varArgOut);
 
         [VtblIndex(56)]
-        HRESULT showHelp([NativeTypeName("BSTR")] ushort* helpURL, VARIANT helpArg, [NativeTypeName("BSTR")] ushort* features = null);
+        HRESULT showHelp([NativeTypeName("BSTR")] char* helpURL, VARIANT helpArg, [NativeTypeName("BSTR")] char* features = null);
 
         [VtblIndex(57)]
         HRESULT get_screen(IHTMLScreen** p);
@@ -806,7 +806,7 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get_clientInformation(IOmNavigator** p);
 
         [VtblIndex(64)]
-        HRESULT setInterval([NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
+        HRESULT setInterval([NativeTypeName("BSTR")] char* expression, [NativeTypeName("long")] int msec, VARIANT* language, [NativeTypeName("long *")] int* timerID);
 
         [VtblIndex(65)]
         HRESULT clearInterval([NativeTypeName("long")] int timerID);
@@ -818,10 +818,10 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         HRESULT get_offscreenBuffering(VARIANT* p);
 
         [VtblIndex(68)]
-        HRESULT execScript([NativeTypeName("BSTR")] ushort* code, [NativeTypeName("BSTR")] ushort* language, VARIANT* pvarRet);
+        HRESULT execScript([NativeTypeName("BSTR")] char* code, [NativeTypeName("BSTR")] char* language, VARIANT* pvarRet);
 
         [VtblIndex(69)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
+        HRESULT toString([NativeTypeName("BSTR *")] char** String);
 
         [VtblIndex(70)]
         HRESULT scrollBy([NativeTypeName("long")] int x, [NativeTypeName("long")] int y);
@@ -864,7 +864,7 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -879,31 +879,31 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHTMLFramesCollection2**, int> get_frames;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_defaultStatus;
+        public delegate* unmanaged<TSelf*, char*, int> put_defaultStatus;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_defaultStatus;
+        public delegate* unmanaged<TSelf*, char**, int> get_defaultStatus;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_status;
+        public delegate* unmanaged<TSelf*, char*, int> put_status;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_status;
+        public delegate* unmanaged<TSelf*, char**, int> get_status;
 
         [NativeTypeName("HRESULT (BSTR, long, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int*, int> setTimeout;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int*, int> setTimeout;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> clearTimeout;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> alert;
+        public delegate* unmanaged<TSelf*, char*, int> alert;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> confirm;
+        public delegate* unmanaged<TSelf*, char*, short*, int> confirm;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT*, int> prompt;
+        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> prompt;
 
         [NativeTypeName("HRESULT (IHTMLImageElementFactory **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLImageElementFactory**, int> get_Image;
@@ -927,16 +927,16 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IOmNavigator**, int> get_navigator;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (IHTMLWindow2 **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLWindow2**, int> get_parent;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT_BOOL, IHTMLWindow2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, short, IHTMLWindow2**, int> open;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, short, IHTMLWindow2**, int> open;
 
         [NativeTypeName("HRESULT (IHTMLWindow2 **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLWindow2**, int> get_self;
@@ -948,7 +948,7 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHTMLWindow2**, int> get_window;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> navigate;
+        public delegate* unmanaged<TSelf*, char*, int> navigate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onfocus;
@@ -1014,10 +1014,10 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, VARIANT*, VARIANT*, int> showModalDialog;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, VARIANT*, VARIANT*, int> showModalDialog;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, ushort*, int> showHelp;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, char*, int> showHelp;
 
         [NativeTypeName("HRESULT (IHTMLScreen **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLScreen**, int> get_screen;
@@ -1041,7 +1041,7 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IOmNavigator**, int> get_clientInformation;
 
         [NativeTypeName("HRESULT (BSTR, long, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int*, int> setInterval;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int*, int> setInterval;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> clearInterval;
@@ -1053,10 +1053,10 @@ public unsafe partial struct IHTMLWindow2 : IHTMLWindow2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_offscreenBuffering;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT*, int> execScript;
+        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> execScript;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int, int> scrollBy;

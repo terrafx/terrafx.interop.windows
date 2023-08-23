@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMNode3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDOMNode3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -209,9 +209,9 @@ public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface, INativeGui
     /// <include file='IHTMLDOMNode3.xml' path='doc/member[@name="IHTMLDOMNode3.isSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT isSupported([NativeTypeName("BSTR")] ushort* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported)
+    public HRESULT isSupported([NativeTypeName("BSTR")] char* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported)
     {
-        return ((delegate* unmanaged<IHTMLDOMNode3*, ushort*, VARIANT, short*, int>)(lpVtbl[23]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), feature, version, pfisSupported);
+        return ((delegate* unmanaged<IHTMLDOMNode3*, char*, VARIANT, short*, int>)(lpVtbl[23]))((IHTMLDOMNode3*)Unsafe.AsPointer(ref this), feature, version, pfisSupported);
     }
 
     public interface Interface : IDispatch.Interface
@@ -265,7 +265,7 @@ public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface, INativeGui
         HRESULT compareDocumentPosition(IHTMLDOMNode* otherNode, ushort* flags);
 
         [VtblIndex(23)]
-        HRESULT isSupported([NativeTypeName("BSTR")] ushort* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported);
+        HRESULT isSupported([NativeTypeName("BSTR")] char* feature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfisSupported);
     }
 
     public partial struct Vtbl<TSelf>
@@ -287,7 +287,7 @@ public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -341,6 +341,6 @@ public unsafe partial struct IHTMLDOMNode3 : IHTMLDOMNode3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IHTMLDOMNode*, ushort*, int> compareDocumentPosition;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> isSupported;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, short*, int> isSupported;
     }
 }

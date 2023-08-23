@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnCustomSpeechCommand : ITfFnCustomSpeechCommand
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnCustomSpeechCommand*, ushort**, int>)(lpVtbl[3]))((ITfFnCustomSpeechCommand*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnCustomSpeechCommand*, char**, int>)(lpVtbl[3]))((ITfFnCustomSpeechCommand*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnCustomSpeechCommand.xml' path='doc/member[@name="ITfFnCustomSpeechCommand.SetSpeechCommandProvider"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ITfFnCustomSpeechCommand : ITfFnCustomSpeechCommand
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, int> SetSpeechCommandProvider;

@@ -49,25 +49,25 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface, INativeGuid
     /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetPronunciations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
+    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
     {
-        return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
+        return ((delegate* unmanaged<ISpLexicon*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
     }
 
     /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.AddPronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[4]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged<ISpLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[4]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.RemovePronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[5]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged<ISpLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[5]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetGeneration"]/*' />
@@ -97,13 +97,13 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList);
+        HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList);
 
         [VtblIndex(4)]
-        HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation);
+        HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation);
 
         [VtblIndex(5)]
-        HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation);
+        HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation);
 
         [VtblIndex(6)]
         HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration);
@@ -128,13 +128,13 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, DWORD, SPWORDPRONUNCIATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
+        public delegate* unmanaged<TSelf*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> AddPronunciation;
+        public delegate* unmanaged<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> AddPronunciation;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> RemovePronunciation;
+        public delegate* unmanaged<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> RemovePronunciation;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetGeneration;

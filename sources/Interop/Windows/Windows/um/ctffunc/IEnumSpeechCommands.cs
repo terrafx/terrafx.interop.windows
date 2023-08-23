@@ -57,9 +57,9 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] ushort** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched)
+    public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] char** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, uint, ushort**, uint*, int>)(lpVtbl[4]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount, pSpCmds, pcFetched);
+        return ((delegate* unmanaged<IEnumSpeechCommands*, uint, char**, uint*, int>)(lpVtbl[4]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount, pSpCmds, pcFetched);
     }
 
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Reset"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         HRESULT Clone(IEnumSpeechCommands** ppEnum);
 
         [VtblIndex(4)]
-        HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] ushort** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched);
+        HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] char** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched);
 
         [VtblIndex(5)]
         HRESULT Reset();
@@ -109,7 +109,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         public delegate* unmanaged<TSelf*, IEnumSpeechCommands**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, WCHAR **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Reset;

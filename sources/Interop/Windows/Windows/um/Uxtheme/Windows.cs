@@ -40,16 +40,16 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenThemeData"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HTHEME OpenThemeData(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList);
+    public static extern HTHEME OpenThemeData(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszClassList);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenThemeDataForDpi"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.15063.0")]
-    public static extern HTHEME OpenThemeDataForDpi(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, uint dpi);
+    public static extern HTHEME OpenThemeDataForDpi(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszClassList, uint dpi);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenThemeDataEx"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HTHEME OpenThemeDataEx(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszClassList, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HTHEME OpenThemeDataEx(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszClassList, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseThemeData"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -65,7 +65,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawThemeText"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT DrawThemeText(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("DWORD")] uint dwTextFlags2, [NativeTypeName("LPCRECT")] RECT* pRect);
+    public static extern HRESULT DrawThemeText(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] char* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("DWORD")] uint dwTextFlags2, [NativeTypeName("LPCRECT")] RECT* pRect);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeBackgroundContentRect"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -85,7 +85,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeTextExtent"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetThemeTextExtent(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchCharCount, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
+    public static extern HRESULT GetThemeTextExtent(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] char* pszText, int cchCharCount, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPCRECT")] RECT* pBoundingRect, [NativeTypeName("LPRECT")] RECT* pExtentRect);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeTextMetrics"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -121,7 +121,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeString"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetThemeString(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszBuff, int cchMaxBuffChars);
+    public static extern HRESULT GetThemeString(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] char* pszBuff, int cchMaxBuffChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeBool"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -161,11 +161,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowTheme"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT SetWindowTheme(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
+    public static extern HRESULT SetWindowTheme(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszSubAppName, [NativeTypeName("LPCWSTR")] char* pszSubIdList);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeFilename"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetThemeFilename(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxBuffChars);
+    public static extern HRESULT GetThemeFilename(HTHEME hTheme, int iPartId, int iStateId, int iPropId, [NativeTypeName("LPWSTR")] char* pszThemeFileName, int cchMaxBuffChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeSysColor"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -189,7 +189,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeSysString"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetThemeSysString(HTHEME hTheme, int iStringId, [NativeTypeName("LPWSTR")] ushort* pszStringBuff, int cchMaxStringChars);
+    public static extern HRESULT GetThemeSysString(HTHEME hTheme, int iStringId, [NativeTypeName("LPWSTR")] char* pszStringBuff, int cchMaxStringChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeSysInt"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -226,11 +226,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentThemeName"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetCurrentThemeName([NativeTypeName("LPWSTR")] ushort* pszThemeFileName, int cchMaxNameChars, [NativeTypeName("LPWSTR")] ushort* pszColorBuff, int cchMaxColorChars, [NativeTypeName("LPWSTR")] ushort* pszSizeBuff, int cchMaxSizeChars);
+    public static extern HRESULT GetCurrentThemeName([NativeTypeName("LPWSTR")] char* pszThemeFileName, int cchMaxNameChars, [NativeTypeName("LPWSTR")] char* pszColorBuff, int cchMaxColorChars, [NativeTypeName("LPWSTR")] char* pszSizeBuff, int cchMaxSizeChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeDocumentationProperty"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT GetThemeDocumentationProperty([NativeTypeName("LPCWSTR")] ushort* pszThemeName, [NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("LPWSTR")] ushort* pszValueBuff, int cchMaxValChars);
+    public static extern HRESULT GetThemeDocumentationProperty([NativeTypeName("LPCWSTR")] char* pszThemeName, [NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("LPWSTR")] char* pszValueBuff, int cchMaxValChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawThemeParentBackground"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
@@ -250,7 +250,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawThemeTextEx"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]
-    public static extern HRESULT DrawThemeTextEx(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] ushort* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPRECT")] RECT* pRect, [NativeTypeName("const DTTOPTS *")] DTTOPTS* pOptions);
+    public static extern HRESULT DrawThemeTextEx(HTHEME hTheme, HDC hdc, int iPartId, int iStateId, [NativeTypeName("LPCWSTR")] char* pszText, int cchText, [NativeTypeName("DWORD")] uint dwTextFlags, [NativeTypeName("LPRECT")] RECT* pRect, [NativeTypeName("const DTTOPTS *")] DTTOPTS* pOptions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThemeBitmap"]/*' />
     [DllImport("uxtheme", ExactSpelling = true)]

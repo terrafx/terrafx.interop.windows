@@ -49,17 +49,17 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
+    public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.GetEventCookie"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
+    public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.FireEvent"]/*' />
@@ -81,26 +81,26 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName)
+    public HRESULT RegisterName([NativeTypeName("LPOLESTR")] char* pchName)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchName);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchName);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterUrn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)
+    public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] char* pchUrn)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
+        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie);
+        HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie);
 
         [VtblIndex(4)]
-        HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie);
+        HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG *")] int* plCookie);
 
         [VtblIndex(5)]
         HRESULT FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject);
@@ -109,10 +109,10 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         HRESULT CreateEventObject(IHTMLEventObj** ppEventObject);
 
         [VtblIndex(7)]
-        HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName);
+        HRESULT RegisterName([NativeTypeName("LPOLESTR")] char* pchName);
 
         [VtblIndex(8)]
-        HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn);
+        HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] char* pchUrn);
     }
 
     public partial struct Vtbl<TSelf>
@@ -128,10 +128,10 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> RegisterEvent;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> RegisterEvent;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetEventCookie;
+        public delegate* unmanaged<TSelf*, char*, int*, int> GetEventCookie;
 
         [NativeTypeName("HRESULT (LONG, IHTMLEventObj *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> FireEvent;
@@ -140,9 +140,9 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         public delegate* unmanaged<TSelf*, IHTMLEventObj**, int> CreateEventObject;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RegisterName;
+        public delegate* unmanaged<TSelf*, char*, int> RegisterName;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RegisterUrn;
+        public delegate* unmanaged<TSelf*, char*, int> RegisterUrn;
     }
 }

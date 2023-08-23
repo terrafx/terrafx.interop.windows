@@ -51,9 +51,9 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface, IN
     /// <include file='IAppxContentGroup.xml' path='doc/member[@name="IAppxContentGroup.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** groupName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** groupName)
     {
-        return ((delegate* unmanaged<IAppxContentGroup*, ushort**, int>)(lpVtbl[3]))((IAppxContentGroup*)Unsafe.AsPointer(ref this), groupName);
+        return ((delegate* unmanaged<IAppxContentGroup*, char**, int>)(lpVtbl[3]))((IAppxContentGroup*)Unsafe.AsPointer(ref this), groupName);
     }
 
     /// <include file='IAppxContentGroup.xml' path='doc/member[@name="IAppxContentGroup.GetFiles"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** groupName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** groupName);
 
         [VtblIndex(4)]
         HRESULT GetFiles(IAppxContentGroupFilesEnumerator** enumerator);
@@ -86,7 +86,7 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (IAppxContentGroupFilesEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxContentGroupFilesEnumerator**, int> GetFiles;

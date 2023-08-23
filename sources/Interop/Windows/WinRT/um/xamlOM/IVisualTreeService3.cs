@@ -76,9 +76,9 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     /// <inheritdoc cref="IVisualTreeService.CreateInstance" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
+    public HRESULT CreateInstance([NativeTypeName("BSTR")] char* typeName, [NativeTypeName("BSTR")] char* value, InstanceHandle* pInstanceHandle)
     {
-        return ((delegate* unmanaged<IVisualTreeService3*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
+        return ((delegate* unmanaged<IVisualTreeService3*, char*, char*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
     /// <inheritdoc cref="IVisualTreeService.GetPropertyValuesChain" />
@@ -148,9 +148,9 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     /// <inheritdoc cref="IVisualTreeService2.GetPropertyIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] ushort* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex)
+    public HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] char* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex)
     {
-        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, uint*, int>)(lpVtbl[15]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), @object, propertyName, pPropertyIndex);
+        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, char*, uint*, int>)(lpVtbl[15]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), @object, propertyName, pPropertyIndex);
     }
 
     /// <inheritdoc cref="IVisualTreeService2.GetProperty" />
@@ -180,17 +180,17 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     /// <include file='IVisualTreeService3.xml' path='doc/member[@name="IVisualTreeService3.ResolveResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] ushort* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex)
+    public HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] char* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex)
     {
-        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, ResourceType, uint, int>)(lpVtbl[19]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), resourceContext, resourceName, resourceType, propertyIndex);
+        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, char*, ResourceType, uint, int>)(lpVtbl[19]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), resourceContext, resourceName, resourceType, propertyIndex);
     }
 
     /// <include file='IVisualTreeService3.xml' path='doc/member[@name="IVisualTreeService3.GetDictionaryItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle)
+    public HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] char* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle)
     {
-        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, ushort*, BOOL, InstanceHandle*, int>)(lpVtbl[20]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceName, resourceIsImplicitStyle, resourceHandle);
+        return ((delegate* unmanaged<IVisualTreeService3*, InstanceHandle, char*, BOOL, InstanceHandle*, int>)(lpVtbl[20]))((IVisualTreeService3*)Unsafe.AsPointer(ref this), dictionaryHandle, resourceName, resourceIsImplicitStyle, resourceHandle);
     }
 
     /// <include file='IVisualTreeService3.xml' path='doc/member[@name="IVisualTreeService3.AddDictionaryItem"]/*' />
@@ -212,10 +212,10 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
     public interface Interface : IVisualTreeService2.Interface
     {
         [VtblIndex(19)]
-        HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] ushort* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex);
+        HRESULT ResolveResource(InstanceHandle resourceContext, [NativeTypeName("LPCWSTR")] char* resourceName, ResourceType resourceType, [NativeTypeName("unsigned int")] uint propertyIndex);
 
         [VtblIndex(20)]
-        HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] ushort* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle);
+        HRESULT GetDictionaryItem(InstanceHandle dictionaryHandle, [NativeTypeName("LPCWSTR")] char* resourceName, BOOL resourceIsImplicitStyle, InstanceHandle* resourceHandle);
 
         [VtblIndex(21)]
         HRESULT AddDictionaryItem(InstanceHandle dictionaryHandle, InstanceHandle resourceKey, InstanceHandle resourceHandle);
@@ -246,7 +246,7 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
         public delegate* unmanaged<TSelf*, uint*, EnumType**, int> GetEnums;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, char*, char*, InstanceHandle*, int> CreateInstance;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
@@ -273,7 +273,7 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
         public delegate* unmanaged<TSelf*, InstanceHandle, int> ClearChildren;
 
         [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, ushort*, uint*, int> GetPropertyIndex;
+        public delegate* unmanaged<TSelf*, InstanceHandle, char*, uint*, int> GetPropertyIndex;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int, InstanceHandle *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, uint, InstanceHandle*, int> GetProperty;
@@ -285,10 +285,10 @@ public unsafe partial struct IVisualTreeService3 : IVisualTreeService3.Interface
         public delegate* unmanaged<TSelf*, InstanceHandle, RenderTargetBitmapOptions, uint, uint, IBitmapData**, int> RenderTargetBitmap;
 
         [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, ResourceType, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, ushort*, ResourceType, uint, int> ResolveResource;
+        public delegate* unmanaged<TSelf*, InstanceHandle, char*, ResourceType, uint, int> ResolveResource;
 
         [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, BOOL, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, ushort*, BOOL, InstanceHandle*, int> GetDictionaryItem;
+        public delegate* unmanaged<TSelf*, InstanceHandle, char*, BOOL, InstanceHandle*, int> GetDictionaryItem;
 
         [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, InstanceHandle) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, InstanceHandle, InstanceHandle, int> AddDictionaryItem;

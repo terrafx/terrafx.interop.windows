@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMouseWheelEvent : IDOMMouseWheelEvent.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMouseWheelEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseWheelEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMouseWheelEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseWheelEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IDOMMouseWheelEvent : IDOMMouseWheelEvent.Interface
     /// <include file='IDOMMouseWheelEvent.xml' path='doc/member[@name="IDOMMouseWheelEvent.initMouseWheelEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT initMouseWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int wheelDeltaArg)
+    public HRESULT initMouseWheelEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("long")] int wheelDeltaArg)
     {
-        return ((delegate* unmanaged<IDOMMouseWheelEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int>)(lpVtbl[8]))((IDOMMouseWheelEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, buttonArg, relatedTargetArg, modifiersListArg, wheelDeltaArg);
+        return ((delegate* unmanaged<IDOMMouseWheelEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, char*, int, int>)(lpVtbl[8]))((IDOMMouseWheelEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, buttonArg, relatedTargetArg, modifiersListArg, wheelDeltaArg);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IDOMMouseWheelEvent : IDOMMouseWheelEvent.Interface
         HRESULT get_wheelDelta([NativeTypeName("long *")] int* p);
 
         [VtblIndex(8)]
-        HRESULT initMouseWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int wheelDeltaArg);
+        HRESULT initMouseWheelEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("long")] int wheelDeltaArg);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IDOMMouseWheelEvent : IDOMMouseWheelEvent.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IDOMMouseWheelEvent : IDOMMouseWheelEvent.Interface
         public delegate* unmanaged<TSelf*, int*, int> get_wheelDelta;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, USHORT, IEventTarget *, BSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int> initMouseWheelEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, char*, int, int> initMouseWheelEvent;
     }
 }

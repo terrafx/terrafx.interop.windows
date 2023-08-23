@@ -130,9 +130,9 @@ public unsafe partial struct IDXGIResource1 : IDXGIResource1.Interface, INativeG
     /// <include file='IDXGIResource1.xml' path='doc/member[@name="IDXGIResource1.CreateSharedHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle)
+    public HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] char* lpName, HANDLE* pHandle)
     {
-        return ((delegate* unmanaged<IDXGIResource1*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int>)(lpVtbl[13]))((IDXGIResource1*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
+        return ((delegate* unmanaged<IDXGIResource1*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int>)(lpVtbl[13]))((IDXGIResource1*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
     }
 
     public interface Interface : IDXGIResource.Interface
@@ -141,7 +141,7 @@ public unsafe partial struct IDXGIResource1 : IDXGIResource1.Interface, INativeG
         HRESULT CreateSubresourceSurface(uint index, IDXGISurface2** ppSurface);
 
         [VtblIndex(13)]
-        HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle);
+        HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] char* lpName, HANDLE* pHandle);
     }
 
     public partial struct Vtbl<TSelf>
@@ -187,6 +187,6 @@ public unsafe partial struct IDXGIResource1 : IDXGIResource1.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, IDXGISurface2**, int> CreateSubresourceSurface;
 
         [NativeTypeName("HRESULT (const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged<TSelf*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int> CreateSharedHandle;
     }
 }

@@ -49,39 +49,39 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface, INat
     /// <inheritdoc cref="IHWEventHandler.Initialize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszParams)
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszParams)
     {
-        return ((delegate* unmanaged<IHWEventHandler2*, ushort*, int>)(lpVtbl[3]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszParams);
+        return ((delegate* unmanaged<IHWEventHandler2*, char*, int>)(lpVtbl[3]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszParams);
     }
 
     /// <inheritdoc cref="IHWEventHandler.HandleEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT HandleEvent([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType)
+    public HRESULT HandleEvent([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType)
     {
-        return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, int>)(lpVtbl[4]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType);
+        return ((delegate* unmanaged<IHWEventHandler2*, char*, char*, char*, int>)(lpVtbl[4]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType);
     }
 
     /// <inheritdoc cref="IHWEventHandler.HandleEventWithContent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT HandleEventWithContent([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, [NativeTypeName("LPCWSTR")] ushort* pszContentTypeHandler, IDataObject* pdataobject)
+    public HRESULT HandleEventWithContent([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType, [NativeTypeName("LPCWSTR")] char* pszContentTypeHandler, IDataObject* pdataobject)
     {
-        return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int>)(lpVtbl[5]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, pdataobject);
+        return ((delegate* unmanaged<IHWEventHandler2*, char*, char*, char*, char*, IDataObject*, int>)(lpVtbl[5]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, pdataobject);
     }
 
     /// <include file='IHWEventHandler2.xml' path='doc/member[@name="IHWEventHandler2.HandleEventWithHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner)
+    public HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType, HWND hwndOwner)
     {
-        return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, HWND, int>)(lpVtbl[6]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
+        return ((delegate* unmanaged<IHWEventHandler2*, char*, char*, char*, HWND, int>)(lpVtbl[6]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, hwndOwner);
     }
 
     public interface Interface : IHWEventHandler.Interface
     {
         [VtblIndex(6)]
-        HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner);
+        HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType, HWND hwndOwner);
     }
 
     public partial struct Vtbl<TSelf>
@@ -97,15 +97,15 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> HandleEvent;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> HandleEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int> HandleEventWithContent;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, IDataObject*, int> HandleEventWithContent;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, HWND, int> HandleEventWithHWND;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, HWND, int> HandleEventWithHWND;
     }
 }

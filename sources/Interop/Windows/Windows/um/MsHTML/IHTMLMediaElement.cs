@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLMediaElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,25 +89,25 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.put_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_src([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_src([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort*, int>)(lpVtbl[8]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char*, int>)(lpVtbl[8]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_src([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_src([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort**, int>)(lpVtbl[9]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char**, int>)(lpVtbl[9]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_currentSrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_currentSrc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_currentSrc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort**, int>)(lpVtbl[10]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char**, int>)(lpVtbl[10]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_networkState"]/*' />
@@ -121,17 +121,17 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.put_preload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_preload([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_preload([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort*, int>)(lpVtbl[12]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char*, int>)(lpVtbl[12]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_preload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_preload([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_preload([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort**, int>)(lpVtbl[13]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char**, int>)(lpVtbl[13]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_buffered"]/*' />
@@ -153,9 +153,9 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.canPlayType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT canPlayType([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR *")] ushort** canPlay)
+    public HRESULT canPlayType([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR *")] char** canPlay)
     {
-        return ((delegate* unmanaged<IHTMLMediaElement*, ushort*, ushort**, int>)(lpVtbl[16]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), type, canPlay);
+        return ((delegate* unmanaged<IHTMLMediaElement*, char*, char**, int>)(lpVtbl[16]))((IHTMLMediaElement*)Unsafe.AsPointer(ref this), type, canPlay);
     }
 
     /// <include file='IHTMLMediaElement.xml' path='doc/member[@name="IHTMLMediaElement.get_seeking"]/*' />
@@ -380,22 +380,22 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
         HRESULT get_error(IHTMLMediaError** p);
 
         [VtblIndex(8)]
-        HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_src([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(9)]
-        HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_src([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_currentSrc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_currentSrc([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT get_networkState(ushort* p);
 
         [VtblIndex(12)]
-        HRESULT put_preload([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_preload([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(13)]
-        HRESULT get_preload([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_preload([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(14)]
         HRESULT get_buffered(IHTMLTimeRanges** p);
@@ -404,7 +404,7 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
         HRESULT load();
 
         [VtblIndex(16)]
-        HRESULT canPlayType([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR *")] ushort** canPlay);
+        HRESULT canPlayType([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR *")] char** canPlay);
 
         [VtblIndex(17)]
         HRESULT get_seeking([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -507,7 +507,7 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -516,22 +516,22 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
         public delegate* unmanaged<TSelf*, IHTMLMediaError**, int> get_error;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_src;
+        public delegate* unmanaged<TSelf*, char*, int> put_src;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_src;
+        public delegate* unmanaged<TSelf*, char**, int> get_src;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_currentSrc;
+        public delegate* unmanaged<TSelf*, char**, int> get_currentSrc;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> get_networkState;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_preload;
+        public delegate* unmanaged<TSelf*, char*, int> put_preload;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_preload;
+        public delegate* unmanaged<TSelf*, char**, int> get_preload;
 
         [NativeTypeName("HRESULT (IHTMLTimeRanges **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLTimeRanges**, int> get_buffered;
@@ -540,7 +540,7 @@ public unsafe partial struct IHTMLMediaElement : IHTMLMediaElement.Interface, IN
         public delegate* unmanaged<TSelf*, int> load;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> canPlayType;
+        public delegate* unmanaged<TSelf*, char*, char**, int> canPlayType;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_seeking;

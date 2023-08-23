@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLElement4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLElement4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface, INativeGui
     /// <include file='IHTMLElement4.xml' path='doc/member[@name="IHTMLElement4.getAttributeNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* bstrname, IHTMLDOMAttribute** ppAttribute)
+    public HRESULT getAttributeNode([NativeTypeName("BSTR")] char* bstrname, IHTMLDOMAttribute** ppAttribute)
     {
-        return ((delegate* unmanaged<IHTMLElement4*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[10]))((IHTMLElement4*)Unsafe.AsPointer(ref this), bstrname, ppAttribute);
+        return ((delegate* unmanaged<IHTMLElement4*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[10]))((IHTMLElement4*)Unsafe.AsPointer(ref this), bstrname, ppAttribute);
     }
 
     /// <include file='IHTMLElement4.xml' path='doc/member[@name="IHTMLElement4.setAttributeNode"]/*' />
@@ -186,7 +186,7 @@ public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface, INativeGui
         HRESULT normalize();
 
         [VtblIndex(10)]
-        HRESULT getAttributeNode([NativeTypeName("BSTR")] ushort* bstrname, IHTMLDOMAttribute** ppAttribute);
+        HRESULT getAttributeNode([NativeTypeName("BSTR")] char* bstrname, IHTMLDOMAttribute** ppAttribute);
 
         [VtblIndex(11)]
         HRESULT setAttributeNode(IHTMLDOMAttribute* pattr, IHTMLDOMAttribute** ppretAttribute);
@@ -232,7 +232,7 @@ public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -247,7 +247,7 @@ public unsafe partial struct IHTMLElement4 : IHTMLElement4.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> normalize;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> getAttributeNode;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMAttribute**, int> getAttributeNode;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute *, IHTMLDOMAttribute **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLDOMAttribute*, IHTMLDOMAttribute**, int> setAttributeNode;

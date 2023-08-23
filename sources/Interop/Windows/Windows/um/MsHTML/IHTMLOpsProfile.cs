@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLOpsProfile*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLOpsProfile*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.addRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT addRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
+    public HRESULT addRequest([NativeTypeName("BSTR")] char* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
     {
-        return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int>)(lpVtbl[7]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
+        return ((delegate* unmanaged<IHTMLOpsProfile*, char*, VARIANT, short*, int>)(lpVtbl[7]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
     }
 
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.clearRequest"]/*' />
@@ -105,17 +105,17 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.getAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT getAttribute([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort**, int>)(lpVtbl[10]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IHTMLOpsProfile*, char*, char**, int>)(lpVtbl[10]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.setAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT setAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success)
+    public HRESULT setAttribute([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success)
     {
-        return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort*, VARIANT, short*, int>)(lpVtbl[11]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value, prefs, success);
+        return ((delegate* unmanaged<IHTMLOpsProfile*, char*, char*, VARIANT, short*, int>)(lpVtbl[11]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, value, prefs, success);
     }
 
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.commitChanges"]/*' />
@@ -129,9 +129,9 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.addReadRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT addReadRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
+    public HRESULT addReadRequest([NativeTypeName("BSTR")] char* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success)
     {
-        return ((delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int>)(lpVtbl[13]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
+        return ((delegate* unmanaged<IHTMLOpsProfile*, char*, VARIANT, short*, int>)(lpVtbl[13]))((IHTMLOpsProfile*)Unsafe.AsPointer(ref this), name, reserved, success);
     }
 
     /// <include file='IHTMLOpsProfile.xml' path='doc/member[@name="IHTMLOpsProfile.doReadRequest"]/*' />
@@ -153,7 +153,7 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT addRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
+        HRESULT addRequest([NativeTypeName("BSTR")] char* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
 
         [VtblIndex(8)]
         HRESULT clearRequest();
@@ -162,16 +162,16 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
         HRESULT doRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved);
 
         [VtblIndex(10)]
-        HRESULT getAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR *")] ushort** value);
+        HRESULT getAttribute([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(11)]
-        HRESULT setAttribute([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success);
+        HRESULT setAttribute([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* value, VARIANT prefs, [NativeTypeName("VARIANT_BOOL *")] short* success);
 
         [VtblIndex(12)]
         HRESULT commitChanges([NativeTypeName("VARIANT_BOOL *")] short* success);
 
         [VtblIndex(13)]
-        HRESULT addReadRequest([NativeTypeName("BSTR")] ushort* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
+        HRESULT addReadRequest([NativeTypeName("BSTR")] char* name, VARIANT reserved, [NativeTypeName("VARIANT_BOOL *")] short* success);
 
         [VtblIndex(14)]
         HRESULT doReadRequest(VARIANT usage, VARIANT fname, VARIANT domain, VARIANT path, VARIANT expire, VARIANT reserved);
@@ -199,13 +199,13 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> addRequest;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, short*, int> addRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> clearRequest;
@@ -214,16 +214,16 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface, INativ
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doRequest;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getAttribute;
+        public delegate* unmanaged<TSelf*, char*, char**, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT, short*, int> setAttribute;
+        public delegate* unmanaged<TSelf*, char*, char*, VARIANT, short*, int> setAttribute;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> commitChanges;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> addReadRequest;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, short*, int> addReadRequest;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doReadRequest;

@@ -57,25 +57,25 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetSource([NativeTypeName("LPOLESTR")] ushort* szSource)
+    public HRESULT SetSource([NativeTypeName("LPOLESTR")] char* szSource)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[4]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szSource);
+        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[4]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szSource);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetDescription([NativeTypeName("LPOLESTR")] ushort* szDescription)
+    public HRESULT SetDescription([NativeTypeName("LPOLESTR")] char* szDescription)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[5]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szDescription);
+        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[5]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szDescription);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] ushort* szHelpFile)
+    public HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] char* szHelpFile)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[6]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szHelpFile);
+        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[6]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szHelpFile);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpContext"]/*' />
@@ -92,13 +92,13 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
         HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* rguid);
 
         [VtblIndex(4)]
-        HRESULT SetSource([NativeTypeName("LPOLESTR")] ushort* szSource);
+        HRESULT SetSource([NativeTypeName("LPOLESTR")] char* szSource);
 
         [VtblIndex(5)]
-        HRESULT SetDescription([NativeTypeName("LPOLESTR")] ushort* szDescription);
+        HRESULT SetDescription([NativeTypeName("LPOLESTR")] char* szDescription);
 
         [VtblIndex(6)]
-        HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] ushort* szHelpFile);
+        HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] char* szHelpFile);
 
         [VtblIndex(7)]
         HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
@@ -120,13 +120,13 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
         public delegate* unmanaged<TSelf*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDescription;
+        public delegate* unmanaged<TSelf*, char*, int> SetDescription;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetHelpFile;
+        public delegate* unmanaged<TSelf*, char*, int> SetHelpFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;

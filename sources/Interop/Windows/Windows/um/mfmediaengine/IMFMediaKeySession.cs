@@ -59,17 +59,17 @@ public unsafe partial struct IMFMediaKeySession : IMFMediaKeySession.Interface, 
     /// <include file='IMFMediaKeySession.xml' path='doc/member[@name="IMFMediaKeySession.get_KeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
+    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession*, ushort**, int>)(lpVtbl[4]))((IMFMediaKeySession*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged<IMFMediaKeySession*, char**, int>)(lpVtbl[4]))((IMFMediaKeySession*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     /// <include file='IMFMediaKeySession.xml' path='doc/member[@name="IMFMediaKeySession.get_SessionId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_SessionId([NativeTypeName("BSTR *")] ushort** sessionId)
+    public HRESULT get_SessionId([NativeTypeName("BSTR *")] char** sessionId)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySession*)Unsafe.AsPointer(ref this), sessionId);
+        return ((delegate* unmanaged<IMFMediaKeySession*, char**, int>)(lpVtbl[5]))((IMFMediaKeySession*)Unsafe.AsPointer(ref this), sessionId);
     }
 
     /// <include file='IMFMediaKeySession.xml' path='doc/member[@name="IMFMediaKeySession.Update"]/*' />
@@ -94,10 +94,10 @@ public unsafe partial struct IMFMediaKeySession : IMFMediaKeySession.Interface, 
         HRESULT GetError(ushort* code, [NativeTypeName("DWORD *")] uint* systemCode);
 
         [VtblIndex(4)]
-        HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem);
+        HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem);
 
         [VtblIndex(5)]
-        HRESULT get_SessionId([NativeTypeName("BSTR *")] ushort** sessionId);
+        HRESULT get_SessionId([NativeTypeName("BSTR *")] char** sessionId);
 
         [VtblIndex(6)]
         HRESULT Update([NativeTypeName("const BYTE *")] byte* key, [NativeTypeName("DWORD")] uint cb);
@@ -122,10 +122,10 @@ public unsafe partial struct IMFMediaKeySession : IMFMediaKeySession.Interface, 
         public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetError;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged<TSelf*, char**, int> get_KeySystem;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_SessionId;
+        public delegate* unmanaged<TSelf*, char**, int> get_SessionId;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> Update;

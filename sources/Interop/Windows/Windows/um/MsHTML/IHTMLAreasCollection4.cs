@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLAreasCollection4 : IHTMLAreasCollection4.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLAreasCollection4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAreasCollection4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLAreasCollection4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAreasCollection4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IHTMLAreasCollection4 : IHTMLAreasCollection4.Inter
     /// <include file='IHTMLAreasCollection4.xml' path='doc/member[@name="IHTMLAreasCollection4.namedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT namedItem([NativeTypeName("BSTR")] ushort* name, IHTMLElement2** pNode)
+    public HRESULT namedItem([NativeTypeName("BSTR")] char* name, IHTMLElement2** pNode)
     {
-        return ((delegate* unmanaged<IHTMLAreasCollection4*, ushort*, IHTMLElement2**, int>)(lpVtbl[9]))((IHTMLAreasCollection4*)Unsafe.AsPointer(ref this), name, pNode);
+        return ((delegate* unmanaged<IHTMLAreasCollection4*, char*, IHTMLElement2**, int>)(lpVtbl[9]))((IHTMLAreasCollection4*)Unsafe.AsPointer(ref this), name, pNode);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IHTMLAreasCollection4 : IHTMLAreasCollection4.Inter
         HRESULT item([NativeTypeName("long")] int index, IHTMLElement2** pNode);
 
         [VtblIndex(9)]
-        HRESULT namedItem([NativeTypeName("BSTR")] ushort* name, IHTMLElement2** pNode);
+        HRESULT namedItem([NativeTypeName("BSTR")] char* name, IHTMLElement2** pNode);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IHTMLAreasCollection4 : IHTMLAreasCollection4.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IHTMLAreasCollection4 : IHTMLAreasCollection4.Inter
         public delegate* unmanaged<TSelf*, int, IHTMLElement2**, int> item;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement2**, int> namedItem;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElement2**, int> namedItem;
     }
 }

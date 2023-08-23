@@ -51,9 +51,9 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
     /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** resource)
+    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** resource)
     {
-        return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
+        return ((delegate* unmanaged<IAppxManifestResourcesEnumerator*, char**, int>)(lpVtbl[3]))((IAppxManifestResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
     }
 
     /// <include file='IAppxManifestResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestResourcesEnumerator.GetHasCurrent"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** resource);
+        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** resource);
 
         [VtblIndex(4)]
         HRESULT GetHasCurrent(BOOL* hasCurrent);
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxManifestResourcesEnumerator : IAppxManifestRes
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;

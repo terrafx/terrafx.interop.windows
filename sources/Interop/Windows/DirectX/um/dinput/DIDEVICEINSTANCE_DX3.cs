@@ -26,9 +26,9 @@ public unsafe partial struct DIDEVICEINSTANCE_DX3
 
     /// <include file='DIDEVICEINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEINSTANCE_DX3.tszInstanceName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszInstanceName[260];
+    public fixed char tszInstanceName[260];
 
     /// <include file='DIDEVICEINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEINSTANCE_DX3.tszProductName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszProductName[260];
+    public fixed char tszProductName[260];
 }

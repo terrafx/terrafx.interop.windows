@@ -40,9 +40,9 @@ public unsafe partial struct MODULEENTRY32W
 
     /// <include file='MODULEENTRY32W.xml' path='doc/member[@name="MODULEENTRY32W.szModule"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort szModule[256];
+    public fixed char szModule[256];
 
     /// <include file='MODULEENTRY32W.xml' path='doc/member[@name="MODULEENTRY32W.szExePath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szExePath[260];
+    public fixed char szExePath[260];
 }

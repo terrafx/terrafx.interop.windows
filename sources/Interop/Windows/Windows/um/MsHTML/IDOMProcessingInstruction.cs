@@ -65,9 +65,9 @@ public unsafe partial struct IDOMProcessingInstruction : IDOMProcessingInstructi
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMProcessingInstruction*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMProcessingInstruction*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,37 +81,37 @@ public unsafe partial struct IDOMProcessingInstruction : IDOMProcessingInstructi
     /// <include file='IDOMProcessingInstruction.xml' path='doc/member[@name="IDOMProcessingInstruction.get_target"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_target([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_target([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMProcessingInstruction*, ushort**, int>)(lpVtbl[7]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMProcessingInstruction*, char**, int>)(lpVtbl[7]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMProcessingInstruction.xml' path='doc/member[@name="IDOMProcessingInstruction.put_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_data([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_data([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IDOMProcessingInstruction*, ushort*, int>)(lpVtbl[8]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IDOMProcessingInstruction*, char*, int>)(lpVtbl[8]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IDOMProcessingInstruction.xml' path='doc/member[@name="IDOMProcessingInstruction.get_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_data([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMProcessingInstruction*, ushort**, int>)(lpVtbl[9]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMProcessingInstruction*, char**, int>)(lpVtbl[9]))((IDOMProcessingInstruction*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_target([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_target([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_data([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(9)]
-        HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_data([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct IDOMProcessingInstruction : IDOMProcessingInstructi
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_target;
+        public delegate* unmanaged<TSelf*, char**, int> get_target;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_data;
+        public delegate* unmanaged<TSelf*, char*, int> put_data;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_data;
+        public delegate* unmanaged<TSelf*, char**, int> get_data;
     }
 }

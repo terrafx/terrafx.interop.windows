@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLElement3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLElement3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -177,17 +177,17 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
     /// <include file='IHTMLElement3.xml' path='doc/member[@name="IHTMLElement3.put_contentEditable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_contentEditable([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLElement3*, ushort*, int>)(lpVtbl[19]))((IHTMLElement3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLElement3*, char*, int>)(lpVtbl[19]))((IHTMLElement3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLElement3.xml' path='doc/member[@name="IHTMLElement3.get_contentEditable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contentEditable([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLElement3*, ushort**, int>)(lpVtbl[20]))((IHTMLElement3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLElement3*, char**, int>)(lpVtbl[20]))((IHTMLElement3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLElement3.xml' path='doc/member[@name="IHTMLElement3.get_isContentEditable"]/*' />
@@ -273,9 +273,9 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
     /// <include file='IHTMLElement3.xml' path='doc/member[@name="IHTMLElement3.fireEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled)
+    public HRESULT fireEvent([NativeTypeName("BSTR")] char* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled)
     {
-        return ((delegate* unmanaged<IHTMLElement3*, ushort*, VARIANT*, short*, int>)(lpVtbl[31]))((IHTMLElement3*)Unsafe.AsPointer(ref this), bstrEventName, pvarEventObject, pfCancelled);
+        return ((delegate* unmanaged<IHTMLElement3*, char*, VARIANT*, short*, int>)(lpVtbl[31]))((IHTMLElement3*)Unsafe.AsPointer(ref this), bstrEventName, pvarEventObject, pfCancelled);
     }
 
     /// <include file='IHTMLElement3.xml' path='doc/member[@name="IHTMLElement3.put_onresizestart"]/*' />
@@ -461,10 +461,10 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
         HRESULT setActive();
 
         [VtblIndex(19)]
-        HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_contentEditable([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(20)]
-        HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contentEditable([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(21)]
         HRESULT get_isContentEditable([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -497,7 +497,7 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
         HRESULT get_oncontrolselect(VARIANT* p);
 
         [VtblIndex(31)]
-        HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+        HRESULT fireEvent([NativeTypeName("BSTR")] char* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
 
         [VtblIndex(32)]
         HRESULT put_onresizestart(VARIANT v);
@@ -573,7 +573,7 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -615,10 +615,10 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> setActive;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_contentEditable;
+        public delegate* unmanaged<TSelf*, char*, int> put_contentEditable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contentEditable;
+        public delegate* unmanaged<TSelf*, char**, int> get_contentEditable;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_isContentEditable;
@@ -651,7 +651,7 @@ public unsafe partial struct IHTMLElement3 : IHTMLElement3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncontrolselect;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, short*, int> fireEvent;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, short*, int> fireEvent;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onresizestart;

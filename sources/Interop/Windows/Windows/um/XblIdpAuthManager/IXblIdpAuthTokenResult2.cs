@@ -49,37 +49,37 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
     /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetModernGamertag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[3]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, char**, int>)(lpVtbl[3]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetModernGamertagSuffix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[4]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, char**, int>)(lpVtbl[4]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IXblIdpAuthTokenResult2.xml' path='doc/member[@name="IXblIdpAuthTokenResult2.GetUniqueModernGamertag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, ushort**, int>)(lpVtbl[5]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IXblIdpAuthTokenResult2*, char**, int>)(lpVtbl[5]))((IXblIdpAuthTokenResult2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetModernGamertag([NativeTypeName("LPWSTR *")] char** value);
 
         [VtblIndex(4)]
-        HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetModernGamertagSuffix([NativeTypeName("LPWSTR *")] char** value);
 
         [VtblIndex(5)]
-        HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetUniqueModernGamertag([NativeTypeName("LPWSTR *")] char** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IXblIdpAuthTokenResult2 : IXblIdpAuthTokenResult2.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetModernGamertag;
+        public delegate* unmanaged<TSelf*, char**, int> GetModernGamertag;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetModernGamertagSuffix;
+        public delegate* unmanaged<TSelf*, char**, int> GetModernGamertagSuffix;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetUniqueModernGamertag;
+        public delegate* unmanaged<TSelf*, char**, int> GetUniqueModernGamertag;
     }
 }

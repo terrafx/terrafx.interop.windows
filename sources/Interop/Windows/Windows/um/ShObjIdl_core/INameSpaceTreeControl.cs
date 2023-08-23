@@ -161,9 +161,9 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
     /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.SetTheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszTheme)
+    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszTheme)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl*, ushort*, int>)(lpVtbl[17]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), pszTheme);
+        return ((delegate* unmanaged<INameSpaceTreeControl*, char*, int>)(lpVtbl[17]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), pszTheme);
     }
 
     /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetNextItem"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         HRESULT EnsureItemVisible(IShellItem* psi);
 
         [VtblIndex(17)]
-        HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszTheme);
+        HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszTheme);
 
         [VtblIndex(18)]
         HRESULT GetNextItem(IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext);
@@ -313,7 +313,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         public delegate* unmanaged<TSelf*, IShellItem*, int> EnsureItemVisible;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTheme;
+        public delegate* unmanaged<TSelf*, char*, int> SetTheme;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCGNI, IShellItem **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, NSTCGNI, IShellItem**, int> GetNextItem;

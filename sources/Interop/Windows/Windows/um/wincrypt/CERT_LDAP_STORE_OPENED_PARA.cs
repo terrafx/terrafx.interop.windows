@@ -13,5 +13,5 @@ public unsafe partial struct CERT_LDAP_STORE_OPENED_PARA
 
     /// <include file='CERT_LDAP_STORE_OPENED_PARA.xml' path='doc/member[@name="CERT_LDAP_STORE_OPENED_PARA.pwszLdapUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszLdapUrl;
+    public char* pwszLdapUrl;
 }

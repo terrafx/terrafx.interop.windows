@@ -89,33 +89,33 @@ public unsafe partial struct IUriBuilder : IUriBuilder.Interface, INativeGuid
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetFragment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment)
+    public HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] char** ppwzFragment)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[8]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchFragment, ppwzFragment);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[8]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchFragment, ppwzFragment);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetHost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost)
+    public HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] char** ppwzHost)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[9]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchHost, ppwzHost);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[9]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchHost, ppwzHost);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetPassword"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword)
+    public HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] char** ppwzPassword)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[10]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPassword, ppwzPassword);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[10]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPassword, ppwzPassword);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath)
+    public HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] char** ppwzPath)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[11]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPath, ppwzPath);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[11]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPath, ppwzPath);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetPort"]/*' />
@@ -129,57 +129,57 @@ public unsafe partial struct IUriBuilder : IUriBuilder.Interface, INativeGuid
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetQuery"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery)
+    public HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] char** ppwzQuery)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[13]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchQuery, ppwzQuery);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[13]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchQuery, ppwzQuery);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetSchemeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName)
+    public HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] char** ppwzSchemeName)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[14]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchSchemeName, ppwzSchemeName);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[14]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchSchemeName, ppwzSchemeName);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.GetUserName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName)
+    public HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] char** ppwzUserName)
     {
-        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[15]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchUserName, ppwzUserName);
+        return ((delegate* unmanaged<IUriBuilder*, uint*, char**, int>)(lpVtbl[15]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchUserName, ppwzUserName);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetFragment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetFragment([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[16]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[16]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetHost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetHost([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[17]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[17]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetPassword"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetPassword([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[18]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[18]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetPath([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[19]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[19]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetPort"]/*' />
@@ -193,25 +193,25 @@ public unsafe partial struct IUriBuilder : IUriBuilder.Interface, INativeGuid
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetQuery"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetQuery([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[21]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[21]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetSchemeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[22]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[22]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.SetUserName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    public HRESULT SetUserName([NativeTypeName("LPCWSTR")] char* pwzNewValue)
     {
-        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[23]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+        return ((delegate* unmanaged<IUriBuilder*, char*, int>)(lpVtbl[23]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
     }
 
     /// <include file='IUriBuilder.xml' path='doc/member[@name="IUriBuilder.RemoveProperties"]/*' />
@@ -248,52 +248,52 @@ public unsafe partial struct IUriBuilder : IUriBuilder.Interface, INativeGuid
         HRESULT SetIUri(IUri* pIUri);
 
         [VtblIndex(8)]
-        HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment);
+        HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] char** ppwzFragment);
 
         [VtblIndex(9)]
-        HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost);
+        HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] char** ppwzHost);
 
         [VtblIndex(10)]
-        HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword);
+        HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] char** ppwzPassword);
 
         [VtblIndex(11)]
-        HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath);
+        HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] char** ppwzPath);
 
         [VtblIndex(12)]
         HRESULT GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort);
 
         [VtblIndex(13)]
-        HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery);
+        HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] char** ppwzQuery);
 
         [VtblIndex(14)]
-        HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName);
+        HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] char** ppwzSchemeName);
 
         [VtblIndex(15)]
-        HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName);
+        HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] char** ppwzUserName);
 
         [VtblIndex(16)]
-        HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetFragment([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(17)]
-        HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetHost([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(18)]
-        HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetPassword([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(19)]
-        HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetPath([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(20)]
         HRESULT SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue);
 
         [VtblIndex(21)]
-        HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetQuery([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(22)]
-        HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(23)]
-        HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        HRESULT SetUserName([NativeTypeName("LPCWSTR")] char* pwzNewValue);
 
         [VtblIndex(24)]
         HRESULT RemoveProperties([NativeTypeName("DWORD")] uint dwPropertyMask);
@@ -330,52 +330,52 @@ public unsafe partial struct IUriBuilder : IUriBuilder.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IUri*, int> SetIUri;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetFragment;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetFragment;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetHost;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetHost;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetPassword;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetPassword;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetPath;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetPath;
 
         [NativeTypeName("HRESULT (BOOL *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, uint*, int> GetPort;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetQuery;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetQuery;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetSchemeName;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetSchemeName;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetUserName;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetUserName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetFragment;
+        public delegate* unmanaged<TSelf*, char*, int> SetFragment;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetHost;
+        public delegate* unmanaged<TSelf*, char*, int> SetHost;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetPassword;
+        public delegate* unmanaged<TSelf*, char*, int> SetPassword;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetPath;
+        public delegate* unmanaged<TSelf*, char*, int> SetPath;
 
         [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, uint, int> SetPort;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetQuery;
+        public delegate* unmanaged<TSelf*, char*, int> SetQuery;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSchemeName;
+        public delegate* unmanaged<TSelf*, char*, int> SetSchemeName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetUserName;
+        public delegate* unmanaged<TSelf*, char*, int> SetUserName;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> RemoveProperties;

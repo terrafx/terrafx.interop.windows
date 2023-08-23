@@ -49,15 +49,15 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
     /// <include file='ILaunchSourceAppUserModelId.xml' path='doc/member[@name="ILaunchSourceAppUserModelId.GetAppUserModelId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** launchingApp)
+    public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] char** launchingApp)
     {
-        return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, ushort**, int>)(lpVtbl[3]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this), launchingApp);
+        return ((delegate* unmanaged<ILaunchSourceAppUserModelId*, char**, int>)(lpVtbl[3]))((ILaunchSourceAppUserModelId*)Unsafe.AsPointer(ref this), launchingApp);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** launchingApp);
+        HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] char** launchingApp);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ILaunchSourceAppUserModelId : ILaunchSourceAppUserM
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAppUserModelId;
+        public delegate* unmanaged<TSelf*, char**, int> GetAppUserModelId;
     }
 }

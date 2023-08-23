@@ -141,7 +141,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlInitUnicodeString"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]
-    public static extern void RtlInitUnicodeString([NativeTypeName("PUNICODE_STRING")] UNICODE_STRING* DestinationString, [NativeTypeName("PCWSTR")] ushort* SourceString);
+    public static extern void RtlInitUnicodeString([NativeTypeName("PUNICODE_STRING")] UNICODE_STRING* DestinationString, [NativeTypeName("PCWSTR")] char* SourceString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlAnsiStringToUnicodeString"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]
@@ -161,7 +161,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlUnicodeToMultiByteSize"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
-    public static extern int RtlUnicodeToMultiByteSize([NativeTypeName("PULONG")] uint* BytesInMultiByteString, [NativeTypeName("PWCH")] ushort* UnicodeString, [NativeTypeName("ULONG")] uint BytesInUnicodeString);
+    public static extern int RtlUnicodeToMultiByteSize([NativeTypeName("PULONG")] uint* BytesInMultiByteString, [NativeTypeName("PWCH")] char* UnicodeString, [NativeTypeName("ULONG")] uint BytesInUnicodeString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlCharToInteger"]/*' />
     [DllImport("ntdll", ExactSpelling = true)]

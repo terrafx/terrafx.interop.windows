@@ -14,7 +14,7 @@ public unsafe partial struct SPPHRASEPROPERTY
 {
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.Anonymous"]/*' />
     [NativeTypeName("__AnonymousRecord_sapi_L5779_C5")]
@@ -22,7 +22,7 @@ public unsafe partial struct SPPHRASEPROPERTY
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.pszValue"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszValue;
+    public char* pszValue;
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.vValue"]/*' />
     public VARIANT vValue;

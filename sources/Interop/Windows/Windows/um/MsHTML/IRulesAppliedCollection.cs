@@ -65,9 +65,9 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IRulesAppliedCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IRulesAppliedCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
     /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.propertyInheritedFrom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] ushort* name, IRulesApplied** ppRulesApplied)
+    public HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] char* name, IRulesApplied** ppRulesApplied)
     {
-        return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, IRulesApplied**, int>)(lpVtbl[10]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, ppRulesApplied);
+        return ((delegate* unmanaged<IRulesAppliedCollection*, char*, IRulesApplied**, int>)(lpVtbl[10]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, ppRulesApplied);
     }
 
     /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.get_propertyCount"]/*' />
@@ -121,25 +121,25 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
     /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.property"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrProperty)
+    public HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pbstrProperty)
     {
-        return ((delegate* unmanaged<IRulesAppliedCollection*, int, ushort**, int>)(lpVtbl[12]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), index, pbstrProperty);
+        return ((delegate* unmanaged<IRulesAppliedCollection*, int, char**, int>)(lpVtbl[12]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), index, pbstrProperty);
     }
 
     /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.propertyInheritedTrace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
+    public HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] char* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied)
     {
-        return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int, IRulesApplied**, int>)(lpVtbl[13]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, index, ppRulesApplied);
+        return ((delegate* unmanaged<IRulesAppliedCollection*, char*, int, IRulesApplied**, int>)(lpVtbl[13]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, index, ppRulesApplied);
     }
 
     /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.propertyInheritedTraceLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
+    public HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] char* name, [NativeTypeName("long *")] int* pLength)
     {
-        return ((delegate* unmanaged<IRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[14]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
+        return ((delegate* unmanaged<IRulesAppliedCollection*, char*, int*, int>)(lpVtbl[14]))((IRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
     }
 
     public interface Interface : IDispatch.Interface
@@ -154,19 +154,19 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
         HRESULT get_element(IHTMLElement** p);
 
         [VtblIndex(10)]
-        HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] ushort* name, IRulesApplied** ppRulesApplied);
+        HRESULT propertyInheritedFrom([NativeTypeName("BSTR")] char* name, IRulesApplied** ppRulesApplied);
 
         [VtblIndex(11)]
         HRESULT get_propertyCount([NativeTypeName("long *")] int* p);
 
         [VtblIndex(12)]
-        HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrProperty);
+        HRESULT property([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pbstrProperty);
 
         [VtblIndex(13)]
-        HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied);
+        HRESULT propertyInheritedTrace([NativeTypeName("BSTR")] char* name, [NativeTypeName("long")] int index, IRulesApplied** ppRulesApplied);
 
         [VtblIndex(14)]
-        HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength);
+        HRESULT propertyInheritedTraceLength([NativeTypeName("BSTR")] char* name, [NativeTypeName("long *")] int* pLength);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,7 +188,7 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -203,18 +203,18 @@ public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.I
         public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_element;
 
         [NativeTypeName("HRESULT (BSTR, IRulesApplied **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IRulesApplied**, int> propertyInheritedFrom;
+        public delegate* unmanaged<TSelf*, char*, IRulesApplied**, int> propertyInheritedFrom;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_propertyCount;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> property;
+        public delegate* unmanaged<TSelf*, int, char**, int> property;
 
         [NativeTypeName("HRESULT (BSTR, long, IRulesApplied **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, IRulesApplied**, int> propertyInheritedTrace;
+        public delegate* unmanaged<TSelf*, char*, int, IRulesApplied**, int> propertyInheritedTrace;
 
         [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> propertyInheritedTraceLength;
+        public delegate* unmanaged<TSelf*, char*, int*, int> propertyInheritedTraceLength;
     }
 }

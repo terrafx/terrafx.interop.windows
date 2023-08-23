@@ -21,5 +21,5 @@ public unsafe partial struct URLINVOKECOMMANDINFOW
 
     /// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW.pcszVerb"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcszVerb;
+    public char* pcszVerb;
 }

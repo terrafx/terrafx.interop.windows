@@ -57,15 +57,15 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
     /// <include file='IWbemUnsecuredApartment.xml' path='doc/member[@name="IWbemUnsecuredApartment.CreateSinkStub"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub)
+    public HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* wszReserved, IWbemObjectSink** ppStub)
     {
-        return ((delegate* unmanaged<IWbemUnsecuredApartment*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int>)(lpVtbl[4]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pSink, dwFlags, wszReserved, ppStub);
+        return ((delegate* unmanaged<IWbemUnsecuredApartment*, IWbemObjectSink*, uint, char*, IWbemObjectSink**, int>)(lpVtbl[4]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pSink, dwFlags, wszReserved, ppStub);
     }
 
     public interface Interface : IUnsecuredApartment.Interface
     {
         [VtblIndex(4)]
-        HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub);
+        HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* wszReserved, IWbemObjectSink** ppStub);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,6 +84,6 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         public delegate* unmanaged<TSelf*, IUnknown*, IUnknown**, int> CreateObjectStub;
 
         [NativeTypeName("HRESULT (IWbemObjectSink *, DWORD, LPCWSTR, IWbemObjectSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int> CreateSinkStub;
+        public delegate* unmanaged<TSelf*, IWbemObjectSink*, uint, char*, IWbemObjectSink**, int> CreateSinkStub;
     }
 }

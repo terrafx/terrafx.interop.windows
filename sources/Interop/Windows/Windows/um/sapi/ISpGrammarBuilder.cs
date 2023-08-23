@@ -57,9 +57,9 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.GetRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState)
+    public HRESULT GetRule([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, ushort*, uint, uint, BOOL, SPSTATEHANDLE*, int>)(lpVtbl[4]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
+        return ((delegate* unmanaged<ISpGrammarBuilder*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int>)(lpVtbl[4]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.ClearRule"]/*' />
@@ -81,9 +81,9 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddWordTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
+    public HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, [NativeTypeName("LPCWSTR")] char* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
+        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddRuleTransition"]/*' />
@@ -97,9 +97,9 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue)
+    public HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] char* pszResourceName, [NativeTypeName("LPCWSTR")] char* pszResourceValue)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, ushort*, ushort*, int>)(lpVtbl[9]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
+        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, char*, char*, int>)(lpVtbl[9]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.Commit"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
         HRESULT ResetGrammar([NativeTypeName("WORD")] ushort NewLanguage);
 
         [VtblIndex(4)]
-        HRESULT GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState);
+        HRESULT GetRule([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState);
 
         [VtblIndex(5)]
         HRESULT ClearRule(SPSTATEHANDLE hState);
@@ -125,13 +125,13 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
         HRESULT CreateNewState(SPSTATEHANDLE hState, SPSTATEHANDLE* phState);
 
         [VtblIndex(7)]
-        HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo);
+        HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, [NativeTypeName("LPCWSTR")] char* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo);
 
         [VtblIndex(8)]
         HRESULT AddRuleTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, SPSTATEHANDLE hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo);
 
         [VtblIndex(9)]
-        HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue);
+        HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] char* pszResourceName, [NativeTypeName("LPCWSTR")] char* pszResourceValue);
 
         [VtblIndex(10)]
         HRESULT Commit([NativeTypeName("DWORD")] uint dwReserved);
@@ -153,7 +153,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
         public delegate* unmanaged<TSelf*, ushort, int> ResetGrammar;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, BOOL, SPSTATEHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint, BOOL, SPSTATEHANDLE*, int> GetRule;
+        public delegate* unmanaged<TSelf*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int> GetRule;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SPSTATEHANDLE, int> ClearRule;
@@ -162,13 +162,13 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
         public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE*, int> CreateNewState;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, LPCWSTR, SPGRAMMARWORDTYPE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int> AddWordTransition;
+        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int> AddWordTransition;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int> AddRuleTransition;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, ushort*, ushort*, int> AddResource;
+        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, char*, char*, int> AddResource;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Commit;

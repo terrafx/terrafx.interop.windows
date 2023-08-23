@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDocument7*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createCDATASection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT createCDATASection([NativeTypeName("BSTR")] ushort* text, IHTMLDOMNode** newCDATASectionNode)
+    public HRESULT createCDATASection([NativeTypeName("BSTR")] char* text, IHTMLDOMNode** newCDATASectionNode)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[8]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), text, newCDATASectionNode);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, IHTMLDOMNode**, int>)(lpVtbl[8]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), text, newCDATASectionNode);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.getSelection"]/*' />
@@ -105,25 +105,25 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.getElementsByTagNameNS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getElementsByTagNameNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrLocalName, IHTMLElementCollection** pelColl)
+    public HRESULT getElementsByTagNameNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrLocalName, IHTMLElementCollection** pelColl)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[10]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrLocalName, pelColl);
+        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, char*, IHTMLElementCollection**, int>)(lpVtbl[10]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrLocalName, pelColl);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createElementNS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT createElementNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrTag, IHTMLElement** newElem)
+    public HRESULT createElementNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrTag, IHTMLElement** newElem)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, ushort*, IHTMLElement**, int>)(lpVtbl[11]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrTag, newElem);
+        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, char*, IHTMLElement**, int>)(lpVtbl[11]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrTag, newElem);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createAttributeNS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT createAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrAttrName, IHTMLDOMAttribute** ppAttribute)
+    public HRESULT createAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrAttrName, IHTMLDOMAttribute** ppAttribute)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[12]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrAttrName, ppAttribute);
+        return ((delegate* unmanaged<IHTMLDocument7*, VARIANT*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[12]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), pvarNS, bstrAttrName, ppAttribute);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.put_onmsthumbnailclick"]/*' />
@@ -145,41 +145,41 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.get_characterSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_characterSet([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_characterSet([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort**, int>)(lpVtbl[15]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument7*, char**, int>)(lpVtbl[15]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT createElement([NativeTypeName("BSTR")] ushort* bstrTag, IHTMLElement** newElem)
+    public HRESULT createElement([NativeTypeName("BSTR")] char* bstrTag, IHTMLElement** newElem)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, IHTMLElement**, int>)(lpVtbl[16]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrTag, newElem);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, IHTMLElement**, int>)(lpVtbl[16]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrTag, newElem);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrAttrName, IHTMLDOMAttribute** ppAttribute)
+    public HRESULT createAttribute([NativeTypeName("BSTR")] char* bstrAttrName, IHTMLDOMAttribute** ppAttribute)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[17]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrAttrName, ppAttribute);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[17]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrAttrName, ppAttribute);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.getElementsByClassName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT getElementsByClassName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pel)
+    public HRESULT getElementsByClassName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pel)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, IHTMLElementCollection**, int>)(lpVtbl[18]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, IHTMLElementCollection**, int>)(lpVtbl[18]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.createProcessingInstruction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT createProcessingInstruction([NativeTypeName("BSTR")] ushort* bstrTarget, [NativeTypeName("BSTR")] ushort* bstrData, IDOMProcessingInstruction** newProcessingInstruction)
+    public HRESULT createProcessingInstruction([NativeTypeName("BSTR")] char* bstrTarget, [NativeTypeName("BSTR")] char* bstrData, IDOMProcessingInstruction** newProcessingInstruction)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, ushort*, IDOMProcessingInstruction**, int>)(lpVtbl[19]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrTarget, bstrData, newProcessingInstruction);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, char*, IDOMProcessingInstruction**, int>)(lpVtbl[19]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), bstrTarget, bstrData, newProcessingInstruction);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.adoptNode"]/*' />
@@ -217,17 +217,17 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.get_inputEncoding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT get_inputEncoding([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_inputEncoding([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort**, int>)(lpVtbl[24]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument7*, char**, int>)(lpVtbl[24]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.get_xmlEncoding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT get_xmlEncoding([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_xmlEncoding([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort**, int>)(lpVtbl[25]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument7*, char**, int>)(lpVtbl[25]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.put_xmlStandalone"]/*' />
@@ -249,17 +249,17 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.put_xmlVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT put_xmlVersion([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_xmlVersion([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort*, int>)(lpVtbl[28]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLDocument7*, char*, int>)(lpVtbl[28]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.get_xmlVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_xmlVersion([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_xmlVersion([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument7*, ushort**, int>)(lpVtbl[29]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument7*, char**, int>)(lpVtbl[29]))((IHTMLDocument7*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument7.xml' path='doc/member[@name="IHTMLDocument7.hasAttributes"]/*' />
@@ -916,19 +916,19 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         HRESULT get_defaultView(IHTMLWindow2** p);
 
         [VtblIndex(8)]
-        HRESULT createCDATASection([NativeTypeName("BSTR")] ushort* text, IHTMLDOMNode** newCDATASectionNode);
+        HRESULT createCDATASection([NativeTypeName("BSTR")] char* text, IHTMLDOMNode** newCDATASectionNode);
 
         [VtblIndex(9)]
         HRESULT getSelection(IHTMLSelection** ppIHTMLSelection);
 
         [VtblIndex(10)]
-        HRESULT getElementsByTagNameNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrLocalName, IHTMLElementCollection** pelColl);
+        HRESULT getElementsByTagNameNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrLocalName, IHTMLElementCollection** pelColl);
 
         [VtblIndex(11)]
-        HRESULT createElementNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrTag, IHTMLElement** newElem);
+        HRESULT createElementNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrTag, IHTMLElement** newElem);
 
         [VtblIndex(12)]
-        HRESULT createAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] ushort* bstrAttrName, IHTMLDOMAttribute** ppAttribute);
+        HRESULT createAttributeNS(VARIANT* pvarNS, [NativeTypeName("BSTR")] char* bstrAttrName, IHTMLDOMAttribute** ppAttribute);
 
         [VtblIndex(13)]
         HRESULT put_onmsthumbnailclick(VARIANT v);
@@ -937,19 +937,19 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         HRESULT get_onmsthumbnailclick(VARIANT* p);
 
         [VtblIndex(15)]
-        HRESULT get_characterSet([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_characterSet([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(16)]
-        HRESULT createElement([NativeTypeName("BSTR")] ushort* bstrTag, IHTMLElement** newElem);
+        HRESULT createElement([NativeTypeName("BSTR")] char* bstrTag, IHTMLElement** newElem);
 
         [VtblIndex(17)]
-        HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrAttrName, IHTMLDOMAttribute** ppAttribute);
+        HRESULT createAttribute([NativeTypeName("BSTR")] char* bstrAttrName, IHTMLDOMAttribute** ppAttribute);
 
         [VtblIndex(18)]
-        HRESULT getElementsByClassName([NativeTypeName("BSTR")] ushort* v, IHTMLElementCollection** pel);
+        HRESULT getElementsByClassName([NativeTypeName("BSTR")] char* v, IHTMLElementCollection** pel);
 
         [VtblIndex(19)]
-        HRESULT createProcessingInstruction([NativeTypeName("BSTR")] ushort* bstrTarget, [NativeTypeName("BSTR")] ushort* bstrData, IDOMProcessingInstruction** newProcessingInstruction);
+        HRESULT createProcessingInstruction([NativeTypeName("BSTR")] char* bstrTarget, [NativeTypeName("BSTR")] char* bstrData, IDOMProcessingInstruction** newProcessingInstruction);
 
         [VtblIndex(20)]
         HRESULT adoptNode(IHTMLDOMNode* pNodeSource, IHTMLDOMNode3** ppNodeDest);
@@ -964,10 +964,10 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         HRESULT get_all(IHTMLElementCollection** p);
 
         [VtblIndex(24)]
-        HRESULT get_inputEncoding([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_inputEncoding([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(25)]
-        HRESULT get_xmlEncoding([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_xmlEncoding([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(26)]
         HRESULT put_xmlStandalone([NativeTypeName("VARIANT_BOOL")] short v);
@@ -976,10 +976,10 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         HRESULT get_xmlStandalone([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(28)]
-        HRESULT put_xmlVersion([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_xmlVersion([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(29)]
-        HRESULT get_xmlVersion([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_xmlVersion([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(30)]
         HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
@@ -1244,7 +1244,7 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -1253,19 +1253,19 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         public delegate* unmanaged<TSelf*, IHTMLWindow2**, int> get_defaultView;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMNode**, int> createCDATASection;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMNode**, int> createCDATASection;
 
         [NativeTypeName("HRESULT (IHTMLSelection **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLSelection**, int> getSelection;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, IHTMLElementCollection**, int> getElementsByTagNameNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, char*, IHTMLElementCollection**, int> getElementsByTagNameNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, IHTMLElement**, int> createElementNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, char*, IHTMLElement**, int> createElementNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, IHTMLDOMAttribute**, int> createAttributeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, char*, IHTMLDOMAttribute**, int> createAttributeNS;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onmsthumbnailclick;
@@ -1274,19 +1274,19 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onmsthumbnailclick;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_characterSet;
+        public delegate* unmanaged<TSelf*, char**, int> get_characterSet;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement**, int> createElement;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElement**, int> createElement;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMAttribute**, int> createAttribute;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElementCollection**, int> getElementsByClassName;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElementCollection**, int> getElementsByClassName;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IDOMProcessingInstruction **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IDOMProcessingInstruction**, int> createProcessingInstruction;
+        public delegate* unmanaged<TSelf*, char*, char*, IDOMProcessingInstruction**, int> createProcessingInstruction;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode *, IHTMLDOMNode3 **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLDOMNode*, IHTMLDOMNode3**, int> adoptNode;
@@ -1301,10 +1301,10 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         public delegate* unmanaged<TSelf*, IHTMLElementCollection**, int> get_all;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_inputEncoding;
+        public delegate* unmanaged<TSelf*, char**, int> get_inputEncoding;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_xmlEncoding;
+        public delegate* unmanaged<TSelf*, char**, int> get_xmlEncoding;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_xmlStandalone;
@@ -1313,10 +1313,10 @@ public unsafe partial struct IHTMLDocument7 : IHTMLDocument7.Interface, INativeG
         public delegate* unmanaged<TSelf*, short*, int> get_xmlStandalone;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_xmlVersion;
+        public delegate* unmanaged<TSelf*, char*, int> put_xmlVersion;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_xmlVersion;
+        public delegate* unmanaged<TSelf*, char**, int> get_xmlVersion;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> hasAttributes;

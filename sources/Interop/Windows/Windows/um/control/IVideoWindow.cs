@@ -65,9 +65,9 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IVideoWindow*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IVideoWindow*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption)
+    public HRESULT put_Caption([NativeTypeName("BSTR")] char* strCaption)
     {
-        return ((delegate* unmanaged<IVideoWindow*, ushort*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged<IVideoWindow*, char*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption)
+    public HRESULT get_Caption([NativeTypeName("BSTR *")] char** strCaption)
     {
-        return ((delegate* unmanaged<IVideoWindow*, ushort**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged<IVideoWindow*, char**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowStyle"]/*' />
@@ -393,10 +393,10 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption);
+        HRESULT put_Caption([NativeTypeName("BSTR")] char* strCaption);
 
         [VtblIndex(8)]
-        HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption);
+        HRESULT get_Caption([NativeTypeName("BSTR *")] char** strCaption);
 
         [VtblIndex(9)]
         HRESULT put_WindowStyle([NativeTypeName("long")] int WindowStyle);
@@ -529,16 +529,16 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Caption;
+        public delegate* unmanaged<TSelf*, char*, int> put_Caption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Caption;
+        public delegate* unmanaged<TSelf*, char**, int> get_Caption;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_WindowStyle;

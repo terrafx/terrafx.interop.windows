@@ -49,9 +49,9 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetAppName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetAppName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, ushort**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged<IFileIsInUse*, char**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetUsage"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetAppName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetAppName([NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(4)]
         HRESULT GetUsage(FILE_USAGE_TYPE* pfut);
@@ -117,7 +117,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAppName;
+        public delegate* unmanaged<TSelf*, char**, int> GetAppName;
 
         [NativeTypeName("HRESULT (FILE_USAGE_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FILE_USAGE_TYPE*, int> GetUsage;

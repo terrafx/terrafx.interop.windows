@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCommentElement : IHTMLCommentElement.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCommentElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCommentElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLCommentElement : IHTMLCommentElement.Interface
     /// <include file='IHTMLCommentElement.xml' path='doc/member[@name="IHTMLCommentElement.put_text"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_text([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_text([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCommentElement*, ushort*, int>)(lpVtbl[7]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCommentElement*, char*, int>)(lpVtbl[7]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCommentElement.xml' path='doc/member[@name="IHTMLCommentElement.get_text"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_text([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_text([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCommentElement*, ushort**, int>)(lpVtbl[8]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCommentElement*, char**, int>)(lpVtbl[8]))((IHTMLCommentElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCommentElement.xml' path='doc/member[@name="IHTMLCommentElement.put_atomic"]/*' />
@@ -113,10 +113,10 @@ public unsafe partial struct IHTMLCommentElement : IHTMLCommentElement.Interface
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_text([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_text([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_text([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_text([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT put_atomic([NativeTypeName("long")] int v);
@@ -144,16 +144,16 @@ public unsafe partial struct IHTMLCommentElement : IHTMLCommentElement.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_text;
+        public delegate* unmanaged<TSelf*, char*, int> put_text;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_text;
+        public delegate* unmanaged<TSelf*, char**, int> get_text;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_atomic;

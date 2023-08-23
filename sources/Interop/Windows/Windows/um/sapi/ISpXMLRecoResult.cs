@@ -65,9 +65,9 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INat
     /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
+    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] char** ppszCoMemText, byte* pbDisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpXMLRecoResult*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+        return ((delegate* unmanaged<ISpXMLRecoResult*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
     /// <inheritdoc cref="ISpPhrase.Discard" />
@@ -137,9 +137,9 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INat
     /// <include file='ISpXMLRecoResult.xml' path='doc/member[@name="ISpXMLRecoResult.GetXMLResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options)
+    public HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] char** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options)
     {
-        return ((delegate* unmanaged<ISpXMLRecoResult*, ushort**, SPXMLRESULTOPTIONS, int>)(lpVtbl[14]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), ppszCoMemXMLResult, Options);
+        return ((delegate* unmanaged<ISpXMLRecoResult*, char**, SPXMLRESULTOPTIONS, int>)(lpVtbl[14]))((ISpXMLRecoResult*)Unsafe.AsPointer(ref this), ppszCoMemXMLResult, Options);
     }
 
     /// <include file='ISpXMLRecoResult.xml' path='doc/member[@name="ISpXMLRecoResult.GetXMLErrorInfo"]/*' />
@@ -153,7 +153,7 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INat
     public interface Interface : ISpRecoResult.Interface
     {
         [VtblIndex(14)]
-        HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
+        HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] char** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
 
         [VtblIndex(15)]
         HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
@@ -178,7 +178,7 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INat
         public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Discard;
@@ -205,7 +205,7 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INat
         public delegate* unmanaged<TSelf*, ISpRecoContext**, int> GetRecoContext;
 
         [NativeTypeName("HRESULT (LPWSTR *, SPXMLRESULTOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, SPXMLRESULTOPTIONS, int> GetXMLResult;
+        public delegate* unmanaged<TSelf*, char**, SPXMLRESULTOPTIONS, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (SPSEMANTICERRORINFO *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SPSEMANTICERRORINFO*, int> GetXMLErrorInfo;

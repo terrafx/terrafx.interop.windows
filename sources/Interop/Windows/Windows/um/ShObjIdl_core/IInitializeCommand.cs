@@ -49,15 +49,15 @@ public unsafe partial struct IInitializeCommand : IInitializeCommand.Interface, 
     /// <include file='IInitializeCommand.xml' path='doc/member[@name="IInitializeCommand.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb)
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszCommandName, IPropertyBag* ppb)
     {
-        return ((delegate* unmanaged<IInitializeCommand*, ushort*, IPropertyBag*, int>)(lpVtbl[3]))((IInitializeCommand*)Unsafe.AsPointer(ref this), pszCommandName, ppb);
+        return ((delegate* unmanaged<IInitializeCommand*, char*, IPropertyBag*, int>)(lpVtbl[3]))((IInitializeCommand*)Unsafe.AsPointer(ref this), pszCommandName, ppb);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszCommandName, IPropertyBag* ppb);
+        HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszCommandName, IPropertyBag* ppb);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IInitializeCommand : IInitializeCommand.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPropertyBag *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IPropertyBag*, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, IPropertyBag*, int> Initialize;
     }
 }

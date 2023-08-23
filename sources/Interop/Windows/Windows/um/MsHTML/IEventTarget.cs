@@ -65,9 +65,9 @@ public unsafe partial struct IEventTarget : IEventTarget.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IEventTarget*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IEventTarget*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IEventTarget*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IEventTarget*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IEventTarget : IEventTarget.Interface, INativeGuid
     /// <include file='IEventTarget.xml' path='doc/member[@name="IEventTarget.addEventListener"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT addEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture)
+    public HRESULT addEventListener([NativeTypeName("BSTR")] char* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture)
     {
-        return ((delegate* unmanaged<IEventTarget*, ushort*, IDispatch*, short, int>)(lpVtbl[7]))((IEventTarget*)Unsafe.AsPointer(ref this), type, listener, useCapture);
+        return ((delegate* unmanaged<IEventTarget*, char*, IDispatch*, short, int>)(lpVtbl[7]))((IEventTarget*)Unsafe.AsPointer(ref this), type, listener, useCapture);
     }
 
     /// <include file='IEventTarget.xml' path='doc/member[@name="IEventTarget.removeEventListener"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT removeEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture)
+    public HRESULT removeEventListener([NativeTypeName("BSTR")] char* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture)
     {
-        return ((delegate* unmanaged<IEventTarget*, ushort*, IDispatch*, short, int>)(lpVtbl[8]))((IEventTarget*)Unsafe.AsPointer(ref this), type, listener, useCapture);
+        return ((delegate* unmanaged<IEventTarget*, char*, IDispatch*, short, int>)(lpVtbl[8]))((IEventTarget*)Unsafe.AsPointer(ref this), type, listener, useCapture);
     }
 
     /// <include file='IEventTarget.xml' path='doc/member[@name="IEventTarget.dispatchEvent"]/*' />
@@ -105,10 +105,10 @@ public unsafe partial struct IEventTarget : IEventTarget.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT addEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+        HRESULT addEventListener([NativeTypeName("BSTR")] char* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
 
         [VtblIndex(8)]
-        HRESULT removeEventListener([NativeTypeName("BSTR")] ushort* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
+        HRESULT removeEventListener([NativeTypeName("BSTR")] char* type, IDispatch* listener, [NativeTypeName("VARIANT_BOOL")] short useCapture);
 
         [VtblIndex(9)]
         HRESULT dispatchEvent(IDOMEvent* evt, [NativeTypeName("VARIANT_BOOL *")] short* pfResult);
@@ -133,16 +133,16 @@ public unsafe partial struct IEventTarget : IEventTarget.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch*, short, int> addEventListener;
+        public delegate* unmanaged<TSelf*, char*, IDispatch*, short, int> addEventListener;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch *, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch*, short, int> removeEventListener;
+        public delegate* unmanaged<TSelf*, char*, IDispatch*, short, int> removeEventListener;
 
         [NativeTypeName("HRESULT (IDOMEvent *, VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDOMEvent*, short*, int> dispatchEvent;

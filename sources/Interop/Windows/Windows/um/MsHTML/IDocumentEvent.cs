@@ -65,9 +65,9 @@ public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDocumentEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDocumentEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDocumentEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDocumentEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface, INativeG
     /// <include file='IDocumentEvent.xml' path='doc/member[@name="IDocumentEvent.createEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT createEvent([NativeTypeName("BSTR")] ushort* eventType, IDOMEvent** ppEvent)
+    public HRESULT createEvent([NativeTypeName("BSTR")] char* eventType, IDOMEvent** ppEvent)
     {
-        return ((delegate* unmanaged<IDocumentEvent*, ushort*, IDOMEvent**, int>)(lpVtbl[7]))((IDocumentEvent*)Unsafe.AsPointer(ref this), eventType, ppEvent);
+        return ((delegate* unmanaged<IDocumentEvent*, char*, IDOMEvent**, int>)(lpVtbl[7]))((IDocumentEvent*)Unsafe.AsPointer(ref this), eventType, ppEvent);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT createEvent([NativeTypeName("BSTR")] ushort* eventType, IDOMEvent** ppEvent);
+        HRESULT createEvent([NativeTypeName("BSTR")] char* eventType, IDOMEvent** ppEvent);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IDocumentEvent : IDocumentEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IDOMEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDOMEvent**, int> createEvent;
+        public delegate* unmanaged<TSelf*, char*, IDOMEvent**, int> createEvent;
     }
 }

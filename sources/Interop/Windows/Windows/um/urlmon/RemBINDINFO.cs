@@ -16,7 +16,7 @@ public unsafe partial struct RemBINDINFO
 
     /// <include file='RemBINDINFO.xml' path='doc/member[@name="RemBINDINFO.szExtraInfo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szExtraInfo;
+    public char* szExtraInfo;
 
     /// <include file='RemBINDINFO.xml' path='doc/member[@name="RemBINDINFO.grfBindInfoF"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,7 +28,7 @@ public unsafe partial struct RemBINDINFO
 
     /// <include file='RemBINDINFO.xml' path='doc/member[@name="RemBINDINFO.szCustomVerb"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szCustomVerb;
+    public char* szCustomVerb;
 
     /// <include file='RemBINDINFO.xml' path='doc/member[@name="RemBINDINFO.cbstgmedData"]/*' />
     [NativeTypeName("DWORD")]

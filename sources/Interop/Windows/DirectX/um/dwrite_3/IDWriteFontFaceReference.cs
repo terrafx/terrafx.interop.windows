@@ -143,9 +143,9 @@ public unsafe partial struct IDWriteFontFaceReference : IDWriteFontFaceReference
     /// <include file='IDWriteFontFaceReference.xml' path='doc/member[@name="IDWriteFontFaceReference.EnqueueCharacterDownloadRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount)
+    public HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] char* characters, [NativeTypeName("UINT32")] uint characterCount)
     {
-        return ((delegate* unmanaged<IDWriteFontFaceReference*, ushort*, uint, int>)(lpVtbl[14]))((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), characters, characterCount);
+        return ((delegate* unmanaged<IDWriteFontFaceReference*, char*, uint, int>)(lpVtbl[14]))((IDWriteFontFaceReference*)Unsafe.AsPointer(ref this), characters, characterCount);
     }
 
     /// <include file='IDWriteFontFaceReference.xml' path='doc/member[@name="IDWriteFontFaceReference.EnqueueGlyphDownloadRequest"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDWriteFontFaceReference : IDWriteFontFaceReference
         HRESULT EnqueueFontDownloadRequest();
 
         [VtblIndex(14)]
-        HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount);
+        HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] char* characters, [NativeTypeName("UINT32")] uint characterCount);
 
         [VtblIndex(15)]
         HRESULT EnqueueGlyphDownloadRequest([NativeTypeName("const UINT16 *")] ushort* glyphIndices, [NativeTypeName("UINT32")] uint glyphCount);
@@ -258,7 +258,7 @@ public unsafe partial struct IDWriteFontFaceReference : IDWriteFontFaceReference
         public delegate* unmanaged<TSelf*, int> EnqueueFontDownloadRequest;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
+        public delegate* unmanaged<TSelf*, char*, uint, int> EnqueueCharacterDownloadRequest;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueGlyphDownloadRequest;

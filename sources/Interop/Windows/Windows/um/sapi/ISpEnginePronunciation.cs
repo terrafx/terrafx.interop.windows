@@ -49,26 +49,26 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation.Normalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Normalize([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("LPCWSTR")] ushort* pszLeftContext, [NativeTypeName("LPCWSTR")] ushort* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPNORMALIZATIONLIST* pNormalizationList)
+    public HRESULT Normalize([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPNORMALIZATIONLIST* pNormalizationList)
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, ushort*, ushort*, ushort*, ushort, SPNORMALIZATIONLIST*, int>)(lpVtbl[3]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pNormalizationList);
+        return ((delegate* unmanaged<ISpEnginePronunciation*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int>)(lpVtbl[3]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pNormalizationList);
     }
 
     /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation.GetPronunciations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("LPCWSTR")] ushort* pszLeftContext, [NativeTypeName("LPCWSTR")] ushort* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList)
+    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList)
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, ushort*, ushort*, ushort*, ushort, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[4]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pEnginePronunciationList);
+        return ((delegate* unmanaged<ISpEnginePronunciation*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[4]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pEnginePronunciationList);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Normalize([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("LPCWSTR")] ushort* pszLeftContext, [NativeTypeName("LPCWSTR")] ushort* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPNORMALIZATIONLIST* pNormalizationList);
+        HRESULT Normalize([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPNORMALIZATIONLIST* pNormalizationList);
 
         [VtblIndex(4)]
-        HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("LPCWSTR")] ushort* pszLeftContext, [NativeTypeName("LPCWSTR")] ushort* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList);
+        HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, WORD, SPNORMALIZATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort, SPNORMALIZATIONLIST*, int> Normalize;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int> Normalize;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, WORD, SPWORDPRONUNCIATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
     }
 }

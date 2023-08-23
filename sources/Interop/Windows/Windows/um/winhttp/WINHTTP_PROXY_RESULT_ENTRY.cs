@@ -23,7 +23,7 @@ public unsafe partial struct WINHTTP_PROXY_RESULT_ENTRY
 
     /// <include file='WINHTTP_PROXY_RESULT_ENTRY.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT_ENTRY.pwszProxy"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszProxy;
+    public char* pwszProxy;
 
     /// <include file='WINHTTP_PROXY_RESULT_ENTRY.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT_ENTRY.ProxyPort"]/*' />
     [NativeTypeName("INTERNET_PORT")]

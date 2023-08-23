@@ -297,9 +297,9 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.SetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    public HRESULT SetRoot([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IDvdControl*, ushort*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged<IDvdControl*, char*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MouseActivate"]/*' />
@@ -422,7 +422,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
         HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode);
 
         [VtblIndex(34)]
-        HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        HRESULT SetRoot([NativeTypeName("LPCWSTR")] char* pszPath);
 
         [VtblIndex(35)]
         HRESULT MouseActivate(POINT point);
@@ -540,7 +540,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, int> VideoModePreferrence;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetRoot;
+        public delegate* unmanaged<TSelf*, char*, int> SetRoot;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, POINT, int> MouseActivate;

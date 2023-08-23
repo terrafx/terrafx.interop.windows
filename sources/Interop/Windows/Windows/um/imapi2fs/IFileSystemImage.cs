@@ -65,9 +65,9 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImage*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IFileSystemImage*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImage*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -137,25 +137,25 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_VolumeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[14]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[14]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.put_VolumeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT put_VolumeName([NativeTypeName("BSTR")] ushort* newVal)
+    public HRESULT put_VolumeName([NativeTypeName("BSTR")] char* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort*, int>)(lpVtbl[15]))((IFileSystemImage*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char*, int>)(lpVtbl[15]))((IFileSystemImage*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_ImportedVolumeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[16]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[16]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_BootImageOptions"]/*' />
@@ -193,17 +193,17 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_WorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[21]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[21]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.put_WorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* newVal)
+    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] char* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort*, int>)(lpVtbl[22]))((IFileSystemImage*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char*, int>)(lpVtbl[22]))((IFileSystemImage*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_ChangePoint"]/*' />
@@ -345,17 +345,17 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.Exists"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT Exists([NativeTypeName("BSTR")] ushort* fullPath, FsiItemType* itemType)
+    public HRESULT Exists([NativeTypeName("BSTR")] char* fullPath, FsiItemType* itemType)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort*, FsiItemType*, int>)(lpVtbl[40]))((IFileSystemImage*)Unsafe.AsPointer(ref this), fullPath, itemType);
+        return ((delegate* unmanaged<IFileSystemImage*, char*, FsiItemType*, int>)(lpVtbl[40]))((IFileSystemImage*)Unsafe.AsPointer(ref this), fullPath, itemType);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.CalculateDiscIdentifier"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] ushort** discIdentifier)
+    public HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] char** discIdentifier)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[41]))((IFileSystemImage*)Unsafe.AsPointer(ref this), discIdentifier);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[41]))((IFileSystemImage*)Unsafe.AsPointer(ref this), discIdentifier);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.IdentifyFileSystemsOnDisc"]/*' />
@@ -409,41 +409,41 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.CreateDirectoryItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] ushort* name, IFsiDirectoryItem** newItem)
+    public HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] char* name, IFsiDirectoryItem** newItem)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort*, IFsiDirectoryItem**, int>)(lpVtbl[48]))((IFileSystemImage*)Unsafe.AsPointer(ref this), name, newItem);
+        return ((delegate* unmanaged<IFileSystemImage*, char*, IFsiDirectoryItem**, int>)(lpVtbl[48]))((IFileSystemImage*)Unsafe.AsPointer(ref this), name, newItem);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.CreateFileItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT CreateFileItem([NativeTypeName("BSTR")] ushort* name, IFsiFileItem** newItem)
+    public HRESULT CreateFileItem([NativeTypeName("BSTR")] char* name, IFsiFileItem** newItem)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort*, IFsiFileItem**, int>)(lpVtbl[49]))((IFileSystemImage*)Unsafe.AsPointer(ref this), name, newItem);
+        return ((delegate* unmanaged<IFileSystemImage*, char*, IFsiFileItem**, int>)(lpVtbl[49]))((IFileSystemImage*)Unsafe.AsPointer(ref this), name, newItem);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_VolumeNameUDF"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[50]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[50]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_VolumeNameJoliet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[51]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[51]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_VolumeNameISO9660"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage*, ushort**, int>)(lpVtbl[52]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImage*, char**, int>)(lpVtbl[52]))((IFileSystemImage*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage.xml' path='doc/member[@name="IFileSystemImage.get_StageFiles"]/*' />
@@ -502,13 +502,13 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         HRESULT get_UsedBlocks([NativeTypeName("LONG *")] int* pVal);
 
         [VtblIndex(14)]
-        HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(15)]
-        HRESULT put_VolumeName([NativeTypeName("BSTR")] ushort* newVal);
+        HRESULT put_VolumeName([NativeTypeName("BSTR")] char* newVal);
 
         [VtblIndex(16)]
-        HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(17)]
         HRESULT get_BootImageOptions(IBootOptions** pVal);
@@ -523,10 +523,10 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         HRESULT get_DirectoryCount([NativeTypeName("LONG *")] int* pVal);
 
         [VtblIndex(21)]
-        HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(22)]
-        HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* newVal);
+        HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] char* newVal);
 
         [VtblIndex(23)]
         HRESULT get_ChangePoint([NativeTypeName("LONG *")] int* pVal);
@@ -580,10 +580,10 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         HRESULT CreateResultImage(IFileSystemImageResult** resultStream);
 
         [VtblIndex(40)]
-        HRESULT Exists([NativeTypeName("BSTR")] ushort* fullPath, FsiItemType* itemType);
+        HRESULT Exists([NativeTypeName("BSTR")] char* fullPath, FsiItemType* itemType);
 
         [VtblIndex(41)]
-        HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] ushort** discIdentifier);
+        HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] char** discIdentifier);
 
         [VtblIndex(42)]
         HRESULT IdentifyFileSystemsOnDisc(IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems);
@@ -604,19 +604,19 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         HRESULT LockInChangePoint();
 
         [VtblIndex(48)]
-        HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] ushort* name, IFsiDirectoryItem** newItem);
+        HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] char* name, IFsiDirectoryItem** newItem);
 
         [VtblIndex(49)]
-        HRESULT CreateFileItem([NativeTypeName("BSTR")] ushort* name, IFsiFileItem** newItem);
+        HRESULT CreateFileItem([NativeTypeName("BSTR")] char* name, IFsiFileItem** newItem);
 
         [VtblIndex(50)]
-        HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(51)]
-        HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(52)]
-        HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(53)]
         HRESULT get_StageFiles([NativeTypeName("VARIANT_BOOL *")] short* pVal);
@@ -650,7 +650,7 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -677,13 +677,13 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         public delegate* unmanaged<TSelf*, int*, int> get_UsedBlocks;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_VolumeName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_VolumeName;
+        public delegate* unmanaged<TSelf*, char*, int> put_VolumeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ImportedVolumeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_ImportedVolumeName;
 
         [NativeTypeName("HRESULT (IBootOptions **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IBootOptions**, int> get_BootImageOptions;
@@ -698,10 +698,10 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         public delegate* unmanaged<TSelf*, int*, int> get_DirectoryCount;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, char**, int> get_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> put_WorkingDirectory;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_ChangePoint;
@@ -755,10 +755,10 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         public delegate* unmanaged<TSelf*, IFileSystemImageResult**, int> CreateResultImage;
 
         [NativeTypeName("HRESULT (BSTR, FsiItemType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, FsiItemType*, int> Exists;
+        public delegate* unmanaged<TSelf*, char*, FsiItemType*, int> Exists;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> CalculateDiscIdentifier;
+        public delegate* unmanaged<TSelf*, char**, int> CalculateDiscIdentifier;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, FsiFileSystems *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDiscRecorder2*, FsiFileSystems*, int> IdentifyFileSystemsOnDisc;
@@ -779,19 +779,19 @@ public unsafe partial struct IFileSystemImage : IFileSystemImage.Interface, INat
         public delegate* unmanaged<TSelf*, int> LockInChangePoint;
 
         [NativeTypeName("HRESULT (BSTR, IFsiDirectoryItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IFsiDirectoryItem**, int> CreateDirectoryItem;
+        public delegate* unmanaged<TSelf*, char*, IFsiDirectoryItem**, int> CreateDirectoryItem;
 
         [NativeTypeName("HRESULT (BSTR, IFsiFileItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IFsiFileItem**, int> CreateFileItem;
+        public delegate* unmanaged<TSelf*, char*, IFsiFileItem**, int> CreateFileItem;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameUDF;
+        public delegate* unmanaged<TSelf*, char**, int> get_VolumeNameUDF;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameJoliet;
+        public delegate* unmanaged<TSelf*, char**, int> get_VolumeNameJoliet;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameISO9660;
+        public delegate* unmanaged<TSelf*, char**, int> get_VolumeNameISO9660;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_StageFiles;

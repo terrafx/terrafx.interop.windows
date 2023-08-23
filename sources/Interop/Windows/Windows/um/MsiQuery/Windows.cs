@@ -15,7 +15,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseOpenViewW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseOpenViewW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szQuery, MSIHANDLE* phView);
+    public static extern uint MsiDatabaseOpenViewW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szQuery, MSIHANDLE* phView);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiViewGetErrorA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -23,7 +23,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiViewGetErrorW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern MSIDBERROR MsiViewGetErrorW(MSIHANDLE hView, [NativeTypeName("LPWSTR")] ushort* szColumnNameBuffer, [NativeTypeName("LPDWORD")] uint* pcchBuf);
+    public static extern MSIDBERROR MsiViewGetErrorW(MSIHANDLE hView, [NativeTypeName("LPWSTR")] char* szColumnNameBuffer, [NativeTypeName("LPDWORD")] uint* pcchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiViewExecute"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -51,7 +51,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseGetPrimaryKeysW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseGetPrimaryKeysW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szTableName, MSIHANDLE* phRecord);
+    public static extern uint MsiDatabaseGetPrimaryKeysW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szTableName, MSIHANDLE* phRecord);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseIsTablePersistentA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -59,7 +59,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseIsTablePersistentW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern MSICONDITION MsiDatabaseIsTablePersistentW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szTableName);
+    public static extern MSICONDITION MsiDatabaseIsTablePersistentW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szTableName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSummaryInformationA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -67,7 +67,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSummaryInformationW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetSummaryInformationW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szDatabasePath, uint uiUpdateCount, MSIHANDLE* phSummaryInfo);
+    public static extern uint MsiGetSummaryInformationW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szDatabasePath, uint uiUpdateCount, MSIHANDLE* phSummaryInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoGetPropertyCount"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -79,7 +79,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoSetPropertyW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSummaryInfoSetPropertyW(MSIHANDLE hSummaryInfo, uint uiProperty, uint uiDataType, int iValue, FILETIME* pftValue, [NativeTypeName("LPCWSTR")] ushort* szValue);
+    public static extern uint MsiSummaryInfoSetPropertyW(MSIHANDLE hSummaryInfo, uint uiProperty, uint uiDataType, int iValue, FILETIME* pftValue, [NativeTypeName("LPCWSTR")] char* szValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoGetPropertyA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -87,7 +87,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoGetPropertyW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSummaryInfoGetPropertyW(MSIHANDLE hSummaryInfo, uint uiProperty, [NativeTypeName("PUINT")] uint* puiDataType, [NativeTypeName("LPINT")] int* piValue, FILETIME* pftValue, [NativeTypeName("LPWSTR")] ushort* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
+    public static extern uint MsiSummaryInfoGetPropertyW(MSIHANDLE hSummaryInfo, uint uiProperty, [NativeTypeName("PUINT")] uint* puiDataType, [NativeTypeName("LPINT")] int* piValue, FILETIME* pftValue, [NativeTypeName("LPWSTR")] char* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoPersist"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -99,7 +99,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiOpenDatabaseW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiOpenDatabaseW([NativeTypeName("LPCWSTR")] ushort* szDatabasePath, [NativeTypeName("LPCWSTR")] ushort* szPersist, MSIHANDLE* phDatabase);
+    public static extern uint MsiOpenDatabaseW([NativeTypeName("LPCWSTR")] char* szDatabasePath, [NativeTypeName("LPCWSTR")] char* szPersist, MSIHANDLE* phDatabase);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseImportA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -107,7 +107,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseImportW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseImportW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szFolderPath, [NativeTypeName("LPCWSTR")] ushort* szFileName);
+    public static extern uint MsiDatabaseImportW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szFolderPath, [NativeTypeName("LPCWSTR")] char* szFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseExportA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -115,7 +115,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseExportW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseExportW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szTableName, [NativeTypeName("LPCWSTR")] ushort* szFolderPath, [NativeTypeName("LPCWSTR")] ushort* szFileName);
+    public static extern uint MsiDatabaseExportW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szTableName, [NativeTypeName("LPCWSTR")] char* szFolderPath, [NativeTypeName("LPCWSTR")] char* szFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseMergeA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -123,7 +123,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseMergeW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseMergeW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseMerge, [NativeTypeName("LPCWSTR")] ushort* szTableName);
+    public static extern uint MsiDatabaseMergeW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseMerge, [NativeTypeName("LPCWSTR")] char* szTableName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseGenerateTransformA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -131,7 +131,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseGenerateTransformW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseGenerateTransformW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseReference, [NativeTypeName("LPCWSTR")] ushort* szTransformFile, int iReserved1, int iReserved2);
+    public static extern uint MsiDatabaseGenerateTransformW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseReference, [NativeTypeName("LPCWSTR")] char* szTransformFile, int iReserved1, int iReserved2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseApplyTransformA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -139,7 +139,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseApplyTransformW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDatabaseApplyTransformW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] ushort* szTransformFile, int iErrorConditions);
+    public static extern uint MsiDatabaseApplyTransformW(MSIHANDLE hDatabase, [NativeTypeName("LPCWSTR")] char* szTransformFile, int iErrorConditions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiCreateTransformSummaryInfoA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -147,7 +147,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiCreateTransformSummaryInfoW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiCreateTransformSummaryInfoW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseReference, [NativeTypeName("LPCWSTR")] ushort* szTransformFile, int iErrorConditions, int iValidation);
+    public static extern uint MsiCreateTransformSummaryInfoW(MSIHANDLE hDatabase, MSIHANDLE hDatabaseReference, [NativeTypeName("LPCWSTR")] char* szTransformFile, int iErrorConditions, int iValidation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseCommit"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -179,7 +179,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordSetStringW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiRecordSetStringW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPCWSTR")] ushort* szValue);
+    public static extern uint MsiRecordSetStringW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPCWSTR")] char* szValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordGetInteger"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -191,7 +191,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordGetStringW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiRecordGetStringW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPWSTR")] ushort* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
+    public static extern uint MsiRecordGetStringW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPWSTR")] char* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordGetFieldCount"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -203,7 +203,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordSetStreamW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiRecordSetStreamW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPCWSTR")] ushort* szFilePath);
+    public static extern uint MsiRecordSetStreamW(MSIHANDLE hRecord, uint iField, [NativeTypeName("LPCWSTR")] char* szFilePath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordReadStream"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -223,7 +223,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetPropertyW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSetPropertyW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szName, [NativeTypeName("LPCWSTR")] ushort* szValue);
+    public static extern uint MsiSetPropertyW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szName, [NativeTypeName("LPCWSTR")] char* szValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetPropertyA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -231,7 +231,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetPropertyW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetPropertyW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szName, [NativeTypeName("LPWSTR")] ushort* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
+    public static extern uint MsiGetPropertyW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szName, [NativeTypeName("LPWSTR")] char* szValueBuf, [NativeTypeName("LPDWORD")] uint* pcchValueBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetLanguage"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -252,7 +252,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiFormatRecordW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiFormatRecordW(MSIHANDLE hInstall, MSIHANDLE hRecord, [NativeTypeName("LPWSTR")] ushort* szResultBuf, [NativeTypeName("LPDWORD")] uint* pcchResultBuf);
+    public static extern uint MsiFormatRecordW(MSIHANDLE hInstall, MSIHANDLE hRecord, [NativeTypeName("LPWSTR")] char* szResultBuf, [NativeTypeName("LPDWORD")] uint* pcchResultBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDoActionA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -260,7 +260,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDoActionW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiDoActionW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szAction);
+    public static extern uint MsiDoActionW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szAction);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSequenceA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -268,7 +268,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSequenceW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSequenceW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szTable, int iSequenceMode);
+    public static extern uint MsiSequenceW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szTable, int iSequenceMode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProcessMessage"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -280,7 +280,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEvaluateConditionW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern MSICONDITION MsiEvaluateConditionW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szCondition);
+    public static extern MSICONDITION MsiEvaluateConditionW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szCondition);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureStateA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -288,7 +288,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureStateW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetFeatureStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFeature, INSTALLSTATE* piInstalled, INSTALLSTATE* piAction);
+    public static extern uint MsiGetFeatureStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFeature, INSTALLSTATE* piInstalled, INSTALLSTATE* piAction);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureStateA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -296,7 +296,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureStateW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSetFeatureStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFeature, INSTALLSTATE iState);
+    public static extern uint MsiSetFeatureStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFeature, INSTALLSTATE iState);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureAttributesA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -304,7 +304,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureAttributesW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSetFeatureAttributesW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("DWORD")] uint dwAttributes);
+    public static extern uint MsiSetFeatureAttributesW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFeature, [NativeTypeName("DWORD")] uint dwAttributes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetComponentStateA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -312,7 +312,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetComponentStateW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetComponentStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szComponent, INSTALLSTATE* piInstalled, INSTALLSTATE* piAction);
+    public static extern uint MsiGetComponentStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szComponent, INSTALLSTATE* piInstalled, INSTALLSTATE* piAction);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetComponentStateA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -320,7 +320,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetComponentStateW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSetComponentStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szComponent, INSTALLSTATE iState);
+    public static extern uint MsiSetComponentStateW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szComponent, INSTALLSTATE iState);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureCostA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -328,7 +328,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureCostW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetFeatureCostW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFeature, MSICOSTTREE iCostTree, INSTALLSTATE iState, [NativeTypeName("LPINT")] int* piCost);
+    public static extern uint MsiGetFeatureCostW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFeature, MSICOSTTREE iCostTree, INSTALLSTATE iState, [NativeTypeName("LPINT")] int* piCost);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentCostsA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -336,7 +336,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentCostsW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiEnumComponentCostsW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szComponent, [NativeTypeName("DWORD")] uint dwIndex, INSTALLSTATE iState, [NativeTypeName("LPWSTR")] ushort* szDriveBuf, [NativeTypeName("LPDWORD")] uint* pcchDriveBuf, [NativeTypeName("LPINT")] int* piCost, [NativeTypeName("LPINT")] int* piTempCost);
+    public static extern uint MsiEnumComponentCostsW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szComponent, [NativeTypeName("DWORD")] uint dwIndex, INSTALLSTATE iState, [NativeTypeName("LPWSTR")] char* szDriveBuf, [NativeTypeName("LPDWORD")] uint* pcchDriveBuf, [NativeTypeName("LPINT")] int* piCost, [NativeTypeName("LPINT")] int* piTempCost);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetInstallLevel"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -348,7 +348,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureValidStatesW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetFeatureValidStatesW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFeature, [NativeTypeName("LPDWORD")] uint* lpInstallStates);
+    public static extern uint MsiGetFeatureValidStatesW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFeature, [NativeTypeName("LPDWORD")] uint* lpInstallStates);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSourcePathA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -356,7 +356,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSourcePathW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetSourcePathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFolder, [NativeTypeName("LPWSTR")] ushort* szPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
+    public static extern uint MsiGetSourcePathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFolder, [NativeTypeName("LPWSTR")] char* szPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetTargetPathA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -364,7 +364,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetTargetPathW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiGetTargetPathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFolder, [NativeTypeName("LPWSTR")] ushort* szPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
+    public static extern uint MsiGetTargetPathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFolder, [NativeTypeName("LPWSTR")] char* szPathBuf, [NativeTypeName("LPDWORD")] uint* pcchPathBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetTargetPathA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -372,7 +372,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetTargetPathW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiSetTargetPathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] ushort* szFolder, [NativeTypeName("LPCWSTR")] ushort* szFolderPath);
+    public static extern uint MsiSetTargetPathW(MSIHANDLE hInstall, [NativeTypeName("LPCWSTR")] char* szFolder, [NativeTypeName("LPCWSTR")] char* szFolderPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiVerifyDiskSpace"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -388,7 +388,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiPreviewDialogW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiPreviewDialogW(MSIHANDLE hPreview, [NativeTypeName("LPCWSTR")] ushort* szDialogName);
+    public static extern uint MsiPreviewDialogW(MSIHANDLE hPreview, [NativeTypeName("LPCWSTR")] char* szDialogName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiPreviewBillboardA"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -396,7 +396,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiPreviewBillboardW"]/*' />
     [DllImport("msi", ExactSpelling = true)]
-    public static extern uint MsiPreviewBillboardW(MSIHANDLE hPreview, [NativeTypeName("LPCWSTR")] ushort* szControlName, [NativeTypeName("LPCWSTR")] ushort* szBillboard);
+    public static extern uint MsiPreviewBillboardW(MSIHANDLE hPreview, [NativeTypeName("LPCWSTR")] char* szControlName, [NativeTypeName("LPCWSTR")] char* szBillboard);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetLastErrorRecord"]/*' />
     [DllImport("msi", ExactSpelling = true)]
@@ -407,19 +407,19 @@ public static unsafe partial class Windows
     public const uint MSI_NULL_INTEGER = 0x80000000;
 
     [NativeTypeName("#define MSIDBOPEN_READONLY (LPCTSTR)0")]
-    public static ushort* MSIDBOPEN_READONLY => (ushort*)(0);
+    public static char* MSIDBOPEN_READONLY => (char*)(0);
 
     [NativeTypeName("#define MSIDBOPEN_TRANSACT (LPCTSTR)1")]
-    public static ushort* MSIDBOPEN_TRANSACT => (ushort*)(1);
+    public static char* MSIDBOPEN_TRANSACT => (char*)(1);
 
     [NativeTypeName("#define MSIDBOPEN_DIRECT (LPCTSTR)2")]
-    public static ushort* MSIDBOPEN_DIRECT => (ushort*)(2);
+    public static char* MSIDBOPEN_DIRECT => (char*)(2);
 
     [NativeTypeName("#define MSIDBOPEN_CREATE (LPCTSTR)3")]
-    public static ushort* MSIDBOPEN_CREATE => (ushort*)(3);
+    public static char* MSIDBOPEN_CREATE => (char*)(3);
 
     [NativeTypeName("#define MSIDBOPEN_CREATEDIRECT (LPCTSTR)4")]
-    public static ushort* MSIDBOPEN_CREATEDIRECT => (ushort*)(4);
+    public static char* MSIDBOPEN_CREATEDIRECT => (char*)(4);
 
     [NativeTypeName("#define MSIDBOPEN_PATCHFILE 32/sizeof(*MSIDBOPEN_READONLY)")]
     public const uint MSIDBOPEN_PATCHFILE = 32 / 2;
@@ -428,110 +428,110 @@ public static unsafe partial class Windows
     public const uint INSTALLMESSAGE_TYPEMASK = 0xFF000000;
 
     [NativeTypeName("#define MsiDatabaseOpenView MsiDatabaseOpenViewW")]
-    public static delegate*<MSIHANDLE, ushort*, MSIHANDLE*, uint> MsiDatabaseOpenView => &MsiDatabaseOpenViewW;
+    public static delegate*<MSIHANDLE, char*, MSIHANDLE*, uint> MsiDatabaseOpenView => &MsiDatabaseOpenViewW;
 
     [NativeTypeName("#define MsiViewGetError MsiViewGetErrorW")]
-    public static delegate*<MSIHANDLE, ushort*, uint*, MSIDBERROR> MsiViewGetError => &MsiViewGetErrorW;
+    public static delegate*<MSIHANDLE, char*, uint*, MSIDBERROR> MsiViewGetError => &MsiViewGetErrorW;
 
     [NativeTypeName("#define MsiDatabaseGetPrimaryKeys MsiDatabaseGetPrimaryKeysW")]
-    public static delegate*<MSIHANDLE, ushort*, MSIHANDLE*, uint> MsiDatabaseGetPrimaryKeys => &MsiDatabaseGetPrimaryKeysW;
+    public static delegate*<MSIHANDLE, char*, MSIHANDLE*, uint> MsiDatabaseGetPrimaryKeys => &MsiDatabaseGetPrimaryKeysW;
 
     [NativeTypeName("#define MsiDatabaseIsTablePersistent MsiDatabaseIsTablePersistentW")]
-    public static delegate*<MSIHANDLE, ushort*, MSICONDITION> MsiDatabaseIsTablePersistent => &MsiDatabaseIsTablePersistentW;
+    public static delegate*<MSIHANDLE, char*, MSICONDITION> MsiDatabaseIsTablePersistent => &MsiDatabaseIsTablePersistentW;
 
     [NativeTypeName("#define MsiGetSummaryInformation MsiGetSummaryInformationW")]
-    public static delegate*<MSIHANDLE, ushort*, uint, MSIHANDLE*, uint> MsiGetSummaryInformation => &MsiGetSummaryInformationW;
+    public static delegate*<MSIHANDLE, char*, uint, MSIHANDLE*, uint> MsiGetSummaryInformation => &MsiGetSummaryInformationW;
 
     [NativeTypeName("#define MsiSummaryInfoSetProperty MsiSummaryInfoSetPropertyW")]
-    public static delegate*<MSIHANDLE, uint, uint, int, FILETIME*, ushort*, uint> MsiSummaryInfoSetProperty => &MsiSummaryInfoSetPropertyW;
+    public static delegate*<MSIHANDLE, uint, uint, int, FILETIME*, char*, uint> MsiSummaryInfoSetProperty => &MsiSummaryInfoSetPropertyW;
 
     [NativeTypeName("#define MsiSummaryInfoGetProperty MsiSummaryInfoGetPropertyW")]
-    public static delegate*<MSIHANDLE, uint, uint*, int*, FILETIME*, ushort*, uint*, uint> MsiSummaryInfoGetProperty => &MsiSummaryInfoGetPropertyW;
+    public static delegate*<MSIHANDLE, uint, uint*, int*, FILETIME*, char*, uint*, uint> MsiSummaryInfoGetProperty => &MsiSummaryInfoGetPropertyW;
 
     [NativeTypeName("#define MsiOpenDatabase MsiOpenDatabaseW")]
-    public static delegate*<ushort*, ushort*, MSIHANDLE*, uint> MsiOpenDatabase => &MsiOpenDatabaseW;
+    public static delegate*<char*, char*, MSIHANDLE*, uint> MsiOpenDatabase => &MsiOpenDatabaseW;
 
     [NativeTypeName("#define MsiDatabaseImport MsiDatabaseImportW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint> MsiDatabaseImport => &MsiDatabaseImportW;
+    public static delegate*<MSIHANDLE, char*, char*, uint> MsiDatabaseImport => &MsiDatabaseImportW;
 
     [NativeTypeName("#define MsiDatabaseExport MsiDatabaseExportW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, ushort*, uint> MsiDatabaseExport => &MsiDatabaseExportW;
+    public static delegate*<MSIHANDLE, char*, char*, char*, uint> MsiDatabaseExport => &MsiDatabaseExportW;
 
     [NativeTypeName("#define MsiDatabaseMerge MsiDatabaseMergeW")]
-    public static delegate*<MSIHANDLE, MSIHANDLE, ushort*, uint> MsiDatabaseMerge => &MsiDatabaseMergeW;
+    public static delegate*<MSIHANDLE, MSIHANDLE, char*, uint> MsiDatabaseMerge => &MsiDatabaseMergeW;
 
     [NativeTypeName("#define MsiDatabaseGenerateTransform MsiDatabaseGenerateTransformW")]
-    public static delegate*<MSIHANDLE, MSIHANDLE, ushort*, int, int, uint> MsiDatabaseGenerateTransform => &MsiDatabaseGenerateTransformW;
+    public static delegate*<MSIHANDLE, MSIHANDLE, char*, int, int, uint> MsiDatabaseGenerateTransform => &MsiDatabaseGenerateTransformW;
 
     [NativeTypeName("#define MsiDatabaseApplyTransform MsiDatabaseApplyTransformW")]
-    public static delegate*<MSIHANDLE, ushort*, int, uint> MsiDatabaseApplyTransform => &MsiDatabaseApplyTransformW;
+    public static delegate*<MSIHANDLE, char*, int, uint> MsiDatabaseApplyTransform => &MsiDatabaseApplyTransformW;
 
     [NativeTypeName("#define MsiCreateTransformSummaryInfo MsiCreateTransformSummaryInfoW")]
-    public static delegate*<MSIHANDLE, MSIHANDLE, ushort*, int, int, uint> MsiCreateTransformSummaryInfo => &MsiCreateTransformSummaryInfoW;
+    public static delegate*<MSIHANDLE, MSIHANDLE, char*, int, int, uint> MsiCreateTransformSummaryInfo => &MsiCreateTransformSummaryInfoW;
 
     [NativeTypeName("#define MsiRecordSetString MsiRecordSetStringW")]
-    public static delegate*<MSIHANDLE, uint, ushort*, uint> MsiRecordSetString => &MsiRecordSetStringW;
+    public static delegate*<MSIHANDLE, uint, char*, uint> MsiRecordSetString => &MsiRecordSetStringW;
 
     [NativeTypeName("#define MsiRecordGetString MsiRecordGetStringW")]
-    public static delegate*<MSIHANDLE, uint, ushort*, uint*, uint> MsiRecordGetString => &MsiRecordGetStringW;
+    public static delegate*<MSIHANDLE, uint, char*, uint*, uint> MsiRecordGetString => &MsiRecordGetStringW;
 
     [NativeTypeName("#define MsiRecordSetStream MsiRecordSetStreamW")]
-    public static delegate*<MSIHANDLE, uint, ushort*, uint> MsiRecordSetStream => &MsiRecordSetStreamW;
+    public static delegate*<MSIHANDLE, uint, char*, uint> MsiRecordSetStream => &MsiRecordSetStreamW;
 
     [NativeTypeName("#define MsiSetProperty MsiSetPropertyW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint> MsiSetProperty => &MsiSetPropertyW;
+    public static delegate*<MSIHANDLE, char*, char*, uint> MsiSetProperty => &MsiSetPropertyW;
 
     [NativeTypeName("#define MsiGetProperty MsiGetPropertyW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint*, uint> MsiGetProperty => &MsiGetPropertyW;
+    public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetProperty => &MsiGetPropertyW;
 
     [NativeTypeName("#define MsiFormatRecord MsiFormatRecordW")]
-    public static delegate*<MSIHANDLE, MSIHANDLE, ushort*, uint*, uint> MsiFormatRecord => &MsiFormatRecordW;
+    public static delegate*<MSIHANDLE, MSIHANDLE, char*, uint*, uint> MsiFormatRecord => &MsiFormatRecordW;
 
     [NativeTypeName("#define MsiDoAction MsiDoActionW")]
-    public static delegate*<MSIHANDLE, ushort*, uint> MsiDoAction => &MsiDoActionW;
+    public static delegate*<MSIHANDLE, char*, uint> MsiDoAction => &MsiDoActionW;
 
     [NativeTypeName("#define MsiSequence MsiSequenceW")]
-    public static delegate*<MSIHANDLE, ushort*, int, uint> MsiSequence => &MsiSequenceW;
+    public static delegate*<MSIHANDLE, char*, int, uint> MsiSequence => &MsiSequenceW;
 
     [NativeTypeName("#define MsiEvaluateCondition MsiEvaluateConditionW")]
-    public static delegate*<MSIHANDLE, ushort*, MSICONDITION> MsiEvaluateCondition => &MsiEvaluateConditionW;
+    public static delegate*<MSIHANDLE, char*, MSICONDITION> MsiEvaluateCondition => &MsiEvaluateConditionW;
 
     [NativeTypeName("#define MsiGetFeatureState MsiGetFeatureStateW")]
-    public static delegate*<MSIHANDLE, ushort*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetFeatureState => &MsiGetFeatureStateW;
+    public static delegate*<MSIHANDLE, char*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetFeatureState => &MsiGetFeatureStateW;
 
     [NativeTypeName("#define MsiSetFeatureState MsiSetFeatureStateW")]
-    public static delegate*<MSIHANDLE, ushort*, INSTALLSTATE, uint> MsiSetFeatureState => &MsiSetFeatureStateW;
+    public static delegate*<MSIHANDLE, char*, INSTALLSTATE, uint> MsiSetFeatureState => &MsiSetFeatureStateW;
 
     [NativeTypeName("#define MsiSetFeatureAttributes MsiSetFeatureAttributesW")]
-    public static delegate*<MSIHANDLE, ushort*, uint, uint> MsiSetFeatureAttributes => &MsiSetFeatureAttributesW;
+    public static delegate*<MSIHANDLE, char*, uint, uint> MsiSetFeatureAttributes => &MsiSetFeatureAttributesW;
 
     [NativeTypeName("#define MsiGetComponentState MsiGetComponentStateW")]
-    public static delegate*<MSIHANDLE, ushort*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetComponentState => &MsiGetComponentStateW;
+    public static delegate*<MSIHANDLE, char*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetComponentState => &MsiGetComponentStateW;
 
     [NativeTypeName("#define MsiSetComponentState MsiSetComponentStateW")]
-    public static delegate*<MSIHANDLE, ushort*, INSTALLSTATE, uint> MsiSetComponentState => &MsiSetComponentStateW;
+    public static delegate*<MSIHANDLE, char*, INSTALLSTATE, uint> MsiSetComponentState => &MsiSetComponentStateW;
 
     [NativeTypeName("#define MsiGetFeatureCost MsiGetFeatureCostW")]
-    public static delegate*<MSIHANDLE, ushort*, MSICOSTTREE, INSTALLSTATE, int*, uint> MsiGetFeatureCost => &MsiGetFeatureCostW;
+    public static delegate*<MSIHANDLE, char*, MSICOSTTREE, INSTALLSTATE, int*, uint> MsiGetFeatureCost => &MsiGetFeatureCostW;
 
     [NativeTypeName("#define MsiEnumComponentCosts MsiEnumComponentCostsW")]
-    public static delegate*<MSIHANDLE, ushort*, uint, INSTALLSTATE, ushort*, uint*, int*, int*, uint> MsiEnumComponentCosts => &MsiEnumComponentCostsW;
+    public static delegate*<MSIHANDLE, char*, uint, INSTALLSTATE, char*, uint*, int*, int*, uint> MsiEnumComponentCosts => &MsiEnumComponentCostsW;
 
     [NativeTypeName("#define MsiGetFeatureValidStates MsiGetFeatureValidStatesW")]
-    public static delegate*<MSIHANDLE, ushort*, uint*, uint> MsiGetFeatureValidStates => &MsiGetFeatureValidStatesW;
+    public static delegate*<MSIHANDLE, char*, uint*, uint> MsiGetFeatureValidStates => &MsiGetFeatureValidStatesW;
 
     [NativeTypeName("#define MsiGetSourcePath MsiGetSourcePathW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint*, uint> MsiGetSourcePath => &MsiGetSourcePathW;
+    public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetSourcePath => &MsiGetSourcePathW;
 
     [NativeTypeName("#define MsiGetTargetPath MsiGetTargetPathW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint*, uint> MsiGetTargetPath => &MsiGetTargetPathW;
+    public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetTargetPath => &MsiGetTargetPathW;
 
     [NativeTypeName("#define MsiSetTargetPath MsiSetTargetPathW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint> MsiSetTargetPath => &MsiSetTargetPathW;
+    public static delegate*<MSIHANDLE, char*, char*, uint> MsiSetTargetPath => &MsiSetTargetPathW;
 
     [NativeTypeName("#define MsiPreviewDialog MsiPreviewDialogW")]
-    public static delegate*<MSIHANDLE, ushort*, uint> MsiPreviewDialog => &MsiPreviewDialogW;
+    public static delegate*<MSIHANDLE, char*, uint> MsiPreviewDialog => &MsiPreviewDialogW;
 
     [NativeTypeName("#define MsiPreviewBillboard MsiPreviewBillboardW")]
-    public static delegate*<MSIHANDLE, ushort*, ushort*, uint> MsiPreviewBillboard => &MsiPreviewBillboardW;
+    public static delegate*<MSIHANDLE, char*, char*, uint> MsiPreviewBillboard => &MsiPreviewBillboardW;
 }

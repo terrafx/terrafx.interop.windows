@@ -57,9 +57,9 @@ public unsafe partial struct IInternetBindInfoEx : IInternetBindInfoEx.Interface
     /// <inheritdoc cref="IInternetBindInfo.GetBindString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
+    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] char** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
     {
-        return ((delegate* unmanaged<IInternetBindInfoEx*, uint, ushort**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfoEx*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
+        return ((delegate* unmanaged<IInternetBindInfoEx*, uint, char**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfoEx*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
     }
 
     /// <include file='IInternetBindInfoEx.xml' path='doc/member[@name="IInternetBindInfoEx.GetBindInfoEx"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IInternetBindInfoEx : IInternetBindInfoEx.Interface
         public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint, uint*, int> GetBindString;
+        public delegate* unmanaged<TSelf*, uint, char**, uint, uint*, int> GetBindString;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *, DWORD *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, BINDINFO*, uint*, uint*, int> GetBindInfoEx;

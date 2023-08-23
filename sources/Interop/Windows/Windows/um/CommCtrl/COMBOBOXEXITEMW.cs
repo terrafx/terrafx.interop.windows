@@ -17,7 +17,7 @@ public unsafe partial struct COMBOBOXEXITEMW
 
     /// <include file='COMBOBOXEXITEMW.xml' path='doc/member[@name="COMBOBOXEXITEMW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='COMBOBOXEXITEMW.xml' path='doc/member[@name="COMBOBOXEXITEMW.cchTextMax"]/*' />
     public int cchTextMax;

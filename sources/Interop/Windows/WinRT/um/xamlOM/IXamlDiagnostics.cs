@@ -108,9 +108,9 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
     /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.GetInitializationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)
+    public HRESULT GetInitializationData([NativeTypeName("BSTR *")] char** pInitializationData)
     {
-        return ((delegate* unmanaged<IXamlDiagnostics*, ushort**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
+        return ((delegate* unmanaged<IXamlDiagnostics*, char**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -137,7 +137,7 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
         HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle);
 
         [VtblIndex(10)]
-        HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
+        HRESULT GetInitializationData([NativeTypeName("BSTR *")] char** pInitializationData);
     }
 
     public partial struct Vtbl<TSelf>
@@ -174,6 +174,6 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INat
         public delegate* unmanaged<TSelf*, IInspectable*, InstanceHandle*, int> RegisterInstance;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetInitializationData;
+        public delegate* unmanaged<TSelf*, char**, int> GetInitializationData;
     }
 }

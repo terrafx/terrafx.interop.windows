@@ -65,9 +65,9 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeG
     /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
+    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] char** ppszCoMemText, byte* pbDisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+        return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
     /// <inheritdoc cref="ISpPhrase.Discard" />
@@ -145,17 +145,17 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeG
     /// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2.CommitText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] ushort* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags)
+    public HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] char* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags)
     {
-        return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, ushort*, uint, int>)(lpVtbl[15]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, pszCorrectedData, eCommitFlags);
+        return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, char*, uint, int>)(lpVtbl[15]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, pszCorrectedData, eCommitFlags);
     }
 
     /// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2.SetTextFeedback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] ushort* pszFeedback, BOOL fSuccessful)
+    public HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] char* pszFeedback, BOOL fSuccessful)
     {
-        return ((delegate* unmanaged<ISpRecoResult2*, ushort*, BOOL, int>)(lpVtbl[16]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pszFeedback, fSuccessful);
+        return ((delegate* unmanaged<ISpRecoResult2*, char*, BOOL, int>)(lpVtbl[16]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pszFeedback, fSuccessful);
     }
 
     public interface Interface : ISpRecoResult.Interface
@@ -164,10 +164,10 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeG
         HRESULT CommitAlternate(ISpPhraseAlt* pPhraseAlt, ISpRecoResult** ppNewResult);
 
         [VtblIndex(15)]
-        HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] ushort* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags);
+        HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] char* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags);
 
         [VtblIndex(16)]
-        HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] ushort* pszFeedback, BOOL fSuccessful);
+        HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] char* pszFeedback, BOOL fSuccessful);
     }
 
     public partial struct Vtbl<TSelf>
@@ -189,7 +189,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeG
         public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Discard;
@@ -219,9 +219,9 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface, INativeG
         public delegate* unmanaged<TSelf*, ISpPhraseAlt*, ISpRecoResult**, int> CommitAlternate;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, uint, int> CommitText;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, uint, int> CommitText;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, int> SetTextFeedback;
+        public delegate* unmanaged<TSelf*, char*, BOOL, int> SetTextFeedback;
     }
 }

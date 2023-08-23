@@ -65,9 +65,9 @@ public unsafe partial struct IDOMXmlSerializer : IDOMXmlSerializer.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMXmlSerializer*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMXmlSerializer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMXmlSerializer*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMXmlSerializer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IDOMXmlSerializer : IDOMXmlSerializer.Interface, IN
     /// <include file='IDOMXmlSerializer.xml' path='doc/member[@name="IDOMXmlSerializer.serializeToString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] ushort** pString)
+    public HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] char** pString)
     {
-        return ((delegate* unmanaged<IDOMXmlSerializer*, IHTMLDOMNode*, ushort**, int>)(lpVtbl[7]))((IDOMXmlSerializer*)Unsafe.AsPointer(ref this), pNode, pString);
+        return ((delegate* unmanaged<IDOMXmlSerializer*, IHTMLDOMNode*, char**, int>)(lpVtbl[7]))((IDOMXmlSerializer*)Unsafe.AsPointer(ref this), pNode, pString);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] ushort** pString);
+        HRESULT serializeToString(IHTMLDOMNode* pNode, [NativeTypeName("BSTR *")] char** pString);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IDOMXmlSerializer : IDOMXmlSerializer.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDOMNode*, ushort**, int> serializeToString;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode*, char**, int> serializeToString;
     }
 }

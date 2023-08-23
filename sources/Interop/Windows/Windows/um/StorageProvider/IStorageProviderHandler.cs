@@ -49,37 +49,37 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
     /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler)
+    public HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] char* path, IStorageProviderPropertyHandler** propertyHandler)
     {
-        return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[3]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), path, propertyHandler);
+        return ((delegate* unmanaged<IStorageProviderHandler*, char*, IStorageProviderPropertyHandler**, int>)(lpVtbl[3]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), path, propertyHandler);
     }
 
     /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler)
+    public HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] char* uri, IStorageProviderPropertyHandler** propertyHandler)
     {
-        return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[4]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), uri, propertyHandler);
+        return ((delegate* unmanaged<IStorageProviderHandler*, char*, IStorageProviderPropertyHandler**, int>)(lpVtbl[4]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), uri, propertyHandler);
     }
 
     /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromFileId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler)
+    public HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] char* fileId, IStorageProviderPropertyHandler** propertyHandler)
     {
-        return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[5]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), fileId, propertyHandler);
+        return ((delegate* unmanaged<IStorageProviderHandler*, char*, IStorageProviderPropertyHandler**, int>)(lpVtbl[5]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), fileId, propertyHandler);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler);
+        HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] char* path, IStorageProviderPropertyHandler** propertyHandler);
 
         [VtblIndex(4)]
-        HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler);
+        HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] char* uri, IStorageProviderPropertyHandler** propertyHandler);
 
         [VtblIndex(5)]
-        HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler);
+        HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] char* fileId, IStorageProviderPropertyHandler** propertyHandler);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromPath;
+        public delegate* unmanaged<TSelf*, char*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromPath;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromUri;
+        public delegate* unmanaged<TSelf*, char*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromUri;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStorageProviderPropertyHandler **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromFileId;
+        public delegate* unmanaged<TSelf*, char*, IStorageProviderPropertyHandler**, int> GetPropertyHandlerFromFileId;
     }
 }

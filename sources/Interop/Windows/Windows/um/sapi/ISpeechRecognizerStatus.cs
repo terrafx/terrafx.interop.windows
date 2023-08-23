@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
     /// <include file='ISpeechRecognizerStatus.xml' path='doc/member[@name="ISpeechRecognizerStatus.get_ClsidEngine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] ushort** ClsidEngine)
+    public HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] char** ClsidEngine)
     {
-        return ((delegate* unmanaged<ISpeechRecognizerStatus*, ushort**, int>)(lpVtbl[11]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), ClsidEngine);
+        return ((delegate* unmanaged<ISpeechRecognizerStatus*, char**, int>)(lpVtbl[11]))((ISpeechRecognizerStatus*)Unsafe.AsPointer(ref this), ClsidEngine);
     }
 
     /// <include file='ISpeechRecognizerStatus.xml' path='doc/member[@name="ISpeechRecognizerStatus.get_SupportedLanguages"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
         HRESULT get_NumberOfActiveRules([NativeTypeName("long *")] int* NumberOfActiveRules);
 
         [VtblIndex(11)]
-        HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] ushort** ClsidEngine);
+        HRESULT get_ClsidEngine([NativeTypeName("BSTR *")] char** ClsidEngine);
 
         [VtblIndex(12)]
         HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages);
@@ -166,7 +166,7 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -184,7 +184,7 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
         public delegate* unmanaged<TSelf*, int*, int> get_NumberOfActiveRules;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ClsidEngine;
+        public delegate* unmanaged<TSelf*, char**, int> get_ClsidEngine;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_SupportedLanguages;

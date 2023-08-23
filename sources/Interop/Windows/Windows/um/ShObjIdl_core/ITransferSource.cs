@@ -81,9 +81,9 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.MoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew)
+    public HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] char* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew)
     {
-        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[7]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, psiParentDst, pszNameDst, flags, ppsiNew);
+        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, char*, uint, IShellItem**, int>)(lpVtbl[7]))((ITransferSource*)Unsafe.AsPointer(ref this), psi, psiParentDst, pszNameDst, flags, ppsiNew);
     }
 
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.RecycleItem"]/*' />
@@ -105,17 +105,17 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.RenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
+    public HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
     {
-        return ((delegate* unmanaged<ITransferSource*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[10]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, pszNewName, flags, ppsiNewDest);
+        return ((delegate* unmanaged<ITransferSource*, IShellItem*, char*, uint, IShellItem**, int>)(lpVtbl[10]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, pszNewName, flags, ppsiNewDest);
     }
 
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.LinkItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
+    public HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest)
     {
-        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int>)(lpVtbl[11]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, pszNewName, flags, ppsiNewDest);
+        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, char*, uint, IShellItem**, int>)(lpVtbl[11]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, pszNewName, flags, ppsiNewDest);
     }
 
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.ApplyPropertiesToItem"]/*' />
@@ -129,9 +129,9 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.GetDefaultDestinationName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName)
+    public HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] char** ppszDestinationName)
     {
-        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort**, int>)(lpVtbl[13]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, ppszDestinationName);
+        return ((delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, char**, int>)(lpVtbl[13]))((ITransferSource*)Unsafe.AsPointer(ref this), psiSource, psiParentDest, ppszDestinationName);
     }
 
     /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.EnterFolder"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
         HRESULT OpenItem(IShellItem* psi, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(7)]
-        HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] ushort* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew);
+        HRESULT MoveItem(IShellItem* psi, IShellItem* psiParentDst, [NativeTypeName("LPCWSTR")] char* pszNameDst, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNew);
 
         [VtblIndex(8)]
         HRESULT RecycleItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
@@ -174,16 +174,16 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
         HRESULT RemoveItem(IShellItem* psiSource, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags);
 
         [VtblIndex(10)]
-        HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
+        HRESULT RenameItem(IShellItem* psiSource, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
 
         [VtblIndex(11)]
-        HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
+        HRESULT LinkItem(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, IShellItem** ppsiNewDest);
 
         [VtblIndex(12)]
         HRESULT ApplyPropertiesToItem(IShellItem* psiSource, IShellItem** ppsiNew);
 
         [VtblIndex(13)]
-        HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] ushort** ppszDestinationName);
+        HRESULT GetDefaultDestinationName(IShellItem* psiSource, IShellItem* psiParentDest, [NativeTypeName("LPWSTR *")] char** ppszDestinationName);
 
         [VtblIndex(14)]
         HRESULT EnterFolder(IShellItem* psiChildFolderDest);
@@ -217,7 +217,7 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
         public delegate* unmanaged<TSelf*, IShellItem*, uint, Guid*, void**, int> OpenItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> MoveItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char*, uint, IShellItem**, int> MoveItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, uint, IShellItem**, int> RecycleItem;
@@ -226,16 +226,16 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface, INativ
         public delegate* unmanaged<TSelf*, IShellItem*, uint, int> RemoveItem;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, uint, IShellItem**, int> RenameItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, uint, IShellItem**, int> RenameItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> LinkItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char*, uint, IShellItem**, int> LinkItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, IShellItem**, int> ApplyPropertiesToItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort**, int> GetDefaultDestinationName;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char**, int> GetDefaultDestinationName;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, int> EnterFolder;

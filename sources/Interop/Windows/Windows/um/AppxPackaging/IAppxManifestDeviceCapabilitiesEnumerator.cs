@@ -51,9 +51,9 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** deviceCapability)
+    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** deviceCapability)
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), deviceCapability);
+        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, char**, int>)(lpVtbl[3]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), deviceCapability);
     }
 
     /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator.GetHasCurrent"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** deviceCapability);
+        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** deviceCapability);
 
         [VtblIndex(4)]
         HRESULT GetHasCurrent(BOOL* hasCurrent);
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;

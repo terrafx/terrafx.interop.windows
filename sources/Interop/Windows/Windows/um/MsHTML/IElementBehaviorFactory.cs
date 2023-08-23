@@ -49,15 +49,15 @@ public unsafe partial struct IElementBehaviorFactory : IElementBehaviorFactory.I
     /// <include file='IElementBehaviorFactory.xml' path='doc/member[@name="IElementBehaviorFactory.FindBehavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT FindBehavior([NativeTypeName("BSTR")] ushort* bstrBehavior, [NativeTypeName("BSTR")] ushort* bstrBehaviorUrl, IElementBehaviorSite* pSite, IElementBehavior** ppBehavior)
+    public HRESULT FindBehavior([NativeTypeName("BSTR")] char* bstrBehavior, [NativeTypeName("BSTR")] char* bstrBehaviorUrl, IElementBehaviorSite* pSite, IElementBehavior** ppBehavior)
     {
-        return ((delegate* unmanaged<IElementBehaviorFactory*, ushort*, ushort*, IElementBehaviorSite*, IElementBehavior**, int>)(lpVtbl[3]))((IElementBehaviorFactory*)Unsafe.AsPointer(ref this), bstrBehavior, bstrBehaviorUrl, pSite, ppBehavior);
+        return ((delegate* unmanaged<IElementBehaviorFactory*, char*, char*, IElementBehaviorSite*, IElementBehavior**, int>)(lpVtbl[3]))((IElementBehaviorFactory*)Unsafe.AsPointer(ref this), bstrBehavior, bstrBehaviorUrl, pSite, ppBehavior);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT FindBehavior([NativeTypeName("BSTR")] ushort* bstrBehavior, [NativeTypeName("BSTR")] ushort* bstrBehaviorUrl, IElementBehaviorSite* pSite, IElementBehavior** ppBehavior);
+        HRESULT FindBehavior([NativeTypeName("BSTR")] char* bstrBehavior, [NativeTypeName("BSTR")] char* bstrBehaviorUrl, IElementBehaviorSite* pSite, IElementBehavior** ppBehavior);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementBehaviorFactory : IElementBehaviorFactory.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IElementBehaviorSite *, IElementBehavior **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IElementBehaviorSite*, IElementBehavior**, int> FindBehavior;
+        public delegate* unmanaged<TSelf*, char*, char*, IElementBehaviorSite*, IElementBehavior**, int> FindBehavior;
     }
 }

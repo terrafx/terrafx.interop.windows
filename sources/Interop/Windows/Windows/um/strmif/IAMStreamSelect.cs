@@ -57,9 +57,9 @@ public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface, INativ
     /// <include file='IAMStreamSelect.xml' path='doc/member[@name="IAMStreamSelect.Info"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Info([NativeTypeName("long")] int lIndex, AM_MEDIA_TYPE** ppmt, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LCID *")] uint* plcid, [NativeTypeName("DWORD *")] uint* pdwGroup, [NativeTypeName("LPWSTR *")] ushort** ppszName, IUnknown** ppObject, IUnknown** ppUnk)
+    public HRESULT Info([NativeTypeName("long")] int lIndex, AM_MEDIA_TYPE** ppmt, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LCID *")] uint* plcid, [NativeTypeName("DWORD *")] uint* pdwGroup, [NativeTypeName("LPWSTR *")] char** ppszName, IUnknown** ppObject, IUnknown** ppUnk)
     {
-        return ((delegate* unmanaged<IAMStreamSelect*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, ushort**, IUnknown**, IUnknown**, int>)(lpVtbl[4]))((IAMStreamSelect*)Unsafe.AsPointer(ref this), lIndex, ppmt, pdwFlags, plcid, pdwGroup, ppszName, ppObject, ppUnk);
+        return ((delegate* unmanaged<IAMStreamSelect*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, char**, IUnknown**, IUnknown**, int>)(lpVtbl[4]))((IAMStreamSelect*)Unsafe.AsPointer(ref this), lIndex, ppmt, pdwFlags, plcid, pdwGroup, ppszName, ppObject, ppUnk);
     }
 
     /// <include file='IAMStreamSelect.xml' path='doc/member[@name="IAMStreamSelect.Enable"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface, INativ
         HRESULT Count([NativeTypeName("DWORD *")] uint* pcStreams);
 
         [VtblIndex(4)]
-        HRESULT Info([NativeTypeName("long")] int lIndex, AM_MEDIA_TYPE** ppmt, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LCID *")] uint* plcid, [NativeTypeName("DWORD *")] uint* pdwGroup, [NativeTypeName("LPWSTR *")] ushort** ppszName, IUnknown** ppObject, IUnknown** ppUnk);
+        HRESULT Info([NativeTypeName("long")] int lIndex, AM_MEDIA_TYPE** ppmt, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LCID *")] uint* plcid, [NativeTypeName("DWORD *")] uint* pdwGroup, [NativeTypeName("LPWSTR *")] char** ppszName, IUnknown** ppObject, IUnknown** ppUnk);
 
         [VtblIndex(5)]
         HRESULT Enable([NativeTypeName("long")] int lIndex, [NativeTypeName("DWORD")] uint dwFlags);
@@ -98,7 +98,7 @@ public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface, INativ
         public delegate* unmanaged<TSelf*, uint*, int> Count;
 
         [NativeTypeName("HRESULT (long, AM_MEDIA_TYPE **, DWORD *, LCID *, DWORD *, LPWSTR *, IUnknown **, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, ushort**, IUnknown**, IUnknown**, int> Info;
+        public delegate* unmanaged<TSelf*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, char**, IUnknown**, IUnknown**, int> Info;
 
         [NativeTypeName("HRESULT (long, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, uint, int> Enable;

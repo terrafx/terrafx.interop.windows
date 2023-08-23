@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_DRED_ALLOCATION_NODE1
 
     /// <include file='D3D12_DRED_ALLOCATION_NODE1.xml' path='doc/member[@name="D3D12_DRED_ALLOCATION_NODE1.ObjectNameW"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* ObjectNameW;
+    public char* ObjectNameW;
 
     /// <include file='D3D12_DRED_ALLOCATION_NODE1.xml' path='doc/member[@name="D3D12_DRED_ALLOCATION_NODE1.AllocationType"]/*' />
     public D3D12_DRED_ALLOCATION_TYPE AllocationType;

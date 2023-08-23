@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -145,9 +145,9 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface, 
     /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastBookmark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark)
+    public HRESULT get_LastBookmark([NativeTypeName("BSTR *")] char** Bookmark)
     {
-        return ((delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int>)(lpVtbl[15]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Bookmark);
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, char**, int>)(lpVtbl[15]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Bookmark);
     }
 
     /// <include file='ISpeechVoiceStatus.xml' path='doc/member[@name="ISpeechVoiceStatus.get_LastBookmarkId"]/*' />
@@ -201,7 +201,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface, 
         HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length);
 
         [VtblIndex(15)]
-        HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark);
+        HRESULT get_LastBookmark([NativeTypeName("BSTR *")] char** Bookmark);
 
         [VtblIndex(16)]
         HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId);
@@ -232,7 +232,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -262,7 +262,7 @@ public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_InputSentenceLength;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_LastBookmark;
+        public delegate* unmanaged<TSelf*, char**, int> get_LastBookmark;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_LastBookmarkId;

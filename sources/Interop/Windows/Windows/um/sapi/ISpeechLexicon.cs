@@ -66,9 +66,9 @@ public unsafe partial struct ISpeechLexicon : ISpeechLexicon.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechLexicon*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -98,41 +98,41 @@ public unsafe partial struct ISpeechLexicon : ISpeechLexicon.Interface, INativeG
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.AddPronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AddPronunciation([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] ushort* bstrPronunciation = null)
+    public HRESULT AddPronunciation([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] char* bstrPronunciation = null)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, ushort*, int, SpeechPartOfSpeech, ushort*, int>)(lpVtbl[9]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, bstrPronunciation);
+        return ((delegate* unmanaged<ISpeechLexicon*, char*, int, SpeechPartOfSpeech, char*, int>)(lpVtbl[9]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, bstrPronunciation);
     }
 
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.AddPronunciationByPhoneIds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT AddPronunciationByPhoneIds([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null)
+    public HRESULT AddPronunciationByPhoneIds([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, ushort*, int, SpeechPartOfSpeech, VARIANT*, int>)(lpVtbl[10]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, PhoneIds);
+        return ((delegate* unmanaged<ISpeechLexicon*, char*, int, SpeechPartOfSpeech, VARIANT*, int>)(lpVtbl[10]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, PhoneIds);
     }
 
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.RemovePronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RemovePronunciation([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] ushort* bstrPronunciation = null)
+    public HRESULT RemovePronunciation([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] char* bstrPronunciation = null)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, ushort*, int, SpeechPartOfSpeech, ushort*, int>)(lpVtbl[11]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, bstrPronunciation);
+        return ((delegate* unmanaged<ISpeechLexicon*, char*, int, SpeechPartOfSpeech, char*, int>)(lpVtbl[11]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, bstrPronunciation);
     }
 
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.RemovePronunciationByPhoneIds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT RemovePronunciationByPhoneIds([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null)
+    public HRESULT RemovePronunciationByPhoneIds([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, ushort*, int, SpeechPartOfSpeech, VARIANT*, int>)(lpVtbl[12]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, PhoneIds);
+        return ((delegate* unmanaged<ISpeechLexicon*, char*, int, SpeechPartOfSpeech, VARIANT*, int>)(lpVtbl[12]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, PartOfSpeech, PhoneIds);
     }
 
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.GetPronunciations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetPronunciations([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations)
+    public HRESULT GetPronunciations([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations)
     {
-        return ((delegate* unmanaged<ISpeechLexicon*, ushort*, int, SpeechLexiconType, ISpeechLexiconPronunciations**, int>)(lpVtbl[13]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, TypeFlags, ppPronunciations);
+        return ((delegate* unmanaged<ISpeechLexicon*, char*, int, SpeechLexiconType, ISpeechLexiconPronunciations**, int>)(lpVtbl[13]))((ISpeechLexicon*)Unsafe.AsPointer(ref this), bstrWord, LangId, TypeFlags, ppPronunciations);
     }
 
     /// <include file='ISpeechLexicon.xml' path='doc/member[@name="ISpeechLexicon.GetGenerationChange"]/*' />
@@ -152,19 +152,19 @@ public unsafe partial struct ISpeechLexicon : ISpeechLexicon.Interface, INativeG
         HRESULT GetWords(SpeechLexiconType Flags, [NativeTypeName("long *")] int* GenerationID, ISpeechLexiconWords** Words);
 
         [VtblIndex(9)]
-        HRESULT AddPronunciation([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] ushort* bstrPronunciation = null);
+        HRESULT AddPronunciation([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] char* bstrPronunciation = null);
 
         [VtblIndex(10)]
-        HRESULT AddPronunciationByPhoneIds([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null);
+        HRESULT AddPronunciationByPhoneIds([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null);
 
         [VtblIndex(11)]
-        HRESULT RemovePronunciation([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] ushort* bstrPronunciation = null);
+        HRESULT RemovePronunciation([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, [NativeTypeName("BSTR")] char* bstrPronunciation = null);
 
         [VtblIndex(12)]
-        HRESULT RemovePronunciationByPhoneIds([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null);
+        HRESULT RemovePronunciationByPhoneIds([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechPartOfSpeech PartOfSpeech = SPSUnknown, VARIANT* PhoneIds = null);
 
         [VtblIndex(13)]
-        HRESULT GetPronunciations([NativeTypeName("BSTR")] ushort* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations);
+        HRESULT GetPronunciations([NativeTypeName("BSTR")] char* bstrWord, [NativeTypeName("SpeechLanguageId")] int LangId, SpeechLexiconType TypeFlags, ISpeechLexiconPronunciations** ppPronunciations);
 
         [VtblIndex(14)]
         HRESULT GetGenerationChange([NativeTypeName("long *")] int* GenerationID, ISpeechLexiconWords** ppWords);
@@ -189,7 +189,7 @@ public unsafe partial struct ISpeechLexicon : ISpeechLexicon.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -201,19 +201,19 @@ public unsafe partial struct ISpeechLexicon : ISpeechLexicon.Interface, INativeG
         public delegate* unmanaged<TSelf*, SpeechLexiconType, int*, ISpeechLexiconWords**, int> GetWords;
 
         [NativeTypeName("HRESULT (BSTR, SpeechLanguageId, SpeechPartOfSpeech, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, SpeechPartOfSpeech, ushort*, int> AddPronunciation;
+        public delegate* unmanaged<TSelf*, char*, int, SpeechPartOfSpeech, char*, int> AddPronunciation;
 
         [NativeTypeName("HRESULT (BSTR, SpeechLanguageId, SpeechPartOfSpeech, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, SpeechPartOfSpeech, VARIANT*, int> AddPronunciationByPhoneIds;
+        public delegate* unmanaged<TSelf*, char*, int, SpeechPartOfSpeech, VARIANT*, int> AddPronunciationByPhoneIds;
 
         [NativeTypeName("HRESULT (BSTR, SpeechLanguageId, SpeechPartOfSpeech, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, SpeechPartOfSpeech, ushort*, int> RemovePronunciation;
+        public delegate* unmanaged<TSelf*, char*, int, SpeechPartOfSpeech, char*, int> RemovePronunciation;
 
         [NativeTypeName("HRESULT (BSTR, SpeechLanguageId, SpeechPartOfSpeech, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, SpeechPartOfSpeech, VARIANT*, int> RemovePronunciationByPhoneIds;
+        public delegate* unmanaged<TSelf*, char*, int, SpeechPartOfSpeech, VARIANT*, int> RemovePronunciationByPhoneIds;
 
         [NativeTypeName("HRESULT (BSTR, SpeechLanguageId, SpeechLexiconType, ISpeechLexiconPronunciations **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, SpeechLexiconType, ISpeechLexiconPronunciations**, int> GetPronunciations;
+        public delegate* unmanaged<TSelf*, char*, int, SpeechLexiconType, ISpeechLexiconPronunciations**, int> GetPronunciations;
 
         [NativeTypeName("HRESULT (long *, ISpeechLexiconWords **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, ISpeechLexiconWords**, int> GetGenerationChange;

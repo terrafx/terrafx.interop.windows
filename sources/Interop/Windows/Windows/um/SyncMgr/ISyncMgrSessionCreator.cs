@@ -49,15 +49,15 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
     /// <include file='ISyncMgrSessionCreator.xml' path='doc/member[@name="ISyncMgrSessionCreator.CreateSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateSession([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback)
+    public HRESULT CreateSession([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR *")] char** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback)
     {
-        return ((delegate* unmanaged<ISyncMgrSessionCreator*, ushort*, ushort**, uint, ISyncMgrSyncCallback**, int>)(lpVtbl[3]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, ppCallback);
+        return ((delegate* unmanaged<ISyncMgrSessionCreator*, char*, char**, uint, ISyncMgrSyncCallback**, int>)(lpVtbl[3]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, ppCallback);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateSession([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback);
+        HRESULT CreateSession([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR *")] char** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG, ISyncMgrSyncCallback **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, uint, ISyncMgrSyncCallback**, int> CreateSession;
+        public delegate* unmanaged<TSelf*, char*, char**, uint, ISyncMgrSyncCallback**, int> CreateSession;
     }
 }

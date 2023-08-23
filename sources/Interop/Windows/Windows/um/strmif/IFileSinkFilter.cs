@@ -49,26 +49,26 @@ public unsafe partial struct IFileSinkFilter : IFileSinkFilter.Interface, INativ
     /// <include file='IFileSinkFilter.xml' path='doc/member[@name="IFileSinkFilter.SetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter*)Unsafe.AsPointer(ref this), pszFileName, pmt);
+        return ((delegate* unmanaged<IFileSinkFilter*, char*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter*)Unsafe.AsPointer(ref this), pszFileName, pmt);
     }
 
     /// <include file='IFileSinkFilter.xml' path='doc/member[@name="IFileSinkFilter.GetCurFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
+    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName, AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+        return ((delegate* unmanaged<IFileSinkFilter*, char**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+        HRESULT SetFileName([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
 
         [VtblIndex(4)]
-        HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt);
+        HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName, AM_MEDIA_TYPE* pmt);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IFileSinkFilter : IFileSinkFilter.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+        public delegate* unmanaged<TSelf*, char*, AM_MEDIA_TYPE*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
+        public delegate* unmanaged<TSelf*, char**, AM_MEDIA_TYPE*, int> GetCurFile;
     }
 }

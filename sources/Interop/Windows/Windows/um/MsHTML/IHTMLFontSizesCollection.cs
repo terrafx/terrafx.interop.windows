@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.get_forFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_forFont([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_forFont([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, ushort**, int>)(lpVtbl[9]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFontSizesCollection*, char**, int>)(lpVtbl[9]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.item"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
         HRESULT get__newEnum(IUnknown** p);
 
         [VtblIndex(9)]
-        HRESULT get_forFont([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_forFont([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
         HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("long *")] int* plSize);
@@ -144,7 +144,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -156,7 +156,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
         public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_forFont;
+        public delegate* unmanaged<TSelf*, char**, int> get_forFont;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int*, int> item;

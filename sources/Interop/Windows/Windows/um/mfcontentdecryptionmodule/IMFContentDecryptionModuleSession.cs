@@ -51,9 +51,9 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
     /// <include file='IMFContentDecryptionModuleSession.xml' path='doc/member[@name="IMFContentDecryptionModuleSession.GetSessionId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSessionId([NativeTypeName("LPWSTR *")] ushort** sessionId)
+    public HRESULT GetSessionId([NativeTypeName("LPWSTR *")] char** sessionId)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort**, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId);
+        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, char**, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId);
     }
 
     /// <include file='IMFContentDecryptionModuleSession.xml' path='doc/member[@name="IMFContentDecryptionModuleSession.GetExpiration"]/*' />
@@ -75,17 +75,17 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
     /// <include file='IMFContentDecryptionModuleSession.xml' path='doc/member[@name="IMFContentDecryptionModuleSession.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Load([NativeTypeName("LPCWSTR")] ushort* sessionId, BOOL* loaded)
+    public HRESULT Load([NativeTypeName("LPCWSTR")] char* sessionId, BOOL* loaded)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, BOOL*, int>)(lpVtbl[6]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId, loaded);
+        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, char*, BOOL*, int>)(lpVtbl[6]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), sessionId, loaded);
     }
 
     /// <include file='IMFContentDecryptionModuleSession.xml' path='doc/member[@name="IMFContentDecryptionModuleSession.GenerateRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GenerateRequest([NativeTypeName("LPCWSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint initDataSize)
+    public HRESULT GenerateRequest([NativeTypeName("LPCWSTR")] char* initDataType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint initDataSize)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, ushort*, byte*, uint, int>)(lpVtbl[7]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), initDataType, initData, initDataSize);
+        return ((delegate* unmanaged<IMFContentDecryptionModuleSession*, char*, byte*, uint, int>)(lpVtbl[7]))((IMFContentDecryptionModuleSession*)Unsafe.AsPointer(ref this), initDataType, initData, initDataSize);
     }
 
     /// <include file='IMFContentDecryptionModuleSession.xml' path='doc/member[@name="IMFContentDecryptionModuleSession.Update"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSessionId([NativeTypeName("LPWSTR *")] ushort** sessionId);
+        HRESULT GetSessionId([NativeTypeName("LPWSTR *")] char** sessionId);
 
         [VtblIndex(4)]
         HRESULT GetExpiration(double* expiration);
@@ -124,10 +124,10 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
         HRESULT GetKeyStatuses(MFMediaKeyStatus** keyStatuses, uint* numKeyStatuses);
 
         [VtblIndex(6)]
-        HRESULT Load([NativeTypeName("LPCWSTR")] ushort* sessionId, BOOL* loaded);
+        HRESULT Load([NativeTypeName("LPCWSTR")] char* sessionId, BOOL* loaded);
 
         [VtblIndex(7)]
-        HRESULT GenerateRequest([NativeTypeName("LPCWSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint initDataSize);
+        HRESULT GenerateRequest([NativeTypeName("LPCWSTR")] char* initDataType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint initDataSize);
 
         [VtblIndex(8)]
         HRESULT Update([NativeTypeName("const BYTE *")] byte* response, [NativeTypeName("DWORD")] uint responseSize);
@@ -152,7 +152,7 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSessionId;
+        public delegate* unmanaged<TSelf*, char**, int> GetSessionId;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, double*, int> GetExpiration;
@@ -161,10 +161,10 @@ public unsafe partial struct IMFContentDecryptionModuleSession : IMFContentDecry
         public delegate* unmanaged<TSelf*, MFMediaKeyStatus**, uint*, int> GetKeyStatuses;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> Load;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> Load;
 
         [NativeTypeName("HRESULT (LPCWSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, int> GenerateRequest;
+        public delegate* unmanaged<TSelf*, char*, byte*, uint, int> GenerateRequest;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> Update;

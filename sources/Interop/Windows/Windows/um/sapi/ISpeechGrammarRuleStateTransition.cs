@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
     /// <include file='ISpeechGrammarRuleStateTransition.xml' path='doc/member[@name="ISpeechGrammarRuleStateTransition.get_Text"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text)
+    public HRESULT get_Text([NativeTypeName("BSTR *")] char** Text)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, ushort**, int>)(lpVtbl[8]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), Text);
+        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, char**, int>)(lpVtbl[8]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), Text);
     }
 
     /// <include file='ISpeechGrammarRuleStateTransition.xml' path='doc/member[@name="ISpeechGrammarRuleStateTransition.get_Rule"]/*' />
@@ -113,9 +113,9 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
     /// <include file='ISpeechGrammarRuleStateTransition.xml' path='doc/member[@name="ISpeechGrammarRuleStateTransition.get_PropertyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_PropertyName([NativeTypeName("BSTR *")] ushort** PropertyName)
+    public HRESULT get_PropertyName([NativeTypeName("BSTR *")] char** PropertyName)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, ushort**, int>)(lpVtbl[11]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), PropertyName);
+        return ((delegate* unmanaged<ISpeechGrammarRuleStateTransition*, char**, int>)(lpVtbl[11]))((ISpeechGrammarRuleStateTransition*)Unsafe.AsPointer(ref this), PropertyName);
     }
 
     /// <include file='ISpeechGrammarRuleStateTransition.xml' path='doc/member[@name="ISpeechGrammarRuleStateTransition.get_PropertyId"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
         HRESULT get_Type(SpeechGrammarRuleStateTransitionType* Type);
 
         [VtblIndex(8)]
-        HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text);
+        HRESULT get_Text([NativeTypeName("BSTR *")] char** Text);
 
         [VtblIndex(9)]
         HRESULT get_Rule(ISpeechGrammarRule** Rule);
@@ -157,7 +157,7 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
         HRESULT get_Weight(VARIANT* Weight);
 
         [VtblIndex(11)]
-        HRESULT get_PropertyName([NativeTypeName("BSTR *")] ushort** PropertyName);
+        HRESULT get_PropertyName([NativeTypeName("BSTR *")] char** PropertyName);
 
         [VtblIndex(12)]
         HRESULT get_PropertyId([NativeTypeName("long *")] int* PropertyId);
@@ -188,7 +188,7 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -197,7 +197,7 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
         public delegate* unmanaged<TSelf*, SpeechGrammarRuleStateTransitionType*, int> get_Type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Text;
+        public delegate* unmanaged<TSelf*, char**, int> get_Text;
 
         [NativeTypeName("HRESULT (ISpeechGrammarRule **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISpeechGrammarRule**, int> get_Rule;
@@ -206,7 +206,7 @@ public unsafe partial struct ISpeechGrammarRuleStateTransition : ISpeechGrammarR
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_Weight;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_PropertyName;
+        public delegate* unmanaged<TSelf*, char**, int> get_PropertyName;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_PropertyId;

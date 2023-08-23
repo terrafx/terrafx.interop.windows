@@ -49,17 +49,17 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface, IN
     /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite)
+    public HRESULT Open([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszPage, IUnknown* punkSite)
     {
-        return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, IUnknown*, int>)(lpVtbl[3]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPage, punkSite);
+        return ((delegate* unmanaged<IOpenControlPanel*, char*, char*, IUnknown*, int>)(lpVtbl[3]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPage, punkSite);
     }
 
     /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, uint cchPath)
+    public HRESULT GetPath([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPWSTR")] char* pszPath, uint cchPath)
     {
-        return ((delegate* unmanaged<IOpenControlPanel*, ushort*, ushort*, uint, int>)(lpVtbl[4]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPath, cchPath);
+        return ((delegate* unmanaged<IOpenControlPanel*, char*, char*, uint, int>)(lpVtbl[4]))((IOpenControlPanel*)Unsafe.AsPointer(ref this), pszName, pszPath, cchPath);
     }
 
     /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.GetCurrentView"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Open([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszPage, IUnknown* punkSite);
+        HRESULT Open([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszPage, IUnknown* punkSite);
 
         [VtblIndex(4)]
-        HRESULT GetPath([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPWSTR")] ushort* pszPath, uint cchPath);
+        HRESULT GetPath([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPWSTR")] char* pszPath, uint cchPath);
 
         [VtblIndex(5)]
         HRESULT GetCurrentView(CPVIEW* pView);
@@ -95,10 +95,10 @@ public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IUnknown*, int> Open;
+        public delegate* unmanaged<TSelf*, char*, char*, IUnknown*, int> Open;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> GetPath;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, int> GetPath;
 
         [NativeTypeName("HRESULT (CPVIEW *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, CPVIEW*, int> GetCurrentView;

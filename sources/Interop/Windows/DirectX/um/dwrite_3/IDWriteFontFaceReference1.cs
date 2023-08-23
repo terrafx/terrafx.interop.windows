@@ -141,9 +141,9 @@ public unsafe partial struct IDWriteFontFaceReference1 : IDWriteFontFaceReferenc
     /// <inheritdoc cref="IDWriteFontFaceReference.EnqueueCharacterDownloadRequest" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] ushort* characters, [NativeTypeName("UINT32")] uint characterCount)
+    public HRESULT EnqueueCharacterDownloadRequest([NativeTypeName("const WCHAR *")] char* characters, [NativeTypeName("UINT32")] uint characterCount)
     {
-        return ((delegate* unmanaged<IDWriteFontFaceReference1*, ushort*, uint, int>)(lpVtbl[14]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this), characters, characterCount);
+        return ((delegate* unmanaged<IDWriteFontFaceReference1*, char*, uint, int>)(lpVtbl[14]))((IDWriteFontFaceReference1*)Unsafe.AsPointer(ref this), characters, characterCount);
     }
 
     /// <inheritdoc cref="IDWriteFontFaceReference.EnqueueGlyphDownloadRequest" />
@@ -246,7 +246,7 @@ public unsafe partial struct IDWriteFontFaceReference1 : IDWriteFontFaceReferenc
         public delegate* unmanaged<TSelf*, int> EnqueueFontDownloadRequest;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
+        public delegate* unmanaged<TSelf*, char*, uint, int> EnqueueCharacterDownloadRequest;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueGlyphDownloadRequest;

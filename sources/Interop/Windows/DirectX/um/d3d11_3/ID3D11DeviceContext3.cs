@@ -1154,17 +1154,17 @@ public unsafe partial struct ID3D11DeviceContext3 : ID3D11DeviceContext3.Interfa
     /// <inheritdoc cref="ID3D11DeviceContext2.SetMarkerInt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(141)]
-    public void SetMarkerInt([NativeTypeName("LPCWSTR")] ushort* pLabel, int Data)
+    public void SetMarkerInt([NativeTypeName("LPCWSTR")] char* pLabel, int Data)
     {
-        ((delegate* unmanaged<ID3D11DeviceContext3*, ushort*, int, void>)(lpVtbl[141]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), pLabel, Data);
+        ((delegate* unmanaged<ID3D11DeviceContext3*, char*, int, void>)(lpVtbl[141]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), pLabel, Data);
     }
 
     /// <inheritdoc cref="ID3D11DeviceContext2.BeginEventInt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(142)]
-    public void BeginEventInt([NativeTypeName("LPCWSTR")] ushort* pLabel, int Data)
+    public void BeginEventInt([NativeTypeName("LPCWSTR")] char* pLabel, int Data)
     {
-        ((delegate* unmanaged<ID3D11DeviceContext3*, ushort*, int, void>)(lpVtbl[142]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), pLabel, Data);
+        ((delegate* unmanaged<ID3D11DeviceContext3*, char*, int, void>)(lpVtbl[142]))((ID3D11DeviceContext3*)Unsafe.AsPointer(ref this), pLabel, Data);
     }
 
     /// <inheritdoc cref="ID3D11DeviceContext2.EndEvent" />
@@ -1638,10 +1638,10 @@ public unsafe partial struct ID3D11DeviceContext3 : ID3D11DeviceContext3.Interfa
         public delegate* unmanaged<TSelf*, int> IsAnnotationEnabled;
 
         [NativeTypeName("void (LPCWSTR, INT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, void> SetMarkerInt;
+        public delegate* unmanaged<TSelf*, char*, int, void> SetMarkerInt;
 
         [NativeTypeName("void (LPCWSTR, INT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, void> BeginEventInt;
+        public delegate* unmanaged<TSelf*, char*, int, void> BeginEventInt;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void> EndEvent;

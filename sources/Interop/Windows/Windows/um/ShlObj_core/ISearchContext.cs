@@ -49,17 +49,17 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface, INativeG
     /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl)
+    public HRESULT GetSearchUrl([NativeTypeName("BSTR *")] char** pbstrSearchUrl)
     {
-        return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[3]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchUrl);
+        return ((delegate* unmanaged<ISearchContext*, char**, int>)(lpVtbl[3]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchUrl);
     }
 
     /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText)
+    public HRESULT GetSearchText([NativeTypeName("BSTR *")] char** pbstrSearchText)
     {
-        return ((delegate* unmanaged<ISearchContext*, ushort**, int>)(lpVtbl[4]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchText);
+        return ((delegate* unmanaged<ISearchContext*, char**, int>)(lpVtbl[4]))((ISearchContext*)Unsafe.AsPointer(ref this), pbstrSearchText);
     }
 
     /// <include file='ISearchContext.xml' path='doc/member[@name="ISearchContext.GetSearchStyle"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface, INativeG
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSearchUrl([NativeTypeName("BSTR *")] ushort** pbstrSearchUrl);
+        HRESULT GetSearchUrl([NativeTypeName("BSTR *")] char** pbstrSearchUrl);
 
         [VtblIndex(4)]
-        HRESULT GetSearchText([NativeTypeName("BSTR *")] ushort** pbstrSearchText);
+        HRESULT GetSearchText([NativeTypeName("BSTR *")] char** pbstrSearchText);
 
         [VtblIndex(5)]
         HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle);
@@ -95,10 +95,10 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSearchUrl;
+        public delegate* unmanaged<TSelf*, char**, int> GetSearchUrl;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSearchText;
+        public delegate* unmanaged<TSelf*, char**, int> GetSearchText;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetSearchStyle;

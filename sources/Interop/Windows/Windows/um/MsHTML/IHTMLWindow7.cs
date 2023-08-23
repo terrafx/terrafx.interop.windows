@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLWindow7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLWindow7*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface, INativeGuid
     /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.getComputedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] ushort* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle)
+    public HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] char* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle)
     {
-        return ((delegate* unmanaged<IHTMLWindow7*, IHTMLDOMNode*, ushort*, IHTMLCSSStyleDeclaration**, int>)(lpVtbl[8]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), varArgIn, bstrPseudoElt, ppComputedStyle);
+        return ((delegate* unmanaged<IHTMLWindow7*, IHTMLDOMNode*, char*, IHTMLCSSStyleDeclaration**, int>)(lpVtbl[8]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), varArgIn, bstrPseudoElt, ppComputedStyle);
     }
 
     /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_styleMedia"]/*' />
@@ -1036,7 +1036,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface, INativeGuid
         HRESULT getSelection(IHTMLSelection** ppIHTMLSelection);
 
         [VtblIndex(8)]
-        HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] ushort* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle);
+        HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] char* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle);
 
         [VtblIndex(9)]
         HRESULT get_styleMedia(IHTMLStyleMedia** p);
@@ -1409,7 +1409,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -1418,7 +1418,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHTMLSelection**, int> getSelection;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode *, BSTR, IHTMLCSSStyleDeclaration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDOMNode*, ushort*, IHTMLCSSStyleDeclaration**, int> getComputedStyle;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode*, char*, IHTMLCSSStyleDeclaration**, int> getComputedStyle;
 
         [NativeTypeName("HRESULT (IHTMLStyleMedia **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLStyleMedia**, int> get_styleMedia;

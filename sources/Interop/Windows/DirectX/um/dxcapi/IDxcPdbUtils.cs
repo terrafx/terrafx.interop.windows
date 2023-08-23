@@ -74,9 +74,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetSourceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSourceName([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetSourceName([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, uint, ushort**, int>)(lpVtbl[6]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, uint, char**, int>)(lpVtbl[6]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetFlagCount"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetFlag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetFlag([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetFlag([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, uint, ushort**, int>)(lpVtbl[8]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, uint, char**, int>)(lpVtbl[8]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetArgCount"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetArg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetArg([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetArg([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, uint, ushort**, int>)(lpVtbl[10]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, uint, char**, int>)(lpVtbl[10]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetArgPairCount"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetArgPair"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetArgPair([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pName, [NativeTypeName("BSTR *")] ushort** pValue)
+    public HRESULT GetArgPair([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pName, [NativeTypeName("BSTR *")] char** pValue)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, uint, ushort**, ushort**, int>)(lpVtbl[12]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pName, pValue);
+        return ((delegate* unmanaged<IDxcPdbUtils*, uint, char**, char**, int>)(lpVtbl[12]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pName, pValue);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetDefineCount"]/*' />
@@ -138,33 +138,33 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetDefine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetDefine([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetDefine([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, uint, ushort**, int>)(lpVtbl[14]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, uint, char**, int>)(lpVtbl[14]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), uIndex, pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetTargetProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetTargetProfile([NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetTargetProfile([NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, ushort**, int>)(lpVtbl[15]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, char**, int>)(lpVtbl[15]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetEntryPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetEntryPoint([NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetEntryPoint([NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, ushort**, int>)(lpVtbl[16]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, char**, int>)(lpVtbl[16]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetMainFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetMainFileName([NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetMainFileName([NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, ushort**, int>)(lpVtbl[17]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, char**, int>)(lpVtbl[17]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetHash"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT GetName([NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetName([NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, ushort**, int>)(lpVtbl[19]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
+        return ((delegate* unmanaged<IDxcPdbUtils*, char**, int>)(lpVtbl[19]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pResult);
     }
 
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.IsFullPDB"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
     /// <include file='IDxcPdbUtils.xml' path='doc/member[@name="IDxcPdbUtils.OverrideRootSignature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT OverrideRootSignature([NativeTypeName("const WCHAR *")] ushort* pRootSignature)
+    public HRESULT OverrideRootSignature([NativeTypeName("const WCHAR *")] char* pRootSignature)
     {
-        return ((delegate* unmanaged<IDxcPdbUtils*, ushort*, int>)(lpVtbl[26]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pRootSignature);
+        return ((delegate* unmanaged<IDxcPdbUtils*, char*, int>)(lpVtbl[26]))((IDxcPdbUtils*)Unsafe.AsPointer(ref this), pRootSignature);
     }
 
     public interface Interface : IUnknown.Interface
@@ -251,46 +251,46 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
         HRESULT GetSource([NativeTypeName("UINT32")] uint uIndex, IDxcBlobEncoding** ppResult);
 
         [VtblIndex(6)]
-        HRESULT GetSourceName([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetSourceName([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(7)]
         HRESULT GetFlagCount([NativeTypeName("UINT32 *")] uint* pCount);
 
         [VtblIndex(8)]
-        HRESULT GetFlag([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetFlag([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(9)]
         HRESULT GetArgCount([NativeTypeName("UINT32 *")] uint* pCount);
 
         [VtblIndex(10)]
-        HRESULT GetArg([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetArg([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(11)]
         HRESULT GetArgPairCount([NativeTypeName("UINT32 *")] uint* pCount);
 
         [VtblIndex(12)]
-        HRESULT GetArgPair([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pName, [NativeTypeName("BSTR *")] ushort** pValue);
+        HRESULT GetArgPair([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pName, [NativeTypeName("BSTR *")] char** pValue);
 
         [VtblIndex(13)]
         HRESULT GetDefineCount([NativeTypeName("UINT32 *")] uint* pCount);
 
         [VtblIndex(14)]
-        HRESULT GetDefine([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetDefine([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(15)]
-        HRESULT GetTargetProfile([NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetTargetProfile([NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(16)]
-        HRESULT GetEntryPoint([NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetEntryPoint([NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(17)]
-        HRESULT GetMainFileName([NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetMainFileName([NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(18)]
         HRESULT GetHash(IDxcBlob** ppResult);
 
         [VtblIndex(19)]
-        HRESULT GetName([NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetName([NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(20)]
         BOOL IsFullPDB();
@@ -311,7 +311,7 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
         HRESULT OverrideArgs(DxcArgPair* pArgPairs, [NativeTypeName("UINT32")] uint uNumArgPairs);
 
         [VtblIndex(26)]
-        HRESULT OverrideRootSignature([NativeTypeName("const WCHAR *")] ushort* pRootSignature);
+        HRESULT OverrideRootSignature([NativeTypeName("const WCHAR *")] char* pRootSignature);
     }
 
     public partial struct Vtbl<TSelf>
@@ -336,46 +336,46 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, IDxcBlobEncoding**, int> GetSource;
 
         [NativeTypeName("HRESULT (UINT32, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetSourceName;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetSourceName;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetFlagCount;
 
         [NativeTypeName("HRESULT (UINT32, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetFlag;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetFlag;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetArgCount;
 
         [NativeTypeName("HRESULT (UINT32, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetArg;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetArg;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetArgPairCount;
 
         [NativeTypeName("HRESULT (UINT32, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, ushort**, int> GetArgPair;
+        public delegate* unmanaged<TSelf*, uint, char**, char**, int> GetArgPair;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetDefineCount;
 
         [NativeTypeName("HRESULT (UINT32, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetDefine;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetDefine;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTargetProfile;
+        public delegate* unmanaged<TSelf*, char**, int> GetTargetProfile;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetEntryPoint;
+        public delegate* unmanaged<TSelf*, char**, int> GetEntryPoint;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetMainFileName;
+        public delegate* unmanaged<TSelf*, char**, int> GetMainFileName;
 
         [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDxcBlob**, int> GetHash;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> IsFullPDB;
@@ -396,6 +396,6 @@ public unsafe partial struct IDxcPdbUtils : IDxcPdbUtils.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, DxcArgPair*, uint, int> OverrideArgs;
 
         [NativeTypeName("HRESULT (const WCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> OverrideRootSignature;
+        public delegate* unmanaged<TSelf*, char*, int> OverrideRootSignature;
     }
 }

@@ -57,9 +57,9 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.GetListenersForType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray)
+    public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] char* pszEventType, SAFEARRAY** ppEventHandlerArray)
     {
-        return ((delegate* unmanaged<IEventTarget2*, ushort*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
+        return ((delegate* unmanaged<IEventTarget2*, char*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
     }
 
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.RegisterForDOMEventListeners"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
         HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray);
 
         [VtblIndex(4)]
-        HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray);
+        HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] char* pszEventType, SAFEARRAY** ppEventHandlerArray);
 
         [VtblIndex(5)]
         HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback);
@@ -109,7 +109,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, SAFEARRAY**, int> GetRegisteredEventTypes;
 
         [NativeTypeName("HRESULT (LPCWSTR, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SAFEARRAY**, int> GetListenersForType;
+        public delegate* unmanaged<TSelf*, char*, SAFEARRAY**, int> GetListenersForType;
 
         [NativeTypeName("HRESULT (IDOMEventRegistrationCallback *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDOMEventRegistrationCallback*, int> RegisterForDOMEventListeners;

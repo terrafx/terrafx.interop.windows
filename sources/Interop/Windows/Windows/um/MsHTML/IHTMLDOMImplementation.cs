@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDOMImplementation : IHTMLDOMImplementation.Int
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMImplementation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDOMImplementation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMImplementation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IHTMLDOMImplementation : IHTMLDOMImplementation.Int
     /// <include file='IHTMLDOMImplementation.xml' path='doc/member[@name="IHTMLDOMImplementation.hasFeature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT hasFeature([NativeTypeName("BSTR")] ushort* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature)
+    public HRESULT hasFeature([NativeTypeName("BSTR")] char* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation*, ushort*, VARIANT, short*, int>)(lpVtbl[7]))((IHTMLDOMImplementation*)Unsafe.AsPointer(ref this), bstrfeature, version, pfHasFeature);
+        return ((delegate* unmanaged<IHTMLDOMImplementation*, char*, VARIANT, short*, int>)(lpVtbl[7]))((IHTMLDOMImplementation*)Unsafe.AsPointer(ref this), bstrfeature, version, pfHasFeature);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT hasFeature([NativeTypeName("BSTR")] ushort* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature);
+        HRESULT hasFeature([NativeTypeName("BSTR")] char* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IHTMLDOMImplementation : IHTMLDOMImplementation.Int
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> hasFeature;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, short*, int> hasFeature;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, INat
     /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
+    public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] char** rubyText)
     {
-        return ((delegate* unmanaged<IMFTimedTextRuby*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
+        return ((delegate* unmanaged<IMFTimedTextRuby*, char**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
     }
 
     /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyPosition"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText);
+        HRESULT GetRubyText([NativeTypeName("LPWSTR *")] char** rubyText);
 
         [VtblIndex(4)]
         HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value);
@@ -106,7 +106,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetRubyText;
+        public delegate* unmanaged<TSelf*, char**, int> GetRubyText;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_POSITION *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_RUBY_POSITION*, int> GetRubyPosition;

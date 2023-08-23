@@ -57,9 +57,9 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)
+    public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pbstr)
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
+        return ((delegate* unmanaged<ITfReverseConversionList*, uint, char**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         HRESULT GetLength(uint* puIndex);
 
         [VtblIndex(4)]
-        HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr);
+        HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pbstr);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         public delegate* unmanaged<TSelf*, uint*, int> GetLength;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetString;
     }
 }

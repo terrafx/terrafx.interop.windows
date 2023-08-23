@@ -31,5 +31,5 @@ public unsafe partial struct DIEFFECTINFO
 
     /// <include file='DIEFFECTINFO.xml' path='doc/member[@name="DIEFFECTINFO.tszName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszName[260];
+    public fixed char tszName[260];
 }

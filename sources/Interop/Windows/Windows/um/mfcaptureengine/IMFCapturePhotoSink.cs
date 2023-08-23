@@ -91,9 +91,9 @@ public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
     /// <include file='IMFCapturePhotoSink.xml' path='doc/member[@name="IMFCapturePhotoSink.SetOutputFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName)
+    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName)
     {
-        return ((delegate* unmanaged<IMFCapturePhotoSink*, ushort*, int>)(lpVtbl[8]))((IMFCapturePhotoSink*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IMFCapturePhotoSink*, char*, int>)(lpVtbl[8]))((IMFCapturePhotoSink*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IMFCapturePhotoSink.xml' path='doc/member[@name="IMFCapturePhotoSink.SetSampleCallback"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
     public interface Interface : IMFCaptureSink.Interface
     {
         [VtblIndex(8)]
-        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName);
+        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName);
 
         [VtblIndex(9)]
         HRESULT SetSampleCallback(IMFCaptureEngineOnSampleCallback* pCallback);
@@ -152,7 +152,7 @@ public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
         public delegate* unmanaged<TSelf*, int> RemoveAllStreams;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFileName;
+        public delegate* unmanaged<TSelf*, char*, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (IMFCaptureEngineOnSampleCallback *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;

@@ -57,9 +57,9 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, ushort**, int>)(lpVtbl[4]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSourceFile*, char**, int>)(lpVtbl[4]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_checksumType"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
         HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(4)]
-        HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(5)]
         HRESULT get_checksumType([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -120,7 +120,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint*, int> get_uniqueId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
+        public delegate* unmanaged<TSelf*, char**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_checksumType;

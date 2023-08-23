@@ -25,15 +25,15 @@ public unsafe partial struct COLORMATCHSETUPW
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pSourceName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pSourceName;
+    public char* pSourceName;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pDisplayName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pDisplayName;
+    public char* pDisplayName;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pPrinterName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pPrinterName;
+    public char* pPrinterName;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.dwRenderIntent"]/*' />
     [NativeTypeName("DWORD")]
@@ -45,7 +45,7 @@ public unsafe partial struct COLORMATCHSETUPW
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pMonitorProfile"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pMonitorProfile;
+    public char* pMonitorProfile;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.ccMonitorProfile"]/*' />
     [NativeTypeName("DWORD")]
@@ -53,7 +53,7 @@ public unsafe partial struct COLORMATCHSETUPW
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pPrinterProfile"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pPrinterProfile;
+    public char* pPrinterProfile;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.ccPrinterProfile"]/*' />
     [NativeTypeName("DWORD")]
@@ -61,7 +61,7 @@ public unsafe partial struct COLORMATCHSETUPW
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.pTargetProfile"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pTargetProfile;
+    public char* pTargetProfile;
 
     /// <include file='COLORMATCHSETUPW.xml' path='doc/member[@name="COLORMATCHSETUPW.ccTargetProfile"]/*' />
     [NativeTypeName("DWORD")]

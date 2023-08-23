@@ -13,7 +13,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateTransaction"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateTransaction([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPGUID")] Guid* UOW, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
+    public static extern HANDLE CreateTransaction([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPGUID")] Guid* UOW, [NativeTypeName("DWORD")] uint CreateOptions, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] char* Description);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenTransaction"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
@@ -48,22 +48,22 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTransactionInformation"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("PDWORD")] uint* Outcome, [NativeTypeName("PDWORD")] uint* IsolationLevel, [NativeTypeName("PDWORD")] uint* IsolationFlags, [NativeTypeName("PDWORD")] uint* Timeout, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] ushort* Description);
+    public static extern BOOL GetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("PDWORD")] uint* Outcome, [NativeTypeName("PDWORD")] uint* IsolationLevel, [NativeTypeName("PDWORD")] uint* IsolationFlags, [NativeTypeName("PDWORD")] uint* Timeout, [NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPWSTR")] char* Description);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTransactionInformation"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] ushort* Description);
+    public static extern BOOL SetTransactionInformation(HANDLE TransactionHandle, [NativeTypeName("DWORD")] uint IsolationLevel, [NativeTypeName("DWORD")] uint IsolationFlags, [NativeTypeName("DWORD")] uint Timeout, [NativeTypeName("LPWSTR")] char* Description);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateTransactionManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateTransactionManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ULONG")] uint CreateOptions, [NativeTypeName("ULONG")] uint CommitStrength);
+    public static extern HANDLE CreateTransactionManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTransactionAttributes, [NativeTypeName("LPWSTR")] char* LogFileName, [NativeTypeName("ULONG")] uint CreateOptions, [NativeTypeName("ULONG")] uint CommitStrength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenTransactionManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenTransactionManager([NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
+    public static extern HANDLE OpenTransactionManager([NativeTypeName("LPWSTR")] char* LogFileName, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, [NativeTypeName("ULONG")] uint OpenOptions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenTransactionManagerById"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
@@ -73,7 +73,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RenameTransactionManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL RenameTransactionManager([NativeTypeName("LPWSTR")] ushort* LogFileName, [NativeTypeName("LPGUID")] Guid* ExistingTransactionManagerGuid);
+    public static extern BOOL RenameTransactionManager([NativeTypeName("LPWSTR")] char* LogFileName, [NativeTypeName("LPGUID")] Guid* ExistingTransactionManagerGuid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RollforwardTransactionManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
@@ -98,7 +98,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateResourceManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateResourceManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpResourceManagerAttributes, [NativeTypeName("LPGUID")] Guid* ResourceManagerId, [NativeTypeName("DWORD")] uint CreateOptions, HANDLE TmHandle, [NativeTypeName("LPWSTR")] ushort* Description);
+    public static extern HANDLE CreateResourceManager([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpResourceManagerAttributes, [NativeTypeName("LPGUID")] Guid* ResourceManagerId, [NativeTypeName("DWORD")] uint CreateOptions, HANDLE TmHandle, [NativeTypeName("LPWSTR")] char* Description);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenResourceManager"]/*' />
     [DllImport("ktmw32", ExactSpelling = true)]

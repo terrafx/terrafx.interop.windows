@@ -49,15 +49,15 @@ public unsafe partial struct IMFMediaEngineClassFactory3 : IMFMediaEngineClassFa
     /// <include file='IMFMediaEngineClassFactory3.xml' path='doc/member[@name="IMFMediaEngineClassFactory3.CreateMediaKeySystemAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateMediaKeySystemAccess([NativeTypeName("BSTR")] ushort* keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint uSize, IMFMediaKeySystemAccess** ppKeyAccess)
+    public HRESULT CreateMediaKeySystemAccess([NativeTypeName("BSTR")] char* keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint uSize, IMFMediaKeySystemAccess** ppKeyAccess)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory3*, ushort*, IPropertyStore**, uint, IMFMediaKeySystemAccess**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory3*)Unsafe.AsPointer(ref this), keySystem, ppSupportedConfigurationsArray, uSize, ppKeyAccess);
+        return ((delegate* unmanaged<IMFMediaEngineClassFactory3*, char*, IPropertyStore**, uint, IMFMediaKeySystemAccess**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory3*)Unsafe.AsPointer(ref this), keySystem, ppSupportedConfigurationsArray, uSize, ppKeyAccess);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateMediaKeySystemAccess([NativeTypeName("BSTR")] ushort* keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint uSize, IMFMediaKeySystemAccess** ppKeyAccess);
+        HRESULT CreateMediaKeySystemAccess([NativeTypeName("BSTR")] char* keySystem, IPropertyStore** ppSupportedConfigurationsArray, uint uSize, IMFMediaKeySystemAccess** ppKeyAccess);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IMFMediaEngineClassFactory3 : IMFMediaEngineClassFa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, IPropertyStore **, UINT, IMFMediaKeySystemAccess **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IPropertyStore**, uint, IMFMediaKeySystemAccess**, int> CreateMediaKeySystemAccess;
+        public delegate* unmanaged<TSelf*, char*, IPropertyStore**, uint, IMFMediaKeySystemAccess**, int> CreateMediaKeySystemAccess;
     }
 }

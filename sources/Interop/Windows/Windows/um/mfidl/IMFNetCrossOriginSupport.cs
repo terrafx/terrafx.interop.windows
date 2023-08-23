@@ -59,17 +59,17 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.GetSourceOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] ushort** wszSourceOrigin)
+    public HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] char** wszSourceOrigin)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort**, int>)(lpVtbl[4]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszSourceOrigin);
+        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, char**, int>)(lpVtbl[4]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszSourceOrigin);
     }
 
     /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.IsSameOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin)
+    public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] char* wszURL, BOOL* pfIsSameOrigin)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
+        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, char*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
     }
 
     public interface Interface : IUnknown.Interface
@@ -78,10 +78,10 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy);
 
         [VtblIndex(4)]
-        HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] ushort** wszSourceOrigin);
+        HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] char** wszSourceOrigin);
 
         [VtblIndex(5)]
-        HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin);
+        HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] char* wszURL, BOOL* pfIsSameOrigin);
     }
 
     public partial struct Vtbl<TSelf>
@@ -100,9 +100,9 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         public delegate* unmanaged<TSelf*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSourceOrigin;
+        public delegate* unmanaged<TSelf*, char**, int> GetSourceOrigin;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> IsSameOrigin;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> IsSameOrigin;
     }
 }

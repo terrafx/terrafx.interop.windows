@@ -97,9 +97,9 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.IsLegacyDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName)
+    public HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] char* dllName)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, ushort*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
+        return ((delegate* unmanaged<IAMPluginControl*, char*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -123,7 +123,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
         HRESULT SetDisabled([NativeTypeName("const IID &")] Guid* clsid, BOOL disabled);
 
         [VtblIndex(9)]
-        HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName);
+        HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] char* dllName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -157,6 +157,6 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
         public delegate* unmanaged<TSelf*, Guid*, BOOL, int> SetDisabled;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> IsLegacyDisabled;
+        public delegate* unmanaged<TSelf*, char*, int> IsLegacyDisabled;
     }
 }

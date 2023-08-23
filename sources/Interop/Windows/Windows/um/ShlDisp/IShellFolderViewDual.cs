@@ -65,9 +65,9 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellFolderViewDual*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,9 +129,9 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
     /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.PopupItemMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual*, FolderItem*, VARIANT, VARIANT, ushort**, int>)(lpVtbl[13]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
+        return ((delegate* unmanaged<IShellFolderViewDual*, FolderItem*, VARIANT, VARIANT, char**, int>)(lpVtbl[13]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
     }
 
     /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_Script"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         HRESULT SelectItem(VARIANT* pvfi, int dwFlags);
 
         [VtblIndex(13)]
-        HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs);
+        HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] char** pbs);
 
         [VtblIndex(14)]
         HRESULT get_Script(IDispatch** ppDisp);
@@ -199,7 +199,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -223,7 +223,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         public delegate* unmanaged<TSelf*, VARIANT*, int, int> SelectItem;
 
         [NativeTypeName("HRESULT (FolderItem *, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, ushort**, int> PopupItemMenu;
+        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, char**, int> PopupItemMenu;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_Script;

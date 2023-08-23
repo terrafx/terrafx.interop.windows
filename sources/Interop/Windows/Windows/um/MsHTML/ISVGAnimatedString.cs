@@ -65,9 +65,9 @@ public unsafe partial struct ISVGAnimatedString : ISVGAnimatedString.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGAnimatedString*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISVGAnimatedString*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,37 +81,37 @@ public unsafe partial struct ISVGAnimatedString : ISVGAnimatedString.Interface, 
     /// <include file='ISVGAnimatedString.xml' path='doc/member[@name="ISVGAnimatedString.put_baseVal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_baseVal([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_baseVal([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ISVGAnimatedString*, ushort*, int>)(lpVtbl[7]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ISVGAnimatedString*, char*, int>)(lpVtbl[7]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGAnimatedString.xml' path='doc/member[@name="ISVGAnimatedString.get_baseVal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_baseVal([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_baseVal([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ISVGAnimatedString*, ushort**, int>)(lpVtbl[8]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ISVGAnimatedString*, char**, int>)(lpVtbl[8]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGAnimatedString.xml' path='doc/member[@name="ISVGAnimatedString.get_animVal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_animVal([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_animVal([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ISVGAnimatedString*, ushort**, int>)(lpVtbl[9]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ISVGAnimatedString*, char**, int>)(lpVtbl[9]))((ISVGAnimatedString*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_baseVal([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_baseVal([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_baseVal([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_baseVal([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_animVal([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_animVal([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct ISVGAnimatedString : ISVGAnimatedString.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_baseVal;
+        public delegate* unmanaged<TSelf*, char*, int> put_baseVal;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_baseVal;
+        public delegate* unmanaged<TSelf*, char**, int> get_baseVal;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_animVal;
+        public delegate* unmanaged<TSelf*, char**, int> get_animVal;
     }
 }

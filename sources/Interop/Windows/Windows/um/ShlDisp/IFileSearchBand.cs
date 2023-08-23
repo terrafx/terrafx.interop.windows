@@ -65,9 +65,9 @@ public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFileSearchBand*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSearchBand*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IFileSearchBand*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSearchBand*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,17 +89,17 @@ public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativ
     /// <include file='IFileSearchBand.xml' path='doc/member[@name="IFileSearchBand.SetSearchParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetSearchParameters([NativeTypeName("BSTR *")] ushort** pbstrSearchID, [NativeTypeName("VARIANT_BOOL")] short bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile)
+    public HRESULT SetSearchParameters([NativeTypeName("BSTR *")] char** pbstrSearchID, [NativeTypeName("VARIANT_BOOL")] short bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile)
     {
-        return ((delegate* unmanaged<IFileSearchBand*, ushort**, short, VARIANT*, VARIANT*, int>)(lpVtbl[8]))((IFileSearchBand*)Unsafe.AsPointer(ref this), pbstrSearchID, bNavToResults, pvarScope, pvarQueryFile);
+        return ((delegate* unmanaged<IFileSearchBand*, char**, short, VARIANT*, VARIANT*, int>)(lpVtbl[8]))((IFileSearchBand*)Unsafe.AsPointer(ref this), pbstrSearchID, bNavToResults, pvarScope, pvarQueryFile);
     }
 
     /// <include file='IFileSearchBand.xml' path='doc/member[@name="IFileSearchBand.get_SearchID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_SearchID([NativeTypeName("BSTR *")] ushort** pbstrSearchID)
+    public HRESULT get_SearchID([NativeTypeName("BSTR *")] char** pbstrSearchID)
     {
-        return ((delegate* unmanaged<IFileSearchBand*, ushort**, int>)(lpVtbl[9]))((IFileSearchBand*)Unsafe.AsPointer(ref this), pbstrSearchID);
+        return ((delegate* unmanaged<IFileSearchBand*, char**, int>)(lpVtbl[9]))((IFileSearchBand*)Unsafe.AsPointer(ref this), pbstrSearchID);
     }
 
     /// <include file='IFileSearchBand.xml' path='doc/member[@name="IFileSearchBand.get_Scope"]/*' />
@@ -124,10 +124,10 @@ public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativ
         HRESULT SetFocus();
 
         [VtblIndex(8)]
-        HRESULT SetSearchParameters([NativeTypeName("BSTR *")] ushort** pbstrSearchID, [NativeTypeName("VARIANT_BOOL")] short bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile);
+        HRESULT SetSearchParameters([NativeTypeName("BSTR *")] char** pbstrSearchID, [NativeTypeName("VARIANT_BOOL")] short bNavToResults, VARIANT* pvarScope, VARIANT* pvarQueryFile);
 
         [VtblIndex(9)]
-        HRESULT get_SearchID([NativeTypeName("BSTR *")] ushort** pbstrSearchID);
+        HRESULT get_SearchID([NativeTypeName("BSTR *")] char** pbstrSearchID);
 
         [VtblIndex(10)]
         HRESULT get_Scope(VARIANT* pvarScope);
@@ -155,7 +155,7 @@ public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -164,10 +164,10 @@ public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativ
         public delegate* unmanaged<TSelf*, int> SetFocus;
 
         [NativeTypeName("HRESULT (BSTR *, VARIANT_BOOL, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, short, VARIANT*, VARIANT*, int> SetSearchParameters;
+        public delegate* unmanaged<TSelf*, char**, short, VARIANT*, VARIANT*, int> SetSearchParameters;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_SearchID;
+        public delegate* unmanaged<TSelf*, char**, int> get_SearchID;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_Scope;

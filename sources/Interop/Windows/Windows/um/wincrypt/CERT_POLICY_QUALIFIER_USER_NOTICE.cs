@@ -13,5 +13,5 @@ public unsafe partial struct CERT_POLICY_QUALIFIER_USER_NOTICE
 
     /// <include file='CERT_POLICY_QUALIFIER_USER_NOTICE.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_USER_NOTICE.pszDisplayText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDisplayText;
+    public char* pszDisplayText;
 }

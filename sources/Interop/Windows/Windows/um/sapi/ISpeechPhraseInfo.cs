@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -169,9 +169,9 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EngineId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_EngineId([NativeTypeName("BSTR *")] ushort** EngineIdGuid)
+    public HRESULT get_EngineId([NativeTypeName("BSTR *")] char** EngineIdGuid)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, ushort**, int>)(lpVtbl[18]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), EngineIdGuid);
+        return ((delegate* unmanaged<ISpeechPhraseInfo*, char**, int>)(lpVtbl[18]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), EngineIdGuid);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EnginePrivateData"]/*' />
@@ -193,9 +193,9 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] ushort** Text)
+    public HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] char** Text)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int, int, short, ushort**, int>)(lpVtbl[21]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, Text);
+        return ((delegate* unmanaged<ISpeechPhraseInfo*, int, int, short, char**, int>)(lpVtbl[21]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, Text);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetDisplayAttributes"]/*' />
@@ -242,7 +242,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         HRESULT get_Replacements(ISpeechPhraseReplacements** Replacements);
 
         [VtblIndex(18)]
-        HRESULT get_EngineId([NativeTypeName("BSTR *")] ushort** EngineIdGuid);
+        HRESULT get_EngineId([NativeTypeName("BSTR *")] char** EngineIdGuid);
 
         [VtblIndex(19)]
         HRESULT get_EnginePrivateData(VARIANT* PrivateData);
@@ -251,7 +251,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         HRESULT SaveToMemory(VARIANT* PhraseBlock);
 
         [VtblIndex(21)]
-        HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] ushort** Text);
+        HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] char** Text);
 
         [VtblIndex(22)]
         HRESULT GetDisplayAttributes([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, SpeechDisplayAttributes* DisplayAttributes);
@@ -276,7 +276,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -315,7 +315,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         public delegate* unmanaged<TSelf*, ISpeechPhraseReplacements**, int> get_Replacements;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_EngineId;
+        public delegate* unmanaged<TSelf*, char**, int> get_EngineId;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_EnginePrivateData;
@@ -324,7 +324,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         public delegate* unmanaged<TSelf*, VARIANT*, int> SaveToMemory;
 
         [NativeTypeName("HRESULT (long, long, VARIANT_BOOL, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, short, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, int, int, short, char**, int> GetText;
 
         [NativeTypeName("HRESULT (long, long, VARIANT_BOOL, SpeechDisplayAttributes *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int, short, SpeechDisplayAttributes*, int> GetDisplayAttributes;

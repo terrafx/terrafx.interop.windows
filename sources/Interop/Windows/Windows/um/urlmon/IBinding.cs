@@ -89,9 +89,9 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.GetBindResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)
+    public HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] char** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)
     {
-        return ((delegate* unmanaged<IBinding*, Guid*, uint*, ushort**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
+        return ((delegate* unmanaged<IBinding*, Guid*, uint*, char**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -112,7 +112,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
         HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority);
 
         [VtblIndex(8)]
-        HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved);
+        HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] char** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,6 +143,6 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> GetPriority;
 
         [NativeTypeName("HRESULT (CLSID *, DWORD *, LPOLESTR *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, ushort**, uint*, int> GetBindResult;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, char**, uint*, int> GetBindResult;
     }
 }

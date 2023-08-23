@@ -14,7 +14,7 @@ public partial struct XINPUT_KEYSTROKE
 
     /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.Unicode"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort Unicode;
+    public char Unicode;
 
     /// <include file='XINPUT_KEYSTROKE.xml' path='doc/member[@name="XINPUT_KEYSTROKE.Flags"]/*' />
     [NativeTypeName("WORD")]

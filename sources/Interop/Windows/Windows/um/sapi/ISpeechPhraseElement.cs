@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechPhraseElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,17 +129,17 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
     /// <include file='ISpeechPhraseElement.xml' path='doc/member[@name="ISpeechPhraseElement.get_DisplayText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_DisplayText([NativeTypeName("BSTR *")] ushort** DisplayText)
+    public HRESULT get_DisplayText([NativeTypeName("BSTR *")] char** DisplayText)
     {
-        return ((delegate* unmanaged<ISpeechPhraseElement*, ushort**, int>)(lpVtbl[13]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), DisplayText);
+        return ((delegate* unmanaged<ISpeechPhraseElement*, char**, int>)(lpVtbl[13]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), DisplayText);
     }
 
     /// <include file='ISpeechPhraseElement.xml' path='doc/member[@name="ISpeechPhraseElement.get_LexicalForm"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_LexicalForm([NativeTypeName("BSTR *")] ushort** LexicalForm)
+    public HRESULT get_LexicalForm([NativeTypeName("BSTR *")] char** LexicalForm)
     {
-        return ((delegate* unmanaged<ISpeechPhraseElement*, ushort**, int>)(lpVtbl[14]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), LexicalForm);
+        return ((delegate* unmanaged<ISpeechPhraseElement*, char**, int>)(lpVtbl[14]))((ISpeechPhraseElement*)Unsafe.AsPointer(ref this), LexicalForm);
     }
 
     /// <include file='ISpeechPhraseElement.xml' path='doc/member[@name="ISpeechPhraseElement.get_Pronunciation"]/*' />
@@ -203,10 +203,10 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
         HRESULT get_RetainedSizeBytes([NativeTypeName("long *")] int* RetainedSizeBytes);
 
         [VtblIndex(13)]
-        HRESULT get_DisplayText([NativeTypeName("BSTR *")] ushort** DisplayText);
+        HRESULT get_DisplayText([NativeTypeName("BSTR *")] char** DisplayText);
 
         [VtblIndex(14)]
-        HRESULT get_LexicalForm([NativeTypeName("BSTR *")] ushort** LexicalForm);
+        HRESULT get_LexicalForm([NativeTypeName("BSTR *")] char** LexicalForm);
 
         [VtblIndex(15)]
         HRESULT get_Pronunciation(VARIANT* Pronunciation);
@@ -243,7 +243,7 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -267,10 +267,10 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
         public delegate* unmanaged<TSelf*, int*, int> get_RetainedSizeBytes;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_DisplayText;
+        public delegate* unmanaged<TSelf*, char**, int> get_DisplayText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_LexicalForm;
+        public delegate* unmanaged<TSelf*, char**, int> get_LexicalForm;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_Pronunciation;

@@ -16,11 +16,11 @@ public unsafe partial struct PropertyChainSource
 
     /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.TargetType"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* TargetType;
+    public char* TargetType;
 
     /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.Name"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='PropertyChainSource.xml' path='doc/member[@name="PropertyChainSource.Source"]/*' />
     public BaseValueSource Source;

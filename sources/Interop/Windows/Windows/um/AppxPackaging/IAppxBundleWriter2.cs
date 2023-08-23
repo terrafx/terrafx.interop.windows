@@ -51,15 +51,15 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface, 
     /// <include file='IAppxBundleWriter2.xml' path='doc/member[@name="IAppxBundleWriter2.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)
+    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter2*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter2*)Unsafe.AsPointer(ref this), fileName, inputStream);
+        return ((delegate* unmanaged<IAppxBundleWriter2*, char*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter2*)Unsafe.AsPointer(ref this), fileName, inputStream);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream);
+        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream);
     }
 
     public partial struct Vtbl<TSelf>
@@ -75,6 +75,6 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddExternalPackageReference;
+        public delegate* unmanaged<TSelf*, char*, IStream*, int> AddExternalPackageReference;
     }
 }

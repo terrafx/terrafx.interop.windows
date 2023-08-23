@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLGenericElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLGenericElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLGenericElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLGenericElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
     /// <include file='IHTMLGenericElement.xml' path='doc/member[@name="IHTMLGenericElement.namedRecordset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT namedRecordset([NativeTypeName("BSTR")] ushort* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset)
+    public HRESULT namedRecordset([NativeTypeName("BSTR")] char* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset)
     {
-        return ((delegate* unmanaged<IHTMLGenericElement*, ushort*, VARIANT*, IDispatch**, int>)(lpVtbl[8]))((IHTMLGenericElement*)Unsafe.AsPointer(ref this), dataMember, hierarchy, ppRecordset);
+        return ((delegate* unmanaged<IHTMLGenericElement*, char*, VARIANT*, IDispatch**, int>)(lpVtbl[8]))((IHTMLGenericElement*)Unsafe.AsPointer(ref this), dataMember, hierarchy, ppRecordset);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
         HRESULT get_recordset(IDispatch** p);
 
         [VtblIndex(8)]
-        HRESULT namedRecordset([NativeTypeName("BSTR")] ushort* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset);
+        HRESULT namedRecordset([NativeTypeName("BSTR")] char* dataMember, VARIANT* hierarchy, IDispatch** ppRecordset);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IHTMLGenericElement : IHTMLGenericElement.Interface
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_recordset;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IDispatch**, int> namedRecordset;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, IDispatch**, int> namedRecordset;
     }
 }

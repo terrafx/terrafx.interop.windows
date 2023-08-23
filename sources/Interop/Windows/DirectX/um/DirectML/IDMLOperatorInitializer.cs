@@ -74,9 +74,9 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
     /// <inheritdoc cref="IDMLObject.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
+    public HRESULT SetName([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<IDMLOperatorInitializer*, ushort*, int>)(lpVtbl[6]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IDMLOperatorInitializer*, char*, int>)(lpVtbl[6]))((IDMLOperatorInitializer*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IDMLDeviceChild.GetDevice" />
@@ -132,7 +132,7 @@ public unsafe partial struct IDMLOperatorInitializer : IDMLOperatorInitializer.I
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;

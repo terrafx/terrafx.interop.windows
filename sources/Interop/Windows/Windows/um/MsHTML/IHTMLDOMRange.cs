@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMRange*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDOMRange*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -257,9 +257,9 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface, INativeGui
     /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** pRangeString)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** pRangeString)
     {
-        return ((delegate* unmanaged<IHTMLDOMRange*, ushort**, int>)(lpVtbl[29]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), pRangeString);
+        return ((delegate* unmanaged<IHTMLDOMRange*, char**, int>)(lpVtbl[29]))((IHTMLDOMRange*)Unsafe.AsPointer(ref this), pRangeString);
     }
 
     /// <include file='IHTMLDOMRange.xml' path='doc/member[@name="IHTMLDOMRange.detach"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface, INativeGui
         HRESULT cloneRange(IHTMLDOMRange** ppClonedRange);
 
         [VtblIndex(29)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** pRangeString);
+        HRESULT toString([NativeTypeName("BSTR *")] char** pRangeString);
 
         [VtblIndex(30)]
         HRESULT detach();
@@ -386,7 +386,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -458,7 +458,7 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IHTMLDOMRange**, int> cloneRange;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> detach;

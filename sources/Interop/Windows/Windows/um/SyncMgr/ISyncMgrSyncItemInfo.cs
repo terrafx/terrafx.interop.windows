@@ -49,17 +49,17 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetTypeLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel)
+    public HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] char** ppszTypeLabel)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszTypeLabel);
+        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, char**, int>)(lpVtbl[3]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszTypeLabel);
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment)
+    public HRESULT GetComment([NativeTypeName("LPWSTR *")] char** ppszComment)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszComment);
+        return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, char**, int>)(lpVtbl[4]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszComment);
     }
 
     /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetLastSyncTime"]/*' />
@@ -89,10 +89,10 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel);
+        HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] char** ppszTypeLabel);
 
         [VtblIndex(4)]
-        HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment);
+        HRESULT GetComment([NativeTypeName("LPWSTR *")] char** ppszComment);
 
         [VtblIndex(5)]
         HRESULT GetLastSyncTime(FILETIME* pftLastSync);
@@ -117,10 +117,10 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTypeLabel;
+        public delegate* unmanaged<TSelf*, char**, int> GetTypeLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetComment;
+        public delegate* unmanaged<TSelf*, char**, int> GetComment;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FILETIME*, int> GetLastSyncTime;

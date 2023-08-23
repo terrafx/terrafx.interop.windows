@@ -65,9 +65,9 @@ public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IIsoImageManager*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IIsoImageManager*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IIsoImageManager*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IIsoImageManager*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INat
     /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager.get_Path"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_Path([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IIsoImageManager*, ushort**, int>)(lpVtbl[7]))((IIsoImageManager*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IIsoImageManager*, char**, int>)(lpVtbl[7]))((IIsoImageManager*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager.get_Stream"]/*' />
@@ -97,9 +97,9 @@ public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INat
     /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager.SetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetPath([NativeTypeName("BSTR")] ushort* Val)
+    public HRESULT SetPath([NativeTypeName("BSTR")] char* Val)
     {
-        return ((delegate* unmanaged<IIsoImageManager*, ushort*, int>)(lpVtbl[9]))((IIsoImageManager*)Unsafe.AsPointer(ref this), Val);
+        return ((delegate* unmanaged<IIsoImageManager*, char*, int>)(lpVtbl[9]))((IIsoImageManager*)Unsafe.AsPointer(ref this), Val);
     }
 
     /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager.SetStream"]/*' />
@@ -121,13 +121,13 @@ public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INat
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_Path([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(8)]
         HRESULT get_Stream(IStream** data);
 
         [VtblIndex(9)]
-        HRESULT SetPath([NativeTypeName("BSTR")] ushort* Val);
+        HRESULT SetPath([NativeTypeName("BSTR")] char* Val);
 
         [VtblIndex(10)]
         HRESULT SetStream(IStream* data);
@@ -155,19 +155,19 @@ public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Path;
+        public delegate* unmanaged<TSelf*, char**, int> get_Path;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream**, int> get_Stream;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetPath;
+        public delegate* unmanaged<TSelf*, char*, int> SetPath;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, int> SetStream;

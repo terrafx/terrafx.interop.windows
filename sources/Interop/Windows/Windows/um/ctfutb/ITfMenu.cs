@@ -49,15 +49,15 @@ public unsafe partial struct ITfMenu : ITfMenu.Interface, INativeGuid
     /// <include file='ITfMenu.xml' path='doc/member[@name="ITfMenu.AddMenuItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
+    public HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu)
     {
-        return ((delegate* unmanaged<ITfMenu*, uint, uint, HBITMAP, HBITMAP, ushort*, uint, ITfMenu**, int>)(lpVtbl[3]))((ITfMenu*)Unsafe.AsPointer(ref this), uId, dwFlags, hbmp, hbmpMask, pch, cch, ppMenu);
+        return ((delegate* unmanaged<ITfMenu*, uint, uint, HBITMAP, HBITMAP, char*, uint, ITfMenu**, int>)(lpVtbl[3]))((ITfMenu*)Unsafe.AsPointer(ref this), uId, dwFlags, hbmp, hbmpMask, pch, cch, ppMenu);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu);
+        HRESULT AddMenuItem(uint uId, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP hbmp, HBITMAP hbmpMask, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch, ITfMenu** ppMenu);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ITfMenu : ITfMenu.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, DWORD, HBITMAP, HBITMAP, const WCHAR *, ULONG, ITfMenu **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, HBITMAP, HBITMAP, ushort*, uint, ITfMenu**, int> AddMenuItem;
+        public delegate* unmanaged<TSelf*, uint, uint, HBITMAP, HBITMAP, char*, uint, ITfMenu**, int> AddMenuItem;
     }
 }

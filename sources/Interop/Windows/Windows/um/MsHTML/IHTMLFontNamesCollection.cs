@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFontNamesCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontNamesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLFontNamesCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontNamesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection
     /// <include file='IHTMLFontNamesCollection.xml' path='doc/member[@name="IHTMLFontNamesCollection.item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IHTMLFontNamesCollection*, int, ushort**, int>)(lpVtbl[9]))((IHTMLFontNamesCollection*)Unsafe.AsPointer(ref this), index, pBstr);
+        return ((delegate* unmanaged<IHTMLFontNamesCollection*, int, char**, int>)(lpVtbl[9]))((IHTMLFontNamesCollection*)Unsafe.AsPointer(ref this), index, pBstr);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection
         HRESULT get__newEnum(IUnknown** p);
 
         [VtblIndex(9)]
-        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pBstr);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IHTMLFontNamesCollection : IHTMLFontNamesCollection
         public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> item;
+        public delegate* unmanaged<TSelf*, int, char**, int> item;
     }
 }

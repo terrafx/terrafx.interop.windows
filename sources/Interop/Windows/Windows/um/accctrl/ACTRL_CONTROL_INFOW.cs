@@ -10,9 +10,9 @@ public unsafe partial struct ACTRL_CONTROL_INFOW
 {
     /// <include file='ACTRL_CONTROL_INFOW.xml' path='doc/member[@name="ACTRL_CONTROL_INFOW.lpControlId"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpControlId;
+    public char* lpControlId;
 
     /// <include file='ACTRL_CONTROL_INFOW.xml' path='doc/member[@name="ACTRL_CONTROL_INFOW.lpControlName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpControlName;
+    public char* lpControlName;
 }

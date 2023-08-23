@@ -10,7 +10,7 @@ public unsafe partial struct CERT_POLICY95_QUALIFIER1
 {
     /// <include file='CERT_POLICY95_QUALIFIER1.xml' path='doc/member[@name="CERT_POLICY95_QUALIFIER1.pszPracticesReference"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPracticesReference;
+    public char* pszPracticesReference;
 
     /// <include file='CERT_POLICY95_QUALIFIER1.xml' path='doc/member[@name="CERT_POLICY95_QUALIFIER1.pszNoticeIdentifier"]/*' />
     [NativeTypeName("LPSTR")]

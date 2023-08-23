@@ -58,17 +58,17 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface, INat
     /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.EnumChildContainerNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer)
+    public HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer)
     {
-        return ((delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int>)(lpVtbl[4]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszContainer, cchContainer);
+        return ((delegate* unmanaged<IDxDiagContainer*, uint, char*, uint, int>)(lpVtbl[4]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszContainer, cchContainer);
     }
 
     /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetChildContainer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] ushort* pwszContainer, IDxDiagContainer** ppInstance)
+    public HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] char* pwszContainer, IDxDiagContainer** ppInstance)
     {
-        return ((delegate* unmanaged<IDxDiagContainer*, ushort*, IDxDiagContainer**, int>)(lpVtbl[5]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszContainer, ppInstance);
+        return ((delegate* unmanaged<IDxDiagContainer*, char*, IDxDiagContainer**, int>)(lpVtbl[5]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszContainer, ppInstance);
     }
 
     /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetNumberOfProps"]/*' />
@@ -82,17 +82,17 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface, INat
     /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.EnumPropNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName)
+    public HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName)
     {
-        return ((delegate* unmanaged<IDxDiagContainer*, uint, ushort*, uint, int>)(lpVtbl[7]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszPropName, cchPropName);
+        return ((delegate* unmanaged<IDxDiagContainer*, uint, char*, uint, int>)(lpVtbl[7]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), dwIndex, pwszPropName, cchPropName);
     }
 
     /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.GetProp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, VARIANT* pvarProp)
+    public HRESULT GetProp([NativeTypeName("LPCWSTR")] char* pwszPropName, VARIANT* pvarProp)
     {
-        return ((delegate* unmanaged<IDxDiagContainer*, ushort*, VARIANT*, int>)(lpVtbl[8]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszPropName, pvarProp);
+        return ((delegate* unmanaged<IDxDiagContainer*, char*, VARIANT*, int>)(lpVtbl[8]))((IDxDiagContainer*)Unsafe.AsPointer(ref this), pwszPropName, pvarProp);
     }
 
     public interface Interface : IUnknown.Interface
@@ -101,19 +101,19 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface, INat
         HRESULT GetNumberOfChildContainers([NativeTypeName("DWORD *")] uint* pdwCount);
 
         [VtblIndex(4)]
-        HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer);
+        HRESULT EnumChildContainerNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pwszContainer, [NativeTypeName("DWORD")] uint cchContainer);
 
         [VtblIndex(5)]
-        HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] ushort* pwszContainer, IDxDiagContainer** ppInstance);
+        HRESULT GetChildContainer([NativeTypeName("LPCWSTR")] char* pwszContainer, IDxDiagContainer** ppInstance);
 
         [VtblIndex(6)]
         HRESULT GetNumberOfProps([NativeTypeName("DWORD *")] uint* pdwCount);
 
         [VtblIndex(7)]
-        HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName);
+        HRESULT EnumPropNames([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pwszPropName, [NativeTypeName("DWORD")] uint cchPropName);
 
         [VtblIndex(8)]
-        HRESULT GetProp([NativeTypeName("LPCWSTR")] ushort* pwszPropName, VARIANT* pvarProp);
+        HRESULT GetProp([NativeTypeName("LPCWSTR")] char* pwszPropName, VARIANT* pvarProp);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,18 +132,18 @@ public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface, INat
         public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfChildContainers;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> EnumChildContainerNames;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> EnumChildContainerNames;
 
         [NativeTypeName("HRESULT (LPCWSTR, IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDxDiagContainer**, int> GetChildContainer;
+        public delegate* unmanaged<TSelf*, char*, IDxDiagContainer**, int> GetChildContainer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfProps;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> EnumPropNames;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> EnumPropNames;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> GetProp;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> GetProp;
     }
 }

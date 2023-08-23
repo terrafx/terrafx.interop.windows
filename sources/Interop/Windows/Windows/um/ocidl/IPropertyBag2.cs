@@ -81,9 +81,9 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface, INativeGui
     /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.LoadObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LoadObject([NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog)
+    public HRESULT LoadObject([NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog)
     {
-        return ((delegate* unmanaged<IPropertyBag2*, ushort*, uint, IUnknown*, IErrorLog*, int>)(lpVtbl[7]))((IPropertyBag2*)Unsafe.AsPointer(ref this), pstrName, dwHint, pUnkObject, pErrLog);
+        return ((delegate* unmanaged<IPropertyBag2*, char*, uint, IUnknown*, IErrorLog*, int>)(lpVtbl[7]))((IPropertyBag2*)Unsafe.AsPointer(ref this), pstrName, dwHint, pUnkObject, pErrLog);
     }
 
     public interface Interface : IUnknown.Interface
@@ -101,7 +101,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface, INativeGui
         HRESULT GetPropertyInfo([NativeTypeName("ULONG")] uint iProperty, [NativeTypeName("ULONG")] uint cProperties, PROPBAG2* pPropBag, [NativeTypeName("ULONG *")] uint* pcProperties);
 
         [VtblIndex(7)]
-        HRESULT LoadObject([NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog);
+        HRESULT LoadObject([NativeTypeName("LPCOLESTR")] char* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,6 +129,6 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, PROPBAG2*, uint*, int> GetPropertyInfo;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IUnknown *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IUnknown*, IErrorLog*, int> LoadObject;
+        public delegate* unmanaged<TSelf*, char*, uint, IUnknown*, IErrorLog*, int> LoadObject;
     }
 }

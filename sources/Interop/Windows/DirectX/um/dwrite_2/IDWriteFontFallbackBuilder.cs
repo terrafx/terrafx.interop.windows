@@ -52,9 +52,9 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMapping"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] ushort* localeName = null, [NativeTypeName("const WCHAR *")] ushort* baseFamilyName = null, float scale = 1.0f)
+    public HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] char* localeName = null, [NativeTypeName("const WCHAR *")] char* baseFamilyName = null, float scale = 1.0f)
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, ushort**, uint, IDWriteFontCollection*, ushort*, ushort*, float, int>)(lpVtbl[3]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
+        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int>)(lpVtbl[3]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
     }
 
     /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMappings"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] ushort** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] ushort* localeName = null, [NativeTypeName("const WCHAR *")] ushort* baseFamilyName = null, float scale = 1.0f);
+        HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] char* localeName = null, [NativeTypeName("const WCHAR *")] char* baseFamilyName = null, float scale = 1.0f);
 
         [VtblIndex(4)]
         HRESULT AddMappings(IDWriteFontFallback* fontFallback);
@@ -98,7 +98,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const DWRITE_UNICODE_RANGE *, UINT32, const WCHAR **, UINT32, IDWriteFontCollection *, const WCHAR *, const WCHAR *, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_UNICODE_RANGE*, uint, ushort**, uint, IDWriteFontCollection*, ushort*, ushort*, float, int> AddMapping;
+        public delegate* unmanaged<TSelf*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int> AddMapping;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDWriteFontFallback*, int> AddMappings;

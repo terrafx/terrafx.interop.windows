@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -217,73 +217,73 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
+    public HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, int, short*, int>)(lpVtbl[24]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, int, short*, int>)(lpVtbl[24]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
+    public HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, int*, short*, int>)(lpVtbl[25]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, int*, short*, int>)(lpVtbl[25]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT SetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("const BSTR")] ushort* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
+    public HRESULT SetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("const BSTR")] char* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, short*, int>)(lpVtbl[26]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, short*, int>)(lpVtbl[26]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT GetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("BSTR *")] ushort** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
+    public HRESULT GetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("BSTR *")] char** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort**, short*, int>)(lpVtbl[27]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char**, short*, int>)(lpVtbl[27]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT IsUISupported([NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
+    public HRESULT IsUISupported([NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, VARIANT*, short*, int>)(lpVtbl[28]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TypeOfUI, ExtraData, Supported);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, VARIANT*, short*, int>)(lpVtbl[28]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TypeOfUI, ExtraData, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null)
+    public HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] char* Title, [NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, int, ushort*, ushort*, VARIANT*, int>)(lpVtbl[29]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
+        return ((delegate* unmanaged<ISpeechRecognizer*, int, char*, char*, VARIANT*, int>)(lpVtbl[29]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetRecognizers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT GetRecognizers([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
+    public HRESULT GetRecognizers([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[30]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[30]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetAudioInputs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT GetAudioInputs([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
+    public HRESULT GetAudioInputs([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[31]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[31]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT GetProfiles([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
+    public HRESULT GetProfiles([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[32]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[32]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     public interface Interface : IDispatch.Interface
@@ -340,31 +340,31 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         HRESULT GetFormat(SpeechFormatType Type, ISpeechAudioFormat** Format);
 
         [VtblIndex(24)]
-        HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+        HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
 
         [VtblIndex(25)]
-        HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+        HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
 
         [VtblIndex(26)]
-        HRESULT SetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("const BSTR")] ushort* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+        HRESULT SetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("const BSTR")] char* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
 
         [VtblIndex(27)]
-        HRESULT GetPropertyString([NativeTypeName("const BSTR")] ushort* Name, [NativeTypeName("BSTR *")] ushort** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+        HRESULT GetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("BSTR *")] char** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
 
         [VtblIndex(28)]
-        HRESULT IsUISupported([NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
+        HRESULT IsUISupported([NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported);
 
         [VtblIndex(29)]
-        HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("const BSTR")] ushort* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null);
+        HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] char* Title, [NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null);
 
         [VtblIndex(30)]
-        HRESULT GetRecognizers([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+        HRESULT GetRecognizers([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
 
         [VtblIndex(31)]
-        HRESULT GetAudioInputs([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+        HRESULT GetAudioInputs([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
 
         [VtblIndex(32)]
-        HRESULT GetProfiles([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
+        HRESULT GetProfiles([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens);
     }
 
     public partial struct Vtbl<TSelf>
@@ -386,7 +386,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -443,30 +443,30 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         public delegate* unmanaged<TSelf*, SpeechFormatType, ISpeechAudioFormat**, int> GetFormat;
 
         [NativeTypeName("HRESULT (const BSTR, long, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, short*, int> SetPropertyNumber;
+        public delegate* unmanaged<TSelf*, char*, int, short*, int> SetPropertyNumber;
 
         [NativeTypeName("HRESULT (const BSTR, long *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, short*, int> GetPropertyNumber;
+        public delegate* unmanaged<TSelf*, char*, int*, short*, int> GetPropertyNumber;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, short*, int> SetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char*, short*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (const BSTR, BSTR *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, short*, int> GetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char**, short*, int> GetPropertyString;
 
         [NativeTypeName("HRESULT (const BSTR, const VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, short*, int> IsUISupported;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, short*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (long, BSTR, const BSTR, const VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, ushort*, VARIANT*, int> DisplayUI;
+        public delegate* unmanaged<TSelf*, int, char*, char*, VARIANT*, int> DisplayUI;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ISpeechObjectTokens**, int> GetRecognizers;
+        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetRecognizers;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ISpeechObjectTokens**, int> GetAudioInputs;
+        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetAudioInputs;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ISpeechObjectTokens**, int> GetProfiles;
+        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetProfiles;
     }
 }

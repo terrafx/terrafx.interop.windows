@@ -49,9 +49,9 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     /// <inheritdoc cref="IEnumString.Next" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] ushort** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] char** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumACString*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IEnumACString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged<IEnumACString*, uint, char**, uint*, int>)(lpVtbl[3]))((IEnumACString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <inheritdoc cref="IEnumString.Skip" />
@@ -81,9 +81,9 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.NextItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex)
+    public HRESULT NextItem([NativeTypeName("LPWSTR")] char* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex)
     {
-        return ((delegate* unmanaged<IEnumACString*, ushort*, uint, uint*, int>)(lpVtbl[7]))((IEnumACString*)Unsafe.AsPointer(ref this), pszUrl, cchMax, pulSortIndex);
+        return ((delegate* unmanaged<IEnumACString*, char*, uint, uint*, int>)(lpVtbl[7]))((IEnumACString*)Unsafe.AsPointer(ref this), pszUrl, cchMax, pulSortIndex);
     }
 
     /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.SetEnumOptions"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
     public interface Interface : IEnumString.Interface
     {
         [VtblIndex(7)]
-        HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex);
+        HRESULT NextItem([NativeTypeName("LPWSTR")] char* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex);
 
         [VtblIndex(8)]
         HRESULT SetEnumOptions([NativeTypeName("DWORD")] uint dwOptions);
@@ -127,7 +127,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Skip;
@@ -139,7 +139,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IEnumString**, int> Clone;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> NextItem;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> NextItem;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetEnumOptions;

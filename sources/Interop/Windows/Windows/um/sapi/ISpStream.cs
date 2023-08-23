@@ -161,9 +161,9 @@ public unsafe partial struct ISpStream : ISpStream.Interface, INativeGuid
     /// <include file='ISpStream.xml' path='doc/member[@name="ISpStream.BindToFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT BindToFile([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPFILEMODE eMode, [NativeTypeName("const GUID *")] Guid* pFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx, [NativeTypeName("ULONGLONG")] ulong ullEventInterest)
+    public HRESULT BindToFile([NativeTypeName("LPCWSTR")] char* pszFileName, SPFILEMODE eMode, [NativeTypeName("const GUID *")] Guid* pFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx, [NativeTypeName("ULONGLONG")] ulong ullEventInterest)
     {
-        return ((delegate* unmanaged<ISpStream*, ushort*, SPFILEMODE, Guid*, WAVEFORMATEX*, ulong, int>)(lpVtbl[17]))((ISpStream*)Unsafe.AsPointer(ref this), pszFileName, eMode, pFormatId, pWaveFormatEx, ullEventInterest);
+        return ((delegate* unmanaged<ISpStream*, char*, SPFILEMODE, Guid*, WAVEFORMATEX*, ulong, int>)(lpVtbl[17]))((ISpStream*)Unsafe.AsPointer(ref this), pszFileName, eMode, pFormatId, pWaveFormatEx, ullEventInterest);
     }
 
     /// <include file='ISpStream.xml' path='doc/member[@name="ISpStream.Close"]/*' />
@@ -183,7 +183,7 @@ public unsafe partial struct ISpStream : ISpStream.Interface, INativeGuid
         HRESULT GetBaseStream(IStream** ppStream);
 
         [VtblIndex(17)]
-        HRESULT BindToFile([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPFILEMODE eMode, [NativeTypeName("const GUID *")] Guid* pFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx, [NativeTypeName("ULONGLONG")] ulong ullEventInterest);
+        HRESULT BindToFile([NativeTypeName("LPCWSTR")] char* pszFileName, SPFILEMODE eMode, [NativeTypeName("const GUID *")] Guid* pFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx, [NativeTypeName("ULONGLONG")] ulong ullEventInterest);
 
         [VtblIndex(18)]
         HRESULT Close();
@@ -244,7 +244,7 @@ public unsafe partial struct ISpStream : ISpStream.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IStream**, int> GetBaseStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, SPFILEMODE, const GUID *, const WAVEFORMATEX *, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SPFILEMODE, Guid*, WAVEFORMATEX*, ulong, int> BindToFile;
+        public delegate* unmanaged<TSelf*, char*, SPFILEMODE, Guid*, WAVEFORMATEX*, ulong, int> BindToFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

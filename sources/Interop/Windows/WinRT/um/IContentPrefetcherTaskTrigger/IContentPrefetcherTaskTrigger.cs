@@ -76,26 +76,26 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.TriggerContentPrefetcherTask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] ushort* packageFullName)
+    public HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, int>)(lpVtbl[6]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, char*, int>)(lpVtbl[6]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.IsRegisteredForContentPrefetch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)
+    public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
+        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, char*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] ushort* packageFullName);
+        HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] char* packageFullName);
 
         [VtblIndex(7)]
-        HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered);
+        HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered);
     }
 
     public partial struct Vtbl<TSelf>
@@ -120,9 +120,9 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> TriggerContentPrefetcherTask;
+        public delegate* unmanaged<TSelf*, char*, int> TriggerContentPrefetcherTask;
 
         [NativeTypeName("HRESULT (LPCWSTR, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, byte*, int> IsRegisteredForContentPrefetch;
+        public delegate* unmanaged<TSelf*, char*, byte*, int> IsRegisteredForContentPrefetch;
     }
 }

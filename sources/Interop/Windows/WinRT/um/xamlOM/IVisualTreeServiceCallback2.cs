@@ -60,15 +60,15 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     /// <include file='IVisualTreeServiceCallback2.xml' path='doc/member[@name="IVisualTreeServiceCallback2.OnElementStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context)
+    public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] char* context)
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, ushort*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
+        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, char*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
     }
 
     public interface Interface : IVisualTreeServiceCallback.Interface
     {
         [VtblIndex(4)]
-        HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] ushort* context);
+        HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] char* context);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         public delegate* unmanaged<TSelf*, ParentChildRelation, VisualElement, VisualMutationType, int> OnVisualTreeChange;
 
         [NativeTypeName("HRESULT (InstanceHandle, VisualElementState, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, VisualElementState, ushort*, int> OnElementStateChanged;
+        public delegate* unmanaged<TSelf*, InstanceHandle, VisualElementState, char*, int> OnElementStateChanged;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLSubmitData : IHTMLSubmitData.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLSubmitData*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLSubmitData*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLSubmitData : IHTMLSubmitData.Interface, INativ
     /// <include file='IHTMLSubmitData.xml' path='doc/member[@name="IHTMLSubmitData.appendNameValuePair"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT appendNameValuePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* value = null)
+    public HRESULT appendNameValuePair([NativeTypeName("BSTR")] char* name = null, [NativeTypeName("BSTR")] char* value = null)
     {
-        return ((delegate* unmanaged<IHTMLSubmitData*, ushort*, ushort*, int>)(lpVtbl[7]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IHTMLSubmitData*, char*, char*, int>)(lpVtbl[7]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IHTMLSubmitData.xml' path='doc/member[@name="IHTMLSubmitData.appendNameFilePair"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT appendNameFilePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* filename = null)
+    public HRESULT appendNameFilePair([NativeTypeName("BSTR")] char* name = null, [NativeTypeName("BSTR")] char* filename = null)
     {
-        return ((delegate* unmanaged<IHTMLSubmitData*, ushort*, ushort*, int>)(lpVtbl[8]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), name, filename);
+        return ((delegate* unmanaged<IHTMLSubmitData*, char*, char*, int>)(lpVtbl[8]))((IHTMLSubmitData*)Unsafe.AsPointer(ref this), name, filename);
     }
 
     /// <include file='IHTMLSubmitData.xml' path='doc/member[@name="IHTMLSubmitData.appendItemSeparator"]/*' />
@@ -105,10 +105,10 @@ public unsafe partial struct IHTMLSubmitData : IHTMLSubmitData.Interface, INativ
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT appendNameValuePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* value = null);
+        HRESULT appendNameValuePair([NativeTypeName("BSTR")] char* name = null, [NativeTypeName("BSTR")] char* value = null);
 
         [VtblIndex(8)]
-        HRESULT appendNameFilePair([NativeTypeName("BSTR")] ushort* name = null, [NativeTypeName("BSTR")] ushort* filename = null);
+        HRESULT appendNameFilePair([NativeTypeName("BSTR")] char* name = null, [NativeTypeName("BSTR")] char* filename = null);
 
         [VtblIndex(9)]
         HRESULT appendItemSeparator();
@@ -133,16 +133,16 @@ public unsafe partial struct IHTMLSubmitData : IHTMLSubmitData.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> appendNameValuePair;
+        public delegate* unmanaged<TSelf*, char*, char*, int> appendNameValuePair;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> appendNameFilePair;
+        public delegate* unmanaged<TSelf*, char*, char*, int> appendNameFilePair;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> appendItemSeparator;

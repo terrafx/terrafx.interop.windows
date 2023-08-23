@@ -65,9 +65,9 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
     /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetPropertyName([NativeTypeName("LPWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired)
+    public HRESULT GetPropertyName([NativeTypeName("LPWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired)
     {
-        return ((delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int>)(lpVtbl[5]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszPropertyName, cchPropertyName, pdwcchPropertyNameRequired);
+        return ((delegate* unmanaged<IContactPropertyCollection*, char*, uint, uint*, int>)(lpVtbl[5]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszPropertyName, cchPropertyName, pdwcchPropertyNameRequired);
     }
 
     /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyType"]/*' />
@@ -97,9 +97,9 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
     /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyArrayElementID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired)
+    public HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] char* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired)
     {
-        return ((delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int>)(lpVtbl[9]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszArrayElementID, cchArrayElementID, pdwcchArrayElementIDRequired);
+        return ((delegate* unmanaged<IContactPropertyCollection*, char*, uint, uint*, int>)(lpVtbl[9]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszArrayElementID, cchArrayElementID, pdwcchArrayElementIDRequired);
     }
 
     public interface Interface : IUnknown.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         HRESULT Next();
 
         [VtblIndex(5)]
-        HRESULT GetPropertyName([NativeTypeName("LPWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired);
+        HRESULT GetPropertyName([NativeTypeName("LPWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired);
 
         [VtblIndex(6)]
         HRESULT GetPropertyType([NativeTypeName("DWORD *")] uint* pdwType);
@@ -123,7 +123,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         HRESULT GetPropertyModificationDate(FILETIME* pftModificationDate);
 
         [VtblIndex(9)]
-        HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired);
+        HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] char* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired);
     }
 
     public partial struct Vtbl<TSelf>
@@ -145,7 +145,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         public delegate* unmanaged<TSelf*, int> Next;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPropertyName;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> GetPropertyName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetPropertyType;
@@ -157,6 +157,6 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         public delegate* unmanaged<TSelf*, FILETIME*, int> GetPropertyModificationDate;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPropertyArrayElementID;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> GetPropertyArrayElementID;
     }
 }

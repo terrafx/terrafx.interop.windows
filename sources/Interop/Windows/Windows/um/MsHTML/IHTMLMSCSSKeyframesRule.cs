@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.I
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort*, int>)(lpVtbl[7]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, char*, int>)(lpVtbl[7]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort**, int>)(lpVtbl[8]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, char**, int>)(lpVtbl[8]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.get_cssRules"]/*' />
@@ -105,46 +105,46 @@ public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.I
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.appendRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT appendRule([NativeTypeName("BSTR")] ushort* bstrRule)
+    public HRESULT appendRule([NativeTypeName("BSTR")] char* bstrRule)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort*, int>)(lpVtbl[10]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrRule);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, char*, int>)(lpVtbl[10]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrRule);
     }
 
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.deleteRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT deleteRule([NativeTypeName("BSTR")] ushort* bstrKey)
+    public HRESULT deleteRule([NativeTypeName("BSTR")] char* bstrKey)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort*, int>)(lpVtbl[11]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrKey);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, char*, int>)(lpVtbl[11]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrKey);
     }
 
     /// <include file='IHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="IHTMLMSCSSKeyframesRule.findRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT findRule([NativeTypeName("BSTR")] ushort* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule)
+    public HRESULT findRule([NativeTypeName("BSTR")] char* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule)
     {
-        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, ushort*, IHTMLMSCSSKeyframeRule**, int>)(lpVtbl[12]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrKey, ppMSKeyframeRule);
+        return ((delegate* unmanaged<IHTMLMSCSSKeyframesRule*, char*, IHTMLMSCSSKeyframeRule**, int>)(lpVtbl[12]))((IHTMLMSCSSKeyframesRule*)Unsafe.AsPointer(ref this), bstrKey, ppMSKeyframeRule);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
 
         [VtblIndex(10)]
-        HRESULT appendRule([NativeTypeName("BSTR")] ushort* bstrRule);
+        HRESULT appendRule([NativeTypeName("BSTR")] char* bstrRule);
 
         [VtblIndex(11)]
-        HRESULT deleteRule([NativeTypeName("BSTR")] ushort* bstrKey);
+        HRESULT deleteRule([NativeTypeName("BSTR")] char* bstrKey);
 
         [VtblIndex(12)]
-        HRESULT findRule([NativeTypeName("BSTR")] ushort* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule);
+        HRESULT findRule([NativeTypeName("BSTR")] char* bstrKey, IHTMLMSCSSKeyframeRule** ppMSKeyframeRule);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,27 +166,27 @@ public unsafe partial struct IHTMLMSCSSKeyframesRule : IHTMLMSCSSKeyframesRule.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (IHTMLStyleSheetRulesCollection **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLStyleSheetRulesCollection**, int> get_cssRules;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> appendRule;
+        public delegate* unmanaged<TSelf*, char*, int> appendRule;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> deleteRule;
+        public delegate* unmanaged<TSelf*, char*, int> deleteRule;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLMSCSSKeyframeRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLMSCSSKeyframeRule**, int> findRule;
+        public delegate* unmanaged<TSelf*, char*, IHTMLMSCSSKeyframeRule**, int> findRule;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.ParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
+    public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
+        return ((delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.EnumObjects"]/*' />
@@ -121,15 +121,15 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.SetNameOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+    public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
+        return ((delegate* unmanaged<IShellFolder*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes);
+        HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes);
 
         [VtblIndex(4)]
         HRESULT EnumObjects(HWND hwnd, [NativeTypeName("SHCONTF")] uint grfFlags, IEnumIDList** ppenumIDList);
@@ -156,7 +156,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
         HRESULT GetDisplayNameOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("SHGDNF")] uint uFlags, STRRET* pName);
 
         [VtblIndex(12)]
-        HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
+        HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
     }
 
     public partial struct Vtbl<TSelf>
@@ -172,7 +172,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IBindCtx *, LPWSTR, ULONG *, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (HWND, SHCONTF, IEnumIDList **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
@@ -199,6 +199,6 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
 
         [NativeTypeName("HRESULT (HWND, LPCITEMIDLIST, LPCWSTR, SHGDNF, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
+        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int> SetNameOf;
     }
 }

@@ -15,13 +15,13 @@ public static unsafe partial class Windows
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows6.2")]
-    public static extern uint WcmQueryProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("PDWORD")] uint* pdwDataSize, [NativeTypeName("PBYTE *")] byte** ppData);
+    public static extern uint WcmQueryProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] char* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("PDWORD")] uint* pdwDataSize, [NativeTypeName("PBYTE *")] byte** ppData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmSetProperty"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows6.2")]
-    public static extern uint WcmSetProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] ushort* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("const BYTE *")] byte* pbData);
+    public static extern uint WcmSetProperty([NativeTypeName("const GUID *")] Guid* pInterface, [NativeTypeName("LPCWSTR")] char* strProfileName, WCM_PROPERTY Property, void* pReserved, [NativeTypeName("DWORD")] uint dwDataSize, [NativeTypeName("const BYTE *")] byte* pbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcmGetProfileList"]/*' />
     [DllImport("wcmapi", ExactSpelling = true)]

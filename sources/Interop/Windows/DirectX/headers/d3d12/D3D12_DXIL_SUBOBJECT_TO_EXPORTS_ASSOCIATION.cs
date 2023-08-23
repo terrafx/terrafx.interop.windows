@@ -10,12 +10,12 @@ public unsafe partial struct D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION
 {
     /// <include file='D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.xml' path='doc/member[@name="D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.SubobjectToAssociate"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* SubobjectToAssociate;
+    public char* SubobjectToAssociate;
 
     /// <include file='D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.xml' path='doc/member[@name="D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.NumExports"]/*' />
     public uint NumExports;
 
     /// <include file='D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.xml' path='doc/member[@name="D3D12_DXIL_SUBOBJECT_TO_EXPORTS_ASSOCIATION.pExports"]/*' />
     [NativeTypeName("LPCWSTR *")]
-    public ushort** pExports;
+    public char** pExports;
 }

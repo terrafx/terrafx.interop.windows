@@ -97,17 +97,17 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetTransportBasicParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    public HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, char**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetTransportBasicParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData)
+    public HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] char* pszData)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, char*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetTransportVideoParameters"]/*' />
@@ -291,10 +291,10 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
         HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue);
 
         [VtblIndex(9)]
-        HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] char** ppszData);
 
         [VtblIndex(10)]
-        HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData);
+        HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] char* pszData);
 
         [VtblIndex(11)]
         HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
@@ -388,10 +388,10 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
         public delegate* unmanaged<TSelf*, int, int*, int> GetStatus;
 
         [NativeTypeName("HRESULT (long, long *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, ushort**, int> GetTransportBasicParameters;
+        public delegate* unmanaged<TSelf*, int, int*, char**, int> GetTransportBasicParameters;
 
         [NativeTypeName("HRESULT (long, long, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort*, int> SetTransportBasicParameters;
+        public delegate* unmanaged<TSelf*, int, int, char*, int> SetTransportBasicParameters;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int*, int> GetTransportVideoParameters;

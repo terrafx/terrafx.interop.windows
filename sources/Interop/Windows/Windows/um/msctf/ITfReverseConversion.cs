@@ -49,15 +49,15 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
     /// <include file='ITfReverseConversion.xml' path='doc/member[@name="ITfReverseConversion.DoReverseConversion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] ushort* lpstr, ITfReverseConversionList** ppList)
+    public HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] char* lpstr, ITfReverseConversionList** ppList)
     {
-        return ((delegate* unmanaged<ITfReverseConversion*, ushort*, ITfReverseConversionList**, int>)(lpVtbl[3]))((ITfReverseConversion*)Unsafe.AsPointer(ref this), lpstr, ppList);
+        return ((delegate* unmanaged<ITfReverseConversion*, char*, ITfReverseConversionList**, int>)(lpVtbl[3]))((ITfReverseConversion*)Unsafe.AsPointer(ref this), lpstr, ppList);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] ushort* lpstr, ITfReverseConversionList** ppList);
+        HRESULT DoReverseConversion([NativeTypeName("LPCWSTR")] char* lpstr, ITfReverseConversionList** ppList);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ITfReverseConversion : ITfReverseConversion.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ITfReverseConversionList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ITfReverseConversionList**, int> DoReverseConversion;
+        public delegate* unmanaged<TSelf*, char*, ITfReverseConversionList**, int> DoReverseConversion;
     }
 }

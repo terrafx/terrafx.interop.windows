@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnPropertyUIStatus*, char**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus.GetStatus"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStatus;

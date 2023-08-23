@@ -105,17 +105,17 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
+    public HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
+        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, char*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, int>)(lpVtbl[11]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cch);
+        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, char*, uint, int>)(lpVtbl[11]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cch);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetFormattedText"]/*' />
@@ -249,9 +249,9 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertTextAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd)
+    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, ushort*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[28]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, ppaStart, ppaEnd);
+        return ((delegate* unmanaged<ITextStoreAnchor*, uint, char*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[28]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, ppaStart, ppaEnd);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertEmbeddedAtSelection"]/*' />
@@ -286,10 +286,10 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ANCHOR *")] TS_SELECTION_ANCHOR* pSelection);
 
         [VtblIndex(10)]
-        HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor);
+        HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor);
 
         [VtblIndex(11)]
-        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch);
+        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch);
 
         [VtblIndex(12)]
         HRESULT GetFormattedText(IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject);
@@ -340,7 +340,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable);
 
         [VtblIndex(28)]
-        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd);
+        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd);
 
         [VtblIndex(29)]
         HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd);
@@ -380,10 +380,10 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         public delegate* unmanaged<TSelf*, uint, TS_SELECTION_ANCHOR*, int> SetSelection;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *, WCHAR *, ULONG, ULONG *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, char*, uint, uint*, BOOL, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, ushort*, uint, int> SetText;
+        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, char*, uint, int> SetText;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, IDataObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, IDataObject**, int> GetFormattedText;
@@ -434,7 +434,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         public delegate* unmanaged<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, const WCHAR *, ULONG, IAnchor **, IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, IAnchor**, IAnchor**, int> InsertTextAtSelection;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, IAnchor**, IAnchor**, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (DWORD, IDataObject *, IAnchor **, IAnchor **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDataObject*, IAnchor**, IAnchor**, int> InsertEmbeddedAtSelection;

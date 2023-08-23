@@ -49,15 +49,15 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
     /// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource.GetResults"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IOpenSearchSource*, HWND, ushort*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
+        return ((delegate* unmanaged<IOpenSearchSource*, HWND, char*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, DWORD, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, uint, uint, Guid*, void**, int> GetResults;
+        public delegate* unmanaged<TSelf*, HWND, char*, uint, uint, Guid*, void**, int> GetResults;
     }
 }

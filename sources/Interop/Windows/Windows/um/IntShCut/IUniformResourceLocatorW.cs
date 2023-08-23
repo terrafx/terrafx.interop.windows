@@ -49,17 +49,17 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
     /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.SetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
+    public HRESULT SetURL([NativeTypeName("LPCWSTR")] char* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
+        return ((delegate* unmanaged<IUniformResourceLocatorW*, char*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
     }
 
     /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
+    public HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort**, int>)(lpVtbl[4]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), ppszURL);
+        return ((delegate* unmanaged<IUniformResourceLocatorW*, char**, int>)(lpVtbl[4]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
     /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.InvokeCommand"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
+        HRESULT SetURL([NativeTypeName("LPCWSTR")] char* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
 
         [VtblIndex(4)]
-        HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+        HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL);
 
         [VtblIndex(5)]
         HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici);
@@ -95,10 +95,10 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetURL;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetURL;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, char**, int> GetURL;
 
         [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, URLINVOKECOMMANDINFOW*, int> InvokeCommand;

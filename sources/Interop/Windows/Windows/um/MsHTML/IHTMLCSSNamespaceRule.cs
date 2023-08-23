@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCSSNamespaceRule : IHTMLCSSNamespaceRule.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IHTMLCSSNamespaceRule : IHTMLCSSNamespaceRule.Inter
     /// <include file='IHTMLCSSNamespaceRule.xml' path='doc/member[@name="IHTMLCSSNamespaceRule.get_namespaceURI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, ushort**, int>)(lpVtbl[7]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, char**, int>)(lpVtbl[7]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSNamespaceRule.xml' path='doc/member[@name="IHTMLCSSNamespaceRule.get_prefix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_prefix([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, ushort**, int>)(lpVtbl[8]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSNamespaceRule*, char**, int>)(lpVtbl[8]))((IHTMLCSSNamespaceRule*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_namespaceURI([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_prefix([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IHTMLCSSNamespaceRule : IHTMLCSSNamespaceRule.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_namespaceURI;
+        public delegate* unmanaged<TSelf*, char**, int> get_namespaceURI;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_prefix;
+        public delegate* unmanaged<TSelf*, char**, int> get_prefix;
     }
 }

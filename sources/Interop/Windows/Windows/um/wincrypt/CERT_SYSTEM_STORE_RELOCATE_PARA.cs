@@ -66,7 +66,7 @@ public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszSystemStore"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszSystemStore
+    public ref char* pwszSystemStore
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -104,6 +104,6 @@ public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszSystemStore"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pwszSystemStore;
+        public char* pwszSystemStore;
     }
 }

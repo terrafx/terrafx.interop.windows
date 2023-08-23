@@ -49,15 +49,15 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
     /// <include file='IPackageExecutionStateChangeNotification.xml' path='doc/member[@name="IPackageExecutionStateChangeNotification.OnStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)
+    public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] char* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)
     {
-        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, ushort*, PACKAGE_EXECUTION_STATE, int>)(lpVtbl[3]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), pszPackageFullName, pesNewState);
+        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, char*, PACKAGE_EXECUTION_STATE, int>)(lpVtbl[3]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), pszPackageFullName, pesNewState);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState);
+        HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] char* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, PACKAGE_EXECUTION_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PACKAGE_EXECUTION_STATE, int> OnStateChanged;
+        public delegate* unmanaged<TSelf*, char*, PACKAGE_EXECUTION_STATE, int> OnStateChanged;
     }
 }

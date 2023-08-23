@@ -65,9 +65,9 @@ public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMFocusEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMFocusEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMFocusEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMFocusEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeG
     /// <include file='IDOMFocusEvent.xml' path='doc/member[@name="IDOMFocusEvent.initFocusEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT initFocusEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg)
+    public HRESULT initFocusEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg)
     {
-        return ((delegate* unmanaged<IDOMFocusEvent*, ushort*, short, short, IHTMLWindow2*, int, IEventTarget*, int>)(lpVtbl[8]))((IDOMFocusEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail, relatedTargetArg);
+        return ((delegate* unmanaged<IDOMFocusEvent*, char*, short, short, IHTMLWindow2*, int, IEventTarget*, int>)(lpVtbl[8]))((IDOMFocusEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail, relatedTargetArg);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeG
         HRESULT get_relatedTarget(IEventTarget** p);
 
         [VtblIndex(8)]
-        HRESULT initFocusEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg);
+        HRESULT initFocusEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail, IEventTarget* relatedTargetArg);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, IEventTarget**, int> get_relatedTarget;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, IEventTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, IEventTarget*, int> initFocusEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, IEventTarget*, int> initFocusEvent;
     }
 }

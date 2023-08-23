@@ -183,7 +183,7 @@ public unsafe partial struct VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
     [UnscopedRef]
-    public ref ushort* bstrVal
+    public ref char* bstrVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -348,7 +348,7 @@ public unsafe partial struct VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
     [UnscopedRef]
-    public ref ushort** pbstrVal
+    public ref char** pbstrVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -681,7 +681,7 @@ public unsafe partial struct VARIANT
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR")]
-                public ushort* bstrVal;
+                public char* bstrVal;
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*' />
                 [FieldOffset(0)]
@@ -748,7 +748,7 @@ public unsafe partial struct VARIANT
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR *")]
-                public ushort** pbstrVal;
+                public char** pbstrVal;
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*' />
                 [FieldOffset(0)]

@@ -65,17 +65,17 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.SAPI2UPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength)
+    public HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] char* pszSAPIId, [NativeTypeName("SPPHONEID *")] char* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[5]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszSAPIId, pszUPSId, cMaxLength);
+        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, char*, char*, uint, int>)(lpVtbl[5]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszSAPIId, pszUPSId, cMaxLength);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.UPS2SAPI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength)
+    public HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] char* pszUPSId, [NativeTypeName("SPPHONEID *")] char* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength)
     {
-        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int>)(lpVtbl[6]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszUPSId, pszSAPIId, cMaxLength);
+        return ((delegate* unmanaged<ISpPhoneticAlphabetConverter*, char*, char*, uint, int>)(lpVtbl[6]))((ISpPhoneticAlphabetConverter*)Unsafe.AsPointer(ref this), pszUPSId, pszSAPIId, cMaxLength);
     }
 
     /// <include file='ISpPhoneticAlphabetConverter.xml' path='doc/member[@name="ISpPhoneticAlphabetConverter.GetMaxConvertLength"]/*' />
@@ -95,10 +95,10 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         HRESULT SetLangId([NativeTypeName("WORD")] ushort LangID);
 
         [VtblIndex(5)]
-        HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength);
+        HRESULT SAPI2UPS([NativeTypeName("const SPPHONEID *")] char* pszSAPIId, [NativeTypeName("SPPHONEID *")] char* pszUPSId, [NativeTypeName("DWORD")] uint cMaxLength);
 
         [VtblIndex(6)]
-        HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] ushort* pszUPSId, [NativeTypeName("SPPHONEID *")] ushort* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength);
+        HRESULT UPS2SAPI([NativeTypeName("const SPPHONEID *")] char* pszUPSId, [NativeTypeName("SPPHONEID *")] char* pszSAPIId, [NativeTypeName("DWORD")] uint cMaxLength);
 
         [VtblIndex(7)]
         HRESULT GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength);
@@ -123,10 +123,10 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         public delegate* unmanaged<TSelf*, ushort, int> SetLangId;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> SAPI2UPS;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, int> SAPI2UPS;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> UPS2SAPI;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, int> UPS2SAPI;
 
         [NativeTypeName("HRESULT (DWORD, BOOL, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, BOOL, uint*, int> GetMaxConvertLength;

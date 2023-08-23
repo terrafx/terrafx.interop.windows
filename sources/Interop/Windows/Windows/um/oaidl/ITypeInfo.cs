@@ -81,9 +81,9 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** rgBstrNames, uint cMaxNames, uint* pcNames)
+    public HRESULT GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** rgBstrNames, uint cMaxNames, uint* pcNames)
     {
-        return ((delegate* unmanaged<ITypeInfo*, int, ushort**, uint, uint*, int>)(lpVtbl[7]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, rgBstrNames, cMaxNames, pcNames);
+        return ((delegate* unmanaged<ITypeInfo*, int, char**, uint, uint*, int>)(lpVtbl[7]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, rgBstrNames, cMaxNames, pcNames);
     }
 
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetRefTypeOfImplType"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetIDsOfNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetIDsOfNames([NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("MEMBERID *")] int* pMemId)
+    public HRESULT GetIDsOfNames([NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("MEMBERID *")] int* pMemId)
     {
-        return ((delegate* unmanaged<ITypeInfo*, ushort**, uint, int*, int>)(lpVtbl[10]))((ITypeInfo*)Unsafe.AsPointer(ref this), rgszNames, cNames, pMemId);
+        return ((delegate* unmanaged<ITypeInfo*, char**, uint, int*, int>)(lpVtbl[10]))((ITypeInfo*)Unsafe.AsPointer(ref this), rgszNames, cNames, pMemId);
     }
 
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.Invoke"]/*' />
@@ -121,17 +121,17 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetDocumentation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetDocumentation([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
+    public HRESULT GetDocumentation([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** pBstrName, [NativeTypeName("BSTR *")] char** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] char** pBstrHelpFile)
     {
-        return ((delegate* unmanaged<ITypeInfo*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[12]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
+        return ((delegate* unmanaged<ITypeInfo*, int, char**, char**, uint*, char**, int>)(lpVtbl[12]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
     }
 
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetDllEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("BSTR *")] ushort** pBstrDllName, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("WORD *")] ushort* pwOrdinal)
+    public HRESULT GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("BSTR *")] char** pBstrDllName, [NativeTypeName("BSTR *")] char** pBstrName, [NativeTypeName("WORD *")] ushort* pwOrdinal)
     {
-        return ((delegate* unmanaged<ITypeInfo*, int, INVOKEKIND, ushort**, ushort**, ushort*, int>)(lpVtbl[13]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, invKind, pBstrDllName, pBstrName, pwOrdinal);
+        return ((delegate* unmanaged<ITypeInfo*, int, INVOKEKIND, char**, char**, ushort*, int>)(lpVtbl[13]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, invKind, pBstrDllName, pBstrName, pwOrdinal);
     }
 
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetRefTypeInfo"]/*' />
@@ -161,9 +161,9 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetMops"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** pBstrMops)
+    public HRESULT GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** pBstrMops)
     {
-        return ((delegate* unmanaged<ITypeInfo*, int, ushort**, int>)(lpVtbl[17]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, pBstrMops);
+        return ((delegate* unmanaged<ITypeInfo*, int, char**, int>)(lpVtbl[17]))((ITypeInfo*)Unsafe.AsPointer(ref this), memid, pBstrMops);
     }
 
     /// <include file='ITypeInfo.xml' path='doc/member[@name="ITypeInfo.GetContainingTypeLib"]/*' />
@@ -213,7 +213,7 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         HRESULT GetVarDesc(uint index, VARDESC** ppVarDesc);
 
         [VtblIndex(7)]
-        HRESULT GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** rgBstrNames, uint cMaxNames, uint* pcNames);
+        HRESULT GetNames([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** rgBstrNames, uint cMaxNames, uint* pcNames);
 
         [VtblIndex(8)]
         HRESULT GetRefTypeOfImplType(uint index, [NativeTypeName("HREFTYPE *")] uint* pRefType);
@@ -222,16 +222,16 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         HRESULT GetImplTypeFlags(uint index, int* pImplTypeFlags);
 
         [VtblIndex(10)]
-        HRESULT GetIDsOfNames([NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("MEMBERID *")] int* pMemId);
+        HRESULT GetIDsOfNames([NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("MEMBERID *")] int* pMemId);
 
         [VtblIndex(11)]
         HRESULT Invoke([NativeTypeName("PVOID")] void* pvInstance, [NativeTypeName("MEMBERID")] int memid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr);
 
         [VtblIndex(12)]
-        HRESULT GetDocumentation([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile);
+        HRESULT GetDocumentation([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** pBstrName, [NativeTypeName("BSTR *")] char** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] char** pBstrHelpFile);
 
         [VtblIndex(13)]
-        HRESULT GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("BSTR *")] ushort** pBstrDllName, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("WORD *")] ushort* pwOrdinal);
+        HRESULT GetDllEntry([NativeTypeName("MEMBERID")] int memid, INVOKEKIND invKind, [NativeTypeName("BSTR *")] char** pBstrDllName, [NativeTypeName("BSTR *")] char** pBstrName, [NativeTypeName("WORD *")] ushort* pwOrdinal);
 
         [VtblIndex(14)]
         HRESULT GetRefTypeInfo([NativeTypeName("HREFTYPE")] uint hRefType, ITypeInfo** ppTInfo);
@@ -243,7 +243,7 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         HRESULT CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("PVOID *")] void** ppvObj);
 
         [VtblIndex(17)]
-        HRESULT GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] ushort** pBstrMops);
+        HRESULT GetMops([NativeTypeName("MEMBERID")] int memid, [NativeTypeName("BSTR *")] char** pBstrMops);
 
         [VtblIndex(18)]
         HRESULT GetContainingTypeLib(ITypeLib** ppTLib, uint* pIndex);
@@ -283,7 +283,7 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, VARDESC**, int> GetVarDesc;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, uint, uint*, int> GetNames;
+        public delegate* unmanaged<TSelf*, int, char**, uint, uint*, int> GetNames;
 
         [NativeTypeName("HRESULT (UINT, HREFTYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetRefTypeOfImplType;
@@ -292,16 +292,16 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, int*, int> GetImplTypeFlags;
 
         [NativeTypeName("HRESULT (LPOLESTR *, UINT, MEMBERID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, char**, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (PVOID, MEMBERID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*, int, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+        public delegate* unmanaged<TSelf*, int, char**, char**, uint*, char**, int> GetDocumentation;
 
         [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, BSTR *, BSTR *, WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, INVOKEKIND, ushort**, ushort**, ushort*, int> GetDllEntry;
+        public delegate* unmanaged<TSelf*, int, INVOKEKIND, char**, char**, ushort*, int> GetDllEntry;
 
         [NativeTypeName("HRESULT (HREFTYPE, ITypeInfo **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ITypeInfo**, int> GetRefTypeInfo;
@@ -313,7 +313,7 @@ public unsafe partial struct ITypeInfo : ITypeInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IUnknown*, Guid*, void**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> GetMops;
+        public delegate* unmanaged<TSelf*, int, char**, int> GetMops;
 
         [NativeTypeName("HRESULT (ITypeLib **, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITypeLib**, uint*, int> GetContainingTypeLib;

@@ -65,9 +65,9 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IProgressItems*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IProgressItems*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IProgressItems*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IProgressItems*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface, INativeG
     /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.ProgressItemFromDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] ushort* description, IProgressItem** item)
+    public HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] char* description, IProgressItem** item)
     {
-        return ((delegate* unmanaged<IProgressItems*, ushort*, IProgressItem**, int>)(lpVtbl[11]))((IProgressItems*)Unsafe.AsPointer(ref this), description, item);
+        return ((delegate* unmanaged<IProgressItems*, char*, IProgressItem**, int>)(lpVtbl[11]))((IProgressItems*)Unsafe.AsPointer(ref this), description, item);
     }
 
     /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.get_EnumProgressItems"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface, INativeG
         HRESULT ProgressItemFromBlock([NativeTypeName("ULONG")] uint block, IProgressItem** item);
 
         [VtblIndex(11)]
-        HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] ushort* description, IProgressItem** item);
+        HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] char* description, IProgressItem** item);
 
         [VtblIndex(12)]
         HRESULT get_EnumProgressItems(IEnumProgressItems** NewEnum);
@@ -166,7 +166,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -184,7 +184,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, IProgressItem**, int> ProgressItemFromBlock;
 
         [NativeTypeName("HRESULT (BSTR, IProgressItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IProgressItem**, int> ProgressItemFromDescription;
+        public delegate* unmanaged<TSelf*, char*, IProgressItem**, int> ProgressItemFromDescription;
 
         [NativeTypeName("HRESULT (IEnumProgressItems **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumProgressItems**, int> get_EnumProgressItems;

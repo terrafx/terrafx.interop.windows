@@ -67,9 +67,9 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** file)
+    public HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] char* fileName, IAppxFile** file)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, ushort*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
+        return ((delegate* unmanaged<IAppxPackageReader*, char*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFiles"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
         HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, IAppxFile** file);
 
         [VtblIndex(5)]
-        HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** file);
+        HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] char* fileName, IAppxFile** file);
 
         [VtblIndex(6)]
         HRESULT GetPayloadFiles(IAppxFilesEnumerator** filesEnumerator);
@@ -125,7 +125,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
         public delegate* unmanaged<TSelf*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IAppxFile**, int> GetPayloadFile;
+        public delegate* unmanaged<TSelf*, char*, IAppxFile**, int> GetPayloadFile;
 
         [NativeTypeName("HRESULT (IAppxFilesEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxFilesEnumerator**, int> GetPayloadFiles;

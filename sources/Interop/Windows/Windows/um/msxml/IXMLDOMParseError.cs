@@ -65,9 +65,9 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IXMLDOMParseError*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,25 +89,25 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_url"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString)
+    public HRESULT get_url([NativeTypeName("BSTR *")] char** urlString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[8]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), urlString);
+        return ((delegate* unmanaged<IXMLDOMParseError*, char**, int>)(lpVtbl[8]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), urlString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_reason"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString)
+    public HRESULT get_reason([NativeTypeName("BSTR *")] char** reasonString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[9]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), reasonString);
+        return ((delegate* unmanaged<IXMLDOMParseError*, char**, int>)(lpVtbl[9]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), reasonString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_srcText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString)
+    public HRESULT get_srcText([NativeTypeName("BSTR *")] char** sourceString)
     {
-        return ((delegate* unmanaged<IXMLDOMParseError*, ushort**, int>)(lpVtbl[10]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), sourceString);
+        return ((delegate* unmanaged<IXMLDOMParseError*, char**, int>)(lpVtbl[10]))((IXMLDOMParseError*)Unsafe.AsPointer(ref this), sourceString);
     }
 
     /// <include file='IXMLDOMParseError.xml' path='doc/member[@name="IXMLDOMParseError.get_line"]/*' />
@@ -140,13 +140,13 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
         HRESULT get_errorCode([NativeTypeName("long *")] int* errorCode);
 
         [VtblIndex(8)]
-        HRESULT get_url([NativeTypeName("BSTR *")] ushort** urlString);
+        HRESULT get_url([NativeTypeName("BSTR *")] char** urlString);
 
         [VtblIndex(9)]
-        HRESULT get_reason([NativeTypeName("BSTR *")] ushort** reasonString);
+        HRESULT get_reason([NativeTypeName("BSTR *")] char** reasonString);
 
         [VtblIndex(10)]
-        HRESULT get_srcText([NativeTypeName("BSTR *")] ushort** sourceString);
+        HRESULT get_srcText([NativeTypeName("BSTR *")] char** sourceString);
 
         [VtblIndex(11)]
         HRESULT get_line([NativeTypeName("long *")] int* lineNumber);
@@ -177,7 +177,7 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -186,13 +186,13 @@ public unsafe partial struct IXMLDOMParseError : IXMLDOMParseError.Interface, IN
         public delegate* unmanaged<TSelf*, int*, int> get_errorCode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_url;
+        public delegate* unmanaged<TSelf*, char**, int> get_url;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_reason;
+        public delegate* unmanaged<TSelf*, char**, int> get_reason;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_srcText;
+        public delegate* unmanaged<TSelf*, char**, int> get_srcText;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_line;

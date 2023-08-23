@@ -49,17 +49,17 @@ public unsafe partial struct ITfRange : ITfRange.Interface, INativeGuid
     /// <include file='ITfRange.xml' path='doc/member[@name="ITfRange.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch)
+    public HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch)
     {
-        return ((delegate* unmanaged<ITfRange*, uint, uint, ushort*, uint, uint*, int>)(lpVtbl[3]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
+        return ((delegate* unmanaged<ITfRange*, uint, uint, char*, uint, uint*, int>)(lpVtbl[3]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
     }
 
     /// <include file='ITfRange.xml' path='doc/member[@name="ITfRange.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
+    public HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch)
     {
-        return ((delegate* unmanaged<ITfRange*, uint, uint, ushort*, int, int>)(lpVtbl[4]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
+        return ((delegate* unmanaged<ITfRange*, uint, uint, char*, int, int>)(lpVtbl[4]))((ITfRange*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
     }
 
     /// <include file='ITfRange.xml' path='doc/member[@name="ITfRange.GetFormattedText"]/*' />
@@ -225,10 +225,10 @@ public unsafe partial struct ITfRange : ITfRange.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch);
+        HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch);
 
         [VtblIndex(4)]
-        HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch);
+        HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch);
 
         [VtblIndex(5)]
         HRESULT GetFormattedText([NativeTypeName("TfEditCookie")] uint ec, IDataObject** ppDataObject);
@@ -304,10 +304,10 @@ public unsafe partial struct ITfRange : ITfRange.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, WCHAR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, uint, uint*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, uint, uint*, int> GetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int, int> SetText;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, int, int> SetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, IDataObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDataObject**, int> GetFormattedText;

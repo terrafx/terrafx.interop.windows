@@ -65,9 +65,9 @@ public unsafe partial struct IWebBridge : IWebBridge.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWebBridge*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWebBridge*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IWebBridge*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWebBridge*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IWebBridge : IWebBridge.Interface, INativeGuid
     /// <include file='IWebBridge.xml' path='doc/member[@name="IWebBridge.put_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_URL([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_URL([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IWebBridge*, ushort*, int>)(lpVtbl[7]))((IWebBridge*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IWebBridge*, char*, int>)(lpVtbl[7]))((IWebBridge*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IWebBridge.xml' path='doc/member[@name="IWebBridge.get_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_URL([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IWebBridge*, ushort**, int>)(lpVtbl[8]))((IWebBridge*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IWebBridge*, char**, int>)(lpVtbl[8]))((IWebBridge*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IWebBridge.xml' path='doc/member[@name="IWebBridge.put_Scrollbar"]/*' />
@@ -153,10 +153,10 @@ public unsafe partial struct IWebBridge : IWebBridge.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_URL([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_URL([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_URL([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT put_Scrollbar([NativeTypeName("VARIANT_BOOL")] short v);
@@ -199,16 +199,16 @@ public unsafe partial struct IWebBridge : IWebBridge.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_URL;
+        public delegate* unmanaged<TSelf*, char*, int> put_URL;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_URL;
+        public delegate* unmanaged<TSelf*, char**, int> get_URL;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_Scrollbar;

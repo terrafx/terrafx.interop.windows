@@ -49,17 +49,17 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Register([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken)
+    public HRESULT Register([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken)
     {
-        return ((delegate* unmanaged<IResourceManager*, ushort*, int, int*, int>)(lpVtbl[3]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, plToken);
+        return ((delegate* unmanaged<IResourceManager*, char*, int, int*, int>)(lpVtbl[3]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, plToken);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.RegisterGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken)
+    public HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken)
     {
-        return ((delegate* unmanaged<IResourceManager*, ushort*, int, int*, int*, int>)(lpVtbl[4]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, palTokens, plToken);
+        return ((delegate* unmanaged<IResourceManager*, char*, int, int*, int*, int>)(lpVtbl[4]))((IResourceManager*)Unsafe.AsPointer(ref this), pName, cResource, palTokens, plToken);
     }
 
     /// <include file='IResourceManager.xml' path='doc/member[@name="IResourceManager.RequestResource"]/*' />
@@ -113,10 +113,10 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Register([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken);
+        HRESULT Register([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* plToken);
 
         [VtblIndex(4)]
-        HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken);
+        HRESULT RegisterGroup([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int cResource, [NativeTypeName("LONG *")] int* palTokens, [NativeTypeName("LONG *")] int* plToken);
 
         [VtblIndex(5)]
         HRESULT RequestResource([NativeTypeName("LONG")] int idResource, IUnknown* pFocusObject, IResourceConsumer* pConsumer);
@@ -150,10 +150,10 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> Register;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> Register;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int*, int> RegisterGroup;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int*, int> RegisterGroup;
 
         [NativeTypeName("HRESULT (LONG, IUnknown *, IResourceConsumer *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IUnknown*, IResourceConsumer*, int> RequestResource;

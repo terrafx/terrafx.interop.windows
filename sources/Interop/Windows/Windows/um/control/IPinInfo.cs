@@ -65,9 +65,9 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IPinInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IPinInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[11]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged<IPinInfo*, char**, int>)(lpVtbl[11]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Direction"]/*' />
@@ -129,9 +129,9 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_PinID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID)
+    public HRESULT get_PinID([NativeTypeName("BSTR *")] char** strPinID)
     {
-        return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[13]))((IPinInfo*)Unsafe.AsPointer(ref this), strPinID);
+        return ((delegate* unmanaged<IPinInfo*, char**, int>)(lpVtbl[13]))((IPinInfo*)Unsafe.AsPointer(ref this), strPinID);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_MediaTypes"]/*' />
@@ -197,13 +197,13 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
         HRESULT get_FilterInfo(IDispatch** ppUnk);
 
         [VtblIndex(11)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** ppUnk);
 
         [VtblIndex(12)]
         HRESULT get_Direction([NativeTypeName("LONG *")] int* ppDirection);
 
         [VtblIndex(13)]
-        HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID);
+        HRESULT get_PinID([NativeTypeName("BSTR *")] char** strPinID);
 
         [VtblIndex(14)]
         HRESULT get_MediaTypes(IDispatch** ppUnk);
@@ -243,7 +243,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -261,13 +261,13 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_FilterInfo;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_Direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_PinID;
+        public delegate* unmanaged<TSelf*, char**, int> get_PinID;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_MediaTypes;

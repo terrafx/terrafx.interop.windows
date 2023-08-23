@@ -51,9 +51,9 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IMFTimedTextStyle*, char**, int>)(lpVtbl[3]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.IsExternal"]/*' />
@@ -67,9 +67,9 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontFamily"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] ushort** fontFamily)
+    public HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] char** fontFamily)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, ushort**, int>)(lpVtbl[5]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontFamily);
+        return ((delegate* unmanaged<IMFTimedTextStyle*, char**, int>)(lpVtbl[5]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontFamily);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontSize"]/*' />
@@ -155,13 +155,13 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
         BOOL IsExternal();
 
         [VtblIndex(5)]
-        HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] ushort** fontFamily);
+        HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] char** fontFamily);
 
         [VtblIndex(6)]
         HRESULT GetFontSize(double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType);
@@ -207,13 +207,13 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> IsExternal;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFontFamily;
+        public delegate* unmanaged<TSelf*, char**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetFontSize;

@@ -18,5 +18,5 @@ public unsafe partial struct SHCOLUMNINIT
 
     /// <include file='SHCOLUMNINIT.xml' path='doc/member[@name="SHCOLUMNINIT.wszFolder"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszFolder[260];
+    public fixed char wszFolder[260];
 }

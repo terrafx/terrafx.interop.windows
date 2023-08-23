@@ -49,15 +49,15 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
     /// <include file='IShellRunDll.xml' path='doc/member[@name="IShellRunDll.Run"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Run([NativeTypeName("LPCWSTR")] ushort* pszArgs)
+    public HRESULT Run([NativeTypeName("LPCWSTR")] char* pszArgs)
     {
-        return ((delegate* unmanaged<IShellRunDll*, ushort*, int>)(lpVtbl[3]))((IShellRunDll*)Unsafe.AsPointer(ref this), pszArgs);
+        return ((delegate* unmanaged<IShellRunDll*, char*, int>)(lpVtbl[3]))((IShellRunDll*)Unsafe.AsPointer(ref this), pszArgs);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Run([NativeTypeName("LPCWSTR")] ushort* pszArgs);
+        HRESULT Run([NativeTypeName("LPCWSTR")] char* pszArgs);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Run;
+        public delegate* unmanaged<TSelf*, char*, int> Run;
     }
 }

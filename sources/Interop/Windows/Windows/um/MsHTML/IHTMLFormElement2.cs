@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLFormElement2 : IHTMLFormElement2.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFormElement2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLFormElement2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLFormElement2 : IHTMLFormElement2.Interface, IN
     /// <include file='IHTMLFormElement2.xml' path='doc/member[@name="IHTMLFormElement2.put_acceptCharset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_acceptCharset([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_acceptCharset([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFormElement2*, ushort*, int>)(lpVtbl[7]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLFormElement2*, char*, int>)(lpVtbl[7]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFormElement2.xml' path='doc/member[@name="IHTMLFormElement2.get_acceptCharset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_acceptCharset([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_acceptCharset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFormElement2*, ushort**, int>)(lpVtbl[8]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFormElement2*, char**, int>)(lpVtbl[8]))((IHTMLFormElement2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFormElement2.xml' path='doc/member[@name="IHTMLFormElement2.urns"]/*' />
@@ -105,10 +105,10 @@ public unsafe partial struct IHTMLFormElement2 : IHTMLFormElement2.Interface, IN
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_acceptCharset([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_acceptCharset([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_acceptCharset([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_acceptCharset([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT urns(VARIANT urn, IDispatch** pdisp);
@@ -133,16 +133,16 @@ public unsafe partial struct IHTMLFormElement2 : IHTMLFormElement2.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_acceptCharset;
+        public delegate* unmanaged<TSelf*, char*, int> put_acceptCharset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_acceptCharset;
+        public delegate* unmanaged<TSelf*, char**, int> get_acceptCharset;
 
         [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, IDispatch**, int> urns;

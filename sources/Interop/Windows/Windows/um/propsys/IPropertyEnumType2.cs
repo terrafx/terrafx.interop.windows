@@ -81,23 +81,23 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface, 
     /// <inheritdoc cref="IPropertyEnumType.GetDisplayText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] char** ppszDisplay)
     {
-        return ((delegate* unmanaged<IPropertyEnumType2*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszDisplay);
+        return ((delegate* unmanaged<IPropertyEnumType2*, char**, int>)(lpVtbl[7]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszDisplay);
     }
 
     /// <include file='IPropertyEnumType2.xml' path='doc/member[@name="IPropertyEnumType2.GetImageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes)
+    public HRESULT GetImageReference([NativeTypeName("LPWSTR *")] char** ppszImageRes)
     {
-        return ((delegate* unmanaged<IPropertyEnumType2*, ushort**, int>)(lpVtbl[8]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszImageRes);
+        return ((delegate* unmanaged<IPropertyEnumType2*, char**, int>)(lpVtbl[8]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszImageRes);
     }
 
     public interface Interface : IPropertyEnumType.Interface
     {
         [VtblIndex(8)]
-        HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes);
+        HRESULT GetImageReference([NativeTypeName("LPWSTR *")] char** ppszImageRes);
     }
 
     public partial struct Vtbl<TSelf>
@@ -125,9 +125,9 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface, 
         public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeSetValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayText;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayText;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetImageReference;
+        public delegate* unmanaged<TSelf*, char**, int> GetImageReference;
     }
 }

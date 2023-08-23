@@ -73,9 +73,9 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.SetProgressMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] ushort* pszMessage)
+    public HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] char* pszMessage)
     {
-        return ((delegate* unmanaged<IFileOperation*, ushort*, int>)(lpVtbl[6]))((IFileOperation*)Unsafe.AsPointer(ref this), pszMessage);
+        return ((delegate* unmanaged<IFileOperation*, char*, int>)(lpVtbl[6]))((IFileOperation*)Unsafe.AsPointer(ref this), pszMessage);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.SetProgressDialog"]/*' />
@@ -121,25 +121,25 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.RenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
+    public HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName, IFileOperationProgressSink* pfopsItem)
     {
-        return ((delegate* unmanaged<IFileOperation*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[12]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, pszNewName, pfopsItem);
+        return ((delegate* unmanaged<IFileOperation*, IShellItem*, char*, IFileOperationProgressSink*, int>)(lpVtbl[12]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, pszNewName, pfopsItem);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.RenameItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+    public HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] char* pszNewName)
     {
-        return ((delegate* unmanaged<IFileOperation*, IUnknown*, ushort*, int>)(lpVtbl[13]))((IFileOperation*)Unsafe.AsPointer(ref this), pUnkItems, pszNewName);
+        return ((delegate* unmanaged<IFileOperation*, IUnknown*, char*, int>)(lpVtbl[13]))((IFileOperation*)Unsafe.AsPointer(ref this), pUnkItems, pszNewName);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.MoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem)
+    public HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, IFileOperationProgressSink* pfopsItem)
     {
-        return ((delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[14]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszNewName, pfopsItem);
+        return ((delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, char*, IFileOperationProgressSink*, int>)(lpVtbl[14]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszNewName, pfopsItem);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.MoveItems"]/*' />
@@ -153,9 +153,9 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.CopyItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszCopyName, IFileOperationProgressSink* pfopsItem)
+    public HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszCopyName, IFileOperationProgressSink* pfopsItem)
     {
-        return ((delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[16]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszCopyName, pfopsItem);
+        return ((delegate* unmanaged<IFileOperation*, IShellItem*, IShellItem*, char*, IFileOperationProgressSink*, int>)(lpVtbl[16]))((IFileOperation*)Unsafe.AsPointer(ref this), psiItem, psiDestinationFolder, pszCopyName, pfopsItem);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.CopyItems"]/*' />
@@ -185,9 +185,9 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.NewItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, IFileOperationProgressSink* pfopsItem)
+    public HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszTemplateName, IFileOperationProgressSink* pfopsItem)
     {
-        return ((delegate* unmanaged<IFileOperation*, IShellItem*, uint, ushort*, ushort*, IFileOperationProgressSink*, int>)(lpVtbl[20]))((IFileOperation*)Unsafe.AsPointer(ref this), psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, pfopsItem);
+        return ((delegate* unmanaged<IFileOperation*, IShellItem*, uint, char*, char*, IFileOperationProgressSink*, int>)(lpVtbl[20]))((IFileOperation*)Unsafe.AsPointer(ref this), psiDestinationFolder, dwFileAttributes, pszName, pszTemplateName, pfopsItem);
     }
 
     /// <include file='IFileOperation.xml' path='doc/member[@name="IFileOperation.PerformOperations"]/*' />
@@ -218,7 +218,7 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         HRESULT SetOperationFlags([NativeTypeName("DWORD")] uint dwOperationFlags);
 
         [VtblIndex(6)]
-        HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] ushort* pszMessage);
+        HRESULT SetProgressMessage([NativeTypeName("LPCWSTR")] char* pszMessage);
 
         [VtblIndex(7)]
         HRESULT SetProgressDialog(IOperationsProgressDialog* popd);
@@ -236,19 +236,19 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         HRESULT ApplyPropertiesToItems(IUnknown* punkItems);
 
         [VtblIndex(12)]
-        HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem);
+        HRESULT RenameItem(IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName, IFileOperationProgressSink* pfopsItem);
 
         [VtblIndex(13)]
-        HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+        HRESULT RenameItems(IUnknown* pUnkItems, [NativeTypeName("LPCWSTR")] char* pszNewName);
 
         [VtblIndex(14)]
-        HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, IFileOperationProgressSink* pfopsItem);
+        HRESULT MoveItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, IFileOperationProgressSink* pfopsItem);
 
         [VtblIndex(15)]
         HRESULT MoveItems(IUnknown* punkItems, IShellItem* psiDestinationFolder);
 
         [VtblIndex(16)]
-        HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszCopyName, IFileOperationProgressSink* pfopsItem);
+        HRESULT CopyItem(IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszCopyName, IFileOperationProgressSink* pfopsItem);
 
         [VtblIndex(17)]
         HRESULT CopyItems(IUnknown* punkItems, IShellItem* psiDestinationFolder);
@@ -260,7 +260,7 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         HRESULT DeleteItems(IUnknown* punkItems);
 
         [VtblIndex(20)]
-        HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, IFileOperationProgressSink* pfopsItem);
+        HRESULT NewItem(IShellItem* psiDestinationFolder, [NativeTypeName("DWORD")] uint dwFileAttributes, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszTemplateName, IFileOperationProgressSink* pfopsItem);
 
         [VtblIndex(21)]
         HRESULT PerformOperations();
@@ -291,7 +291,7 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, int> SetOperationFlags;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetProgressMessage;
+        public delegate* unmanaged<TSelf*, char*, int> SetProgressMessage;
 
         [NativeTypeName("HRESULT (IOperationsProgressDialog *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IOperationsProgressDialog*, int> SetProgressDialog;
@@ -309,19 +309,19 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         public delegate* unmanaged<TSelf*, IUnknown*, int> ApplyPropertiesToItems;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, IFileOperationProgressSink*, int> RenameItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, IFileOperationProgressSink*, int> RenameItem;
 
         [NativeTypeName("HRESULT (IUnknown *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, ushort*, int> RenameItems;
+        public delegate* unmanaged<TSelf*, IUnknown*, char*, int> RenameItems;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int> MoveItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char*, IFileOperationProgressSink*, int> MoveItem;
 
         [NativeTypeName("HRESULT (IUnknown *, IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, IShellItem*, int> MoveItems;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, IFileOperationProgressSink*, int> CopyItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char*, IFileOperationProgressSink*, int> CopyItem;
 
         [NativeTypeName("HRESULT (IUnknown *, IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, IShellItem*, int> CopyItems;
@@ -333,7 +333,7 @@ public unsafe partial struct IFileOperation : IFileOperation.Interface, INativeG
         public delegate* unmanaged<TSelf*, IUnknown*, int> DeleteItems;
 
         [NativeTypeName("HRESULT (IShellItem *, DWORD, LPCWSTR, LPCWSTR, IFileOperationProgressSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, ushort*, ushort*, IFileOperationProgressSink*, int> NewItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, char*, char*, IFileOperationProgressSink*, int> NewItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> PerformOperations;

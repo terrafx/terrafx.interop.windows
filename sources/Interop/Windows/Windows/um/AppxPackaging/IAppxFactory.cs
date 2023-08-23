@@ -83,9 +83,9 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface, INativeGuid
     /// <include file='IAppxFactory.xml' path='doc/member[@name="IAppxFactory.CreateValidatedBlockMapReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader)
+    public HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] char* signatureFileName, IAppxBlockMapReader** blockMapReader)
     {
-        return ((delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int>)(lpVtbl[7]))((IAppxFactory*)Unsafe.AsPointer(ref this), blockMapStream, signatureFileName, blockMapReader);
+        return ((delegate* unmanaged<IAppxFactory*, IStream*, char*, IAppxBlockMapReader**, int>)(lpVtbl[7]))((IAppxFactory*)Unsafe.AsPointer(ref this), blockMapStream, signatureFileName, blockMapReader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -103,7 +103,7 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface, INativeGuid
         HRESULT CreateBlockMapReader(IStream* inputStream, IAppxBlockMapReader** blockMapReader);
 
         [VtblIndex(7)]
-        HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader);
+        HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] char* signatureFileName, IAppxBlockMapReader** blockMapReader);
     }
 
     public partial struct Vtbl<TSelf>
@@ -131,6 +131,6 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IStream*, IAppxBlockMapReader**, int> CreateBlockMapReader;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxBlockMapReader**, int> CreateValidatedBlockMapReader;
+        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxBlockMapReader**, int> CreateValidatedBlockMapReader;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct DWRITE_STRIKETHROUGH
 
     /// <include file='DWRITE_STRIKETHROUGH.xml' path='doc/member[@name="DWRITE_STRIKETHROUGH.localeName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* localeName;
+    public char* localeName;
 
     /// <include file='DWRITE_STRIKETHROUGH.xml' path='doc/member[@name="DWRITE_STRIKETHROUGH.measuringMode"]/*' />
     public DWRITE_MEASURING_MODE measuringMode;

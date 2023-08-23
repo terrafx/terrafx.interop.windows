@@ -12,12 +12,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmStartSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmStartSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("DWORD")] uint dwSessionFlags, [NativeTypeName("WCHAR[]")] ushort* strSessionKey);
+    public static extern uint RmStartSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("DWORD")] uint dwSessionFlags, [NativeTypeName("WCHAR[]")] char* strSessionKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmJoinSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmJoinSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("const WCHAR[]")] ushort* strSessionKey);
+    public static extern uint RmJoinSession([NativeTypeName("DWORD *")] uint* pSessionHandle, [NativeTypeName("const WCHAR[]")] char* strSessionKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmEndSession"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
@@ -27,7 +27,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRegisterResources"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR[]")] ushort** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS[]")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR[]")] ushort** rgsServiceNames);
+    public static extern uint RmRegisterResources([NativeTypeName("DWORD")] uint dwSessionHandle, uint nFiles, [NativeTypeName("LPCWSTR[]")] char** rgsFileNames, uint nApplications, [NativeTypeName("RM_UNIQUE_PROCESS[]")] RM_UNIQUE_PROCESS* rgApplications, uint nServices, [NativeTypeName("LPCWSTR[]")] char** rgsServiceNames);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmGetList"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
@@ -52,12 +52,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmAddFilter"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmAddFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] ushort* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] ushort* strServiceShortName, RM_FILTER_ACTION FilterAction);
+    public static extern uint RmAddFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] char* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] char* strServiceShortName, RM_FILTER_ACTION FilterAction);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmRemoveFilter"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint RmRemoveFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] ushort* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] ushort* strServiceShortName);
+    public static extern uint RmRemoveFilter([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("LPCWSTR")] char* strModuleName, RM_UNIQUE_PROCESS* pProcess, [NativeTypeName("LPCWSTR")] char* strServiceShortName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RmGetFilterList"]/*' />
     [DllImport("rstrtmgr", ExactSpelling = true)]

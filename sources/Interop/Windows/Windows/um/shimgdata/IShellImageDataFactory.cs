@@ -57,9 +57,9 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg)
+    public HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] char* pszPath, IShellImageData** ppshimg)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
+        return ((delegate* unmanaged<IShellImageDataFactory*, char*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
     }
 
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromStream"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.GetDataFormatFromPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat)
+    public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] char* pszPath, Guid* pDataFormat)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
+        return ((delegate* unmanaged<IShellImageDataFactory*, char*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
     }
 
     public interface Interface : IUnknown.Interface
@@ -84,13 +84,13 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         HRESULT CreateIShellImageData(IShellImageData** ppshimg);
 
         [VtblIndex(4)]
-        HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg);
+        HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] char* pszPath, IShellImageData** ppshimg);
 
         [VtblIndex(5)]
         HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg);
 
         [VtblIndex(6)]
-        HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat);
+        HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] char* pszPath, Guid* pDataFormat);
     }
 
     public partial struct Vtbl<TSelf>
@@ -109,12 +109,12 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         public delegate* unmanaged<TSelf*, IShellImageData**, int> CreateIShellImageData;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IShellImageData**, int> CreateImageFromFile;
+        public delegate* unmanaged<TSelf*, char*, IShellImageData**, int> CreateImageFromFile;
 
         [NativeTypeName("HRESULT (IStream *, IShellImageData **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, IShellImageData**, int> CreateImageFromStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> GetDataFormatFromPath;
+        public delegate* unmanaged<TSelf*, char*, Guid*, int> GetDataFormatFromPath;
     }
 }

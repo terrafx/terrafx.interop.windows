@@ -73,9 +73,9 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.OnNavigationComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError)
+    public HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] char* pwzError)
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, ushort*, int>)(lpVtbl[6]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwreserved, hrError, pwzError);
+        return ((delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, char*, int>)(lpVtbl[6]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwreserved, hrError, pwzError);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,7 +90,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
         HRESULT ReadyToNavigate([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwReserved);
 
         [VtblIndex(6)]
-        HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError);
+        HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] char* pwzError);
     }
 
     public partial struct Vtbl<TSelf>
@@ -115,6 +115,6 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, int> ReadyToNavigate;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, HRESULT, ushort*, int> OnNavigationComplete;
+        public delegate* unmanaged<TSelf*, uint, uint, HRESULT, char*, int> OnNavigationComplete;
     }
 }

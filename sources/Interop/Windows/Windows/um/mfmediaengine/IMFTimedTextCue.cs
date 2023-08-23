@@ -60,9 +60,9 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface, INativ
     /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetOriginalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] ushort** originalId)
+    public HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] char** originalId)
     {
-        return ((delegate* unmanaged<IMFTimedTextCue*, ushort**, int>)(lpVtbl[4]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), originalId);
+        return ((delegate* unmanaged<IMFTimedTextCue*, char**, int>)(lpVtbl[4]))((IMFTimedTextCue*)Unsafe.AsPointer(ref this), originalId);
     }
 
     /// <include file='IMFTimedTextCue.xml' path='doc/member[@name="IMFTimedTextCue.GetCueKind"]/*' />
@@ -146,7 +146,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface, INativ
         uint GetId();
 
         [VtblIndex(4)]
-        HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] ushort** originalId);
+        HRESULT GetOriginalId([NativeTypeName("LPWSTR *")] char** originalId);
 
         [VtblIndex(5)]
         MF_TIMED_TEXT_TRACK_KIND GetCueKind();
@@ -194,7 +194,7 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> GetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetOriginalId;
+        public delegate* unmanaged<TSelf*, char**, int> GetOriginalId;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetCueKind;

@@ -20,9 +20,9 @@ public unsafe partial struct SIGNER_ATTR_AUTHCODE
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszName;
+    public char* pwszName;
 
     /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszInfo"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszInfo;
+    public char* pwszInfo;
 }

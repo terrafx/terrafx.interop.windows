@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLControlElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLControlElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,17 +105,17 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
     /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_accessKey([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLControlElement*, ushort*, int>)(lpVtbl[10]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLControlElement*, char*, int>)(lpVtbl[10]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.get_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_accessKey([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLControlElement*, ushort**, int>)(lpVtbl[11]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLControlElement*, char**, int>)(lpVtbl[11]))((IHTMLControlElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLControlElement.xml' path='doc/member[@name="IHTMLControlElement.put_onblur"]/*' />
@@ -234,10 +234,10 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         HRESULT focus();
 
         [VtblIndex(10)]
-        HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_accessKey([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(11)]
-        HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_accessKey([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
         HRESULT put_onblur(VARIANT v);
@@ -298,7 +298,7 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -313,10 +313,10 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         public delegate* unmanaged<TSelf*, int> focus;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_accessKey;
+        public delegate* unmanaged<TSelf*, char*, int> put_accessKey;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_accessKey;
+        public delegate* unmanaged<TSelf*, char**, int> get_accessKey;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onblur;

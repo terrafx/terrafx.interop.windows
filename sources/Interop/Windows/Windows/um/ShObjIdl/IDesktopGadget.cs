@@ -49,15 +49,15 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface, INativeG
     /// <include file='IDesktopGadget.xml' path='doc/member[@name="IDesktopGadget.RunGadget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath)
+    public HRESULT RunGadget([NativeTypeName("LPCWSTR")] char* gadgetPath)
     {
-        return ((delegate* unmanaged<IDesktopGadget*, ushort*, int>)(lpVtbl[3]))((IDesktopGadget*)Unsafe.AsPointer(ref this), gadgetPath);
+        return ((delegate* unmanaged<IDesktopGadget*, char*, int>)(lpVtbl[3]))((IDesktopGadget*)Unsafe.AsPointer(ref this), gadgetPath);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RunGadget([NativeTypeName("LPCWSTR")] ushort* gadgetPath);
+        HRESULT RunGadget([NativeTypeName("LPCWSTR")] char* gadgetPath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IDesktopGadget : IDesktopGadget.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RunGadget;
+        public delegate* unmanaged<TSelf*, char*, int> RunGadget;
     }
 }

@@ -51,9 +51,9 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ushort**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, char**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetMinVersion"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
         HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;

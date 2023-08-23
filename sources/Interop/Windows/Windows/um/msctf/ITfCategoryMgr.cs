@@ -89,9 +89,9 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, ushort*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
+        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, char*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterGUIDDescription"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUIDDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    public HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, ushort**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
+        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, char**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDWORD"]/*' />
@@ -176,13 +176,13 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
         HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount);
 
         [VtblIndex(8)]
-        HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch);
+        HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cch);
 
         [VtblIndex(9)]
         HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid);
 
         [VtblIndex(10)]
-        HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] char** pbstrDesc);
 
         [VtblIndex(11)]
         HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw);
@@ -231,13 +231,13 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
         public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid**, uint, int> FindClosestCategory;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, ushort*, uint, int> RegisterGUIDDescription;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, char*, uint, int> RegisterGUIDDescription;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, Guid*, int> UnregisterGUIDDescription;
 
         [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, int> GetGUIDDescription;
+        public delegate* unmanaged<TSelf*, Guid*, char**, int> GetGUIDDescription;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, int> RegisterGUIDDWORD;

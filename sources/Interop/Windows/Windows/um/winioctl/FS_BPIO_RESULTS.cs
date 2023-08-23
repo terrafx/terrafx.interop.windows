@@ -18,7 +18,7 @@ public unsafe partial struct FS_BPIO_RESULTS
 
     /// <include file='FS_BPIO_RESULTS.xml' path='doc/member[@name="FS_BPIO_RESULTS.FailingDriverName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort FailingDriverName[32];
+    public fixed char FailingDriverName[32];
 
     /// <include file='FS_BPIO_RESULTS.xml' path='doc/member[@name="FS_BPIO_RESULTS.FailureReasonLen"]/*' />
     [NativeTypeName("WORD")]
@@ -26,5 +26,5 @@ public unsafe partial struct FS_BPIO_RESULTS
 
     /// <include file='FS_BPIO_RESULTS.xml' path='doc/member[@name="FS_BPIO_RESULTS.FailureReason"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort FailureReason[128];
+    public fixed char FailureReason[128];
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,114 +81,114 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface, IN
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_contextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_contextMenu([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_contextMenu([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[7]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char*, int>)(lpVtbl[7]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_contextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_contextMenu([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contextMenu([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[8]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char**, int>)(lpVtbl[8]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_innerBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_innerBorder([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_innerBorder([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[9]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char*, int>)(lpVtbl[9]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_innerBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_innerBorder([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_innerBorder([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[10]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char**, int>)(lpVtbl[10]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_scroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_scroll([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_scroll([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[11]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char*, int>)(lpVtbl[11]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_scroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_scroll([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_scroll([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[12]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char**, int>)(lpVtbl[12]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_scrollFlat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_scrollFlat([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_scrollFlat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[13]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char*, int>)(lpVtbl[13]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_scrollFlat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_scrollFlat([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_scrollFlat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[14]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char**, int>)(lpVtbl[14]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_selection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT put_selection([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_selection([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[15]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char*, int>)(lpVtbl[15]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_selection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_selection([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_selection([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[16]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior2*, char**, int>)(lpVtbl[16]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_contextMenu([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_contextMenu([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_contextMenu([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contextMenu([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_innerBorder([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_innerBorder([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_innerBorder([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_innerBorder([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_scroll([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_scroll([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_scroll([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_scroll([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_scrollFlat([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_scrollFlat([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_scrollFlat([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_scrollFlat([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
-        HRESULT put_selection([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_selection([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(16)]
-        HRESULT get_selection([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_selection([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -210,39 +210,39 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_contextMenu;
+        public delegate* unmanaged<TSelf*, char*, int> put_contextMenu;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contextMenu;
+        public delegate* unmanaged<TSelf*, char**, int> get_contextMenu;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_innerBorder;
+        public delegate* unmanaged<TSelf*, char*, int> put_innerBorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_innerBorder;
+        public delegate* unmanaged<TSelf*, char**, int> get_innerBorder;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_scroll;
+        public delegate* unmanaged<TSelf*, char*, int> put_scroll;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_scroll;
+        public delegate* unmanaged<TSelf*, char**, int> get_scroll;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_scrollFlat;
+        public delegate* unmanaged<TSelf*, char*, int> put_scrollFlat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_scrollFlat;
+        public delegate* unmanaged<TSelf*, char**, int> get_scrollFlat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_selection;
+        public delegate* unmanaged<TSelf*, char*, int> put_selection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_selection;
+        public delegate* unmanaged<TSelf*, char**, int> get_selection;
     }
 }

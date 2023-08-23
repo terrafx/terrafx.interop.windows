@@ -74,9 +74,9 @@ public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Int
     /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+    public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, int>)(lpVtbl[6]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, char*, int>)(lpVtbl[6]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
@@ -90,25 +90,25 @@ public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Int
     /// <inheritdoc cref="ID3D12PipelineLibrary.StorePipeline" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT StorePipeline([NativeTypeName("LPCWSTR")] ushort* pName, ID3D12PipelineState* pPipeline)
+    public HRESULT StorePipeline([NativeTypeName("LPCWSTR")] char* pName, ID3D12PipelineState* pPipeline)
     {
-        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, ID3D12PipelineState*, int>)(lpVtbl[8]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pPipeline);
+        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, char*, ID3D12PipelineState*, int>)(lpVtbl[8]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pPipeline);
     }
 
     /// <inheritdoc cref="ID3D12PipelineLibrary.LoadGraphicsPipeline" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_GRAPHICS_PIPELINE_STATE_DESC *")] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
+    public HRESULT LoadGraphicsPipeline([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("const D3D12_GRAPHICS_PIPELINE_STATE_DESC *")] D3D12_GRAPHICS_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
     {
-        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
+        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, char*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
     }
 
     /// <inheritdoc cref="ID3D12PipelineLibrary.LoadComputePipeline" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT LoadComputePipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_COMPUTE_PIPELINE_STATE_DESC *")] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
+    public HRESULT LoadComputePipeline([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("const D3D12_COMPUTE_PIPELINE_STATE_DESC *")] D3D12_COMPUTE_PIPELINE_STATE_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
     {
-        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int>)(lpVtbl[10]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
+        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, char*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int>)(lpVtbl[10]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
     }
 
     /// <inheritdoc cref="ID3D12PipelineLibrary.GetSerializedSize" />
@@ -131,15 +131,15 @@ public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Int
     /// <include file='ID3D12PipelineLibrary1.xml' path='doc/member[@name="ID3D12PipelineLibrary1.LoadPipeline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
+    public HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState)
     {
-        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, ushort*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int>)(lpVtbl[13]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
+        return ((delegate* unmanaged<ID3D12PipelineLibrary1*, char*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int>)(lpVtbl[13]))((ID3D12PipelineLibrary1*)Unsafe.AsPointer(ref this), pName, pDesc, riid, ppPipelineState);
     }
 
     public interface Interface : ID3D12PipelineLibrary.Interface
     {
         [VtblIndex(13)]
-        HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
+        HRESULT LoadPipeline([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("const D3D12_PIPELINE_STATE_STREAM_DESC *")] D3D12_PIPELINE_STATE_STREAM_DESC* pDesc, [NativeTypeName("const IID &")] Guid* riid, void** ppPipelineState);
     }
 
     public partial struct Vtbl<TSelf>
@@ -164,19 +164,19 @@ public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Int
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (LPCWSTR, ID3D12PipelineState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID3D12PipelineState*, int> StorePipeline;
+        public delegate* unmanaged<TSelf*, char*, ID3D12PipelineState*, int> StorePipeline;
 
         [NativeTypeName("HRESULT (LPCWSTR, const D3D12_GRAPHICS_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadGraphicsPipeline;
+        public delegate* unmanaged<TSelf*, char*, D3D12_GRAPHICS_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadGraphicsPipeline;
 
         [NativeTypeName("HRESULT (LPCWSTR, const D3D12_COMPUTE_PIPELINE_STATE_DESC *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadComputePipeline;
+        public delegate* unmanaged<TSelf*, char*, D3D12_COMPUTE_PIPELINE_STATE_DESC*, Guid*, void**, int> LoadComputePipeline;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, nuint> GetSerializedSize;
@@ -185,6 +185,6 @@ public unsafe partial struct ID3D12PipelineLibrary1 : ID3D12PipelineLibrary1.Int
         public delegate* unmanaged<TSelf*, void*, nuint, int> Serialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, const D3D12_PIPELINE_STATE_STREAM_DESC *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int> LoadPipeline;
+        public delegate* unmanaged<TSelf*, char*, D3D12_PIPELINE_STATE_STREAM_DESC*, Guid*, void**, int> LoadPipeline;
     }
 }

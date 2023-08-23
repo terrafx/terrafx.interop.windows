@@ -14,5 +14,5 @@ public unsafe partial struct CALPWSTR
 
     /// <include file='CALPWSTR.xml' path='doc/member[@name="CALPWSTR.pElems"]/*' />
     [NativeTypeName("LPWSTR *")]
-    public ushort** pElems;
+    public char** pElems;
 }

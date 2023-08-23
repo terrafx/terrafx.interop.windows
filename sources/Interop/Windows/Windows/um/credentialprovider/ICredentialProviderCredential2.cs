@@ -91,9 +91,9 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
     /// <inheritdoc cref="ICredentialProviderCredential.GetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPWSTR *")] ushort** ppsz)
+    public HRESULT GetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPWSTR *")] char** ppsz)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, ushort**, int>)(lpVtbl[8]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, ppsz);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, char**, int>)(lpVtbl[8]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, ppsz);
     }
 
     /// <inheritdoc cref="ICredentialProviderCredential.GetBitmapValue" />
@@ -107,9 +107,9 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
     /// <inheritdoc cref="ICredentialProviderCredential.GetCheckboxValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL* pbChecked, [NativeTypeName("LPWSTR *")] ushort** ppszLabel)
+    public HRESULT GetCheckboxValue([NativeTypeName("DWORD")] uint dwFieldID, BOOL* pbChecked, [NativeTypeName("LPWSTR *")] char** ppszLabel)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, BOOL*, ushort**, int>)(lpVtbl[10]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, pbChecked, ppszLabel);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, BOOL*, char**, int>)(lpVtbl[10]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, pbChecked, ppszLabel);
     }
 
     /// <inheritdoc cref="ICredentialProviderCredential.GetSubmitButtonValue" />
@@ -131,17 +131,17 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
     /// <inheritdoc cref="ICredentialProviderCredential.GetComboBoxValueAt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetComboBoxValueAt([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem, [NativeTypeName("LPWSTR *")] ushort** ppszItem)
+    public HRESULT GetComboBoxValueAt([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem, [NativeTypeName("LPWSTR *")] char** ppszItem)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, uint, ushort**, int>)(lpVtbl[13]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, dwItem, ppszItem);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, uint, char**, int>)(lpVtbl[13]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, dwItem, ppszItem);
     }
 
     /// <inheritdoc cref="ICredentialProviderCredential.SetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT SetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz)
+    public HRESULT SetStringValue([NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* psz)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, ushort*, int>)(lpVtbl[14]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, psz);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, uint, char*, int>)(lpVtbl[14]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), dwFieldID, psz);
     }
 
     /// <inheritdoc cref="ICredentialProviderCredential.SetCheckboxValue" />
@@ -171,31 +171,31 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
     /// <inheritdoc cref="ICredentialProviderCredential.GetSerialization" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetSerialization(CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE* pcpgsr, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs, [NativeTypeName("LPWSTR *")] ushort** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon)
+    public HRESULT GetSerialization(CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE* pcpgsr, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs, [NativeTypeName("LPWSTR *")] char** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int>)(lpVtbl[18]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), pcpgsr, pcpcs, ppszOptionalStatusText, pcpsiOptionalStatusIcon);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, char**, CREDENTIAL_PROVIDER_STATUS_ICON*, int>)(lpVtbl[18]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), pcpgsr, pcpcs, ppszOptionalStatusText, pcpsiOptionalStatusIcon);
     }
 
     /// <inheritdoc cref="ICredentialProviderCredential.ReportResult" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT ReportResult([NativeTypeName("NTSTATUS")] int ntsStatus, [NativeTypeName("NTSTATUS")] int ntsSubstatus, [NativeTypeName("LPWSTR *")] ushort** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon)
+    public HRESULT ReportResult([NativeTypeName("NTSTATUS")] int ntsStatus, [NativeTypeName("NTSTATUS")] int ntsSubstatus, [NativeTypeName("LPWSTR *")] char** ppszOptionalStatusText, CREDENTIAL_PROVIDER_STATUS_ICON* pcpsiOptionalStatusIcon)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, int, int, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int>)(lpVtbl[19]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), ntsStatus, ntsSubstatus, ppszOptionalStatusText, pcpsiOptionalStatusIcon);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, int, int, char**, CREDENTIAL_PROVIDER_STATUS_ICON*, int>)(lpVtbl[19]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), ntsStatus, ntsSubstatus, ppszOptionalStatusText, pcpsiOptionalStatusIcon);
     }
 
     /// <include file='ICredentialProviderCredential2.xml' path='doc/member[@name="ICredentialProviderCredential2.GetUserSid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid)
+    public HRESULT GetUserSid([NativeTypeName("LPWSTR *")] char** sid)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredential2*, ushort**, int>)(lpVtbl[20]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), sid);
+        return ((delegate* unmanaged<ICredentialProviderCredential2*, char**, int>)(lpVtbl[20]))((ICredentialProviderCredential2*)Unsafe.AsPointer(ref this), sid);
     }
 
     public interface Interface : ICredentialProviderCredential.Interface
     {
         [VtblIndex(20)]
-        HRESULT GetUserSid([NativeTypeName("LPWSTR *")] ushort** sid);
+        HRESULT GetUserSid([NativeTypeName("LPWSTR *")] char** sid);
     }
 
     public partial struct Vtbl<TSelf>
@@ -226,13 +226,13 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
         public delegate* unmanaged<TSelf*, uint, CREDENTIAL_PROVIDER_FIELD_STATE*, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE*, int> GetFieldState;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (DWORD, HBITMAP *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, HBITMAP*, int> GetBitmapValue;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, ushort**, int> GetCheckboxValue;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, char**, int> GetCheckboxValue;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetSubmitButtonValue;
@@ -241,10 +241,10 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
         public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetComboBoxValueCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort**, int> GetComboBoxValueAt;
+        public delegate* unmanaged<TSelf*, uint, uint, char**, int> GetComboBoxValueAt;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetStringValue;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetStringValue;
 
         [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, BOOL, int> SetCheckboxValue;
@@ -256,12 +256,12 @@ public unsafe partial struct ICredentialProviderCredential2 : ICredentialProvide
         public delegate* unmanaged<TSelf*, uint, int> CommandLinkClicked;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE *, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *, LPWSTR *, CREDENTIAL_PROVIDER_STATUS_ICON *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> GetSerialization;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_GET_SERIALIZATION_RESPONSE*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, char**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> GetSerialization;
 
         [NativeTypeName("HRESULT (NTSTATUS, NTSTATUS, LPWSTR *, CREDENTIAL_PROVIDER_STATUS_ICON *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> ReportResult;
+        public delegate* unmanaged<TSelf*, int, int, char**, CREDENTIAL_PROVIDER_STATUS_ICON*, int> ReportResult;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetUserSid;
+        public delegate* unmanaged<TSelf*, char**, int> GetUserSid;
     }
 }

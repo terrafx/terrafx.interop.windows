@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleS
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,25 +97,25 @@ public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleS
     /// <include file='IHTMLStyleSheetRulesAppliedCollection.xml' path='doc/member[@name="IHTMLStyleSheetRulesAppliedCollection.propertyAppliedBy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT propertyAppliedBy([NativeTypeName("BSTR")] ushort* name, IHTMLStyleSheetRule** ppRule)
+    public HRESULT propertyAppliedBy([NativeTypeName("BSTR")] char* name, IHTMLStyleSheetRule** ppRule)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, IHTMLStyleSheetRule**, int>)(lpVtbl[9]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, ppRule);
+        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, char*, IHTMLStyleSheetRule**, int>)(lpVtbl[9]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, ppRule);
     }
 
     /// <include file='IHTMLStyleSheetRulesAppliedCollection.xml' path='doc/member[@name="IHTMLStyleSheetRulesAppliedCollection.propertyAppliedTrace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule)
+    public HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] char* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int, IHTMLStyleSheetRule**, int>)(lpVtbl[10]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, index, ppRule);
+        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, char*, int, IHTMLStyleSheetRule**, int>)(lpVtbl[10]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, index, ppRule);
     }
 
     /// <include file='IHTMLStyleSheetRulesAppliedCollection.xml' path='doc/member[@name="IHTMLStyleSheetRulesAppliedCollection.propertyAppliedTraceLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength)
+    public HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] char* name, [NativeTypeName("long *")] int* pLength)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, ushort*, int*, int>)(lpVtbl[11]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
+        return ((delegate* unmanaged<IHTMLStyleSheetRulesAppliedCollection*, char*, int*, int>)(lpVtbl[11]))((IHTMLStyleSheetRulesAppliedCollection*)Unsafe.AsPointer(ref this), name, pLength);
     }
 
     public interface Interface : IDispatch.Interface
@@ -127,13 +127,13 @@ public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleS
         HRESULT get_length([NativeTypeName("long *")] int* p);
 
         [VtblIndex(9)]
-        HRESULT propertyAppliedBy([NativeTypeName("BSTR")] ushort* name, IHTMLStyleSheetRule** ppRule);
+        HRESULT propertyAppliedBy([NativeTypeName("BSTR")] char* name, IHTMLStyleSheetRule** ppRule);
 
         [VtblIndex(10)]
-        HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule);
+        HRESULT propertyAppliedTrace([NativeTypeName("BSTR")] char* name, [NativeTypeName("long")] int index, IHTMLStyleSheetRule** ppRule);
 
         [VtblIndex(11)]
-        HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("long *")] int* pLength);
+        HRESULT propertyAppliedTraceLength([NativeTypeName("BSTR")] char* name, [NativeTypeName("long *")] int* pLength);
     }
 
     public partial struct Vtbl<TSelf>
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleS
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -167,12 +167,12 @@ public unsafe partial struct IHTMLStyleSheetRulesAppliedCollection : IHTMLStyleS
         public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLStyleSheetRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLStyleSheetRule**, int> propertyAppliedBy;
+        public delegate* unmanaged<TSelf*, char*, IHTMLStyleSheetRule**, int> propertyAppliedBy;
 
         [NativeTypeName("HRESULT (BSTR, long, IHTMLStyleSheetRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, IHTMLStyleSheetRule**, int> propertyAppliedTrace;
+        public delegate* unmanaged<TSelf*, char*, int, IHTMLStyleSheetRule**, int> propertyAppliedTrace;
 
         [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> propertyAppliedTraceLength;
+        public delegate* unmanaged<TSelf*, char*, int*, int> propertyAppliedTraceLength;
     }
 }

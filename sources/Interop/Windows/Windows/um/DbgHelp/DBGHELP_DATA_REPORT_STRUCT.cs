@@ -10,9 +10,9 @@ public unsafe partial struct DBGHELP_DATA_REPORT_STRUCT
 {
     /// <include file='DBGHELP_DATA_REPORT_STRUCT.xml' path='doc/member[@name="DBGHELP_DATA_REPORT_STRUCT.pBinPathNonExist"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pBinPathNonExist;
+    public char* pBinPathNonExist;
 
     /// <include file='DBGHELP_DATA_REPORT_STRUCT.xml' path='doc/member[@name="DBGHELP_DATA_REPORT_STRUCT.pSymbolPathNonExist"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pSymbolPathNonExist;
+    public char* pSymbolPathNonExist;
 }

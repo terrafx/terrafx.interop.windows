@@ -49,15 +49,15 @@ public unsafe partial struct IUrlMon : IUrlMon.Interface, INativeGuid
     /// <include file='IUrlMon.xml' path='doc/member[@name="IUrlMon.AsyncGetClassBits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AsyncGetClassBits([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pszTYPE, [NativeTypeName("LPCWSTR")] ushort* pszExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* pszCodeBase, IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD")] uint flags)
+    public HRESULT AsyncGetClassBits([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] char* pszTYPE, [NativeTypeName("LPCWSTR")] char* pszExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] char* pszCodeBase, IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD")] uint flags)
     {
-        return ((delegate* unmanaged<IUrlMon*, Guid*, ushort*, ushort*, uint, uint, ushort*, IBindCtx*, uint, Guid*, uint, int>)(lpVtbl[3]))((IUrlMon*)Unsafe.AsPointer(ref this), rclsid, pszTYPE, pszExt, dwFileVersionMS, dwFileVersionLS, pszCodeBase, pbc, dwClassContext, riid, flags);
+        return ((delegate* unmanaged<IUrlMon*, Guid*, char*, char*, uint, uint, char*, IBindCtx*, uint, Guid*, uint, int>)(lpVtbl[3]))((IUrlMon*)Unsafe.AsPointer(ref this), rclsid, pszTYPE, pszExt, dwFileVersionMS, dwFileVersionLS, pszCodeBase, pbc, dwClassContext, riid, flags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AsyncGetClassBits([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pszTYPE, [NativeTypeName("LPCWSTR")] ushort* pszExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* pszCodeBase, IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD")] uint flags);
+        HRESULT AsyncGetClassBits([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] char* pszTYPE, [NativeTypeName("LPCWSTR")] char* pszExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] char* pszCodeBase, IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("DWORD")] uint flags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IUrlMon : IUrlMon.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, LPCWSTR, DWORD, DWORD, LPCWSTR, IBindCtx *, DWORD, const IID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, ushort*, uint, uint, ushort*, IBindCtx*, uint, Guid*, uint, int> AsyncGetClassBits;
+        public delegate* unmanaged<TSelf*, Guid*, char*, char*, uint, uint, char*, IBindCtx*, uint, Guid*, uint, int> AsyncGetClassBits;
     }
 }

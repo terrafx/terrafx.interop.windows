@@ -65,9 +65,9 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGLength*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGLength*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISVGLength*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGLength*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,17 +129,17 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface, INativeGuid
     /// <include file='ISVGLength.xml' path='doc/member[@name="ISVGLength.put_valueAsString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_valueAsString([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_valueAsString([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ISVGLength*, ushort*, int>)(lpVtbl[13]))((ISVGLength*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ISVGLength*, char*, int>)(lpVtbl[13]))((ISVGLength*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGLength.xml' path='doc/member[@name="ISVGLength.get_valueAsString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_valueAsString([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_valueAsString([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ISVGLength*, ushort**, int>)(lpVtbl[14]))((ISVGLength*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ISVGLength*, char**, int>)(lpVtbl[14]))((ISVGLength*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGLength.xml' path='doc/member[@name="ISVGLength.newValueSpecifiedUnits"]/*' />
@@ -179,10 +179,10 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface, INativeGuid
         HRESULT get_valueInSpecifiedUnits(float* p);
 
         [VtblIndex(13)]
-        HRESULT put_valueAsString([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_valueAsString([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_valueAsString([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_valueAsString([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
         HRESULT newValueSpecifiedUnits(short unitType, float valueInSpecifiedUnits);
@@ -210,7 +210,7 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -234,10 +234,10 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, float*, int> get_valueInSpecifiedUnits;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_valueAsString;
+        public delegate* unmanaged<TSelf*, char*, int> put_valueAsString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_valueAsString;
+        public delegate* unmanaged<TSelf*, char**, int> get_valueAsString;
 
         [NativeTypeName("HRESULT (short, float) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, float, int> newValueSpecifiedUnits;

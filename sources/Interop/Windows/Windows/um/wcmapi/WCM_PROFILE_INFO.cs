@@ -14,7 +14,7 @@ public unsafe partial struct WCM_PROFILE_INFO
 {
     /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.strProfileName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort strProfileName[256];
+    public fixed char strProfileName[256];
 
     /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.AdapterGUID"]/*' />
     public Guid AdapterGUID;

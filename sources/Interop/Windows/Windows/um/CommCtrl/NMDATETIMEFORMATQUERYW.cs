@@ -13,7 +13,7 @@ public unsafe partial struct NMDATETIMEFORMATQUERYW
 
     /// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW.pszFormat"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszFormat;
+    public char* pszFormat;
 
     /// <include file='NMDATETIMEFORMATQUERYW.xml' path='doc/member[@name="NMDATETIMEFORMATQUERYW.szMax"]/*' />
     public SIZE szMax;

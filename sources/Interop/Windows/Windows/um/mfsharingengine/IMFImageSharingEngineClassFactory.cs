@@ -51,15 +51,15 @@ public unsafe partial struct IMFImageSharingEngineClassFactory : IMFImageSharing
     /// <include file='IMFImageSharingEngineClassFactory.xml' path='doc/member[@name="IMFImageSharingEngineClassFactory.CreateInstanceFromUDN"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine)
+    public HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] char* pUniqueDeviceName, IMFImageSharingEngine** ppEngine)
     {
-        return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
+        return ((delegate* unmanaged<IMFImageSharingEngineClassFactory*, char*, IMFImageSharingEngine**, int>)(lpVtbl[3]))((IMFImageSharingEngineClassFactory*)Unsafe.AsPointer(ref this), pUniqueDeviceName, ppEngine);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine);
+        HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] char* pUniqueDeviceName, IMFImageSharingEngine** ppEngine);
     }
 
     public partial struct Vtbl<TSelf>
@@ -75,6 +75,6 @@ public unsafe partial struct IMFImageSharingEngineClassFactory : IMFImageSharing
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, IMFImageSharingEngine **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFImageSharingEngine**, int> CreateInstanceFromUDN;
+        public delegate* unmanaged<TSelf*, char*, IMFImageSharingEngine**, int> CreateInstanceFromUDN;
     }
 }

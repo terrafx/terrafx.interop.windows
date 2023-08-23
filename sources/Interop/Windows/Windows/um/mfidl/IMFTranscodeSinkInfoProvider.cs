@@ -49,9 +49,9 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.SetOutputFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetOutputFile([NativeTypeName("LPCWSTR")] ushort* pwszFileName)
+    public HRESULT SetOutputFile([NativeTypeName("LPCWSTR")] char* pwszFileName)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, ushort*, int>)(lpVtbl[3]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pwszFileName);
+        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, char*, int>)(lpVtbl[3]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pwszFileName);
     }
 
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.SetOutputByteStream"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetOutputFile([NativeTypeName("LPCWSTR")] ushort* pwszFileName);
+        HRESULT SetOutputFile([NativeTypeName("LPCWSTR")] char* pwszFileName);
 
         [VtblIndex(4)]
         HRESULT SetOutputByteStream(IMFActivate* pByteStreamActivate);
@@ -106,7 +106,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFile;
+        public delegate* unmanaged<TSelf*, char*, int> SetOutputFile;
 
         [NativeTypeName("HRESULT (IMFActivate *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFActivate*, int> SetOutputByteStream;

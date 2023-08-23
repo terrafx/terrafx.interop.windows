@@ -105,9 +105,9 @@ public unsafe partial struct IPin : IPin.Interface, INativeGuid
     /// <include file='IPin.xml' path='doc/member[@name="IPin.QueryId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id)
+    public HRESULT QueryId([NativeTypeName("LPWSTR *")] char** Id)
     {
-        return ((delegate* unmanaged<IPin*, ushort**, int>)(lpVtbl[10]))((IPin*)Unsafe.AsPointer(ref this), Id);
+        return ((delegate* unmanaged<IPin*, char**, int>)(lpVtbl[10]))((IPin*)Unsafe.AsPointer(ref this), Id);
     }
 
     /// <include file='IPin.xml' path='doc/member[@name="IPin.QueryAccept"]/*' />
@@ -190,7 +190,7 @@ public unsafe partial struct IPin : IPin.Interface, INativeGuid
         HRESULT QueryDirection(PIN_DIRECTION* pPinDir);
 
         [VtblIndex(10)]
-        HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id);
+        HRESULT QueryId([NativeTypeName("LPWSTR *")] char** Id);
 
         [VtblIndex(11)]
         HRESULT QueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
@@ -248,7 +248,7 @@ public unsafe partial struct IPin : IPin.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, PIN_DIRECTION*, int> QueryDirection;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> QueryId;
+        public delegate* unmanaged<TSelf*, char**, int> QueryId;
 
         [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> QueryAccept;

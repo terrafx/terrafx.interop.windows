@@ -65,9 +65,9 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellDispatch2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellDispatch2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellDispatch2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
     /// <inheritdoc cref="IShellDispatch.BrowseForFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT BrowseForFolder([NativeTypeName("long")] int Hwnd, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("long")] int Options, VARIANT RootFolder, Folder** ppsdf)
+    public HRESULT BrowseForFolder([NativeTypeName("long")] int Hwnd, [NativeTypeName("BSTR")] char* Title, [NativeTypeName("long")] int Options, VARIANT RootFolder, Folder** ppsdf)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, int, ushort*, int, VARIANT, Folder**, int>)(lpVtbl[10]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Hwnd, Title, Options, RootFolder, ppsdf);
+        return ((delegate* unmanaged<IShellDispatch2*, int, char*, int, VARIANT, Folder**, int>)(lpVtbl[10]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Hwnd, Title, Options, RootFolder, ppsdf);
     }
 
     /// <inheritdoc cref="IShellDispatch.Windows" />
@@ -257,111 +257,111 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
     /// <inheritdoc cref="IShellDispatch.ControlPanelItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT ControlPanelItem([NativeTypeName("BSTR")] ushort* bstrDir)
+    public HRESULT ControlPanelItem([NativeTypeName("BSTR")] char* bstrDir)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, int>)(lpVtbl[29]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrDir);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, int>)(lpVtbl[29]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrDir);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.IsRestricted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT IsRestricted([NativeTypeName("BSTR")] ushort* Group, [NativeTypeName("BSTR")] ushort* Restriction, [NativeTypeName("long *")] int* plRestrictValue)
+    public HRESULT IsRestricted([NativeTypeName("BSTR")] char* Group, [NativeTypeName("BSTR")] char* Restriction, [NativeTypeName("long *")] int* plRestrictValue)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, ushort*, int*, int>)(lpVtbl[30]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Group, Restriction, plRestrictValue);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, char*, int*, int>)(lpVtbl[30]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Group, Restriction, plRestrictValue);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ShellExecuteW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT ShellExecuteW([NativeTypeName("BSTR")] ushort* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow)
+    public HRESULT ShellExecuteW([NativeTypeName("BSTR")] char* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[31]))((IShellDispatch2*)Unsafe.AsPointer(ref this), File, vArgs, vDir, vOperation, vShow);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[31]))((IShellDispatch2*)Unsafe.AsPointer(ref this), File, vArgs, vDir, vOperation, vShow);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.FindPrinter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT FindPrinter([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* location, [NativeTypeName("BSTR")] ushort* model)
+    public HRESULT FindPrinter([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* location, [NativeTypeName("BSTR")] char* model)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, ushort*, ushort*, int>)(lpVtbl[32]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, location, model);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, char*, char*, int>)(lpVtbl[32]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, location, model);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.GetSystemInformation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT GetSystemInformation([NativeTypeName("BSTR")] ushort* name, VARIANT* pv)
+    public HRESULT GetSystemInformation([NativeTypeName("BSTR")] char* name, VARIANT* pv)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[33]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, pv);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT*, int>)(lpVtbl[33]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, pv);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ServiceStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT ServiceStart([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
+    public HRESULT ServiceStart([NativeTypeName("BSTR")] char* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[34]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT, VARIANT*, int>)(lpVtbl[34]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ServiceStop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT ServiceStop([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
+    public HRESULT ServiceStop([NativeTypeName("BSTR")] char* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[35]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT, VARIANT*, int>)(lpVtbl[35]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.IsServiceRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT IsServiceRunning([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pRunning)
+    public HRESULT IsServiceRunning([NativeTypeName("BSTR")] char* ServiceName, VARIANT* pRunning)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[36]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pRunning);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT*, int>)(lpVtbl[36]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pRunning);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.CanStartStopService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT CanStartStopService([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pCanStartStop)
+    public HRESULT CanStartStopService([NativeTypeName("BSTR")] char* ServiceName, VARIANT* pCanStartStop)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[37]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pCanStartStop);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT*, int>)(lpVtbl[37]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pCanStartStop);
     }
 
     /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ShowBrowserBar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT ShowBrowserBar([NativeTypeName("BSTR")] ushort* bstrClsid, VARIANT bShow, VARIANT* pSuccess)
+    public HRESULT ShowBrowserBar([NativeTypeName("BSTR")] char* bstrClsid, VARIANT bShow, VARIANT* pSuccess)
     {
-        return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[38]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrClsid, bShow, pSuccess);
+        return ((delegate* unmanaged<IShellDispatch2*, char*, VARIANT, VARIANT*, int>)(lpVtbl[38]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrClsid, bShow, pSuccess);
     }
 
     public interface Interface : IShellDispatch.Interface
     {
         [VtblIndex(30)]
-        HRESULT IsRestricted([NativeTypeName("BSTR")] ushort* Group, [NativeTypeName("BSTR")] ushort* Restriction, [NativeTypeName("long *")] int* plRestrictValue);
+        HRESULT IsRestricted([NativeTypeName("BSTR")] char* Group, [NativeTypeName("BSTR")] char* Restriction, [NativeTypeName("long *")] int* plRestrictValue);
 
         [VtblIndex(31)]
-        HRESULT ShellExecuteW([NativeTypeName("BSTR")] ushort* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow);
+        HRESULT ShellExecuteW([NativeTypeName("BSTR")] char* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow);
 
         [VtblIndex(32)]
-        HRESULT FindPrinter([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* location, [NativeTypeName("BSTR")] ushort* model);
+        HRESULT FindPrinter([NativeTypeName("BSTR")] char* name, [NativeTypeName("BSTR")] char* location, [NativeTypeName("BSTR")] char* model);
 
         [VtblIndex(33)]
-        HRESULT GetSystemInformation([NativeTypeName("BSTR")] ushort* name, VARIANT* pv);
+        HRESULT GetSystemInformation([NativeTypeName("BSTR")] char* name, VARIANT* pv);
 
         [VtblIndex(34)]
-        HRESULT ServiceStart([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
+        HRESULT ServiceStart([NativeTypeName("BSTR")] char* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
 
         [VtblIndex(35)]
-        HRESULT ServiceStop([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
+        HRESULT ServiceStop([NativeTypeName("BSTR")] char* ServiceName, VARIANT Persistent, VARIANT* pSuccess);
 
         [VtblIndex(36)]
-        HRESULT IsServiceRunning([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pRunning);
+        HRESULT IsServiceRunning([NativeTypeName("BSTR")] char* ServiceName, VARIANT* pRunning);
 
         [VtblIndex(37)]
-        HRESULT CanStartStopService([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pCanStartStop);
+        HRESULT CanStartStopService([NativeTypeName("BSTR")] char* ServiceName, VARIANT* pCanStartStop);
 
         [VtblIndex(38)]
-        HRESULT ShowBrowserBar([NativeTypeName("BSTR")] ushort* bstrClsid, VARIANT bShow, VARIANT* pSuccess);
+        HRESULT ShowBrowserBar([NativeTypeName("BSTR")] char* bstrClsid, VARIANT bShow, VARIANT* pSuccess);
     }
 
     public partial struct Vtbl<TSelf>
@@ -383,7 +383,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -398,7 +398,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
         public delegate* unmanaged<TSelf*, VARIANT, Folder**, int> NameSpace;
 
         [NativeTypeName("HRESULT (long, BSTR, long, VARIANT, Folder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, int, VARIANT, Folder**, int> BrowseForFolder;
+        public delegate* unmanaged<TSelf*, int, char*, int, VARIANT, Folder**, int> BrowseForFolder;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> Windows;
@@ -455,33 +455,33 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface, INativ
         public delegate* unmanaged<TSelf*, int> RefreshMenu;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> ControlPanelItem;
+        public delegate* unmanaged<TSelf*, char*, int> ControlPanelItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int*, int> IsRestricted;
+        public delegate* unmanaged<TSelf*, char*, char*, int*, int> IsRestricted;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int> ShellExecuteW;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, VARIANT, VARIANT, VARIANT, int> ShellExecuteW;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> FindPrinter;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> FindPrinter;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> GetSystemInformation;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> GetSystemInformation;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ServiceStart;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, VARIANT*, int> ServiceStart;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ServiceStop;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, VARIANT*, int> ServiceStop;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> IsServiceRunning;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> IsServiceRunning;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> CanStartStopService;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> CanStartStopService;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ShowBrowserBar;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, VARIANT*, int> ShowBrowserBar;
     }
 }

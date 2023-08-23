@@ -49,26 +49,26 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
     /// <include file='ITfSystemLangBarItemText.xml' path='doc/member[@name="ITfSystemLangBarItemText.SetItemText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetItemText([NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT SetItemText([NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemText*, ushort*, uint, int>)(lpVtbl[3]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pch, cch);
+        return ((delegate* unmanaged<ITfSystemLangBarItemText*, char*, uint, int>)(lpVtbl[3]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pch, cch);
     }
 
     /// <include file='ITfSystemLangBarItemText.xml' path='doc/member[@name="ITfSystemLangBarItemText.GetItemText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetItemText([NativeTypeName("BSTR *")] ushort** pbstrText)
+    public HRESULT GetItemText([NativeTypeName("BSTR *")] char** pbstrText)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemText*, ushort**, int>)(lpVtbl[4]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pbstrText);
+        return ((delegate* unmanaged<ITfSystemLangBarItemText*, char**, int>)(lpVtbl[4]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pbstrText);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetItemText([NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch);
+        HRESULT SetItemText([NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch);
 
         [VtblIndex(4)]
-        HRESULT GetItemText([NativeTypeName("BSTR *")] ushort** pbstrText);
+        HRESULT GetItemText([NativeTypeName("BSTR *")] char** pbstrText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetItemText;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetItemText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetItemText;
+        public delegate* unmanaged<TSelf*, char**, int> GetItemText;
     }
 }

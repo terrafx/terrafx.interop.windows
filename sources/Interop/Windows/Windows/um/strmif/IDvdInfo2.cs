@@ -225,9 +225,9 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDTextStringAsUnicode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] ushort* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType)
+    public HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] char* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType)
     {
-        return ((delegate* unmanaged<IDvdInfo2*, uint, uint, ushort*, uint, uint*, DVD_TextStringType*, int>)(lpVtbl[25]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulLangIndex, ulStringIndex, pchwBuffer, ulMaxBufferSize, pulActualSize, pType);
+        return ((delegate* unmanaged<IDvdInfo2*, uint, uint, char*, uint, uint*, DVD_TextStringType*, int>)(lpVtbl[25]))((IDvdInfo2*)Unsafe.AsPointer(ref this), ulLangIndex, ulStringIndex, pchwBuffer, ulMaxBufferSize, pulActualSize, pType);
     }
 
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetPlayerParentalLevel"]/*' />
@@ -257,9 +257,9 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDVDDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] ushort* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
+    public HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] char* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
     {
-        return ((delegate* unmanaged<IDvdInfo2*, ushort*, uint, uint*, int>)(lpVtbl[29]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, ulMaxSize, pulActualSize);
+        return ((delegate* unmanaged<IDvdInfo2*, char*, uint, uint*, int>)(lpVtbl[29]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, ulMaxSize, pulActualSize);
     }
 
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.IsAudioStreamEnabled"]/*' />
@@ -273,9 +273,9 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetDiscID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT GetDiscID([NativeTypeName("LPCWSTR")] ushort* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID)
+    public HRESULT GetDiscID([NativeTypeName("LPCWSTR")] char* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID)
     {
-        return ((delegate* unmanaged<IDvdInfo2*, ushort*, ulong*, int>)(lpVtbl[31]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, pullDiscID);
+        return ((delegate* unmanaged<IDvdInfo2*, char*, ulong*, int>)(lpVtbl[31]))((IDvdInfo2*)Unsafe.AsPointer(ref this), pszwPath, pullDiscID);
     }
 
     /// <include file='IDvdInfo2.xml' path='doc/member[@name="IDvdInfo2.GetState"]/*' />
@@ -427,7 +427,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
         HRESULT GetDVDTextStringAsNative([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, byte* pbBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
 
         [VtblIndex(25)]
-        HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] ushort* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
+        HRESULT GetDVDTextStringAsUnicode([NativeTypeName("ULONG")] uint ulLangIndex, [NativeTypeName("ULONG")] uint ulStringIndex, [NativeTypeName("WCHAR *")] char* pchwBuffer, [NativeTypeName("ULONG")] uint ulMaxBufferSize, [NativeTypeName("ULONG *")] uint* pulActualSize, [NativeTypeName("enum DVD_TextStringType *")] DVD_TextStringType* pType);
 
         [VtblIndex(26)]
         HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("BYTE[2]")] byte* pbCountryCode);
@@ -439,13 +439,13 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
         HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels);
 
         [VtblIndex(29)]
-        HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] ushort* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
+        HRESULT GetDVDDirectory([NativeTypeName("LPWSTR")] char* pszwPath, [NativeTypeName("ULONG")] uint ulMaxSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
 
         [VtblIndex(30)]
         HRESULT IsAudioStreamEnabled([NativeTypeName("ULONG")] uint ulStreamNum, BOOL* pbEnabled);
 
         [VtblIndex(31)]
-        HRESULT GetDiscID([NativeTypeName("LPCWSTR")] ushort* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID);
+        HRESULT GetDiscID([NativeTypeName("LPCWSTR")] char* pszwPath, [NativeTypeName("ULONGLONG *")] ulong* pullDiscID);
 
         [VtblIndex(32)]
         HRESULT GetState(IDvdState** pStateData);
@@ -557,7 +557,7 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, uint*, DVD_TextStringType*, int> GetDVDTextStringAsNative;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, WCHAR *, ULONG, ULONG *, enum DVD_TextStringType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, uint, uint*, DVD_TextStringType*, int> GetDVDTextStringAsUnicode;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, uint, uint*, DVD_TextStringType*, int> GetDVDTextStringAsUnicode;
 
         [NativeTypeName("HRESULT (ULONG *, BYTE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, byte*, int> GetPlayerParentalLevel;
@@ -569,13 +569,13 @@ public unsafe partial struct IDvdInfo2 : IDvdInfo2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetTitleParentalLevels;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetDVDDirectory;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> GetDVDDirectory;
 
         [NativeTypeName("HRESULT (ULONG, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, BOOL*, int> IsAudioStreamEnabled;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong*, int> GetDiscID;
+        public delegate* unmanaged<TSelf*, char*, ulong*, int> GetDiscID;
 
         [NativeTypeName("HRESULT (IDvdState **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDvdState**, int> GetState;

@@ -49,9 +49,9 @@ public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interfa
     /// <include file='ITfInsertAtSelection.xml' path='doc/member[@name="ITfInsertAtSelection.InsertTextAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT InsertTextAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch, ITfRange** ppRange)
+    public HRESULT InsertTextAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch, ITfRange** ppRange)
     {
-        return ((delegate* unmanaged<ITfInsertAtSelection*, uint, uint, ushort*, int, ITfRange**, int>)(lpVtbl[3]))((ITfInsertAtSelection*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch, ppRange);
+        return ((delegate* unmanaged<ITfInsertAtSelection*, uint, uint, char*, int, ITfRange**, int>)(lpVtbl[3]))((ITfInsertAtSelection*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch, ppRange);
     }
 
     /// <include file='ITfInsertAtSelection.xml' path='doc/member[@name="ITfInsertAtSelection.InsertEmbeddedAtSelection"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT InsertTextAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch, ITfRange** ppRange);
+        HRESULT InsertTextAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch, ITfRange** ppRange);
 
         [VtblIndex(4)]
         HRESULT InsertEmbeddedAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, ITfRange** ppRange);
@@ -84,7 +84,7 @@ public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int, ITfRange**, int> InsertTextAtSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, int, ITfRange**, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, IDataObject *, ITfRange **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, IDataObject*, ITfRange**, int> InsertEmbeddedAtSelection;

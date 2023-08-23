@@ -28,7 +28,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.specializationApplicationName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort specializationApplicationName[128];
+    public fixed char specializationApplicationName[128];
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
     public uint isSpecializationEnabled

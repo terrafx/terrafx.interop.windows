@@ -49,9 +49,9 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfUIElement*, ushort**, int>)(lpVtbl[3]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged<ITfUIElement*, char**, int>)(lpVtbl[3]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetGUID"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription);
 
         [VtblIndex(4)]
         HRESULT GetGUID(Guid* pguid);
@@ -106,7 +106,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;

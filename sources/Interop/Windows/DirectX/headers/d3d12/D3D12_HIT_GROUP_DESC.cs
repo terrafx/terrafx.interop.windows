@@ -10,20 +10,20 @@ public unsafe partial struct D3D12_HIT_GROUP_DESC
 {
     /// <include file='D3D12_HIT_GROUP_DESC.xml' path='doc/member[@name="D3D12_HIT_GROUP_DESC.HitGroupExport"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* HitGroupExport;
+    public char* HitGroupExport;
 
     /// <include file='D3D12_HIT_GROUP_DESC.xml' path='doc/member[@name="D3D12_HIT_GROUP_DESC.Type"]/*' />
     public D3D12_HIT_GROUP_TYPE Type;
 
     /// <include file='D3D12_HIT_GROUP_DESC.xml' path='doc/member[@name="D3D12_HIT_GROUP_DESC.AnyHitShaderImport"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* AnyHitShaderImport;
+    public char* AnyHitShaderImport;
 
     /// <include file='D3D12_HIT_GROUP_DESC.xml' path='doc/member[@name="D3D12_HIT_GROUP_DESC.ClosestHitShaderImport"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* ClosestHitShaderImport;
+    public char* ClosestHitShaderImport;
 
     /// <include file='D3D12_HIT_GROUP_DESC.xml' path='doc/member[@name="D3D12_HIT_GROUP_DESC.IntersectionShaderImport"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* IntersectionShaderImport;
+    public char* IntersectionShaderImport;
 }

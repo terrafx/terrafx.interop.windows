@@ -17,7 +17,7 @@ public unsafe partial struct APPX_ENCRYPTED_PACKAGE_SETTINGS
 
     /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.encryptionAlgorithm"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* encryptionAlgorithm;
+    public char* encryptionAlgorithm;
 
     /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.useDiffusion"]/*' />
     public BOOL useDiffusion;

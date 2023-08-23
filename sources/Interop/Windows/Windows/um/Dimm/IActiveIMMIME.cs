@@ -97,9 +97,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.EnumRegisterWordW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum)
+    public HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int>)(lpVtbl[9]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szRegister, pData, pEnum);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, char*, uint, char*, void*, IEnumRegisterWordW**, int>)(lpVtbl[9]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szRegister, pData, pEnum);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.EscapeA"]/*' />
@@ -217,9 +217,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetConversionListW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied)
+    public HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] char* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[24]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[24]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, hIMC, pSrc, uBufLen, uFlag, pDst, puCopied);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetConversionStatus"]/*' />
@@ -249,9 +249,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetDescriptionW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, uint* puCopied)
+    public HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] char* szDescription, uint* puCopied)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int>)(lpVtbl[28]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szDescription, puCopied);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, char*, uint*, int>)(lpVtbl[28]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szDescription, puCopied);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetGuideLineA"]/*' />
@@ -265,9 +265,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetGuideLineW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] ushort* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult)
+    public HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] char* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, ushort*, uint*, int>)(lpVtbl[30]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
+        return ((delegate* unmanaged<IActiveIMMIME*, HIMC, uint, uint, char*, uint*, int>)(lpVtbl[30]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hIMC, dwIndex, dwBufLen, pBuf, pdwResult);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetIMEFileNameA"]/*' />
@@ -281,9 +281,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetIMEFileNameW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, uint* puCopied)
+    public HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] char* szFileName, uint* puCopied)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, ushort*, uint*, int>)(lpVtbl[32]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szFileName, puCopied);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, uint, char*, uint*, int>)(lpVtbl[32]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, uBufLen, szFileName, puCopied);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GetOpenStatus"]/*' />
@@ -345,9 +345,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.InstallIMEW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT InstallIMEW([NativeTypeName("LPWSTR")] ushort* szIMEFileName, [NativeTypeName("LPWSTR")] ushort* szLayoutText, HKL* phKL)
+    public HRESULT InstallIMEW([NativeTypeName("LPWSTR")] char* szIMEFileName, [NativeTypeName("LPWSTR")] char* szLayoutText, HKL* phKL)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, ushort*, ushort*, HKL*, int>)(lpVtbl[40]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), szIMEFileName, szLayoutText, phKL);
+        return ((delegate* unmanaged<IActiveIMMIME*, char*, char*, HKL*, int>)(lpVtbl[40]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), szIMEFileName, szLayoutText, phKL);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.IsIME"]/*' />
@@ -393,9 +393,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.RegisterWordW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister)
+    public HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, int>)(lpVtbl[46]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szRegister);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, char*, uint, char*, int>)(lpVtbl[46]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szRegister);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.ReleaseContext"]/*' />
@@ -497,9 +497,9 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.UnregisterWordW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
-    public HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szUnregister)
+    public HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szUnregister)
     {
-        return ((delegate* unmanaged<IActiveIMMIME*, HKL, ushort*, uint, ushort*, int>)(lpVtbl[59]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szUnregister);
+        return ((delegate* unmanaged<IActiveIMMIME*, HKL, char*, uint, char*, int>)(lpVtbl[59]))((IActiveIMMIME*)Unsafe.AsPointer(ref this), hKL, szReading, dwStyle, szUnregister);
     }
 
     /// <include file='IActiveIMMIME.xml' path='doc/member[@name="IActiveIMMIME.GenerateMessage"]/*' />
@@ -771,7 +771,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT EnumRegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordA** pEnum);
 
         [VtblIndex(9)]
-        HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum);
+        HRESULT EnumRegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** pEnum);
 
         [VtblIndex(10)]
         HRESULT EscapeA(HKL hKL, HIMC hIMC, uint uEscape, [NativeTypeName("LPVOID")] void* pData, LRESULT* plResult);
@@ -816,7 +816,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT GetConversionListA(HKL hKL, HIMC hIMC, [NativeTypeName("LPSTR")] sbyte* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
 
         [VtblIndex(24)]
-        HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
+        HRESULT GetConversionListW(HKL hKL, HIMC hIMC, [NativeTypeName("LPWSTR")] char* pSrc, uint uBufLen, uint uFlag, CANDIDATELIST* pDst, uint* puCopied);
 
         [VtblIndex(25)]
         HRESULT GetConversionStatus(HIMC hIMC, [NativeTypeName("DWORD *")] uint* pfdwConversion, [NativeTypeName("DWORD *")] uint* pfdwSentence);
@@ -828,19 +828,19 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT GetDescriptionA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szDescription, uint* puCopied);
 
         [VtblIndex(28)]
-        HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szDescription, uint* puCopied);
+        HRESULT GetDescriptionW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] char* szDescription, uint* puCopied);
 
         [VtblIndex(29)]
         HRESULT GetGuideLineA(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPSTR")] sbyte* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
 
         [VtblIndex(30)]
-        HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] ushort* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
+        HRESULT GetGuideLineW(HIMC hIMC, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwBufLen, [NativeTypeName("LPWSTR")] char* pBuf, [NativeTypeName("DWORD *")] uint* pdwResult);
 
         [VtblIndex(31)]
         HRESULT GetIMEFileNameA(HKL hKL, uint uBufLen, [NativeTypeName("LPSTR")] sbyte* szFileName, uint* puCopied);
 
         [VtblIndex(32)]
-        HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] ushort* szFileName, uint* puCopied);
+        HRESULT GetIMEFileNameW(HKL hKL, uint uBufLen, [NativeTypeName("LPWSTR")] char* szFileName, uint* puCopied);
 
         [VtblIndex(33)]
         HRESULT GetOpenStatus(HIMC hIMC);
@@ -864,7 +864,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT InstallIMEA([NativeTypeName("LPSTR")] sbyte* szIMEFileName, [NativeTypeName("LPSTR")] sbyte* szLayoutText, HKL* phKL);
 
         [VtblIndex(40)]
-        HRESULT InstallIMEW([NativeTypeName("LPWSTR")] ushort* szIMEFileName, [NativeTypeName("LPWSTR")] ushort* szLayoutText, HKL* phKL);
+        HRESULT InstallIMEW([NativeTypeName("LPWSTR")] char* szIMEFileName, [NativeTypeName("LPWSTR")] char* szLayoutText, HKL* phKL);
 
         [VtblIndex(41)]
         HRESULT IsIME(HKL hKL);
@@ -882,7 +882,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT RegisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szRegister);
 
         [VtblIndex(46)]
-        HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister);
+        HRESULT RegisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister);
 
         [VtblIndex(47)]
         HRESULT ReleaseContext(HWND hWnd, HIMC hIMC);
@@ -921,7 +921,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         HRESULT UnregisterWordA(HKL hKL, [NativeTypeName("LPSTR")] sbyte* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPSTR")] sbyte* szUnregister);
 
         [VtblIndex(59)]
-        HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szUnregister);
+        HRESULT UnregisterWordW(HKL hKL, [NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szUnregister);
 
         [VtblIndex(60)]
         HRESULT GenerateMessage(HIMC hIMC);
@@ -1048,7 +1048,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HKL, sbyte*, uint, sbyte*, void*, IEnumRegisterWordA**, int> EnumRegisterWordA;
 
         [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR, LPVOID, IEnumRegisterWordW **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int> EnumRegisterWordW;
+        public delegate* unmanaged<TSelf*, HKL, char*, uint, char*, void*, IEnumRegisterWordW**, int> EnumRegisterWordW;
 
         [NativeTypeName("HRESULT (HKL, HIMC, UINT, LPVOID, LRESULT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HKL, HIMC, uint, void*, LRESULT*, int> EscapeA;
@@ -1093,7 +1093,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HKL, HIMC, sbyte*, uint, uint, CANDIDATELIST*, uint*, int> GetConversionListA;
 
         [NativeTypeName("HRESULT (HKL, HIMC, LPWSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int> GetConversionListW;
+        public delegate* unmanaged<TSelf*, HKL, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int> GetConversionListW;
 
         [NativeTypeName("HRESULT (HIMC, DWORD *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HIMC, uint*, uint*, int> GetConversionStatus;
@@ -1105,19 +1105,19 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HKL, uint, sbyte*, uint*, int> GetDescriptionA;
 
         [NativeTypeName("HRESULT (HKL, UINT, LPWSTR, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, uint, ushort*, uint*, int> GetDescriptionW;
+        public delegate* unmanaged<TSelf*, HKL, uint, char*, uint*, int> GetDescriptionW;
 
         [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LPSTR, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HIMC, uint, uint, sbyte*, uint*, int> GetGuideLineA;
 
         [NativeTypeName("HRESULT (HIMC, DWORD, DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HIMC, uint, uint, ushort*, uint*, int> GetGuideLineW;
+        public delegate* unmanaged<TSelf*, HIMC, uint, uint, char*, uint*, int> GetGuideLineW;
 
         [NativeTypeName("HRESULT (HKL, UINT, LPSTR, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HKL, uint, sbyte*, uint*, int> GetIMEFileNameA;
 
         [NativeTypeName("HRESULT (HKL, UINT, LPWSTR, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, uint, ushort*, uint*, int> GetIMEFileNameW;
+        public delegate* unmanaged<TSelf*, HKL, uint, char*, uint*, int> GetIMEFileNameW;
 
         [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HIMC, int> GetOpenStatus;
@@ -1141,7 +1141,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, sbyte*, sbyte*, HKL*, int> InstallIMEA;
 
         [NativeTypeName("HRESULT (LPWSTR, LPWSTR, HKL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, HKL*, int> InstallIMEW;
+        public delegate* unmanaged<TSelf*, char*, char*, HKL*, int> InstallIMEW;
 
         [NativeTypeName("HRESULT (HKL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HKL, int> IsIME;
@@ -1159,7 +1159,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HKL, sbyte*, uint, sbyte*, int> RegisterWordA;
 
         [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, ushort*, uint, ushort*, int> RegisterWordW;
+        public delegate* unmanaged<TSelf*, HKL, char*, uint, char*, int> RegisterWordW;
 
         [NativeTypeName("HRESULT (HWND, HIMC) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, HIMC, int> ReleaseContext;
@@ -1198,7 +1198,7 @@ public unsafe partial struct IActiveIMMIME : IActiveIMMIME.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HKL, sbyte*, uint, sbyte*, int> UnregisterWordA;
 
         [NativeTypeName("HRESULT (HKL, LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKL, ushort*, uint, ushort*, int> UnregisterWordW;
+        public delegate* unmanaged<TSelf*, HKL, char*, uint, char*, int> UnregisterWordW;
 
         [NativeTypeName("HRESULT (HIMC) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HIMC, int> GenerateMessage;

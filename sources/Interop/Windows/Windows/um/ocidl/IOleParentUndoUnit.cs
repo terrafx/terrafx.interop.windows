@@ -57,9 +57,9 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface, 
     /// <inheritdoc cref="IOleUndoUnit.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleParentUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged<IOleParentUndoUnit*, char**, int>)(lpVtbl[4]))((IOleParentUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <inheritdoc cref="IOleUndoUnit.GetUnitType" />
@@ -152,7 +152,7 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface, 
         public delegate* unmanaged<TSelf*, IOleUndoManager*, int> Do;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int*, int> GetUnitType;

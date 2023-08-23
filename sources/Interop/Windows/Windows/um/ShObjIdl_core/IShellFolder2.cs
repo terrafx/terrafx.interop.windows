@@ -49,9 +49,9 @@ public unsafe partial struct IShellFolder2 : IShellFolder2.Interface, INativeGui
     /// <inheritdoc cref="IShellFolder.ParseDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
+    public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
     {
-        return ((delegate* unmanaged<IShellFolder2*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder2*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
+        return ((delegate* unmanaged<IShellFolder2*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder2*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
     }
 
     /// <inheritdoc cref="IShellFolder.EnumObjects" />
@@ -121,9 +121,9 @@ public unsafe partial struct IShellFolder2 : IShellFolder2.Interface, INativeGui
     /// <inheritdoc cref="IShellFolder.SetNameOf" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+    public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
     {
-        return ((delegate* unmanaged<IShellFolder2*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder2*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
+        return ((delegate* unmanaged<IShellFolder2*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder2*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
     }
 
     /// <include file='IShellFolder2.xml' path='doc/member[@name="IShellFolder2.GetDefaultSearchGUID"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IShellFolder2 : IShellFolder2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IBindCtx *, LPWSTR, ULONG *, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (HWND, SHCONTF, IEnumIDList **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
@@ -246,7 +246,7 @@ public unsafe partial struct IShellFolder2 : IShellFolder2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
 
         [NativeTypeName("HRESULT (HWND, LPCITEMIDLIST, LPCWSTR, SHGDNF, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
+        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int> SetNameOf;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetDefaultSearchGUID;

@@ -49,23 +49,23 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativ
     /// <inheritdoc cref="IAuthenticate.Authenticate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword)
+    public HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword)
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
+        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, char**, char**, int>)(lpVtbl[3]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
     }
 
     /// <include file='IAuthenticateEx.xml' path='doc/member[@name="IAuthenticateEx.AuthenticateEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword, AUTHENTICATEINFO* pauthinfo)
+    public HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword, AUTHENTICATEINFO* pauthinfo)
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int>)(lpVtbl[4]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword, pauthinfo);
+        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, char**, char**, AUTHENTICATEINFO*, int>)(lpVtbl[4]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword, pauthinfo);
     }
 
     public interface Interface : IAuthenticate.Interface
     {
         [VtblIndex(4)]
-        HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword, AUTHENTICATEINFO* pauthinfo);
+        HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword, AUTHENTICATEINFO* pauthinfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -81,9 +81,9 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, int> Authenticate;
+        public delegate* unmanaged<TSelf*, HWND*, char**, char**, int> Authenticate;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *, AUTHENTICATEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int> AuthenticateEx;
+        public delegate* unmanaged<TSelf*, HWND*, char**, char**, AUTHENTICATEINFO*, int> AuthenticateEx;
     }
 }

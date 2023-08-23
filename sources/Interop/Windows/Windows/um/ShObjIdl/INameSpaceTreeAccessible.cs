@@ -49,9 +49,9 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnGetDefaultAccessibilityAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction)
+    public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] char** pbstrDefaultAction)
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
+        return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, char**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
     }
 
     /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnDoDefaultAccessibilityAction"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction);
+        HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] char** pbstrDefaultAction);
 
         [VtblIndex(4)]
         HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi);
@@ -95,7 +95,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
+        public delegate* unmanaged<TSelf*, IShellItem*, char**, int> OnGetDefaultAccessibilityAction;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, int> OnDoDefaultAccessibilityAction;

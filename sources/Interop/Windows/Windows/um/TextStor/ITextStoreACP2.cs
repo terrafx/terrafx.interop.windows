@@ -107,17 +107,17 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
     /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetText([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("WCHAR *")] ushort* pchPlain, [NativeTypeName("ULONG")] uint cchPlainReq, [NativeTypeName("ULONG *")] uint* pcchPlainRet, TS_RUNINFO* prgRunInfo, [NativeTypeName("ULONG")] uint cRunInfoReq, [NativeTypeName("ULONG *")] uint* pcRunInfoRet, [NativeTypeName("LONG *")] int* pacpNext)
+    public HRESULT GetText([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("WCHAR *")] char* pchPlain, [NativeTypeName("ULONG")] uint cchPlainReq, [NativeTypeName("ULONG *")] uint* pcchPlainRet, TS_RUNINFO* prgRunInfo, [NativeTypeName("ULONG")] uint cRunInfoReq, [NativeTypeName("ULONG *")] uint* pcRunInfoRet, [NativeTypeName("LONG *")] int* pacpNext)
     {
-        return ((delegate* unmanaged<ITextStoreACP2*, int, int, ushort*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int>)(lpVtbl[10]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), acpStart, acpEnd, pchPlain, cchPlainReq, pcchPlainRet, prgRunInfo, cRunInfoReq, pcRunInfoRet, pacpNext);
+        return ((delegate* unmanaged<ITextStoreACP2*, int, int, char*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int>)(lpVtbl[10]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), acpStart, acpEnd, pchPlain, cchPlainReq, pcchPlainRet, prgRunInfo, cRunInfoReq, pcRunInfoRet, pacpNext);
     }
 
     /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, TS_TEXTCHANGE* pChange)
+    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, TS_TEXTCHANGE* pChange)
     {
-        return ((delegate* unmanaged<ITextStoreACP2*, uint, int, int, ushort*, uint, TS_TEXTCHANGE*, int>)(lpVtbl[11]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), dwFlags, acpStart, acpEnd, pchText, cch, pChange);
+        return ((delegate* unmanaged<ITextStoreACP2*, uint, int, int, char*, uint, TS_TEXTCHANGE*, int>)(lpVtbl[11]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), dwFlags, acpStart, acpEnd, pchText, cch, pChange);
     }
 
     /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.GetFormattedText"]/*' />
@@ -155,9 +155,9 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
     /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.InsertTextAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LONG *")] int* pacpStart, [NativeTypeName("LONG *")] int* pacpEnd, TS_TEXTCHANGE* pChange)
+    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LONG *")] int* pacpStart, [NativeTypeName("LONG *")] int* pacpEnd, TS_TEXTCHANGE* pChange)
     {
-        return ((delegate* unmanaged<ITextStoreACP2*, uint, ushort*, uint, int*, int*, TS_TEXTCHANGE*, int>)(lpVtbl[16]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, pacpStart, pacpEnd, pChange);
+        return ((delegate* unmanaged<ITextStoreACP2*, uint, char*, uint, int*, int*, TS_TEXTCHANGE*, int>)(lpVtbl[16]))((ITextStoreACP2*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, pacpStart, pacpEnd, pChange);
     }
 
     /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.InsertEmbeddedAtSelection"]/*' />
@@ -272,10 +272,10 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
         HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ACP *")] TS_SELECTION_ACP* pSelection);
 
         [VtblIndex(10)]
-        HRESULT GetText([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("WCHAR *")] ushort* pchPlain, [NativeTypeName("ULONG")] uint cchPlainReq, [NativeTypeName("ULONG *")] uint* pcchPlainRet, TS_RUNINFO* prgRunInfo, [NativeTypeName("ULONG")] uint cRunInfoReq, [NativeTypeName("ULONG *")] uint* pcRunInfoRet, [NativeTypeName("LONG *")] int* pacpNext);
+        HRESULT GetText([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("WCHAR *")] char* pchPlain, [NativeTypeName("ULONG")] uint cchPlainReq, [NativeTypeName("ULONG *")] uint* pcchPlainRet, TS_RUNINFO* prgRunInfo, [NativeTypeName("ULONG")] uint cRunInfoReq, [NativeTypeName("ULONG *")] uint* pcRunInfoRet, [NativeTypeName("LONG *")] int* pacpNext);
 
         [VtblIndex(11)]
-        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, TS_TEXTCHANGE* pChange);
+        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, TS_TEXTCHANGE* pChange);
 
         [VtblIndex(12)]
         HRESULT GetFormattedText([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, IDataObject** ppDataObject);
@@ -290,7 +290,7 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
         HRESULT InsertEmbedded([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, IDataObject* pDataObject, TS_TEXTCHANGE* pChange);
 
         [VtblIndex(16)]
-        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LONG *")] int* pacpStart, [NativeTypeName("LONG *")] int* pacpEnd, TS_TEXTCHANGE* pChange);
+        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LONG *")] int* pacpStart, [NativeTypeName("LONG *")] int* pacpEnd, TS_TEXTCHANGE* pChange);
 
         [VtblIndex(17)]
         HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, [NativeTypeName("LONG *")] int* pacpStart, [NativeTypeName("LONG *")] int* pacpEnd, TS_TEXTCHANGE* pChange);
@@ -360,10 +360,10 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, TS_SELECTION_ACP*, int> SetSelection;
 
         [NativeTypeName("HRESULT (LONG, LONG, WCHAR *, ULONG, ULONG *, TS_RUNINFO *, ULONG, ULONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int> GetText;
+        public delegate* unmanaged<TSelf*, int, int, char*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD, LONG, LONG, const WCHAR *, ULONG, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, int, ushort*, uint, TS_TEXTCHANGE*, int> SetText;
+        public delegate* unmanaged<TSelf*, uint, int, int, char*, uint, TS_TEXTCHANGE*, int> SetText;
 
         [NativeTypeName("HRESULT (LONG, LONG, IDataObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int, IDataObject**, int> GetFormattedText;
@@ -378,7 +378,7 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, int, int, IDataObject*, TS_TEXTCHANGE*, int> InsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, const WCHAR *, ULONG, LONG *, LONG *, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int*, int*, TS_TEXTCHANGE*, int> InsertTextAtSelection;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int*, int*, TS_TEXTCHANGE*, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (DWORD, IDataObject *, LONG *, LONG *, TS_TEXTCHANGE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDataObject*, int*, int*, TS_TEXTCHANGE*, int> InsertEmbeddedAtSelection;

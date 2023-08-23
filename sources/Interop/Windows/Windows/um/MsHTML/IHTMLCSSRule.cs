@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCSSRule : IHTMLCSSRule.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSRule*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCSSRule*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,17 +89,17 @@ public unsafe partial struct IHTMLCSSRule : IHTMLCSSRule.Interface, INativeGuid
     /// <include file='IHTMLCSSRule.xml' path='doc/member[@name="IHTMLCSSRule.put_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_cssText([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSRule*, ushort*, int>)(lpVtbl[8]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSRule*, char*, int>)(lpVtbl[8]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSRule.xml' path='doc/member[@name="IHTMLCSSRule.get_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cssText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSRule*, ushort**, int>)(lpVtbl[9]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSRule*, char**, int>)(lpVtbl[9]))((IHTMLCSSRule*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSRule.xml' path='doc/member[@name="IHTMLCSSRule.get_parentRule"]/*' />
@@ -124,10 +124,10 @@ public unsafe partial struct IHTMLCSSRule : IHTMLCSSRule.Interface, INativeGuid
         HRESULT get_type(ushort* p);
 
         [VtblIndex(8)]
-        HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_cssText([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(9)]
-        HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cssText([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
         HRESULT get_parentRule(IHTMLCSSRule** p);
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLCSSRule : IHTMLCSSRule.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -164,10 +164,10 @@ public unsafe partial struct IHTMLCSSRule : IHTMLCSSRule.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ushort*, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_cssText;
+        public delegate* unmanaged<TSelf*, char*, int> put_cssText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cssText;
+        public delegate* unmanaged<TSelf*, char**, int> get_cssText;
 
         [NativeTypeName("HRESULT (IHTMLCSSRule **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLCSSRule**, int> get_parentRule;

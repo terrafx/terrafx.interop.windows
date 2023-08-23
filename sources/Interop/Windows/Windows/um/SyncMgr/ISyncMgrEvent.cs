@@ -57,17 +57,17 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetHandlerID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] ushort** ppszHandlerID)
+    public HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] char** ppszHandlerID)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[4]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszHandlerID);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[4]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszHandlerID);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetItemID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
+    public HRESULT GetItemID([NativeTypeName("LPWSTR *")] char** ppszItemID)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[5]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszItemID);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[5]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszItemID);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLevel"]/*' />
@@ -97,41 +97,41 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[9]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[9]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetDescription([NativeTypeName("LPWSTR *")] ushort** ppszDescription)
+    public HRESULT GetDescription([NativeTypeName("LPWSTR *")] char** ppszDescription)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[10]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszDescription);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[10]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszDescription);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLinkText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetLinkText([NativeTypeName("LPWSTR *")] ushort** ppszLinkText)
+    public HRESULT GetLinkText([NativeTypeName("LPWSTR *")] char** ppszLinkText)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[11]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkText);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[11]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkText);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLinkReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] ushort** ppszLinkReference)
+    public HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] char** ppszLinkReference)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[12]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkReference);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[12]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkReference);
     }
 
     /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetContext([NativeTypeName("LPWSTR *")] ushort** ppszContext)
+    public HRESULT GetContext([NativeTypeName("LPWSTR *")] char** ppszContext)
     {
-        return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[13]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszContext);
+        return ((delegate* unmanaged<ISyncMgrEvent*, char**, int>)(lpVtbl[13]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -140,10 +140,10 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
         HRESULT GetEventID(Guid* pguidEventID);
 
         [VtblIndex(4)]
-        HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] ushort** ppszHandlerID);
+        HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] char** ppszHandlerID);
 
         [VtblIndex(5)]
-        HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID);
+        HRESULT GetItemID([NativeTypeName("LPWSTR *")] char** ppszItemID);
 
         [VtblIndex(6)]
         HRESULT GetLevel(SYNCMGR_EVENT_LEVEL* pnLevel);
@@ -155,19 +155,19 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
         HRESULT GetTime(FILETIME* pfCreationTime);
 
         [VtblIndex(9)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(10)]
-        HRESULT GetDescription([NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+        HRESULT GetDescription([NativeTypeName("LPWSTR *")] char** ppszDescription);
 
         [VtblIndex(11)]
-        HRESULT GetLinkText([NativeTypeName("LPWSTR *")] ushort** ppszLinkText);
+        HRESULT GetLinkText([NativeTypeName("LPWSTR *")] char** ppszLinkText);
 
         [VtblIndex(12)]
-        HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] ushort** ppszLinkReference);
+        HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] char** ppszLinkReference);
 
         [VtblIndex(13)]
-        HRESULT GetContext([NativeTypeName("LPWSTR *")] ushort** ppszContext);
+        HRESULT GetContext([NativeTypeName("LPWSTR *")] char** ppszContext);
     }
 
     public partial struct Vtbl<TSelf>
@@ -186,10 +186,10 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
         public delegate* unmanaged<TSelf*, Guid*, int> GetEventID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetHandlerID;
+        public delegate* unmanaged<TSelf*, char**, int> GetHandlerID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetItemID;
+        public delegate* unmanaged<TSelf*, char**, int> GetItemID;
 
         [NativeTypeName("HRESULT (SYNCMGR_EVENT_LEVEL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SYNCMGR_EVENT_LEVEL*, int> GetLevel;
@@ -201,18 +201,18 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGui
         public delegate* unmanaged<TSelf*, FILETIME*, int> GetTime;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLinkText;
+        public delegate* unmanaged<TSelf*, char**, int> GetLinkText;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLinkReference;
+        public delegate* unmanaged<TSelf*, char**, int> GetLinkReference;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetContext;
+        public delegate* unmanaged<TSelf*, char**, int> GetContext;
     }
 }

@@ -81,9 +81,9 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.GetTopologyWorkQueueMMCSSClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetTopologyWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass)
+    public HRESULT GetTopologyWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LPWSTR")] char* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass)
     {
-        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint*, int>)(lpVtbl[7]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwTopologyWorkQueueId, pwszClass, pcchClass);
+        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, char*, uint*, int>)(lpVtbl[7]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwTopologyWorkQueueId, pwszClass, pcchClass);
     }
 
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.GetTopologyWorkQueueMMCSSTaskId"]/*' />
@@ -97,9 +97,9 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.BeginRegisterPlatformWorkQueueWithMMCSS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT BeginRegisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState)
+    public HRESULT BeginRegisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] char* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState)
     {
-        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[9]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwPlatformWorkQueue, wszClass, dwTaskId, pCallback, pState);
+        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, char*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[9]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwPlatformWorkQueue, wszClass, dwTaskId, pCallback, pState);
     }
 
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.EndRegisterPlatformWorkQueueWithMMCSS"]/*' />
@@ -129,9 +129,9 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.GetPlaftormWorkQueueMMCSSClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetPlaftormWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass)
+    public HRESULT GetPlaftormWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LPWSTR")] char* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass)
     {
-        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, ushort*, uint*, int>)(lpVtbl[13]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwPlatformWorkQueueId, pwszClass, pcchClass);
+        return ((delegate* unmanaged<IMFWorkQueueServices*, uint, char*, uint*, int>)(lpVtbl[13]))((IMFWorkQueueServices*)Unsafe.AsPointer(ref this), dwPlatformWorkQueueId, pwszClass, pcchClass);
     }
 
     /// <include file='IMFWorkQueueServices.xml' path='doc/member[@name="IMFWorkQueueServices.GetPlatformWorkQueueMMCSSTaskId"]/*' />
@@ -157,13 +157,13 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
         HRESULT EndUnregisterTopologyWorkQueuesWithMMCSS(IMFAsyncResult* pResult);
 
         [VtblIndex(7)]
-        HRESULT GetTopologyWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+        HRESULT GetTopologyWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("LPWSTR")] char* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
 
         [VtblIndex(8)]
         HRESULT GetTopologyWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwTopologyWorkQueueId, [NativeTypeName("DWORD *")] uint* pdwTaskId);
 
         [VtblIndex(9)]
-        HRESULT BeginRegisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState);
+        HRESULT BeginRegisterPlatformWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwPlatformWorkQueue, [NativeTypeName("LPCWSTR")] char* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pCallback, IUnknown* pState);
 
         [VtblIndex(10)]
         HRESULT EndRegisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult, [NativeTypeName("DWORD *")] uint* pdwTaskId);
@@ -175,7 +175,7 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
         HRESULT EndUnregisterPlatformWorkQueueWithMMCSS(IMFAsyncResult* pResult);
 
         [VtblIndex(13)]
-        HRESULT GetPlaftormWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+        HRESULT GetPlaftormWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("LPWSTR")] char* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
 
         [VtblIndex(14)]
         HRESULT GetPlatformWorkQueueMMCSSTaskId([NativeTypeName("DWORD")] uint dwPlatformWorkQueueId, [NativeTypeName("DWORD *")] uint* pdwTaskId);
@@ -206,13 +206,13 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
         public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndUnregisterTopologyWorkQueuesWithMMCSS;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetTopologyWorkQueueMMCSSClass;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetTopologyWorkQueueMMCSSClass;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetTopologyWorkQueueMMCSSTaskId;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, DWORD, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRegisterPlatformWorkQueueWithMMCSS;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRegisterPlatformWorkQueueWithMMCSS;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFAsyncResult*, uint*, int> EndRegisterPlatformWorkQueueWithMMCSS;
@@ -224,7 +224,7 @@ public unsafe partial struct IMFWorkQueueServices : IMFWorkQueueServices.Interfa
         public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndUnregisterPlatformWorkQueueWithMMCSS;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetPlaftormWorkQueueMMCSSClass;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetPlaftormWorkQueueMMCSSClass;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetPlatformWorkQueueMMCSSTaskId;

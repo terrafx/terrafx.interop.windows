@@ -13,7 +13,7 @@ public unsafe partial struct DIDEVICEIMAGEINFOW
 {
     /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW.tszImagePath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszImagePath[260];
+    public fixed char tszImagePath[260];
 
     /// <include file='DIDEVICEIMAGEINFOW.xml' path='doc/member[@name="DIDEVICEIMAGEINFOW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]

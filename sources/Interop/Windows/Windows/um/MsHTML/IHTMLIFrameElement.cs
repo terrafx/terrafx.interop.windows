@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLIFrameElement : IHTMLIFrameElement.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLIFrameElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLIFrameElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IHTMLIFrameElement : IHTMLIFrameElement.Interface, 
     /// <include file='IHTMLIFrameElement.xml' path='doc/member[@name="IHTMLIFrameElement.put_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_align([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLIFrameElement*, ushort*, int>)(lpVtbl[11]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLIFrameElement*, char*, int>)(lpVtbl[11]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLIFrameElement.xml' path='doc/member[@name="IHTMLIFrameElement.get_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_align([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLIFrameElement*, ushort**, int>)(lpVtbl[12]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLIFrameElement*, char**, int>)(lpVtbl[12]))((IHTMLIFrameElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -141,10 +141,10 @@ public unsafe partial struct IHTMLIFrameElement : IHTMLIFrameElement.Interface, 
         HRESULT get_hspace([NativeTypeName("long *")] int* p);
 
         [VtblIndex(11)]
-        HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_align([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_align([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,7 +166,7 @@ public unsafe partial struct IHTMLIFrameElement : IHTMLIFrameElement.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -184,9 +184,9 @@ public unsafe partial struct IHTMLIFrameElement : IHTMLIFrameElement.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_hspace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_align;
+        public delegate* unmanaged<TSelf*, char*, int> put_align;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_align;
+        public delegate* unmanaged<TSelf*, char**, int> get_align;
     }
 }

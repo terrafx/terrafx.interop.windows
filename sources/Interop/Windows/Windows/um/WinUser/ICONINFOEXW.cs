@@ -35,9 +35,9 @@ public unsafe partial struct ICONINFOEXW
 
     /// <include file='ICONINFOEXW.xml' path='doc/member[@name="ICONINFOEXW.szModName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szModName[260];
+    public fixed char szModName[260];
 
     /// <include file='ICONINFOEXW.xml' path='doc/member[@name="ICONINFOEXW.szResName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szResName[260];
+    public fixed char szResName[260];
 }

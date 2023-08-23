@@ -17,11 +17,11 @@ public unsafe partial struct DISCDLGSTRUCTW
 
     /// <include file='DISCDLGSTRUCTW.xml' path='doc/member[@name="DISCDLGSTRUCTW.lpLocalName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpLocalName;
+    public char* lpLocalName;
 
     /// <include file='DISCDLGSTRUCTW.xml' path='doc/member[@name="DISCDLGSTRUCTW.lpRemoteName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpRemoteName;
+    public char* lpRemoteName;
 
     /// <include file='DISCDLGSTRUCTW.xml' path='doc/member[@name="DISCDLGSTRUCTW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]

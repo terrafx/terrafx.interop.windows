@@ -51,9 +51,9 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface, INativeG
     /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
+    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
     {
-        return ((delegate* unmanaged<IMFSensorGroup*, ushort*, int, int*, int>)(lpVtbl[3]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
+        return ((delegate* unmanaged<IMFSensorGroup*, char*, int, int*, int>)(lpVtbl[3]))((IMFSensorGroup*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
     /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.GetFlags"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface, INativeG
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
+        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
 
         [VtblIndex(4)]
         HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags);
@@ -152,7 +152,7 @@ public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetSymbolicLink;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetFlags;

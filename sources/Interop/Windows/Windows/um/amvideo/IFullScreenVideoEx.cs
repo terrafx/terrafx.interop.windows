@@ -161,17 +161,17 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface, 
     /// <inheritdoc cref="IFullScreenVideo.SetCaption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption)
+    public HRESULT SetCaption([NativeTypeName("BSTR")] char* strCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideoEx*, ushort*, int>)(lpVtbl[17]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged<IFullScreenVideoEx*, char*, int>)(lpVtbl[17]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <inheritdoc cref="IFullScreenVideo.GetCaption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption)
+    public HRESULT GetCaption([NativeTypeName("BSTR *")] char** pstrCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideoEx*, ushort**, int>)(lpVtbl[18]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pstrCaption);
+        return ((delegate* unmanaged<IFullScreenVideoEx*, char**, int>)(lpVtbl[18]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pstrCaption);
     }
 
     /// <inheritdoc cref="IFullScreenVideo.SetDefault" />
@@ -284,10 +284,10 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface, 
         public delegate* unmanaged<TSelf*, int> IsHideOnDeactivate;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetCaption;
+        public delegate* unmanaged<TSelf*, char*, int> SetCaption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCaption;
+        public delegate* unmanaged<TSelf*, char**, int> GetCaption;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> SetDefault;

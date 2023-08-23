@@ -57,9 +57,9 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
     /// <include file='ITfSystemLangBarItem.xml' path='doc/member[@name="ITfSystemLangBarItem.SetTooltipString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT SetTooltipString([NativeTypeName("WCHAR *")] char* pchToolTip, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
+        return ((delegate* unmanaged<ITfSystemLangBarItem*, char*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
         HRESULT SetIcon(HICON hIcon);
 
         [VtblIndex(4)]
-        HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch);
+        HRESULT SetTooltipString([NativeTypeName("WCHAR *")] char* pchToolTip, [NativeTypeName("ULONG")] uint cch);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
         public delegate* unmanaged<TSelf*, HICON, int> SetIcon;
 
         [NativeTypeName("HRESULT (WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetTooltipString;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetTooltipString;
     }
 }

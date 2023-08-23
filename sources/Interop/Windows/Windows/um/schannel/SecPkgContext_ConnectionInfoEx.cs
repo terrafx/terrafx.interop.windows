@@ -18,7 +18,7 @@ public unsafe partial struct SecPkgContext_ConnectionInfoEx
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.szCipher"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szCipher[64];
+    public fixed char szCipher[64];
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.dwCipherStrength"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,7 +26,7 @@ public unsafe partial struct SecPkgContext_ConnectionInfoEx
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.szHash"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szHash[64];
+    public fixed char szHash[64];
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.dwHashStrength"]/*' />
     [NativeTypeName("DWORD")]
@@ -34,7 +34,7 @@ public unsafe partial struct SecPkgContext_ConnectionInfoEx
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.szExchange"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szExchange[64];
+    public fixed char szExchange[64];
 
     /// <include file='SecPkgContext_ConnectionInfoEx.xml' path='doc/member[@name="SecPkgContext_ConnectionInfoEx.dwExchStrength"]/*' />
     [NativeTypeName("DWORD")]

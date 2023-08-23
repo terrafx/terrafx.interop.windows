@@ -57,17 +57,17 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
     /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.GetCurrentPrinterName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] ushort* pPrinterName, uint* pcchSize)
+    public HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] char* pPrinterName, uint* pcchSize)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, ushort*, uint*, int>)(lpVtbl[4]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPrinterName, pcchSize);
+        return ((delegate* unmanaged<IPrintDialogServices*, char*, uint*, int>)(lpVtbl[4]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPrinterName, pcchSize);
     }
 
     /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.GetCurrentPortName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] ushort* pPortName, uint* pcchSize)
+    public HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] char* pPortName, uint* pcchSize)
     {
-        return ((delegate* unmanaged<IPrintDialogServices*, ushort*, uint*, int>)(lpVtbl[5]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPortName, pcchSize);
+        return ((delegate* unmanaged<IPrintDialogServices*, char*, uint*, int>)(lpVtbl[5]))((IPrintDialogServices*)Unsafe.AsPointer(ref this), pPortName, pcchSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,10 +76,10 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
         HRESULT GetCurrentDevMode([NativeTypeName("LPDEVMODE")] DEVMODEW* pDevMode, uint* pcbSize);
 
         [VtblIndex(4)]
-        HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] ushort* pPrinterName, uint* pcchSize);
+        HRESULT GetCurrentPrinterName([NativeTypeName("LPWSTR")] char* pPrinterName, uint* pcchSize);
 
         [VtblIndex(5)]
-        HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] ushort* pPortName, uint* pcchSize);
+        HRESULT GetCurrentPortName([NativeTypeName("LPWSTR")] char* pPortName, uint* pcchSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -98,9 +98,9 @@ public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interfa
         public delegate* unmanaged<TSelf*, DEVMODEW*, uint*, int> GetCurrentDevMode;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentPrinterName;
+        public delegate* unmanaged<TSelf*, char*, uint*, int> GetCurrentPrinterName;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentPortName;
+        public delegate* unmanaged<TSelf*, char*, uint*, int> GetCurrentPortName;
     }
 }

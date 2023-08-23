@@ -26,7 +26,7 @@ public unsafe partial struct HTTPSPolicyCallbackData
 
     /// <include file='HTTPSPolicyCallbackData.xml' path='doc/member[@name="HTTPSPolicyCallbackData.pwszServerName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszServerName;
+    public char* pwszServerName;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbStruct"]/*' />
     [UnscopedRef]

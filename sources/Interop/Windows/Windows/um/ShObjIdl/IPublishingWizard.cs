@@ -73,9 +73,9 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     /// <include file='IPublishingWizard.xml' path='doc/member[@name="IPublishingWizard.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope)
+    public HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] char* pszServiceScope)
     {
-        return ((delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, ushort*, int>)(lpVtbl[6]))((IPublishingWizard*)Unsafe.AsPointer(ref this), pdo, dwOptions, pszServiceScope);
+        return ((delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, char*, int>)(lpVtbl[6]))((IPublishingWizard*)Unsafe.AsPointer(ref this), pdo, dwOptions, pszServiceScope);
     }
 
     /// <include file='IPublishingWizard.xml' path='doc/member[@name="IPublishingWizard.GetTransferManifest"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
     public interface Interface : IWizardExtension.Interface
     {
         [VtblIndex(6)]
-        HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] ushort* pszServiceScope);
+        HRESULT Initialize(IDataObject* pdo, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("LPCWSTR")] char* pszServiceScope);
 
         [VtblIndex(7)]
         HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest);
@@ -117,7 +117,7 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface, IN
         public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDataObject*, uint, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, char*, int> Initialize;
 
         [NativeTypeName("HRESULT (HRESULT *, IXMLDOMDocument **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;

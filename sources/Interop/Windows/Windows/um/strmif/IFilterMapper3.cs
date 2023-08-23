@@ -49,25 +49,25 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface, INativeG
     /// <inheritdoc cref="IFilterMapper2.CreateCategory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateCategory([NativeTypeName("const IID &")] Guid* clsidCategory, [NativeTypeName("DWORD")] uint dwCategoryMerit, [NativeTypeName("LPCWSTR")] ushort* Description)
+    public HRESULT CreateCategory([NativeTypeName("const IID &")] Guid* clsidCategory, [NativeTypeName("DWORD")] uint dwCategoryMerit, [NativeTypeName("LPCWSTR")] char* Description)
     {
-        return ((delegate* unmanaged<IFilterMapper3*, Guid*, uint, ushort*, int>)(lpVtbl[3]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidCategory, dwCategoryMerit, Description);
+        return ((delegate* unmanaged<IFilterMapper3*, Guid*, uint, char*, int>)(lpVtbl[3]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidCategory, dwCategoryMerit, Description);
     }
 
     /// <inheritdoc cref="IFilterMapper2.UnregisterFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT UnregisterFilter([NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const IID &")] Guid* Filter)
+    public HRESULT UnregisterFilter([NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] char* szInstance, [NativeTypeName("const IID &")] Guid* Filter)
     {
-        return ((delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, Guid*, int>)(lpVtbl[4]))((IFilterMapper3*)Unsafe.AsPointer(ref this), pclsidCategory, szInstance, Filter);
+        return ((delegate* unmanaged<IFilterMapper3*, Guid*, char*, Guid*, int>)(lpVtbl[4]))((IFilterMapper3*)Unsafe.AsPointer(ref this), pclsidCategory, szInstance, Filter);
     }
 
     /// <inheritdoc cref="IFilterMapper2.RegisterFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RegisterFilter([NativeTypeName("const IID &")] Guid* clsidFilter, [NativeTypeName("LPCWSTR")] ushort* Name, IMoniker** ppMoniker, [NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] ushort* szInstance, [NativeTypeName("const REGFILTER2 *")] REGFILTER2* prf2)
+    public HRESULT RegisterFilter([NativeTypeName("const IID &")] Guid* clsidFilter, [NativeTypeName("LPCWSTR")] char* Name, IMoniker** ppMoniker, [NativeTypeName("const CLSID *")] Guid* pclsidCategory, [NativeTypeName("LPCOLESTR")] char* szInstance, [NativeTypeName("const REGFILTER2 *")] REGFILTER2* prf2)
     {
-        return ((delegate* unmanaged<IFilterMapper3*, Guid*, ushort*, IMoniker**, Guid*, ushort*, REGFILTER2*, int>)(lpVtbl[5]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidFilter, Name, ppMoniker, pclsidCategory, szInstance, prf2);
+        return ((delegate* unmanaged<IFilterMapper3*, Guid*, char*, IMoniker**, Guid*, char*, REGFILTER2*, int>)(lpVtbl[5]))((IFilterMapper3*)Unsafe.AsPointer(ref this), clsidFilter, Name, ppMoniker, pclsidCategory, szInstance, prf2);
     }
 
     /// <inheritdoc cref="IFilterMapper2.EnumMatchingFilters" />
@@ -105,13 +105,13 @@ public unsafe partial struct IFilterMapper3 : IFilterMapper3.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, ushort*, int> CreateCategory;
+        public delegate* unmanaged<TSelf*, Guid*, uint, char*, int> CreateCategory;
 
         [NativeTypeName("HRESULT (const CLSID *, LPCOLESTR, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, Guid*, int> UnregisterFilter;
+        public delegate* unmanaged<TSelf*, Guid*, char*, Guid*, int> UnregisterFilter;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMoniker **, const CLSID *, LPCOLESTR, const REGFILTER2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, IMoniker**, Guid*, ushort*, REGFILTER2*, int> RegisterFilter;
+        public delegate* unmanaged<TSelf*, Guid*, char*, IMoniker**, Guid*, char*, REGFILTER2*, int> RegisterFilter;
 
         [NativeTypeName("HRESULT (IEnumMoniker **, DWORD, BOOL, DWORD, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *, BOOL, BOOL, DWORD, const GUID *, const REGPINMEDIUM *, const CLSID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumMoniker**, uint, BOOL, uint, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, BOOL, BOOL, uint, Guid*, REGPINMEDIUM*, Guid*, int> EnumMatchingFilters;

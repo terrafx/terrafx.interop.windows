@@ -16,5 +16,5 @@ public unsafe partial struct PIN_INFO
 
     /// <include file='PIN_INFO.xml' path='doc/member[@name="PIN_INFO.achName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort achName[128];
+    public fixed char achName[128];
 }

@@ -49,15 +49,15 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
     /// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback.OnPictureChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName)
+    public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] char* pszUserName)
     {
-        return ((delegate* unmanaged<IUserAccountChangeCallback*, ushort*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
+        return ((delegate* unmanaged<IUserAccountChangeCallback*, char*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName);
+        HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] char* pszUserName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> OnPictureChange;
+        public delegate* unmanaged<TSelf*, char*, int> OnPictureChange;
     }
 }

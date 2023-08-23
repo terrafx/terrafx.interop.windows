@@ -65,9 +65,9 @@ public unsafe partial struct IDOMTextEvent : IDOMTextEvent.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMTextEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMTextEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IDOMTextEvent : IDOMTextEvent.Interface, INativeGui
     /// <include file='IDOMTextEvent.xml' path='doc/member[@name="IDOMTextEvent.get_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_data([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMTextEvent*, ushort**, int>)(lpVtbl[7]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMTextEvent*, char**, int>)(lpVtbl[7]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTextEvent.xml' path='doc/member[@name="IDOMTextEvent.get_inputMethod"]/*' />
@@ -97,32 +97,32 @@ public unsafe partial struct IDOMTextEvent : IDOMTextEvent.Interface, INativeGui
     /// <include file='IDOMTextEvent.xml' path='doc/member[@name="IDOMTextEvent.initTextEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT initTextEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* dataArg, [NativeTypeName("ULONG")] uint inputMethod, [NativeTypeName("BSTR")] ushort* locale)
+    public HRESULT initTextEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* dataArg, [NativeTypeName("ULONG")] uint inputMethod, [NativeTypeName("BSTR")] char* locale)
     {
-        return ((delegate* unmanaged<IDOMTextEvent*, ushort*, short, short, IHTMLWindow2*, ushort*, uint, ushort*, int>)(lpVtbl[9]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, dataArg, inputMethod, locale);
+        return ((delegate* unmanaged<IDOMTextEvent*, char*, short, short, IHTMLWindow2*, char*, uint, char*, int>)(lpVtbl[9]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, dataArg, inputMethod, locale);
     }
 
     /// <include file='IDOMTextEvent.xml' path='doc/member[@name="IDOMTextEvent.get_locale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_locale([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMTextEvent*, ushort**, int>)(lpVtbl[10]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMTextEvent*, char**, int>)(lpVtbl[10]))((IDOMTextEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_data([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_inputMethod([NativeTypeName("ULONG *")] uint* p);
 
         [VtblIndex(9)]
-        HRESULT initTextEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* dataArg, [NativeTypeName("ULONG")] uint inputMethod, [NativeTypeName("BSTR")] ushort* locale);
+        HRESULT initTextEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* dataArg, [NativeTypeName("ULONG")] uint inputMethod, [NativeTypeName("BSTR")] char* locale);
 
         [VtblIndex(10)]
-        HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_locale([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,21 +144,21 @@ public unsafe partial struct IDOMTextEvent : IDOMTextEvent.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_data;
+        public delegate* unmanaged<TSelf*, char**, int> get_data;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_inputMethod;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, BSTR, ULONG, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, ushort*, uint, ushort*, int> initTextEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, char*, uint, char*, int> initTextEvent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_locale;
+        public delegate* unmanaged<TSelf*, char**, int> get_locale;
     }
 }

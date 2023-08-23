@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDocument6*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument6*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDocument6*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument6*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,9 +129,9 @@ public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface, INativeG
     /// <include file='IHTMLDocument6.xml' path='doc/member[@name="IHTMLDocument6.getElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT getElementById([NativeTypeName("BSTR")] ushort* bstrId, IHTMLElement2** ppRetElement)
+    public HRESULT getElementById([NativeTypeName("BSTR")] char* bstrId, IHTMLElement2** ppRetElement)
     {
-        return ((delegate* unmanaged<IHTMLDocument6*, ushort*, IHTMLElement2**, int>)(lpVtbl[13]))((IHTMLDocument6*)Unsafe.AsPointer(ref this), bstrId, ppRetElement);
+        return ((delegate* unmanaged<IHTMLDocument6*, char*, IHTMLElement2**, int>)(lpVtbl[13]))((IHTMLDocument6*)Unsafe.AsPointer(ref this), bstrId, ppRetElement);
     }
 
     /// <include file='IHTMLDocument6.xml' path='doc/member[@name="IHTMLDocument6.updateSettings"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface, INativeG
         HRESULT get_onstoragecommit(VARIANT* p);
 
         [VtblIndex(13)]
-        HRESULT getElementById([NativeTypeName("BSTR")] ushort* bstrId, IHTMLElement2** ppRetElement);
+        HRESULT getElementById([NativeTypeName("BSTR")] char* bstrId, IHTMLElement2** ppRetElement);
 
         [VtblIndex(14)]
         HRESULT updateSettings();
@@ -188,7 +188,7 @@ public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -212,7 +212,7 @@ public unsafe partial struct IHTMLDocument6 : IHTMLDocument6.Interface, INativeG
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onstoragecommit;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement2**, int> getElementById;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElement2**, int> getElementById;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> updateSettings;

@@ -13,9 +13,9 @@ public unsafe partial struct TBSAVEPARAMSW
 
     /// <include file='TBSAVEPARAMSW.xml' path='doc/member[@name="TBSAVEPARAMSW.pszSubKey"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszSubKey;
+    public char* pszSubKey;
 
     /// <include file='TBSAVEPARAMSW.xml' path='doc/member[@name="TBSAVEPARAMSW.pszValueName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszValueName;
+    public char* pszValueName;
 }

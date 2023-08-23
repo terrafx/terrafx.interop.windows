@@ -49,15 +49,15 @@ public unsafe partial struct IRichChunk : IRichChunk.Interface, INativeGuid
     /// <include file='IRichChunk.xml' path='doc/member[@name="IRichChunk.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] ushort** ppsz, PROPVARIANT* pValue)
+    public HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] char** ppsz, PROPVARIANT* pValue)
     {
-        return ((delegate* unmanaged<IRichChunk*, uint*, uint*, ushort**, PROPVARIANT*, int>)(lpVtbl[3]))((IRichChunk*)Unsafe.AsPointer(ref this), pFirstPos, pLength, ppsz, pValue);
+        return ((delegate* unmanaged<IRichChunk*, uint*, uint*, char**, PROPVARIANT*, int>)(lpVtbl[3]))((IRichChunk*)Unsafe.AsPointer(ref this), pFirstPos, pLength, ppsz, pValue);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] ushort** ppsz, PROPVARIANT* pValue);
+        HRESULT GetData([NativeTypeName("ULONG *")] uint* pFirstPos, [NativeTypeName("ULONG *")] uint* pLength, [NativeTypeName("LPWSTR *")] char** ppsz, PROPVARIANT* pValue);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IRichChunk : IRichChunk.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, ULONG *, LPWSTR *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, ushort**, PROPVARIANT*, int> GetData;
+        public delegate* unmanaged<TSelf*, uint*, uint*, char**, PROPVARIANT*, int> GetData;
     }
 }

@@ -76,9 +76,9 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
     /// <inheritdoc cref="IVisualTreeService.CreateInstance" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
+    public HRESULT CreateInstance([NativeTypeName("BSTR")] char* typeName, [NativeTypeName("BSTR")] char* value, InstanceHandle* pInstanceHandle)
     {
-        return ((delegate* unmanaged<IVisualTreeService2*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
+        return ((delegate* unmanaged<IVisualTreeService2*, char*, char*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
     /// <inheritdoc cref="IVisualTreeService.GetPropertyValuesChain" />
@@ -148,9 +148,9 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
     /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.GetPropertyIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] ushort* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex)
+    public HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] char* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex)
     {
-        return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, ushort*, uint*, int>)(lpVtbl[15]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), @object, propertyName, pPropertyIndex);
+        return ((delegate* unmanaged<IVisualTreeService2*, InstanceHandle, char*, uint*, int>)(lpVtbl[15]))((IVisualTreeService2*)Unsafe.AsPointer(ref this), @object, propertyName, pPropertyIndex);
     }
 
     /// <include file='IVisualTreeService2.xml' path='doc/member[@name="IVisualTreeService2.GetProperty"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
     public interface Interface : IVisualTreeService.Interface
     {
         [VtblIndex(15)]
-        HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] ushort* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex);
+        HRESULT GetPropertyIndex(InstanceHandle @object, [NativeTypeName("LPCWSTR")] char* propertyName, [NativeTypeName("unsigned int *")] uint* pPropertyIndex);
 
         [VtblIndex(16)]
         HRESULT GetProperty(InstanceHandle @object, [NativeTypeName("unsigned int")] uint propertyIndex, InstanceHandle* pValue);
@@ -214,7 +214,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         public delegate* unmanaged<TSelf*, uint*, EnumType**, int> GetEnums;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, char*, char*, InstanceHandle*, int> CreateInstance;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
@@ -241,7 +241,7 @@ public unsafe partial struct IVisualTreeService2 : IVisualTreeService2.Interface
         public delegate* unmanaged<TSelf*, InstanceHandle, int> ClearChildren;
 
         [NativeTypeName("HRESULT (InstanceHandle, LPCWSTR, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, ushort*, uint*, int> GetPropertyIndex;
+        public delegate* unmanaged<TSelf*, InstanceHandle, char*, uint*, int> GetPropertyIndex;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int, InstanceHandle *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, uint, InstanceHandle*, int> GetProperty;

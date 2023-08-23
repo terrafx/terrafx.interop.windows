@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLMarqueeElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,33 +113,33 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_direction([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_direction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[11]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLMarqueeElement*, char*, int>)(lpVtbl[11]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_direction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[12]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMarqueeElement*, char**, int>)(lpVtbl[12]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_behavior([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort*, int>)(lpVtbl[13]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLMarqueeElement*, char*, int>)(lpVtbl[13]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.get_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_behavior([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLMarqueeElement*, ushort**, int>)(lpVtbl[14]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLMarqueeElement*, char**, int>)(lpVtbl[14]))((IHTMLMarqueeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLMarqueeElement.xml' path='doc/member[@name="IHTMLMarqueeElement.put_scrollAmount"]/*' />
@@ -333,16 +333,16 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         HRESULT get_scrollDelay([NativeTypeName("long *")] int* p);
 
         [VtblIndex(11)]
-        HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_direction([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_direction([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_behavior([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_behavior([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
         HRESULT put_scrollAmount([NativeTypeName("long")] int v);
@@ -430,7 +430,7 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -448,16 +448,16 @@ public unsafe partial struct IHTMLMarqueeElement : IHTMLMarqueeElement.Interface
         public delegate* unmanaged<TSelf*, int*, int> get_scrollDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_direction;
+        public delegate* unmanaged<TSelf*, char*, int> put_direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_direction;
+        public delegate* unmanaged<TSelf*, char**, int> get_direction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_behavior;
+        public delegate* unmanaged<TSelf*, char*, int> put_behavior;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_behavior;
+        public delegate* unmanaged<TSelf*, char**, int> get_behavior;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_scrollAmount;

@@ -65,9 +65,9 @@ public unsafe partial struct DDiscMaster2Events : DDiscMaster2Events.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<DDiscMaster2Events*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<DDiscMaster2Events*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct DDiscMaster2Events : DDiscMaster2Events.Interface, 
     /// <include file='DDiscMaster2Events.xml' path='doc/member[@name="DDiscMaster2Events.NotifyDeviceAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT NotifyDeviceAdded(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId)
+    public HRESULT NotifyDeviceAdded(IDispatch* @object, [NativeTypeName("BSTR")] char* uniqueId)
     {
-        return ((delegate* unmanaged<DDiscMaster2Events*, IDispatch*, ushort*, int>)(lpVtbl[7]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), @object, uniqueId);
+        return ((delegate* unmanaged<DDiscMaster2Events*, IDispatch*, char*, int>)(lpVtbl[7]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), @object, uniqueId);
     }
 
     /// <include file='DDiscMaster2Events.xml' path='doc/member[@name="DDiscMaster2Events.NotifyDeviceRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId)
+    public HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] char* uniqueId)
     {
-        return ((delegate* unmanaged<DDiscMaster2Events*, IDispatch*, ushort*, int>)(lpVtbl[8]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), @object, uniqueId);
+        return ((delegate* unmanaged<DDiscMaster2Events*, IDispatch*, char*, int>)(lpVtbl[8]))((DDiscMaster2Events*)Unsafe.AsPointer(ref this), @object, uniqueId);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT NotifyDeviceAdded(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId);
+        HRESULT NotifyDeviceAdded(IDispatch* @object, [NativeTypeName("BSTR")] char* uniqueId);
 
         [VtblIndex(8)]
-        HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] ushort* uniqueId);
+        HRESULT NotifyDeviceRemoved(IDispatch* @object, [NativeTypeName("BSTR")] char* uniqueId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct DDiscMaster2Events : DDiscMaster2Events.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, ushort*, int> NotifyDeviceAdded;
+        public delegate* unmanaged<TSelf*, IDispatch*, char*, int> NotifyDeviceAdded;
 
         [NativeTypeName("HRESULT (IDispatch *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, ushort*, int> NotifyDeviceRemoved;
+        public delegate* unmanaged<TSelf*, IDispatch*, char*, int> NotifyDeviceRemoved;
     }
 }

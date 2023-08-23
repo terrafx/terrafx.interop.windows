@@ -14,5 +14,5 @@ public unsafe partial struct GET_FILTER_FILE_IDENTIFIER_INPUT
 
     /// <include file='GET_FILTER_FILE_IDENTIFIER_INPUT.xml' path='doc/member[@name="GET_FILTER_FILE_IDENTIFIER_INPUT.Altitude"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Altitude[1];
+    public fixed char Altitude[1];
 }

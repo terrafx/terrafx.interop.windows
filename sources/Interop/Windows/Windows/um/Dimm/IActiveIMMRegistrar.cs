@@ -49,9 +49,9 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
     /// <include file='IActiveIMMRegistrar.xml' path='doc/member[@name="IActiveIMMRegistrar.RegisterIME"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc)
+    public HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] char* pszIconFile, [NativeTypeName("LPCWSTR")] char* pszDesc)
     {
-        return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, ushort, ushort*, ushort*, int>)(lpVtbl[3]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid, lgid, pszIconFile, pszDesc);
+        return ((delegate* unmanaged<IActiveIMMRegistrar*, Guid*, ushort, char*, char*, int>)(lpVtbl[3]))((IActiveIMMRegistrar*)Unsafe.AsPointer(ref this), rclsid, lgid, pszIconFile, pszDesc);
     }
 
     /// <include file='IActiveIMMRegistrar.xml' path='doc/member[@name="IActiveIMMRegistrar.UnregisterIME"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] ushort* pszIconFile, [NativeTypeName("LPCWSTR")] ushort* pszDesc);
+        HRESULT RegisterIME([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort lgid, [NativeTypeName("LPCWSTR")] char* pszIconFile, [NativeTypeName("LPCWSTR")] char* pszDesc);
 
         [VtblIndex(4)]
         HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid);
@@ -84,7 +84,7 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, ushort*, ushort*, int> RegisterIME;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, char*, char*, int> RegisterIME;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> UnregisterIME;

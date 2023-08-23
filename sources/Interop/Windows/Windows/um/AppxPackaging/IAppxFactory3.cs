@@ -49,37 +49,37 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreatePackageReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreatePackageReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxPackageReader** packageReader)
+    public HRESULT CreatePackageReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, ushort*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, packageReader);
+        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, packageReader);
     }
 
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreateManifestReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateManifestReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxManifestReader** manifestReader)
+    public HRESULT CreateManifestReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxManifestReader** manifestReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, ushort*, IAppxManifestReader**, int>)(lpVtbl[4]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, manifestReader);
+        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxManifestReader**, int>)(lpVtbl[4]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, manifestReader);
     }
 
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreateAppInstallerReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateAppInstallerReader(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxAppInstallerReader** appInstallerReader)
+    public HRESULT CreateAppInstallerReader(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxAppInstallerReader** appInstallerReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, ushort*, IAppxAppInstallerReader**, int>)(lpVtbl[5]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, appInstallerReader);
+        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxAppInstallerReader**, int>)(lpVtbl[5]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, appInstallerReader);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreatePackageReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxPackageReader** packageReader);
+        HRESULT CreatePackageReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader);
 
         [VtblIndex(4)]
-        HRESULT CreateManifestReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxManifestReader** manifestReader);
+        HRESULT CreateManifestReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxManifestReader** manifestReader);
 
         [VtblIndex(5)]
-        HRESULT CreateAppInstallerReader(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxAppInstallerReader** appInstallerReader);
+        HRESULT CreateAppInstallerReader(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxAppInstallerReader** appInstallerReader);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxPackageReader**, int> CreatePackageReader2;
+        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxPackageReader**, int> CreatePackageReader2;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxManifestReader**, int> CreateManifestReader2;
+        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxManifestReader**, int> CreateManifestReader2;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxAppInstallerReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxAppInstallerReader**, int> CreateAppInstallerReader;
+        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxAppInstallerReader**, int> CreateAppInstallerReader;
     }
 }

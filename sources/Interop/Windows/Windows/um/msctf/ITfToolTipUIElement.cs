@@ -49,9 +49,9 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfToolTipUIElement*, ushort**, int>)(lpVtbl[3]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged<ITfToolTipUIElement*, char**, int>)(lpVtbl[3]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -81,15 +81,15 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
     /// <include file='ITfToolTipUIElement.xml' path='doc/member[@name="ITfToolTipUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr)
+    public HRESULT GetString([NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<ITfToolTipUIElement*, ushort**, int>)(lpVtbl[7]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pstr);
+        return ((delegate* unmanaged<ITfToolTipUIElement*, char**, int>)(lpVtbl[7]))((ITfToolTipUIElement*)Unsafe.AsPointer(ref this), pstr);
     }
 
     public interface Interface : ITfUIElement.Interface
     {
         [VtblIndex(7)]
-        HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
+        HRESULT GetString([NativeTypeName("BSTR *")] char** pstr);
     }
 
     public partial struct Vtbl<TSelf>
@@ -105,7 +105,7 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
@@ -117,6 +117,6 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, char**, int> GetString;
     }
 }

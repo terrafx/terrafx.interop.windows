@@ -73,9 +73,9 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pValue)
+    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, int, ushort**, VARIANT*, int>)(lpVtbl[6]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pstrName, pValue);
+        return ((delegate* unmanaged<IWbemContext*, int, char**, VARIANT*, int>)(lpVtbl[6]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pstrName, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.EndEnumeration"]/*' />
@@ -89,25 +89,25 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.SetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
+    public HRESULT SetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int>)(lpVtbl[8]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
+        return ((delegate* unmanaged<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[8]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
+    public HRESULT GetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int>)(lpVtbl[9]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
+        return ((delegate* unmanaged<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[9]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.DeleteValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags)
+    public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemContext*, ushort*, int, int>)(lpVtbl[10]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags);
+        return ((delegate* unmanaged<IWbemContext*, char*, int, int>)(lpVtbl[10]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.DeleteAll"]/*' />
@@ -130,19 +130,19 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
         HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags);
 
         [VtblIndex(6)]
-        HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, VARIANT* pValue);
+        HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, VARIANT* pValue);
 
         [VtblIndex(7)]
         HRESULT EndEnumeration();
 
         [VtblIndex(8)]
-        HRESULT SetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
+        HRESULT SetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
 
         [VtblIndex(9)]
-        HRESULT GetValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
+        HRESULT GetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue);
 
         [VtblIndex(10)]
-        HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags);
+        HRESULT DeleteValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags);
 
         [VtblIndex(11)]
         HRESULT DeleteAll();
@@ -170,19 +170,19 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, VARIANT*, int> Next;
+        public delegate* unmanaged<TSelf*, int, char**, VARIANT*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndEnumeration;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> DeleteValue;
+        public delegate* unmanaged<TSelf*, char*, int, int> DeleteValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> DeleteAll;

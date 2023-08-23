@@ -242,23 +242,23 @@ public unsafe partial struct IDirectInputDevice7W : IDirectInputDevice7W.Interfa
     /// <include file='IDirectInputDevice7W.xml' path='doc/member[@name="IDirectInputDevice7W.EnumEffectsInFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT EnumEffectsInFile([NativeTypeName("LPCWSTR")] ushort* param0, [NativeTypeName("LPDIENUMEFFECTSINFILECALLBACK")] delegate* unmanaged<DIFILEEFFECT*, void*, BOOL> param1, [NativeTypeName("LPVOID")] void* param2, [NativeTypeName("DWORD")] uint param3)
+    public HRESULT EnumEffectsInFile([NativeTypeName("LPCWSTR")] char* param0, [NativeTypeName("LPDIENUMEFFECTSINFILECALLBACK")] delegate* unmanaged<DIFILEEFFECT*, void*, BOOL> param1, [NativeTypeName("LPVOID")] void* param2, [NativeTypeName("DWORD")] uint param3)
     {
-        return ((delegate* unmanaged<IDirectInputDevice7W*, ushort*, delegate* unmanaged<DIFILEEFFECT*, void*, BOOL>, void*, uint, int>)(lpVtbl[27]))((IDirectInputDevice7W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged<IDirectInputDevice7W*, char*, delegate* unmanaged<DIFILEEFFECT*, void*, BOOL>, void*, uint, int>)(lpVtbl[27]))((IDirectInputDevice7W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     /// <include file='IDirectInputDevice7W.xml' path='doc/member[@name="IDirectInputDevice7W.WriteEffectToFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT WriteEffectToFile([NativeTypeName("LPCWSTR")] ushort* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIFILEEFFECT")] DIFILEEFFECT* param2, [NativeTypeName("DWORD")] uint param3)
+    public HRESULT WriteEffectToFile([NativeTypeName("LPCWSTR")] char* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIFILEEFFECT")] DIFILEEFFECT* param2, [NativeTypeName("DWORD")] uint param3)
     {
-        return ((delegate* unmanaged<IDirectInputDevice7W*, ushort*, uint, DIFILEEFFECT*, uint, int>)(lpVtbl[28]))((IDirectInputDevice7W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged<IDirectInputDevice7W*, char*, uint, DIFILEEFFECT*, uint, int>)(lpVtbl[28]))((IDirectInputDevice7W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     public interface Interface : IDirectInputDevice2W.Interface
     {
         [VtblIndex(28)]
-        HRESULT WriteEffectToFile([NativeTypeName("LPCWSTR")] ushort* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIFILEEFFECT")] DIFILEEFFECT* param2, [NativeTypeName("DWORD")] uint param3);
+        HRESULT WriteEffectToFile([NativeTypeName("LPCWSTR")] char* param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPDIFILEEFFECT")] DIFILEEFFECT* param2, [NativeTypeName("DWORD")] uint param3);
     }
 
     public partial struct Vtbl<TSelf>
@@ -346,9 +346,9 @@ public unsafe partial struct IDirectInputDevice7W : IDirectInputDevice7W.Interfa
         public delegate* unmanaged<TSelf*, uint, DIDEVICEOBJECTDATA*, uint*, uint, int> SendDeviceData;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPDIENUMEFFECTSINFILECALLBACK, LPVOID, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, delegate* unmanaged<DIFILEEFFECT*, void*, BOOL>, void*, uint, int> EnumEffectsInFile;
+        public delegate* unmanaged<TSelf*, char*, delegate* unmanaged<DIFILEEFFECT*, void*, BOOL>, void*, uint, int> EnumEffectsInFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPDIFILEEFFECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, DIFILEEFFECT*, uint, int> WriteEffectToFile;
+        public delegate* unmanaged<TSelf*, char*, uint, DIFILEEFFECT*, uint, int> WriteEffectToFile;
     }
 }

@@ -89,17 +89,17 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
+        return ((delegate* unmanaged<ICreateProcessInputs*, char*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetEnvironmentVariableW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
+    public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszValue)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
+        return ((delegate* unmanaged<ICreateProcessInputs*, char*, char*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -120,10 +120,10 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags);
 
         [VtblIndex(8)]
-        HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+        HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle);
 
         [VtblIndex(9)]
-        HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue);
+        HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszValue);
     }
 
     public partial struct Vtbl<TSelf>
@@ -154,9 +154,9 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         public delegate* unmanaged<TSelf*, uint, int> AddStartupFlags;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetEnvironmentVariableW;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetEnvironmentVariableW;
     }
 }

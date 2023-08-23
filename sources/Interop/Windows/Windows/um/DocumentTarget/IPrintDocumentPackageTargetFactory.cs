@@ -51,15 +51,15 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
     /// <include file='IPrintDocumentPackageTargetFactory.xml' path='doc/member[@name="IPrintDocumentPackageTargetFactory.CreateDocumentPackageTargetForPrintJob"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateDocumentPackageTargetForPrintJob([NativeTypeName("LPCWSTR")] ushort* printerName, [NativeTypeName("LPCWSTR")] ushort* jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
+    public HRESULT CreateDocumentPackageTargetForPrintJob([NativeTypeName("LPCWSTR")] char* printerName, [NativeTypeName("LPCWSTR")] char* jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, ushort*, ushort*, IStream*, IStream*, IPrintDocumentPackageTarget**, int>)(lpVtbl[3]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
+        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int>)(lpVtbl[3]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateDocumentPackageTargetForPrintJob([NativeTypeName("LPCWSTR")] ushort* printerName, [NativeTypeName("LPCWSTR")] ushort* jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget);
+        HRESULT CreateDocumentPackageTargetForPrintJob([NativeTypeName("LPCWSTR")] char* printerName, [NativeTypeName("LPCWSTR")] char* jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget);
     }
 
     public partial struct Vtbl<TSelf>
@@ -75,6 +75,6 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IStream *, IStream *, IPrintDocumentPackageTarget **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IStream*, IStream*, IPrintDocumentPackageTarget**, int> CreateDocumentPackageTargetForPrintJob;
+        public delegate* unmanaged<TSelf*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int> CreateDocumentPackageTargetForPrintJob;
     }
 }

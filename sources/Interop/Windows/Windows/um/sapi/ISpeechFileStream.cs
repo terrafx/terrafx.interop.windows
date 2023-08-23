@@ -66,9 +66,9 @@ public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechFileStream*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechFileStream*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechFileStream*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechFileStream*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -122,9 +122,9 @@ public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface, IN
     /// <include file='ISpeechFileStream.xml' path='doc/member[@name="ISpeechFileStream.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT Open([NativeTypeName("BSTR")] ushort* FileName, SpeechStreamFileMode FileMode = SSFMOpenForRead, [NativeTypeName("VARIANT_BOOL")] short DoEvents = 0)
+    public HRESULT Open([NativeTypeName("BSTR")] char* FileName, SpeechStreamFileMode FileMode = SSFMOpenForRead, [NativeTypeName("VARIANT_BOOL")] short DoEvents = 0)
     {
-        return ((delegate* unmanaged<ISpeechFileStream*, ushort*, SpeechStreamFileMode, short, int>)(lpVtbl[12]))((ISpeechFileStream*)Unsafe.AsPointer(ref this), FileName, FileMode, DoEvents);
+        return ((delegate* unmanaged<ISpeechFileStream*, char*, SpeechStreamFileMode, short, int>)(lpVtbl[12]))((ISpeechFileStream*)Unsafe.AsPointer(ref this), FileName, FileMode, DoEvents);
     }
 
     /// <include file='ISpeechFileStream.xml' path='doc/member[@name="ISpeechFileStream.Close"]/*' />
@@ -138,7 +138,7 @@ public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface, IN
     public interface Interface : ISpeechBaseStream.Interface
     {
         [VtblIndex(12)]
-        HRESULT Open([NativeTypeName("BSTR")] ushort* FileName, SpeechStreamFileMode FileMode = SSFMOpenForRead, [NativeTypeName("VARIANT_BOOL")] short DoEvents = 0);
+        HRESULT Open([NativeTypeName("BSTR")] char* FileName, SpeechStreamFileMode FileMode = SSFMOpenForRead, [NativeTypeName("VARIANT_BOOL")] short DoEvents = 0);
 
         [VtblIndex(13)]
         HRESULT Close();
@@ -163,7 +163,7 @@ public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -184,7 +184,7 @@ public unsafe partial struct ISpeechFileStream : ISpeechFileStream.Interface, IN
         public delegate* unmanaged<TSelf*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int> Seek;
 
         [NativeTypeName("HRESULT (BSTR, SpeechStreamFileMode, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SpeechStreamFileMode, short, int> Open;
+        public delegate* unmanaged<TSelf*, char*, SpeechStreamFileMode, short, int> Open;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

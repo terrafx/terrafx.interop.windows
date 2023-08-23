@@ -49,23 +49,23 @@ public unsafe partial struct ITfFnConfigureRegisterEudc : ITfFnConfigureRegister
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, ushort**, int>)(lpVtbl[3]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, char**, int>)(lpVtbl[3]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnConfigureRegisterEudc.xml' path='doc/member[@name="ITfFnConfigureRegisterEudc.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered)
+    public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] char* bstrRegistered)
     {
-        return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, HWND, ushort, Guid*, ushort*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
+        return ((delegate* unmanaged<ITfFnConfigureRegisterEudc*, HWND, ushort, Guid*, char*, int>)(lpVtbl[4]))((ITfFnConfigureRegisterEudc*)Unsafe.AsPointer(ref this), hwndParent, langid, rguidProfile, bstrRegistered);
     }
 
     public interface Interface : ITfFunction.Interface
     {
         [VtblIndex(4)]
-        HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered);
+        HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] char* bstrRegistered);
     }
 
     public partial struct Vtbl<TSelf>
@@ -81,9 +81,9 @@ public unsafe partial struct ITfFnConfigureRegisterEudc : ITfFnConfigureRegister
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (HWND, LANGID, const GUID &, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort, Guid*, ushort*, int> Show;
+        public delegate* unmanaged<TSelf*, HWND, ushort, Guid*, char*, int> Show;
     }
 }

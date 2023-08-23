@@ -49,17 +49,17 @@ public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, INativeGuid
     /// <inheritdoc cref="IActiveIME.Inquire" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] ushort* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate)
+    public HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] char* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate)
     {
-        return ((delegate* unmanaged<IActiveIME2*, uint, IMEINFO*, ushort*, uint*, int>)(lpVtbl[3]))((IActiveIME2*)Unsafe.AsPointer(ref this), dwSystemInfoFlags, pIMEInfo, szWndClass, pdwPrivate);
+        return ((delegate* unmanaged<IActiveIME2*, uint, IMEINFO*, char*, uint*, int>)(lpVtbl[3]))((IActiveIME2*)Unsafe.AsPointer(ref this), dwSystemInfoFlags, pIMEInfo, szWndClass, pdwPrivate);
     }
 
     /// <inheritdoc cref="IActiveIME.ConversionList" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied)
+    public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] char* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied)
     {
-        return ((delegate* unmanaged<IActiveIME2*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
+        return ((delegate* unmanaged<IActiveIME2*, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME2*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
     }
 
     /// <inheritdoc cref="IActiveIME.Configure" />
@@ -137,17 +137,17 @@ public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, INativeGuid
     /// <inheritdoc cref="IActiveIME.RegisterWord" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT RegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString)
+    public HRESULT RegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString)
     {
-        return ((delegate* unmanaged<IActiveIME2*, ushort*, uint, ushort*, int>)(lpVtbl[14]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
+        return ((delegate* unmanaged<IActiveIME2*, char*, uint, char*, int>)(lpVtbl[14]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
     }
 
     /// <inheritdoc cref="IActiveIME.UnregisterWord" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT UnregisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString)
+    public HRESULT UnregisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString)
     {
-        return ((delegate* unmanaged<IActiveIME2*, ushort*, uint, ushort*, int>)(lpVtbl[15]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
+        return ((delegate* unmanaged<IActiveIME2*, char*, uint, char*, int>)(lpVtbl[15]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
     }
 
     /// <inheritdoc cref="IActiveIME.GetRegisterWordStyle" />
@@ -161,9 +161,9 @@ public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, INativeGuid
     /// <inheritdoc cref="IActiveIME.EnumRegisterWord" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum)
+    public HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum)
     {
-        return ((delegate* unmanaged<IActiveIME2*, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int>)(lpVtbl[17]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szRegister, pData, ppEnum);
+        return ((delegate* unmanaged<IActiveIME2*, char*, uint, char*, void*, IEnumRegisterWordW**, int>)(lpVtbl[17]))((IActiveIME2*)Unsafe.AsPointer(ref this), szReading, dwStyle, szRegister, pData, ppEnum);
     }
 
     /// <inheritdoc cref="IActiveIME.GetCodePageA" />
@@ -220,10 +220,10 @@ public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMEINFO *, LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMEINFO*, ushort*, uint*, int> Inquire;
+        public delegate* unmanaged<TSelf*, uint, IMEINFO*, char*, uint*, int> Inquire;
 
         [NativeTypeName("HRESULT (HIMC, LPWSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int> ConversionList;
+        public delegate* unmanaged<TSelf*, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int> ConversionList;
 
         [NativeTypeName("HRESULT (HKL, HWND, DWORD, REGISTERWORDW *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HKL, HWND, uint, REGISTERWORDW*, int> Configure;
@@ -253,16 +253,16 @@ public unsafe partial struct IActiveIME2 : IActiveIME2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, HIMC, uint*, uint*, int> ToAsciiEx;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, int> RegisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, int> RegisterWord;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, int> UnregisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, int> UnregisterWord;
 
         [NativeTypeName("HRESULT (UINT, STYLEBUFW *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, STYLEBUFW*, uint*, int> GetRegisterWordStyle;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR, LPVOID, IEnumRegisterWordW **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int> EnumRegisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, void*, IEnumRegisterWordW**, int> EnumRegisterWord;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetCodePageA;

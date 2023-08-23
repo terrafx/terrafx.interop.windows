@@ -49,37 +49,37 @@ public unsafe partial struct IMofCompiler : IMofCompiler.Interface, INativeGuid
     /// <include file='IMofCompiler.xml' path='doc/member[@name="IMofCompiler.CompileFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CompileFile([NativeTypeName("LPWSTR")] ushort* FileName, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
+    public HRESULT CompileFile([NativeTypeName("LPWSTR")] char* FileName, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LPWSTR")] char* User, [NativeTypeName("LPWSTR")] char* Authority, [NativeTypeName("LPWSTR")] char* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IMofCompiler*, ushort*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[3]))((IMofCompiler*)Unsafe.AsPointer(ref this), FileName, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+        return ((delegate* unmanaged<IMofCompiler*, char*, char*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[3]))((IMofCompiler*)Unsafe.AsPointer(ref this), FileName, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
     }
 
     /// <include file='IMofCompiler.xml' path='doc/member[@name="IMofCompiler.CompileBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, byte* pBuffer, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
+    public HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, byte* pBuffer, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LPWSTR")] char* User, [NativeTypeName("LPWSTR")] char* Authority, [NativeTypeName("LPWSTR")] char* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IMofCompiler*, int, byte*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[4]))((IMofCompiler*)Unsafe.AsPointer(ref this), BuffSize, pBuffer, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+        return ((delegate* unmanaged<IMofCompiler*, int, byte*, char*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[4]))((IMofCompiler*)Unsafe.AsPointer(ref this), BuffSize, pBuffer, ServerAndNamespace, User, Authority, Password, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
     }
 
     /// <include file='IMofCompiler.xml' path='doc/member[@name="IMofCompiler.CreateBMOF"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateBMOF([NativeTypeName("LPWSTR")] ushort* TextFileName, [NativeTypeName("LPWSTR")] ushort* BMOFFileName, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
+    public HRESULT CreateBMOF([NativeTypeName("LPWSTR")] char* TextFileName, [NativeTypeName("LPWSTR")] char* BMOFFileName, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IMofCompiler*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[5]))((IMofCompiler*)Unsafe.AsPointer(ref this), TextFileName, BMOFFileName, ServerAndNamespace, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
+        return ((delegate* unmanaged<IMofCompiler*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int>)(lpVtbl[5]))((IMofCompiler*)Unsafe.AsPointer(ref this), TextFileName, BMOFFileName, ServerAndNamespace, lOptionFlags, lClassFlags, lInstanceFlags, pInfo);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CompileFile([NativeTypeName("LPWSTR")] ushort* FileName, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
+        HRESULT CompileFile([NativeTypeName("LPWSTR")] char* FileName, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LPWSTR")] char* User, [NativeTypeName("LPWSTR")] char* Authority, [NativeTypeName("LPWSTR")] char* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
 
         [VtblIndex(4)]
-        HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, byte* pBuffer, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LPWSTR")] ushort* User, [NativeTypeName("LPWSTR")] ushort* Authority, [NativeTypeName("LPWSTR")] ushort* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
+        HRESULT CompileBuffer([NativeTypeName("long")] int BuffSize, byte* pBuffer, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LPWSTR")] char* User, [NativeTypeName("LPWSTR")] char* Authority, [NativeTypeName("LPWSTR")] char* Password, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
 
         [VtblIndex(5)]
-        HRESULT CreateBMOF([NativeTypeName("LPWSTR")] ushort* TextFileName, [NativeTypeName("LPWSTR")] ushort* BMOFFileName, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
+        HRESULT CreateBMOF([NativeTypeName("LPWSTR")] char* TextFileName, [NativeTypeName("LPWSTR")] char* BMOFFileName, [NativeTypeName("LPWSTR")] char* ServerAndNamespace, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IMofCompiler : IMofCompiler.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, LPWSTR, LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileFile;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileFile;
 
         [NativeTypeName("HRESULT (long, BYTE *, LPWSTR, LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, byte*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileBuffer;
+        public delegate* unmanaged<TSelf*, int, byte*, char*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileBuffer;
 
         [NativeTypeName("HRESULT (LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CreateBMOF;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CreateBMOF;
     }
 }

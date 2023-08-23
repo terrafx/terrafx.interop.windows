@@ -49,9 +49,9 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindFirstProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved)
+    public HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] char* pszHost, [NativeTypeName("LPCWSTR")] char* pszUrl, BOOL fReserved)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, ushort*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
+        return ((delegate* unmanaged<IMFNetProxyLocator*, char*, char*, BOOL, int>)(lpVtbl[3]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszHost, pszUrl, fReserved);
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.FindNextProxy"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.GetCurrentProxy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr)
+    public HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] char* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocator*, ushort*, uint*, int>)(lpVtbl[6]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszStr, pcchStr);
+        return ((delegate* unmanaged<IMFNetProxyLocator*, char*, uint*, int>)(lpVtbl[6]))((IMFNetProxyLocator*)Unsafe.AsPointer(ref this), pszStr, pcchStr);
     }
 
     /// <include file='IMFNetProxyLocator.xml' path='doc/member[@name="IMFNetProxyLocator.Clone"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] ushort* pszHost, [NativeTypeName("LPCWSTR")] ushort* pszUrl, BOOL fReserved);
+        HRESULT FindFirstProxy([NativeTypeName("LPCWSTR")] char* pszHost, [NativeTypeName("LPCWSTR")] char* pszUrl, BOOL fReserved);
 
         [VtblIndex(4)]
         HRESULT FindNextProxy();
@@ -98,7 +98,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
         HRESULT RegisterProxyResult(HRESULT hrOp);
 
         [VtblIndex(6)]
-        HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] ushort* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr);
+        HRESULT GetCurrentProxy([NativeTypeName("LPWSTR")] char* pszStr, [NativeTypeName("DWORD *")] uint* pcchStr);
 
         [VtblIndex(7)]
         HRESULT Clone(IMFNetProxyLocator** ppProxyLocator);
@@ -117,7 +117,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, BOOL, int> FindFirstProxy;
+        public delegate* unmanaged<TSelf*, char*, char*, BOOL, int> FindFirstProxy;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> FindNextProxy;
@@ -126,7 +126,7 @@ public unsafe partial struct IMFNetProxyLocator : IMFNetProxyLocator.Interface, 
         public delegate* unmanaged<TSelf*, HRESULT, int> RegisterProxyResult;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetCurrentProxy;
+        public delegate* unmanaged<TSelf*, char*, uint*, int> GetCurrentProxy;
 
         [NativeTypeName("HRESULT (IMFNetProxyLocator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFNetProxyLocator**, int> Clone;

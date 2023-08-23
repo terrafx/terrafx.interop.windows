@@ -89,9 +89,9 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetStatusTextSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] ushort* pszStatusText)
+    public HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IShellBrowser*, ushort*, int>)(lpVtbl[8]))((IShellBrowser*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged<IShellBrowser*, char*, int>)(lpVtbl[8]))((IShellBrowser*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.EnableModelessSB"]/*' />
@@ -178,7 +178,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         HRESULT RemoveMenusSB(HMENU hmenuShared);
 
         [VtblIndex(8)]
-        HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] ushort* pszStatusText);
+        HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] char* pszStatusText);
 
         [VtblIndex(9)]
         HRESULT EnableModelessSB(BOOL fEnable);
@@ -236,7 +236,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenusSB;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusTextSB;
+        public delegate* unmanaged<TSelf*, char*, int> SetStatusTextSB;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, int> EnableModelessSB;

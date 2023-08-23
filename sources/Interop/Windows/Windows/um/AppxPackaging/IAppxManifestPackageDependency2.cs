@@ -51,17 +51,17 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int>)(lpVtbl[3]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[3]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetPublisher" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
+    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] char** publisher)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int>)(lpVtbl[4]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), publisher);
+        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[4]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), publisher);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetMinVersion" />
@@ -99,10 +99,10 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, char**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;

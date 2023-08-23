@@ -65,9 +65,9 @@ public unsafe partial struct IElementSelector : IElementSelector.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IElementSelector*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IElementSelector*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IElementSelector*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IElementSelector*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IElementSelector : IElementSelector.Interface, INat
     /// <include file='IElementSelector.xml' path='doc/member[@name="IElementSelector.querySelector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT querySelector([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel)
+    public HRESULT querySelector([NativeTypeName("BSTR")] char* v, IHTMLElement** pel)
     {
-        return ((delegate* unmanaged<IElementSelector*, ushort*, IHTMLElement**, int>)(lpVtbl[7]))((IElementSelector*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged<IElementSelector*, char*, IHTMLElement**, int>)(lpVtbl[7]))((IElementSelector*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     /// <include file='IElementSelector.xml' path='doc/member[@name="IElementSelector.querySelectorAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT querySelectorAll([NativeTypeName("BSTR")] ushort* v, IHTMLDOMChildrenCollection** pel)
+    public HRESULT querySelectorAll([NativeTypeName("BSTR")] char* v, IHTMLDOMChildrenCollection** pel)
     {
-        return ((delegate* unmanaged<IElementSelector*, ushort*, IHTMLDOMChildrenCollection**, int>)(lpVtbl[8]))((IElementSelector*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged<IElementSelector*, char*, IHTMLDOMChildrenCollection**, int>)(lpVtbl[8]))((IElementSelector*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT querySelector([NativeTypeName("BSTR")] ushort* v, IHTMLElement** pel);
+        HRESULT querySelector([NativeTypeName("BSTR")] char* v, IHTMLElement** pel);
 
         [VtblIndex(8)]
-        HRESULT querySelectorAll([NativeTypeName("BSTR")] ushort* v, IHTMLDOMChildrenCollection** pel);
+        HRESULT querySelectorAll([NativeTypeName("BSTR")] char* v, IHTMLDOMChildrenCollection** pel);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IElementSelector : IElementSelector.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement**, int> querySelector;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElement**, int> querySelector;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMChildrenCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMChildrenCollection**, int> querySelectorAll;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMChildrenCollection**, int> querySelectorAll;
     }
 }

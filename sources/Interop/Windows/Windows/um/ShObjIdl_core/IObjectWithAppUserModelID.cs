@@ -49,26 +49,26 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, ushort*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged<IObjectWithAppUserModelID*, char*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.GetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAppID([NativeTypeName("LPWSTR *")] ushort** ppszAppID)
+    public HRESULT GetAppID([NativeTypeName("LPWSTR *")] char** ppszAppID)
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, ushort**, int>)(lpVtbl[4]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), ppszAppID);
+        return ((delegate* unmanaged<IObjectWithAppUserModelID*, char**, int>)(lpVtbl[4]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), ppszAppID);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+        HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID);
 
         [VtblIndex(4)]
-        HRESULT GetAppID([NativeTypeName("LPWSTR *")] ushort** ppszAppID);
+        HRESULT GetAppID([NativeTypeName("LPWSTR *")] char** ppszAppID);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAppID;
+        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAppID;
+        public delegate* unmanaged<TSelf*, char**, int> GetAppID;
     }
 }

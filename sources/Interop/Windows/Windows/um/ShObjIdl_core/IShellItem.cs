@@ -65,9 +65,9 @@ public unsafe partial struct IShellItem : IShellItem.Interface, INativeGuid
     /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IShellItem*, SIGDN, ushort**, int>)(lpVtbl[5]))((IShellItem*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
+        return ((delegate* unmanaged<IShellItem*, SIGDN, char**, int>)(lpVtbl[5]))((IShellItem*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
     }
 
     /// <include file='IShellItem.xml' path='doc/member[@name="IShellItem.GetAttributes"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface, INativeGuid
         HRESULT GetParent(IShellItem** ppsi);
 
         [VtblIndex(5)]
-        HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(6)]
         HRESULT GetAttributes([NativeTypeName("SFGAOF")] uint sfgaoMask, [NativeTypeName("SFGAOF *")] uint* psfgaoAttribs);
@@ -123,7 +123,7 @@ public unsafe partial struct IShellItem : IShellItem.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IShellItem**, int> GetParent;
 
         [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIGDN, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, SIGDN, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetAttributes;

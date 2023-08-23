@@ -59,9 +59,9 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
     /// <include file='IDWriteLocalizedStrings.xml' path='doc/member[@name="IDWriteLocalizedStrings.FindLocaleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT FindLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
+    public HRESULT FindLocaleName([NativeTypeName("const WCHAR *")] char* localeName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
     {
-        return ((delegate* unmanaged<IDWriteLocalizedStrings*, ushort*, uint*, BOOL*, int>)(lpVtbl[4]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), localeName, index, exists);
+        return ((delegate* unmanaged<IDWriteLocalizedStrings*, char*, uint*, BOOL*, int>)(lpVtbl[4]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), localeName, index, exists);
     }
 
     /// <include file='IDWriteLocalizedStrings.xml' path='doc/member[@name="IDWriteLocalizedStrings.GetLocaleNameLength"]/*' />
@@ -75,9 +75,9 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
     /// <include file='IDWriteLocalizedStrings.xml' path='doc/member[@name="IDWriteLocalizedStrings.GetLocaleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
+    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint size)
     {
-        return ((delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int>)(lpVtbl[6]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, localeName, size);
+        return ((delegate* unmanaged<IDWriteLocalizedStrings*, uint, char*, uint, int>)(lpVtbl[6]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, localeName, size);
     }
 
     /// <include file='IDWriteLocalizedStrings.xml' path='doc/member[@name="IDWriteLocalizedStrings.GetStringLength"]/*' />
@@ -91,9 +91,9 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
     /// <include file='IDWriteLocalizedStrings.xml' path='doc/member[@name="IDWriteLocalizedStrings.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size)
+    public HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint size)
     {
-        return ((delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int>)(lpVtbl[8]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, stringBuffer, size);
+        return ((delegate* unmanaged<IDWriteLocalizedStrings*, uint, char*, uint, int>)(lpVtbl[8]))((IDWriteLocalizedStrings*)Unsafe.AsPointer(ref this), index, stringBuffer, size);
     }
 
     public interface Interface : IUnknown.Interface
@@ -103,19 +103,19 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
         uint GetCount();
 
         [VtblIndex(4)]
-        HRESULT FindLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists);
+        HRESULT FindLocaleName([NativeTypeName("const WCHAR *")] char* localeName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists);
 
         [VtblIndex(5)]
         HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
 
         [VtblIndex(6)]
-        HRESULT GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
+        HRESULT GetLocaleName([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint size);
 
         [VtblIndex(7)]
         HRESULT GetStringLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* length);
 
         [VtblIndex(8)]
-        HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size);
+        HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint size);
     }
 
     public partial struct Vtbl<TSelf>
@@ -134,18 +134,18 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
         public delegate* unmanaged<TSelf*, uint> GetCount;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, BOOL*, int> FindLocaleName;
+        public delegate* unmanaged<TSelf*, char*, uint*, BOOL*, int> FindLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetString;
     }
 }

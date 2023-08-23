@@ -13,9 +13,9 @@ public unsafe partial struct DWRITE_FONT_PROPERTY
 
     /// <include file='DWRITE_FONT_PROPERTY.xml' path='doc/member[@name="DWRITE_FONT_PROPERTY.propertyValue"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* propertyValue;
+    public char* propertyValue;
 
     /// <include file='DWRITE_FONT_PROPERTY.xml' path='doc/member[@name="DWRITE_FONT_PROPERTY.localeName"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* localeName;
+    public char* localeName;
 }

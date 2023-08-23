@@ -51,7 +51,7 @@ public unsafe partial struct NT_CONSOLE_PROPS
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.FaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort FaceName[32];
+    public fixed char FaceName[32];
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.uCursorSize"]/*' />
     public uint uCursorSize;

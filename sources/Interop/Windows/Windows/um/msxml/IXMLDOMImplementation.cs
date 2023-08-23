@@ -65,9 +65,9 @@ public unsafe partial struct IXMLDOMImplementation : IXMLDOMImplementation.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLDOMImplementation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IXMLDOMImplementation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IXMLDOMImplementation : IXMLDOMImplementation.Inter
     /// <include file='IXMLDOMImplementation.xml' path='doc/member[@name="IXMLDOMImplementation.hasFeature"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature)
+    public HRESULT hasFeature([NativeTypeName("BSTR")] char* feature, [NativeTypeName("BSTR")] char* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature)
     {
-        return ((delegate* unmanaged<IXMLDOMImplementation*, ushort*, ushort*, short*, int>)(lpVtbl[7]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), feature, version, hasFeature);
+        return ((delegate* unmanaged<IXMLDOMImplementation*, char*, char*, short*, int>)(lpVtbl[7]))((IXMLDOMImplementation*)Unsafe.AsPointer(ref this), feature, version, hasFeature);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT hasFeature([NativeTypeName("BSTR")] ushort* feature, [NativeTypeName("BSTR")] ushort* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature);
+        HRESULT hasFeature([NativeTypeName("BSTR")] char* feature, [NativeTypeName("BSTR")] char* version, [NativeTypeName("VARIANT_BOOL *")] short* hasFeature);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IXMLDOMImplementation : IXMLDOMImplementation.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, short*, int> hasFeature;
+        public delegate* unmanaged<TSelf*, char*, char*, short*, int> hasFeature;
     }
 }

@@ -34,7 +34,7 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />
     [UnscopedRef]
-    public ref ushort* ai_template
+    public ref char* ai_template
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -50,6 +50,6 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PWSTR")]
-        public ushort* ai_template;
+        public char* ai_template;
     }
 }

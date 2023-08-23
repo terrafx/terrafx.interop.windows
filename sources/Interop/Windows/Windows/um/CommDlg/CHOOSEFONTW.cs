@@ -41,14 +41,14 @@ public unsafe partial struct CHOOSEFONTW
 
     /// <include file='CHOOSEFONTW.xml' path='doc/member[@name="CHOOSEFONTW.lpTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTemplateName;
+    public char* lpTemplateName;
 
     /// <include file='CHOOSEFONTW.xml' path='doc/member[@name="CHOOSEFONTW.hInstance"]/*' />
     public HINSTANCE hInstance;
 
     /// <include file='CHOOSEFONTW.xml' path='doc/member[@name="CHOOSEFONTW.lpszStyle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszStyle;
+    public char* lpszStyle;
 
     /// <include file='CHOOSEFONTW.xml' path='doc/member[@name="CHOOSEFONTW.nFontType"]/*' />
     [NativeTypeName("WORD")]

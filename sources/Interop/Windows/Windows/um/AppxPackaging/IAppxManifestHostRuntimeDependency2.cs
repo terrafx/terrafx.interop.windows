@@ -49,15 +49,15 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency2 : IAppxManifest
     /// <include file='IAppxManifestHostRuntimeDependency2.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependency2.GetPackageFamilyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
+    public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName)
     {
-        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency2*, ushort**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency2*, char**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
+        HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency2 : IAppxManifest
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetPackageFamilyName;
+        public delegate* unmanaged<TSelf*, char**, int> GetPackageFamilyName;
     }
 }

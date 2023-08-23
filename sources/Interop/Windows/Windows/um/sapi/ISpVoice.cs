@@ -185,9 +185,9 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Speak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
+    public HRESULT Speak([NativeTypeName("LPCWSTR")] char* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, uint, uint*, int>)(lpVtbl[20]))((ISpVoice*)Unsafe.AsPointer(ref this), pwcs, dwFlags, pulStreamNumber);
+        return ((delegate* unmanaged<ISpVoice*, char*, uint, uint*, int>)(lpVtbl[20]))((ISpVoice*)Unsafe.AsPointer(ref this), pwcs, dwFlags, pulStreamNumber);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SpeakStream"]/*' />
@@ -201,17 +201,17 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark)
+    public HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] char** ppszLastBookmark)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPVOICESTATUS*, ushort**, int>)(lpVtbl[22]))((ISpVoice*)Unsafe.AsPointer(ref this), pStatus, ppszLastBookmark);
+        return ((delegate* unmanaged<ISpVoice*, SPVOICESTATUS*, char**, int>)(lpVtbl[22]))((ISpVoice*)Unsafe.AsPointer(ref this), pStatus, ppszLastBookmark);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped)
+    public HRESULT Skip([NativeTypeName("LPCWSTR")] char* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, int, uint*, int>)(lpVtbl[23]))((ISpVoice*)Unsafe.AsPointer(ref this), pItemType, lNumItems, pulNumSkipped);
+        return ((delegate* unmanaged<ISpVoice*, char*, int, uint*, int>)(lpVtbl[23]))((ISpVoice*)Unsafe.AsPointer(ref this), pItemType, lNumItems, pulNumSkipped);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetPriority"]/*' />
@@ -313,17 +313,17 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
+    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[36]))((ISpVoice*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+        return ((delegate* unmanaged<ISpVoice*, char*, void*, uint, BOOL*, int>)(lpVtbl[36]))((ISpVoice*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
+    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
     {
-        return ((delegate* unmanaged<ISpVoice*, HWND, ushort*, ushort*, void*, uint, int>)(lpVtbl[37]))((ISpVoice*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+        return ((delegate* unmanaged<ISpVoice*, HWND, char*, char*, void*, uint, int>)(lpVtbl[37]))((ISpVoice*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
     }
 
     public interface Interface : ISpEventSource.Interface
@@ -350,16 +350,16 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         HRESULT GetVoice(ISpObjectToken** ppToken);
 
         [VtblIndex(20)]
-        HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+        HRESULT Speak([NativeTypeName("LPCWSTR")] char* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
 
         [VtblIndex(21)]
         HRESULT SpeakStream(IStream* pStream, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
 
         [VtblIndex(22)]
-        HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark);
+        HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] char** ppszLastBookmark);
 
         [VtblIndex(23)]
-        HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped);
+        HRESULT Skip([NativeTypeName("LPCWSTR")] char* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped);
 
         [VtblIndex(24)]
         HRESULT SetPriority(SPVPRIORITY ePriority);
@@ -398,10 +398,10 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         HANDLE SpeakCompleteEvent();
 
         [VtblIndex(36)]
-        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
+        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
 
         [VtblIndex(37)]
-        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
+        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
     }
 
     public partial struct Vtbl<TSelf>
@@ -468,16 +468,16 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetVoice;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> Speak;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> Speak;
 
         [NativeTypeName("HRESULT (IStream *, DWORD, ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, uint, uint*, int> SpeakStream;
 
         [NativeTypeName("HRESULT (SPVOICESTATUS *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPVOICESTATUS*, ushort**, int> GetStatus;
+        public delegate* unmanaged<TSelf*, SPVOICESTATUS*, char**, int> GetStatus;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, uint*, int> Skip;
+        public delegate* unmanaged<TSelf*, char*, int, uint*, int> Skip;
 
         [NativeTypeName("HRESULT (SPVPRIORITY) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SPVPRIORITY, int> SetPriority;
@@ -516,9 +516,9 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, void*> SpeakCompleteEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*, uint, BOOL*, int> IsUISupported;
+        public delegate* unmanaged<TSelf*, char*, void*, uint, BOOL*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
+        public delegate* unmanaged<TSelf*, HWND, char*, char*, void*, uint, int> DisplayUI;
     }
 }

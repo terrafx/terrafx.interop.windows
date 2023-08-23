@@ -10,7 +10,7 @@ public unsafe partial struct TOKEN_BNO_ISOLATION_INFORMATION
 {
     /// <include file='TOKEN_BNO_ISOLATION_INFORMATION.xml' path='doc/member[@name="TOKEN_BNO_ISOLATION_INFORMATION.IsolationPrefix"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* IsolationPrefix;
+    public char* IsolationPrefix;
 
     /// <include file='TOKEN_BNO_ISOLATION_INFORMATION.xml' path='doc/member[@name="TOKEN_BNO_ISOLATION_INFORMATION.IsolationEnabled"]/*' />
     [NativeTypeName("BOOLEAN")]

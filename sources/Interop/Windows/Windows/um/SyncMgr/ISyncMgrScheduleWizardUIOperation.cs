@@ -57,15 +57,15 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     /// <include file='ISyncMgrScheduleWizardUIOperation.xml' path='doc/member[@name="ISyncMgrScheduleWizardUIOperation.InitWizard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT InitWizard([NativeTypeName("LPCWSTR")] ushort* pszHandlerID)
+    public HRESULT InitWizard([NativeTypeName("LPCWSTR")] char* pszHandlerID)
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, ushort*, int>)(lpVtbl[4]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), pszHandlerID);
+        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, char*, int>)(lpVtbl[4]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), pszHandlerID);
     }
 
     public interface Interface : ISyncMgrUIOperation.Interface
     {
         [VtblIndex(4)]
-        HRESULT InitWizard([NativeTypeName("LPCWSTR")] ushort* pszHandlerID);
+        HRESULT InitWizard([NativeTypeName("LPCWSTR")] char* pszHandlerID);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,6 +84,6 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         public delegate* unmanaged<TSelf*, HWND, int> Run;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InitWizard;
+        public delegate* unmanaged<TSelf*, char*, int> InitWizard;
     }
 }

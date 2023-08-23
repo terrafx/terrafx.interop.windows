@@ -420,9 +420,9 @@ public unsafe partial struct ID3D11Device3 : ID3D11Device3.Interface, INativeGui
     /// <inheritdoc cref="ID3D11Device1.OpenSharedResourceByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
+    public HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
     {
-        return ((delegate* unmanaged<ID3D11Device3*, ushort*, uint, Guid*, void**, int>)(lpVtbl[49]))((ID3D11Device3*)Unsafe.AsPointer(ref this), lpName, dwDesiredAccess, returnedInterface, ppResource);
+        return ((delegate* unmanaged<ID3D11Device3*, char*, uint, Guid*, void**, int>)(lpVtbl[49]))((ID3D11Device3*)Unsafe.AsPointer(ref this), lpName, dwDesiredAccess, returnedInterface, ppResource);
     }
 
     /// <inheritdoc cref="ID3D11Device2.GetImmediateContext2" />
@@ -732,7 +732,7 @@ public unsafe partial struct ID3D11Device3 : ID3D11Device3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, int> OpenSharedResource1;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, Guid*, void**, int> OpenSharedResourceByName;
+        public delegate* unmanaged<TSelf*, char*, uint, Guid*, void**, int> OpenSharedResourceByName;
 
         [NativeTypeName("void (ID3D11DeviceContext2 **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ID3D11DeviceContext2**, void> GetImmediateContext2;

@@ -65,9 +65,9 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFsiItem*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiItem*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IFsiItem*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiItem*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
     /// <include file='IFsiItem.xml' path='doc/member[@name="IFsiItem.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiItem*, ushort**, int>)(lpVtbl[7]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFsiItem*, char**, int>)(lpVtbl[7]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFsiItem.xml' path='doc/member[@name="IFsiItem.get_FullPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_FullPath([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiItem*, ushort**, int>)(lpVtbl[8]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFsiItem*, char**, int>)(lpVtbl[8]))((IFsiItem*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFsiItem.xml' path='doc/member[@name="IFsiItem.get_CreationTime"]/*' />
@@ -161,26 +161,26 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
     /// <include file='IFsiItem.xml' path='doc/member[@name="IFsiItem.FileSystemName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[17]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, char**, int>)(lpVtbl[17]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
     /// <include file='IFsiItem.xml' path='doc/member[@name="IFsiItem.FileSystemPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
+        return ((delegate* unmanaged<IFsiItem*, FsiFileSystems, char**, int>)(lpVtbl[18]))((IFsiItem*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(8)]
-        HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_FullPath([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(9)]
         HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal);
@@ -207,10 +207,10 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
         HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal);
 
         [VtblIndex(17)]
-        HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(18)]
-        HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] char** pVal);
     }
 
     public partial struct Vtbl<TSelf>
@@ -232,16 +232,16 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_FullPath;
+        public delegate* unmanaged<TSelf*, char**, int> get_FullPath;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, double*, int> get_CreationTime;
@@ -268,9 +268,9 @@ public unsafe partial struct IFsiItem : IFsiItem.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, short, int> put_IsHidden;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemName;
+        public delegate* unmanaged<TSelf*, FsiFileSystems, char**, int> FileSystemName;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemPath;
+        public delegate* unmanaged<TSelf*, FsiFileSystems, char**, int> FileSystemPath;
     }
 }

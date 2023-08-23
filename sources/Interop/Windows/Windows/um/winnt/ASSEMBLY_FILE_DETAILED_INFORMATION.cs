@@ -22,9 +22,9 @@ public unsafe partial struct ASSEMBLY_FILE_DETAILED_INFORMATION
 
     /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.lpFileName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpFileName;
+    public char* lpFileName;
 
     /// <include file='ASSEMBLY_FILE_DETAILED_INFORMATION.xml' path='doc/member[@name="ASSEMBLY_FILE_DETAILED_INFORMATION.lpFilePath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpFilePath;
+    public char* lpFilePath;
 }

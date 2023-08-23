@@ -195,9 +195,9 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontFamilyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, ushort*, uint, int>)(lpVtbl[21]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
+        return ((delegate* unmanaged<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[21]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontWeight"]/*' />
@@ -244,9 +244,9 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetLocaleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, ushort*, uint, int>)(lpVtbl[27]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), localeName, nameSize);
+        return ((delegate* unmanaged<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[27]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), localeName, nameSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -307,7 +307,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
         uint GetFontFamilyNameLength();
 
         [VtblIndex(21)]
-        HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
+        HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize);
 
         [VtblIndex(22)]
         DWRITE_FONT_WEIGHT GetFontWeight();
@@ -326,7 +326,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
         uint GetLocaleNameLength();
 
         [VtblIndex(27)]
-        HRESULT GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize);
+        HRESULT GetLocaleName([NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -396,7 +396,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
         public delegate* unmanaged<TSelf*, uint> GetFontFamilyNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetFontFamilyName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
@@ -414,6 +414,6 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
         public delegate* unmanaged<TSelf*, uint> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetLocaleName;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWebWizardHost*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IWebWizardHost*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWebWizardHost*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,33 +105,33 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.put_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* bstrCaption)
+    public HRESULT put_Caption([NativeTypeName("BSTR")] char* bstrCaption)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, ushort*, int>)(lpVtbl[10]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrCaption);
+        return ((delegate* unmanaged<IWebWizardHost*, char*, int>)(lpVtbl[10]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrCaption);
     }
 
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.get_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** pbstrCaption)
+    public HRESULT get_Caption([NativeTypeName("BSTR *")] char** pbstrCaption)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, ushort**, int>)(lpVtbl[11]))((IWebWizardHost*)Unsafe.AsPointer(ref this), pbstrCaption);
+        return ((delegate* unmanaged<IWebWizardHost*, char**, int>)(lpVtbl[11]))((IWebWizardHost*)Unsafe.AsPointer(ref this), pbstrCaption);
     }
 
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.put_Property"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty)
+    public HRESULT put_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
+        return ((delegate* unmanaged<IWebWizardHost*, char*, VARIANT*, int>)(lpVtbl[12]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
     }
 
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.get_Property"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty)
+    public HRESULT get_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
+        return ((delegate* unmanaged<IWebWizardHost*, char*, VARIANT*, int>)(lpVtbl[13]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrPropertyName, pvProperty);
     }
 
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.SetWizardButtons"]/*' />
@@ -145,9 +145,9 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
     /// <include file='IWebWizardHost.xml' path='doc/member[@name="IWebWizardHost.SetHeaderText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SetHeaderText([NativeTypeName("BSTR")] ushort* bstrHeaderTitle, [NativeTypeName("BSTR")] ushort* bstrHeaderSubtitle)
+    public HRESULT SetHeaderText([NativeTypeName("BSTR")] char* bstrHeaderTitle, [NativeTypeName("BSTR")] char* bstrHeaderSubtitle)
     {
-        return ((delegate* unmanaged<IWebWizardHost*, ushort*, ushort*, int>)(lpVtbl[15]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrHeaderTitle, bstrHeaderSubtitle);
+        return ((delegate* unmanaged<IWebWizardHost*, char*, char*, int>)(lpVtbl[15]))((IWebWizardHost*)Unsafe.AsPointer(ref this), bstrHeaderTitle, bstrHeaderSubtitle);
     }
 
     public interface Interface : IDispatch.Interface
@@ -162,22 +162,22 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
         HRESULT Cancel();
 
         [VtblIndex(10)]
-        HRESULT put_Caption([NativeTypeName("BSTR")] ushort* bstrCaption);
+        HRESULT put_Caption([NativeTypeName("BSTR")] char* bstrCaption);
 
         [VtblIndex(11)]
-        HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** pbstrCaption);
+        HRESULT get_Caption([NativeTypeName("BSTR *")] char** pbstrCaption);
 
         [VtblIndex(12)]
-        HRESULT put_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty);
+        HRESULT put_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty);
 
         [VtblIndex(13)]
-        HRESULT get_Property([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvProperty);
+        HRESULT get_Property([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvProperty);
 
         [VtblIndex(14)]
         HRESULT SetWizardButtons([NativeTypeName("VARIANT_BOOL")] short vfEnableBack, [NativeTypeName("VARIANT_BOOL")] short vfEnableNext, [NativeTypeName("VARIANT_BOOL")] short vfLastPage);
 
         [VtblIndex(15)]
-        HRESULT SetHeaderText([NativeTypeName("BSTR")] ushort* bstrHeaderTitle, [NativeTypeName("BSTR")] ushort* bstrHeaderSubtitle);
+        HRESULT SetHeaderText([NativeTypeName("BSTR")] char* bstrHeaderTitle, [NativeTypeName("BSTR")] char* bstrHeaderSubtitle);
     }
 
     public partial struct Vtbl<TSelf>
@@ -199,7 +199,7 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -214,21 +214,21 @@ public unsafe partial struct IWebWizardHost : IWebWizardHost.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> Cancel;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Caption;
+        public delegate* unmanaged<TSelf*, char*, int> put_Caption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Caption;
+        public delegate* unmanaged<TSelf*, char**, int> get_Caption;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> put_Property;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> put_Property;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> get_Property;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> get_Property;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, short, short, int> SetWizardButtons;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetHeaderText;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetHeaderText;
     }
 }

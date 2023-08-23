@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLElement7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLElement7*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElement7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -449,17 +449,17 @@ public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface, INativeGui
     /// <include file='IHTMLElement7.xml' path='doc/member[@name="IHTMLElement7.put_xmsAcceleratorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
-    public HRESULT put_xmsAcceleratorKey([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_xmsAcceleratorKey([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLElement7*, ushort*, int>)(lpVtbl[53]))((IHTMLElement7*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLElement7*, char*, int>)(lpVtbl[53]))((IHTMLElement7*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLElement7.xml' path='doc/member[@name="IHTMLElement7.get_xmsAcceleratorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
-    public HRESULT get_xmsAcceleratorKey([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_xmsAcceleratorKey([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLElement7*, ushort**, int>)(lpVtbl[54]))((IHTMLElement7*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLElement7*, char**, int>)(lpVtbl[54]))((IHTMLElement7*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLElement7.xml' path='doc/member[@name="IHTMLElement7.put_spellcheck"]/*' />
@@ -651,10 +651,10 @@ public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface, INativeGui
         HRESULT get_oninvalid(VARIANT* p);
 
         [VtblIndex(53)]
-        HRESULT put_xmsAcceleratorKey([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_xmsAcceleratorKey([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(54)]
-        HRESULT get_xmsAcceleratorKey([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_xmsAcceleratorKey([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(55)]
         HRESULT put_spellcheck(VARIANT v);
@@ -694,7 +694,7 @@ public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -838,10 +838,10 @@ public unsafe partial struct IHTMLElement7 : IHTMLElement7.Interface, INativeGui
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_oninvalid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_xmsAcceleratorKey;
+        public delegate* unmanaged<TSelf*, char*, int> put_xmsAcceleratorKey;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_xmsAcceleratorKey;
+        public delegate* unmanaged<TSelf*, char**, int> get_xmsAcceleratorKey;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_spellcheck;

@@ -57,15 +57,15 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
     /// <include file='IElementNamespaceFactory2.xml' path='doc/member[@name="IElementNamespaceFactory2.CreateWithImplementation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation)
+    public HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] char* bstrImplementation)
     {
-        return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int>)(lpVtbl[4]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace, bstrImplementation);
+        return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, char*, int>)(lpVtbl[4]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace, bstrImplementation);
     }
 
     public interface Interface : IElementNamespaceFactory.Interface
     {
         [VtblIndex(4)]
-        HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation);
+        HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] char* bstrImplementation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,6 +84,6 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         public delegate* unmanaged<TSelf*, IElementNamespace*, int> Create;
 
         [NativeTypeName("HRESULT (IElementNamespace *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IElementNamespace*, ushort*, int> CreateWithImplementation;
+        public delegate* unmanaged<TSelf*, IElementNamespace*, char*, int> CreateWithImplementation;
     }
 }

@@ -49,15 +49,15 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
     /// <include file='IApplicationAssociationRegistrationUI.xml' path='doc/member[@name="IApplicationAssociationRegistrationUI.LaunchAdvancedAssociationUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName)
+    public HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] char* pszAppRegistryName)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, ushort*, int>)(lpVtbl[3]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), pszAppRegistryName);
+        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, char*, int>)(lpVtbl[3]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), pszAppRegistryName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName);
+        HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] char* pszAppRegistryName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> LaunchAdvancedAssociationUI;
+        public delegate* unmanaged<TSelf*, char*, int> LaunchAdvancedAssociationUI;
     }
 }

@@ -49,17 +49,17 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnDisplayNameChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] ushort* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext)
+    public HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] char* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int>)(lpVtbl[3]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewDisplayName, EventContext);
+        return ((delegate* unmanaged<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[3]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewDisplayName, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnIconPathChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] ushort* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext)
+    public HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] char* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int>)(lpVtbl[4]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewIconPath, EventContext);
+        return ((delegate* unmanaged<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[4]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewIconPath, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnSimpleVolumeChanged"]/*' />
@@ -105,10 +105,10 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] ushort* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext);
+        HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] char* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext);
 
         [VtblIndex(4)]
-        HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] ushort* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext);
+        HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] char* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext);
 
         [VtblIndex(5)]
         HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext);
@@ -139,10 +139,10 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> OnDisplayNameChanged;
+        public delegate* unmanaged<TSelf*, char*, Guid*, int> OnDisplayNameChanged;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> OnIconPathChanged;
+        public delegate* unmanaged<TSelf*, char*, Guid*, int> OnIconPathChanged;
 
         [NativeTypeName("HRESULT (float, BOOL, LPCGUID) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;

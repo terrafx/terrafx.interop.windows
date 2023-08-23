@@ -65,9 +65,9 @@ public unsafe partial struct ISpPhrase2 : ISpPhrase2.Interface, INativeGuid
     /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
+    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] char** ppszCoMemText, byte* pbDisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpPhrase2*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+        return ((delegate* unmanaged<ISpPhrase2*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
     /// <inheritdoc cref="ISpPhrase.Discard" />
@@ -81,9 +81,9 @@ public unsafe partial struct ISpPhrase2 : ISpPhrase2.Interface, INativeGuid
     /// <include file='ISpPhrase2.xml' path='doc/member[@name="ISpPhrase2.GetXMLResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options)
+    public HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] char** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options)
     {
-        return ((delegate* unmanaged<ISpPhrase2*, ushort**, SPXMLRESULTOPTIONS, int>)(lpVtbl[7]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ppszCoMemXMLResult, Options);
+        return ((delegate* unmanaged<ISpPhrase2*, char**, SPXMLRESULTOPTIONS, int>)(lpVtbl[7]))((ISpPhrase2*)Unsafe.AsPointer(ref this), ppszCoMemXMLResult, Options);
     }
 
     /// <include file='ISpPhrase2.xml' path='doc/member[@name="ISpPhrase2.GetXMLErrorInfo"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct ISpPhrase2 : ISpPhrase2.Interface, INativeGuid
     public interface Interface : ISpPhrase.Interface
     {
         [VtblIndex(7)]
-        HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] ushort** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
+        HRESULT GetXMLResult([NativeTypeName("LPWSTR *")] char** ppszCoMemXMLResult, SPXMLRESULTOPTIONS Options);
 
         [VtblIndex(8)]
         HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
@@ -133,13 +133,13 @@ public unsafe partial struct ISpPhrase2 : ISpPhrase2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Discard;
 
         [NativeTypeName("HRESULT (LPWSTR *, SPXMLRESULTOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, SPXMLRESULTOPTIONS, int> GetXMLResult;
+        public delegate* unmanaged<TSelf*, char**, SPXMLRESULTOPTIONS, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (SPSEMANTICERRORINFO *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SPSEMANTICERRORINFO*, int> GetXMLErrorInfo;

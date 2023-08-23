@@ -10,7 +10,7 @@ public unsafe partial struct CONFIRM_CONFLICT_RESULT_INFO
 {
     /// <include file='CONFIRM_CONFLICT_RESULT_INFO.xml' path='doc/member[@name="CONFIRM_CONFLICT_RESULT_INFO.pszNewName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszNewName;
+    public char* pszNewName;
 
     /// <include file='CONFIRM_CONFLICT_RESULT_INFO.xml' path='doc/member[@name="CONFIRM_CONFLICT_RESULT_INFO.iItemIndex"]/*' />
     public uint iItemIndex;

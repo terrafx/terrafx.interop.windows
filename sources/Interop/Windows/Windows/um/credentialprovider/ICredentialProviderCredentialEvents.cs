@@ -65,17 +65,17 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz)
+    public HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* psz)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, ushort*, int>)(lpVtbl[5]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, psz);
+        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[5]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, psz);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldCheckbox"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] ushort* pszLabel)
+    public HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, BOOL, ushort*, int>)(lpVtbl[6]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, bChecked, pszLabel);
+        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, BOOL, char*, int>)(lpVtbl[6]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, bChecked, pszLabel);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldBitmap"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.AppendFieldComboBoxItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* pszItem)
+    public HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* pszItem)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, ushort*, int>)(lpVtbl[10]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, pszItem);
+        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[10]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, pszItem);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldSubmitButton"]/*' />
@@ -135,10 +135,10 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         HRESULT SetFieldInteractiveState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis);
 
         [VtblIndex(5)]
-        HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz);
+        HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* psz);
 
         [VtblIndex(6)]
-        HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
+        HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] char* pszLabel);
 
         [VtblIndex(7)]
         HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, HBITMAP hbmp);
@@ -150,7 +150,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         HRESULT DeleteFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem);
 
         [VtblIndex(10)]
-        HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* pszItem);
+        HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* pszItem);
 
         [VtblIndex(11)]
         HRESULT SetFieldSubmitButton(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwAdjacentTo);
@@ -178,10 +178,10 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int> SetFieldInteractiveState;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, ushort*, int> SetFieldString;
+        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, char*, int> SetFieldString;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, BOOL, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, BOOL, ushort*, int> SetFieldCheckbox;
+        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, BOOL, char*, int> SetFieldCheckbox;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, HBITMAP) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, HBITMAP, int> SetFieldBitmap;
@@ -193,7 +193,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, uint, int> DeleteFieldComboBoxItem;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, ushort*, int> AppendFieldComboBoxItem;
+        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, char*, int> AppendFieldComboBoxItem;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, uint, int> SetFieldSubmitButton;

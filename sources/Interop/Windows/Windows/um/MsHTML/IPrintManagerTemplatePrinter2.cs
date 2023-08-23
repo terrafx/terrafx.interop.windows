@@ -65,9 +65,9 @@ public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTempla
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IPrintManagerTemplatePrinter2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IPrintManagerTemplatePrinter2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IPrintManagerTemplatePrinter2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTempla
     /// <inheritdoc cref="IPrintManagerTemplatePrinter.getPrintTaskOptionValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT getPrintTaskOptionValue([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* pvarin)
+    public HRESULT getPrintTaskOptionValue([NativeTypeName("BSTR")] char* bstrKey, VARIANT* pvarin)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter2*, ushort*, VARIANT*, int>)(lpVtbl[11]))((IPrintManagerTemplatePrinter2*)Unsafe.AsPointer(ref this), bstrKey, pvarin);
+        return ((delegate* unmanaged<IPrintManagerTemplatePrinter2*, char*, VARIANT*, int>)(lpVtbl[11]))((IPrintManagerTemplatePrinter2*)Unsafe.AsPointer(ref this), bstrKey, pvarin);
     }
 
     /// <inheritdoc cref="IPrintManagerTemplatePrinter.endPrint" />
@@ -181,7 +181,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTempla
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -199,7 +199,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTempla
         public delegate* unmanaged<TSelf*, int> invalidatePreview;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getPrintTaskOptionValue;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getPrintTaskOptionValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> endPrint;

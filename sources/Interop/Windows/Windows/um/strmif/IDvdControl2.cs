@@ -273,9 +273,9 @@ public unsafe partial struct IDvdControl2 : IDvdControl2.Interface, INativeGuid
     /// <include file='IDvdControl2.xml' path='doc/member[@name="IDvdControl2.SetDVDDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT SetDVDDirectory([NativeTypeName("LPCWSTR")] ushort* pszwPath)
+    public HRESULT SetDVDDirectory([NativeTypeName("LPCWSTR")] char* pszwPath)
     {
-        return ((delegate* unmanaged<IDvdControl2*, ushort*, int>)(lpVtbl[31]))((IDvdControl2*)Unsafe.AsPointer(ref this), pszwPath);
+        return ((delegate* unmanaged<IDvdControl2*, char*, int>)(lpVtbl[31]))((IDvdControl2*)Unsafe.AsPointer(ref this), pszwPath);
     }
 
     /// <include file='IDvdControl2.xml' path='doc/member[@name="IDvdControl2.ActivateAtPosition"]/*' />
@@ -453,7 +453,7 @@ public unsafe partial struct IDvdControl2 : IDvdControl2.Interface, INativeGuid
         HRESULT SelectVideoModePreference([NativeTypeName("ULONG")] uint ulPreferredDisplayMode);
 
         [VtblIndex(31)]
-        HRESULT SetDVDDirectory([NativeTypeName("LPCWSTR")] ushort* pszwPath);
+        HRESULT SetDVDDirectory([NativeTypeName("LPCWSTR")] char* pszwPath);
 
         [VtblIndex(32)]
         HRESULT ActivateAtPosition(POINT point);
@@ -586,7 +586,7 @@ public unsafe partial struct IDvdControl2 : IDvdControl2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, int> SelectVideoModePreference;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDVDDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> SetDVDDirectory;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, POINT, int> ActivateAtPosition;

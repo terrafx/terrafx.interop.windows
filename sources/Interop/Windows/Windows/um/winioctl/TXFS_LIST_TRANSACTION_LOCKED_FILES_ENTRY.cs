@@ -34,5 +34,5 @@ public unsafe partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY
 
     /// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileName[1];
+    public fixed char FileName[1];
 }

@@ -47,7 +47,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegConnectRegistryW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegConnectRegistryW([NativeTypeName("LPCWSTR")] ushort* lpMachineName, HKEY hKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
+    public static extern int RegConnectRegistryW([NativeTypeName("LPCWSTR")] char* lpMachineName, HKEY hKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegConnectRegistryExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -57,7 +57,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegConnectRegistryExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegConnectRegistryExW([NativeTypeName("LPCWSTR")] ushort* lpMachineName, HKEY hKey, [NativeTypeName("ULONG")] uint Flags, [NativeTypeName("PHKEY")] HKEY* phkResult);
+    public static extern int RegConnectRegistryExW([NativeTypeName("LPCWSTR")] char* lpMachineName, HKEY hKey, [NativeTypeName("ULONG")] uint Flags, [NativeTypeName("PHKEY")] HKEY* phkResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -67,7 +67,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegCreateKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
+    public static extern int RegCreateKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -77,7 +77,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegCreateKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("LPWSTR")] ushort* lpClass, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("LPDWORD")] uint* lpdwDisposition);
+    public static extern int RegCreateKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("LPWSTR")] char* lpClass, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("LPDWORD")] uint* lpdwDisposition);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyTransactedA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -87,7 +87,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyTransactedW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegCreateKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("LPWSTR")] ushort* lpClass, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("LPDWORD")] uint* lpdwDisposition, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParemeter);
+    public static extern int RegCreateKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("LPWSTR")] char* lpClass, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("LPDWORD")] uint* lpdwDisposition, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParemeter);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -97,7 +97,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey);
+    public static extern int RegDeleteKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -107,7 +107,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Reserved);
+    public static extern int RegDeleteKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyTransactedA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -117,7 +117,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyTransactedW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Reserved, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParameter);
+    public static extern int RegDeleteKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Reserved, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParameter);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDisableReflectionKey"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -142,7 +142,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpValueName);
+    public static extern int RegDeleteValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpValueName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -152,7 +152,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegEnumKeyW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint cchName);
+    public static extern int RegEnumKeyW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* lpName, [NativeTypeName("DWORD")] uint cchName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKeyExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -162,7 +162,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKeyExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegEnumKeyExW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpName, [NativeTypeName("LPDWORD")] uint* lpcchName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPWSTR")] ushort* lpClass, [NativeTypeName("LPDWORD")] uint* lpcchClass, [NativeTypeName("PFILETIME")] FILETIME* lpftLastWriteTime);
+    public static extern int RegEnumKeyExW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* lpName, [NativeTypeName("LPDWORD")] uint* lpcchName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPWSTR")] char* lpClass, [NativeTypeName("LPDWORD")] uint* lpcchClass, [NativeTypeName("PFILETIME")] FILETIME* lpftLastWriteTime);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumValueA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -172,7 +172,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegEnumValueW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpValueName, [NativeTypeName("LPDWORD")] uint* lpcchValueName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpType, [NativeTypeName("LPBYTE")] byte* lpData, [NativeTypeName("LPDWORD")] uint* lpcbData);
+    public static extern int RegEnumValueW(HKEY hKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* lpValueName, [NativeTypeName("LPDWORD")] uint* lpcchValueName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpType, [NativeTypeName("LPBYTE")] byte* lpData, [NativeTypeName("LPDWORD")] uint* lpcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegFlushKey"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -192,7 +192,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegLoadKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPCWSTR")] ushort* lpFile);
+    public static extern int RegLoadKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPCWSTR")] char* lpFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegNotifyChangeKeyValue"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -207,7 +207,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegOpenKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
+    public static extern int RegOpenKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("PHKEY")] HKEY* phkResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -217,7 +217,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegOpenKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("DWORD")] uint ulOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("PHKEY")] HKEY* phkResult);
+    public static extern int RegOpenKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("DWORD")] uint ulOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("PHKEY")] HKEY* phkResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyTransactedA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -227,7 +227,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyTransactedW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegOpenKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("DWORD")] uint ulOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("PHKEY")] HKEY* phkResult, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParemeter);
+    public static extern int RegOpenKeyTransactedW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("DWORD")] uint ulOptions, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("PHKEY")] HKEY* phkResult, HANDLE hTransaction, [NativeTypeName("PVOID")] void* pExtendedParemeter);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryInfoKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -237,7 +237,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryInfoKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegQueryInfoKeyW(HKEY hKey, [NativeTypeName("LPWSTR")] ushort* lpClass, [NativeTypeName("LPDWORD")] uint* lpcchClass, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpcSubKeys, [NativeTypeName("LPDWORD")] uint* lpcbMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* lpcbMaxClassLen, [NativeTypeName("LPDWORD")] uint* lpcValues, [NativeTypeName("LPDWORD")] uint* lpcbMaxValueNameLen, [NativeTypeName("LPDWORD")] uint* lpcbMaxValueLen, [NativeTypeName("LPDWORD")] uint* lpcbSecurityDescriptor, [NativeTypeName("PFILETIME")] FILETIME* lpftLastWriteTime);
+    public static extern int RegQueryInfoKeyW(HKEY hKey, [NativeTypeName("LPWSTR")] char* lpClass, [NativeTypeName("LPDWORD")] uint* lpcchClass, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpcSubKeys, [NativeTypeName("LPDWORD")] uint* lpcbMaxSubKeyLen, [NativeTypeName("LPDWORD")] uint* lpcbMaxClassLen, [NativeTypeName("LPDWORD")] uint* lpcValues, [NativeTypeName("LPDWORD")] uint* lpcbMaxValueNameLen, [NativeTypeName("LPDWORD")] uint* lpcbMaxValueLen, [NativeTypeName("LPDWORD")] uint* lpcbSecurityDescriptor, [NativeTypeName("PFILETIME")] FILETIME* lpftLastWriteTime);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValueA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -247,7 +247,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegQueryValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPWSTR")] ushort* lpData, [NativeTypeName("PLONG")] int* lpcbData);
+    public static extern int RegQueryValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPWSTR")] char* lpData, [NativeTypeName("PLONG")] int* lpcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryMultipleValuesA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -257,7 +257,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryMultipleValuesW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegQueryMultipleValuesW(HKEY hKey, [NativeTypeName("PVALENTW")] VALENTW* val_list, [NativeTypeName("DWORD")] uint num_vals, [NativeTypeName("LPWSTR")] ushort* lpValueBuf, [NativeTypeName("LPDWORD")] uint* ldwTotsize);
+    public static extern int RegQueryMultipleValuesW(HKEY hKey, [NativeTypeName("PVALENTW")] VALENTW* val_list, [NativeTypeName("DWORD")] uint num_vals, [NativeTypeName("LPWSTR")] char* lpValueBuf, [NativeTypeName("LPDWORD")] uint* ldwTotsize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValueExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -267,7 +267,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValueExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegQueryValueExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpValueName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpType, [NativeTypeName("LPBYTE")] byte* lpData, [NativeTypeName("LPDWORD")] uint* lpcbData);
+    public static extern int RegQueryValueExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpValueName, [NativeTypeName("LPDWORD")] uint* lpReserved, [NativeTypeName("LPDWORD")] uint* lpType, [NativeTypeName("LPBYTE")] byte* lpData, [NativeTypeName("LPDWORD")] uint* lpcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegReplaceKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -277,7 +277,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegReplaceKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegReplaceKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPCWSTR")] ushort* lpNewFile, [NativeTypeName("LPCWSTR")] ushort* lpOldFile);
+    public static extern int RegReplaceKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPCWSTR")] char* lpNewFile, [NativeTypeName("LPCWSTR")] char* lpOldFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegRestoreKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -287,12 +287,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegRestoreKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegRestoreKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int RegRestoreKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegRenameKey"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegRenameKey(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKeyName, [NativeTypeName("LPCWSTR")] ushort* lpNewKeyName);
+    public static extern int RegRenameKey(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKeyName, [NativeTypeName("LPCWSTR")] char* lpNewKeyName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSaveKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -302,7 +302,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSaveKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegSaveKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+    public static extern int RegSaveKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetKeySecurity"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -317,7 +317,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegSetValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCWSTR")] ushort* lpData, [NativeTypeName("DWORD")] uint cbData);
+    public static extern int RegSetValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCWSTR")] char* lpData, [NativeTypeName("DWORD")] uint cbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetValueExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -327,7 +327,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetValueExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegSetValueExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpValueName, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const BYTE *")] byte* lpData, [NativeTypeName("DWORD")] uint cbData);
+    public static extern int RegSetValueExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpValueName, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const BYTE *")] byte* lpData, [NativeTypeName("DWORD")] uint cbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegUnLoadKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -337,7 +337,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegUnLoadKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegUnLoadKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey);
+    public static extern int RegUnLoadKeyW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyValueA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -347,7 +347,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteKeyValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPCWSTR")] ushort* lpValueName);
+    public static extern int RegDeleteKeyValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPCWSTR")] char* lpValueName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetKeyValueA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -357,7 +357,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetKeyValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegSetKeyValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPCWSTR")] ushort* lpValueName, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* lpData, [NativeTypeName("DWORD")] uint cbData);
+    public static extern int RegSetKeyValueW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPCWSTR")] char* lpValueName, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* lpData, [NativeTypeName("DWORD")] uint cbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteTreeA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -367,7 +367,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteTreeW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegDeleteTreeW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey);
+    public static extern int RegDeleteTreeW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpSubKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCopyTreeA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -382,12 +382,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegGetValueW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, [NativeTypeName("LPCWSTR")] ushort* lpValue, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDWORD")] uint* pdwType, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
+    public static extern int RegGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* lpSubKey, [NativeTypeName("LPCWSTR")] char* lpValue, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDWORD")] uint* pdwType, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCopyTreeW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegCopyTreeW(HKEY hKeySrc, [NativeTypeName("LPCWSTR")] ushort* lpSubKey, HKEY hKeyDest);
+    public static extern int RegCopyTreeW(HKEY hKeySrc, [NativeTypeName("LPCWSTR")] char* lpSubKey, HKEY hKeyDest);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadMUIStringA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -397,7 +397,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadMUIStringW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegLoadMUIStringW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("LPWSTR")] ushort* pszOutBuf, [NativeTypeName("DWORD")] uint cbOutBuf, [NativeTypeName("LPDWORD")] uint* pcbData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPCWSTR")] ushort* pszDirectory);
+    public static extern int RegLoadMUIStringW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("LPWSTR")] char* pszOutBuf, [NativeTypeName("DWORD")] uint cbOutBuf, [NativeTypeName("LPDWORD")] uint* pcbData, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPCWSTR")] char* pszDirectory);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadAppKeyA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -407,7 +407,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadAppKeyW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegLoadAppKeyW([NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint Reserved);
+    public static extern int RegLoadAppKeyW([NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("PHKEY")] HKEY* phkResult, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint dwOptions, [NativeTypeName("DWORD")] uint Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdownA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -417,7 +417,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdownW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL InitiateSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
+    public static extern BOOL InitiateSystemShutdownW([NativeTypeName("LPWSTR")] char* lpMachineName, [NativeTypeName("LPWSTR")] char* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AbortSystemShutdownA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -427,7 +427,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AbortSystemShutdownW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AbortSystemShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName);
+    public static extern BOOL AbortSystemShutdownW([NativeTypeName("LPWSTR")] char* lpMachineName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdownExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -437,7 +437,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdownExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL InitiateSystemShutdownExW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
+    public static extern BOOL InitiateSystemShutdownExW([NativeTypeName("LPWSTR")] char* lpMachineName, [NativeTypeName("LPWSTR")] char* lpMessage, [NativeTypeName("DWORD")] uint dwTimeout, BOOL bForceAppsClosed, BOOL bRebootAfterShutdown, [NativeTypeName("DWORD")] uint dwReason);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateShutdownA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -447,7 +447,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateShutdownW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint InitiateShutdownW([NativeTypeName("LPWSTR")] ushort* lpMachineName, [NativeTypeName("LPWSTR")] ushort* lpMessage, [NativeTypeName("DWORD")] uint dwGracePeriod, [NativeTypeName("DWORD")] uint dwShutdownFlags, [NativeTypeName("DWORD")] uint dwReason);
+    public static extern uint InitiateShutdownW([NativeTypeName("LPWSTR")] char* lpMachineName, [NativeTypeName("LPWSTR")] char* lpMessage, [NativeTypeName("DWORD")] uint dwGracePeriod, [NativeTypeName("DWORD")] uint dwShutdownFlags, [NativeTypeName("DWORD")] uint dwReason);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckForHiberboot"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -462,7 +462,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSaveKeyExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int RegSaveKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("DWORD")] uint Flags);
+    public static extern int RegSaveKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("DWORD")] uint Flags);
 
     [NativeTypeName("#define PROVIDER_KEEPS_VALUE_LENGTH 0x1")]
     public const int PROVIDER_KEEPS_VALUE_LENGTH = 0x1;
@@ -471,109 +471,109 @@ public static unsafe partial class Windows
     public const int WIN31_CLASS = 0;
 
     [NativeTypeName("#define RegConnectRegistry RegConnectRegistryW")]
-    public static delegate*<ushort*, HKEY, HKEY*, int> RegConnectRegistry => &RegConnectRegistryW;
+    public static delegate*<char*, HKEY, HKEY*, int> RegConnectRegistry => &RegConnectRegistryW;
 
     [NativeTypeName("#define RegConnectRegistryEx RegConnectRegistryExW")]
-    public static delegate*<ushort*, HKEY, uint, HKEY*, int> RegConnectRegistryEx => &RegConnectRegistryExW;
+    public static delegate*<char*, HKEY, uint, HKEY*, int> RegConnectRegistryEx => &RegConnectRegistryExW;
 
     [NativeTypeName("#define RegCreateKey RegCreateKeyW")]
-    public static delegate*<HKEY, ushort*, HKEY*, int> RegCreateKey => &RegCreateKeyW;
+    public static delegate*<HKEY, char*, HKEY*, int> RegCreateKey => &RegCreateKeyW;
 
     [NativeTypeName("#define RegCreateKeyEx RegCreateKeyExW")]
-    public static delegate*<HKEY, ushort*, uint, ushort*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, int> RegCreateKeyEx => &RegCreateKeyExW;
+    public static delegate*<HKEY, char*, uint, char*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, int> RegCreateKeyEx => &RegCreateKeyExW;
 
     [NativeTypeName("#define RegCreateKeyTransacted RegCreateKeyTransactedW")]
-    public static delegate*<HKEY, ushort*, uint, ushort*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, HANDLE, void*, int> RegCreateKeyTransacted => &RegCreateKeyTransactedW;
+    public static delegate*<HKEY, char*, uint, char*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, HANDLE, void*, int> RegCreateKeyTransacted => &RegCreateKeyTransactedW;
 
     [NativeTypeName("#define RegDeleteKey RegDeleteKeyW")]
-    public static delegate*<HKEY, ushort*, int> RegDeleteKey => &RegDeleteKeyW;
+    public static delegate*<HKEY, char*, int> RegDeleteKey => &RegDeleteKeyW;
 
     [NativeTypeName("#define RegDeleteKeyEx RegDeleteKeyExW")]
-    public static delegate*<HKEY, ushort*, uint, uint, int> RegDeleteKeyEx => &RegDeleteKeyExW;
+    public static delegate*<HKEY, char*, uint, uint, int> RegDeleteKeyEx => &RegDeleteKeyExW;
 
     [NativeTypeName("#define RegDeleteKeyTransacted RegDeleteKeyTransactedW")]
-    public static delegate*<HKEY, ushort*, uint, uint, HANDLE, void*, int> RegDeleteKeyTransacted => &RegDeleteKeyTransactedW;
+    public static delegate*<HKEY, char*, uint, uint, HANDLE, void*, int> RegDeleteKeyTransacted => &RegDeleteKeyTransactedW;
 
     [NativeTypeName("#define RegDeleteValue RegDeleteValueW")]
-    public static delegate*<HKEY, ushort*, int> RegDeleteValue => &RegDeleteValueW;
+    public static delegate*<HKEY, char*, int> RegDeleteValue => &RegDeleteValueW;
 
     [NativeTypeName("#define RegEnumKey RegEnumKeyW")]
-    public static delegate*<HKEY, uint, ushort*, uint, int> RegEnumKey => &RegEnumKeyW;
+    public static delegate*<HKEY, uint, char*, uint, int> RegEnumKey => &RegEnumKeyW;
 
     [NativeTypeName("#define RegEnumKeyEx RegEnumKeyExW")]
-    public static delegate*<HKEY, uint, ushort*, uint*, uint*, ushort*, uint*, FILETIME*, int> RegEnumKeyEx => &RegEnumKeyExW;
+    public static delegate*<HKEY, uint, char*, uint*, uint*, char*, uint*, FILETIME*, int> RegEnumKeyEx => &RegEnumKeyExW;
 
     [NativeTypeName("#define RegEnumValue RegEnumValueW")]
-    public static delegate*<HKEY, uint, ushort*, uint*, uint*, uint*, byte*, uint*, int> RegEnumValue => &RegEnumValueW;
+    public static delegate*<HKEY, uint, char*, uint*, uint*, uint*, byte*, uint*, int> RegEnumValue => &RegEnumValueW;
 
     [NativeTypeName("#define RegLoadKey RegLoadKeyW")]
-    public static delegate*<HKEY, ushort*, ushort*, int> RegLoadKey => &RegLoadKeyW;
+    public static delegate*<HKEY, char*, char*, int> RegLoadKey => &RegLoadKeyW;
 
     [NativeTypeName("#define RegOpenKey RegOpenKeyW")]
-    public static delegate*<HKEY, ushort*, HKEY*, int> RegOpenKey => &RegOpenKeyW;
+    public static delegate*<HKEY, char*, HKEY*, int> RegOpenKey => &RegOpenKeyW;
 
     [NativeTypeName("#define RegOpenKeyEx RegOpenKeyExW")]
-    public static delegate*<HKEY, ushort*, uint, uint, HKEY*, int> RegOpenKeyEx => &RegOpenKeyExW;
+    public static delegate*<HKEY, char*, uint, uint, HKEY*, int> RegOpenKeyEx => &RegOpenKeyExW;
 
     [NativeTypeName("#define RegOpenKeyTransacted RegOpenKeyTransactedW")]
-    public static delegate*<HKEY, ushort*, uint, uint, HKEY*, HANDLE, void*, int> RegOpenKeyTransacted => &RegOpenKeyTransactedW;
+    public static delegate*<HKEY, char*, uint, uint, HKEY*, HANDLE, void*, int> RegOpenKeyTransacted => &RegOpenKeyTransactedW;
 
     [NativeTypeName("#define RegQueryInfoKey RegQueryInfoKeyW")]
-    public static delegate*<HKEY, ushort*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, FILETIME*, int> RegQueryInfoKey => &RegQueryInfoKeyW;
+    public static delegate*<HKEY, char*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, FILETIME*, int> RegQueryInfoKey => &RegQueryInfoKeyW;
 
     [NativeTypeName("#define RegQueryValue RegQueryValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, int*, int> RegQueryValue => &RegQueryValueW;
+    public static delegate*<HKEY, char*, char*, int*, int> RegQueryValue => &RegQueryValueW;
 
     [NativeTypeName("#define RegQueryMultipleValues RegQueryMultipleValuesW")]
-    public static delegate*<HKEY, VALENTW*, uint, ushort*, uint*, int> RegQueryMultipleValues => &RegQueryMultipleValuesW;
+    public static delegate*<HKEY, VALENTW*, uint, char*, uint*, int> RegQueryMultipleValues => &RegQueryMultipleValuesW;
 
     [NativeTypeName("#define RegQueryValueEx RegQueryValueExW")]
-    public static delegate*<HKEY, ushort*, uint*, uint*, byte*, uint*, int> RegQueryValueEx => &RegQueryValueExW;
+    public static delegate*<HKEY, char*, uint*, uint*, byte*, uint*, int> RegQueryValueEx => &RegQueryValueExW;
 
     [NativeTypeName("#define RegReplaceKey RegReplaceKeyW")]
-    public static delegate*<HKEY, ushort*, ushort*, ushort*, int> RegReplaceKey => &RegReplaceKeyW;
+    public static delegate*<HKEY, char*, char*, char*, int> RegReplaceKey => &RegReplaceKeyW;
 
     [NativeTypeName("#define RegRestoreKey RegRestoreKeyW")]
-    public static delegate*<HKEY, ushort*, uint, int> RegRestoreKey => &RegRestoreKeyW;
+    public static delegate*<HKEY, char*, uint, int> RegRestoreKey => &RegRestoreKeyW;
 
     [NativeTypeName("#define RegSaveKey RegSaveKeyW")]
-    public static delegate*<HKEY, ushort*, SECURITY_ATTRIBUTES*, int> RegSaveKey => &RegSaveKeyW;
+    public static delegate*<HKEY, char*, SECURITY_ATTRIBUTES*, int> RegSaveKey => &RegSaveKeyW;
 
     [NativeTypeName("#define RegSetValue RegSetValueW")]
-    public static delegate*<HKEY, ushort*, uint, ushort*, uint, int> RegSetValue => &RegSetValueW;
+    public static delegate*<HKEY, char*, uint, char*, uint, int> RegSetValue => &RegSetValueW;
 
     [NativeTypeName("#define RegSetValueEx RegSetValueExW")]
-    public static delegate*<HKEY, ushort*, uint, uint, byte*, uint, int> RegSetValueEx => &RegSetValueExW;
+    public static delegate*<HKEY, char*, uint, uint, byte*, uint, int> RegSetValueEx => &RegSetValueExW;
 
     [NativeTypeName("#define RegUnLoadKey RegUnLoadKeyW")]
-    public static delegate*<HKEY, ushort*, int> RegUnLoadKey => &RegUnLoadKeyW;
+    public static delegate*<HKEY, char*, int> RegUnLoadKey => &RegUnLoadKeyW;
 
     [NativeTypeName("#define RegDeleteKeyValue RegDeleteKeyValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, int> RegDeleteKeyValue => &RegDeleteKeyValueW;
+    public static delegate*<HKEY, char*, char*, int> RegDeleteKeyValue => &RegDeleteKeyValueW;
 
     [NativeTypeName("#define RegSetKeyValue RegSetKeyValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, void*, uint, int> RegSetKeyValue => &RegSetKeyValueW;
+    public static delegate*<HKEY, char*, char*, uint, void*, uint, int> RegSetKeyValue => &RegSetKeyValueW;
 
     [NativeTypeName("#define RegDeleteTree RegDeleteTreeW")]
-    public static delegate*<HKEY, ushort*, int> RegDeleteTree => &RegDeleteTreeW;
+    public static delegate*<HKEY, char*, int> RegDeleteTree => &RegDeleteTreeW;
 
     [NativeTypeName("#define RegGetValue RegGetValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, uint*, void*, uint*, int> RegGetValue => &RegGetValueW;
+    public static delegate*<HKEY, char*, char*, uint, uint*, void*, uint*, int> RegGetValue => &RegGetValueW;
 
     [NativeTypeName("#define RegCopyTree RegCopyTreeW")]
-    public static delegate*<HKEY, ushort*, HKEY, int> RegCopyTree => &RegCopyTreeW;
+    public static delegate*<HKEY, char*, HKEY, int> RegCopyTree => &RegCopyTreeW;
 
     [NativeTypeName("#define RegLoadMUIString RegLoadMUIStringW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, uint*, uint, ushort*, int> RegLoadMUIString => &RegLoadMUIStringW;
+    public static delegate*<HKEY, char*, char*, uint, uint*, uint, char*, int> RegLoadMUIString => &RegLoadMUIStringW;
 
     [NativeTypeName("#define RegLoadAppKey RegLoadAppKeyW")]
-    public static delegate*<ushort*, HKEY*, uint, uint, uint, int> RegLoadAppKey => &RegLoadAppKeyW;
+    public static delegate*<char*, HKEY*, uint, uint, uint, int> RegLoadAppKey => &RegLoadAppKeyW;
 
     [NativeTypeName("#define InitiateSystemShutdown InitiateSystemShutdownW")]
-    public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, BOOL> InitiateSystemShutdown => &InitiateSystemShutdownW;
+    public static delegate*<char*, char*, uint, BOOL, BOOL, BOOL> InitiateSystemShutdown => &InitiateSystemShutdownW;
 
     [NativeTypeName("#define AbortSystemShutdown AbortSystemShutdownW")]
-    public static delegate*<ushort*, BOOL> AbortSystemShutdown => &AbortSystemShutdownW;
+    public static delegate*<char*, BOOL> AbortSystemShutdown => &AbortSystemShutdownW;
 
     [NativeTypeName("#define REASON_SWINSTALL (SHTDN_REASON_MAJOR_SOFTWARE|SHTDN_REASON_MINOR_INSTALLATION)")]
     public const int REASON_SWINSTALL = (0x00030000 | 0x00000002);
@@ -603,11 +603,11 @@ public static unsafe partial class Windows
     public const uint REASON_PLANNED_FLAG = 0x80000000;
 
     [NativeTypeName("#define InitiateSystemShutdownEx InitiateSystemShutdownExW")]
-    public static delegate*<ushort*, ushort*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
+    public static delegate*<char*, char*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
 
     [NativeTypeName("#define InitiateShutdown InitiateShutdownW")]
-    public static delegate*<ushort*, ushort*, uint, uint, uint, uint> InitiateShutdown => &InitiateShutdownW;
+    public static delegate*<char*, char*, uint, uint, uint, uint> InitiateShutdown => &InitiateShutdownW;
 
     [NativeTypeName("#define RegSaveKeyEx RegSaveKeyExW")]
-    public static delegate*<HKEY, ushort*, SECURITY_ATTRIBUTES*, uint, int> RegSaveKeyEx => &RegSaveKeyExW;
+    public static delegate*<HKEY, char*, SECURITY_ATTRIBUTES*, uint, int> RegSaveKeyEx => &RegSaveKeyExW;
 }

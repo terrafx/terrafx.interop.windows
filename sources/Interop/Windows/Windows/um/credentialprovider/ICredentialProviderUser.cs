@@ -51,9 +51,9 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
     /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetSid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSid([NativeTypeName("LPWSTR *")] ushort** sid)
+    public HRESULT GetSid([NativeTypeName("LPWSTR *")] char** sid)
     {
-        return ((delegate* unmanaged<ICredentialProviderUser*, ushort**, int>)(lpVtbl[3]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), sid);
+        return ((delegate* unmanaged<ICredentialProviderUser*, char**, int>)(lpVtbl[3]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), sid);
     }
 
     /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetProviderID"]/*' />
@@ -67,9 +67,9 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
     /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** stringValue)
+    public HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] char** stringValue)
     {
-        return ((delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, ushort**, int>)(lpVtbl[5]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), key, stringValue);
+        return ((delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, char**, int>)(lpVtbl[5]))((ICredentialProviderUser*)Unsafe.AsPointer(ref this), key, stringValue);
     }
 
     /// <include file='ICredentialProviderUser.xml' path='doc/member[@name="ICredentialProviderUser.GetValue"]/*' />
@@ -83,13 +83,13 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSid([NativeTypeName("LPWSTR *")] ushort** sid);
+        HRESULT GetSid([NativeTypeName("LPWSTR *")] char** sid);
 
         [VtblIndex(4)]
         HRESULT GetProviderID(Guid* providerID);
 
         [VtblIndex(5)]
-        HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** stringValue);
+        HRESULT GetStringValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] char** stringValue);
 
         [VtblIndex(6)]
         HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* value);
@@ -108,13 +108,13 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSid;
+        public delegate* unmanaged<TSelf*, char**, int> GetSid;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetProviderID;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, char**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;

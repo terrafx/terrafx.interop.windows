@@ -99,9 +99,9 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetOutputFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName)
+    public HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName)
     {
-        return ((delegate* unmanaged<IMFCaptureRecordSink*, ushort*, int>)(lpVtbl[9]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IMFCaptureRecordSink*, char*, int>)(lpVtbl[9]))((IMFCaptureRecordSink*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.SetSampleCallback"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
         HRESULT SetOutputByteStream(IMFByteStream* pByteStream, [NativeTypeName("const GUID &")] Guid* guidContainerType);
 
         [VtblIndex(9)]
-        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] ushort* fileName);
+        HRESULT SetOutputFileName([NativeTypeName("LPCWSTR")] char* fileName);
 
         [VtblIndex(10)]
         HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback);
@@ -188,7 +188,7 @@ public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interfa
         public delegate* unmanaged<TSelf*, IMFByteStream*, Guid*, int> SetOutputByteStream;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFileName;
+        public delegate* unmanaged<TSelf*, char*, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (DWORD, IMFCaptureEngineOnSampleCallback *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;

@@ -13,7 +13,7 @@ public unsafe partial struct SourceInfo
 {
     /// <include file='SourceInfo.xml' path='doc/member[@name="SourceInfo.FileName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* FileName;
+    public char* FileName;
 
     /// <include file='SourceInfo.xml' path='doc/member[@name="SourceInfo.LineNumber"]/*' />
     [NativeTypeName("unsigned int")]
@@ -29,5 +29,5 @@ public unsafe partial struct SourceInfo
 
     /// <include file='SourceInfo.xml' path='doc/member[@name="SourceInfo.Hash"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Hash;
+    public char* Hash;
 }

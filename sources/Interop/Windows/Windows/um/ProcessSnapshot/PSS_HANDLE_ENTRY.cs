@@ -57,7 +57,7 @@ public unsafe partial struct PSS_HANDLE_ENTRY
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.TypeName"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* TypeName;
+    public char* TypeName;
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.ObjectNameLength"]/*' />
     [NativeTypeName("WORD")]
@@ -65,7 +65,7 @@ public unsafe partial struct PSS_HANDLE_ENTRY
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.ObjectName"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* ObjectName;
+    public char* ObjectName;
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.TypeSpecificInformation"]/*' />
     [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L258_C5")]

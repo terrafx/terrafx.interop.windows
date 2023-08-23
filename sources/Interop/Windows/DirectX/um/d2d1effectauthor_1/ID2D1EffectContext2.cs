@@ -186,9 +186,9 @@ public unsafe partial struct ID2D1EffectContext2 : ID2D1EffectContext2.Interface
     /// <inheritdoc cref="ID2D1EffectContext.CreateColorContextFromFilename" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext)
+    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext)
     {
-        return ((delegate* unmanaged<ID2D1EffectContext2*, ushort*, ID2D1ColorContext**, int>)(lpVtbl[20]))((ID2D1EffectContext2*)Unsafe.AsPointer(ref this), filename, colorContext);
+        return ((delegate* unmanaged<ID2D1EffectContext2*, char*, ID2D1ColorContext**, int>)(lpVtbl[20]))((ID2D1EffectContext2*)Unsafe.AsPointer(ref this), filename, colorContext);
     }
 
     /// <inheritdoc cref="ID2D1EffectContext.CreateColorContextFromWicColorContext" />
@@ -312,7 +312,7 @@ public unsafe partial struct ID2D1EffectContext2 : ID2D1EffectContext2.Interface
         public delegate* unmanaged<TSelf*, D2D1_COLOR_SPACE, byte*, uint, ID2D1ColorContext**, int> CreateColorContext;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
+        public delegate* unmanaged<TSelf*, char*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
 
         [NativeTypeName("HRESULT (IWICColorContext *, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IWICColorContext*, ID2D1ColorContext**, int> CreateColorContextFromWicColorContext;

@@ -30,11 +30,11 @@ public unsafe partial struct DRIVER_VER_INFO
 
     /// <include file='DRIVER_VER_INFO.xml' path='doc/member[@name="DRIVER_VER_INFO.wszVersion"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszVersion[260];
+    public fixed char wszVersion[260];
 
     /// <include file='DRIVER_VER_INFO.xml' path='doc/member[@name="DRIVER_VER_INFO.wszSignedBy"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszSignedBy[260];
+    public fixed char wszSignedBy[260];
 
     /// <include file='DRIVER_VER_INFO.xml' path='doc/member[@name="DRIVER_VER_INFO.pcSignerCertContext"]/*' />
     [NativeTypeName("PCCERT_CONTEXT")]

@@ -49,17 +49,17 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     /// <inheritdoc cref="ITfRange.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch)
+    public HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, ushort*, uint, uint*, int>)(lpVtbl[3]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
+        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, char*, uint, uint*, int>)(lpVtbl[3]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
     }
 
     /// <inheritdoc cref="ITfRange.SetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
+    public HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, ushort*, int, int>)(lpVtbl[4]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
+        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, char*, int, int>)(lpVtbl[4]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
     }
 
     /// <inheritdoc cref="ITfRange.GetFormattedText" />
@@ -260,10 +260,10 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, WCHAR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, uint, uint*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, uint, uint*, int> GetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int, int> SetText;
+        public delegate* unmanaged<TSelf*, uint, uint, char*, int, int> SetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, IDataObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDataObject**, int> GetFormattedText;

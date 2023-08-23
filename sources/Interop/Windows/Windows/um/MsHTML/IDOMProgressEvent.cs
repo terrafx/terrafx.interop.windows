@@ -65,9 +65,9 @@ public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMProgressEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMProgressEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface, IN
     /// <include file='IDOMProgressEvent.xml' path='doc/member[@name="IDOMProgressEvent.initProgressEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg)
+    public HRESULT initProgressEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg)
     {
-        return ((delegate* unmanaged<IDOMProgressEvent*, ushort*, short, short, short, ulong, ulong, int>)(lpVtbl[10]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, lengthComputableArg, loadedArg, totalArg);
+        return ((delegate* unmanaged<IDOMProgressEvent*, char*, short, short, short, ulong, ulong, int>)(lpVtbl[10]))((IDOMProgressEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, lengthComputableArg, loadedArg, totalArg);
     }
 
     public interface Interface : IDispatch.Interface
@@ -122,7 +122,7 @@ public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface, IN
         HRESULT get_total([NativeTypeName("ULONGLONG *")] ulong* p);
 
         [VtblIndex(10)]
-        HRESULT initProgressEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg);
+        HRESULT initProgressEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short lengthComputableArg, [NativeTypeName("ULONGLONG")] ulong loadedArg, [NativeTypeName("ULONGLONG")] ulong totalArg);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,7 +144,7 @@ public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -159,6 +159,6 @@ public unsafe partial struct IDOMProgressEvent : IDOMProgressEvent.Interface, IN
         public delegate* unmanaged<TSelf*, ulong*, int> get_total;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, short, ulong, ulong, int> initProgressEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, short, ulong, ulong, int> initProgressEvent;
     }
 }

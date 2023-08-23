@@ -18,5 +18,5 @@ public unsafe partial struct AXISINFOW
 
     /// <include file='AXISINFOW.xml' path='doc/member[@name="AXISINFOW.axAxisName"]/*' />
     [NativeTypeName("WCHAR[16]")]
-    public fixed ushort axAxisName[16];
+    public fixed char axAxisName[16];
 }

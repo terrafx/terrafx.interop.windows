@@ -169,17 +169,17 @@ public unsafe partial struct ITaskbarList4 : ITaskbarList4.Interface, INativeGui
     /// <inheritdoc cref="ITaskbarList3.SetOverlayIcon" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszDescription)
+    public HRESULT SetOverlayIcon(HWND hwnd, HICON hIcon, [NativeTypeName("LPCWSTR")] char* pszDescription)
     {
-        return ((delegate* unmanaged<ITaskbarList4*, HWND, HICON, ushort*, int>)(lpVtbl[18]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, hIcon, pszDescription);
+        return ((delegate* unmanaged<ITaskbarList4*, HWND, HICON, char*, int>)(lpVtbl[18]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, hIcon, pszDescription);
     }
 
     /// <inheritdoc cref="ITaskbarList3.SetThumbnailTooltip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszTip)
+    public HRESULT SetThumbnailTooltip(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszTip)
     {
-        return ((delegate* unmanaged<ITaskbarList4*, HWND, ushort*, int>)(lpVtbl[19]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, pszTip);
+        return ((delegate* unmanaged<ITaskbarList4*, HWND, char*, int>)(lpVtbl[19]))((ITaskbarList4*)Unsafe.AsPointer(ref this), hwnd, pszTip);
     }
 
     /// <inheritdoc cref="ITaskbarList3.SetThumbnailClip" />
@@ -262,10 +262,10 @@ public unsafe partial struct ITaskbarList4 : ITaskbarList4.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HWND, HIMAGELIST, int> ThumbBarSetImageList;
 
         [NativeTypeName("HRESULT (HWND, HICON, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HICON, ushort*, int> SetOverlayIcon;
+        public delegate* unmanaged<TSelf*, HWND, HICON, char*, int> SetOverlayIcon;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, int> SetThumbnailTooltip;
+        public delegate* unmanaged<TSelf*, HWND, char*, int> SetThumbnailTooltip;
 
         [NativeTypeName("HRESULT (HWND, RECT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, RECT*, int> SetThumbnailClip;

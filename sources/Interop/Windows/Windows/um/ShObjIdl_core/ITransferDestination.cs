@@ -65,9 +65,9 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
     /// <include file='ITransferDestination.xml' path='doc/member[@name="ITransferDestination.CreateItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources)
+    public HRESULT CreateItem([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources)
     {
-        return ((delegate* unmanaged<ITransferDestination*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int>)(lpVtbl[5]))((ITransferDestination*)Unsafe.AsPointer(ref this), pszName, dwAttributes, ullSize, flags, riidItem, ppvItem, riidResources, ppvResources);
+        return ((delegate* unmanaged<ITransferDestination*, char*, uint, ulong, uint, Guid*, void**, Guid*, void**, int>)(lpVtbl[5]))((ITransferDestination*)Unsafe.AsPointer(ref this), pszName, dwAttributes, ullSize, flags, riidItem, ppvItem, riidResources, ppvResources);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
 
         [VtblIndex(5)]
-        HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources);
+        HRESULT CreateItem([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONGLONG, TRANSFER_SOURCE_FLAGS, const IID &, void **, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int> CreateItem;
+        public delegate* unmanaged<TSelf*, char*, uint, ulong, uint, Guid*, void**, Guid*, void**, int> CreateItem;
     }
 }

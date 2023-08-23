@@ -49,48 +49,48 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.SetBanner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPCWSTR")] ushort* contentId)
+    public HRESULT SetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPCWSTR")] char* contentId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort*, int>)(lpVtbl[3]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
+        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, char*, int>)(lpVtbl[3]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.ClearBanner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ClearBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId)
+    public HRESULT ClearBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, int>)(lpVtbl[4]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId);
+        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, int>)(lpVtbl[4]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.ClearAllBanners"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] ushort* providerIdentity)
+    public HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] char* providerIdentity)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, ushort*, int>)(lpVtbl[5]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity);
+        return ((delegate* unmanaged<IStorageProviderBanners*, char*, int>)(lpVtbl[5]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.GetBanner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPWSTR *")] ushort** contentId)
+    public HRESULT GetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPWSTR *")] char** contentId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort**, int>)(lpVtbl[6]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
+        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, char**, int>)(lpVtbl[6]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPCWSTR")] ushort* contentId);
+        HRESULT SetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPCWSTR")] char* contentId);
 
         [VtblIndex(4)]
-        HRESULT ClearBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId);
+        HRESULT ClearBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId);
 
         [VtblIndex(5)]
-        HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] ushort* providerIdentity);
+        HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] char* providerIdentity);
 
         [VtblIndex(6)]
-        HRESULT GetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPWSTR *")] ushort** contentId);
+        HRESULT GetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPWSTR *")] char** contentId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -106,15 +106,15 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> SetBanner;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> SetBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> ClearBanner;
+        public delegate* unmanaged<TSelf*, char*, char*, int> ClearBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> ClearAllBanners;
+        public delegate* unmanaged<TSelf*, char*, int> ClearAllBanners;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort**, int> GetBanner;
+        public delegate* unmanaged<TSelf*, char*, char*, char**, int> GetBanner;
     }
 }

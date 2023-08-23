@@ -49,25 +49,25 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.ProcessSoftDist"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] ushort* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi)
+    public HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] char* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, ushort*, IXMLElement*, SOFTDISTINFO*, int>)(lpVtbl[3]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCDFURL, pSoftDistElement, lpsdi);
+        return ((delegate* unmanaged<ISoftDistExt*, char*, IXMLElement*, SOFTDISTINFO*, int>)(lpVtbl[3]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCDFURL, pSoftDistElement, lpsdi);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.GetFirstCodeBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
+    public HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, ushort**, uint*, int>)(lpVtbl[4]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
+        return ((delegate* unmanaged<ISoftDistExt*, char**, uint*, int>)(lpVtbl[4]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.GetNextCodeBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
+    public HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, ushort**, uint*, int>)(lpVtbl[5]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
+        return ((delegate* unmanaged<ISoftDistExt*, char**, uint*, int>)(lpVtbl[5]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.AsyncInstallDistributionUnit"]/*' />
@@ -81,13 +81,13 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] ushort* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi);
+        HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] char* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi);
 
         [VtblIndex(4)]
-        HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
+        HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
 
         [VtblIndex(5)]
-        HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] ushort** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
+        HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize);
 
         [VtblIndex(6)]
         HRESULT AsyncInstallDistributionUnit(IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPCODEBASEHOLD")] CODEBASEHOLD* lpcbh);
@@ -106,13 +106,13 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IXMLElement *, LPSOFTDISTINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
+        public delegate* unmanaged<TSelf*, char*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetFirstCodeBase;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetFirstCodeBase;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetNextCodeBase;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetNextCodeBase;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPVOID, DWORD, LPCODEBASEHOLD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IBindCtx*, void*, uint, CODEBASEHOLD*, int> AsyncInstallDistributionUnit;

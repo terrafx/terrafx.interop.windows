@@ -65,9 +65,9 @@ public unsafe partial struct IDOMStorageEvent : IDOMStorageEvent.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMStorageEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct IDOMStorageEvent : IDOMStorageEvent.Interface, INat
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.get_key"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_key([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_key([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, ushort**, int>)(lpVtbl[7]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMStorageEvent*, char**, int>)(lpVtbl[7]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.get_oldValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_oldValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_oldValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, ushort**, int>)(lpVtbl[8]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMStorageEvent*, char**, int>)(lpVtbl[8]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.get_newValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_newValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, ushort**, int>)(lpVtbl[9]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMStorageEvent*, char**, int>)(lpVtbl[9]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.get_url"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_url([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_url([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, ushort**, int>)(lpVtbl[10]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMStorageEvent*, char**, int>)(lpVtbl[10]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.get_storageArea"]/*' />
@@ -121,30 +121,30 @@ public unsafe partial struct IDOMStorageEvent : IDOMStorageEvent.Interface, INat
     /// <include file='IDOMStorageEvent.xml' path='doc/member[@name="IDOMStorageEvent.initStorageEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT initStorageEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("BSTR")] ushort* oldValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* urlArg, IHTMLStorage* storageAreaArg)
+    public HRESULT initStorageEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("BSTR")] char* oldValueArg, [NativeTypeName("BSTR")] char* newValueArg, [NativeTypeName("BSTR")] char* urlArg, IHTMLStorage* storageAreaArg)
     {
-        return ((delegate* unmanaged<IDOMStorageEvent*, ushort*, short, short, ushort*, ushort*, ushort*, ushort*, IHTMLStorage*, int>)(lpVtbl[12]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, keyArg, oldValueArg, newValueArg, urlArg, storageAreaArg);
+        return ((delegate* unmanaged<IDOMStorageEvent*, char*, short, short, char*, char*, char*, char*, IHTMLStorage*, int>)(lpVtbl[12]))((IDOMStorageEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, keyArg, oldValueArg, newValueArg, urlArg, storageAreaArg);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_key([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_key([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_oldValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_oldValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_newValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_url([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_url([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT get_storageArea(IHTMLStorage** p);
 
         [VtblIndex(12)]
-        HRESULT initStorageEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("BSTR")] ushort* oldValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* urlArg, IHTMLStorage* storageAreaArg);
+        HRESULT initStorageEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("BSTR")] char* oldValueArg, [NativeTypeName("BSTR")] char* newValueArg, [NativeTypeName("BSTR")] char* urlArg, IHTMLStorage* storageAreaArg);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,27 +166,27 @@ public unsafe partial struct IDOMStorageEvent : IDOMStorageEvent.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_key;
+        public delegate* unmanaged<TSelf*, char**, int> get_key;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_oldValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_oldValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_newValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_newValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_url;
+        public delegate* unmanaged<TSelf*, char**, int> get_url;
 
         [NativeTypeName("HRESULT (IHTMLStorage **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLStorage**, int> get_storageArea;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, BSTR, BSTR, BSTR, BSTR, IHTMLStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, ushort*, ushort*, ushort*, ushort*, IHTMLStorage*, int> initStorageEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, char*, char*, char*, char*, IHTMLStorage*, int> initStorageEvent;
     }
 }

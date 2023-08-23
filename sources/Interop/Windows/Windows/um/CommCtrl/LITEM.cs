@@ -22,9 +22,9 @@ public unsafe partial struct LITEM
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szID"]/*' />
     [NativeTypeName("WCHAR[48]")]
-    public fixed ushort szID[48];
+    public fixed char szID[48];
 
     /// <include file='LITEM.xml' path='doc/member[@name="LITEM.szUrl"]/*' />
     [NativeTypeName("WCHAR[2084]")]
-    public fixed ushort szUrl[2084];
+    public fixed char szUrl[2084];
 }

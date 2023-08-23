@@ -105,9 +105,9 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToAttributeByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri)
+    public HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort*, ushort*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
+        return ((delegate* unmanaged<IXmlReader*, char*, char*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToElement"]/*' />
@@ -121,57 +121,57 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetQualifiedName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, uint* pcwchQualifiedName)
+    public HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] char** ppwszQualifiedName, uint* pcwchQualifiedName)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetNamespaceUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, uint* pcwchNamespaceUri)
+    public HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] char** ppwszNamespaceUri, uint* pcwchNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLocalName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, uint* pcwchLocalName)
+    public HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] char** ppwszLocalName, uint* pcwchLocalName)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetPrefix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, uint* pcwchPrefix)
+    public HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] char** ppwszPrefix, uint* pcwchPrefix)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, uint* pcwchValue)
+    public HRESULT GetValue([NativeTypeName("LPCWSTR *")] char** ppwszValue, uint* pcwchValue)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.ReadValueChunk"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, uint cwchChunkSize, uint* pcwchRead)
+    public HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] char* pwchBuffer, uint cwchChunkSize, uint* pcwchRead)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
+        return ((delegate* unmanaged<IXmlReader*, char*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetBaseUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, uint* pcwchBaseUri)
+    public HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] char** ppwszBaseUri, uint* pcwchBaseUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, ushort**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
+        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsDefault"]/*' />
@@ -254,31 +254,31 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
         HRESULT MoveToNextAttribute();
 
         [VtblIndex(10)]
-        HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] ushort* pwszLocalName, [NativeTypeName("LPCWSTR")] ushort* pwszNamespaceUri);
+        HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri);
 
         [VtblIndex(11)]
         HRESULT MoveToElement();
 
         [VtblIndex(12)]
-        HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] ushort** ppwszQualifiedName, uint* pcwchQualifiedName);
+        HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] char** ppwszQualifiedName, uint* pcwchQualifiedName);
 
         [VtblIndex(13)]
-        HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] ushort** ppwszNamespaceUri, uint* pcwchNamespaceUri);
+        HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] char** ppwszNamespaceUri, uint* pcwchNamespaceUri);
 
         [VtblIndex(14)]
-        HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] ushort** ppwszLocalName, uint* pcwchLocalName);
+        HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] char** ppwszLocalName, uint* pcwchLocalName);
 
         [VtblIndex(15)]
-        HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] ushort** ppwszPrefix, uint* pcwchPrefix);
+        HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] char** ppwszPrefix, uint* pcwchPrefix);
 
         [VtblIndex(16)]
-        HRESULT GetValue([NativeTypeName("LPCWSTR *")] ushort** ppwszValue, uint* pcwchValue);
+        HRESULT GetValue([NativeTypeName("LPCWSTR *")] char** ppwszValue, uint* pcwchValue);
 
         [VtblIndex(17)]
-        HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] ushort* pwchBuffer, uint cwchChunkSize, uint* pcwchRead);
+        HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] char* pwchBuffer, uint cwchChunkSize, uint* pcwchRead);
 
         [VtblIndex(18)]
-        HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] ushort** ppwszBaseUri, uint* pcwchBaseUri);
+        HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] char** ppwszBaseUri, uint* pcwchBaseUri);
 
         [VtblIndex(19)]
         BOOL IsDefault();
@@ -336,31 +336,31 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int> MoveToNextAttribute;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> MoveToAttributeByName;
+        public delegate* unmanaged<TSelf*, char*, char*, int> MoveToAttributeByName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> MoveToElement;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetQualifiedName;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetQualifiedName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetNamespaceUri;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetNamespaceUri;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetLocalName;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetLocalName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetPrefix;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetPrefix;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetValue;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetValue;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> ReadValueChunk;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> ReadValueChunk;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetBaseUri;
+        public delegate* unmanaged<TSelf*, char**, uint*, int> GetBaseUri;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> IsDefault;

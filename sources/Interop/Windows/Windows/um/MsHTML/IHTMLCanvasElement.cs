@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCanvasElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCanvasElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface, 
     /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.getContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT getContext([NativeTypeName("BSTR")] ushort* contextId, ICanvasRenderingContext2D** ppContext)
+    public HRESULT getContext([NativeTypeName("BSTR")] char* contextId, ICanvasRenderingContext2D** ppContext)
     {
-        return ((delegate* unmanaged<IHTMLCanvasElement*, ushort*, ICanvasRenderingContext2D**, int>)(lpVtbl[11]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), contextId, ppContext);
+        return ((delegate* unmanaged<IHTMLCanvasElement*, char*, ICanvasRenderingContext2D**, int>)(lpVtbl[11]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), contextId, ppContext);
     }
 
     /// <include file='IHTMLCanvasElement.xml' path='doc/member[@name="IHTMLCanvasElement.toDataURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT toDataURL([NativeTypeName("BSTR")] ushort* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] ushort** pUrl)
+    public HRESULT toDataURL([NativeTypeName("BSTR")] char* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] char** pUrl)
     {
-        return ((delegate* unmanaged<IHTMLCanvasElement*, ushort*, VARIANT, ushort**, int>)(lpVtbl[12]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), type, jpegquality, pUrl);
+        return ((delegate* unmanaged<IHTMLCanvasElement*, char*, VARIANT, char**, int>)(lpVtbl[12]))((IHTMLCanvasElement*)Unsafe.AsPointer(ref this), type, jpegquality, pUrl);
     }
 
     public interface Interface : IDispatch.Interface
@@ -141,10 +141,10 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface, 
         HRESULT get_height([NativeTypeName("long *")] int* p);
 
         [VtblIndex(11)]
-        HRESULT getContext([NativeTypeName("BSTR")] ushort* contextId, ICanvasRenderingContext2D** ppContext);
+        HRESULT getContext([NativeTypeName("BSTR")] char* contextId, ICanvasRenderingContext2D** ppContext);
 
         [VtblIndex(12)]
-        HRESULT toDataURL([NativeTypeName("BSTR")] ushort* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] ushort** pUrl);
+        HRESULT toDataURL([NativeTypeName("BSTR")] char* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] char** pUrl);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,7 +166,7 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -184,9 +184,9 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR, ICanvasRenderingContext2D **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ICanvasRenderingContext2D**, int> getContext;
+        public delegate* unmanaged<TSelf*, char*, ICanvasRenderingContext2D**, int> getContext;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, ushort**, int> toDataURL;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, char**, int> toDataURL;
     }
 }

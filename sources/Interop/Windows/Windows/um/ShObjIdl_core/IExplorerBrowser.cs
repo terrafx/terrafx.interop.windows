@@ -73,17 +73,17 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface, INat
     /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetPropertyBag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] ushort* pszPropertyBag)
+    public HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] char* pszPropertyBag)
     {
-        return ((delegate* unmanaged<IExplorerBrowser*, ushort*, int>)(lpVtbl[6]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszPropertyBag);
+        return ((delegate* unmanaged<IExplorerBrowser*, char*, int>)(lpVtbl[6]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszPropertyBag);
     }
 
     /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetEmptyText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] ushort* pszEmptyText)
+    public HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] char* pszEmptyText)
     {
-        return ((delegate* unmanaged<IExplorerBrowser*, ushort*, int>)(lpVtbl[7]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszEmptyText);
+        return ((delegate* unmanaged<IExplorerBrowser*, char*, int>)(lpVtbl[7]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszEmptyText);
     }
 
     /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetFolderSettings"]/*' />
@@ -178,10 +178,10 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface, INat
         HRESULT SetRect(HDWP* phdwp, RECT rcBrowser);
 
         [VtblIndex(6)]
-        HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] ushort* pszPropertyBag);
+        HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] char* pszPropertyBag);
 
         [VtblIndex(7)]
-        HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] ushort* pszEmptyText);
+        HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] char* pszEmptyText);
 
         [VtblIndex(8)]
         HRESULT SetFolderSettings([NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs);
@@ -236,10 +236,10 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface, INat
         public delegate* unmanaged<TSelf*, HDWP*, RECT, int> SetRect;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetPropertyBag;
+        public delegate* unmanaged<TSelf*, char*, int> SetPropertyBag;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetEmptyText;
+        public delegate* unmanaged<TSelf*, char*, int> SetEmptyText;
 
         [NativeTypeName("HRESULT (const FOLDERSETTINGS *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FOLDERSETTINGS*, int> SetFolderSettings;

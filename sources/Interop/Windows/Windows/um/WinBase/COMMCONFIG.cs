@@ -37,5 +37,5 @@ public unsafe partial struct COMMCONFIG
 
     /// <include file='COMMCONFIG.xml' path='doc/member[@name="COMMCONFIG.wcProviderData"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort wcProviderData[1];
+    public fixed char wcProviderData[1];
 }

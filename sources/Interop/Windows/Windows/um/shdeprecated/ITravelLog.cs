@@ -97,9 +97,9 @@ public unsafe partial struct ITravelLog : ITravelLog.Interface, INativeGuid
     /// <include file='ITravelLog.xml' path='doc/member[@name="ITravelLog.GetToolTipText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetToolTipText(IUnknown* punk, int iOffset, int idsTemplate, [NativeTypeName("LPWSTR")] ushort* pwzText, [NativeTypeName("DWORD")] uint cchText)
+    public HRESULT GetToolTipText(IUnknown* punk, int iOffset, int idsTemplate, [NativeTypeName("LPWSTR")] char* pwzText, [NativeTypeName("DWORD")] uint cchText)
     {
-        return ((delegate* unmanaged<ITravelLog*, IUnknown*, int, int, ushort*, uint, int>)(lpVtbl[9]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, iOffset, idsTemplate, pwzText, cchText);
+        return ((delegate* unmanaged<ITravelLog*, IUnknown*, int, int, char*, uint, int>)(lpVtbl[9]))((ITravelLog*)Unsafe.AsPointer(ref this), punk, iOffset, idsTemplate, pwzText, cchText);
     }
 
     /// <include file='ITravelLog.xml' path='doc/member[@name="ITravelLog.InsertMenuEntries"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct ITravelLog : ITravelLog.Interface, INativeGuid
         HRESULT FindTravelEntry(IUnknown* punk, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, ITravelEntry** ppte);
 
         [VtblIndex(9)]
-        HRESULT GetToolTipText(IUnknown* punk, int iOffset, int idsTemplate, [NativeTypeName("LPWSTR")] ushort* pwzText, [NativeTypeName("DWORD")] uint cchText);
+        HRESULT GetToolTipText(IUnknown* punk, int iOffset, int idsTemplate, [NativeTypeName("LPWSTR")] char* pwzText, [NativeTypeName("DWORD")] uint cchText);
 
         [VtblIndex(10)]
         HRESULT InsertMenuEntries(IUnknown* punk, HMENU hmenu, int nPos, int idFirst, int idLast, [NativeTypeName("DWORD")] uint dwFlags);
@@ -203,7 +203,7 @@ public unsafe partial struct ITravelLog : ITravelLog.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IUnknown*, ITEMIDLIST*, ITravelEntry**, int> FindTravelEntry;
 
         [NativeTypeName("HRESULT (IUnknown *, int, int, LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int, int, ushort*, uint, int> GetToolTipText;
+        public delegate* unmanaged<TSelf*, IUnknown*, int, int, char*, uint, int> GetToolTipText;
 
         [NativeTypeName("HRESULT (IUnknown *, HMENU, int, int, int, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, HMENU, int, int, int, uint, int> InsertMenuEntries;

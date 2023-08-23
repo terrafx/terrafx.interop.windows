@@ -81,9 +81,9 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INat
     /// <inheritdoc cref="ICommDlgBrowser2.GetDefaultMenuText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax)
+    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] char* pszText, int cchMax)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, ushort*, int, int>)(lpVtbl[7]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
+        return ((delegate* unmanaged<ICommDlgBrowser3*, IShellView*, char*, int, int>)(lpVtbl[7]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
     }
 
     /// <inheritdoc cref="ICommDlgBrowser2.GetViewFlags" />
@@ -105,9 +105,9 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INat
     /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.GetCurrentFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] ushort* pszFileSpec, int cchFileSpec)
+    public HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] char* pszFileSpec, int cchFileSpec)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser3*, ushort*, int, int>)(lpVtbl[10]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), pszFileSpec, cchFileSpec);
+        return ((delegate* unmanaged<ICommDlgBrowser3*, char*, int, int>)(lpVtbl[10]))((ICommDlgBrowser3*)Unsafe.AsPointer(ref this), pszFileSpec, cchFileSpec);
     }
 
     /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.OnPreViewCreated"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INat
         HRESULT OnColumnClicked(IShellView* ppshv, int iColumn);
 
         [VtblIndex(10)]
-        HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] ushort* pszFileSpec, int cchFileSpec);
+        HRESULT GetCurrentFilter([NativeTypeName("LPWSTR")] char* pszFileSpec, int cchFileSpec);
 
         [VtblIndex(11)]
         HRESULT OnPreViewCreated(IShellView* ppshv);
@@ -155,7 +155,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INat
         public delegate* unmanaged<TSelf*, IShellView*, uint, int> Notify;
 
         [NativeTypeName("HRESULT (IShellView *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ushort*, int, int> GetDefaultMenuText;
+        public delegate* unmanaged<TSelf*, IShellView*, char*, int, int> GetDefaultMenuText;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetViewFlags;
@@ -164,7 +164,7 @@ public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INat
         public delegate* unmanaged<TSelf*, IShellView*, int, int> OnColumnClicked;
 
         [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> GetCurrentFilter;
+        public delegate* unmanaged<TSelf*, char*, int, int> GetCurrentFilter;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellView*, int> OnPreViewCreated;

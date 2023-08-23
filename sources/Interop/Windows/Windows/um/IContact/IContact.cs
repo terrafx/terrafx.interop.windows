@@ -49,17 +49,17 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
     /// <include file='IContact.xml' path='doc/member[@name="IContact.GetContactID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetContactID([NativeTypeName("LPWSTR")] ushort* pszContactID, [NativeTypeName("DWORD")] uint cchContactID, [NativeTypeName("DWORD *")] uint* pdwcchContactIDRequired)
+    public HRESULT GetContactID([NativeTypeName("LPWSTR")] char* pszContactID, [NativeTypeName("DWORD")] uint cchContactID, [NativeTypeName("DWORD *")] uint* pdwcchContactIDRequired)
     {
-        return ((delegate* unmanaged<IContact*, ushort*, uint, uint*, int>)(lpVtbl[3]))((IContact*)Unsafe.AsPointer(ref this), pszContactID, cchContactID, pdwcchContactIDRequired);
+        return ((delegate* unmanaged<IContact*, char*, uint, uint*, int>)(lpVtbl[3]))((IContact*)Unsafe.AsPointer(ref this), pszContactID, cchContactID, pdwcchContactIDRequired);
     }
 
     /// <include file='IContact.xml' path='doc/member[@name="IContact.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPath([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("DWORD *")] uint* pdwcchPathRequired)
+    public HRESULT GetPath([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("DWORD *")] uint* pdwcchPathRequired)
     {
-        return ((delegate* unmanaged<IContact*, ushort*, uint, uint*, int>)(lpVtbl[4]))((IContact*)Unsafe.AsPointer(ref this), pszPath, cchPath, pdwcchPathRequired);
+        return ((delegate* unmanaged<IContact*, char*, uint, uint*, int>)(lpVtbl[4]))((IContact*)Unsafe.AsPointer(ref this), pszPath, cchPath, pdwcchPathRequired);
     }
 
     /// <include file='IContact.xml' path='doc/member[@name="IContact.CommitChanges"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetContactID([NativeTypeName("LPWSTR")] ushort* pszContactID, [NativeTypeName("DWORD")] uint cchContactID, [NativeTypeName("DWORD *")] uint* pdwcchContactIDRequired);
+        HRESULT GetContactID([NativeTypeName("LPWSTR")] char* pszContactID, [NativeTypeName("DWORD")] uint cchContactID, [NativeTypeName("DWORD *")] uint* pdwcchContactIDRequired);
 
         [VtblIndex(4)]
-        HRESULT GetPath([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("DWORD *")] uint* pdwcchPathRequired);
+        HRESULT GetPath([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint cchPath, [NativeTypeName("DWORD *")] uint* pdwcchPathRequired);
 
         [VtblIndex(5)]
         HRESULT CommitChanges([NativeTypeName("DWORD")] uint dwCommitFlags);
@@ -95,10 +95,10 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetContactID;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> GetContactID;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPath;
+        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> GetPath;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> CommitChanges;

@@ -49,39 +49,39 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     /// <inheritdoc cref="IHandlerInfo.GetApplicationDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetApplicationDisplayName([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetApplicationDisplayName([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[3]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[3]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IHandlerInfo.GetApplicationPublisher" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetApplicationPublisher([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetApplicationPublisher([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[4]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[4]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IHandlerInfo.GetApplicationIconReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetApplicationIconReference([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetApplicationIconReference([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[5]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[5]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2.GetApplicationId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[6]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[6]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IHandlerInfo.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] char** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -97,15 +97,15 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetApplicationDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationPublisher;
+        public delegate* unmanaged<TSelf*, char**, int> GetApplicationPublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationIconReference;
+        public delegate* unmanaged<TSelf*, char**, int> GetApplicationIconReference;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationId;
+        public delegate* unmanaged<TSelf*, char**, int> GetApplicationId;
     }
 }

@@ -57,33 +57,33 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface, INativ
     /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.LoadCmdFromFile2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri)
+    public HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] char* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] char* pszSharingUri, [NativeTypeName("LPCWSTR")] char* pszBaseUri)
     {
-        return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int>)(lpVtbl[4]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszFileName, Options, pszSharingUri, pszBaseUri);
+        return ((delegate* unmanaged<ISpRecoGrammar2*, char*, SPLOADOPTIONS, char*, char*, int>)(lpVtbl[4]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszFileName, Options, pszSharingUri, pszBaseUri);
     }
 
     /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.LoadCmdFromMemory2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri)
+    public HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] char* pszSharingUri, [NativeTypeName("LPCWSTR")] char* pszBaseUri)
     {
-        return ((delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int>)(lpVtbl[5]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pGrammar, Options, pszSharingUri, pszBaseUri);
+        return ((delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, char*, char*, int>)(lpVtbl[5]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pGrammar, Options, pszSharingUri, pszBaseUri);
     }
 
     /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetRulePriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority)
+    public HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority)
     {
-        return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, int, int>)(lpVtbl[6]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, nRulePriority);
+        return ((delegate* unmanaged<ISpRecoGrammar2*, char*, uint, int, int>)(lpVtbl[6]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, nRulePriority);
     }
 
     /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetRuleWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight)
+    public HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight)
     {
-        return ((delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, float, int>)(lpVtbl[7]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, flWeight);
+        return ((delegate* unmanaged<ISpRecoGrammar2*, char*, uint, float, int>)(lpVtbl[7]))((ISpRecoGrammar2*)Unsafe.AsPointer(ref this), pszRuleName, ulRuleId, flWeight);
     }
 
     /// <include file='ISpRecoGrammar2.xml' path='doc/member[@name="ISpRecoGrammar2.SetDictationWeight"]/*' />
@@ -116,16 +116,16 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface, INativ
         HRESULT GetRules(SPRULE** ppCoMemRules, uint* puNumRules);
 
         [VtblIndex(4)]
-        HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] ushort* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri);
+        HRESULT LoadCmdFromFile2([NativeTypeName("LPCWSTR")] char* pszFileName, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] char* pszSharingUri, [NativeTypeName("LPCWSTR")] char* pszBaseUri);
 
         [VtblIndex(5)]
-        HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] ushort* pszSharingUri, [NativeTypeName("LPCWSTR")] ushort* pszBaseUri);
+        HRESULT LoadCmdFromMemory2([NativeTypeName("const SPBINARYGRAMMAR *")] SPBINARYGRAMMAR* pGrammar, SPLOADOPTIONS Options, [NativeTypeName("LPCWSTR")] char* pszSharingUri, [NativeTypeName("LPCWSTR")] char* pszBaseUri);
 
         [VtblIndex(6)]
-        HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority);
+        HRESULT SetRulePriority([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, int nRulePriority);
 
         [VtblIndex(7)]
-        HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight);
+        HRESULT SetRuleWeight([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("ULONG")] uint ulRuleId, float flWeight);
 
         [VtblIndex(8)]
         HRESULT SetDictationWeight(float flWeight);
@@ -153,16 +153,16 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface, INativ
         public delegate* unmanaged<TSelf*, SPRULE**, uint*, int> GetRules;
 
         [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromFile2;
+        public delegate* unmanaged<TSelf*, char*, SPLOADOPTIONS, char*, char*, int> LoadCmdFromFile2;
 
         [NativeTypeName("HRESULT (const SPBINARYGRAMMAR *, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromMemory2;
+        public delegate* unmanaged<TSelf*, SPBINARYGRAMMAR*, SPLOADOPTIONS, char*, char*, int> LoadCmdFromMemory2;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int, int> SetRulePriority;
+        public delegate* unmanaged<TSelf*, char*, uint, int, int> SetRulePriority;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, float, int> SetRuleWeight;
+        public delegate* unmanaged<TSelf*, char*, uint, float, int> SetRuleWeight;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, int> SetDictationWeight;

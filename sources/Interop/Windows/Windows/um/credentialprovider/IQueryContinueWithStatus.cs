@@ -57,15 +57,15 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
     /// <include file='IQueryContinueWithStatus.xml' path='doc/member[@name="IQueryContinueWithStatus.SetStatusMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz)
+    public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] char* psz)
     {
-        return ((delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int>)(lpVtbl[4]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), psz);
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, char*, int>)(lpVtbl[4]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), psz);
     }
 
     public interface Interface : IQueryContinue.Interface
     {
         [VtblIndex(4)]
-        HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz);
+        HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] char* psz);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,6 +84,6 @@ public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus
         public delegate* unmanaged<TSelf*, int> QueryContinue;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusMessage;
+        public delegate* unmanaged<TSelf*, char*, int> SetStatusMessage;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -137,9 +137,9 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.InvokeContextMenuCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand)
+    public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] char* strCommand)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int>)(lpVtbl[14]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), strCommand);
+        return ((delegate* unmanaged<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[14]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), strCommand);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionTo"]/*' />
@@ -177,9 +177,9 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.SetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)
+    public HRESULT SetRoot([NativeTypeName("BSTR")] char* bstrFullPath)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
+        return ((delegate* unmanaged<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
     }
 
     public interface Interface : IDispatch.Interface
@@ -206,7 +206,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         HRESULT Export();
 
         [VtblIndex(14)]
-        HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand);
+        HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] char* strCommand);
 
         [VtblIndex(15)]
         HRESULT MoveSelectionTo();
@@ -221,7 +221,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool);
 
         [VtblIndex(19)]
-        HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath);
+        HRESULT SetRoot([NativeTypeName("BSTR")] char* bstrFullPath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -243,7 +243,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -270,7 +270,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         public delegate* unmanaged<TSelf*, int> Export;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InvokeContextMenuCommand;
+        public delegate* unmanaged<TSelf*, char*, int> InvokeContextMenuCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> MoveSelectionTo;
@@ -285,6 +285,6 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         public delegate* unmanaged<TSelf*, short*, int> DeleteSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetRoot;
+        public delegate* unmanaged<TSelf*, char*, int> SetRoot;
     }
 }

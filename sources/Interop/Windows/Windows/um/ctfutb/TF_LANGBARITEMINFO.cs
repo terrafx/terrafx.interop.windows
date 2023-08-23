@@ -27,5 +27,5 @@ public unsafe partial struct TF_LANGBARITEMINFO
 
     /// <include file='TF_LANGBARITEMINFO.xml' path='doc/member[@name="TF_LANGBARITEMINFO.szDescription"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szDescription[32];
+    public fixed char szDescription[32];
 }

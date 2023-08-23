@@ -49,15 +49,15 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
     /// <include file='IElementBehaviorSiteCategory.xml' path='doc/member[@name="IElementBehaviorSiteCategory.GetRelatedBehaviors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator)
+    public HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] char* pchCategory, IEnumUnknown** ppEnumerator)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteCategory*, int, ushort*, IEnumUnknown**, int>)(lpVtbl[3]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this), lDirection, pchCategory, ppEnumerator);
+        return ((delegate* unmanaged<IElementBehaviorSiteCategory*, int, char*, IEnumUnknown**, int>)(lpVtbl[3]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this), lDirection, pchCategory, ppEnumerator);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator);
+        HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] char* pchCategory, IEnumUnknown** ppEnumerator);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, LPOLESTR, IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, IEnumUnknown**, int> GetRelatedBehaviors;
+        public delegate* unmanaged<TSelf*, int, char*, IEnumUnknown**, int> GetRelatedBehaviors;
     }
 }

@@ -113,9 +113,9 @@ public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface
     /// <include file='IAMVideoCompression.xml' path='doc/member[@name="IAMVideoCompression.GetInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetInfo([NativeTypeName("LPWSTR")] ushort* pszVersion, int* pcbVersion, [NativeTypeName("LPWSTR")] ushort* pszDescription, int* pcbDescription, [NativeTypeName("long *")] int* pDefaultKeyFrameRate, [NativeTypeName("long *")] int* pDefaultPFramesPerKey, double* pDefaultQuality, [NativeTypeName("long *")] int* pCapabilities)
+    public HRESULT GetInfo([NativeTypeName("LPWSTR")] char* pszVersion, int* pcbVersion, [NativeTypeName("LPWSTR")] char* pszDescription, int* pcbDescription, [NativeTypeName("long *")] int* pDefaultKeyFrameRate, [NativeTypeName("long *")] int* pDefaultPFramesPerKey, double* pDefaultQuality, [NativeTypeName("long *")] int* pCapabilities)
     {
-        return ((delegate* unmanaged<IAMVideoCompression*, ushort*, int*, ushort*, int*, int*, int*, double*, int*, int>)(lpVtbl[11]))((IAMVideoCompression*)Unsafe.AsPointer(ref this), pszVersion, pcbVersion, pszDescription, pcbDescription, pDefaultKeyFrameRate, pDefaultPFramesPerKey, pDefaultQuality, pCapabilities);
+        return ((delegate* unmanaged<IAMVideoCompression*, char*, int*, char*, int*, int*, int*, double*, int*, int>)(lpVtbl[11]))((IAMVideoCompression*)Unsafe.AsPointer(ref this), pszVersion, pcbVersion, pszDescription, pcbDescription, pDefaultKeyFrameRate, pDefaultPFramesPerKey, pDefaultQuality, pCapabilities);
     }
 
     /// <include file='IAMVideoCompression.xml' path='doc/member[@name="IAMVideoCompression.OverrideKeyFrame"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface
         HRESULT get_WindowSize([NativeTypeName("DWORDLONG *")] ulong* pWindowSize);
 
         [VtblIndex(11)]
-        HRESULT GetInfo([NativeTypeName("LPWSTR")] ushort* pszVersion, int* pcbVersion, [NativeTypeName("LPWSTR")] ushort* pszDescription, int* pcbDescription, [NativeTypeName("long *")] int* pDefaultKeyFrameRate, [NativeTypeName("long *")] int* pDefaultPFramesPerKey, double* pDefaultQuality, [NativeTypeName("long *")] int* pCapabilities);
+        HRESULT GetInfo([NativeTypeName("LPWSTR")] char* pszVersion, int* pcbVersion, [NativeTypeName("LPWSTR")] char* pszDescription, int* pcbDescription, [NativeTypeName("long *")] int* pDefaultKeyFrameRate, [NativeTypeName("long *")] int* pDefaultPFramesPerKey, double* pDefaultQuality, [NativeTypeName("long *")] int* pCapabilities);
 
         [VtblIndex(12)]
         HRESULT OverrideKeyFrame([NativeTypeName("long")] int FrameNumber);
@@ -207,7 +207,7 @@ public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface
         public delegate* unmanaged<TSelf*, ulong*, int> get_WindowSize;
 
         [NativeTypeName("HRESULT (LPWSTR, int *, LPWSTR, int *, long *, long *, double *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, ushort*, int*, int*, int*, double*, int*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, char*, int*, char*, int*, int*, int*, double*, int*, int> GetInfo;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> OverrideKeyFrame;

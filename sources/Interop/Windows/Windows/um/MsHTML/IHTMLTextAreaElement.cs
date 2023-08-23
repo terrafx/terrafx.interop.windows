@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,41 +81,41 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[7]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char**, int>)(lpVtbl[7]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[8]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char*, int>)(lpVtbl[8]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[9]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char**, int>)(lpVtbl[9]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[10]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char*, int>)(lpVtbl[10]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[11]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char**, int>)(lpVtbl[11]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_status"]/*' />
@@ -161,17 +161,17 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_defaultValue([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[17]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char*, int>)(lpVtbl[17]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_defaultValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[18]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char**, int>)(lpVtbl[18]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.select"]/*' />
@@ -265,17 +265,17 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.put_wrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT put_wrap([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_wrap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort*, int>)(lpVtbl[30]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char*, int>)(lpVtbl[30]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.get_wrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT get_wrap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTextAreaElement*, ushort**, int>)(lpVtbl[31]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTextAreaElement*, char**, int>)(lpVtbl[31]))((IHTMLTextAreaElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTextAreaElement.xml' path='doc/member[@name="IHTMLTextAreaElement.createTextRange"]/*' />
@@ -289,19 +289,19 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_value([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(9)]
-        HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_value([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(11)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
         HRESULT put_status(VARIANT v);
@@ -319,10 +319,10 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         HRESULT get_form(IHTMLFormElement** p);
 
         [VtblIndex(17)]
-        HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_defaultValue([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(18)]
-        HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_defaultValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
         HRESULT select();
@@ -358,10 +358,10 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         HRESULT get_cols([NativeTypeName("long *")] int* p);
 
         [VtblIndex(30)]
-        HRESULT put_wrap([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_wrap([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(31)]
-        HRESULT get_wrap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wrap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(32)]
         HRESULT createTextRange(IHTMLTxtRange** range);
@@ -386,25 +386,25 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_value;
+        public delegate* unmanaged<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_value;
+        public delegate* unmanaged<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_status;
@@ -422,10 +422,10 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         public delegate* unmanaged<TSelf*, IHTMLFormElement**, int> get_form;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_defaultValue;
+        public delegate* unmanaged<TSelf*, char*, int> put_defaultValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_defaultValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_defaultValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> select;
@@ -461,10 +461,10 @@ public unsafe partial struct IHTMLTextAreaElement : IHTMLTextAreaElement.Interfa
         public delegate* unmanaged<TSelf*, int*, int> get_cols;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_wrap;
+        public delegate* unmanaged<TSelf*, char*, int> put_wrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wrap;
+        public delegate* unmanaged<TSelf*, char**, int> get_wrap;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLTxtRange**, int> createTextRange;

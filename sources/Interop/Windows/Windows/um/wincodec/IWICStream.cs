@@ -145,9 +145,9 @@ public unsafe partial struct IWICStream : IWICStream.Interface, INativeGuid
     /// <include file='IWICStream.xml' path='doc/member[@name="IWICStream.InitializeFromFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess)
+    public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess)
     {
-        return ((delegate* unmanaged<IWICStream*, ushort*, uint, int>)(lpVtbl[15]))((IWICStream*)Unsafe.AsPointer(ref this), wzFileName, dwDesiredAccess);
+        return ((delegate* unmanaged<IWICStream*, char*, uint, int>)(lpVtbl[15]))((IWICStream*)Unsafe.AsPointer(ref this), wzFileName, dwDesiredAccess);
     }
 
     /// <include file='IWICStream.xml' path='doc/member[@name="IWICStream.InitializeFromMemory"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IWICStream : IWICStream.Interface, INativeGuid
         HRESULT InitializeFromIStream(IStream* pIStream);
 
         [VtblIndex(15)]
-        HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+        HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
         [VtblIndex(16)]
         HRESULT InitializeFromMemory([NativeTypeName("WICInProcPointer")] byte* pbBuffer, [NativeTypeName("DWORD")] uint cbBufferSize);
@@ -230,7 +230,7 @@ public unsafe partial struct IWICStream : IWICStream.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IStream*, int> InitializeFromIStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> InitializeFromFilename;
+        public delegate* unmanaged<TSelf*, char*, uint, int> InitializeFromFilename;
 
         [NativeTypeName("HRESULT (WICInProcPointer, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> InitializeFromMemory;

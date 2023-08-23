@@ -10,7 +10,7 @@ public unsafe partial struct MSIPATCHSEQUENCEINFOW
 {
     /// <include file='MSIPATCHSEQUENCEINFOW.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOW.szPatchData"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* szPatchData;
+    public char* szPatchData;
 
     /// <include file='MSIPATCHSEQUENCEINFOW.xml' path='doc/member[@name="MSIPATCHSEQUENCEINFOW.ePatchDataType"]/*' />
     public MSIPATCHDATATYPE ePatchDataType;

@@ -89,9 +89,9 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
     /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.RegisterProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] char* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, char*, uint, char*, uint, uint, HKL, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
     }
 
     /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.UnregisterProfile"]/*' />
@@ -128,7 +128,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags);
 
         [VtblIndex(8)]
-        HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags);
+        HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] char* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags);
 
         [VtblIndex(9)]
         HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags);
@@ -165,7 +165,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         public delegate* unmanaged<TSelf*, Guid*, uint, int> ReleaseInputProcessor;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG, HKL, DWORD, BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, char*, uint, char*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;

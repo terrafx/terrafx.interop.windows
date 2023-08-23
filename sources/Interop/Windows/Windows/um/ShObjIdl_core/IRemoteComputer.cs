@@ -49,15 +49,15 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
     /// <include file='IRemoteComputer.xml' path='doc/member[@name="IRemoteComputer.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating)
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszMachine, BOOL bEnumerating)
     {
-        return ((delegate* unmanaged<IRemoteComputer*, ushort*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
+        return ((delegate* unmanaged<IRemoteComputer*, char*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszMachine, BOOL bEnumerating);
+        HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszMachine, BOOL bEnumerating);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, BOOL, int> Initialize;
     }
 }

@@ -49,17 +49,17 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.Inquire"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] ushort* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate)
+    public HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] char* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate)
     {
-        return ((delegate* unmanaged<IActiveIME*, uint, IMEINFO*, ushort*, uint*, int>)(lpVtbl[3]))((IActiveIME*)Unsafe.AsPointer(ref this), dwSystemInfoFlags, pIMEInfo, szWndClass, pdwPrivate);
+        return ((delegate* unmanaged<IActiveIME*, uint, IMEINFO*, char*, uint*, int>)(lpVtbl[3]))((IActiveIME*)Unsafe.AsPointer(ref this), dwSystemInfoFlags, pIMEInfo, szWndClass, pdwPrivate);
     }
 
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.ConversionList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied)
+    public HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] char* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied)
     {
-        return ((delegate* unmanaged<IActiveIME*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
+        return ((delegate* unmanaged<IActiveIME*, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int>)(lpVtbl[4]))((IActiveIME*)Unsafe.AsPointer(ref this), hIMC, szSource, uFlag, uBufLen, pDest, puCopied);
     }
 
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.Configure"]/*' />
@@ -137,17 +137,17 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.RegisterWord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT RegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString)
+    public HRESULT RegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString)
     {
-        return ((delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, int>)(lpVtbl[14]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
+        return ((delegate* unmanaged<IActiveIME*, char*, uint, char*, int>)(lpVtbl[14]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
     }
 
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.UnregisterWord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT UnregisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString)
+    public HRESULT UnregisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString)
     {
-        return ((delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, int>)(lpVtbl[15]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
+        return ((delegate* unmanaged<IActiveIME*, char*, uint, char*, int>)(lpVtbl[15]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szString);
     }
 
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.GetRegisterWordStyle"]/*' />
@@ -161,9 +161,9 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.EnumRegisterWord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum)
+    public HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum)
     {
-        return ((delegate* unmanaged<IActiveIME*, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int>)(lpVtbl[17]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szRegister, pData, ppEnum);
+        return ((delegate* unmanaged<IActiveIME*, char*, uint, char*, void*, IEnumRegisterWordW**, int>)(lpVtbl[17]))((IActiveIME*)Unsafe.AsPointer(ref this), szReading, dwStyle, szRegister, pData, ppEnum);
     }
 
     /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.GetCodePageA"]/*' />
@@ -185,10 +185,10 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] ushort* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate);
+        HRESULT Inquire([NativeTypeName("DWORD")] uint dwSystemInfoFlags, IMEINFO* pIMEInfo, [NativeTypeName("LPWSTR")] char* szWndClass, [NativeTypeName("DWORD *")] uint* pdwPrivate);
 
         [VtblIndex(4)]
-        HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] ushort* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied);
+        HRESULT ConversionList(HIMC hIMC, [NativeTypeName("LPWSTR")] char* szSource, uint uFlag, uint uBufLen, CANDIDATELIST* pDest, uint* puCopied);
 
         [VtblIndex(5)]
         HRESULT Configure(HKL hKL, HWND hWnd, [NativeTypeName("DWORD")] uint dwMode, REGISTERWORDW* pRegisterWord);
@@ -218,16 +218,16 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
         HRESULT ToAsciiEx(uint uVirKey, uint uScanCode, byte* pbKeyState, uint fuState, HIMC hIMC, [NativeTypeName("DWORD *")] uint* pdwTransBuf, uint* puSize);
 
         [VtblIndex(14)]
-        HRESULT RegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString);
+        HRESULT RegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString);
 
         [VtblIndex(15)]
-        HRESULT UnregisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szString);
+        HRESULT UnregisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szString);
 
         [VtblIndex(16)]
         HRESULT GetRegisterWordStyle(uint nItem, STYLEBUFW* pStyleBuf, uint* puBufSize);
 
         [VtblIndex(17)]
-        HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] ushort* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] ushort* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum);
+        HRESULT EnumRegisterWord([NativeTypeName("LPWSTR")] char* szReading, [NativeTypeName("DWORD")] uint dwStyle, [NativeTypeName("LPWSTR")] char* szRegister, [NativeTypeName("LPVOID")] void* pData, IEnumRegisterWordW** ppEnum);
 
         [VtblIndex(18)]
         HRESULT GetCodePageA(uint* uCodePage);
@@ -249,10 +249,10 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMEINFO *, LPWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMEINFO*, ushort*, uint*, int> Inquire;
+        public delegate* unmanaged<TSelf*, uint, IMEINFO*, char*, uint*, int> Inquire;
 
         [NativeTypeName("HRESULT (HIMC, LPWSTR, UINT, UINT, CANDIDATELIST *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HIMC, ushort*, uint, uint, CANDIDATELIST*, uint*, int> ConversionList;
+        public delegate* unmanaged<TSelf*, HIMC, char*, uint, uint, CANDIDATELIST*, uint*, int> ConversionList;
 
         [NativeTypeName("HRESULT (HKL, HWND, DWORD, REGISTERWORDW *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HKL, HWND, uint, REGISTERWORDW*, int> Configure;
@@ -282,16 +282,16 @@ public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, HIMC, uint*, uint*, int> ToAsciiEx;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, int> RegisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, int> RegisterWord;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, int> UnregisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, int> UnregisterWord;
 
         [NativeTypeName("HRESULT (UINT, STYLEBUFW *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, STYLEBUFW*, uint*, int> GetRegisterWordStyle;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, LPWSTR, LPVOID, IEnumRegisterWordW **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, void*, IEnumRegisterWordW**, int> EnumRegisterWord;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, void*, IEnumRegisterWordW**, int> EnumRegisterWord;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetCodePageA;

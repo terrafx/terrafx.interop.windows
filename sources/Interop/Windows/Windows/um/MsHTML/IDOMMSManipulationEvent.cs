@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMSManipulationEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSManipulationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMSManipulationEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSManipulationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.I
     /// <include file='IDOMMSManipulationEvent.xml' path='doc/member[@name="IDOMMSManipulationEvent.initMSManipulationEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState)
+    public HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState)
     {
-        return ((delegate* unmanaged<IDOMMSManipulationEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int>)(lpVtbl[9]))((IDOMMSManipulationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, lastState, currentState);
+        return ((delegate* unmanaged<IDOMMSManipulationEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int>)(lpVtbl[9]))((IDOMMSManipulationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, lastState, currentState);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.I
         HRESULT get_currentState([NativeTypeName("long *")] int* p);
 
         [VtblIndex(9)]
-        HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState);
+        HRESULT initMSManipulationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int lastState, [NativeTypeName("long")] int currentState);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IDOMMSManipulationEvent : IDOMMSManipulationEvent.I
         public delegate* unmanaged<TSelf*, int*, int> get_currentState;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int> initMSManipulationEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int> initMSManipulationEvent;
     }
 }

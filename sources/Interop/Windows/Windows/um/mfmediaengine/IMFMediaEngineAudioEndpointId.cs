@@ -49,26 +49,26 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
     /// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId.SetAudioEndpointId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAudioEndpointId([NativeTypeName("LPCWSTR")] ushort* pszEndpointId)
+    public HRESULT SetAudioEndpointId([NativeTypeName("LPCWSTR")] char* pszEndpointId)
     {
-        return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, ushort*, int>)(lpVtbl[3]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), pszEndpointId);
+        return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, char*, int>)(lpVtbl[3]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), pszEndpointId);
     }
 
     /// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId.GetAudioEndpointId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAudioEndpointId([NativeTypeName("LPWSTR *")] ushort** ppszEndpointId)
+    public HRESULT GetAudioEndpointId([NativeTypeName("LPWSTR *")] char** ppszEndpointId)
     {
-        return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, ushort**, int>)(lpVtbl[4]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), ppszEndpointId);
+        return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, char**, int>)(lpVtbl[4]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), ppszEndpointId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAudioEndpointId([NativeTypeName("LPCWSTR")] ushort* pszEndpointId);
+        HRESULT SetAudioEndpointId([NativeTypeName("LPCWSTR")] char* pszEndpointId);
 
         [VtblIndex(4)]
-        HRESULT GetAudioEndpointId([NativeTypeName("LPWSTR *")] ushort** ppszEndpointId);
+        HRESULT GetAudioEndpointId([NativeTypeName("LPWSTR *")] char** ppszEndpointId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAudioEndpointId;
+        public delegate* unmanaged<TSelf*, char*, int> SetAudioEndpointId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAudioEndpointId;
+        public delegate* unmanaged<TSelf*, char**, int> GetAudioEndpointId;
     }
 }

@@ -99,9 +99,9 @@ public unsafe partial struct IAppxManifestReader : IAppxManifestReader.Interface
     /// <include file='IAppxManifestReader.xml' path='doc/member[@name="IAppxManifestReader.GetPrerequisite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
+    public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("UINT64 *")] ulong* value)
     {
-        return ((delegate* unmanaged<IAppxManifestReader*, ushort*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IAppxManifestReader*, char*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IAppxManifestReader.xml' path='doc/member[@name="IAppxManifestReader.GetApplications"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IAppxManifestReader : IAppxManifestReader.Interface
         HRESULT GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities);
 
         [VtblIndex(9)]
-        HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value);
+        HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("UINT64 *")] ulong* value);
 
         [VtblIndex(10)]
         HRESULT GetApplications(IAppxManifestApplicationsEnumerator** applications);
@@ -181,7 +181,7 @@ public unsafe partial struct IAppxManifestReader : IAppxManifestReader.Interface
         public delegate* unmanaged<TSelf*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong*, int> GetPrerequisite;
+        public delegate* unmanaged<TSelf*, char*, ulong*, int> GetPrerequisite;
 
         [NativeTypeName("HRESULT (IAppxManifestApplicationsEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxManifestApplicationsEnumerator**, int> GetApplications;

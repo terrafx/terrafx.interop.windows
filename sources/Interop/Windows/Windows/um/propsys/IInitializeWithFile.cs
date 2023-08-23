@@ -49,15 +49,15 @@ public unsafe partial struct IInitializeWithFile : IInitializeWithFile.Interface
     /// <include file='IInitializeWithFile.xml' path='doc/member[@name="IInitializeWithFile.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszFilePath, [NativeTypeName("DWORD")] uint grfMode)
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszFilePath, [NativeTypeName("DWORD")] uint grfMode)
     {
-        return ((delegate* unmanaged<IInitializeWithFile*, ushort*, uint, int>)(lpVtbl[3]))((IInitializeWithFile*)Unsafe.AsPointer(ref this), pszFilePath, grfMode);
+        return ((delegate* unmanaged<IInitializeWithFile*, char*, uint, int>)(lpVtbl[3]))((IInitializeWithFile*)Unsafe.AsPointer(ref this), pszFilePath, grfMode);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszFilePath, [NativeTypeName("DWORD")] uint grfMode);
+        HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszFilePath, [NativeTypeName("DWORD")] uint grfMode);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IInitializeWithFile : IInitializeWithFile.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, uint, int> Initialize;
     }
 }

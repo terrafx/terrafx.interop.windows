@@ -57,33 +57,33 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     /// <inheritdoc cref="ITfInputScope.GetPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, uint* pcCount)
+    public HRESULT GetPhrase([NativeTypeName("BSTR **")] char*** ppbstrPhrases, uint* pcCount)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, ushort***, uint*, int>)(lpVtbl[4]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
+        return ((delegate* unmanaged<ITfInputScope2*, char***, uint*, int>)(lpVtbl[4]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetRegularExpression" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp)
+    public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] char** pbstrRegExp)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[5]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrRegExp);
+        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[5]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrRegExp);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetSRGS" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS)
+    public HRESULT GetSRGS([NativeTypeName("BSTR *")] char** pbstrSRGS)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[6]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrSRGS);
+        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[6]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrSRGS);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetXML" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)
+    public HRESULT GetXML([NativeTypeName("BSTR *")] char** pbstrXML)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, ushort**, int>)(lpVtbl[7]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrXML);
+        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[7]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrXML);
     }
 
     /// <include file='ITfInputScope2.xml' path='doc/member[@name="ITfInputScope2.EnumWordList"]/*' />
@@ -116,16 +116,16 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
         public delegate* unmanaged<TSelf*, InputScope**, uint*, int> GetInputScopes;
 
         [NativeTypeName("HRESULT (BSTR **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort***, uint*, int> GetPhrase;
+        public delegate* unmanaged<TSelf*, char***, uint*, int> GetPhrase;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetRegularExpression;
+        public delegate* unmanaged<TSelf*, char**, int> GetRegularExpression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSRGS;
+        public delegate* unmanaged<TSelf*, char**, int> GetSRGS;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetXML;
+        public delegate* unmanaged<TSelf*, char**, int> GetXML;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumString**, int> EnumWordList;

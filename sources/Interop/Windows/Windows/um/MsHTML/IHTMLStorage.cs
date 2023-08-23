@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStorage*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStorage*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStorage*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStorage*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,33 +97,33 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface, INativeGuid
     /// <include file='IHTMLStorage.xml' path='doc/member[@name="IHTMLStorage.key"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT key([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLStorage0000)
+    public HRESULT key([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] char** __MIDL__IHTMLStorage0000)
     {
-        return ((delegate* unmanaged<IHTMLStorage*, int, ushort**, int>)(lpVtbl[9]))((IHTMLStorage*)Unsafe.AsPointer(ref this), lIndex, __MIDL__IHTMLStorage0000);
+        return ((delegate* unmanaged<IHTMLStorage*, int, char**, int>)(lpVtbl[9]))((IHTMLStorage*)Unsafe.AsPointer(ref this), lIndex, __MIDL__IHTMLStorage0000);
     }
 
     /// <include file='IHTMLStorage.xml' path='doc/member[@name="IHTMLStorage.getItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getItem([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* __MIDL__IHTMLStorage0001)
+    public HRESULT getItem([NativeTypeName("BSTR")] char* bstrKey, VARIANT* __MIDL__IHTMLStorage0001)
     {
-        return ((delegate* unmanaged<IHTMLStorage*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey, __MIDL__IHTMLStorage0001);
+        return ((delegate* unmanaged<IHTMLStorage*, char*, VARIANT*, int>)(lpVtbl[10]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey, __MIDL__IHTMLStorage0001);
     }
 
     /// <include file='IHTMLStorage.xml' path='doc/member[@name="IHTMLStorage.setItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT setItem([NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("BSTR")] ushort* bstrValue)
+    public HRESULT setItem([NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("BSTR")] char* bstrValue)
     {
-        return ((delegate* unmanaged<IHTMLStorage*, ushort*, ushort*, int>)(lpVtbl[11]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey, bstrValue);
+        return ((delegate* unmanaged<IHTMLStorage*, char*, char*, int>)(lpVtbl[11]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey, bstrValue);
     }
 
     /// <include file='IHTMLStorage.xml' path='doc/member[@name="IHTMLStorage.removeItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT removeItem([NativeTypeName("BSTR")] ushort* bstrKey)
+    public HRESULT removeItem([NativeTypeName("BSTR")] char* bstrKey)
     {
-        return ((delegate* unmanaged<IHTMLStorage*, ushort*, int>)(lpVtbl[12]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey);
+        return ((delegate* unmanaged<IHTMLStorage*, char*, int>)(lpVtbl[12]))((IHTMLStorage*)Unsafe.AsPointer(ref this), bstrKey);
     }
 
     /// <include file='IHTMLStorage.xml' path='doc/member[@name="IHTMLStorage.clear"]/*' />
@@ -143,16 +143,16 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface, INativeGuid
         HRESULT get_remainingSpace([NativeTypeName("long *")] int* p);
 
         [VtblIndex(9)]
-        HRESULT key([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** __MIDL__IHTMLStorage0000);
+        HRESULT key([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] char** __MIDL__IHTMLStorage0000);
 
         [VtblIndex(10)]
-        HRESULT getItem([NativeTypeName("BSTR")] ushort* bstrKey, VARIANT* __MIDL__IHTMLStorage0001);
+        HRESULT getItem([NativeTypeName("BSTR")] char* bstrKey, VARIANT* __MIDL__IHTMLStorage0001);
 
         [VtblIndex(11)]
-        HRESULT setItem([NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("BSTR")] ushort* bstrValue);
+        HRESULT setItem([NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("BSTR")] char* bstrValue);
 
         [VtblIndex(12)]
-        HRESULT removeItem([NativeTypeName("BSTR")] ushort* bstrKey);
+        HRESULT removeItem([NativeTypeName("BSTR")] char* bstrKey);
 
         [VtblIndex(13)]
         HRESULT clear();
@@ -177,7 +177,7 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -189,16 +189,16 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_remainingSpace;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> key;
+        public delegate* unmanaged<TSelf*, int, char**, int> key;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getItem;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> setItem;
+        public delegate* unmanaged<TSelf*, char*, char*, int> setItem;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> removeItem;
+        public delegate* unmanaged<TSelf*, char*, int> removeItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> clear;

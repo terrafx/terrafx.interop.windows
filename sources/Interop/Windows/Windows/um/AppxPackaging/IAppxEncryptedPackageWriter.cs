@@ -51,9 +51,9 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.AddPayloadFileEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
+    public HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] char* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), fileName, compressionOption, inputStream);
+        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, char*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), fileName, compressionOption, inputStream);
     }
 
     /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.Close"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
+        HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] char* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
 
         [VtblIndex(4)]
         HRESULT Close();
@@ -86,7 +86,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, APPX_COMPRESSION_OPTION, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
+        public delegate* unmanaged<TSelf*, char*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

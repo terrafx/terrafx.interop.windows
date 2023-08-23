@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyle3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutFlow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[7]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[7]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[8]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[8]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_zoom"]/*' />
@@ -113,33 +113,33 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_wordWrap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[11]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[11]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[12]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[12]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[13]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[13]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[14]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[14]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarBaseColor"]/*' />
@@ -273,33 +273,33 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_writingMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[31]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[31]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[32]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[32]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAlignLast([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[33]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[33]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[34]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[34]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textKashidaSpace"]/*' />
@@ -321,10 +321,10 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutFlow([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT put_zoom(VARIANT v);
@@ -333,16 +333,16 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         HRESULT get_zoom(VARIANT* p);
 
         [VtblIndex(11)]
-        HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_wordWrap([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
         HRESULT put_scrollbarBaseColor(VARIANT v);
@@ -393,16 +393,16 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         HRESULT get_scrollbarTrackColor(VARIANT* p);
 
         [VtblIndex(31)]
-        HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_writingMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(32)]
-        HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(33)]
-        HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAlignLast([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(34)]
-        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(35)]
         HRESULT put_textKashidaSpace(VARIANT v);
@@ -430,16 +430,16 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutFlow;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutFlow;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_zoom;
@@ -448,16 +448,16 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_wordWrap;
+        public delegate* unmanaged<TSelf*, char*, int> put_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wordWrap;
+        public delegate* unmanaged<TSelf*, char**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarBaseColor;
@@ -508,16 +508,16 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_writingMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_writingMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_writingMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlignLast;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAlignLast;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlignLast;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashidaSpace;

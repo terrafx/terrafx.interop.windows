@@ -62,5 +62,5 @@ public unsafe partial struct DIACTIONFORMATW
 
     /// <include file='DIACTIONFORMATW.xml' path='doc/member[@name="DIACTIONFORMATW.tszActionMap"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszActionMap[260];
+    public fixed char tszActionMap[260];
 }

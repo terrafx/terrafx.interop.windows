@@ -81,9 +81,9 @@ public unsafe partial struct ISelectionServicesListener : ISelectionServicesList
     /// <include file='ISelectionServicesListener.xml' path='doc/member[@name="ISelectionServicesListener.GetTypeDetail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetTypeDetail([NativeTypeName("BSTR *")] ushort** pTypeDetail)
+    public HRESULT GetTypeDetail([NativeTypeName("BSTR *")] char** pTypeDetail)
     {
-        return ((delegate* unmanaged<ISelectionServicesListener*, ushort**, int>)(lpVtbl[7]))((ISelectionServicesListener*)Unsafe.AsPointer(ref this), pTypeDetail);
+        return ((delegate* unmanaged<ISelectionServicesListener*, char**, int>)(lpVtbl[7]))((ISelectionServicesListener*)Unsafe.AsPointer(ref this), pTypeDetail);
     }
 
     public interface Interface : IUnknown.Interface
@@ -101,7 +101,7 @@ public unsafe partial struct ISelectionServicesListener : ISelectionServicesList
         HRESULT OnChangeType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener);
 
         [VtblIndex(7)]
-        HRESULT GetTypeDetail([NativeTypeName("BSTR *")] ushort** pTypeDetail);
+        HRESULT GetTypeDetail([NativeTypeName("BSTR *")] char** pTypeDetail);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,6 +129,6 @@ public unsafe partial struct ISelectionServicesListener : ISelectionServicesList
         public delegate* unmanaged<TSelf*, SELECTION_TYPE, ISelectionServicesListener*, int> OnChangeType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTypeDetail;
+        public delegate* unmanaged<TSelf*, char**, int> GetTypeDetail;
     }
 }

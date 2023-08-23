@@ -10,7 +10,7 @@ public partial struct WCRANGE
 {
     /// <include file='WCRANGE.xml' path='doc/member[@name="WCRANGE.wcLow"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort wcLow;
+    public char wcLow;
 
     /// <include file='WCRANGE.xml' path='doc/member[@name="WCRANGE.cGlyphs"]/*' />
     public ushort cGlyphs;

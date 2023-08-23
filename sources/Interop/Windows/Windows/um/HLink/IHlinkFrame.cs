@@ -73,17 +73,17 @@ public unsafe partial struct IHlinkFrame : IHlinkFrame.Interface, INativeGuid
     /// <include file='IHlinkFrame.xml' path='doc/member[@name="IHlinkFrame.OnNavigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OnNavigate([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("DWORD")] uint dwreserved)
+    public HRESULT OnNavigate([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName, [NativeTypeName("DWORD")] uint dwreserved)
     {
-        return ((delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, uint, int>)(lpVtbl[6]))((IHlinkFrame*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, dwreserved);
+        return ((delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, char*, char*, uint, int>)(lpVtbl[6]))((IHlinkFrame*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, dwreserved);
     }
 
     /// <include file='IHlinkFrame.xml' path='doc/member[@name="IHlinkFrame.UpdateHlink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, int>)(lpVtbl[7]))((IHlinkFrame*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
+        return ((delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, char*, char*, int>)(lpVtbl[7]))((IHlinkFrame*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,10 +98,10 @@ public unsafe partial struct IHlinkFrame : IHlinkFrame.Interface, INativeGuid
         HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPBC")] IBindCtx* pbc, IBindStatusCallback* pibsc, IHlink* pihlNavigate);
 
         [VtblIndex(6)]
-        HRESULT OnNavigate([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("DWORD")] uint dwreserved);
+        HRESULT OnNavigate([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName, [NativeTypeName("DWORD")] uint dwreserved);
 
         [VtblIndex(7)]
-        HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -126,9 +126,9 @@ public unsafe partial struct IHlinkFrame : IHlinkFrame.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, IBindCtx*, IBindStatusCallback*, IHlink*, int> Navigate;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, uint, int> OnNavigate;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, uint, int> OnNavigate;
 
         [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, int> UpdateHlink;
     }
 }

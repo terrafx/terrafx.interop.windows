@@ -65,49 +65,49 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreRenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+    public HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int>)(lpVtbl[5]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, char*, int>)(lpVtbl[5]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostRenameItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated)
+    public HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[6]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName, hrRename, psiNewlyCreated);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, char*, HRESULT, IShellItem*, int>)(lpVtbl[6]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, pszNewName, hrRename, psiNewlyCreated);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreMoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+    public HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[7]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, char*, int>)(lpVtbl[7]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostMoveItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated)
+    public HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[8]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrMove, psiNewlyCreated);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, char*, HRESULT, IShellItem*, int>)(lpVtbl[8]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrMove, psiNewlyCreated);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreCopyItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+    public HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[9]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, char*, int>)(lpVtbl[9]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostCopyItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated)
+    public HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int>)(lpVtbl[10]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrCopy, psiNewlyCreated);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, char*, HRESULT, IShellItem*, int>)(lpVtbl[10]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiItem, psiDestinationFolder, pszNewName, hrCopy, psiNewlyCreated);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreDeleteItem"]/*' />
@@ -129,17 +129,17 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PreNewItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName)
+    public HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int>)(lpVtbl[13]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, char*, int>)(lpVtbl[13]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.PostNewItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem)
+    public HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("LPCWSTR")] char* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem)
     {
-        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, ushort*, uint, HRESULT, IShellItem*, int>)(lpVtbl[14]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName, pszTemplateName, dwFileAttributes, hrNew, psiNewItem);
+        return ((delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, char*, char*, uint, HRESULT, IShellItem*, int>)(lpVtbl[14]))((IFileOperationProgressSink*)Unsafe.AsPointer(ref this), dwFlags, psiDestinationFolder, pszNewName, pszTemplateName, dwFileAttributes, hrNew, psiNewItem);
     }
 
     /// <include file='IFileOperationProgressSink.xml' path='doc/member[@name="IFileOperationProgressSink.UpdateProgress"]/*' />
@@ -183,22 +183,22 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         HRESULT FinishOperations(HRESULT hrResult);
 
         [VtblIndex(5)]
-        HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+        HRESULT PreRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName);
 
         [VtblIndex(6)]
-        HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated);
+        HRESULT PostRenameItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrRename, IShellItem* psiNewlyCreated);
 
         [VtblIndex(7)]
-        HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+        HRESULT PreMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName);
 
         [VtblIndex(8)]
-        HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated);
+        HRESULT PostMoveItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrMove, IShellItem* psiNewlyCreated);
 
         [VtblIndex(9)]
-        HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+        HRESULT PreCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName);
 
         [VtblIndex(10)]
-        HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated);
+        HRESULT PostCopyItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, HRESULT hrCopy, IShellItem* psiNewlyCreated);
 
         [VtblIndex(11)]
         HRESULT PreDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem);
@@ -207,10 +207,10 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         HRESULT PostDeleteItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiItem, HRESULT hrDelete, IShellItem* psiNewlyCreated);
 
         [VtblIndex(13)]
-        HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName);
+        HRESULT PreNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName);
 
         [VtblIndex(14)]
-        HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] ushort* pszNewName, [NativeTypeName("LPCWSTR")] ushort* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem);
+        HRESULT PostNewItem([NativeTypeName("DWORD")] uint dwFlags, IShellItem* psiDestinationFolder, [NativeTypeName("LPCWSTR")] char* pszNewName, [NativeTypeName("LPCWSTR")] char* pszTemplateName, [NativeTypeName("DWORD")] uint dwFileAttributes, HRESULT hrNew, IShellItem* psiNewItem);
 
         [VtblIndex(15)]
         HRESULT UpdateProgress(uint iWorkTotal, uint iWorkSoFar);
@@ -244,22 +244,22 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         public delegate* unmanaged<TSelf*, HRESULT, int> FinishOperations;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, int> PreRenameItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, char*, int> PreRenameItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostRenameItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, char*, HRESULT, IShellItem*, int> PostRenameItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, int> PreMoveItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, char*, int> PreMoveItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostMoveItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, char*, HRESULT, IShellItem*, int> PostMoveItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, int> PreCopyItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, char*, int> PreCopyItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostCopyItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, char*, HRESULT, IShellItem*, int> PostCopyItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IShellItem*, int> PreDeleteItem;
@@ -268,10 +268,10 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         public delegate* unmanaged<TSelf*, uint, IShellItem*, HRESULT, IShellItem*, int> PostDeleteItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, int> PreNewItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, char*, int> PreNewItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR, LPCWSTR, DWORD, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, ushort*, uint, HRESULT, IShellItem*, int> PostNewItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, char*, char*, uint, HRESULT, IShellItem*, int> PostNewItem;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, int> UpdateProgress;

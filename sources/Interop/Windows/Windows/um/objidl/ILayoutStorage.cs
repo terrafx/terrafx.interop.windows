@@ -73,9 +73,9 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] ushort* pwcsNewDfName)
+    public HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] char* pwcsNewDfName)
     {
-        return ((delegate* unmanaged<ILayoutStorage*, ushort*, int>)(lpVtbl[6]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pwcsNewDfName);
+        return ((delegate* unmanaged<ILayoutStorage*, char*, int>)(lpVtbl[6]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pwcsNewDfName);
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfileOnILockBytes"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
         HRESULT EndMonitor();
 
         [VtblIndex(6)]
-        HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] ushort* pwcsNewDfName);
+        HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] char* pwcsNewDfName);
 
         [VtblIndex(7)]
         HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes);
@@ -126,7 +126,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> EndMonitor;
 
         [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> ReLayoutDocfile;
+        public delegate* unmanaged<TSelf*, char*, int> ReLayoutDocfile;
 
         [NativeTypeName("HRESULT (ILockBytes *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;

@@ -59,9 +59,9 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     /// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo.GetMainPackageName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] ushort** mainPackageName)
+    public HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] char** mainPackageName)
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, ushort**, int>)(lpVtbl[4]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), mainPackageName);
+        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, char**, int>)(lpVtbl[4]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), mainPackageName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -70,7 +70,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         HRESULT GetIsOptionalPackage(BOOL* isOptionalPackage);
 
         [VtblIndex(4)]
-        HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] ushort** mainPackageName);
+        HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] char** mainPackageName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -89,6 +89,6 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         public delegate* unmanaged<TSelf*, BOOL*, int> GetIsOptionalPackage;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetMainPackageName;
+        public delegate* unmanaged<TSelf*, char**, int> GetMainPackageName;
     }
 }

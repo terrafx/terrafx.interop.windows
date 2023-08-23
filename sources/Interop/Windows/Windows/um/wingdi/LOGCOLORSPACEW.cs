@@ -45,5 +45,5 @@ public unsafe partial struct LOGCOLORSPACEW
 
     /// <include file='LOGCOLORSPACEW.xml' path='doc/member[@name="LOGCOLORSPACEW.lcsFilename"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort lcsFilename[260];
+    public fixed char lcsFilename[260];
 }

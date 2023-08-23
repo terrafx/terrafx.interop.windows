@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCSSImportRule : IHTMLCSSImportRule.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSImportRule*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSImportRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCSSImportRule*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSImportRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLCSSImportRule : IHTMLCSSImportRule.Interface, 
     /// <include file='IHTMLCSSImportRule.xml' path='doc/member[@name="IHTMLCSSImportRule.get_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_href([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_href([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSImportRule*, ushort**, int>)(lpVtbl[7]))((IHTMLCSSImportRule*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSImportRule*, char**, int>)(lpVtbl[7]))((IHTMLCSSImportRule*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSImportRule.xml' path='doc/member[@name="IHTMLCSSImportRule.put_media"]/*' />
@@ -113,7 +113,7 @@ public unsafe partial struct IHTMLCSSImportRule : IHTMLCSSImportRule.Interface, 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_href([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_href([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT put_media(VARIANT v);
@@ -144,13 +144,13 @@ public unsafe partial struct IHTMLCSSImportRule : IHTMLCSSImportRule.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_href;
+        public delegate* unmanaged<TSelf*, char**, int> get_href;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_media;

@@ -32,7 +32,7 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszWindowTitle"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszWindowTitle;
+    public char* pszWindowTitle;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous1"]/*' />
     [NativeTypeName("__AnonymousRecord_CommCtrl_L7735_C5")]
@@ -40,11 +40,11 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszMainInstruction"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszMainInstruction;
+    public char* pszMainInstruction;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszContent"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszContent;
+    public char* pszContent;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.cButtons"]/*' />
     public uint cButtons;
@@ -68,19 +68,19 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszVerificationText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszVerificationText;
+    public char* pszVerificationText;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszExpandedInformation"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszExpandedInformation;
+    public char* pszExpandedInformation;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszExpandedControlText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszExpandedControlText;
+    public char* pszExpandedControlText;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszCollapsedControlText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszCollapsedControlText;
+    public char* pszCollapsedControlText;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.Anonymous2"]/*' />
     [NativeTypeName("__AnonymousRecord_CommCtrl_L7752_C5")]
@@ -88,7 +88,7 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pszFooter"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszFooter;
+    public char* pszFooter;
 
     /// <include file='TASKDIALOGCONFIG.xml' path='doc/member[@name="TASKDIALOGCONFIG.pfCallback"]/*' />
     [NativeTypeName("PFTASKDIALOGCALLBACK")]
@@ -114,7 +114,7 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszMainIcon"]/*' />
     [UnscopedRef]
-    public ref ushort* pszMainIcon
+    public ref char* pszMainIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -136,7 +136,7 @@ public unsafe partial struct TASKDIALOGCONFIG
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszFooterIcon"]/*' />
     [UnscopedRef]
-    public ref ushort* pszFooterIcon
+    public ref char* pszFooterIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -156,7 +156,7 @@ public unsafe partial struct TASKDIALOGCONFIG
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszMainIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pszMainIcon;
+        public char* pszMainIcon;
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
@@ -170,6 +170,6 @@ public unsafe partial struct TASKDIALOGCONFIG
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszFooterIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pszFooterIcon;
+        public char* pszFooterIcon;
     }
 }

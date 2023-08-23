@@ -49,15 +49,15 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
     /// <include file='IBindCallbackRedirect.xml' path='doc/member[@name="IBindCallbackRedirect.Redirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Redirect([NativeTypeName("LPCWSTR")] ushort* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel)
+    public HRESULT Redirect([NativeTypeName("LPCWSTR")] char* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel)
     {
-        return ((delegate* unmanaged<IBindCallbackRedirect*, ushort*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
+        return ((delegate* unmanaged<IBindCallbackRedirect*, char*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Redirect([NativeTypeName("LPCWSTR")] ushort* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel);
+        HRESULT Redirect([NativeTypeName("LPCWSTR")] char* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> Redirect;
+        public delegate* unmanaged<TSelf*, char*, short*, int> Redirect;
     }
 }

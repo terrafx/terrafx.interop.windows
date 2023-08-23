@@ -49,9 +49,9 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     /// <include file='IActionProgressDialog.xml' path='doc/member[@name="IActionProgressDialog.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszCancel)
+    public HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszCancel)
     {
-        return ((delegate* unmanaged<IActionProgressDialog*, uint, ushort*, ushort*, int>)(lpVtbl[3]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), flags, pszTitle, pszCancel);
+        return ((delegate* unmanaged<IActionProgressDialog*, uint, char*, char*, int>)(lpVtbl[3]))((IActionProgressDialog*)Unsafe.AsPointer(ref this), flags, pszTitle, pszCancel);
     }
 
     /// <include file='IActionProgressDialog.xml' path='doc/member[@name="IActionProgressDialog.Stop"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszCancel);
+        HRESULT Initialize([NativeTypeName("SPINITF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszCancel);
 
         [VtblIndex(4)]
         HRESULT Stop();
@@ -84,7 +84,7 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPINITF, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Stop;

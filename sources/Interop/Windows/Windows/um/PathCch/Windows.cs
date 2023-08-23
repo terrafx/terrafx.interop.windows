@@ -13,112 +13,112 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern BOOL PathIsUNCEx([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszServer);
+    public static extern BOOL PathIsUNCEx([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PCWSTR *")] char** ppszServer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchIsRoot"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern BOOL PathCchIsRoot([NativeTypeName("PCWSTR")] ushort* pszPath);
+    public static extern BOOL PathCchIsRoot([NativeTypeName("PCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchAddBackslashEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchAddBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
+    public static extern HRESULT PathCchAddBackslashEx([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] char** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchAddBackslash"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchAddBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchAddBackslash([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchRemoveBackslashEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchRemoveBackslashEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] ushort** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
+    public static extern HRESULT PathCchRemoveBackslashEx([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PWSTR *")] char** ppszEnd, [NativeTypeName("size_t *")] nuint* pcchRemaining);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchRemoveBackslash"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchRemoveBackslash([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchRemoveBackslash([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchSkipRoot"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchSkipRoot([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PCWSTR *")] ushort** ppszRootEnd);
+    public static extern HRESULT PathCchSkipRoot([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PCWSTR *")] char** ppszRootEnd);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchStripToRoot"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchStripToRoot([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchStripToRoot([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchRemoveFileSpec"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchRemoveFileSpec([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchRemoveFileSpec([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchFindExtension"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchFindExtension([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR *")] ushort** ppszExt);
+    public static extern HRESULT PathCchFindExtension([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR *")] char** ppszExt);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchAddExtension"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchAddExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
+    public static extern HRESULT PathCchAddExtension([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] char* pszExt);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchRenameExtension"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchRenameExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszExt);
+    public static extern HRESULT PathCchRenameExtension([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] char* pszExt);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchRemoveExtension"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchRemoveExtension([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchRemoveExtension([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchCanonicalizeEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchCanonicalizeEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags);
+    public static extern HRESULT PathCchCanonicalizeEx([NativeTypeName("PWSTR")] char* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchCanonicalize"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchCanonicalize([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn);
+    public static extern HRESULT PathCchCanonicalize([NativeTypeName("PWSTR")] char* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] char* pszPathIn);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchCombineEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchCombineEx([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
+    public static extern HRESULT PathCchCombineEx([NativeTypeName("PWSTR")] char* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("PCWSTR")] char* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchCombine"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchCombine([NativeTypeName("PWSTR")] ushort* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore);
+    public static extern HRESULT PathCchCombine([NativeTypeName("PWSTR")] char* pszPathOut, [NativeTypeName("size_t")] nuint cchPathOut, [NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("PCWSTR")] char* pszMore);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchAppendEx"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchAppendEx([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
+    public static extern HRESULT PathCchAppendEx([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] char* pszMore, [NativeTypeName("ULONG")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchAppend"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchAppend([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] ushort* pszMore);
+    public static extern HRESULT PathCchAppend([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath, [NativeTypeName("PCWSTR")] char* pszMore);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCchStripPrefix"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathCchStripPrefix([NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("size_t")] nuint cchPath);
+    public static extern HRESULT PathCchStripPrefix([NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("size_t")] nuint cchPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAllocCombine"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathAllocCombine([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("PCWSTR")] ushort* pszMore, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
+    public static extern HRESULT PathAllocCombine([NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("PCWSTR")] char* pszMore, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] char** ppszPathOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAllocCanonicalize"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] ushort* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] ushort** ppszPathOut);
+    public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] char** ppszPathOut);
 
     [NativeTypeName("#define VOLUME_PREFIX L\"\\\\\\\\?\\\\Volume\"")]
     public const string VOLUME_PREFIX = "\\\\?\\Volume";

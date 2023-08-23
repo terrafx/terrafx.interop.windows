@@ -49,9 +49,9 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface, INativeGui
     /// <inheritdoc cref="IParseDisplayName.ParseDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
+    public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
     {
-        return ((delegate* unmanaged<IOleContainer*, IBindCtx*, ushort*, uint*, IMoniker**, int>)(lpVtbl[3]))((IOleContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+        return ((delegate* unmanaged<IOleContainer*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IOleContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
     }
 
     /// <include file='IOleContainer.xml' path='doc/member[@name="IOleContainer.EnumObjects"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IOleContainer : IOleContainer.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IEnumUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IEnumUnknown**, int> EnumObjects;

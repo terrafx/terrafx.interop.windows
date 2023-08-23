@@ -49,9 +49,9 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface, INativeGui
     /// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete.Init"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] ushort* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] ushort* pwszQuickComplete)
+    public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] char* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] char* pwszQuickComplete)
     {
-        return ((delegate* unmanaged<IAutoComplete*, HWND, IUnknown*, ushort*, ushort*, int>)(lpVtbl[3]))((IAutoComplete*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
+        return ((delegate* unmanaged<IAutoComplete*, HWND, IUnknown*, char*, char*, int>)(lpVtbl[3]))((IAutoComplete*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
     }
 
     /// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete.Enable"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface, INativeGui
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] ushort* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] ushort* pwszQuickComplete);
+        HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] char* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] char* pwszQuickComplete);
 
         [VtblIndex(4)]
         HRESULT Enable(BOOL fEnable);
@@ -84,7 +84,7 @@ public unsafe partial struct IAutoComplete : IAutoComplete.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IUnknown*, ushort*, ushort*, int> Init;
+        public delegate* unmanaged<TSelf*, HWND, IUnknown*, char*, char*, int> Init;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, int> Enable;

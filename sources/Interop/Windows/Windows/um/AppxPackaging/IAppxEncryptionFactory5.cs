@@ -49,26 +49,26 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     /// <include file='IAppxEncryptionFactory5.xml' path='doc/member[@name="IAppxEncryptionFactory5.CreateEncryptedPackageReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateEncryptedPackageReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxPackageReader** packageReader)
+    public HRESULT CreateEncryptedPackageReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, ushort*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, packageReader);
+        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, packageReader);
     }
 
     /// <include file='IAppxEncryptionFactory5.xml' path='doc/member[@name="IAppxEncryptionFactory5.CreateEncryptedBundleReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateEncryptedBundleReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader)
+    public HRESULT CreateEncryptedBundleReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, ushort*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, bundleReader);
+        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, bundleReader);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateEncryptedPackageReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxPackageReader** packageReader);
+        HRESULT CreateEncryptedPackageReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader);
 
         [VtblIndex(4)]
-        HRESULT CreateEncryptedBundleReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader);
+        HRESULT CreateEncryptedBundleReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, LPCWSTR, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, ushort*, IAppxPackageReader**, int> CreateEncryptedPackageReader2;
+        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int> CreateEncryptedPackageReader2;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, LPCWSTR, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, ushort*, IAppxBundleReader**, int> CreateEncryptedBundleReader2;
+        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int> CreateEncryptedBundleReader2;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION
 
     /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.VolumeName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* VolumeName;
+    public char* VolumeName;
 
     /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.BaseIoSize"]/*' />
     [NativeTypeName("ULONG")]

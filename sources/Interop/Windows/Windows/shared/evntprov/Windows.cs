@@ -54,7 +54,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWriteString"]/*' />
     [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
-    public static extern uint EventWriteString([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword, [NativeTypeName("PCWSTR")] ushort* String);
+    public static extern uint EventWriteString([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword, [NativeTypeName("PCWSTR")] char* String);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventActivityIdControl"]/*' />
     [DllImport("Advapi32", ExactSpelling = true)]

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLSelection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSelection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLSelection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSelection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -201,9 +201,9 @@ public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface, INativeG
     /// <include file='IHTMLSelection.xml' path='doc/member[@name="IHTMLSelection.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** pSelectionString)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** pSelectionString)
     {
-        return ((delegate* unmanaged<IHTMLSelection*, ushort**, int>)(lpVtbl[22]))((IHTMLSelection*)Unsafe.AsPointer(ref this), pSelectionString);
+        return ((delegate* unmanaged<IHTMLSelection*, char**, int>)(lpVtbl[22]))((IHTMLSelection*)Unsafe.AsPointer(ref this), pSelectionString);
     }
 
     public interface Interface : IDispatch.Interface
@@ -254,7 +254,7 @@ public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface, INativeG
         HRESULT removeAllRanges();
 
         [VtblIndex(22)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** pSelectionString);
+        HRESULT toString([NativeTypeName("BSTR *")] char** pSelectionString);
     }
 
     public partial struct Vtbl<TSelf>
@@ -276,7 +276,7 @@ public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -327,6 +327,6 @@ public unsafe partial struct IHTMLSelection : IHTMLSelection.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> removeAllRanges;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
     }
 }

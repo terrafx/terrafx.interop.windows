@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLTableSection : IHTMLTableSection.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLTableSection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLTableSection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct IHTMLTableSection : IHTMLTableSection.Interface, IN
     /// <include file='IHTMLTableSection.xml' path='doc/member[@name="IHTMLTableSection.put_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_align([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTableSection*, ushort*, int>)(lpVtbl[7]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTableSection*, char*, int>)(lpVtbl[7]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTableSection.xml' path='doc/member[@name="IHTMLTableSection.get_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_align([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTableSection*, ushort**, int>)(lpVtbl[8]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTableSection*, char**, int>)(lpVtbl[8]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTableSection.xml' path='doc/member[@name="IHTMLTableSection.put_vAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_vAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLTableSection*, ushort*, int>)(lpVtbl[9]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLTableSection*, char*, int>)(lpVtbl[9]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLTableSection.xml' path='doc/member[@name="IHTMLTableSection.get_vAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_vAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLTableSection*, ushort**, int>)(lpVtbl[10]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLTableSection*, char**, int>)(lpVtbl[10]))((IHTMLTableSection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLTableSection.xml' path='doc/member[@name="IHTMLTableSection.put_bgColor"]/*' />
@@ -153,16 +153,16 @@ public unsafe partial struct IHTMLTableSection : IHTMLTableSection.Interface, IN
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_align([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_align([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_vAlign([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_vAlign([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_vAlign([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_vAlign([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT put_bgColor(VARIANT v);
@@ -199,22 +199,22 @@ public unsafe partial struct IHTMLTableSection : IHTMLTableSection.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_align;
+        public delegate* unmanaged<TSelf*, char*, int> put_align;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_align;
+        public delegate* unmanaged<TSelf*, char**, int> get_align;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_vAlign;
+        public delegate* unmanaged<TSelf*, char*, int> put_vAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_vAlign;
+        public delegate* unmanaged<TSelf*, char**, int> get_vAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_bgColor;

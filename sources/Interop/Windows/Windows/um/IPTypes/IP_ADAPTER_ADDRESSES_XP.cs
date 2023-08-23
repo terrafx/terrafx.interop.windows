@@ -42,15 +42,15 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.DnsSuffix"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* DnsSuffix;
+    public char* DnsSuffix;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.Description"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* Description;
+    public char* Description;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.FriendlyName"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* FriendlyName;
+    public char* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]

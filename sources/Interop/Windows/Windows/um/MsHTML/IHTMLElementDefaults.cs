@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLElementDefaults*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLElementDefaults*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -185,17 +185,17 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
     /// <include file='IHTMLElementDefaults.xml' path='doc/member[@name="IHTMLElementDefaults.put_contentEditable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_contentEditable([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLElementDefaults*, ushort*, int>)(lpVtbl[20]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLElementDefaults*, char*, int>)(lpVtbl[20]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLElementDefaults.xml' path='doc/member[@name="IHTMLElementDefaults.get_contentEditable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contentEditable([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLElementDefaults*, ushort**, int>)(lpVtbl[21]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLElementDefaults*, char**, int>)(lpVtbl[21]))((IHTMLElementDefaults*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLElementDefaults.xml' path='doc/member[@name="IHTMLElementDefaults.put_canHaveHTML"]/*' />
@@ -288,10 +288,10 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
         HRESULT get_isMultiLine([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(20)]
-        HRESULT put_contentEditable([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_contentEditable([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(21)]
-        HRESULT get_contentEditable([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contentEditable([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
         HRESULT put_canHaveHTML([NativeTypeName("VARIANT_BOOL")] short v);
@@ -331,7 +331,7 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -376,10 +376,10 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
         public delegate* unmanaged<TSelf*, short*, int> get_isMultiLine;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_contentEditable;
+        public delegate* unmanaged<TSelf*, char*, int> put_contentEditable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contentEditable;
+        public delegate* unmanaged<TSelf*, char**, int> get_contentEditable;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_canHaveHTML;

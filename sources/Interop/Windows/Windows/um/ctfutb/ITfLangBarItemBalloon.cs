@@ -73,9 +73,9 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged<ITfLangBarItemBalloon*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemBalloon.xml' path='doc/member[@name="ITfLangBarItemBalloon.OnClick"]/*' />
@@ -136,7 +136,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
         public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;

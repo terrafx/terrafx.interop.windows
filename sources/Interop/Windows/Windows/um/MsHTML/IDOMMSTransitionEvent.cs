@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMSTransitionEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMSTransitionEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Inter
     /// <include file='IDOMMSTransitionEvent.xml' path='doc/member[@name="IDOMMSTransitionEvent.get_propertyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_propertyName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_propertyName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMMSTransitionEvent*, ushort**, int>)(lpVtbl[7]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMMSTransitionEvent*, char**, int>)(lpVtbl[7]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMSTransitionEvent.xml' path='doc/member[@name="IDOMMSTransitionEvent.get_elapsedTime"]/*' />
@@ -97,21 +97,21 @@ public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Inter
     /// <include file='IDOMMSTransitionEvent.xml' path='doc/member[@name="IDOMMSTransitionEvent.initMSTransitionEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime)
+    public HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* propertyName, float elapsedTime)
     {
-        return ((delegate* unmanaged<IDOMMSTransitionEvent*, ushort*, short, short, ushort*, float, int>)(lpVtbl[9]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, propertyName, elapsedTime);
+        return ((delegate* unmanaged<IDOMMSTransitionEvent*, char*, short, short, char*, float, int>)(lpVtbl[9]))((IDOMMSTransitionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, propertyName, elapsedTime);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_propertyName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_propertyName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_elapsedTime(float* p);
 
         [VtblIndex(9)]
-        HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* propertyName, float elapsedTime);
+        HRESULT initMSTransitionEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* propertyName, float elapsedTime);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct IDOMMSTransitionEvent : IDOMMSTransitionEvent.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_propertyName;
+        public delegate* unmanaged<TSelf*, char**, int> get_propertyName;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float*, int> get_elapsedTime;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, BSTR, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, ushort*, float, int> initMSTransitionEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, char*, float, int> initMSTransitionEvent;
     }
 }

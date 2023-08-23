@@ -57,9 +57,9 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetResultString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] ushort** pstrResultString)
+    public HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] char** pstrResultString)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, int, ushort**, int>)(lpVtbl[4]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, pstrResultString);
+        return ((delegate* unmanaged<IWbemCallResult*, int, char**, int>)(lpVtbl[4]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, pstrResultString);
     }
 
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetResultServices"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
         HRESULT GetResultObject([NativeTypeName("long")] int lTimeout, IWbemClassObject** ppResultObject);
 
         [VtblIndex(4)]
-        HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] ushort** pstrResultString);
+        HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] char** pstrResultString);
 
         [VtblIndex(5)]
         HRESULT GetResultServices([NativeTypeName("long")] int lTimeout, IWbemServices** ppServices);
@@ -109,7 +109,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
         public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> GetResultObject;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> GetResultString;
+        public delegate* unmanaged<TSelf*, int, char**, int> GetResultString;
 
         [NativeTypeName("HRESULT (long, IWbemServices **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IWbemServices**, int> GetResultServices;

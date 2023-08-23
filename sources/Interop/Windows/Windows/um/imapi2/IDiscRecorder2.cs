@@ -65,9 +65,9 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDiscRecorder2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.AcquireExclusiveAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] ushort* __MIDL__IDiscRecorder20000)
+    public HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] char* __MIDL__IDiscRecorder20000)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, short, ushort*, int>)(lpVtbl[9]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), force, __MIDL__IDiscRecorder20000);
+        return ((delegate* unmanaged<IDiscRecorder2*, short, char*, int>)(lpVtbl[9]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), force, __MIDL__IDiscRecorder20000);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.ReleaseExclusiveAccess"]/*' />
@@ -129,49 +129,49 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.InitializeDiscRecorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] ushort* recorderUniqueId)
+    public HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] char* recorderUniqueId)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort*, int>)(lpVtbl[13]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), recorderUniqueId);
+        return ((delegate* unmanaged<IDiscRecorder2*, char*, int>)(lpVtbl[13]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), recorderUniqueId);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ActiveDiscRecorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[14]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[14]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VendorId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_VendorId([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_VendorId([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[15]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[15]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ProductId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_ProductId([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ProductId([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[16]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[16]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ProductRevision"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_ProductRevision([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ProductRevision([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[17]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[17]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VolumeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[18]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[18]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VolumePathNames"]/*' />
@@ -241,9 +241,9 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ExclusiveAccessOwner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, ushort**, int>)(lpVtbl[27]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[27]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IDispatch.Interface
@@ -255,7 +255,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         HRESULT CloseTray();
 
         [VtblIndex(9)]
-        HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] ushort* __MIDL__IDiscRecorder20000);
+        HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] char* __MIDL__IDiscRecorder20000);
 
         [VtblIndex(10)]
         HRESULT ReleaseExclusiveAccess();
@@ -267,22 +267,22 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         HRESULT EnableMcn();
 
         [VtblIndex(13)]
-        HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] ushort* recorderUniqueId);
+        HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] char* recorderUniqueId);
 
         [VtblIndex(14)]
-        HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(15)]
-        HRESULT get_VendorId([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_VendorId([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(16)]
-        HRESULT get_ProductId([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ProductId([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(17)]
-        HRESULT get_ProductRevision([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ProductRevision([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(18)]
-        HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(19)]
         HRESULT get_VolumePathNames(SAFEARRAY** value);
@@ -309,7 +309,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         HRESULT get_SupportedModePages(SAFEARRAY** value);
 
         [VtblIndex(27)]
-        HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] char** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -331,7 +331,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -343,7 +343,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> CloseTray;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, ushort*, int> AcquireExclusiveAccess;
+        public delegate* unmanaged<TSelf*, short, char*, int> AcquireExclusiveAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> ReleaseExclusiveAccess;
@@ -355,22 +355,22 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> EnableMcn;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InitializeDiscRecorder;
+        public delegate* unmanaged<TSelf*, char*, int> InitializeDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ActiveDiscRecorder;
+        public delegate* unmanaged<TSelf*, char**, int> get_ActiveDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VendorId;
+        public delegate* unmanaged<TSelf*, char**, int> get_VendorId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ProductId;
+        public delegate* unmanaged<TSelf*, char**, int> get_ProductId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ProductRevision;
+        public delegate* unmanaged<TSelf*, char**, int> get_ProductRevision;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_VolumeName;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_VolumePathNames;
@@ -397,6 +397,6 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedModePages;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ExclusiveAccessOwner;
+        public delegate* unmanaged<TSelf*, char**, int> get_ExclusiveAccessOwner;
     }
 }

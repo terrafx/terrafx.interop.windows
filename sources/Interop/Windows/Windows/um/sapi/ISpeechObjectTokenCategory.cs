@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Id"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Id([NativeTypeName("BSTR *")] ushort** Id)
+    public HRESULT get_Id([NativeTypeName("BSTR *")] char** Id)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int>)(lpVtbl[7]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[7]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.put_Default"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_Default([NativeTypeName("const BSTR")] ushort* TokenId)
+    public HRESULT put_Default([NativeTypeName("const BSTR")] char* TokenId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, int>)(lpVtbl[8]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, int>)(lpVtbl[8]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Default"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Default([NativeTypeName("BSTR *")] ushort** TokenId)
+    public HRESULT get_Default([NativeTypeName("BSTR *")] char** TokenId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int>)(lpVtbl[9]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[9]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetId([NativeTypeName("const BSTR")] ushort* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0)
+    public HRESULT SetId([NativeTypeName("const BSTR")] char* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, short, int>)(lpVtbl[10]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id, CreateIfNotExist);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, short, int>)(lpVtbl[10]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id, CreateIfNotExist);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.GetDataKey"]/*' />
@@ -121,30 +121,30 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.EnumerateTokens"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT EnumerateTokens([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** Tokens)
+    public HRESULT EnumerateTokens([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** Tokens)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, ushort*, ISpeechObjectTokens**, int>)(lpVtbl[12]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, Tokens);
+        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[12]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, Tokens);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_Id([NativeTypeName("BSTR *")] ushort** Id);
+        HRESULT get_Id([NativeTypeName("BSTR *")] char** Id);
 
         [VtblIndex(8)]
-        HRESULT put_Default([NativeTypeName("const BSTR")] ushort* TokenId);
+        HRESULT put_Default([NativeTypeName("const BSTR")] char* TokenId);
 
         [VtblIndex(9)]
-        HRESULT get_Default([NativeTypeName("BSTR *")] ushort** TokenId);
+        HRESULT get_Default([NativeTypeName("BSTR *")] char** TokenId);
 
         [VtblIndex(10)]
-        HRESULT SetId([NativeTypeName("const BSTR")] ushort* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0);
+        HRESULT SetId([NativeTypeName("const BSTR")] char* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0);
 
         [VtblIndex(11)]
         HRESULT GetDataKey(SpeechDataKeyLocation Location, ISpeechDataKey** DataKey);
 
         [VtblIndex(12)]
-        HRESULT EnumerateTokens([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** Tokens);
+        HRESULT EnumerateTokens([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** Tokens);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,27 +166,27 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Id;
+        public delegate* unmanaged<TSelf*, char**, int> get_Id;
 
         [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Default;
+        public delegate* unmanaged<TSelf*, char*, int> put_Default;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Default;
+        public delegate* unmanaged<TSelf*, char**, int> get_Default;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> SetId;
+        public delegate* unmanaged<TSelf*, char*, short, int> SetId;
 
         [NativeTypeName("HRESULT (SpeechDataKeyLocation, ISpeechDataKey **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SpeechDataKeyLocation, ISpeechDataKey**, int> GetDataKey;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ISpeechObjectTokens**, int> EnumerateTokens;
+        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> EnumerateTokens;
     }
 }

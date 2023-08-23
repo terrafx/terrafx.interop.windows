@@ -49,15 +49,15 @@ public unsafe partial struct IMFMediaEngineClassFactory4 : IMFMediaEngineClassFa
     /// <include file='IMFMediaEngineClassFactory4.xml' path='doc/member[@name="IMFMediaEngineClassFactory4.CreateContentDecryptionModuleFactory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] ushort* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
+    public HRESULT CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] char* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, ushort*, Guid*, void**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), keySystem, riid, ppvObject);
+        return ((delegate* unmanaged<IMFMediaEngineClassFactory4*, char*, Guid*, void**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory4*)Unsafe.AsPointer(ref this), keySystem, riid, ppvObject);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] ushort* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+        HRESULT CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] char* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IMFMediaEngineClassFactory4 : IMFMediaEngineClassFa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> CreateContentDecryptionModuleFactory;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> CreateContentDecryptionModuleFactory;
     }
 }

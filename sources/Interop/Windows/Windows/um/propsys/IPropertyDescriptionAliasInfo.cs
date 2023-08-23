@@ -57,9 +57,9 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
     /// <inheritdoc cref="IPropertyDescription.GetCanonicalName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCanonicalName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetCanonicalName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, ushort**, int>)(lpVtbl[4]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, char**, int>)(lpVtbl[4]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <inheritdoc cref="IPropertyDescription.GetPropertyType" />
@@ -73,17 +73,17 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
     /// <inheritdoc cref="IPropertyDescription.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, ushort**, int>)(lpVtbl[6]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, char**, int>)(lpVtbl[6]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <inheritdoc cref="IPropertyDescription.GetEditInvitation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetEditInvitation([NativeTypeName("LPWSTR *")] ushort** ppszInvite)
+    public HRESULT GetEditInvitation([NativeTypeName("LPWSTR *")] char** ppszInvite)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, ushort**, int>)(lpVtbl[7]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszInvite);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, char**, int>)(lpVtbl[7]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), ppszInvite);
     }
 
     /// <inheritdoc cref="IPropertyDescription.GetTypeFlags" />
@@ -145,9 +145,9 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
     /// <inheritdoc cref="IPropertyDescription.GetRelativeDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetRelativeDescription([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar1, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar2, [NativeTypeName("LPWSTR *")] ushort** ppszDesc1, [NativeTypeName("LPWSTR *")] ushort** ppszDesc2)
+    public HRESULT GetRelativeDescription([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar1, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar2, [NativeTypeName("LPWSTR *")] char** ppszDesc1, [NativeTypeName("LPWSTR *")] char** ppszDesc2)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int>)(lpVtbl[15]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), propvar1, propvar2, ppszDesc1, ppszDesc2);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, PROPVARIANT*, PROPVARIANT*, char**, char**, int>)(lpVtbl[15]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), propvar1, propvar2, ppszDesc1, ppszDesc2);
     }
 
     /// <inheritdoc cref="IPropertyDescription.GetSortDescription" />
@@ -161,9 +161,9 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
     /// <inheritdoc cref="IPropertyDescription.GetSortDescriptionLabel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetSortDescriptionLabel(BOOL fDescending, [NativeTypeName("LPWSTR *")] ushort** ppszDescription)
+    public HRESULT GetSortDescriptionLabel(BOOL fDescending, [NativeTypeName("LPWSTR *")] char** ppszDescription)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, BOOL, ushort**, int>)(lpVtbl[17]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), fDescending, ppszDescription);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, BOOL, char**, int>)(lpVtbl[17]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), fDescending, ppszDescription);
     }
 
     /// <inheritdoc cref="IPropertyDescription.GetAggregationType" />
@@ -201,9 +201,9 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
     /// <inheritdoc cref="IPropertyDescription.FormatForDisplay" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT FormatForDisplay([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    public HRESULT FormatForDisplay([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR *")] char** ppszDisplay)
     {
-        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int>)(lpVtbl[22]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), propvar, pdfFlags, ppszDisplay);
+        return ((delegate* unmanaged<IPropertyDescriptionAliasInfo*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char**, int>)(lpVtbl[22]))((IPropertyDescriptionAliasInfo*)Unsafe.AsPointer(ref this), propvar, pdfFlags, ppszDisplay);
     }
 
     /// <inheritdoc cref="IPropertyDescription.IsValueCanonical" />
@@ -255,16 +255,16 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCanonicalName;
+        public delegate* unmanaged<TSelf*, char**, int> GetCanonicalName;
 
         [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> GetPropertyType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetEditInvitation;
+        public delegate* unmanaged<TSelf*, char**, int> GetEditInvitation;
 
         [NativeTypeName("HRESULT (PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS*, int> GetTypeFlags;
@@ -288,13 +288,13 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
         public delegate* unmanaged<TSelf*, PROPDESC_RELATIVEDESCRIPTION_TYPE*, int> GetRelativeDescriptionType;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, const PROPVARIANT &, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int> GetRelativeDescription;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, char**, char**, int> GetRelativeDescription;
 
         [NativeTypeName("HRESULT (PROPDESC_SORTDESCRIPTION *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPDESC_SORTDESCRIPTION*, int> GetSortDescription;
 
         [NativeTypeName("HRESULT (BOOL, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, ushort**, int> GetSortDescriptionLabel;
+        public delegate* unmanaged<TSelf*, BOOL, char**, int> GetSortDescriptionLabel;
 
         [NativeTypeName("HRESULT (PROPDESC_AGGREGATION_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPDESC_AGGREGATION_TYPE*, int> GetAggregationType;
@@ -309,7 +309,7 @@ public unsafe partial struct IPropertyDescriptionAliasInfo : IPropertyDescriptio
         public delegate* unmanaged<TSelf*, PROPVARIANT*, int> CoerceToCanonicalValue;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplay;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char**, int> FormatForDisplay;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPVARIANT*, int> IsValueCanonical;

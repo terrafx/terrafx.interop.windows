@@ -49,9 +49,9 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[3]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged<ICustomDestinationList*, char*, int>)(lpVtbl[3]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.BeginList"]/*' />
@@ -65,9 +65,9 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AppendCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa)
+    public HRESULT AppendCategory([NativeTypeName("LPCWSTR")] char* pszCategory, IObjectArray* poa)
     {
-        return ((delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int>)(lpVtbl[5]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszCategory, poa);
+        return ((delegate* unmanaged<ICustomDestinationList*, char*, IObjectArray*, int>)(lpVtbl[5]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszCategory, poa);
     }
 
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AppendKnownCategory"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.DeleteList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+    public HRESULT DeleteList([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[10]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged<ICustomDestinationList*, char*, int>)(lpVtbl[10]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AbortList"]/*' />
@@ -121,13 +121,13 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+        HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID);
 
         [VtblIndex(4)]
         HRESULT BeginList(uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(5)]
-        HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa);
+        HRESULT AppendCategory([NativeTypeName("LPCWSTR")] char* pszCategory, IObjectArray* poa);
 
         [VtblIndex(6)]
         HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category);
@@ -142,7 +142,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         HRESULT GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(10)]
-        HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+        HRESULT DeleteList([NativeTypeName("LPCWSTR")] char* pszAppID);
 
         [VtblIndex(11)]
         HRESULT AbortList();
@@ -161,13 +161,13 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAppID;
+        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (UINT *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, Guid*, void**, int> BeginList;
 
         [NativeTypeName("HRESULT (LPCWSTR, IObjectArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IObjectArray*, int> AppendCategory;
+        public delegate* unmanaged<TSelf*, char*, IObjectArray*, int> AppendCategory;
 
         [NativeTypeName("HRESULT (KNOWNDESTCATEGORY) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, KNOWNDESTCATEGORY, int> AppendKnownCategory;
@@ -182,7 +182,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetRemovedDestinations;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteList;
+        public delegate* unmanaged<TSelf*, char*, int> DeleteList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> AbortList;

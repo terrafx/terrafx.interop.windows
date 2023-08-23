@@ -73,9 +73,9 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
     /// <inheritdoc cref="IWICComponentInfo.GetAuthor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
+    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] char* wzAuthor, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[6]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetVendorGUID" />
@@ -89,25 +89,25 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
     /// <inheritdoc cref="IWICComponentInfo.GetVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
+    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] char* wzVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[8]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetSpecVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
+    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] char* wzSpecVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[9]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetFriendlyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)
+    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] char* wzFriendlyName, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[10]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[10]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetContainerFormat"]/*' />
@@ -129,41 +129,41 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetColorManagementVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetColorManagementVersion(uint cchColorManagementVersion, [NativeTypeName("WCHAR *")] ushort* wzColorManagementVersion, uint* pcchActual)
+    public HRESULT GetColorManagementVersion(uint cchColorManagementVersion, [NativeTypeName("WCHAR *")] char* wzColorManagementVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[13]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchColorManagementVersion, wzColorManagementVersion, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[13]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchColorManagementVersion, wzColorManagementVersion, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetDeviceManufacturer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, uint* pcchActual)
+    public HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] char* wzDeviceManufacturer, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[14]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[14]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetDeviceModels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, uint* pcchActual)
+    public HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] char* wzDeviceModels, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[15]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchDeviceModels, wzDeviceModels, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[15]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchDeviceModels, wzDeviceModels, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetMimeTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetMimeTypes(uint cchMimeTypes, [NativeTypeName("WCHAR *")] ushort* wzMimeTypes, uint* pcchActual)
+    public HRESULT GetMimeTypes(uint cchMimeTypes, [NativeTypeName("WCHAR *")] char* wzMimeTypes, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[16]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchMimeTypes, wzMimeTypes, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[16]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchMimeTypes, wzMimeTypes, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.GetFileExtensions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetFileExtensions(uint cchFileExtensions, [NativeTypeName("WCHAR *")] ushort* wzFileExtensions, uint* pcchActual)
+    public HRESULT GetFileExtensions(uint cchFileExtensions, [NativeTypeName("WCHAR *")] char* wzFileExtensions, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, ushort*, uint*, int>)(lpVtbl[17]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchFileExtensions, wzFileExtensions, pcchActual);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, uint, char*, uint*, int>)(lpVtbl[17]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), cchFileExtensions, wzFileExtensions, pcchActual);
     }
 
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.DoesSupportAnimation"]/*' />
@@ -201,9 +201,9 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
     /// <include file='IWICBitmapCodecInfo.xml' path='doc/member[@name="IWICBitmapCodecInfo.MatchesMimeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT MatchesMimeType([NativeTypeName("LPCWSTR")] ushort* wzMimeType, BOOL* pfMatches)
+    public HRESULT MatchesMimeType([NativeTypeName("LPCWSTR")] char* wzMimeType, BOOL* pfMatches)
     {
-        return ((delegate* unmanaged<IWICBitmapCodecInfo*, ushort*, BOOL*, int>)(lpVtbl[22]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), wzMimeType, pfMatches);
+        return ((delegate* unmanaged<IWICBitmapCodecInfo*, char*, BOOL*, int>)(lpVtbl[22]))((IWICBitmapCodecInfo*)Unsafe.AsPointer(ref this), wzMimeType, pfMatches);
     }
 
     public interface Interface : IWICComponentInfo.Interface
@@ -215,19 +215,19 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
         HRESULT GetPixelFormats(uint cFormats, Guid* pguidPixelFormats, uint* pcActual);
 
         [VtblIndex(13)]
-        HRESULT GetColorManagementVersion(uint cchColorManagementVersion, [NativeTypeName("WCHAR *")] ushort* wzColorManagementVersion, uint* pcchActual);
+        HRESULT GetColorManagementVersion(uint cchColorManagementVersion, [NativeTypeName("WCHAR *")] char* wzColorManagementVersion, uint* pcchActual);
 
         [VtblIndex(14)]
-        HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, uint* pcchActual);
+        HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] char* wzDeviceManufacturer, uint* pcchActual);
 
         [VtblIndex(15)]
-        HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, uint* pcchActual);
+        HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] char* wzDeviceModels, uint* pcchActual);
 
         [VtblIndex(16)]
-        HRESULT GetMimeTypes(uint cchMimeTypes, [NativeTypeName("WCHAR *")] ushort* wzMimeTypes, uint* pcchActual);
+        HRESULT GetMimeTypes(uint cchMimeTypes, [NativeTypeName("WCHAR *")] char* wzMimeTypes, uint* pcchActual);
 
         [VtblIndex(17)]
-        HRESULT GetFileExtensions(uint cchFileExtensions, [NativeTypeName("WCHAR *")] ushort* wzFileExtensions, uint* pcchActual);
+        HRESULT GetFileExtensions(uint cchFileExtensions, [NativeTypeName("WCHAR *")] char* wzFileExtensions, uint* pcchActual);
 
         [VtblIndex(18)]
         HRESULT DoesSupportAnimation(BOOL* pfSupportAnimation);
@@ -242,7 +242,7 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
         HRESULT DoesSupportMultiframe(BOOL* pfSupportMultiframe);
 
         [VtblIndex(22)]
-        HRESULT MatchesMimeType([NativeTypeName("LPCWSTR")] ushort* wzMimeType, BOOL* pfMatches);
+        HRESULT MatchesMimeType([NativeTypeName("LPCWSTR")] char* wzMimeType, BOOL* pfMatches);
     }
 
     public partial struct Vtbl<TSelf>
@@ -267,19 +267,19 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
         public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
@@ -288,19 +288,19 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
         public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> GetPixelFormats;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetColorManagementVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetColorManagementVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetDeviceManufacturer;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceModels;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetDeviceModels;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetMimeTypes;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetMimeTypes;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFileExtensions;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetFileExtensions;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportAnimation;
@@ -315,6 +315,6 @@ public unsafe partial struct IWICBitmapCodecInfo : IWICBitmapCodecInfo.Interface
         public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportMultiframe;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> MatchesMimeType;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> MatchesMimeType;
     }
 }

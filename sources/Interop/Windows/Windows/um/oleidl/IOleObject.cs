@@ -65,9 +65,9 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
     /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetHostNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] ushort* szContainerApp, [NativeTypeName("LPCOLESTR")] ushort* szContainerObj)
+    public HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] char* szContainerApp, [NativeTypeName("LPCOLESTR")] char* szContainerObj)
     {
-        return ((delegate* unmanaged<IOleObject*, ushort*, ushort*, int>)(lpVtbl[5]))((IOleObject*)Unsafe.AsPointer(ref this), szContainerApp, szContainerObj);
+        return ((delegate* unmanaged<IOleObject*, char*, char*, int>)(lpVtbl[5]))((IOleObject*)Unsafe.AsPointer(ref this), szContainerApp, szContainerObj);
     }
 
     /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.Close"]/*' />
@@ -153,9 +153,9 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
     /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetUserType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] ushort** pszUserType)
+    public HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] char** pszUserType)
     {
-        return ((delegate* unmanaged<IOleObject*, uint, ushort**, int>)(lpVtbl[16]))((IOleObject*)Unsafe.AsPointer(ref this), dwFormOfType, pszUserType);
+        return ((delegate* unmanaged<IOleObject*, uint, char**, int>)(lpVtbl[16]))((IOleObject*)Unsafe.AsPointer(ref this), dwFormOfType, pszUserType);
     }
 
     /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetExtent"]/*' />
@@ -223,7 +223,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
         HRESULT GetClientSite(IOleClientSite** ppClientSite);
 
         [VtblIndex(5)]
-        HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] ushort* szContainerApp, [NativeTypeName("LPCOLESTR")] ushort* szContainerObj);
+        HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] char* szContainerApp, [NativeTypeName("LPCOLESTR")] char* szContainerObj);
 
         [VtblIndex(6)]
         HRESULT Close([NativeTypeName("DWORD")] uint dwSaveOption);
@@ -256,7 +256,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
         HRESULT GetUserClassID([NativeTypeName("CLSID *")] Guid* pClsid);
 
         [VtblIndex(16)]
-        HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] ushort** pszUserType);
+        HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] char** pszUserType);
 
         [VtblIndex(17)]
         HRESULT SetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("SIZEL *")] SIZE* psizel);
@@ -299,7 +299,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IOleClientSite**, int> GetClientSite;
 
         [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetHostNames;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetHostNames;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Close;
@@ -332,7 +332,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, int> GetUserClassID;
 
         [NativeTypeName("HRESULT (DWORD, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetUserType;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetUserType;
 
         [NativeTypeName("HRESULT (DWORD, SIZEL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, SIZE*, int> SetExtent;

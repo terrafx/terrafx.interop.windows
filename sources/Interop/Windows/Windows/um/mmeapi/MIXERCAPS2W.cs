@@ -26,7 +26,7 @@ public unsafe partial struct MIXERCAPS2W
 
     /// <include file='MIXERCAPS2W.xml' path='doc/member[@name="MIXERCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public fixed char szPname[32];
 
     /// <include file='MIXERCAPS2W.xml' path='doc/member[@name="MIXERCAPS2W.fdwSupport"]/*' />
     [NativeTypeName("DWORD")]

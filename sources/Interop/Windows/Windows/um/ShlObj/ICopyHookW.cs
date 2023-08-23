@@ -49,15 +49,15 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
     /// <include file='ICopyHookW.xml' path='doc/member[@name="ICopyHookW.CopyCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] ushort* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] ushort* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
+    public uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] char* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] char* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
     {
-        return ((delegate* unmanaged<ICopyHookW*, HWND, uint, uint, ushort*, uint, ushort*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+        return ((delegate* unmanaged<ICopyHookW*, HWND, uint, uint, char*, uint, char*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] ushort* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] ushort* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs);
+        uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] char* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] char* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT (HWND, UINT, UINT, PCWSTR, DWORD, PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, uint, ushort*, uint, ushort*, uint, uint> CopyCallback;
+        public delegate* unmanaged<TSelf*, HWND, uint, uint, char*, uint, char*, uint, uint> CopyCallback;
     }
 }

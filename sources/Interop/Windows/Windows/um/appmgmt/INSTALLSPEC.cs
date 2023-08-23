@@ -20,12 +20,12 @@ public unsafe partial struct INSTALLSPEC
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.FileExt"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("WCHAR *")]
-    public ushort* FileExt;
+    public char* FileExt;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.ProgId"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("WCHAR *")]
-    public ushort* ProgId;
+    public char* ProgId;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.COMClass"]/*' />
     [FieldOffset(0)]
@@ -37,7 +37,7 @@ public unsafe partial struct INSTALLSPEC
     {
         /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct.Name"]/*' />
         [NativeTypeName("WCHAR *")]
-        public ushort* Name;
+        public char* Name;
 
         /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct.GPOId"]/*' />
         public Guid GPOId;

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLBaseFontElement : IHTMLBaseFontElement.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLBaseFontElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLBaseFontElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,17 +97,17 @@ public unsafe partial struct IHTMLBaseFontElement : IHTMLBaseFontElement.Interfa
     /// <include file='IHTMLBaseFontElement.xml' path='doc/member[@name="IHTMLBaseFontElement.put_face"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_face([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_face([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLBaseFontElement*, ushort*, int>)(lpVtbl[9]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLBaseFontElement*, char*, int>)(lpVtbl[9]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLBaseFontElement.xml' path='doc/member[@name="IHTMLBaseFontElement.get_face"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_face([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_face([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLBaseFontElement*, ushort**, int>)(lpVtbl[10]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLBaseFontElement*, char**, int>)(lpVtbl[10]))((IHTMLBaseFontElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLBaseFontElement.xml' path='doc/member[@name="IHTMLBaseFontElement.put_size"]/*' />
@@ -135,10 +135,10 @@ public unsafe partial struct IHTMLBaseFontElement : IHTMLBaseFontElement.Interfa
         HRESULT get_color(VARIANT* p);
 
         [VtblIndex(9)]
-        HRESULT put_face([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_face([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_face([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_face([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT put_size([NativeTypeName("long")] int v);
@@ -166,7 +166,7 @@ public unsafe partial struct IHTMLBaseFontElement : IHTMLBaseFontElement.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -178,10 +178,10 @@ public unsafe partial struct IHTMLBaseFontElement : IHTMLBaseFontElement.Interfa
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_color;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_face;
+        public delegate* unmanaged<TSelf*, char*, int> put_face;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_face;
+        public delegate* unmanaged<TSelf*, char**, int> get_face;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_size;

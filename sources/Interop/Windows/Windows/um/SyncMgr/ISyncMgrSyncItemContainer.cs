@@ -49,9 +49,9 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem)
+    public HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] char* pszItemID, ISyncMgrSyncItem** ppItem)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, ushort*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
+        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, char*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
     }
 
     /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItemEnumerator"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] ushort* pszItemID, ISyncMgrSyncItem** ppItem);
+        HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] char* pszItemID, ISyncMgrSyncItem** ppItem);
 
         [VtblIndex(4)]
         HRESULT GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum);
@@ -95,7 +95,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ISyncMgrSyncItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ISyncMgrSyncItem**, int> GetSyncItem;
+        public delegate* unmanaged<TSelf*, char*, ISyncMgrSyncItem**, int> GetSyncItem;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;

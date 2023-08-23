@@ -65,9 +65,9 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.RenderDvdVideoVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] ushort* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus)
+    public HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] char* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus)
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, ushort*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
+        return ((delegate* unmanaged<IDvdGraphBuilder*, char*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
         HRESULT GetDvdInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvIF);
 
         [VtblIndex(5)]
-        HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] ushort* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus);
+        HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] char* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDvdInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, AM_DVD_RENDERSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
+        public delegate* unmanaged<TSelf*, char*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
     }
 }

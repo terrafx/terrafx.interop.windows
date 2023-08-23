@@ -97,9 +97,9 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
     /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.LogError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError)
+    public HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] char* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError)
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, ushort*, SYNCMGRLOGERRORINFO*, int>)(lpVtbl[9]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), dwErrorLevel, pszErrorText, pSyncLogError);
+        return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, char*, SYNCMGRLOGERRORINFO*, int>)(lpVtbl[9]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), dwErrorLevel, pszErrorText, pSyncLogError);
     }
 
     /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.DeleteLogError"]/*' />
@@ -113,9 +113,9 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
     /// <include file='ISyncMgrSynchronizeCallback.xml' path='doc/member[@name="ISyncMgrSynchronizeCallback.EstablishConnection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)
+    public HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] char* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int>)(lpVtbl[11]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), pwszConnection, dwReserved);
+        return ((delegate* unmanaged<ISyncMgrSynchronizeCallback*, char*, uint, int>)(lpVtbl[11]))((ISyncMgrSynchronizeCallback*)Unsafe.AsPointer(ref this), pwszConnection, dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -139,13 +139,13 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         HRESULT Progress([NativeTypeName("const GUID &")] Guid* ItemID, [NativeTypeName("const SYNCMGRPROGRESSITEM *")] SYNCMGRPROGRESSITEM* pSyncProgressItem);
 
         [VtblIndex(9)]
-        HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] ushort* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError);
+        HRESULT LogError([NativeTypeName("DWORD")] uint dwErrorLevel, [NativeTypeName("LPCWSTR")] char* pszErrorText, [NativeTypeName("const SYNCMGRLOGERRORINFO *")] SYNCMGRLOGERRORINFO* pSyncLogError);
 
         [VtblIndex(10)]
         HRESULT DeleteLogError([NativeTypeName("const GUID &")] Guid* ErrorID, [NativeTypeName("DWORD")] uint dwReserved);
 
         [VtblIndex(11)]
-        HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved);
+        HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] char* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
     public partial struct Vtbl<TSelf>
@@ -179,12 +179,12 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         public delegate* unmanaged<TSelf*, Guid*, SYNCMGRPROGRESSITEM*, int> Progress;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, const SYNCMGRLOGERRORINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, SYNCMGRLOGERRORINFO*, int> LogError;
+        public delegate* unmanaged<TSelf*, uint, char*, SYNCMGRLOGERRORINFO*, int> LogError;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, uint, int> DeleteLogError;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> EstablishConnection;
+        public delegate* unmanaged<TSelf*, char*, uint, int> EstablishConnection;
     }
 }

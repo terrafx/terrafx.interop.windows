@@ -74,9 +74,9 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
     /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+    public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12Device*, ushort*, int>)(lpVtbl[6]))((ID3D12Device*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged<ID3D12Device*, char*, int>)(lpVtbl[6]))((ID3D12Device*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D12Device.xml' path='doc/member[@name="ID3D12Device.GetNodeCount"]/*' />
@@ -276,9 +276,9 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
     /// <include file='ID3D12Device.xml' path='doc/member[@name="ID3D12Device.CreateSharedHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] ushort* Name, HANDLE* pHandle)
+    public HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] char* Name, HANDLE* pHandle)
     {
-        return ((delegate* unmanaged<ID3D12Device*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int>)(lpVtbl[31]))((ID3D12Device*)Unsafe.AsPointer(ref this), pObject, pAttributes, Access, Name, pHandle);
+        return ((delegate* unmanaged<ID3D12Device*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int>)(lpVtbl[31]))((ID3D12Device*)Unsafe.AsPointer(ref this), pObject, pAttributes, Access, Name, pHandle);
     }
 
     /// <include file='ID3D12Device.xml' path='doc/member[@name="ID3D12Device.OpenSharedHandle"]/*' />
@@ -292,9 +292,9 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
     /// <include file='ID3D12Device.xml' path='doc/member[@name="ID3D12Device.OpenSharedHandleByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, HANDLE* pNTHandle)
+    public HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, HANDLE* pNTHandle)
     {
-        return ((delegate* unmanaged<ID3D12Device*, ushort*, uint, HANDLE*, int>)(lpVtbl[33]))((ID3D12Device*)Unsafe.AsPointer(ref this), Name, Access, pNTHandle);
+        return ((delegate* unmanaged<ID3D12Device*, char*, uint, HANDLE*, int>)(lpVtbl[33]))((ID3D12Device*)Unsafe.AsPointer(ref this), Name, Access, pNTHandle);
     }
 
     /// <include file='ID3D12Device.xml' path='doc/member[@name="ID3D12Device.MakeResident"]/*' />
@@ -453,13 +453,13 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
         HRESULT CreateReservedResource([NativeTypeName("const D3D12_RESOURCE_DESC *")] D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialState, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("const IID &")] Guid* riid, void** ppvResource);
 
         [VtblIndex(31)]
-        HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] ushort* Name, HANDLE* pHandle);
+        HRESULT CreateSharedHandle(ID3D12DeviceChild* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint Access, [NativeTypeName("LPCWSTR")] char* Name, HANDLE* pHandle);
 
         [VtblIndex(32)]
         HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
 
         [VtblIndex(33)]
-        HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint Access, HANDLE* pNTHandle);
+        HRESULT OpenSharedHandleByName([NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("DWORD")] uint Access, HANDLE* pNTHandle);
 
         [VtblIndex(34)]
         HRESULT MakeResident(uint NumObjects, [NativeTypeName("ID3D12Pageable *const *")] ID3D12Pageable** ppObjects);
@@ -514,7 +514,7 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetNodeCount;
@@ -589,13 +589,13 @@ public unsafe partial struct ID3D12Device : ID3D12Device.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, Guid*, void**, int> CreateReservedResource;
 
         [NativeTypeName("HRESULT (ID3D12DeviceChild *, const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged<TSelf*, ID3D12DeviceChild*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int> CreateSharedHandle;
 
         [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, int> OpenSharedHandle;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, HANDLE*, int> OpenSharedHandleByName;
+        public delegate* unmanaged<TSelf*, char*, uint, HANDLE*, int> OpenSharedHandleByName;
 
         [NativeTypeName("HRESULT (UINT, ID3D12Pageable *const *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ID3D12Pageable**, int> MakeResident;

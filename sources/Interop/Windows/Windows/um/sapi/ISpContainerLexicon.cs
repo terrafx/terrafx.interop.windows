@@ -49,25 +49,25 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
     /// <inheritdoc cref="ISpLexicon.GetPronunciations" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
+    public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
+        return ((delegate* unmanaged<ISpContainerLexicon*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
     }
 
     /// <inheritdoc cref="ISpLexicon.AddPronunciation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[4]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged<ISpContainerLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[4]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <inheritdoc cref="ISpLexicon.RemovePronunciation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
+    public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] char* pszPronunciation)
     {
-        return ((delegate* unmanaged<ISpContainerLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[5]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
+        return ((delegate* unmanaged<ISpContainerLexicon*, char*, ushort, SPPARTOFSPEECH, char*, int>)(lpVtbl[5]))((ISpContainerLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
     /// <inheritdoc cref="ISpLexicon.GetGeneration" />
@@ -121,13 +121,13 @@ public unsafe partial struct ISpContainerLexicon : ISpContainerLexicon.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, DWORD, SPWORDPRONUNCIATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
+        public delegate* unmanaged<TSelf*, char*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> AddPronunciation;
+        public delegate* unmanaged<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> AddPronunciation;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, SPPARTOFSPEECH, PCSPPHONEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int> RemovePronunciation;
+        public delegate* unmanaged<TSelf*, char*, ushort, SPPARTOFSPEECH, char*, int> RemovePronunciation;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetGeneration;

@@ -73,17 +73,17 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetComponentDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr)
+    public HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, ushort**, int>)(lpVtbl[6]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
+        return ((delegate* unmanaged<IVersionInfo*, uint, char**, int>)(lpVtbl[6]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetInstanceDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr)
+    public HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, ushort**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
+        return ((delegate* unmanaged<IVersionInfo*, uint, char**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,10 +98,10 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
         HRESULT GetBuildVersion([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("DWORD *")] uint* pdwMajor, [NativeTypeName("DWORD *")] uint* pdwMinor);
 
         [VtblIndex(6)]
-        HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr);
+        HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr);
 
         [VtblIndex(7)]
-        HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr);
+        HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr);
     }
 
     public partial struct Vtbl<TSelf>
@@ -126,9 +126,9 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetBuildVersion;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetComponentDescription;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetComponentDescription;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetInstanceDescription;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetInstanceDescription;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWebBrowser*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWebBrowser*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IWebBrowser*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWebBrowser*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.Navigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT Navigate([NativeTypeName("BSTR")] ushort* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers)
+    public HRESULT Navigate([NativeTypeName("BSTR")] char* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers)
     {
-        return ((delegate* unmanaged<IWebBrowser*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[11]))((IWebBrowser*)Unsafe.AsPointer(ref this), URL, Flags, TargetFrameName, PostData, Headers);
+        return ((delegate* unmanaged<IWebBrowser*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[11]))((IWebBrowser*)Unsafe.AsPointer(ref this), URL, Flags, TargetFrameName, PostData, Headers);
     }
 
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.Refresh"]/*' />
@@ -185,9 +185,9 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.get_Type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_Type([NativeTypeName("BSTR *")] ushort** Type)
+    public HRESULT get_Type([NativeTypeName("BSTR *")] char** Type)
     {
-        return ((delegate* unmanaged<IWebBrowser*, ushort**, int>)(lpVtbl[20]))((IWebBrowser*)Unsafe.AsPointer(ref this), Type);
+        return ((delegate* unmanaged<IWebBrowser*, char**, int>)(lpVtbl[20]))((IWebBrowser*)Unsafe.AsPointer(ref this), Type);
     }
 
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.get_Left"]/*' />
@@ -257,17 +257,17 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.get_LocationName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_LocationName([NativeTypeName("BSTR *")] ushort** LocationName)
+    public HRESULT get_LocationName([NativeTypeName("BSTR *")] char** LocationName)
     {
-        return ((delegate* unmanaged<IWebBrowser*, ushort**, int>)(lpVtbl[29]))((IWebBrowser*)Unsafe.AsPointer(ref this), LocationName);
+        return ((delegate* unmanaged<IWebBrowser*, char**, int>)(lpVtbl[29]))((IWebBrowser*)Unsafe.AsPointer(ref this), LocationName);
     }
 
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.get_LocationURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT get_LocationURL([NativeTypeName("BSTR *")] ushort** LocationURL)
+    public HRESULT get_LocationURL([NativeTypeName("BSTR *")] char** LocationURL)
     {
-        return ((delegate* unmanaged<IWebBrowser*, ushort**, int>)(lpVtbl[30]))((IWebBrowser*)Unsafe.AsPointer(ref this), LocationURL);
+        return ((delegate* unmanaged<IWebBrowser*, char**, int>)(lpVtbl[30]))((IWebBrowser*)Unsafe.AsPointer(ref this), LocationURL);
     }
 
     /// <include file='IWebBrowser.xml' path='doc/member[@name="IWebBrowser.get_Busy"]/*' />
@@ -293,7 +293,7 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         HRESULT GoSearch();
 
         [VtblIndex(11)]
-        HRESULT Navigate([NativeTypeName("BSTR")] ushort* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers);
+        HRESULT Navigate([NativeTypeName("BSTR")] char* URL, VARIANT* Flags, VARIANT* TargetFrameName, VARIANT* PostData, VARIANT* Headers);
 
         [VtblIndex(12)]
         HRESULT Refresh();
@@ -320,7 +320,7 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         HRESULT get_TopLevelContainer([NativeTypeName("VARIANT_BOOL *")] short* pBool);
 
         [VtblIndex(20)]
-        HRESULT get_Type([NativeTypeName("BSTR *")] ushort** Type);
+        HRESULT get_Type([NativeTypeName("BSTR *")] char** Type);
 
         [VtblIndex(21)]
         HRESULT get_Left([NativeTypeName("long *")] int* pl);
@@ -347,10 +347,10 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         HRESULT put_Height([NativeTypeName("long")] int Height);
 
         [VtblIndex(29)]
-        HRESULT get_LocationName([NativeTypeName("BSTR *")] ushort** LocationName);
+        HRESULT get_LocationName([NativeTypeName("BSTR *")] char** LocationName);
 
         [VtblIndex(30)]
-        HRESULT get_LocationURL([NativeTypeName("BSTR *")] ushort** LocationURL);
+        HRESULT get_LocationURL([NativeTypeName("BSTR *")] char** LocationURL);
 
         [VtblIndex(31)]
         HRESULT get_Busy([NativeTypeName("VARIANT_BOOL *")] short* pBool);
@@ -375,7 +375,7 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -393,7 +393,7 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int> GoSearch;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> Navigate;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> Navigate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Refresh;
@@ -420,7 +420,7 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, short*, int> get_TopLevelContainer;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Type;
+        public delegate* unmanaged<TSelf*, char**, int> get_Type;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_Left;
@@ -447,10 +447,10 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int, int> put_Height;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_LocationName;
+        public delegate* unmanaged<TSelf*, char**, int> get_LocationName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_LocationURL;
+        public delegate* unmanaged<TSelf*, char**, int> get_LocationURL;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_Busy;

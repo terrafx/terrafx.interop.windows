@@ -65,9 +65,9 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
     /// <include file='IRawCDImageTrackInfo.xml' path='doc/member[@name="IRawCDImageTrackInfo.get_ISRC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_ISRC([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ISRC([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IRawCDImageTrackInfo*, ushort**, int>)(lpVtbl[11]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IRawCDImageTrackInfo*, char**, int>)(lpVtbl[11]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageTrackInfo.xml' path='doc/member[@name="IRawCDImageTrackInfo.put_ISRC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_ISRC([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_ISRC([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IRawCDImageTrackInfo*, ushort*, int>)(lpVtbl[12]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IRawCDImageTrackInfo*, char*, int>)(lpVtbl[12]))((IRawCDImageTrackInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageTrackInfo.xml' path='doc/member[@name="IRawCDImageTrackInfo.get_DigitalAudioCopySetting"]/*' />
@@ -197,10 +197,10 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
         HRESULT get_SectorType(IMAPI_CD_SECTOR_TYPE* value);
 
         [VtblIndex(11)]
-        HRESULT get_ISRC([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ISRC([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(12)]
-        HRESULT put_ISRC([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_ISRC([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(13)]
         HRESULT get_DigitalAudioCopySetting(IMAPI_CD_TRACK_DIGITAL_COPY_SETTING* value);
@@ -243,7 +243,7 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -261,10 +261,10 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
         public delegate* unmanaged<TSelf*, IMAPI_CD_SECTOR_TYPE*, int> get_SectorType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ISRC;
+        public delegate* unmanaged<TSelf*, char**, int> get_ISRC;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_ISRC;
+        public delegate* unmanaged<TSelf*, char*, int> put_ISRC;
 
         [NativeTypeName("HRESULT (IMAPI_CD_TRACK_DIGITAL_COPY_SETTING *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING*, int> get_DigitalAudioCopySetting;

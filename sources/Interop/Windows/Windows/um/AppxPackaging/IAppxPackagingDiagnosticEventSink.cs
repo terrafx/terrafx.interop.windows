@@ -49,26 +49,26 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
     /// <include file='IAppxPackagingDiagnosticEventSink.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSink.ReportContextChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] ushort* contextMessage, [NativeTypeName("LPCWSTR")] ushort* detailsMessage)
+    public HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] char* contextMessage, [NativeTypeName("LPCWSTR")] char* detailsMessage)
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, ushort*, ushort*, int>)(lpVtbl[3]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), changeType, contextId, contextName, contextMessage, detailsMessage);
+        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, char*, char*, int>)(lpVtbl[3]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), changeType, contextId, contextName, contextMessage, detailsMessage);
     }
 
     /// <include file='IAppxPackagingDiagnosticEventSink.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSink.ReportError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ReportError([NativeTypeName("LPCWSTR")] ushort* errorMessage)
+    public HRESULT ReportError([NativeTypeName("LPCWSTR")] char* errorMessage)
     {
-        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, ushort*, int>)(lpVtbl[4]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), errorMessage);
+        return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSink*, char*, int>)(lpVtbl[4]))((IAppxPackagingDiagnosticEventSink*)Unsafe.AsPointer(ref this), errorMessage);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] ushort* contextMessage, [NativeTypeName("LPCWSTR")] ushort* detailsMessage);
+        HRESULT ReportContextChange(APPX_PACKAGING_CONTEXT_CHANGE_TYPE changeType, [NativeTypeName("LONG")] int contextId, [NativeTypeName("LPCSTR")] sbyte* contextName, [NativeTypeName("LPCWSTR")] char* contextMessage, [NativeTypeName("LPCWSTR")] char* detailsMessage);
 
         [VtblIndex(4)]
-        HRESULT ReportError([NativeTypeName("LPCWSTR")] ushort* errorMessage);
+        HRESULT ReportError([NativeTypeName("LPCWSTR")] char* errorMessage);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSink : IAppxPackagingD
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APPX_PACKAGING_CONTEXT_CHANGE_TYPE, LONG, LPCSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, ushort*, ushort*, int> ReportContextChange;
+        public delegate* unmanaged<TSelf*, APPX_PACKAGING_CONTEXT_CHANGE_TYPE, int, sbyte*, char*, char*, int> ReportContextChange;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> ReportError;
+        public delegate* unmanaged<TSelf*, char*, int> ReportError;
     }
 }

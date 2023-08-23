@@ -64,7 +64,7 @@ public unsafe partial struct FILE_NOTIFY_FULL_INFORMATION
 
     /// <include file='FILE_NOTIFY_FULL_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_FULL_INFORMATION.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileName[1];
+    public fixed char FileName[1];
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ReparsePointTag"]/*' />
     [UnscopedRef]

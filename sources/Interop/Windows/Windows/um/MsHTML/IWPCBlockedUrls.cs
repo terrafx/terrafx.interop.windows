@@ -57,9 +57,9 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
     /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.GetUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl)
+    public HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] char** pbstrUrl)
     {
-        return ((delegate* unmanaged<IWPCBlockedUrls*, uint, ushort**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
+        return ((delegate* unmanaged<IWPCBlockedUrls*, uint, char**, int>)(lpVtbl[4]))((IWPCBlockedUrls*)Unsafe.AsPointer(ref this), dwIdx, pbstrUrl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
         HRESULT GetCount([NativeTypeName("DWORD *")] uint* pdwCount);
 
         [VtblIndex(4)]
-        HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] ushort** pbstrUrl);
+        HRESULT GetUrl([NativeTypeName("DWORD")] uint dwIdx, [NativeTypeName("BSTR *")] char** pbstrUrl);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativ
         public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetUrl;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetUrl;
     }
 }

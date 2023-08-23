@@ -49,17 +49,17 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestH
     /// <include file='IAppxManifestHostRuntimeDependency.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependency.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, char**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxManifestHostRuntimeDependency.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependency.GetPublisher"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
+    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] char** publisher)
     {
-        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[4]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), publisher);
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, char**, int>)(lpVtbl[4]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), publisher);
     }
 
     /// <include file='IAppxManifestHostRuntimeDependency.xml' path='doc/member[@name="IAppxManifestHostRuntimeDependency.GetMinVersion"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestH
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
-        HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+        HRESULT GetPublisher([NativeTypeName("LPWSTR *")] char** publisher);
 
         [VtblIndex(5)]
         HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
@@ -95,10 +95,10 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestH
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, char**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;

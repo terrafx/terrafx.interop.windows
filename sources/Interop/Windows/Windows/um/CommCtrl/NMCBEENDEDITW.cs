@@ -19,7 +19,7 @@ public unsafe partial struct NMCBEENDEDITW
 
     /// <include file='NMCBEENDEDITW.xml' path='doc/member[@name="NMCBEENDEDITW.szText"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szText[260];
+    public fixed char szText[260];
 
     /// <include file='NMCBEENDEDITW.xml' path='doc/member[@name="NMCBEENDEDITW.iWhy"]/*' />
     public int iWhy;

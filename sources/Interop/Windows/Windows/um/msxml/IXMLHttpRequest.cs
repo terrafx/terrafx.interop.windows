@@ -65,9 +65,9 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IXMLHttpRequest*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword)
+    public HRESULT open([NativeTypeName("BSTR")] char* bstrMethod, [NativeTypeName("BSTR")] char* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[7]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl, varAsync, bstrUser, bstrPassword);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char*, char*, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[7]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl, varAsync, bstrUser, bstrPassword);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.setRequestHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue)
+    public HRESULT setRequestHeader([NativeTypeName("BSTR")] char* bstrHeader, [NativeTypeName("BSTR")] char* bstrValue)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort*, int>)(lpVtbl[8]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, bstrValue);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char*, char*, int>)(lpVtbl[8]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, bstrValue);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.getResponseHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** pbstrValue)
+    public HRESULT getResponseHeader([NativeTypeName("BSTR")] char* bstrHeader, [NativeTypeName("BSTR *")] char** pbstrValue)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort*, ushort**, int>)(lpVtbl[9]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, pbstrValue);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char*, char**, int>)(lpVtbl[9]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), bstrHeader, pbstrValue);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.getAllResponseHeaders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** pbstrHeaders)
+    public HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] char** pbstrHeaders)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort**, int>)(lpVtbl[10]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrHeaders);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char**, int>)(lpVtbl[10]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrHeaders);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.send"]/*' />
@@ -137,9 +137,9 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.get_statusText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** pbstrStatus)
+    public HRESULT get_statusText([NativeTypeName("BSTR *")] char** pbstrStatus)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort**, int>)(lpVtbl[14]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrStatus);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char**, int>)(lpVtbl[14]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrStatus);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.get_responseXML"]/*' />
@@ -153,9 +153,9 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.get_responseText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** pbstrBody)
+    public HRESULT get_responseText([NativeTypeName("BSTR *")] char** pbstrBody)
     {
-        return ((delegate* unmanaged<IXMLHttpRequest*, ushort**, int>)(lpVtbl[16]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrBody);
+        return ((delegate* unmanaged<IXMLHttpRequest*, char**, int>)(lpVtbl[16]))((IXMLHttpRequest*)Unsafe.AsPointer(ref this), pbstrBody);
     }
 
     /// <include file='IXMLHttpRequest.xml' path='doc/member[@name="IXMLHttpRequest.get_responseBody"]/*' />
@@ -193,16 +193,16 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword);
+        HRESULT open([NativeTypeName("BSTR")] char* bstrMethod, [NativeTypeName("BSTR")] char* bstrUrl, VARIANT varAsync, VARIANT bstrUser, VARIANT bstrPassword);
 
         [VtblIndex(8)]
-        HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue);
+        HRESULT setRequestHeader([NativeTypeName("BSTR")] char* bstrHeader, [NativeTypeName("BSTR")] char* bstrValue);
 
         [VtblIndex(9)]
-        HRESULT getResponseHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR *")] ushort** pbstrValue);
+        HRESULT getResponseHeader([NativeTypeName("BSTR")] char* bstrHeader, [NativeTypeName("BSTR *")] char** pbstrValue);
 
         [VtblIndex(10)]
-        HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] ushort** pbstrHeaders);
+        HRESULT getAllResponseHeaders([NativeTypeName("BSTR *")] char** pbstrHeaders);
 
         [VtblIndex(11)]
         HRESULT send(VARIANT varBody);
@@ -214,13 +214,13 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
         HRESULT get_status([NativeTypeName("long *")] int* plStatus);
 
         [VtblIndex(14)]
-        HRESULT get_statusText([NativeTypeName("BSTR *")] ushort** pbstrStatus);
+        HRESULT get_statusText([NativeTypeName("BSTR *")] char** pbstrStatus);
 
         [VtblIndex(15)]
         HRESULT get_responseXML(IDispatch** ppBody);
 
         [VtblIndex(16)]
-        HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** pbstrBody);
+        HRESULT get_responseText([NativeTypeName("BSTR *")] char** pbstrBody);
 
         [VtblIndex(17)]
         HRESULT get_responseBody(VARIANT* pvarBody);
@@ -254,22 +254,22 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int> open;
+        public delegate* unmanaged<TSelf*, char*, char*, VARIANT, VARIANT, VARIANT, int> open;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> setRequestHeader;
+        public delegate* unmanaged<TSelf*, char*, char*, int> setRequestHeader;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getResponseHeader;
+        public delegate* unmanaged<TSelf*, char*, char**, int> getResponseHeader;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> getAllResponseHeaders;
+        public delegate* unmanaged<TSelf*, char**, int> getAllResponseHeaders;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> send;
@@ -281,13 +281,13 @@ public unsafe partial struct IXMLHttpRequest : IXMLHttpRequest.Interface, INativ
         public delegate* unmanaged<TSelf*, int*, int> get_status;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_statusText;
+        public delegate* unmanaged<TSelf*, char**, int> get_statusText;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_responseXML;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_responseText;
+        public delegate* unmanaged<TSelf*, char**, int> get_responseText;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_responseBody;

@@ -49,26 +49,26 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface, IN
     /// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID.SetProgID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID)
+    public HRESULT SetProgID([NativeTypeName("LPCWSTR")] char* pszProgID)
     {
-        return ((delegate* unmanaged<IObjectWithProgID*, ushort*, int>)(lpVtbl[3]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), pszProgID);
+        return ((delegate* unmanaged<IObjectWithProgID*, char*, int>)(lpVtbl[3]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), pszProgID);
     }
 
     /// <include file='IObjectWithProgID.xml' path='doc/member[@name="IObjectWithProgID.GetProgID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID)
+    public HRESULT GetProgID([NativeTypeName("LPWSTR *")] char** ppszProgID)
     {
-        return ((delegate* unmanaged<IObjectWithProgID*, ushort**, int>)(lpVtbl[4]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), ppszProgID);
+        return ((delegate* unmanaged<IObjectWithProgID*, char**, int>)(lpVtbl[4]))((IObjectWithProgID*)Unsafe.AsPointer(ref this), ppszProgID);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetProgID([NativeTypeName("LPCWSTR")] ushort* pszProgID);
+        HRESULT SetProgID([NativeTypeName("LPCWSTR")] char* pszProgID);
 
         [VtblIndex(4)]
-        HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID);
+        HRESULT GetProgID([NativeTypeName("LPWSTR *")] char** ppszProgID);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetProgID;
+        public delegate* unmanaged<TSelf*, char*, int> SetProgID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetProgID;
+        public delegate* unmanaged<TSelf*, char**, int> GetProgID;
     }
 }

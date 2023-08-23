@@ -90,15 +90,15 @@ public unsafe partial struct IDirectInput2W : IDirectInput2W.Interface, INativeG
     /// <include file='IDirectInput2W.xml' path='doc/member[@name="IDirectInput2W.FindDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPGUID")] Guid* param2)
+    public HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPGUID")] Guid* param2)
     {
-        return ((delegate* unmanaged<IDirectInput2W*, Guid*, ushort*, Guid*, int>)(lpVtbl[8]))((IDirectInput2W*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged<IDirectInput2W*, Guid*, char*, Guid*, int>)(lpVtbl[8]))((IDirectInput2W*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     public interface Interface : IDirectInputW.Interface
     {
         [VtblIndex(8)]
-        HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPGUID")] Guid* param2);
+        HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPGUID")] Guid* param2);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,6 +129,6 @@ public unsafe partial struct IDirectInput2W : IDirectInput2W.Interface, INativeG
         public delegate* unmanaged<TSelf*, HINSTANCE, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR, LPGUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, Guid*, int> FindDevice;
+        public delegate* unmanaged<TSelf*, Guid*, char*, Guid*, int> FindDevice;
     }
 }

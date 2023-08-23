@@ -117,7 +117,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ActivateAudioInterfaceAsync"]/*' />
     [DllImport("mmdevapi", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
+    public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] char* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
     [NativeTypeName("#define ENDPOINT_SYSFX_ENABLED 0x00000000")]
     public const int ENDPOINT_SYSFX_ENABLED = 0x00000000;

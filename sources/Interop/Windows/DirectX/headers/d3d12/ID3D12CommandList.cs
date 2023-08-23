@@ -74,9 +74,9 @@ public unsafe partial struct ID3D12CommandList : ID3D12CommandList.Interface, IN
     /// <inheritdoc cref="ID3D12Object.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+    public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12CommandList*, ushort*, int>)(lpVtbl[6]))((ID3D12CommandList*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged<ID3D12CommandList*, char*, int>)(lpVtbl[6]))((ID3D12CommandList*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
@@ -123,7 +123,7 @@ public unsafe partial struct ID3D12CommandList : ID3D12CommandList.Interface, IN
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;

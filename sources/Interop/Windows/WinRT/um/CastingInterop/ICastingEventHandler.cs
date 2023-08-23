@@ -58,9 +58,9 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     /// <include file='ICastingEventHandler.xml' path='doc/member[@name="ICastingEventHandler.OnError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] ushort* errorMessage)
+    public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] char* errorMessage)
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, ushort*, int>)(lpVtbl[4]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), errorStatus, errorMessage);
+        return ((delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, char*, int>)(lpVtbl[4]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), errorStatus, errorMessage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -69,7 +69,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
         HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState);
 
         [VtblIndex(4)]
-        HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] ushort* errorMessage);
+        HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] char* errorMessage);
     }
 
     public partial struct Vtbl<TSelf>
@@ -88,6 +88,6 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
         public delegate* unmanaged<TSelf*, CASTING_CONNECTION_STATE, int> OnStateChanged;
 
         [NativeTypeName("HRESULT (CASTING_CONNECTION_ERROR_STATUS, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_ERROR_STATUS, ushort*, int> OnError;
+        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_ERROR_STATUS, char*, int> OnError;
     }
 }

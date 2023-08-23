@@ -51,9 +51,9 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.AddPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream)
+    public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
+        return ((delegate* unmanaged<IAppxBundleWriter*, char*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
     }
 
     /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.Close"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream);
+        HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream);
 
         [VtblIndex(4)]
         HRESULT Close();
@@ -86,7 +86,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddPayloadPackage;
+        public delegate* unmanaged<TSelf*, char*, IStream*, int> AddPayloadPackage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

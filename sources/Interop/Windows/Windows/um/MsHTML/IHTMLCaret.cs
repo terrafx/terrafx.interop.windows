@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface, INativeGuid
     /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.InsertText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pText, [NativeTypeName("LONG")] int lLen)
+    public HRESULT InsertText([NativeTypeName("OLECHAR *")] char* pText, [NativeTypeName("LONG")] int lLen)
     {
-        return ((delegate* unmanaged<IHTMLCaret*, ushort*, int, int>)(lpVtbl[10]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pText, lLen);
+        return ((delegate* unmanaged<IHTMLCaret*, char*, int, int>)(lpVtbl[10]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pText, lLen);
     }
 
     /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.ScrollIntoView"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface, INativeGuid
         HRESULT Hide();
 
         [VtblIndex(10)]
-        HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pText, [NativeTypeName("LONG")] int lLen);
+        HRESULT InsertText([NativeTypeName("OLECHAR *")] char* pText, [NativeTypeName("LONG")] int lLen);
 
         [VtblIndex(11)]
         HRESULT ScrollIntoView();
@@ -215,7 +215,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int> Hide;
 
         [NativeTypeName("HRESULT (OLECHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> InsertText;
+        public delegate* unmanaged<TSelf*, char*, int, int> InsertText;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> ScrollIntoView;

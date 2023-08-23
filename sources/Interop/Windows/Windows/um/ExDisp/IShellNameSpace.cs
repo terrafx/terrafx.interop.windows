@@ -65,9 +65,9 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellNameSpace*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellNameSpace*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -137,9 +137,9 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
     /// <inheritdoc cref="IShellFavoritesNameSpace.InvokeContextMenuCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand)
+    public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] char* strCommand)
     {
-        return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[14]))((IShellNameSpace*)Unsafe.AsPointer(ref this), strCommand);
+        return ((delegate* unmanaged<IShellNameSpace*, char*, int>)(lpVtbl[14]))((IShellNameSpace*)Unsafe.AsPointer(ref this), strCommand);
     }
 
     /// <inheritdoc cref="IShellFavoritesNameSpace.MoveSelectionTo" />
@@ -177,9 +177,9 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
     /// <inheritdoc cref="IShellFavoritesNameSpace.SetRoot" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)
+    public HRESULT SetRoot([NativeTypeName("BSTR")] char* bstrFullPath)
     {
-        return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[19]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
+        return ((delegate* unmanaged<IShellNameSpace*, char*, int>)(lpVtbl[19]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
     }
 
     /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_EnumOptions"]/*' />
@@ -297,17 +297,17 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
     /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_Columns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT get_Columns([NativeTypeName("BSTR *")] ushort** bstrColumns)
+    public HRESULT get_Columns([NativeTypeName("BSTR *")] char** bstrColumns)
     {
-        return ((delegate* unmanaged<IShellNameSpace*, ushort**, int>)(lpVtbl[34]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
+        return ((delegate* unmanaged<IShellNameSpace*, char**, int>)(lpVtbl[34]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
     }
 
     /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.put_Columns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT put_Columns([NativeTypeName("BSTR")] ushort* bstrColumns)
+    public HRESULT put_Columns([NativeTypeName("BSTR")] char* bstrColumns)
     {
-        return ((delegate* unmanaged<IShellNameSpace*, ushort*, int>)(lpVtbl[35]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
+        return ((delegate* unmanaged<IShellNameSpace*, char*, int>)(lpVtbl[35]))((IShellNameSpace*)Unsafe.AsPointer(ref this), bstrColumns);
     }
 
     /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.get_CountViewTypes"]/*' />
@@ -395,10 +395,10 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
         HRESULT get_TVFlags([NativeTypeName("DWORD *")] uint* dwFlags);
 
         [VtblIndex(34)]
-        HRESULT get_Columns([NativeTypeName("BSTR *")] ushort** bstrColumns);
+        HRESULT get_Columns([NativeTypeName("BSTR *")] char** bstrColumns);
 
         [VtblIndex(35)]
-        HRESULT put_Columns([NativeTypeName("BSTR")] ushort* bstrColumns);
+        HRESULT put_Columns([NativeTypeName("BSTR")] char* bstrColumns);
 
         [VtblIndex(36)]
         HRESULT get_CountViewTypes(int* piTypes);
@@ -435,7 +435,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -462,7 +462,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
         public delegate* unmanaged<TSelf*, int> Export;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InvokeContextMenuCommand;
+        public delegate* unmanaged<TSelf*, char*, int> InvokeContextMenuCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> MoveSelectionTo;
@@ -477,7 +477,7 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
         public delegate* unmanaged<TSelf*, short*, int> DeleteSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetRoot;
+        public delegate* unmanaged<TSelf*, char*, int> SetRoot;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_EnumOptions;
@@ -522,10 +522,10 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativ
         public delegate* unmanaged<TSelf*, uint*, int> get_TVFlags;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Columns;
+        public delegate* unmanaged<TSelf*, char**, int> get_Columns;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Columns;
+        public delegate* unmanaged<TSelf*, char*, int> put_Columns;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_CountViewTypes;

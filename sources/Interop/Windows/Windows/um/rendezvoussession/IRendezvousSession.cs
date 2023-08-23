@@ -57,9 +57,9 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.get_RemoteUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName)
+    public HRESULT get_RemoteUser([NativeTypeName("BSTR *")] char** bstrUserName)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, ushort**, int>)(lpVtbl[4]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrUserName);
+        return ((delegate* unmanaged<IRendezvousSession*, char**, int>)(lpVtbl[4]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrUserName);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.get_Flags"]/*' />
@@ -73,17 +73,17 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.SendContextData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SendContextData([NativeTypeName("BSTR")] ushort* bstrData)
+    public HRESULT SendContextData([NativeTypeName("BSTR")] char* bstrData)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, ushort*, int>)(lpVtbl[6]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrData);
+        return ((delegate* unmanaged<IRendezvousSession*, char*, int>)(lpVtbl[6]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrData);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.Terminate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData)
+    public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] char* bstrAppData)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, HRESULT, ushort*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
+        return ((delegate* unmanaged<IRendezvousSession*, HRESULT, char*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -92,16 +92,16 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
         HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState);
 
         [VtblIndex(4)]
-        HRESULT get_RemoteUser([NativeTypeName("BSTR *")] ushort** bstrUserName);
+        HRESULT get_RemoteUser([NativeTypeName("BSTR *")] char** bstrUserName);
 
         [VtblIndex(5)]
         HRESULT get_Flags([NativeTypeName("LONG *")] int* pFlags);
 
         [VtblIndex(6)]
-        HRESULT SendContextData([NativeTypeName("BSTR")] ushort* bstrData);
+        HRESULT SendContextData([NativeTypeName("BSTR")] char* bstrData);
 
         [VtblIndex(7)]
-        HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] ushort* bstrAppData);
+        HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] char* bstrAppData);
     }
 
     public partial struct Vtbl<TSelf>
@@ -120,15 +120,15 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
         public delegate* unmanaged<TSelf*, RENDEZVOUS_SESSION_STATE*, int> get_State;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_RemoteUser;
+        public delegate* unmanaged<TSelf*, char**, int> get_RemoteUser;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_Flags;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SendContextData;
+        public delegate* unmanaged<TSelf*, char*, int> SendContextData;
 
         [NativeTypeName("HRESULT (HRESULT, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, ushort*, int> Terminate;
+        public delegate* unmanaged<TSelf*, HRESULT, char*, int> Terminate;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
     /// <inheritdoc cref="IACList.Expand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Expand([NativeTypeName("PCWSTR")] ushort* pszExpand)
+    public HRESULT Expand([NativeTypeName("PCWSTR")] char* pszExpand)
     {
-        return ((delegate* unmanaged<IACList2*, ushort*, int>)(lpVtbl[3]))((IACList2*)Unsafe.AsPointer(ref this), pszExpand);
+        return ((delegate* unmanaged<IACList2*, char*, int>)(lpVtbl[3]))((IACList2*)Unsafe.AsPointer(ref this), pszExpand);
     }
 
     /// <include file='IACList2.xml' path='doc/member[@name="IACList2.SetOptions"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IACList2 : IACList2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Expand;
+        public delegate* unmanaged<TSelf*, char*, int> Expand;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetOptions;

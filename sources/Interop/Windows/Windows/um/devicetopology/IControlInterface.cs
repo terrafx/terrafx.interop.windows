@@ -49,9 +49,9 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     /// <include file='IControlInterface.xml' path='doc/member[@name="IControlInterface.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName)
     {
-        return ((delegate* unmanaged<IControlInterface*, ushort**, int>)(lpVtbl[3]))((IControlInterface*)Unsafe.AsPointer(ref this), ppwstrName);
+        return ((delegate* unmanaged<IControlInterface*, char**, int>)(lpVtbl[3]))((IControlInterface*)Unsafe.AsPointer(ref this), ppwstrName);
     }
 
     /// <include file='IControlInterface.xml' path='doc/member[@name="IControlInterface.GetIID"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName);
 
         [VtblIndex(4)]
         HRESULT GetIID(Guid* pIID);
@@ -84,7 +84,7 @@ public unsafe partial struct IControlInterface : IControlInterface.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetIID;

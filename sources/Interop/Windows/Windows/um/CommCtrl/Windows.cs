@@ -88,7 +88,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_LoadImageW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern HIMAGELIST ImageList_LoadImageW(HINSTANCE hi, [NativeTypeName("LPCWSTR")] ushort* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
+    public static extern HIMAGELIST ImageList_LoadImageW(HINSTANCE hi, [NativeTypeName("LPCWSTR")] char* lpbmp, int cx, int cGrow, COLORREF crMask, uint uType, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_Copy"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
@@ -188,7 +188,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawStatusTextW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern void DrawStatusTextW(HDC hDC, [NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint uFlags);
+    public static extern void DrawStatusTextW(HDC hDC, [NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("LPCWSTR")] char* pszText, uint uFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateStatusWindowA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
@@ -198,7 +198,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateStatusWindowW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HWND CreateStatusWindowW([NativeTypeName("LONG")] int style, [NativeTypeName("LPCWSTR")] ushort* lpszText, HWND hwndParent, uint wID);
+    public static extern HWND CreateStatusWindowW([NativeTypeName("LONG")] int style, [NativeTypeName("LPCWSTR")] char* lpszText, HWND hwndParent, uint wID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MenuHelp"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
@@ -234,7 +234,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TaskDialog"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern HRESULT TaskDialog(HWND hwndOwner, HINSTANCE hInstance, [NativeTypeName("PCWSTR")] ushort* pszWindowTitle, [NativeTypeName("PCWSTR")] ushort* pszMainInstruction, [NativeTypeName("PCWSTR")] ushort* pszContent, [NativeTypeName("TASKDIALOG_COMMON_BUTTON_FLAGS")] int dwCommonButtons, [NativeTypeName("PCWSTR")] ushort* pszIcon, int* pnButton);
+    public static extern HRESULT TaskDialog(HWND hwndOwner, HINSTANCE hInstance, [NativeTypeName("PCWSTR")] char* pszWindowTitle, [NativeTypeName("PCWSTR")] char* pszMainInstruction, [NativeTypeName("PCWSTR")] char* pszContent, [NativeTypeName("TASKDIALOG_COMMON_BUTTON_FLAGS")] int dwCommonButtons, [NativeTypeName("PCWSTR")] char* pszIcon, int* pnButton);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InitMUILanguage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
@@ -315,15 +315,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconMetric"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern HRESULT LoadIconMetric(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int lims, HICON* phico);
+    public static extern HRESULT LoadIconMetric(HINSTANCE hinst, [NativeTypeName("PCWSTR")] char* pszName, int lims, HICON* phico);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconWithScaleDown"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern HRESULT LoadIconWithScaleDown(HINSTANCE hinst, [NativeTypeName("PCWSTR")] ushort* pszName, int cx, int cy, HICON* phico);
+    public static extern HRESULT LoadIconWithScaleDown(HINSTANCE hinst, [NativeTypeName("PCWSTR")] char* pszName, int cx, int cy, HICON* phico);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawShadowText"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
-    public static extern int DrawShadowText(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* pszText, uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, COLORREF crText, COLORREF crShadow, int ixOffset, int iyOffset);
+    public static extern int DrawShadowText(HDC hdc, [NativeTypeName("LPCWSTR")] char* pszText, uint cch, RECT* prc, [NativeTypeName("DWORD")] uint dwFlags, COLORREF crText, COLORREF crShadow, int ixOffset, int iyOffset);
 
     [NativeTypeName("#define ODT_HEADER 100")]
     public const int ODT_HEADER = 100;
@@ -461,7 +461,7 @@ public static unsafe partial class Windows
     public const int ILGT_ASYNC = 0x00000001;
 
     [NativeTypeName("#define ImageList_LoadImage ImageList_LoadImageW")]
-    public static delegate*<HINSTANCE, ushort*, int, int, COLORREF, uint, uint, HIMAGELIST> ImageList_LoadImage => &ImageList_LoadImageW;
+    public static delegate*<HINSTANCE, char*, int, int, COLORREF, uint, uint, HIMAGELIST> ImageList_LoadImage => &ImageList_LoadImageW;
 
     [NativeTypeName("#define ILCF_MOVE (0x00000000)")]
     public const int ILCF_MOVE = (0x00000000);
@@ -785,10 +785,10 @@ public static unsafe partial class Windows
     public const int SBT_TOOLTIPS = 0x0800;
 
     [NativeTypeName("#define CreateStatusWindow CreateStatusWindowW")]
-    public static delegate*<int, ushort*, HWND, uint, HWND> CreateStatusWindow => &CreateStatusWindowW;
+    public static delegate*<int, char*, HWND, uint, HWND> CreateStatusWindow => &CreateStatusWindowW;
 
     [NativeTypeName("#define DrawStatusText DrawStatusTextW")]
-    public static delegate*<HDC, RECT*, ushort*, uint, void> DrawStatusText => &DrawStatusTextW;
+    public static delegate*<HDC, RECT*, char*, uint, void> DrawStatusText => &DrawStatusTextW;
 
     [NativeTypeName("#define STATUSCLASSNAMEW L\"msctls_statusbar32\"")]
     public const string STATUSCLASSNAMEW = "msctls_statusbar32";
@@ -1121,13 +1121,13 @@ public static unsafe partial class Windows
     public const int I_GROUPIDNONE = (-2);
 
     [NativeTypeName("#define LPSTR_TEXTCALLBACKW ((LPWSTR)-1L)")]
-    public static ushort* LPSTR_TEXTCALLBACKW => unchecked((ushort*)(-1));
+    public static char* LPSTR_TEXTCALLBACKW => unchecked((char*)(-1));
 
     [NativeTypeName("#define LPSTR_TEXTCALLBACKA ((LPSTR)-1L)")]
     public static sbyte* LPSTR_TEXTCALLBACKA => unchecked((sbyte*)(-1));
 
     [NativeTypeName("#define LPSTR_TEXTCALLBACK LPSTR_TEXTCALLBACKW")]
-    public static ushort* LPSTR_TEXTCALLBACK => unchecked((ushort*)(-1));
+    public static char* LPSTR_TEXTCALLBACK => unchecked((char*)(-1));
 
     [NativeTypeName("#define I_IMAGECALLBACK (-1)")]
     public const int I_IMAGECALLBACK = (-1);

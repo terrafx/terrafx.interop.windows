@@ -49,9 +49,9 @@ public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Inter
     /// <include file='IAutoCompleteDropDown.xml' path='doc/member[@name="IAutoCompleteDropDown.GetDropDownStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDropDownStatus([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR *")] ushort** ppwszString)
+    public HRESULT GetDropDownStatus([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR *")] char** ppwszString)
     {
-        return ((delegate* unmanaged<IAutoCompleteDropDown*, uint*, ushort**, int>)(lpVtbl[3]))((IAutoCompleteDropDown*)Unsafe.AsPointer(ref this), pdwFlags, ppwszString);
+        return ((delegate* unmanaged<IAutoCompleteDropDown*, uint*, char**, int>)(lpVtbl[3]))((IAutoCompleteDropDown*)Unsafe.AsPointer(ref this), pdwFlags, ppwszString);
     }
 
     /// <include file='IAutoCompleteDropDown.xml' path='doc/member[@name="IAutoCompleteDropDown.ResetEnumerator"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Inter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDropDownStatus([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR *")] ushort** ppwszString);
+        HRESULT GetDropDownStatus([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR *")] char** ppwszString);
 
         [VtblIndex(4)]
         HRESULT ResetEnumerator();
@@ -84,7 +84,7 @@ public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetDropDownStatus;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetDropDownStatus;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> ResetEnumerator;

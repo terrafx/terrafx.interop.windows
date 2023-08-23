@@ -49,9 +49,9 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     /// <include file='ISpGrammarBuilder2.xml' path='doc/member[@name="ISpGrammarBuilder2.AddTextSubset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, SPMATCHINGMODE eMatchMode)
+    public HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, SPMATCHINGMODE eMatchMode)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
+        return ((delegate* unmanaged<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
     }
 
     /// <include file='ISpGrammarBuilder2.xml' path='doc/member[@name="ISpGrammarBuilder2.SetPhoneticAlphabet"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, SPMATCHINGMODE eMatchMode);
+        HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, SPMATCHINGMODE eMatchMode);
 
         [VtblIndex(4)]
         HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet);
@@ -84,7 +84,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, SPMATCHINGMODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, SPMATCHINGMODE, int> AddTextSubset;
+        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int> AddTextSubset;
 
         [NativeTypeName("HRESULT (PHONETICALPHABET) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PHONETICALPHABET, int> SetPhoneticAlphabet;

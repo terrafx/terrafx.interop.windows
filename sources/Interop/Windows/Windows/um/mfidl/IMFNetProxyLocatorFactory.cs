@@ -49,15 +49,15 @@ public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFacto
     /// <include file='IMFNetProxyLocatorFactory.xml' path='doc/member[@name="IMFNetProxyLocatorFactory.CreateProxyLocator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IMFNetProxyLocator** ppProxyLocator)
+    public HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] char* pszProtocol, IMFNetProxyLocator** ppProxyLocator)
     {
-        return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, ushort*, IMFNetProxyLocator**, int>)(lpVtbl[3]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), pszProtocol, ppProxyLocator);
+        return ((delegate* unmanaged<IMFNetProxyLocatorFactory*, char*, IMFNetProxyLocator**, int>)(lpVtbl[3]))((IMFNetProxyLocatorFactory*)Unsafe.AsPointer(ref this), pszProtocol, ppProxyLocator);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IMFNetProxyLocator** ppProxyLocator);
+        HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] char* pszProtocol, IMFNetProxyLocator** ppProxyLocator);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFacto
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFNetProxyLocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFNetProxyLocator**, int> CreateProxyLocator;
+        public delegate* unmanaged<TSelf*, char*, IMFNetProxyLocator**, int> CreateProxyLocator;
     }
 }

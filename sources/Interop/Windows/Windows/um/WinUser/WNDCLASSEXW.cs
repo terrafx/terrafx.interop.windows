@@ -38,11 +38,11 @@ public unsafe partial struct WNDCLASSEXW
 
     /// <include file='WNDCLASSEXW.xml' path='doc/member[@name="WNDCLASSEXW.lpszMenuName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszMenuName;
+    public char* lpszMenuName;
 
     /// <include file='WNDCLASSEXW.xml' path='doc/member[@name="WNDCLASSEXW.lpszClassName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszClassName;
+    public char* lpszClassName;
 
     /// <include file='WNDCLASSEXW.xml' path='doc/member[@name="WNDCLASSEXW.hIconSm"]/*' />
     public HICON hIconSm;

@@ -19,7 +19,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrChrW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch);
+    public static extern char* StrChrW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("WCHAR")] char wMatch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -29,17 +29,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrChrIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch);
+    public static extern char* StrChrIW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("WCHAR")] char wMatch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrNW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrChrNW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch, uint cchMax);
+    public static extern char* StrChrNW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("WCHAR")] char wMatch, uint cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrNIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrChrNIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("WCHAR")] ushort wMatch, uint cchMax);
+    public static extern char* StrChrNIW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("WCHAR")] char wMatch, uint cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -47,7 +47,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpNW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int nChar);
+    public static extern int StrCmpNW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -55,7 +55,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpNIW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int nChar);
+    public static extern int StrCmpNIW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpnA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -63,7 +63,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpnW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCSpnW([NativeTypeName("PCWSTR")] ushort* pszStr, [NativeTypeName("PCWSTR")] ushort* pszSet);
+    public static extern int StrCSpnW([NativeTypeName("PCWSTR")] char* pszStr, [NativeTypeName("PCWSTR")] char* pszSet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpnIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -71,7 +71,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpnIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCSpnIW([NativeTypeName("PCWSTR")] ushort* pszStr, [NativeTypeName("PCWSTR")] ushort* pszSet);
+    public static extern int StrCSpnIW([NativeTypeName("PCWSTR")] char* pszStr, [NativeTypeName("PCWSTR")] char* pszSet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrDupA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -81,11 +81,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrDupW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrDupW([NativeTypeName("PCWSTR")] ushort* pszSrch);
+    public static extern char* StrDupW([NativeTypeName("PCWSTR")] char* pszSrch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatByteSizeEx"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT StrFormatByteSizeEx([NativeTypeName("ULONGLONG")] ulong ull, [NativeTypeName("SFBS_FLAGS")] int flags, [NativeTypeName("PWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern HRESULT StrFormatByteSizeEx([NativeTypeName("ULONGLONG")] ulong ull, [NativeTypeName("SFBS_FLAGS")] int flags, [NativeTypeName("PWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatByteSizeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -100,12 +100,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatByteSizeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrFormatByteSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern char* StrFormatByteSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatKBSizeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrFormatKBSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern char* StrFormatKBSizeW([NativeTypeName("LONGLONG")] long qdw, [NativeTypeName("PWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatKBSizeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -118,7 +118,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFromTimeIntervalW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrFromTimeIntervalW([NativeTypeName("PWSTR")] ushort* pszOut, uint cchMax, [NativeTypeName("DWORD")] uint dwTimeMS, int digits);
+    public static extern int StrFromTimeIntervalW([NativeTypeName("PWSTR")] char* pszOut, uint cchMax, [NativeTypeName("DWORD")] uint dwTimeMS, int digits);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrIsIntlEqualA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -126,7 +126,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrIsIntlEqualW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL StrIsIntlEqualW(BOOL fCaseSens, [NativeTypeName("PCWSTR")] ushort* pszString1, [NativeTypeName("PCWSTR")] ushort* pszString2, int nChar);
+    public static extern BOOL StrIsIntlEqualW(BOOL fCaseSens, [NativeTypeName("PCWSTR")] char* pszString1, [NativeTypeName("PCWSTR")] char* pszString2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCatA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -136,7 +136,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCatW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrNCatW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, int cchMax);
+    public static extern char* StrNCatW([NativeTypeName("PWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2, int cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrPBrkA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -146,7 +146,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrPBrkW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrPBrkW([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszSet);
+    public static extern char* StrPBrkW([NativeTypeName("PCWSTR")] char* psz, [NativeTypeName("PCWSTR")] char* pszSet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChrA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -156,7 +156,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChrW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrRChrW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("PCWSTR")] ushort* pszEnd, [NativeTypeName("WCHAR")] ushort wMatch);
+    public static extern char* StrRChrW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("PCWSTR")] char* pszEnd, [NativeTypeName("WCHAR")] char wMatch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChrIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -166,7 +166,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChrIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrRChrIW([NativeTypeName("PCWSTR")] ushort* pszStart, [NativeTypeName("PCWSTR")] ushort* pszEnd, [NativeTypeName("WCHAR")] ushort wMatch);
+    public static extern char* StrRChrIW([NativeTypeName("PCWSTR")] char* pszStart, [NativeTypeName("PCWSTR")] char* pszEnd, [NativeTypeName("WCHAR")] char wMatch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRStrIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -176,7 +176,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRStrIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrRStrIW([NativeTypeName("PCWSTR")] ushort* pszSource, [NativeTypeName("PCWSTR")] ushort* pszLast, [NativeTypeName("PCWSTR")] ushort* pszSrch);
+    public static extern char* StrRStrIW([NativeTypeName("PCWSTR")] char* pszSource, [NativeTypeName("PCWSTR")] char* pszLast, [NativeTypeName("PCWSTR")] char* pszSrch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrSpnA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -184,7 +184,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrSpnW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrSpnW([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszSet);
+    public static extern int StrSpnW([NativeTypeName("PCWSTR")] char* psz, [NativeTypeName("PCWSTR")] char* pszSet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -194,7 +194,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrStrW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch);
+    public static extern char* StrStrW([NativeTypeName("PCWSTR")] char* pszFirst, [NativeTypeName("PCWSTR")] char* pszSrch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrIA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -204,17 +204,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrStrIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch);
+    public static extern char* StrStrIW([NativeTypeName("PCWSTR")] char* pszFirst, [NativeTypeName("PCWSTR")] char* pszSrch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrNW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrStrNW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, uint cchMax);
+    public static extern char* StrStrNW([NativeTypeName("PCWSTR")] char* pszFirst, [NativeTypeName("PCWSTR")] char* pszSrch, uint cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrNIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrStrNIW([NativeTypeName("PCWSTR")] ushort* pszFirst, [NativeTypeName("PCWSTR")] ushort* pszSrch, uint cchMax);
+    public static extern char* StrStrNIW([NativeTypeName("PCWSTR")] char* pszFirst, [NativeTypeName("PCWSTR")] char* pszSrch, uint cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToIntA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -222,7 +222,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToIntW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrToIntW([NativeTypeName("PCWSTR")] ushort* pszSrc);
+    public static extern int StrToIntW([NativeTypeName("PCWSTR")] char* pszSrc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToIntExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -230,7 +230,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToIntExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL StrToIntExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
+    public static extern BOOL StrToIntExW([NativeTypeName("PCWSTR")] char* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, int* piRet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToInt64ExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -238,7 +238,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToInt64ExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL StrToInt64ExW([NativeTypeName("PCWSTR")] ushort* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
+    public static extern BOOL StrToInt64ExW([NativeTypeName("PCWSTR")] char* pszString, [NativeTypeName("STIF_FLAGS")] int dwFlags, [NativeTypeName("LONGLONG *")] long* pllRet);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrTrimA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -246,35 +246,35 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrTrimW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL StrTrimW([NativeTypeName("PWSTR")] ushort* psz, [NativeTypeName("PCWSTR")] ushort* pszTrimChars);
+    public static extern BOOL StrTrimW([NativeTypeName("PWSTR")] char* psz, [NativeTypeName("PCWSTR")] char* pszTrimChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrCatW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
+    public static extern char* StrCatW([NativeTypeName("PWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
+    public static extern int StrCmpW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpIW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
+    public static extern int StrCmpIW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrCpyW([NativeTypeName("PWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
+    public static extern char* StrCpyW([NativeTypeName("PWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpyNW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrCpyNW([NativeTypeName("PWSTR")] ushort* pszDst, [NativeTypeName("PCWSTR")] ushort* pszSrc, int cchMax);
+    public static extern char* StrCpyNW([NativeTypeName("PWSTR")] char* pszDst, [NativeTypeName("PCWSTR")] char* pszSrc, int cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatBuffW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* StrCatBuffW([NativeTypeName("PWSTR")] ushort* pszDest, [NativeTypeName("PCWSTR")] ushort* pszSrc, int cchDestBuffSize);
+    public static extern char* StrCatBuffW([NativeTypeName("PWSTR")] char* pszDest, [NativeTypeName("PCWSTR")] char* pszSrc, int cchDestBuffSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatBuffA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -287,7 +287,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChrCmpIW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL ChrCmpIW([NativeTypeName("WCHAR")] ushort w1, [NativeTypeName("WCHAR")] ushort w2);
+    public static extern BOOL ChrCmpIW([NativeTypeName("WCHAR")] char w1, [NativeTypeName("WCHAR")] char w2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wvnsprintfA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -295,7 +295,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wvnsprintfW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int wvnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
+    public static extern int wvnsprintfW([NativeTypeName("PWSTR")] char* pszDest, int cchDest, [NativeTypeName("PCWSTR")] char* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfA"]/*' />
     [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -303,7 +303,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfW"]/*' />
     [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern int wnsprintfW([NativeTypeName("PWSTR")] ushort* pszDest, int cchDest, [NativeTypeName("PCWSTR")] ushort* pszFmt, __arglist);
+    public static extern int wnsprintfW([NativeTypeName("PWSTR")] char* pszDest, int cchDest, [NativeTypeName("PCWSTR")] char* pszFmt, __arglist);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToStrA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -311,7 +311,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToStrW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT StrRetToStrW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR *")] ushort** ppsz);
+    public static extern HRESULT StrRetToStrW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR *")] char** ppsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToBufA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -319,18 +319,18 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToBufW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT StrRetToBufW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern HRESULT StrRetToBufW(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStrDupA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHStrDupA([NativeTypeName("LPCSTR")] sbyte* psz, [NativeTypeName("LPWSTR *")] ushort** ppwsz);
+    public static extern HRESULT SHStrDupA([NativeTypeName("LPCSTR")] sbyte* psz, [NativeTypeName("LPWSTR *")] char** ppwsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStrDupW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHStrDupW([NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPWSTR *")] ushort** ppwsz);
+    public static extern HRESULT SHStrDupW([NativeTypeName("LPCWSTR")] char* psz, [NativeTypeName("LPWSTR *")] char** ppwsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLocalStrDupW"]/*' />
-    public static HRESULT SHLocalStrDupW([NativeTypeName("PCWSTR")] ushort* psz, [NativeTypeName("PWSTR *")] ushort** ppsz)
+    public static HRESULT SHLocalStrDupW([NativeTypeName("PCWSTR")] char* psz, [NativeTypeName("PWSTR *")] char** ppsz)
     {
         *ppsz = StrDupW(psz);
         return (*ppsz) != null ? ((HRESULT)(0)) : ((HRESULT)(0x8007000E));
@@ -345,20 +345,20 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpLogicalW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpLogicalW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2);
+    public static extern int StrCmpLogicalW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatChainW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint StrCatChainW([NativeTypeName("PWSTR")] ushort* pszDst, [NativeTypeName("DWORD")] uint cchDst, [NativeTypeName("DWORD")] uint ichAt, [NativeTypeName("PCWSTR")] ushort* pszSrc);
+    public static extern uint StrCatChainW([NativeTypeName("PWSTR")] char* pszDst, [NativeTypeName("DWORD")] uint cchDst, [NativeTypeName("DWORD")] uint ichAt, [NativeTypeName("PCWSTR")] char* pszSrc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToBSTR"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT StrRetToBSTR(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BSTR *")] ushort** pbstr);
+    public static extern HRESULT StrRetToBSTR(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("BSTR *")] char** pbstr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLoadIndirectString"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHLoadIndirectString([NativeTypeName("PCWSTR")] ushort* pszSource, [NativeTypeName("PWSTR")] ushort* pszOutBuf, uint cchOutBuf, void** ppvReserved);
+    public static extern HRESULT SHLoadIndirectString([NativeTypeName("PCWSTR")] char* pszSource, [NativeTypeName("PWSTR")] char* pszOutBuf, uint cchOutBuf, void** ppvReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharSpaceA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -366,7 +366,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharSpaceW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL IsCharSpaceW([NativeTypeName("WCHAR")] ushort wch);
+    public static extern BOOL IsCharSpaceW([NativeTypeName("WCHAR")] char wch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpCA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -374,7 +374,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpCW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpCW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2);
+    public static extern int StrCmpCW([NativeTypeName("LPCWSTR")] char* pszStr1, [NativeTypeName("LPCWSTR")] char* pszStr2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpICA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -382,7 +382,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpICW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpICW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2);
+    public static extern int StrCmpICW([NativeTypeName("LPCWSTR")] char* pszStr1, [NativeTypeName("LPCWSTR")] char* pszStr2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNCA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -390,7 +390,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNCW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpNCW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2, int nChar);
+    public static extern int StrCmpNCW([NativeTypeName("LPCWSTR")] char* pszStr1, [NativeTypeName("LPCWSTR")] char* pszStr2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNICA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -398,7 +398,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNICW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int StrCmpNICW([NativeTypeName("LPCWSTR")] ushort* pszStr1, [NativeTypeName("LPCWSTR")] ushort* pszStr2, int nChar);
+    public static extern int StrCmpNICW([NativeTypeName("LPCWSTR")] char* pszStr1, [NativeTypeName("LPCWSTR")] char* pszStr2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IntlStrEqWorkerA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -406,7 +406,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IntlStrEqWorkerW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL IntlStrEqWorkerW(BOOL fCaseSens, [NativeTypeName("LPCWSTR")] ushort* lpString1, [NativeTypeName("LPCWSTR")] ushort* lpString2, int nChar);
+    public static extern BOOL IntlStrEqWorkerW(BOOL fCaseSens, [NativeTypeName("LPCWSTR")] char* lpString1, [NativeTypeName("LPCWSTR")] char* lpString2, int nChar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddBackslashA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -416,7 +416,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddBackslashW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathAddBackslashW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern char* PathAddBackslashW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddExtensionA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -424,7 +424,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddExtensionW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathAddExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
+    public static extern BOOL PathAddExtensionW([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("LPCWSTR")] char* pszExt);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAppendA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -432,7 +432,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAppendW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathAppendW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszMore);
+    public static extern BOOL PathAppendW([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("LPCWSTR")] char* pszMore);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathBuildRootA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -442,7 +442,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathBuildRootW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathBuildRootW([NativeTypeName("LPWSTR")] ushort* pszRoot, int iDrive);
+    public static extern char* PathBuildRootW([NativeTypeName("LPWSTR")] char* pszRoot, int iDrive);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCanonicalizeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -452,7 +452,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCanonicalizeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL PathCanonicalizeW([NativeTypeName("LPWSTR")] ushort* pszBuf, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathCanonicalizeW([NativeTypeName("LPWSTR")] char* pszBuf, [NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCombineA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -462,7 +462,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCombineW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathCombineW([NativeTypeName("LPWSTR")] ushort* pszDest, [NativeTypeName("LPCWSTR")] ushort* pszDir, [NativeTypeName("LPCWSTR")] ushort* pszFile);
+    public static extern char* PathCombineW([NativeTypeName("LPWSTR")] char* pszDest, [NativeTypeName("LPCWSTR")] char* pszDir, [NativeTypeName("LPCWSTR")] char* pszFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -470,7 +470,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathCompactPathW(HDC hDC, [NativeTypeName("LPWSTR")] ushort* pszPath, uint dx);
+    public static extern BOOL PathCompactPathW(HDC hDC, [NativeTypeName("LPWSTR")] char* pszPath, uint dx);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPathExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -478,7 +478,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPathExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathCompactPathExW([NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("LPCWSTR")] ushort* pszSrc, uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL PathCompactPathExW([NativeTypeName("LPWSTR")] char* pszOut, [NativeTypeName("LPCWSTR")] char* pszSrc, uint cchMax, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCommonPrefixA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -486,7 +486,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCommonPrefixW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int PathCommonPrefixW([NativeTypeName("LPCWSTR")] ushort* pszFile1, [NativeTypeName("LPCWSTR")] ushort* pszFile2, [NativeTypeName("LPWSTR")] ushort* achPath);
+    public static extern int PathCommonPrefixW([NativeTypeName("LPCWSTR")] char* pszFile1, [NativeTypeName("LPCWSTR")] char* pszFile2, [NativeTypeName("LPWSTR")] char* achPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFileExistsA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -496,7 +496,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFileExistsW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL PathFileExistsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathFileExistsW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindExtensionA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -506,7 +506,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindExtensionW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathFindExtensionW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern char* PathFindExtensionW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindFileNameA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -516,7 +516,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindFileNameW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathFindFileNameW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern char* PathFindFileNameW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindNextComponentA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -526,7 +526,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindNextComponentW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathFindNextComponentW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern char* PathFindNextComponentW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindOnPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -534,7 +534,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindOnPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathFindOnPathW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("PZPCWSTR")] ushort** ppszOtherDirs);
+    public static extern BOOL PathFindOnPathW([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("PZPCWSTR")] char** ppszOtherDirs);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindSuffixArrayA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -544,7 +544,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindSuffixArrayW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPCWSTR")]
-    public static extern ushort* PathFindSuffixArrayW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("const LPCWSTR *")] ushort** apszSuffix, int iArraySize);
+    public static extern char* PathFindSuffixArrayW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("const LPCWSTR *")] char** apszSuffix, int iArraySize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetArgsA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -554,7 +554,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetArgsW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathGetArgsW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern char* PathGetArgsW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsLFNFileSpecA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -562,7 +562,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsLFNFileSpecW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsLFNFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszName);
+    public static extern BOOL PathIsLFNFileSpecW([NativeTypeName("LPCWSTR")] char* pszName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetCharTypeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -570,7 +570,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetCharTypeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern uint PathGetCharTypeW([NativeTypeName("WCHAR")] ushort ch);
+    public static extern uint PathGetCharTypeW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetDriveNumberA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -578,7 +578,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetDriveNumberW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int PathGetDriveNumberW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern int PathGetDriveNumberW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectoryA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -586,7 +586,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectoryW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsDirectoryW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsDirectoryW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectoryEmptyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -594,7 +594,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectoryEmptyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsDirectoryEmptyW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsDirectoryEmptyW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsFileSpecA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -602,7 +602,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsFileSpecW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsFileSpecW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsFileSpecW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsPrefixA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -610,7 +610,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsPrefixW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsPrefixW([NativeTypeName("LPCWSTR")] ushort* pszPrefix, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsPrefixW([NativeTypeName("LPCWSTR")] char* pszPrefix, [NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRelativeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -618,7 +618,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRelativeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsRelativeW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsRelativeW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRootA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -626,7 +626,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRootW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsRootW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSameRootA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -634,7 +634,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSameRootW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsSameRootW([NativeTypeName("LPCWSTR")] ushort* pszPath1, [NativeTypeName("LPCWSTR")] ushort* pszPath2);
+    public static extern BOOL PathIsSameRootW([NativeTypeName("LPCWSTR")] char* pszPath1, [NativeTypeName("LPCWSTR")] char* pszPath2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -642,7 +642,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsUNCW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsUNCW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsNetworkPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -650,7 +650,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsNetworkPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsNetworkPathW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsNetworkPathW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServerA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -658,7 +658,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServerW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsUNCServerW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsUNCServerW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServerShareA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -666,7 +666,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServerShareW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsUNCServerShareW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsUNCServerShareW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsContentTypeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -674,7 +674,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsContentTypeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsContentTypeW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszContentType);
+    public static extern BOOL PathIsContentTypeW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("LPCWSTR")] char* pszContentType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsURLA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -682,7 +682,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsURLW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsURLW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathIsURLW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakePrettyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -690,7 +690,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakePrettyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathMakePrettyW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern BOOL PathMakePrettyW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpecA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -698,7 +698,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpecW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathMatchSpecW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec);
+    public static extern BOOL PathMatchSpecW([NativeTypeName("LPCWSTR")] char* pszFile, [NativeTypeName("LPCWSTR")] char* pszSpec);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpecExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -706,7 +706,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpecExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT PathMatchSpecExW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("LPCWSTR")] ushort* pszSpec, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT PathMatchSpecExW([NativeTypeName("LPCWSTR")] char* pszFile, [NativeTypeName("LPCWSTR")] char* pszSpec, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathParseIconLocationA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -714,7 +714,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathParseIconLocationW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int PathParseIconLocationW([NativeTypeName("LPWSTR")] ushort* pszIconFile);
+    public static extern int PathParseIconLocationW([NativeTypeName("LPWSTR")] char* pszIconFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathQuoteSpacesA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -722,7 +722,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathQuoteSpacesW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathQuoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
+    public static extern BOOL PathQuoteSpacesW([NativeTypeName("LPWSTR")] char* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRelativePathToA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -730,7 +730,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRelativePathToW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathRelativePathToW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCWSTR")] ushort* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
+    public static extern BOOL PathRelativePathToW([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("LPCWSTR")] char* pszFrom, [NativeTypeName("DWORD")] uint dwAttrFrom, [NativeTypeName("LPCWSTR")] char* pszTo, [NativeTypeName("DWORD")] uint dwAttrTo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveArgsA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -738,7 +738,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveArgsW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathRemoveArgsW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern void PathRemoveArgsW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBackslashA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -748,7 +748,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBackslashW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathRemoveBackslashW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern char* PathRemoveBackslashW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBlanksA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -756,7 +756,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBlanksW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathRemoveBlanksW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern void PathRemoveBlanksW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveExtensionA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -764,7 +764,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveExtensionW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathRemoveExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern void PathRemoveExtensionW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveFileSpecA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -772,7 +772,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveFileSpecW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathRemoveFileSpecW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern BOOL PathRemoveFileSpecW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRenameExtensionA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -780,7 +780,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRenameExtensionW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathRenameExtensionW([NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("LPCWSTR")] ushort* pszExt);
+    public static extern BOOL PathRenameExtensionW([NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("LPCWSTR")] char* pszExt);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSearchAndQualifyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -788,7 +788,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSearchAndQualifyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathSearchAndQualifyW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern BOOL PathSearchAndQualifyW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("LPWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSetDlgItemPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -796,7 +796,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSetDlgItemPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathSetDlgItemPathW(HWND hDlg, int id, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern void PathSetDlgItemPathW(HWND hDlg, int id, [NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSkipRootA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -806,7 +806,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSkipRootW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* PathSkipRootW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern char* PathSkipRootW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -814,7 +814,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathStripPathW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern void PathStripPathW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripToRootA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -822,7 +822,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripToRootW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathStripToRootW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern BOOL PathStripToRootW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnquoteSpacesA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -830,7 +830,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnquoteSpacesW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathUnquoteSpacesW([NativeTypeName("LPWSTR")] ushort* lpsz);
+    public static extern BOOL PathUnquoteSpacesW([NativeTypeName("LPWSTR")] char* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakeSystemFolderA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -838,7 +838,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakeSystemFolderW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathMakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathMakeSystemFolderW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnmakeSystemFolderA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -846,7 +846,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnmakeSystemFolderW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathUnmakeSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath);
+    public static extern BOOL PathUnmakeSystemFolderW([NativeTypeName("LPCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSystemFolderA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -854,7 +854,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSystemFolderW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathIsSystemFolderW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
+    public static extern BOOL PathIsSystemFolderW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwAttrb);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUndecorateA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -862,7 +862,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUndecorateW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern void PathUndecorateW([NativeTypeName("LPWSTR")] ushort* pszPath);
+    public static extern void PathUndecorateW([NativeTypeName("LPWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnExpandEnvStringsA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -870,7 +870,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnExpandEnvStringsW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL PathUnExpandEnvStringsW([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("LPWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern BOOL PathUnExpandEnvStringsW([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("LPWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCompareA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -878,7 +878,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCompareW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int UrlCompareW([NativeTypeName("PCWSTR")] ushort* psz1, [NativeTypeName("PCWSTR")] ushort* psz2, BOOL fIgnoreSlash);
+    public static extern int UrlCompareW([NativeTypeName("PCWSTR")] char* psz1, [NativeTypeName("PCWSTR")] char* psz2, BOOL fIgnoreSlash);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCombineA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -886,7 +886,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCombineW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlCombineW([NativeTypeName("PCWSTR")] ushort* pszBase, [NativeTypeName("PCWSTR")] ushort* pszRelative, [NativeTypeName("PWSTR")] ushort* pszCombined, [NativeTypeName("DWORD *")] uint* pcchCombined, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlCombineW([NativeTypeName("PCWSTR")] char* pszBase, [NativeTypeName("PCWSTR")] char* pszRelative, [NativeTypeName("PWSTR")] char* pszCombined, [NativeTypeName("DWORD *")] uint* pcchCombined, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCanonicalizeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -894,7 +894,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCanonicalizeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlCanonicalizeW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszCanonicalized, [NativeTypeName("DWORD *")] uint* pcchCanonicalized, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlCanonicalizeW([NativeTypeName("PCWSTR")] char* pszUrl, [NativeTypeName("PWSTR")] char* pszCanonicalized, [NativeTypeName("DWORD *")] uint* pcchCanonicalized, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsOpaqueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -902,7 +902,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsOpaqueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL UrlIsOpaqueW([NativeTypeName("PCWSTR")] ushort* pszURL);
+    public static extern BOOL UrlIsOpaqueW([NativeTypeName("PCWSTR")] char* pszURL);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsNoHistoryA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -910,7 +910,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsNoHistoryW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL UrlIsNoHistoryW([NativeTypeName("PCWSTR")] ushort* pszURL);
+    public static extern BOOL UrlIsNoHistoryW([NativeTypeName("PCWSTR")] char* pszURL);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -918,7 +918,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL UrlIsW([NativeTypeName("PCWSTR")] ushort* pszUrl, URLIS UrlIs);
+    public static extern BOOL UrlIsW([NativeTypeName("PCWSTR")] char* pszUrl, URLIS UrlIs);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetLocationA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -928,7 +928,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetLocationW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LPCWSTR")]
-    public static extern ushort* UrlGetLocationW([NativeTypeName("PCWSTR")] ushort* pszURL);
+    public static extern char* UrlGetLocationW([NativeTypeName("PCWSTR")] char* pszURL);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlUnescapeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -936,7 +936,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlUnescapeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlUnescapeW([NativeTypeName("PWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszUnescaped, [NativeTypeName("DWORD *")] uint* pcchUnescaped, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlUnescapeW([NativeTypeName("PWSTR")] char* pszUrl, [NativeTypeName("PWSTR")] char* pszUnescaped, [NativeTypeName("DWORD *")] uint* pcchUnescaped, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlEscapeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -944,7 +944,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlEscapeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlEscapeW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszEscaped, [NativeTypeName("DWORD *")] uint* pcchEscaped, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlEscapeW([NativeTypeName("PCWSTR")] char* pszUrl, [NativeTypeName("PWSTR")] char* pszEscaped, [NativeTypeName("DWORD *")] uint* pcchEscaped, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCreateFromPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -952,7 +952,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCreateFromPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlCreateFromPathW([NativeTypeName("PCWSTR")] ushort* pszPath, [NativeTypeName("PWSTR")] ushort* pszUrl, [NativeTypeName("DWORD *")] uint* pcchUrl, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlCreateFromPathW([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PWSTR")] char* pszUrl, [NativeTypeName("DWORD *")] uint* pcchUrl, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCreateFromUrlA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -960,11 +960,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCreateFromUrlW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT PathCreateFromUrlW([NativeTypeName("PCWSTR")] ushort* pszUrl, [NativeTypeName("PWSTR")] ushort* pszPath, [NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT PathCreateFromUrlW([NativeTypeName("PCWSTR")] char* pszUrl, [NativeTypeName("PWSTR")] char* pszPath, [NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCreateFromUrlAlloc"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT PathCreateFromUrlAlloc([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR *")] ushort** ppszOut, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT PathCreateFromUrlAlloc([NativeTypeName("PCWSTR")] char* pszIn, [NativeTypeName("PWSTR *")] char** ppszOut, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlHashA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -972,11 +972,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlHashW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlHashW([NativeTypeName("PCWSTR")] ushort* pszUrl, byte* pbHash, [NativeTypeName("DWORD")] uint cbHash);
+    public static extern HRESULT UrlHashW([NativeTypeName("PCWSTR")] char* pszUrl, byte* pbHash, [NativeTypeName("DWORD")] uint cbHash);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetPartW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlGetPartW([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwPart, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlGetPartW([NativeTypeName("PCWSTR")] char* pszIn, [NativeTypeName("PWSTR")] char* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwPart, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetPartA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -988,7 +988,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlApplySchemeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlApplySchemeW([NativeTypeName("PCWSTR")] ushort* pszIn, [NativeTypeName("PWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT UrlApplySchemeW([NativeTypeName("PCWSTR")] char* pszIn, [NativeTypeName("PWSTR")] char* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HashData"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -996,7 +996,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlFixupW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT UrlFixupW([NativeTypeName("PCWSTR")] ushort* pcszUrl, [NativeTypeName("PWSTR")] ushort* pszTranslatedUrl, [NativeTypeName("DWORD")] uint cchMax);
+    public static extern HRESULT UrlFixupW([NativeTypeName("PCWSTR")] char* pcszUrl, [NativeTypeName("PWSTR")] char* pszTranslatedUrl, [NativeTypeName("DWORD")] uint cchMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ParseURLA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1004,7 +1004,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ParseURLW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT ParseURLW([NativeTypeName("LPCWSTR")] ushort* pcszURL, PARSEDURLW* ppu);
+    public static extern HRESULT ParseURLW([NativeTypeName("LPCWSTR")] char* pcszURL, PARSEDURLW* ppu);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteEmptyKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1014,7 +1014,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteEmptyKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHDeleteEmptyKeyW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey);
+    public static extern int SHDeleteEmptyKeyW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1024,7 +1024,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHDeleteKeyW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey);
+    public static extern int SHDeleteKeyW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDuplicateHKey"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1038,7 +1038,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHDeleteValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue);
+    public static extern int SHDeleteValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1048,7 +1048,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
+    public static extern int SHGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1058,7 +1058,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHSetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
+    public static extern int SHSetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("LPCVOID")] void* pvData, [NativeTypeName("DWORD")] uint cbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1068,16 +1068,16 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
+    public static extern int SHRegGetValueW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetValueFromHKCUHKLM"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegGetValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pwszKey, [NativeTypeName("PCWSTR")] ushort* pwszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
+    public static extern int SHRegGetValueFromHKCUHKLM([NativeTypeName("PCWSTR")] char* pwszKey, [NativeTypeName("PCWSTR")] char* pwszValue, [NativeTypeName("SRRF")] int srrfFlags, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetBoolValueFromHKCUHKLM"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] ushort* pszKey, [NativeTypeName("PCWSTR")] ushort* pszValue, BOOL fDefault);
+    public static extern BOOL SHRegGetBoolValueFromHKCUHKLM([NativeTypeName("PCWSTR")] char* pszKey, [NativeTypeName("PCWSTR")] char* pszValue, BOOL fDefault);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryValueExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1087,7 +1087,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryValueExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHQueryValueExW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
+    public static extern int SHQueryValueExW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumKeyExA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1097,7 +1097,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumKeyExW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHEnumKeyExW(HKEY hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("LPDWORD")] uint* pcchName);
+    public static extern int SHEnumKeyExW(HKEY hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pszName, [NativeTypeName("LPDWORD")] uint* pcchName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1107,7 +1107,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHEnumValueW(HKEY hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("PWSTR")] ushort* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
+    public static extern int SHEnumValueW(HKEY hkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("PWSTR")] char* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryInfoKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1127,7 +1127,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCopyKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHCopyKeyW(HKEY hkeySrc, [NativeTypeName("LPCWSTR")] ushort* pszSrcSubKey, HKEY hkeyDest, [NativeTypeName("DWORD")] uint fReserved);
+    public static extern int SHCopyKeyW(HKEY hkeySrc, [NativeTypeName("LPCWSTR")] char* pszSrcSubKey, HKEY hkeyDest, [NativeTypeName("DWORD")] uint fReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1137,7 +1137,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegGetPathW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* pcszSubKey, [NativeTypeName("LPCWSTR")] ushort* pcszValue, [NativeTypeName("LPWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int SHRegGetPathW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* pcszSubKey, [NativeTypeName("LPCWSTR")] char* pcszValue, [NativeTypeName("LPWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetPathA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1147,7 +1147,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetPathW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegSetPathW(HKEY hKey, [NativeTypeName("LPCWSTR")] ushort* pcszSubKey, [NativeTypeName("LPCWSTR")] ushort* pcszValue, [NativeTypeName("LPCWSTR")] ushort* pcszPath, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int SHRegSetPathW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* pcszSubKey, [NativeTypeName("LPCWSTR")] char* pcszValue, [NativeTypeName("LPCWSTR")] char* pcszPath, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegCreateUSKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1157,7 +1157,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegCreateUSKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegCreateUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, HUSKEY hRelativeUSKey, [NativeTypeName("PHUSKEY")] HUSKEY* phNewUSKey, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int SHRegCreateUSKeyW([NativeTypeName("LPCWSTR")] char* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, HUSKEY hRelativeUSKey, [NativeTypeName("PHUSKEY")] HUSKEY* phNewUSKey, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegOpenUSKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1167,7 +1167,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegOpenUSKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegOpenUSKeyW([NativeTypeName("LPCWSTR")] ushort* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, HUSKEY hRelativeUSKey, [NativeTypeName("PHUSKEY")] HUSKEY* phNewUSKey, BOOL fIgnoreHKCU);
+    public static extern int SHRegOpenUSKeyW([NativeTypeName("LPCWSTR")] char* pwzPath, [NativeTypeName("REGSAM")] uint samDesired, HUSKEY hRelativeUSKey, [NativeTypeName("PHUSKEY")] HUSKEY* phNewUSKey, BOOL fIgnoreHKCU);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegQueryUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1177,7 +1177,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegQueryUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegQueryUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+    public static extern int SHRegQueryUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegWriteUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1187,7 +1187,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegWriteUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegWriteUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int SHRegWriteUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] char* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1197,12 +1197,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegDeleteUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, SHREGDEL_FLAGS delRegFlags);
+    public static extern int SHRegDeleteUSValueW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] char* pwzValue, SHREGDEL_FLAGS delRegFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteEmptyUSKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegDeleteEmptyUSKeyW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] ushort* pwzSubKey, SHREGDEL_FLAGS delRegFlags);
+    public static extern int SHRegDeleteEmptyUSKeyW(HUSKEY hUSKey, [NativeTypeName("LPCWSTR")] char* pwzSubKey, SHREGDEL_FLAGS delRegFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteEmptyUSKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1217,7 +1217,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegEnumUSKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegEnumUSKeyW(HUSKEY hUSKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pwzName, [NativeTypeName("LPDWORD")] uint* pcchName, SHREGENUM_FLAGS enumRegFlags);
+    public static extern int SHRegEnumUSKeyW(HUSKEY hUSKey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pwzName, [NativeTypeName("LPDWORD")] uint* pcchName, SHREGENUM_FLAGS enumRegFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegEnumUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1227,7 +1227,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegEnumUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegEnumUSValueW(HUSKEY hUSkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData, SHREGENUM_FLAGS enumRegFlags);
+    public static extern int SHRegEnumUSValueW(HUSKEY hUSkey, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* pszValueName, [NativeTypeName("LPDWORD")] uint* pcchValueName, [NativeTypeName("LPDWORD")] uint* pdwType, void* pvData, [NativeTypeName("LPDWORD")] uint* pcbData, SHREGENUM_FLAGS enumRegFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegQueryInfoUSKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1252,7 +1252,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegGetUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
+    public static extern int SHRegGetUSValueW([NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD *")] uint* pdwType, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fIgnoreHKCU, void* pvDefaultData, [NativeTypeName("DWORD")] uint dwDefaultDataSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1262,11 +1262,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("LSTATUS")]
-    public static extern int SHRegSetUSValueW([NativeTypeName("LPCWSTR")] ushort* pwzSubKey, [NativeTypeName("LPCWSTR")] ushort* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern int SHRegSetUSValueW([NativeTypeName("LPCWSTR")] char* pwzSubKey, [NativeTypeName("LPCWSTR")] char* pwzValue, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("const void *")] void* pvData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetIntW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHRegGetIntW(HKEY hk, [NativeTypeName("PCWSTR")] ushort* pwzKey, int iDefault);
+    public static extern int SHRegGetIntW(HKEY hk, [NativeTypeName("PCWSTR")] char* pwzKey, int iDefault);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetBoolUSValueA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1274,7 +1274,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetBoolUSValueW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] ushort* pszSubKey, [NativeTypeName("LPCWSTR")] ushort* pszValue, BOOL fIgnoreHKCU, BOOL fDefault);
+    public static extern BOOL SHRegGetBoolUSValueW([NativeTypeName("LPCWSTR")] char* pszSubKey, [NativeTypeName("LPCWSTR")] char* pszValue, BOOL fIgnoreHKCU, BOOL fDefault);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocCreate"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1286,7 +1286,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT AssocQueryStringW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
+    public static extern HRESULT AssocQueryStringW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] char* pszAssoc, [NativeTypeName("LPCWSTR")] char* pszExtra, [NativeTypeName("LPWSTR")] char* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringByKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1294,7 +1294,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringByKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT AssocQueryStringByKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, HKEY hkAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("LPWSTR")] ushort* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
+    public static extern HRESULT AssocQueryStringByKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, HKEY hkAssoc, [NativeTypeName("LPCWSTR")] char* pszExtra, [NativeTypeName("LPWSTR")] char* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryKeyA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1302,15 +1302,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryKeyW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT AssocQueryKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] ushort* pszAssoc, [NativeTypeName("LPCWSTR")] ushort* pszExtra, HKEY* phkeyOut);
+    public static extern HRESULT AssocQueryKeyW([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] char* pszAssoc, [NativeTypeName("LPCWSTR")] char* pszExtra, HKEY* phkeyOut);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocIsDangerous"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern BOOL AssocIsDangerous([NativeTypeName("PCWSTR")] ushort* pszAssoc);
+    public static extern BOOL AssocIsDangerous([NativeTypeName("PCWSTR")] char* pszAssoc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocGetPerceivedType"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT AssocGetPerceivedType([NativeTypeName("PCWSTR")] ushort* pszExt, PERCEIVED* ptype, [NativeTypeName("PERCEIVEDFLAG *")] uint* pflag, [NativeTypeName("PWSTR *")] ushort** ppszType);
+    public static extern HRESULT AssocGetPerceivedType([NativeTypeName("PCWSTR")] char* pszExt, PERCEIVED* ptype, [NativeTypeName("PERCEIVEDFLAG *")] uint* pflag, [NativeTypeName("PWSTR *")] char** ppszType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStreamA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1318,7 +1318,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStreamW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern IStream* SHOpenRegStreamW(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
+    public static extern IStream* SHOpenRegStreamW(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubkey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStream2A"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1326,7 +1326,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStream2W"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern IStream* SHOpenRegStream2W(HKEY hkey, [NativeTypeName("LPCWSTR")] ushort* pszSubkey, [NativeTypeName("LPCWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint grfMode);
+    public static extern IStream* SHOpenRegStream2W(HKEY hkey, [NativeTypeName("LPCWSTR")] char* pszSubkey, [NativeTypeName("LPCWSTR")] char* pszValue, [NativeTypeName("DWORD")] uint grfMode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateStreamOnFileA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1334,11 +1334,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateStreamOnFileW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHCreateStreamOnFileW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, IStream** ppstm);
+    public static extern HRESULT SHCreateStreamOnFileW([NativeTypeName("LPCWSTR")] char* pszFile, [NativeTypeName("DWORD")] uint grfMode, IStream** ppstm);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateStreamOnFileEx"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHCreateStreamOnFileEx([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreate, IStream* pstmTemplate, IStream** ppstm);
+    public static extern HRESULT SHCreateStreamOnFileEx([NativeTypeName("LPCWSTR")] char* pszFile, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreate, IStream* pstmTemplate, IStream** ppstm);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateMemStream"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1350,7 +1350,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAcceptLanguagesW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT GetAcceptLanguagesW([NativeTypeName("LPWSTR")] ushort* pszLanguages, [NativeTypeName("DWORD *")] uint* pcchLanguages);
+    public static extern HRESULT GetAcceptLanguagesW([NativeTypeName("LPWSTR")] char* pszLanguages, [NativeTypeName("DWORD *")] uint* pcchLanguages);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IUnknown_Set"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1406,11 +1406,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IStream_ReadStr"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT IStream_ReadStr(IStream* pstm, [NativeTypeName("PWSTR *")] ushort** ppsz);
+    public static extern HRESULT IStream_ReadStr(IStream* pstm, [NativeTypeName("PWSTR *")] char** ppsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IStream_WriteStr"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT IStream_WriteStr(IStream* pstm, [NativeTypeName("PCWSTR")] ushort* psz);
+    public static extern HRESULT IStream_WriteStr(IStream* pstm, [NativeTypeName("PCWSTR")] char* psz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IStream_Copy"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1418,7 +1418,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetViewStatePropertyBag"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern HRESULT SHGetViewStatePropertyBag([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PCWSTR")] ushort* pszBagName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT SHGetViewStatePropertyBag([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("PCWSTR")] char* pszBagName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFormatDateTimeA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1426,11 +1426,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFormatDateTimeW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHFormatDateTimeW([NativeTypeName("const __unaligned FILETIME *")] FILETIME* pft, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR")] ushort* pszBuf, uint cchBuf);
+    public static extern int SHFormatDateTimeW([NativeTypeName("const __unaligned FILETIME *")] FILETIME* pft, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("LPWSTR")] char* pszBuf, uint cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAnsiToUnicode"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHAnsiToUnicode([NativeTypeName("PCSTR")] sbyte* pszSrc, [NativeTypeName("PWSTR")] ushort* pwszDst, int cwchBuf);
+    public static extern int SHAnsiToUnicode([NativeTypeName("PCSTR")] sbyte* pszSrc, [NativeTypeName("PWSTR")] char* pwszDst, int cwchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAnsiToAnsi"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1438,11 +1438,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHUnicodeToAnsi"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHUnicodeToAnsi([NativeTypeName("PCWSTR")] ushort* pwszSrc, [NativeTypeName("PSTR")] sbyte* pszDst, int cchBuf);
+    public static extern int SHUnicodeToAnsi([NativeTypeName("PCWSTR")] char* pwszSrc, [NativeTypeName("PSTR")] sbyte* pszDst, int cchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHUnicodeToUnicode"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHUnicodeToUnicode([NativeTypeName("PCWSTR")] ushort* pwzSrc, [NativeTypeName("PWSTR")] ushort* pwzDst, int cwchBuf);
+    public static extern int SHUnicodeToUnicode([NativeTypeName("PCWSTR")] char* pwzSrc, [NativeTypeName("PWSTR")] char* pwzDst, int cwchBuf);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHMessageBoxCheckA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1450,7 +1450,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHMessageBoxCheckW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
-    public static extern int SHMessageBoxCheckW(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("LPCWSTR")] ushort* pszCaption, uint uType, int iDefault, [NativeTypeName("LPCWSTR")] ushort* pszRegVal);
+    public static extern int SHMessageBoxCheckW(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszText, [NativeTypeName("LPCWSTR")] char* pszCaption, uint uType, int iDefault, [NativeTypeName("LPCWSTR")] char* pszRegVal);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSendMessageBroadcastA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1468,7 +1468,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStripMneumonicW"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     [return: NativeTypeName("WCHAR")]
-    public static extern ushort SHStripMneumonicW([NativeTypeName("LPWSTR")] ushort* pszMenu);
+    public static extern char SHStripMneumonicW([NativeTypeName("LPWSTR")] char* pszMenu);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsOS"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
@@ -1582,112 +1582,112 @@ public static unsafe partial class Windows
     public const int STIF_SUPPORT_HEX = 0x00000001;
 
     [NativeTypeName("#define StrRetToStr StrRetToStrW")]
-    public static delegate*<STRRET*, ITEMIDLIST*, ushort**, HRESULT> StrRetToStr => &StrRetToStrW;
+    public static delegate*<STRRET*, ITEMIDLIST*, char**, HRESULT> StrRetToStr => &StrRetToStrW;
 
     [NativeTypeName("#define StrRetToBuf StrRetToBufW")]
-    public static delegate*<STRRET*, ITEMIDLIST*, ushort*, uint, HRESULT> StrRetToBuf => &StrRetToBufW;
+    public static delegate*<STRRET*, ITEMIDLIST*, char*, uint, HRESULT> StrRetToBuf => &StrRetToBufW;
 
     [NativeTypeName("#define SHStrDup SHStrDupW")]
-    public static delegate*<ushort*, ushort**, HRESULT> SHStrDup => &SHStrDupW;
+    public static delegate*<char*, char**, HRESULT> SHStrDup => &SHStrDupW;
 
     [NativeTypeName("#define SHLocalStrDup SHLocalStrDupW")]
-    public static delegate*<ushort*, ushort**, HRESULT> SHLocalStrDup => &SHLocalStrDupW;
+    public static delegate*<char*, char**, HRESULT> SHLocalStrDup => &SHLocalStrDupW;
 
     [NativeTypeName("#define IsCharSpace IsCharSpaceW")]
-    public static delegate*<ushort, BOOL> IsCharSpace => &IsCharSpaceW;
+    public static delegate*<char, BOOL> IsCharSpace => &IsCharSpaceW;
 
     [NativeTypeName("#define StrCmpC StrCmpCW")]
-    public static delegate*<ushort*, ushort*, int> StrCmpC => &StrCmpCW;
+    public static delegate*<char*, char*, int> StrCmpC => &StrCmpCW;
 
     [NativeTypeName("#define StrCmpIC StrCmpICW")]
-    public static delegate*<ushort*, ushort*, int> StrCmpIC => &StrCmpICW;
+    public static delegate*<char*, char*, int> StrCmpIC => &StrCmpICW;
 
     [NativeTypeName("#define StrChr StrChrW")]
-    public static delegate*<ushort*, ushort, ushort*> StrChr => &StrChrW;
+    public static delegate*<char*, char, char*> StrChr => &StrChrW;
 
     [NativeTypeName("#define StrRChr StrRChrW")]
-    public static delegate*<ushort*, ushort*, ushort, ushort*> StrRChr => &StrRChrW;
+    public static delegate*<char*, char*, char, char*> StrRChr => &StrRChrW;
 
     [NativeTypeName("#define StrChrI StrChrIW")]
-    public static delegate*<ushort*, ushort, ushort*> StrChrI => &StrChrIW;
+    public static delegate*<char*, char, char*> StrChrI => &StrChrIW;
 
     [NativeTypeName("#define StrRChrI StrRChrIW")]
-    public static delegate*<ushort*, ushort*, ushort, ushort*> StrRChrI => &StrRChrIW;
+    public static delegate*<char*, char*, char, char*> StrRChrI => &StrRChrIW;
 
     [NativeTypeName("#define StrCmpN StrCmpNW")]
-    public static delegate*<ushort*, ushort*, int, int> StrCmpN => &StrCmpNW;
+    public static delegate*<char*, char*, int, int> StrCmpN => &StrCmpNW;
 
     [NativeTypeName("#define StrCmpNI StrCmpNIW")]
-    public static delegate*<ushort*, ushort*, int, int> StrCmpNI => &StrCmpNIW;
+    public static delegate*<char*, char*, int, int> StrCmpNI => &StrCmpNIW;
 
     [NativeTypeName("#define StrStr StrStrW")]
-    public static delegate*<ushort*, ushort*, ushort*> StrStr => &StrStrW;
+    public static delegate*<char*, char*, char*> StrStr => &StrStrW;
 
     [NativeTypeName("#define StrStrI StrStrIW")]
-    public static delegate*<ushort*, ushort*, ushort*> StrStrI => &StrStrIW;
+    public static delegate*<char*, char*, char*> StrStrI => &StrStrIW;
 
     [NativeTypeName("#define StrDup StrDupW")]
-    public static delegate*<ushort*, ushort*> StrDup => &StrDupW;
+    public static delegate*<char*, char*> StrDup => &StrDupW;
 
     [NativeTypeName("#define StrRStrI StrRStrIW")]
-    public static delegate*<ushort*, ushort*, ushort*, ushort*> StrRStrI => &StrRStrIW;
+    public static delegate*<char*, char*, char*, char*> StrRStrI => &StrRStrIW;
 
     [NativeTypeName("#define StrCSpn StrCSpnW")]
-    public static delegate*<ushort*, ushort*, int> StrCSpn => &StrCSpnW;
+    public static delegate*<char*, char*, int> StrCSpn => &StrCSpnW;
 
     [NativeTypeName("#define StrCSpnI StrCSpnIW")]
-    public static delegate*<ushort*, ushort*, int> StrCSpnI => &StrCSpnIW;
+    public static delegate*<char*, char*, int> StrCSpnI => &StrCSpnIW;
 
     [NativeTypeName("#define StrSpn StrSpnW")]
-    public static delegate*<ushort*, ushort*, int> StrSpn => &StrSpnW;
+    public static delegate*<char*, char*, int> StrSpn => &StrSpnW;
 
     [NativeTypeName("#define StrToInt StrToIntW")]
-    public static delegate*<ushort*, int> StrToInt => &StrToIntW;
+    public static delegate*<char*, int> StrToInt => &StrToIntW;
 
     [NativeTypeName("#define StrPBrk StrPBrkW")]
-    public static delegate*<ushort*, ushort*, ushort*> StrPBrk => &StrPBrkW;
+    public static delegate*<char*, char*, char*> StrPBrk => &StrPBrkW;
 
     [NativeTypeName("#define StrToIntEx StrToIntExW")]
-    public static delegate*<ushort*, int, int*, BOOL> StrToIntEx => &StrToIntExW;
+    public static delegate*<char*, int, int*, BOOL> StrToIntEx => &StrToIntExW;
 
     [NativeTypeName("#define StrToInt64Ex StrToInt64ExW")]
-    public static delegate*<ushort*, int, long*, BOOL> StrToInt64Ex => &StrToInt64ExW;
+    public static delegate*<char*, int, long*, BOOL> StrToInt64Ex => &StrToInt64ExW;
 
     [NativeTypeName("#define StrFromTimeInterval StrFromTimeIntervalW")]
-    public static delegate*<ushort*, uint, uint, int, int> StrFromTimeInterval => &StrFromTimeIntervalW;
+    public static delegate*<char*, uint, uint, int, int> StrFromTimeInterval => &StrFromTimeIntervalW;
 
     [NativeTypeName("#define StrFormatByteSize StrFormatByteSizeW")]
-    public static delegate*<long, ushort*, uint, ushort*> StrFormatByteSize => &StrFormatByteSizeW;
+    public static delegate*<long, char*, uint, char*> StrFormatByteSize => &StrFormatByteSizeW;
 
     [NativeTypeName("#define StrFormatByteSize64 StrFormatByteSizeW")]
-    public static delegate*<long, ushort*, uint, ushort*> StrFormatByteSize64 => &StrFormatByteSizeW;
+    public static delegate*<long, char*, uint, char*> StrFormatByteSize64 => &StrFormatByteSizeW;
 
     [NativeTypeName("#define StrFormatKBSize StrFormatKBSizeW")]
-    public static delegate*<long, ushort*, uint, ushort*> StrFormatKBSize => &StrFormatKBSizeW;
+    public static delegate*<long, char*, uint, char*> StrFormatKBSize => &StrFormatKBSizeW;
 
     [NativeTypeName("#define StrNCat StrNCatW")]
-    public static delegate*<ushort*, ushort*, int, ushort*> StrNCat => &StrNCatW;
+    public static delegate*<char*, char*, int, char*> StrNCat => &StrNCatW;
 
     [NativeTypeName("#define StrTrim StrTrimW")]
-    public static delegate*<ushort*, ushort*, BOOL> StrTrim => &StrTrimW;
+    public static delegate*<char*, char*, BOOL> StrTrim => &StrTrimW;
 
     [NativeTypeName("#define StrCatBuff StrCatBuffW")]
-    public static delegate*<ushort*, ushort*, int, ushort*> StrCatBuff => &StrCatBuffW;
+    public static delegate*<char*, char*, int, char*> StrCatBuff => &StrCatBuffW;
 
     [NativeTypeName("#define ChrCmpI ChrCmpIW")]
-    public static delegate*<ushort, ushort, BOOL> ChrCmpI => &ChrCmpIW;
+    public static delegate*<char, char, BOOL> ChrCmpI => &ChrCmpIW;
 
     [NativeTypeName("#define wvnsprintf wvnsprintfW")]
-    public static delegate*<ushort*, int, ushort*, sbyte*, int> wvnsprintf => &wvnsprintfW;
+    public static delegate*<char*, int, char*, sbyte*, int> wvnsprintf => &wvnsprintfW;
 
     [NativeTypeName("#define StrIsIntlEqual StrIsIntlEqualW")]
-    public static delegate*<BOOL, ushort*, ushort*, int, BOOL> StrIsIntlEqual => &StrIsIntlEqualW;
+    public static delegate*<BOOL, char*, char*, int, BOOL> StrIsIntlEqual => &StrIsIntlEqualW;
 
     [NativeTypeName("#define StrCmpNC StrCmpNCW")]
-    public static delegate*<ushort*, ushort*, int, int> StrCmpNC => &StrCmpNCW;
+    public static delegate*<char*, char*, int, int> StrCmpNC => &StrCmpNCW;
 
     [NativeTypeName("#define StrCmpNIC StrCmpNICW")]
-    public static delegate*<ushort*, ushort*, int, int> StrCmpNIC => &StrCmpNICW;
+    public static delegate*<char*, char*, int, int> StrCmpNIC => &StrCmpNICW;
 
     [NativeTypeName("#define StrCatA lstrcatA")]
     public static delegate*<sbyte*, sbyte*, sbyte*> StrCatA => &lstrcatA;
@@ -1705,67 +1705,67 @@ public static unsafe partial class Windows
     public static delegate*<sbyte*, sbyte*, int, sbyte*> StrCpyNA => &lstrcpynA;
 
     [NativeTypeName("#define StrToLong StrToInt")]
-    public static delegate*<ushort*, int> StrToLong => &StrToIntW;
+    public static delegate*<char*, int> StrToLong => &StrToIntW;
 
     [NativeTypeName("#define StrNCmp StrCmpN")]
-    public static delegate*<ushort*, ushort*, int, int> StrNCmp => &StrCmpNW;
+    public static delegate*<char*, char*, int, int> StrNCmp => &StrCmpNW;
 
     [NativeTypeName("#define StrNCmpI StrCmpNI")]
-    public static delegate*<ushort*, ushort*, int, int> StrNCmpI => &StrCmpNIW;
+    public static delegate*<char*, char*, int, int> StrNCmpI => &StrCmpNIW;
 
     [NativeTypeName("#define StrNCpy StrCpyN")]
-    public static delegate*<ushort*, ushort*, int, ushort*> StrNCpy => &StrCpyNW;
+    public static delegate*<char*, char*, int, char*> StrNCpy => &StrCpyNW;
 
     [NativeTypeName("#define StrCatN StrNCat")]
-    public static delegate*<ushort*, ushort*, int, ushort*> StrCatN => &StrNCatW;
+    public static delegate*<char*, char*, int, char*> StrCatN => &StrNCatW;
 
     [NativeTypeName("#define StrCat StrCatW")]
-    public static delegate*<ushort*, ushort*, ushort*> StrCat => &StrCatW;
+    public static delegate*<char*, char*, char*> StrCat => &StrCatW;
 
     [NativeTypeName("#define StrCmp StrCmpW")]
-    public static delegate*<ushort*, ushort*, int> StrCmp => &StrCmpW;
+    public static delegate*<char*, char*, int> StrCmp => &StrCmpW;
 
     [NativeTypeName("#define StrCmpI StrCmpIW")]
-    public static delegate*<ushort*, ushort*, int> StrCmpI => &StrCmpIW;
+    public static delegate*<char*, char*, int> StrCmpI => &StrCmpIW;
 
     [NativeTypeName("#define StrCpy StrCpyW")]
-    public static delegate*<ushort*, ushort*, ushort*> StrCpy => &StrCpyW;
+    public static delegate*<char*, char*, char*> StrCpy => &StrCpyW;
 
     [NativeTypeName("#define StrCpyN StrCpyNW")]
-    public static delegate*<ushort*, ushort*, int, ushort*> StrCpyN => &StrCpyNW;
+    public static delegate*<char*, char*, int, char*> StrCpyN => &StrCpyNW;
 
     [NativeTypeName("#define PathAddBackslash PathAddBackslashW")]
-    public static delegate*<ushort*, ushort*> PathAddBackslash => &PathAddBackslashW;
+    public static delegate*<char*, char*> PathAddBackslash => &PathAddBackslashW;
 
     [NativeTypeName("#define PathAddExtension PathAddExtensionW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathAddExtension => &PathAddExtensionW;
+    public static delegate*<char*, char*, BOOL> PathAddExtension => &PathAddExtensionW;
 
     [NativeTypeName("#define PathBuildRoot PathBuildRootW")]
-    public static delegate*<ushort*, int, ushort*> PathBuildRoot => &PathBuildRootW;
+    public static delegate*<char*, int, char*> PathBuildRoot => &PathBuildRootW;
 
     [NativeTypeName("#define PathCombine PathCombineW")]
-    public static delegate*<ushort*, ushort*, ushort*, ushort*> PathCombine => &PathCombineW;
+    public static delegate*<char*, char*, char*, char*> PathCombine => &PathCombineW;
 
     [NativeTypeName("#define PathFileExists PathFileExistsW")]
-    public static delegate*<ushort*, BOOL> PathFileExists => &PathFileExistsW;
+    public static delegate*<char*, BOOL> PathFileExists => &PathFileExistsW;
 
     [NativeTypeName("#define PathFindExtension PathFindExtensionW")]
-    public static delegate*<ushort*, ushort*> PathFindExtension => &PathFindExtensionW;
+    public static delegate*<char*, char*> PathFindExtension => &PathFindExtensionW;
 
     [NativeTypeName("#define PathFindFileName PathFindFileNameW")]
-    public static delegate*<ushort*, ushort*> PathFindFileName => &PathFindFileNameW;
+    public static delegate*<char*, char*> PathFindFileName => &PathFindFileNameW;
 
     [NativeTypeName("#define PathFindNextComponent PathFindNextComponentW")]
-    public static delegate*<ushort*, ushort*> PathFindNextComponent => &PathFindNextComponentW;
+    public static delegate*<char*, char*> PathFindNextComponent => &PathFindNextComponentW;
 
     [NativeTypeName("#define PathFindSuffixArray PathFindSuffixArrayW")]
-    public static delegate*<ushort*, ushort**, int, ushort*> PathFindSuffixArray => &PathFindSuffixArrayW;
+    public static delegate*<char*, char**, int, char*> PathFindSuffixArray => &PathFindSuffixArrayW;
 
     [NativeTypeName("#define PathGetArgs PathGetArgsW")]
-    public static delegate*<ushort*, ushort*> PathGetArgs => &PathGetArgsW;
+    public static delegate*<char*, char*> PathGetArgs => &PathGetArgsW;
 
     [NativeTypeName("#define PathIsLFNFileSpec PathIsLFNFileSpecW")]
-    public static delegate*<ushort*, BOOL> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
+    public static delegate*<char*, BOOL> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
 
     [NativeTypeName("#define GCT_INVALID 0x0000")]
     public const int GCT_INVALID = 0x0000;
@@ -1783,43 +1783,43 @@ public static unsafe partial class Windows
     public const int GCT_SEPARATOR = 0x0008;
 
     [NativeTypeName("#define PathGetDriveNumber PathGetDriveNumberW")]
-    public static delegate*<ushort*, int> PathGetDriveNumber => &PathGetDriveNumberW;
+    public static delegate*<char*, int> PathGetDriveNumber => &PathGetDriveNumberW;
 
     [NativeTypeName("#define PathIsDirectory PathIsDirectoryW")]
-    public static delegate*<ushort*, BOOL> PathIsDirectory => &PathIsDirectoryW;
+    public static delegate*<char*, BOOL> PathIsDirectory => &PathIsDirectoryW;
 
     [NativeTypeName("#define PathIsDirectoryEmpty PathIsDirectoryEmptyW")]
-    public static delegate*<ushort*, BOOL> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
+    public static delegate*<char*, BOOL> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
 
     [NativeTypeName("#define PathIsFileSpec PathIsFileSpecW")]
-    public static delegate*<ushort*, BOOL> PathIsFileSpec => &PathIsFileSpecW;
+    public static delegate*<char*, BOOL> PathIsFileSpec => &PathIsFileSpecW;
 
     [NativeTypeName("#define PathIsPrefix PathIsPrefixW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathIsPrefix => &PathIsPrefixW;
+    public static delegate*<char*, char*, BOOL> PathIsPrefix => &PathIsPrefixW;
 
     [NativeTypeName("#define PathIsRelative PathIsRelativeW")]
-    public static delegate*<ushort*, BOOL> PathIsRelative => &PathIsRelativeW;
+    public static delegate*<char*, BOOL> PathIsRelative => &PathIsRelativeW;
 
     [NativeTypeName("#define PathIsRoot PathIsRootW")]
-    public static delegate*<ushort*, BOOL> PathIsRoot => &PathIsRootW;
+    public static delegate*<char*, BOOL> PathIsRoot => &PathIsRootW;
 
     [NativeTypeName("#define PathIsSameRoot PathIsSameRootW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathIsSameRoot => &PathIsSameRootW;
+    public static delegate*<char*, char*, BOOL> PathIsSameRoot => &PathIsSameRootW;
 
     [NativeTypeName("#define PathIsUNC PathIsUNCW")]
-    public static delegate*<ushort*, BOOL> PathIsUNC => &PathIsUNCW;
+    public static delegate*<char*, BOOL> PathIsUNC => &PathIsUNCW;
 
     [NativeTypeName("#define PathIsNetworkPath PathIsNetworkPathW")]
-    public static delegate*<ushort*, BOOL> PathIsNetworkPath => &PathIsNetworkPathW;
+    public static delegate*<char*, BOOL> PathIsNetworkPath => &PathIsNetworkPathW;
 
     [NativeTypeName("#define PathIsUNCServer PathIsUNCServerW")]
-    public static delegate*<ushort*, BOOL> PathIsUNCServer => &PathIsUNCServerW;
+    public static delegate*<char*, BOOL> PathIsUNCServer => &PathIsUNCServerW;
 
     [NativeTypeName("#define PathIsUNCServerShare PathIsUNCServerShareW")]
-    public static delegate*<ushort*, BOOL> PathIsUNCServerShare => &PathIsUNCServerShareW;
+    public static delegate*<char*, BOOL> PathIsUNCServerShare => &PathIsUNCServerShareW;
 
     [NativeTypeName("#define PathIsURL PathIsURLW")]
-    public static delegate*<ushort*, BOOL> PathIsURL => &PathIsURLW;
+    public static delegate*<char*, BOOL> PathIsURL => &PathIsURLW;
 
     [NativeTypeName("#define PMSF_NORMAL 0x00000000")]
     public const int PMSF_NORMAL = 0x00000000;
@@ -1831,181 +1831,181 @@ public static unsafe partial class Windows
     public const int PMSF_DONT_STRIP_SPACES = 0x00010000;
 
     [NativeTypeName("#define PathRemoveBackslash PathRemoveBackslashW")]
-    public static delegate*<ushort*, ushort*> PathRemoveBackslash => &PathRemoveBackslashW;
+    public static delegate*<char*, char*> PathRemoveBackslash => &PathRemoveBackslashW;
 
     [NativeTypeName("#define PathSkipRoot PathSkipRootW")]
-    public static delegate*<ushort*, ushort*> PathSkipRoot => &PathSkipRootW;
+    public static delegate*<char*, char*> PathSkipRoot => &PathSkipRootW;
 
     [NativeTypeName("#define PathStripPath PathStripPathW")]
-    public static delegate*<ushort*, void> PathStripPath => &PathStripPathW;
+    public static delegate*<char*, void> PathStripPath => &PathStripPathW;
 
     [NativeTypeName("#define PathStripToRoot PathStripToRootW")]
-    public static delegate*<ushort*, BOOL> PathStripToRoot => &PathStripToRootW;
+    public static delegate*<char*, BOOL> PathStripToRoot => &PathStripToRootW;
 
     [NativeTypeName("#define PathMakeSystemFolder PathMakeSystemFolderW")]
-    public static delegate*<ushort*, BOOL> PathMakeSystemFolder => &PathMakeSystemFolderW;
+    public static delegate*<char*, BOOL> PathMakeSystemFolder => &PathMakeSystemFolderW;
 
     [NativeTypeName("#define PathUnmakeSystemFolder PathUnmakeSystemFolderW")]
-    public static delegate*<ushort*, BOOL> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
+    public static delegate*<char*, BOOL> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
 
     [NativeTypeName("#define PathIsSystemFolder PathIsSystemFolderW")]
-    public static delegate*<ushort*, uint, BOOL> PathIsSystemFolder => &PathIsSystemFolderW;
+    public static delegate*<char*, uint, BOOL> PathIsSystemFolder => &PathIsSystemFolderW;
 
     [NativeTypeName("#define PathUndecorate PathUndecorateW")]
-    public static delegate*<ushort*, void> PathUndecorate => &PathUndecorateW;
+    public static delegate*<char*, void> PathUndecorate => &PathUndecorateW;
 
     [NativeTypeName("#define PathUnExpandEnvStrings PathUnExpandEnvStringsW")]
-    public static delegate*<ushort*, ushort*, uint, BOOL> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
+    public static delegate*<char*, char*, uint, BOOL> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
 
     [NativeTypeName("#define PathAppend PathAppendW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathAppend => &PathAppendW;
+    public static delegate*<char*, char*, BOOL> PathAppend => &PathAppendW;
 
     [NativeTypeName("#define PathCanonicalize PathCanonicalizeW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathCanonicalize => &PathCanonicalizeW;
+    public static delegate*<char*, char*, BOOL> PathCanonicalize => &PathCanonicalizeW;
 
     [NativeTypeName("#define PathCompactPath PathCompactPathW")]
-    public static delegate*<HDC, ushort*, uint, BOOL> PathCompactPath => &PathCompactPathW;
+    public static delegate*<HDC, char*, uint, BOOL> PathCompactPath => &PathCompactPathW;
 
     [NativeTypeName("#define PathCompactPathEx PathCompactPathExW")]
-    public static delegate*<ushort*, ushort*, uint, uint, BOOL> PathCompactPathEx => &PathCompactPathExW;
+    public static delegate*<char*, char*, uint, uint, BOOL> PathCompactPathEx => &PathCompactPathExW;
 
     [NativeTypeName("#define PathCommonPrefix PathCommonPrefixW")]
-    public static delegate*<ushort*, ushort*, ushort*, int> PathCommonPrefix => &PathCommonPrefixW;
+    public static delegate*<char*, char*, char*, int> PathCommonPrefix => &PathCommonPrefixW;
 
     [NativeTypeName("#define PathFindOnPath PathFindOnPathW")]
-    public static delegate*<ushort*, ushort**, BOOL> PathFindOnPath => &PathFindOnPathW;
+    public static delegate*<char*, char**, BOOL> PathFindOnPath => &PathFindOnPathW;
 
     [NativeTypeName("#define PathGetCharType PathGetCharTypeW")]
-    public static delegate*<ushort, uint> PathGetCharType => &PathGetCharTypeW;
+    public static delegate*<char, uint> PathGetCharType => &PathGetCharTypeW;
 
     [NativeTypeName("#define PathIsContentType PathIsContentTypeW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathIsContentType => &PathIsContentTypeW;
+    public static delegate*<char*, char*, BOOL> PathIsContentType => &PathIsContentTypeW;
 
     [NativeTypeName("#define PathMakePretty PathMakePrettyW")]
-    public static delegate*<ushort*, BOOL> PathMakePretty => &PathMakePrettyW;
+    public static delegate*<char*, BOOL> PathMakePretty => &PathMakePrettyW;
 
     [NativeTypeName("#define PathMatchSpec PathMatchSpecW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathMatchSpec => &PathMatchSpecW;
+    public static delegate*<char*, char*, BOOL> PathMatchSpec => &PathMatchSpecW;
 
     [NativeTypeName("#define PathMatchSpecEx PathMatchSpecExW")]
-    public static delegate*<ushort*, ushort*, uint, HRESULT> PathMatchSpecEx => &PathMatchSpecExW;
+    public static delegate*<char*, char*, uint, HRESULT> PathMatchSpecEx => &PathMatchSpecExW;
 
     [NativeTypeName("#define PathParseIconLocation PathParseIconLocationW")]
-    public static delegate*<ushort*, int> PathParseIconLocation => &PathParseIconLocationW;
+    public static delegate*<char*, int> PathParseIconLocation => &PathParseIconLocationW;
 
     [NativeTypeName("#define PathQuoteSpaces PathQuoteSpacesW")]
-    public static delegate*<ushort*, BOOL> PathQuoteSpaces => &PathQuoteSpacesW;
+    public static delegate*<char*, BOOL> PathQuoteSpaces => &PathQuoteSpacesW;
 
     [NativeTypeName("#define PathRelativePathTo PathRelativePathToW")]
-    public static delegate*<ushort*, ushort*, uint, ushort*, uint, BOOL> PathRelativePathTo => &PathRelativePathToW;
+    public static delegate*<char*, char*, uint, char*, uint, BOOL> PathRelativePathTo => &PathRelativePathToW;
 
     [NativeTypeName("#define PathRemoveArgs PathRemoveArgsW")]
-    public static delegate*<ushort*, void> PathRemoveArgs => &PathRemoveArgsW;
+    public static delegate*<char*, void> PathRemoveArgs => &PathRemoveArgsW;
 
     [NativeTypeName("#define PathRemoveBlanks PathRemoveBlanksW")]
-    public static delegate*<ushort*, void> PathRemoveBlanks => &PathRemoveBlanksW;
+    public static delegate*<char*, void> PathRemoveBlanks => &PathRemoveBlanksW;
 
     [NativeTypeName("#define PathRemoveExtension PathRemoveExtensionW")]
-    public static delegate*<ushort*, void> PathRemoveExtension => &PathRemoveExtensionW;
+    public static delegate*<char*, void> PathRemoveExtension => &PathRemoveExtensionW;
 
     [NativeTypeName("#define PathRemoveFileSpec PathRemoveFileSpecW")]
-    public static delegate*<ushort*, BOOL> PathRemoveFileSpec => &PathRemoveFileSpecW;
+    public static delegate*<char*, BOOL> PathRemoveFileSpec => &PathRemoveFileSpecW;
 
     [NativeTypeName("#define PathRenameExtension PathRenameExtensionW")]
-    public static delegate*<ushort*, ushort*, BOOL> PathRenameExtension => &PathRenameExtensionW;
+    public static delegate*<char*, char*, BOOL> PathRenameExtension => &PathRenameExtensionW;
 
     [NativeTypeName("#define PathSearchAndQualify PathSearchAndQualifyW")]
-    public static delegate*<ushort*, ushort*, uint, BOOL> PathSearchAndQualify => &PathSearchAndQualifyW;
+    public static delegate*<char*, char*, uint, BOOL> PathSearchAndQualify => &PathSearchAndQualifyW;
 
     [NativeTypeName("#define PathSetDlgItemPath PathSetDlgItemPathW")]
-    public static delegate*<HWND, int, ushort*, void> PathSetDlgItemPath => &PathSetDlgItemPathW;
+    public static delegate*<HWND, int, char*, void> PathSetDlgItemPath => &PathSetDlgItemPathW;
 
     [NativeTypeName("#define PathUnquoteSpaces PathUnquoteSpacesW")]
-    public static delegate*<ushort*, BOOL> PathUnquoteSpaces => &PathUnquoteSpacesW;
+    public static delegate*<char*, BOOL> PathUnquoteSpaces => &PathUnquoteSpacesW;
 
     [NativeTypeName("#define UrlCompare UrlCompareW")]
-    public static delegate*<ushort*, ushort*, BOOL, int> UrlCompare => &UrlCompareW;
+    public static delegate*<char*, char*, BOOL, int> UrlCompare => &UrlCompareW;
 
     [NativeTypeName("#define UrlCombine UrlCombineW")]
-    public static delegate*<ushort*, ushort*, ushort*, uint*, uint, HRESULT> UrlCombine => &UrlCombineW;
+    public static delegate*<char*, char*, char*, uint*, uint, HRESULT> UrlCombine => &UrlCombineW;
 
     [NativeTypeName("#define UrlCanonicalize UrlCanonicalizeW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> UrlCanonicalize => &UrlCanonicalizeW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> UrlCanonicalize => &UrlCanonicalizeW;
 
     [NativeTypeName("#define UrlIsOpaque UrlIsOpaqueW")]
-    public static delegate*<ushort*, BOOL> UrlIsOpaque => &UrlIsOpaqueW;
+    public static delegate*<char*, BOOL> UrlIsOpaque => &UrlIsOpaqueW;
 
     [NativeTypeName("#define UrlGetLocation UrlGetLocationW")]
-    public static delegate*<ushort*, ushort*> UrlGetLocation => &UrlGetLocationW;
+    public static delegate*<char*, char*> UrlGetLocation => &UrlGetLocationW;
 
     [NativeTypeName("#define UrlUnescape UrlUnescapeW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> UrlUnescape => &UrlUnescapeW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> UrlUnescape => &UrlUnescapeW;
 
     [NativeTypeName("#define UrlEscape UrlEscapeW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> UrlEscape => &UrlEscapeW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> UrlEscape => &UrlEscapeW;
 
     [NativeTypeName("#define UrlCreateFromPath UrlCreateFromPathW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> UrlCreateFromPath => &UrlCreateFromPathW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> UrlCreateFromPath => &UrlCreateFromPathW;
 
     [NativeTypeName("#define PathCreateFromUrl PathCreateFromUrlW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> PathCreateFromUrl => &PathCreateFromUrlW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> PathCreateFromUrl => &PathCreateFromUrlW;
 
     [NativeTypeName("#define UrlHash UrlHashW")]
-    public static delegate*<ushort*, byte*, uint, HRESULT> UrlHash => &UrlHashW;
+    public static delegate*<char*, byte*, uint, HRESULT> UrlHash => &UrlHashW;
 
     [NativeTypeName("#define UrlGetPart UrlGetPartW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, uint, HRESULT> UrlGetPart => &UrlGetPartW;
+    public static delegate*<char*, char*, uint*, uint, uint, HRESULT> UrlGetPart => &UrlGetPartW;
 
     [NativeTypeName("#define UrlApplyScheme UrlApplySchemeW")]
-    public static delegate*<ushort*, ushort*, uint*, uint, HRESULT> UrlApplyScheme => &UrlApplySchemeW;
+    public static delegate*<char*, char*, uint*, uint, HRESULT> UrlApplyScheme => &UrlApplySchemeW;
 
     [NativeTypeName("#define UrlIs UrlIsW")]
-    public static delegate*<ushort*, URLIS, BOOL> UrlIs => &UrlIsW;
+    public static delegate*<char*, URLIS, BOOL> UrlIs => &UrlIsW;
 
     [NativeTypeName("#define UrlFixup UrlFixupW")]
-    public static delegate*<ushort*, ushort*, uint, HRESULT> UrlFixup => &UrlFixupW;
+    public static delegate*<char*, char*, uint, HRESULT> UrlFixup => &UrlFixupW;
 
     [NativeTypeName("#define ParseURL ParseURLW")]
-    public static delegate*<ushort*, PARSEDURLW*, HRESULT> ParseURL => &ParseURLW;
+    public static delegate*<char*, PARSEDURLW*, HRESULT> ParseURL => &ParseURLW;
 
     [NativeTypeName("#define SHDeleteEmptyKey SHDeleteEmptyKeyW")]
-    public static delegate*<HKEY, ushort*, int> SHDeleteEmptyKey => &SHDeleteEmptyKeyW;
+    public static delegate*<HKEY, char*, int> SHDeleteEmptyKey => &SHDeleteEmptyKeyW;
 
     [NativeTypeName("#define SHDeleteKey SHDeleteKeyW")]
-    public static delegate*<HKEY, ushort*, int> SHDeleteKey => &SHDeleteKeyW;
+    public static delegate*<HKEY, char*, int> SHDeleteKey => &SHDeleteKeyW;
 
     [NativeTypeName("#define SHDeleteValue SHDeleteValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, int> SHDeleteValue => &SHDeleteValueW;
+    public static delegate*<HKEY, char*, char*, int> SHDeleteValue => &SHDeleteValueW;
 
     [NativeTypeName("#define SHGetValue SHGetValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint*, void*, uint*, int> SHGetValue => &SHGetValueW;
+    public static delegate*<HKEY, char*, char*, uint*, void*, uint*, int> SHGetValue => &SHGetValueW;
 
     [NativeTypeName("#define SHSetValue SHSetValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, void*, uint, int> SHSetValue => &SHSetValueW;
+    public static delegate*<HKEY, char*, char*, uint, void*, uint, int> SHSetValue => &SHSetValueW;
 
     [NativeTypeName("#define SHRegGetValue SHRegGetValueW")]
-    public static delegate*<HKEY, ushort*, ushort*, int, uint*, void*, uint*, int> SHRegGetValue => &SHRegGetValueW;
+    public static delegate*<HKEY, char*, char*, int, uint*, void*, uint*, int> SHRegGetValue => &SHRegGetValueW;
 
     [NativeTypeName("#define SHQueryValueEx SHQueryValueExW")]
-    public static delegate*<HKEY, ushort*, uint*, uint*, void*, uint*, int> SHQueryValueEx => &SHQueryValueExW;
+    public static delegate*<HKEY, char*, uint*, uint*, void*, uint*, int> SHQueryValueEx => &SHQueryValueExW;
 
     [NativeTypeName("#define SHEnumKeyEx SHEnumKeyExW")]
-    public static delegate*<HKEY, uint, ushort*, uint*, int> SHEnumKeyEx => &SHEnumKeyExW;
+    public static delegate*<HKEY, uint, char*, uint*, int> SHEnumKeyEx => &SHEnumKeyExW;
 
     [NativeTypeName("#define SHEnumValue SHEnumValueW")]
-    public static delegate*<HKEY, uint, ushort*, uint*, uint*, void*, uint*, int> SHEnumValue => &SHEnumValueW;
+    public static delegate*<HKEY, uint, char*, uint*, uint*, void*, uint*, int> SHEnumValue => &SHEnumValueW;
 
     [NativeTypeName("#define SHQueryInfoKey SHQueryInfoKeyW")]
     public static delegate*<HKEY, uint*, uint*, uint*, uint*, int> SHQueryInfoKey => &SHQueryInfoKeyW;
 
     [NativeTypeName("#define SHCopyKey SHCopyKeyW")]
-    public static delegate*<HKEY, ushort*, HKEY, uint, int> SHCopyKey => &SHCopyKeyW;
+    public static delegate*<HKEY, char*, HKEY, uint, int> SHCopyKey => &SHCopyKeyW;
 
     [NativeTypeName("#define SHRegGetPath SHRegGetPathW")]
-    public static delegate*<HKEY, ushort*, ushort*, ushort*, uint, int> SHRegGetPath => &SHRegGetPathW;
+    public static delegate*<HKEY, char*, char*, char*, uint, int> SHRegGetPath => &SHRegGetPathW;
 
     [NativeTypeName("#define SHRegSetPath SHRegSetPathW")]
-    public static delegate*<HKEY, ushort*, ushort*, ushort*, uint, int> SHRegSetPath => &SHRegSetPathW;
+    public static delegate*<HKEY, char*, char*, char*, uint, int> SHRegSetPath => &SHRegSetPathW;
 
     [NativeTypeName("#define SHREGSET_HKCU 0x00000001")]
     public const int SHREGSET_HKCU = 0x00000001;
@@ -2023,64 +2023,64 @@ public static unsafe partial class Windows
     public const int SHREGSET_DEFAULT = (0x00000002 | 0x00000004);
 
     [NativeTypeName("#define SHRegCreateUSKey SHRegCreateUSKeyW")]
-    public static delegate*<ushort*, uint, HUSKEY, HUSKEY*, uint, int> SHRegCreateUSKey => &SHRegCreateUSKeyW;
+    public static delegate*<char*, uint, HUSKEY, HUSKEY*, uint, int> SHRegCreateUSKey => &SHRegCreateUSKeyW;
 
     [NativeTypeName("#define SHRegOpenUSKey SHRegOpenUSKeyW")]
-    public static delegate*<ushort*, uint, HUSKEY, HUSKEY*, BOOL, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
+    public static delegate*<char*, uint, HUSKEY, HUSKEY*, BOOL, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
 
     [NativeTypeName("#define SHRegQueryUSValue SHRegQueryUSValueW")]
-    public static delegate*<HUSKEY, ushort*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
+    public static delegate*<HUSKEY, char*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
 
     [NativeTypeName("#define SHRegWriteUSValue SHRegWriteUSValueW")]
-    public static delegate*<HUSKEY, ushort*, uint, void*, uint, uint, int> SHRegWriteUSValue => &SHRegWriteUSValueW;
+    public static delegate*<HUSKEY, char*, uint, void*, uint, uint, int> SHRegWriteUSValue => &SHRegWriteUSValueW;
 
     [NativeTypeName("#define SHRegDeleteUSValue SHRegDeleteUSValueW")]
-    public static delegate*<HUSKEY, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteUSValue => &SHRegDeleteUSValueW;
+    public static delegate*<HUSKEY, char*, SHREGDEL_FLAGS, int> SHRegDeleteUSValue => &SHRegDeleteUSValueW;
 
     [NativeTypeName("#define SHRegDeleteEmptyUSKey SHRegDeleteEmptyUSKeyW")]
-    public static delegate*<HUSKEY, ushort*, SHREGDEL_FLAGS, int> SHRegDeleteEmptyUSKey => &SHRegDeleteEmptyUSKeyW;
+    public static delegate*<HUSKEY, char*, SHREGDEL_FLAGS, int> SHRegDeleteEmptyUSKey => &SHRegDeleteEmptyUSKeyW;
 
     [NativeTypeName("#define SHRegEnumUSKey SHRegEnumUSKeyW")]
-    public static delegate*<HUSKEY, uint, ushort*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSKey => &SHRegEnumUSKeyW;
+    public static delegate*<HUSKEY, uint, char*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSKey => &SHRegEnumUSKeyW;
 
     [NativeTypeName("#define SHRegEnumUSValue SHRegEnumUSValueW")]
-    public static delegate*<HUSKEY, uint, ushort*, uint*, uint*, void*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSValue => &SHRegEnumUSValueW;
+    public static delegate*<HUSKEY, uint, char*, uint*, uint*, void*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSValue => &SHRegEnumUSValueW;
 
     [NativeTypeName("#define SHRegQueryInfoUSKey SHRegQueryInfoUSKeyW")]
     public static delegate*<HUSKEY, uint*, uint*, uint*, uint*, SHREGENUM_FLAGS, int> SHRegQueryInfoUSKey => &SHRegQueryInfoUSKeyW;
 
     [NativeTypeName("#define SHRegGetUSValue SHRegGetUSValueW")]
-    public static delegate*<ushort*, ushort*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
+    public static delegate*<char*, char*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
 
     [NativeTypeName("#define SHRegSetUSValue SHRegSetUSValueW")]
-    public static delegate*<ushort*, ushort*, uint, void*, uint, uint, int> SHRegSetUSValue => &SHRegSetUSValueW;
+    public static delegate*<char*, char*, uint, void*, uint, uint, int> SHRegSetUSValue => &SHRegSetUSValueW;
 
     [NativeTypeName("#define SHRegGetInt SHRegGetIntW")]
-    public static delegate*<HKEY, ushort*, int, int> SHRegGetInt => &SHRegGetIntW;
+    public static delegate*<HKEY, char*, int, int> SHRegGetInt => &SHRegGetIntW;
 
     [NativeTypeName("#define SHRegGetBoolUSValue SHRegGetBoolUSValueW")]
-    public static delegate*<ushort*, ushort*, BOOL, BOOL, BOOL> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
+    public static delegate*<char*, char*, BOOL, BOOL, BOOL> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
 
     [NativeTypeName("#define AssocQueryString AssocQueryStringW")]
-    public static delegate*<uint, ASSOCSTR, ushort*, ushort*, ushort*, uint*, HRESULT> AssocQueryString => &AssocQueryStringW;
+    public static delegate*<uint, ASSOCSTR, char*, char*, char*, uint*, HRESULT> AssocQueryString => &AssocQueryStringW;
 
     [NativeTypeName("#define AssocQueryStringByKey AssocQueryStringByKeyW")]
-    public static delegate*<uint, ASSOCSTR, HKEY, ushort*, ushort*, uint*, HRESULT> AssocQueryStringByKey => &AssocQueryStringByKeyW;
+    public static delegate*<uint, ASSOCSTR, HKEY, char*, char*, uint*, HRESULT> AssocQueryStringByKey => &AssocQueryStringByKeyW;
 
     [NativeTypeName("#define AssocQueryKey AssocQueryKeyW")]
-    public static delegate*<uint, ASSOCKEY, ushort*, ushort*, HKEY*, HRESULT> AssocQueryKey => &AssocQueryKeyW;
+    public static delegate*<uint, ASSOCKEY, char*, char*, HKEY*, HRESULT> AssocQueryKey => &AssocQueryKeyW;
 
     [NativeTypeName("#define SHOpenRegStream SHOpenRegStreamW")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, IStream*> SHOpenRegStream => &SHOpenRegStreamW;
+    public static delegate*<HKEY, char*, char*, uint, IStream*> SHOpenRegStream => &SHOpenRegStreamW;
 
     [NativeTypeName("#define SHOpenRegStream2 SHOpenRegStream2W")]
-    public static delegate*<HKEY, ushort*, ushort*, uint, IStream*> SHOpenRegStream2 => &SHOpenRegStream2W;
+    public static delegate*<HKEY, char*, char*, uint, IStream*> SHOpenRegStream2 => &SHOpenRegStream2W;
 
     [NativeTypeName("#define SHCreateStreamOnFile SHCreateStreamOnFileW")]
-    public static delegate*<ushort*, uint, IStream**, HRESULT> SHCreateStreamOnFile => &SHCreateStreamOnFileW;
+    public static delegate*<char*, uint, IStream**, HRESULT> SHCreateStreamOnFile => &SHCreateStreamOnFileW;
 
     [NativeTypeName("#define GetAcceptLanguages GetAcceptLanguagesW")]
-    public static delegate*<ushort*, uint*, HRESULT> GetAcceptLanguages => &GetAcceptLanguagesW;
+    public static delegate*<char*, uint*, HRESULT> GetAcceptLanguages => &GetAcceptLanguagesW;
 
     [NativeTypeName("#define FDTF_SHORTTIME 0x00000001")]
     public const int FDTF_SHORTTIME = 0x00000001;
@@ -2110,16 +2110,16 @@ public static unsafe partial class Windows
     public const int FDTF_NOAUTOREADINGORDER = 0x00000400;
 
     [NativeTypeName("#define SHFormatDateTime SHFormatDateTimeW")]
-    public static delegate*<FILETIME*, uint*, ushort*, uint, int> SHFormatDateTime => &SHFormatDateTimeW;
+    public static delegate*<FILETIME*, uint*, char*, uint, int> SHFormatDateTime => &SHFormatDateTimeW;
 
     [NativeTypeName("#define SHMessageBoxCheck SHMessageBoxCheckW")]
-    public static delegate*<HWND, ushort*, ushort*, uint, int, ushort*, int> SHMessageBoxCheck => &SHMessageBoxCheckW;
+    public static delegate*<HWND, char*, char*, uint, int, char*, int> SHMessageBoxCheck => &SHMessageBoxCheckW;
 
     [NativeTypeName("#define SHSendMessageBroadcast SHSendMessageBroadcastW")]
     public static delegate*<uint, WPARAM, LPARAM, LRESULT> SHSendMessageBroadcast => &SHSendMessageBroadcastW;
 
     [NativeTypeName("#define SHStripMneumonic SHStripMneumonicW")]
-    public static delegate*<ushort*, ushort> SHStripMneumonic => &SHStripMneumonicW;
+    public static delegate*<char*, char> SHStripMneumonic => &SHStripMneumonicW;
 
     [NativeTypeName("#define PLATFORM_UNKNOWN 0")]
     public const int PLATFORM_UNKNOWN = 0;

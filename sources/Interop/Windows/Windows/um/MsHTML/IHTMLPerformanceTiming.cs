@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -249,9 +249,9 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
     /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** @string)
     {
-        return ((delegate* unmanaged<IHTMLPerformanceTiming*, ushort**, int>)(lpVtbl[28]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), @string);
+        return ((delegate* unmanaged<IHTMLPerformanceTiming*, char**, int>)(lpVtbl[28]))((IHTMLPerformanceTiming*)Unsafe.AsPointer(ref this), @string);
     }
 
     /// <include file='IHTMLPerformanceTiming.xml' path='doc/member[@name="IHTMLPerformanceTiming.toJSON"]/*' />
@@ -328,7 +328,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         HRESULT get_msFirstPaint([NativeTypeName("ULONGLONG *")] ulong* p);
 
         [VtblIndex(28)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+        HRESULT toString([NativeTypeName("BSTR *")] char** @string);
 
         [VtblIndex(29)]
         HRESULT toJSON(VARIANT* pVar);
@@ -353,7 +353,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -422,7 +422,7 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         public delegate* unmanaged<TSelf*, ulong*, int> get_msFirstPaint;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> toJSON;

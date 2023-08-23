@@ -65,9 +65,9 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWBScriptControl*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IWBScriptControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IWBScriptControl*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWBScriptControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
     /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.raiseEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT raiseEvent([NativeTypeName("BSTR")] ushort* name, VARIANT eventData)
+    public HRESULT raiseEvent([NativeTypeName("BSTR")] char* name, VARIANT eventData)
     {
-        return ((delegate* unmanaged<IWBScriptControl*, ushort*, VARIANT, int>)(lpVtbl[7]))((IWBScriptControl*)Unsafe.AsPointer(ref this), name, eventData);
+        return ((delegate* unmanaged<IWBScriptControl*, char*, VARIANT, int>)(lpVtbl[7]))((IWBScriptControl*)Unsafe.AsPointer(ref this), name, eventData);
     }
 
     /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.bubbleEvent"]/*' />
@@ -145,9 +145,9 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
     /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_version"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_version([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_version([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IWBScriptControl*, ushort**, int>)(lpVtbl[15]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IWBScriptControl*, char**, int>)(lpVtbl[15]))((IWBScriptControl*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.get_visibility"]/*' />
@@ -177,7 +177,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT raiseEvent([NativeTypeName("BSTR")] ushort* name, VARIANT eventData);
+        HRESULT raiseEvent([NativeTypeName("BSTR")] char* name, VARIANT eventData);
 
         [VtblIndex(8)]
         HRESULT bubbleEvent();
@@ -201,7 +201,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
         HRESULT get_scrollbar([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(15)]
-        HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_version([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(16)]
         HRESULT get_visibility([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -232,13 +232,13 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> raiseEvent;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, int> raiseEvent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> bubbleEvent;
@@ -262,7 +262,7 @@ public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INat
         public delegate* unmanaged<TSelf*, short*, int> get_scrollbar;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_version;
+        public delegate* unmanaged<TSelf*, char**, int> get_version;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_visibility;

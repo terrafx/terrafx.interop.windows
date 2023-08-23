@@ -33,7 +33,7 @@ public unsafe partial struct CRYPT_RETRIEVE_AUX_INFO
 
     /// <include file='CRYPT_RETRIEVE_AUX_INFO.xml' path='doc/member[@name="CRYPT_RETRIEVE_AUX_INFO.pwszCacheFileNamePrefix"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszCacheFileNamePrefix;
+    public char* pwszCacheFileNamePrefix;
 
     /// <include file='CRYPT_RETRIEVE_AUX_INFO.xml' path='doc/member[@name="CRYPT_RETRIEVE_AUX_INFO.pftCacheResync"]/*' />
     [NativeTypeName("LPFILETIME")]
@@ -48,7 +48,7 @@ public unsafe partial struct CRYPT_RETRIEVE_AUX_INFO
 
     /// <include file='CRYPT_RETRIEVE_AUX_INFO.xml' path='doc/member[@name="CRYPT_RETRIEVE_AUX_INFO.ppwszErrorResponseHeaders"]/*' />
     [NativeTypeName("LPWSTR *")]
-    public ushort** ppwszErrorResponseHeaders;
+    public char** ppwszErrorResponseHeaders;
 
     /// <include file='CRYPT_RETRIEVE_AUX_INFO.xml' path='doc/member[@name="CRYPT_RETRIEVE_AUX_INFO.ppErrorContentBlob"]/*' />
     [NativeTypeName("PCRYPT_DATA_BLOB *")]

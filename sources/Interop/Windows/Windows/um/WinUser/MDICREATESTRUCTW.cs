@@ -10,11 +10,11 @@ public unsafe partial struct MDICREATESTRUCTW
 {
     /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.szClass"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* szClass;
+    public char* szClass;
 
     /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.szTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* szTitle;
+    public char* szTitle;
 
     /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.hOwner"]/*' />
     public HANDLE hOwner;

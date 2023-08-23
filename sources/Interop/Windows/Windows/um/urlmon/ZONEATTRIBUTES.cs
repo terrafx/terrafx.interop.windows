@@ -14,15 +14,15 @@ public unsafe partial struct ZONEATTRIBUTES
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szDisplayName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szDisplayName[260];
+    public fixed char szDisplayName[260];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szDescription"]/*' />
     [NativeTypeName("WCHAR[200]")]
-    public fixed ushort szDescription[200];
+    public fixed char szDescription[200];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.szIconPath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szIconPath[260];
+    public fixed char szIconPath[260];
 
     /// <include file='ZONEATTRIBUTES.xml' path='doc/member[@name="ZONEATTRIBUTES.dwTemplateMinLevel"]/*' />
     [NativeTypeName("DWORD")]

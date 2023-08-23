@@ -65,9 +65,9 @@ public unsafe partial struct ISVGStringList : ISVGStringList.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGStringList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGStringList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISVGStringList*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGStringList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,49 +105,49 @@ public unsafe partial struct ISVGStringList : ISVGStringList.Interface, INativeG
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT initialize([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT initialize([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int>)(lpVtbl[10]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, char*, char**, int>)(lpVtbl[10]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
     }
 
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.getItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT getItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT getItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, int, ushort**, int>)(lpVtbl[11]))((ISVGStringList*)Unsafe.AsPointer(ref this), index, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, int, char**, int>)(lpVtbl[11]))((ISVGStringList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.insertItemBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT insertItemBefore([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT insertItemBefore([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, ushort*, int, ushort**, int>)(lpVtbl[12]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, char*, int, char**, int>)(lpVtbl[12]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
     }
 
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.replaceItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT replaceItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT replaceItem([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, ushort*, int, ushort**, int>)(lpVtbl[13]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, char*, int, char**, int>)(lpVtbl[13]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, index, ppResult);
     }
 
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.removeItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT removeItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT removeItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, int, ushort**, int>)(lpVtbl[14]))((ISVGStringList*)Unsafe.AsPointer(ref this), index, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, int, char**, int>)(lpVtbl[14]))((ISVGStringList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
     /// <include file='ISVGStringList.xml' path='doc/member[@name="ISVGStringList.appendItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT appendItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult)
+    public HRESULT appendItem([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("BSTR *")] char** ppResult)
     {
-        return ((delegate* unmanaged<ISVGStringList*, ushort*, ushort**, int>)(lpVtbl[15]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
+        return ((delegate* unmanaged<ISVGStringList*, char*, char**, int>)(lpVtbl[15]))((ISVGStringList*)Unsafe.AsPointer(ref this), newItem, ppResult);
     }
 
     public interface Interface : IDispatch.Interface
@@ -162,22 +162,22 @@ public unsafe partial struct ISVGStringList : ISVGStringList.Interface, INativeG
         HRESULT clear();
 
         [VtblIndex(10)]
-        HRESULT initialize([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT initialize([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("BSTR *")] char** ppResult);
 
         [VtblIndex(11)]
-        HRESULT getItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT getItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult);
 
         [VtblIndex(12)]
-        HRESULT insertItemBefore([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT insertItemBefore([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult);
 
         [VtblIndex(13)]
-        HRESULT replaceItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT replaceItem([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult);
 
         [VtblIndex(14)]
-        HRESULT removeItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT removeItem([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppResult);
 
         [VtblIndex(15)]
-        HRESULT appendItem([NativeTypeName("BSTR")] ushort* newItem, [NativeTypeName("BSTR *")] ushort** ppResult);
+        HRESULT appendItem([NativeTypeName("BSTR")] char* newItem, [NativeTypeName("BSTR *")] char** ppResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -199,7 +199,7 @@ public unsafe partial struct ISVGStringList : ISVGStringList.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -214,21 +214,21 @@ public unsafe partial struct ISVGStringList : ISVGStringList.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> clear;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> initialize;
+        public delegate* unmanaged<TSelf*, char*, char**, int> initialize;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> getItem;
+        public delegate* unmanaged<TSelf*, int, char**, int> getItem;
 
         [NativeTypeName("HRESULT (BSTR, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, ushort**, int> insertItemBefore;
+        public delegate* unmanaged<TSelf*, char*, int, char**, int> insertItemBefore;
 
         [NativeTypeName("HRESULT (BSTR, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, ushort**, int> replaceItem;
+        public delegate* unmanaged<TSelf*, char*, int, char**, int> replaceItem;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> removeItem;
+        public delegate* unmanaged<TSelf*, int, char**, int> removeItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> appendItem;
+        public delegate* unmanaged<TSelf*, char*, char**, int> appendItem;
     }
 }

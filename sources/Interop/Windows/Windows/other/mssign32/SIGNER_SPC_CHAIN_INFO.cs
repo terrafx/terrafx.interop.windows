@@ -14,7 +14,7 @@ public unsafe partial struct SIGNER_SPC_CHAIN_INFO
 
     /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.pwszSpcFile"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszSpcFile;
+    public char* pwszSpcFile;
 
     /// <include file='SIGNER_SPC_CHAIN_INFO.xml' path='doc/member[@name="SIGNER_SPC_CHAIN_INFO.dwCertPolicy"]/*' />
     [NativeTypeName("DWORD")]

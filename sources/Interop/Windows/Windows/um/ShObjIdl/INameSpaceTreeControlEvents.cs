@@ -129,9 +129,9 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
     /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnGetToolTip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] ushort* pszTip, int cchTip)
+    public HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] char* pszTip, int cchTip)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, ushort*, int, int>)(lpVtbl[13]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, pszTip, cchTip);
+        return ((delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, char*, int, int>)(lpVtbl[13]))((INameSpaceTreeControlEvents*)Unsafe.AsPointer(ref this), psi, pszTip, cchTip);
     }
 
     /// <include file='INameSpaceTreeControlEvents.xml' path='doc/member[@name="INameSpaceTreeControlEvents.OnBeforeItemDelete"]/*' />
@@ -223,7 +223,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         HRESULT OnEndLabelEdit(IShellItem* psi);
 
         [VtblIndex(13)]
-        HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] ushort* pszTip, int cchTip);
+        HRESULT OnGetToolTip(IShellItem* psi, [NativeTypeName("LPWSTR")] char* pszTip, int cchTip);
 
         [VtblIndex(14)]
         HRESULT OnBeforeItemDelete(IShellItem* psi);
@@ -290,7 +290,7 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         public delegate* unmanaged<TSelf*, IShellItem*, int> OnEndLabelEdit;
 
         [NativeTypeName("HRESULT (IShellItem *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, int, int> OnGetToolTip;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, int, int> OnGetToolTip;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, int> OnBeforeItemDelete;

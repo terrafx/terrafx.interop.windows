@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLInputElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,49 +81,49 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_type([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_type([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[7]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[7]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[8]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[8]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[9]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[9]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[10]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[10]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[11]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[11]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[12]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[12]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_status"]/*' />
@@ -241,17 +241,17 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_defaultValue([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[27]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[27]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_defaultValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[28]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[28]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_readOnly"]/*' />
@@ -377,89 +377,89 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_alt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
-    public HRESULT put_alt([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_alt([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[44]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[44]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_alt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
-    public HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_alt([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[45]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[45]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT put_src([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_src([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[46]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[46]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
-    public HRESULT get_src([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_src([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[47]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[47]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lowsrc([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[48]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[48]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lowsrc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[49]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[49]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_vrml([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[50]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[50]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_vrml([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[51]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[51]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_dynsrc([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[52]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[52]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
-    public HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dynsrc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[53]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[53]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
-    public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_readyState([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[54]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[54]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_complete"]/*' />
@@ -489,17 +489,17 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
-    public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_align([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[58]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[58]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
-    public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_align([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[59]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[59]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onload"]/*' />
@@ -585,38 +585,38 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
-    public HRESULT put_start([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_start([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[70]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLInputElement*, char*, int>)(lpVtbl[70]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(71)]
-    public HRESULT get_start([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_start([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[71]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLInputElement*, char**, int>)(lpVtbl[71]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_type([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_value([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_value([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
         HRESULT put_status([NativeTypeName("VARIANT_BOOL")] short v);
@@ -661,10 +661,10 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         HRESULT get_onselect(VARIANT* p);
 
         [VtblIndex(27)]
-        HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_defaultValue([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(28)]
-        HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_defaultValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(29)]
         HRESULT put_readOnly([NativeTypeName("VARIANT_BOOL")] short v);
@@ -712,37 +712,37 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         HRESULT get_hspace([NativeTypeName("long *")] int* p);
 
         [VtblIndex(44)]
-        HRESULT put_alt([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_alt([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(45)]
-        HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_alt([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(46)]
-        HRESULT put_src([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_src([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(47)]
-        HRESULT get_src([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_src([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(48)]
-        HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lowsrc([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(49)]
-        HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lowsrc([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(50)]
-        HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_vrml([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(51)]
-        HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_vrml([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(52)]
-        HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_dynsrc([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(53)]
-        HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dynsrc([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(54)]
-        HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_readyState([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(55)]
         HRESULT get_complete([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -754,10 +754,10 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         HRESULT get_loop(VARIANT* p);
 
         [VtblIndex(58)]
-        HRESULT put_align([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_align([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(59)]
-        HRESULT get_align([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_align([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(60)]
         HRESULT put_onload(VARIANT v);
@@ -790,10 +790,10 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         HRESULT get_height([NativeTypeName("long *")] int* p);
 
         [VtblIndex(70)]
-        HRESULT put_start([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_start([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(71)]
-        HRESULT get_start([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_start([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -815,28 +815,28 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_type;
+        public delegate* unmanaged<TSelf*, char*, int> put_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_value;
+        public delegate* unmanaged<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_value;
+        public delegate* unmanaged<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_status;
@@ -881,10 +881,10 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onselect;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_defaultValue;
+        public delegate* unmanaged<TSelf*, char*, int> put_defaultValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_defaultValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_defaultValue;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_readOnly;
@@ -932,37 +932,37 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         public delegate* unmanaged<TSelf*, int*, int> get_hspace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_alt;
+        public delegate* unmanaged<TSelf*, char*, int> put_alt;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_alt;
+        public delegate* unmanaged<TSelf*, char**, int> get_alt;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_src;
+        public delegate* unmanaged<TSelf*, char*, int> put_src;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_src;
+        public delegate* unmanaged<TSelf*, char**, int> get_src;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lowsrc;
+        public delegate* unmanaged<TSelf*, char*, int> put_lowsrc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lowsrc;
+        public delegate* unmanaged<TSelf*, char**, int> get_lowsrc;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_vrml;
+        public delegate* unmanaged<TSelf*, char*, int> put_vrml;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_vrml;
+        public delegate* unmanaged<TSelf*, char**, int> get_vrml;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dynsrc;
+        public delegate* unmanaged<TSelf*, char*, int> put_dynsrc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dynsrc;
+        public delegate* unmanaged<TSelf*, char**, int> get_dynsrc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_readyState;
+        public delegate* unmanaged<TSelf*, char**, int> get_readyState;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_complete;
@@ -974,10 +974,10 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_loop;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_align;
+        public delegate* unmanaged<TSelf*, char*, int> put_align;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_align;
+        public delegate* unmanaged<TSelf*, char**, int> get_align;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;
@@ -1010,9 +1010,9 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface, IN
         public delegate* unmanaged<TSelf*, int*, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_start;
+        public delegate* unmanaged<TSelf*, char*, int> put_start;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_start;
+        public delegate* unmanaged<TSelf*, char**, int> get_start;
     }
 }

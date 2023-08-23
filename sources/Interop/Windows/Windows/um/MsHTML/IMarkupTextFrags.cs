@@ -57,9 +57,9 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface, INat
     /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.GetTextFrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR *")] ushort** pbstrFrag, IMarkupPointer* pPointerFrag)
+    public HRESULT GetTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR *")] char** pbstrFrag, IMarkupPointer* pPointerFrag)
     {
-        return ((delegate* unmanaged<IMarkupTextFrags*, int, ushort**, IMarkupPointer*, int>)(lpVtbl[4]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, pbstrFrag, pPointerFrag);
+        return ((delegate* unmanaged<IMarkupTextFrags*, int, char**, IMarkupPointer*, int>)(lpVtbl[4]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, pbstrFrag, pPointerFrag);
     }
 
     /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.RemoveTextFrag"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface, INat
     /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.InsertTextFrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT InsertTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR")] ushort* bstrInsert, IMarkupPointer* pPointerInsert)
+    public HRESULT InsertTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR")] char* bstrInsert, IMarkupPointer* pPointerInsert)
     {
-        return ((delegate* unmanaged<IMarkupTextFrags*, int, ushort*, IMarkupPointer*, int>)(lpVtbl[6]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, bstrInsert, pPointerInsert);
+        return ((delegate* unmanaged<IMarkupTextFrags*, int, char*, IMarkupPointer*, int>)(lpVtbl[6]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, bstrInsert, pPointerInsert);
     }
 
     /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.FindTextFragFromMarkupPointer"]/*' />
@@ -92,13 +92,13 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface, INat
         HRESULT GetTextFragCount([NativeTypeName("long *")] int* pcFrags);
 
         [VtblIndex(4)]
-        HRESULT GetTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR *")] ushort** pbstrFrag, IMarkupPointer* pPointerFrag);
+        HRESULT GetTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR *")] char** pbstrFrag, IMarkupPointer* pPointerFrag);
 
         [VtblIndex(5)]
         HRESULT RemoveTextFrag([NativeTypeName("long")] int iFrag);
 
         [VtblIndex(6)]
-        HRESULT InsertTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR")] ushort* bstrInsert, IMarkupPointer* pPointerInsert);
+        HRESULT InsertTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR")] char* bstrInsert, IMarkupPointer* pPointerInsert);
 
         [VtblIndex(7)]
         HRESULT FindTextFragFromMarkupPointer(IMarkupPointer* pPointerFind, [NativeTypeName("long *")] int* piFrag, BOOL* pfFragFound);
@@ -120,13 +120,13 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface, INat
         public delegate* unmanaged<TSelf*, int*, int> GetTextFragCount;
 
         [NativeTypeName("HRESULT (long, BSTR *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, IMarkupPointer*, int> GetTextFrag;
+        public delegate* unmanaged<TSelf*, int, char**, IMarkupPointer*, int> GetTextFrag;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> RemoveTextFrag;
 
         [NativeTypeName("HRESULT (long, BSTR, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, IMarkupPointer*, int> InsertTextFrag;
+        public delegate* unmanaged<TSelf*, int, char*, IMarkupPointer*, int> InsertTextFrag;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, long *, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMarkupPointer*, int*, BOOL*, int> FindTextFragFromMarkupPointer;

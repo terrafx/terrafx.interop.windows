@@ -43,15 +43,15 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.DnsSuffix"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* DnsSuffix;
+    public char* DnsSuffix;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Description"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* Description;
+    public char* Description;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.FriendlyName"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* FriendlyName;
+    public char* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]

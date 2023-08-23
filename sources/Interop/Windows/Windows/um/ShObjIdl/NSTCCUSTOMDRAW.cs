@@ -20,7 +20,7 @@ public unsafe partial struct NSTCCUSTOMDRAW
 
     /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.pszText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='NSTCCUSTOMDRAW.xml' path='doc/member[@name="NSTCCUSTOMDRAW.iImage"]/*' />
     public int iImage;

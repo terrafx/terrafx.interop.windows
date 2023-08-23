@@ -65,9 +65,9 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ITemplatePrinter3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     /// <inheritdoc cref="ITemplatePrinter.startDoc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT startDoc([NativeTypeName("BSTR")] ushort* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT startDoc([NativeTypeName("BSTR")] char* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, short*, int>)(lpVtbl[7]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), bstrTitle, p);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, short*, int>)(lpVtbl[7]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), bstrTitle, p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.stopDoc" />
@@ -369,33 +369,33 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     /// <inheritdoc cref="ITemplatePrinter.put_header" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
-    public HRESULT put_header([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_header([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, int>)(lpVtbl[43]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, int>)(lpVtbl[43]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_header" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
-    public HRESULT get_header([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_header([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort**, int>)(lpVtbl[44]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char**, int>)(lpVtbl[44]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_footer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
-    public HRESULT put_footer([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_footer([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, int>)(lpVtbl[45]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, int>)(lpVtbl[45]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_footer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT get_footer([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_footer([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort**, int>)(lpVtbl[46]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char**, int>)(lpVtbl[46]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_marginLeft" />
@@ -553,17 +553,17 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     /// <inheritdoc cref="ITemplatePrinter2.put_orientation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
-    public HRESULT put_orientation([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_orientation([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, int>)(lpVtbl[66]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, int>)(lpVtbl[66]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter2.get_orientation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
-    public HRESULT get_orientation([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_orientation([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort**, int>)(lpVtbl[67]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char**, int>)(lpVtbl[67]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter2.put_usePrinterCopyCollate" />
@@ -585,25 +585,25 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     /// <inheritdoc cref="ITemplatePrinter2.deviceSupports" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
-    public HRESULT deviceSupports([NativeTypeName("BSTR")] ushort* bstrProperty, VARIANT* pvar)
+    public HRESULT deviceSupports([NativeTypeName("BSTR")] char* bstrProperty, VARIANT* pvar)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, VARIANT*, int>)(lpVtbl[70]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), bstrProperty, pvar);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, VARIANT*, int>)(lpVtbl[70]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), bstrProperty, pvar);
     }
 
     /// <include file='ITemplatePrinter3.xml' path='doc/member[@name="ITemplatePrinter3.put_headerFooterFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(71)]
-    public HRESULT put_headerFooterFont([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_headerFooterFont([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort*, int>)(lpVtbl[71]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char*, int>)(lpVtbl[71]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter3.xml' path='doc/member[@name="ITemplatePrinter3.get_headerFooterFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(72)]
-    public HRESULT get_headerFooterFont([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_headerFooterFont([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter3*, ushort**, int>)(lpVtbl[72]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter3*, char**, int>)(lpVtbl[72]))((ITemplatePrinter3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter3.xml' path='doc/member[@name="ITemplatePrinter3.getPageMarginTop"]/*' />
@@ -673,10 +673,10 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
     public interface Interface : ITemplatePrinter2.Interface
     {
         [VtblIndex(71)]
-        HRESULT put_headerFooterFont([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_headerFooterFont([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(72)]
-        HRESULT get_headerFooterFont([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_headerFooterFont([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(73)]
         HRESULT getPageMarginTop(IDispatch* pageRule, [NativeTypeName("long")] int pageWidth, [NativeTypeName("long")] int pageHeight, VARIANT* pMargin);
@@ -722,13 +722,13 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> startDoc;
+        public delegate* unmanaged<TSelf*, char*, short*, int> startDoc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> stopDoc;
@@ -836,16 +836,16 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
         public delegate* unmanaged<TSelf*, short*, int> get_allLinkedDocuments;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_header;
+        public delegate* unmanaged<TSelf*, char*, int> put_header;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_header;
+        public delegate* unmanaged<TSelf*, char**, int> get_header;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_footer;
+        public delegate* unmanaged<TSelf*, char*, int> put_footer;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_footer;
+        public delegate* unmanaged<TSelf*, char**, int> get_footer;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_marginLeft;
@@ -905,10 +905,10 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
         public delegate* unmanaged<TSelf*, short*, int> get_frameActiveEnabled;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_orientation;
+        public delegate* unmanaged<TSelf*, char*, int> put_orientation;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_orientation;
+        public delegate* unmanaged<TSelf*, char**, int> get_orientation;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_usePrinterCopyCollate;
@@ -917,13 +917,13 @@ public unsafe partial struct ITemplatePrinter3 : ITemplatePrinter3.Interface, IN
         public delegate* unmanaged<TSelf*, short*, int> get_usePrinterCopyCollate;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> deviceSupports;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> deviceSupports;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_headerFooterFont;
+        public delegate* unmanaged<TSelf*, char*, int> put_headerFooterFont;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_headerFooterFont;
+        public delegate* unmanaged<TSelf*, char**, int> get_headerFooterFont;
 
         [NativeTypeName("HRESULT (IDispatch *, long, long, VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch*, int, int, VARIANT*, int> getPageMarginTop;

@@ -28,7 +28,7 @@ public unsafe partial struct RM_FILTER_INFO
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strFilename"]/*' />
     [UnscopedRef]
-    public ref ushort* strFilename
+    public ref char* strFilename
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -50,7 +50,7 @@ public unsafe partial struct RM_FILTER_INFO
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strServiceShortName"]/*' />
     [UnscopedRef]
-    public ref ushort* strServiceShortName
+    public ref char* strServiceShortName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -66,7 +66,7 @@ public unsafe partial struct RM_FILTER_INFO
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strFilename"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* strFilename;
+        public char* strFilename;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Process"]/*' />
         [FieldOffset(0)]
@@ -75,6 +75,6 @@ public unsafe partial struct RM_FILTER_INFO
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strServiceShortName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* strServiceShortName;
+        public char* strServiceShortName;
     }
 }

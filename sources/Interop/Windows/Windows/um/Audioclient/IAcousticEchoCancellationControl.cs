@@ -49,15 +49,15 @@ public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCan
     /// <include file='IAcousticEchoCancellationControl.xml' path='doc/member[@name="IAcousticEchoCancellationControl.SetEchoCancellationRenderEndpoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] ushort* endpointId)
+    public HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] char* endpointId)
     {
-        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, ushort*, int>)(lpVtbl[3]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), endpointId);
+        return ((delegate* unmanaged<IAcousticEchoCancellationControl*, char*, int>)(lpVtbl[3]))((IAcousticEchoCancellationControl*)Unsafe.AsPointer(ref this), endpointId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] ushort* endpointId);
+        HRESULT SetEchoCancellationRenderEndpoint([NativeTypeName("LPCWSTR")] char* endpointId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCan
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetEchoCancellationRenderEndpoint;
+        public delegate* unmanaged<TSelf*, char*, int> SetEchoCancellationRenderEndpoint;
     }
 }

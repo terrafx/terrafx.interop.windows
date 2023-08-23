@@ -18,7 +18,7 @@ public unsafe partial struct PUBAPPINFO
 
     /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.pszSource"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSource;
+    public char* pszSource;
 
     /// <include file='PUBAPPINFO.xml' path='doc/member[@name="PUBAPPINFO.stAssigned"]/*' />
     public SYSTEMTIME stAssigned;

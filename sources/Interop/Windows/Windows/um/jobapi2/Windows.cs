@@ -13,7 +13,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateJobObjectW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateJobObjectW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpJobAttributes, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE CreateJobObjectW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpJobAttributes, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeMemoryJobObject"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -23,7 +23,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenJobObjectW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenJobObjectW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE OpenJobObjectW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssignProcessToJobObject"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -57,5 +57,5 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows10.0")]
-    public static extern uint QueryIoRateControlInformationJobObject(HANDLE hJob, [NativeTypeName("PCWSTR")] ushort* VolumeName, JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, [NativeTypeName("ULONG *")] uint* InfoBlockCount);
+    public static extern uint QueryIoRateControlInformationJobObject(HANDLE hJob, [NativeTypeName("PCWSTR")] char* VolumeName, JOBOBJECT_IO_RATE_CONTROL_INFORMATION** InfoBlocks, [NativeTypeName("ULONG *")] uint* InfoBlockCount);
 }

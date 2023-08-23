@@ -25,7 +25,7 @@ public unsafe partial struct WAVEOUTCAPSW
 
     /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public fixed char szPname[32];
 
     /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.dwFormats"]/*' />
     [NativeTypeName("DWORD")]

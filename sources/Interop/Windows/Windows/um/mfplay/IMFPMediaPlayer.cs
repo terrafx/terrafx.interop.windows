@@ -137,9 +137,9 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
+    public HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] char* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, ushort*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
+        return ((delegate* unmanaged<IMFPMediaPlayer*, char*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromObject"]/*' />
@@ -370,7 +370,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
         HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState);
 
         [VtblIndex(14)]
-        HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
+        HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] char* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
 
         [VtblIndex(15)]
         HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem);
@@ -491,7 +491,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
         public delegate* unmanaged<TSelf*, MFP_MEDIAPLAYER_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromURL;
+        public delegate* unmanaged<TSelf*, char*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromURL;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromObject;

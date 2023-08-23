@@ -18,23 +18,23 @@ public unsafe partial struct PROFILEINFOW
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpUserName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpUserName;
+    public char* lpUserName;
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpProfilePath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpProfilePath;
+    public char* lpProfilePath;
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpDefaultPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpDefaultPath;
+    public char* lpDefaultPath;
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpServerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpServerName;
+    public char* lpServerName;
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.lpPolicyPath"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpPolicyPath;
+    public char* lpPolicyPath;
 
     /// <include file='PROFILEINFOW.xml' path='doc/member[@name="PROFILEINFOW.hProfile"]/*' />
     public HANDLE hProfile;

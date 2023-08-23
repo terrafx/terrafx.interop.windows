@@ -18,5 +18,5 @@ public unsafe partial struct DIPROPGUIDANDPATH
 
     /// <include file='DIPROPGUIDANDPATH.xml' path='doc/member[@name="DIPROPGUIDANDPATH.wszPath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszPath[260];
+    public fixed char wszPath[260];
 }

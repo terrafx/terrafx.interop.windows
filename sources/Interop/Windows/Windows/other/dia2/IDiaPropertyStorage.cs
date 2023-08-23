@@ -57,9 +57,9 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadPropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName)
+    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.Enum"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadBSTR"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue)
+    public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] char** pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ushort**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, char**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -116,7 +116,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar);
 
         [VtblIndex(4)]
-        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] ushort** rglpwstrName);
+        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] char** rglpwstrName);
 
         [VtblIndex(5)]
         HRESULT Enum(IEnumSTATPROPSTG** ppenum);
@@ -134,7 +134,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         HRESULT ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue);
 
         [VtblIndex(10)]
-        HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue);
+        HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] char** pValue);
     }
 
     public partial struct Vtbl<TSelf>
@@ -153,7 +153,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> ReadPropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumSTATPROPSTG**, int> Enum;
@@ -171,6 +171,6 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         public delegate* unmanaged<TSelf*, uint, ulong*, int> ReadULONGLONG;
 
         [NativeTypeName("HRESULT (PROPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> ReadBSTR;
+        public delegate* unmanaged<TSelf*, uint, char**, int> ReadBSTR;
     }
 }

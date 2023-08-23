@@ -51,9 +51,9 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
     /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** file)
+    public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** file)
     {
-        return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this), file);
+        return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, char**, int>)(lpVtbl[3]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this), file);
     }
 
     /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator.GetHasCurrent"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** file);
+        HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** file);
 
         [VtblIndex(4)]
         HRESULT GetHasCurrent(BOOL* hasCurrent);
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;

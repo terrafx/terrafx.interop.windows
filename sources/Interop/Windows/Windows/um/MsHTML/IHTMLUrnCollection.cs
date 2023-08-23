@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLUrnCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLUrnCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLUrnCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLUrnCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface, 
     /// <include file='IHTMLUrnCollection.xml' path='doc/member[@name="IHTMLUrnCollection.item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppUrn)
+    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppUrn)
     {
-        return ((delegate* unmanaged<IHTMLUrnCollection*, int, ushort**, int>)(lpVtbl[8]))((IHTMLUrnCollection*)Unsafe.AsPointer(ref this), index, ppUrn);
+        return ((delegate* unmanaged<IHTMLUrnCollection*, int, char**, int>)(lpVtbl[8]))((IHTMLUrnCollection*)Unsafe.AsPointer(ref this), index, ppUrn);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface, 
         HRESULT get_length([NativeTypeName("long *")] int* p);
 
         [VtblIndex(8)]
-        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** ppUrn);
+        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** ppUrn);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IHTMLUrnCollection : IHTMLUrnCollection.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> item;
+        public delegate* unmanaged<TSelf*, int, char**, int> item;
     }
 }

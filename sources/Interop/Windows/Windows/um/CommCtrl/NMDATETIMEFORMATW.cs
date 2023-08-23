@@ -13,16 +13,16 @@ public unsafe partial struct NMDATETIMEFORMATW
 
     /// <include file='NMDATETIMEFORMATW.xml' path='doc/member[@name="NMDATETIMEFORMATW.pszFormat"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszFormat;
+    public char* pszFormat;
 
     /// <include file='NMDATETIMEFORMATW.xml' path='doc/member[@name="NMDATETIMEFORMATW.st"]/*' />
     public SYSTEMTIME st;
 
     /// <include file='NMDATETIMEFORMATW.xml' path='doc/member[@name="NMDATETIMEFORMATW.pszDisplay"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszDisplay;
+    public char* pszDisplay;
 
     /// <include file='NMDATETIMEFORMATW.xml' path='doc/member[@name="NMDATETIMEFORMATW.szDisplay"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szDisplay[64];
+    public fixed char szDisplay[64];
 }

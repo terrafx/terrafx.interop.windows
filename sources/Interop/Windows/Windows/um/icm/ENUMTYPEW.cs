@@ -22,7 +22,7 @@ public unsafe partial struct ENUMTYPEW
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.pDeviceName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pDeviceName;
+    public char* pDeviceName;
 
     /// <include file='ENUMTYPEW.xml' path='doc/member[@name="ENUMTYPEW.dwMediaType"]/*' />
     [NativeTypeName("DWORD")]

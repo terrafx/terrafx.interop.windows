@@ -49,37 +49,37 @@ public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Int
     /// <include file='IDedupReadFileCallback.xml' path='doc/member[@name="IDedupReadFileCallback.ReadBackupFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ReadBackupFile([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags)
+    public HRESULT ReadBackupFile([NativeTypeName("BSTR")] char* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags)
     {
-        return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, long, uint, byte*, uint*, uint, int>)(lpVtbl[3]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, FileOffset, SizeToRead, FileBuffer, ReturnedSize, Flags);
+        return ((delegate* unmanaged<IDedupReadFileCallback*, char*, long, uint, byte*, uint*, uint, int>)(lpVtbl[3]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, FileOffset, SizeToRead, FileBuffer, ReturnedSize, Flags);
     }
 
     /// <include file='IDedupReadFileCallback.xml' path='doc/member[@name="IDedupReadFileCallback.OrderContainersRestore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] ushort** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan)
+    public HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] char** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan)
     {
-        return ((delegate* unmanaged<IDedupReadFileCallback*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int>)(lpVtbl[4]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), NumberOfContainers, ContainerPaths, ReadPlanEntries, ReadPlan);
+        return ((delegate* unmanaged<IDedupReadFileCallback*, uint, char**, uint*, DEDUP_CONTAINER_EXTENT**, int>)(lpVtbl[4]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), NumberOfContainers, ContainerPaths, ReadPlanEntries, ReadPlan);
     }
 
     /// <include file='IDedupReadFileCallback.xml' path='doc/member[@name="IDedupReadFileCallback.PreviewContainerRead"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets)
+    public HRESULT PreviewContainerRead([NativeTypeName("BSTR")] char* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets)
     {
-        return ((delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int>)(lpVtbl[5]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, NumberOfReads, ReadOffsets);
+        return ((delegate* unmanaged<IDedupReadFileCallback*, char*, uint, DDP_FILE_EXTENT*, int>)(lpVtbl[5]))((IDedupReadFileCallback*)Unsafe.AsPointer(ref this), FileFullPath, NumberOfReads, ReadOffsets);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ReadBackupFile([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags);
+        HRESULT ReadBackupFile([NativeTypeName("BSTR")] char* FileFullPath, [NativeTypeName("long long")] long FileOffset, [NativeTypeName("ULONG")] uint SizeToRead, byte* FileBuffer, [NativeTypeName("ULONG *")] uint* ReturnedSize, [NativeTypeName("DWORD")] uint Flags);
 
         [VtblIndex(4)]
-        HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] ushort** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan);
+        HRESULT OrderContainersRestore([NativeTypeName("ULONG")] uint NumberOfContainers, [NativeTypeName("BSTR *")] char** ContainerPaths, [NativeTypeName("ULONG *")] uint* ReadPlanEntries, DEDUP_CONTAINER_EXTENT** ReadPlan);
 
         [VtblIndex(5)]
-        HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets);
+        HRESULT PreviewContainerRead([NativeTypeName("BSTR")] char* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, long long, ULONG, BYTE *, ULONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, long, uint, byte*, uint*, uint, int> ReadBackupFile;
+        public delegate* unmanaged<TSelf*, char*, long, uint, byte*, uint*, uint, int> ReadBackupFile;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *, ULONG *, DEDUP_CONTAINER_EXTENT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int> OrderContainersRestore;
+        public delegate* unmanaged<TSelf*, uint, char**, uint*, DEDUP_CONTAINER_EXTENT**, int> OrderContainersRestore;
 
         [NativeTypeName("HRESULT (BSTR, ULONG, DDP_FILE_EXTENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, DDP_FILE_EXTENT*, int> PreviewContainerRead;
+        public delegate* unmanaged<TSelf*, char*, uint, DDP_FILE_EXTENT*, int> PreviewContainerRead;
     }
 }

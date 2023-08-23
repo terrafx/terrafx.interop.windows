@@ -49,9 +49,9 @@ public unsafe partial struct IEnumString : IEnumString.Interface, INativeGuid
     /// <include file='IEnumString.xml' path='doc/member[@name="IEnumString.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] ushort** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
+    public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] char** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumString*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IEnumString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged<IEnumString*, uint, char**, uint*, int>)(lpVtbl[3]))((IEnumString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumString.xml' path='doc/member[@name="IEnumString.Skip"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IEnumString : IEnumString.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] ushort** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
+        HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] char** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
 
         [VtblIndex(4)]
         HRESULT Skip([NativeTypeName("ULONG")] uint celt);
@@ -106,7 +106,7 @@ public unsafe partial struct IEnumString : IEnumString.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Skip;

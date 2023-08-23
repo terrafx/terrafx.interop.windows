@@ -49,9 +49,9 @@ public unsafe partial struct IApplicationDocumentLists : IApplicationDocumentLis
     /// <include file='IApplicationDocumentLists.xml' path='doc/member[@name="IApplicationDocumentLists.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<IApplicationDocumentLists*, ushort*, int>)(lpVtbl[3]))((IApplicationDocumentLists*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged<IApplicationDocumentLists*, char*, int>)(lpVtbl[3]))((IApplicationDocumentLists*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='IApplicationDocumentLists.xml' path='doc/member[@name="IApplicationDocumentLists.GetList"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IApplicationDocumentLists : IApplicationDocumentLis
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+        HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID);
 
         [VtblIndex(4)]
         HRESULT GetList(APPDOCLISTTYPE listtype, uint cItemsDesired, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
@@ -84,7 +84,7 @@ public unsafe partial struct IApplicationDocumentLists : IApplicationDocumentLis
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAppID;
+        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (APPDOCLISTTYPE, UINT, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, APPDOCLISTTYPE, uint, Guid*, void**, int> GetList;

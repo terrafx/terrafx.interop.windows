@@ -65,9 +65,9 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ITemplatePrinter*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.startDoc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT startDoc([NativeTypeName("BSTR")] ushort* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT startDoc([NativeTypeName("BSTR")] char* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, ushort*, short*, int>)(lpVtbl[7]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), bstrTitle, p);
+        return ((delegate* unmanaged<ITemplatePrinter*, char*, short*, int>)(lpVtbl[7]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), bstrTitle, p);
     }
 
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.stopDoc"]/*' />
@@ -369,33 +369,33 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.put_header"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
-    public HRESULT put_header([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_header([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, ushort*, int>)(lpVtbl[43]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter*, char*, int>)(lpVtbl[43]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.get_header"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
-    public HRESULT get_header([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_header([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, ushort**, int>)(lpVtbl[44]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter*, char**, int>)(lpVtbl[44]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.put_footer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
-    public HRESULT put_footer([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_footer([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, ushort*, int>)(lpVtbl[45]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ITemplatePrinter*, char*, int>)(lpVtbl[45]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.get_footer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT get_footer([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_footer([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter*, ushort**, int>)(lpVtbl[46]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ITemplatePrinter*, char**, int>)(lpVtbl[46]))((ITemplatePrinter*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter.xml' path='doc/member[@name="ITemplatePrinter.put_marginLeft"]/*' />
@@ -521,7 +521,7 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT startDoc([NativeTypeName("BSTR")] ushort* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p);
+        HRESULT startDoc([NativeTypeName("BSTR")] char* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(8)]
         HRESULT stopDoc();
@@ -629,16 +629,16 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
         HRESULT get_allLinkedDocuments([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(43)]
-        HRESULT put_header([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_header([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(44)]
-        HRESULT get_header([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_header([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(45)]
-        HRESULT put_footer([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_footer([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(46)]
-        HRESULT get_footer([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_footer([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(47)]
         HRESULT put_marginLeft([NativeTypeName("long")] int v);
@@ -705,13 +705,13 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> startDoc;
+        public delegate* unmanaged<TSelf*, char*, short*, int> startDoc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> stopDoc;
@@ -819,16 +819,16 @@ public unsafe partial struct ITemplatePrinter : ITemplatePrinter.Interface, INat
         public delegate* unmanaged<TSelf*, short*, int> get_allLinkedDocuments;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_header;
+        public delegate* unmanaged<TSelf*, char*, int> put_header;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_header;
+        public delegate* unmanaged<TSelf*, char**, int> get_header;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_footer;
+        public delegate* unmanaged<TSelf*, char*, int> put_footer;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_footer;
+        public delegate* unmanaged<TSelf*, char**, int> get_footer;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_marginLeft;

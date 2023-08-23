@@ -428,7 +428,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateProxyLocator"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    public static extern HRESULT MFCreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
+    public static extern HRESULT MFCreateProxyLocator([NativeTypeName("LPCWSTR")] char* pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
 
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNET_SAVEJOB_SERVICE
@@ -581,7 +581,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeTopology"]/*' />
     [DllImport("mf", ExactSpelling = true)]
-    public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] ushort* pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
+    public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] char* pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeTopologyFromByteStream"]/*' />
     [DllImport("mf", ExactSpelling = true)]
@@ -750,7 +750,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLoadSignedLibrary"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, IMFSignedLibrary** ppLib);
+    public static extern HRESULT MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] char* pszName, IMFSignedLibrary** ppLib);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSystemId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
@@ -760,7 +760,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetLocalId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFGetLocalId([NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("UINT32")] uint size, [NativeTypeName("LPWSTR *")] ushort** id);
+    public static extern HRESULT MFGetLocalId([NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("UINT32")] uint size, [NativeTypeName("LPWSTR *")] char** id);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateContentProtectionDevice"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -780,12 +780,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorGroup"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
-    public static extern HRESULT MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
+    public static extern HRESULT MFCreateSensorGroup([NativeTypeName("LPCWSTR")] char* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorProfile"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
-    public static extern HRESULT MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] ushort* Constraints, IMFSensorProfile** ppProfile);
+    public static extern HRESULT MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] char* Constraints, IMFSensorProfile** ppProfile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorProfileCollection"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
@@ -849,11 +849,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateRelativePanelWatcher"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19041.0")]
-    public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
+    public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] char* videoDeviceId, [NativeTypeName("PCWSTR")] char* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraOcclusionStateMonitor"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
-    public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
+    public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] char* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
 
     [NativeTypeName("const IID")]
     public static ref readonly Guid KSPROPERTYSETID_ANYCAMERACONTROL
@@ -883,7 +883,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraControlMonitor"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.22621.0")]
-    public static extern HRESULT MFCreateCameraControlMonitor([NativeTypeName("LPCWSTR")] ushort* symbolicLink, IMFCameraControlNotify* callback, IMFCameraControlMonitor** ppCameraControlMonitor);
+    public static extern HRESULT MFCreateCameraControlMonitor([NativeTypeName("LPCWSTR")] char* symbolicLink, IMFCameraControlNotify* callback, IMFCameraControlMonitor** ppCameraControlMonitor);
 
     [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
     public const int MEDIASINK_FIXED_STREAMS = 0x00000001;

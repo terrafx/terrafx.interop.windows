@@ -49,25 +49,25 @@ public unsafe partial struct IContactManager : IContactManager.Interface, INativ
     /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszAppName, [NativeTypeName("LPCWSTR")] ushort* pszAppVersion)
+    public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszAppName, [NativeTypeName("LPCWSTR")] char* pszAppVersion)
     {
-        return ((delegate* unmanaged<IContactManager*, ushort*, ushort*, int>)(lpVtbl[3]))((IContactManager*)Unsafe.AsPointer(ref this), pszAppName, pszAppVersion);
+        return ((delegate* unmanaged<IContactManager*, char*, char*, int>)(lpVtbl[3]))((IContactManager*)Unsafe.AsPointer(ref this), pszAppName, pszAppVersion);
     }
 
     /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Load([NativeTypeName("LPCWSTR")] ushort* pszContactID, IContact** ppContact)
+    public HRESULT Load([NativeTypeName("LPCWSTR")] char* pszContactID, IContact** ppContact)
     {
-        return ((delegate* unmanaged<IContactManager*, ushort*, IContact**, int>)(lpVtbl[4]))((IContactManager*)Unsafe.AsPointer(ref this), pszContactID, ppContact);
+        return ((delegate* unmanaged<IContactManager*, char*, IContact**, int>)(lpVtbl[4]))((IContactManager*)Unsafe.AsPointer(ref this), pszContactID, ppContact);
     }
 
     /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager.MergeContactIDs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] ushort* pszNewContactID, [NativeTypeName("LPCWSTR")] ushort* pszOldContactID)
+    public HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] char* pszNewContactID, [NativeTypeName("LPCWSTR")] char* pszOldContactID)
     {
-        return ((delegate* unmanaged<IContactManager*, ushort*, ushort*, int>)(lpVtbl[5]))((IContactManager*)Unsafe.AsPointer(ref this), pszNewContactID, pszOldContactID);
+        return ((delegate* unmanaged<IContactManager*, char*, char*, int>)(lpVtbl[5]))((IContactManager*)Unsafe.AsPointer(ref this), pszNewContactID, pszOldContactID);
     }
 
     /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager.GetMeContact"]/*' />
@@ -97,13 +97,13 @@ public unsafe partial struct IContactManager : IContactManager.Interface, INativ
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszAppName, [NativeTypeName("LPCWSTR")] ushort* pszAppVersion);
+        HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszAppName, [NativeTypeName("LPCWSTR")] char* pszAppVersion);
 
         [VtblIndex(4)]
-        HRESULT Load([NativeTypeName("LPCWSTR")] ushort* pszContactID, IContact** ppContact);
+        HRESULT Load([NativeTypeName("LPCWSTR")] char* pszContactID, IContact** ppContact);
 
         [VtblIndex(5)]
-        HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] ushort* pszNewContactID, [NativeTypeName("LPCWSTR")] ushort* pszOldContactID);
+        HRESULT MergeContactIDs([NativeTypeName("LPCWSTR")] char* pszNewContactID, [NativeTypeName("LPCWSTR")] char* pszOldContactID);
 
         [VtblIndex(6)]
         HRESULT GetMeContact(IContact** ppMeContact);
@@ -128,13 +128,13 @@ public unsafe partial struct IContactManager : IContactManager.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, char*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, IContact **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IContact**, int> Load;
+        public delegate* unmanaged<TSelf*, char*, IContact**, int> Load;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> MergeContactIDs;
+        public delegate* unmanaged<TSelf*, char*, char*, int> MergeContactIDs;
 
         [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IContact**, int> GetMeContact;

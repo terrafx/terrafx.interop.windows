@@ -57,9 +57,9 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.BeforeCreateProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo)
+    public HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] char* applicationPath, [NativeTypeName("LPCWSTR")] char* commandLine, IHandlerInfo* handlerInfo)
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, ushort*, ushort*, IHandlerInfo*, int>)(lpVtbl[4]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), applicationPath, commandLine, handlerInfo);
+        return ((delegate* unmanaged<IHandlerActivationHost*, char*, char*, IHandlerInfo*, int>)(lpVtbl[4]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), applicationPath, commandLine, handlerInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         HRESULT BeforeCoCreateInstance([NativeTypeName("const IID &")] Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo);
 
         [VtblIndex(4)]
-        HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo);
+        HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] char* applicationPath, [NativeTypeName("LPCWSTR")] char* commandLine, IHandlerInfo* handlerInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         public delegate* unmanaged<TSelf*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IHandlerInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IHandlerInfo*, int> BeforeCreateProcess;
+        public delegate* unmanaged<TSelf*, char*, char*, IHandlerInfo*, int> BeforeCreateProcess;
     }
 }

@@ -49,25 +49,25 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface, INativeGui
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppsz)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppsz)
     {
-        return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[3]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
+        return ((delegate* unmanaged<IAssocHandler*, char**, int>)(lpVtbl[3]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
     }
 
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetUIName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz)
+    public HRESULT GetUIName([NativeTypeName("LPWSTR *")] char** ppsz)
     {
-        return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[4]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
+        return ((delegate* unmanaged<IAssocHandler*, char**, int>)(lpVtbl[4]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
     }
 
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex)
+    public HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] char** ppszPath, int* pIndex)
     {
-        return ((delegate* unmanaged<IAssocHandler*, ushort**, int*, int>)(lpVtbl[5]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppszPath, pIndex);
+        return ((delegate* unmanaged<IAssocHandler*, char**, int*, int>)(lpVtbl[5]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppszPath, pIndex);
     }
 
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.IsRecommended"]/*' />
@@ -81,9 +81,9 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface, INativeGui
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.MakeDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription)
+    public HRESULT MakeDefault([NativeTypeName("LPCWSTR")] char* pszDescription)
     {
-        return ((delegate* unmanaged<IAssocHandler*, ushort*, int>)(lpVtbl[7]))((IAssocHandler*)Unsafe.AsPointer(ref this), pszDescription);
+        return ((delegate* unmanaged<IAssocHandler*, char*, int>)(lpVtbl[7]))((IAssocHandler*)Unsafe.AsPointer(ref this), pszDescription);
     }
 
     /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.Invoke"]/*' />
@@ -105,19 +105,19 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface, INativeGui
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppsz);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppsz);
 
         [VtblIndex(4)]
-        HRESULT GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz);
+        HRESULT GetUIName([NativeTypeName("LPWSTR *")] char** ppsz);
 
         [VtblIndex(5)]
-        HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex);
+        HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] char** ppszPath, int* pIndex);
 
         [VtblIndex(6)]
         HRESULT IsRecommended();
 
         [VtblIndex(7)]
-        HRESULT MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription);
+        HRESULT MakeDefault([NativeTypeName("LPCWSTR")] char* pszDescription);
 
         [VtblIndex(8)]
         HRESULT Invoke(IDataObject* pdo);
@@ -139,19 +139,19 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetUIName;
+        public delegate* unmanaged<TSelf*, char**, int> GetUIName;
 
         [NativeTypeName("HRESULT (LPWSTR *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int*, int> GetIconLocation;
+        public delegate* unmanaged<TSelf*, char**, int*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> IsRecommended;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> MakeDefault;
+        public delegate* unmanaged<TSelf*, char*, int> MakeDefault;
 
         [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDataObject*, int> Invoke;

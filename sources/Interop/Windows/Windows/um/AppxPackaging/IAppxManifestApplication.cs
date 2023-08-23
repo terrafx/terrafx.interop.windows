@@ -51,26 +51,26 @@ public unsafe partial struct IAppxManifestApplication : IAppxManifestApplication
     /// <include file='IAppxManifestApplication.xml' path='doc/member[@name="IAppxManifestApplication.GetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IAppxManifestApplication*, ushort*, ushort**, int>)(lpVtbl[3]))((IAppxManifestApplication*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IAppxManifestApplication*, char*, char**, int>)(lpVtbl[3]))((IAppxManifestApplication*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IAppxManifestApplication.xml' path='doc/member[@name="IAppxManifestApplication.GetAppUserModelId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** appUserModelId)
+    public HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] char** appUserModelId)
     {
-        return ((delegate* unmanaged<IAppxManifestApplication*, ushort**, int>)(lpVtbl[4]))((IAppxManifestApplication*)Unsafe.AsPointer(ref this), appUserModelId);
+        return ((delegate* unmanaged<IAppxManifestApplication*, char**, int>)(lpVtbl[4]))((IAppxManifestApplication*)Unsafe.AsPointer(ref this), appUserModelId);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("LPWSTR *")] char** value);
 
         [VtblIndex(4)]
-        HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** appUserModelId);
+        HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] char** appUserModelId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IAppxManifestApplication : IAppxManifestApplication
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAppUserModelId;
+        public delegate* unmanaged<TSelf*, char**, int> GetAppUserModelId;
     }
 }

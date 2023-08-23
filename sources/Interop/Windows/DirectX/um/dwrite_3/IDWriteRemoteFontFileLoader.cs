@@ -74,9 +74,9 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
     /// <include file='IDWriteRemoteFontFileLoader.xml' path='doc/member[@name="IDWriteRemoteFontFileLoader.CreateFontFileReferenceFromUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, IDWriteFontFile** fontFile)
+    public HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] char* baseUrl, [NativeTypeName("const WCHAR *")] char* fontFileUrl, IDWriteFontFile** fontFile)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, IDWriteFactory*, ushort*, ushort*, IDWriteFontFile**, int>)(lpVtbl[6]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), factory, baseUrl, fontFileUrl, fontFile);
+        return ((delegate* unmanaged<IDWriteRemoteFontFileLoader*, IDWriteFactory*, char*, char*, IDWriteFontFile**, int>)(lpVtbl[6]))((IDWriteRemoteFontFileLoader*)Unsafe.AsPointer(ref this), factory, baseUrl, fontFileUrl, fontFile);
     }
 
     public interface Interface : IDWriteFontFileLoader.Interface
@@ -88,7 +88,7 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         HRESULT GetLocalityFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, DWRITE_LOCALITY* locality);
 
         [VtblIndex(6)]
-        HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] ushort* baseUrl, [NativeTypeName("const WCHAR *")] ushort* fontFileUrl, IDWriteFontFile** fontFile);
+        HRESULT CreateFontFileReferenceFromUrl(IDWriteFactory* factory, [NativeTypeName("const WCHAR *")] char* baseUrl, [NativeTypeName("const WCHAR *")] char* fontFileUrl, IDWriteFontFile** fontFile);
     }
 
     public partial struct Vtbl<TSelf>
@@ -113,6 +113,6 @@ public unsafe partial struct IDWriteRemoteFontFileLoader : IDWriteRemoteFontFile
         public delegate* unmanaged<TSelf*, void*, uint, DWRITE_LOCALITY*, int> GetLocalityFromKey;
 
         [NativeTypeName("HRESULT (IDWriteFactory *, const WCHAR *, const WCHAR *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFactory*, ushort*, ushort*, IDWriteFontFile**, int> CreateFontFileReferenceFromUrl;
+        public delegate* unmanaged<TSelf*, IDWriteFactory*, char*, char*, IDWriteFontFile**, int> CreateFontFileReferenceFromUrl;
     }
 }

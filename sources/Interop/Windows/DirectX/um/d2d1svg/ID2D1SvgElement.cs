@@ -22,132 +22,132 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
 
     public void** lpVtbl;
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, float value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, float value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, &value, sizeof(float));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, float* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, float* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT, value, sizeof(float));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)(sizeof(DXGI_RGBA)));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR, value, (uint)(sizeof(DXGI_RGBA)));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_FILL_MODE value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_FILL_MODE value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE, &value, sizeof(D2D1_FILL_MODE));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_FILL_MODE* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_FILL_MODE* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE, value, sizeof(D2D1_FILL_MODE));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_DISPLAY value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_DISPLAY value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY, &value, sizeof(D2D1_SVG_DISPLAY));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_DISPLAY* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_DISPLAY* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY, value, sizeof(D2D1_SVG_DISPLAY));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_OVERFLOW value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_OVERFLOW value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW, &value, sizeof(D2D1_SVG_OVERFLOW));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_OVERFLOW* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_OVERFLOW* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW, value, sizeof(D2D1_SVG_OVERFLOW));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_JOIN value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_LINE_JOIN value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN, &value, sizeof(D2D1_SVG_LINE_JOIN));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_JOIN* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_LINE_JOIN* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN, value, sizeof(D2D1_SVG_LINE_JOIN));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_CAP value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_LINE_CAP value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP, &value, sizeof(D2D1_SVG_LINE_CAP));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LINE_CAP* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_LINE_CAP* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP, value, sizeof(D2D1_SVG_LINE_CAP));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_VISIBILITY value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_VISIBILITY value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY, &value, sizeof(D2D1_SVG_VISIBILITY));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_VISIBILITY* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_VISIBILITY* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY, value, sizeof(D2D1_SVG_VISIBILITY));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)(sizeof(D2D_MATRIX_3X2_F)));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX, value, (uint)(sizeof(D2D_MATRIX_3X2_F)));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_UNIT_TYPE value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_UNIT_TYPE value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE, &value, sizeof(D2D1_SVG_UNIT_TYPE));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_UNIT_TYPE* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_UNIT_TYPE* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE, value, sizeof(D2D1_SVG_UNIT_TYPE));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_EXTEND_MODE value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_EXTEND_MODE value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE, &value, sizeof(D2D1_EXTEND_MODE));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_EXTEND_MODE* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_EXTEND_MODE* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE, value, sizeof(D2D1_EXTEND_MODE));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_SVG_PRESERVE_ASPECT_RATIO &")] D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const D2D1_SVG_PRESERVE_ASPECT_RATIO &")] D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_PRESERVE_ASPECT_RATIO* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO, value, (uint)(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
     }
 
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const D2D1_SVG_LENGTH &")] D2D1_SVG_LENGTH* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const D2D1_SVG_LENGTH &")] D2D1_SVG_LENGTH* value)
     {
         return SetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)(sizeof(D2D1_SVG_LENGTH)));
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_LENGTH* value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_LENGTH* value)
     {
         return GetAttributeValue(name, D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH, value, (uint)(sizeof(D2D1_SVG_LENGTH)));
     }
@@ -197,9 +197,9 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetTagName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetTagName([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+    public HRESULT GetTagName([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int>)(lpVtbl[5]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, uint, int>)(lpVtbl[5]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetTagNameLength"]/*' />
@@ -302,17 +302,17 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.CreateChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT CreateChild([NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild)
+    public HRESULT CreateChild([NativeTypeName("PCWSTR")] char* tagName, ID2D1SvgElement** newChild)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, ID2D1SvgElement**, int>)(lpVtbl[18]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), tagName, newChild);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, ID2D1SvgElement**, int>)(lpVtbl[18]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), tagName, newChild);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.IsAttributeSpecified"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public BOOL IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, BOOL* inherited = null)
+    public BOOL IsAttributeSpecified([NativeTypeName("PCWSTR")] char* name, BOOL* inherited = null)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, BOOL*, int>)(lpVtbl[19]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, inherited);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, BOOL*, int>)(lpVtbl[19]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, inherited);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetSpecifiedAttributeCount"]/*' />
@@ -327,9 +327,9 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetSpecifiedAttributeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, BOOL* inherited = null)
+    public HRESULT GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount, BOOL* inherited = null)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, uint, ushort*, uint, BOOL*, int>)(lpVtbl[21]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, name, nameCount, inherited);
+        return ((delegate* unmanaged<ID2D1SvgElement*, uint, char*, uint, BOOL*, int>)(lpVtbl[21]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), index, name, nameCount, inherited);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetSpecifiedAttributeNameLength"]/*' />
@@ -343,25 +343,25 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.RemoveAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT RemoveAttribute([NativeTypeName("PCWSTR")] ushort* name)
+    public HRESULT RemoveAttribute([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, int>)(lpVtbl[23]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, int>)(lpVtbl[23]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.SetTextValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT SetTextValue([NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+    public HRESULT SetTextValue([NativeTypeName("const WCHAR *")] char* name, [NativeTypeName("UINT32")] uint nameCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int>)(lpVtbl[24]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, uint, int>)(lpVtbl[24]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetTextValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT GetTextValue([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+    public HRESULT GetTextValue([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int>)(lpVtbl[25]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, uint, int>)(lpVtbl[25]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, nameCount);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetTextValueLength"]/*' />
@@ -376,57 +376,57 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.SetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgAttribute* value)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, ID2D1SvgAttribute*, int>)(lpVtbl[27]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, ID2D1SvgAttribute*, int>)(lpVtbl[27]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.SetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int>)(lpVtbl[28]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int>)(lpVtbl[28]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.SetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value)
+    public HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] char* value)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, int>)(lpVtbl[29]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, char*, int>)(lpVtbl[29]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const IID &")] Guid* riid, void** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const IID &")] Guid* riid, void** value)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, Guid*, void**, int>)(lpVtbl[30]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, riid, value);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, Guid*, void**, int>)(lpVtbl[30]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, riid, value);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int>)(lpVtbl[31]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int>)(lpVtbl[31]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueSizeInBytes);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetAttributeValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] char* value, [NativeTypeName("UINT32")] uint valueCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, uint, int>)(lpVtbl[32]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueCount);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, char*, uint, int>)(lpVtbl[32]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, value, valueCount);
     }
 
     /// <include file='ID2D1SvgElement.xml' path='doc/member[@name="ID2D1SvgElement.GetAttributeValueLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength)
+    public HRESULT GetAttributeValueLength([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength)
     {
-        return ((delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int>)(lpVtbl[33]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, valueLength);
+        return ((delegate* unmanaged<ID2D1SvgElement*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int>)(lpVtbl[33]))((ID2D1SvgElement*)Unsafe.AsPointer(ref this), name, type, valueLength);
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -435,7 +435,7 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
         void GetDocument(ID2D1SvgDocument** document);
 
         [VtblIndex(5)]
-        HRESULT GetTagName([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        HRESULT GetTagName([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount);
 
         [VtblIndex(6)]
         [return: NativeTypeName("UINT32")]
@@ -475,54 +475,54 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
         HRESULT RemoveChild(ID2D1SvgElement* oldChild);
 
         [VtblIndex(18)]
-        HRESULT CreateChild([NativeTypeName("PCWSTR")] ushort* tagName, ID2D1SvgElement** newChild);
+        HRESULT CreateChild([NativeTypeName("PCWSTR")] char* tagName, ID2D1SvgElement** newChild);
 
         [VtblIndex(19)]
-        BOOL IsAttributeSpecified([NativeTypeName("PCWSTR")] ushort* name, BOOL* inherited = null);
+        BOOL IsAttributeSpecified([NativeTypeName("PCWSTR")] char* name, BOOL* inherited = null);
 
         [VtblIndex(20)]
         [return: NativeTypeName("UINT32")]
         uint GetSpecifiedAttributeCount();
 
         [VtblIndex(21)]
-        HRESULT GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount, BOOL* inherited = null);
+        HRESULT GetSpecifiedAttributeName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount, BOOL* inherited = null);
 
         [VtblIndex(22)]
         HRESULT GetSpecifiedAttributeNameLength([NativeTypeName("UINT32")] uint index, [NativeTypeName("UINT32 *")] uint* nameLength, BOOL* inherited = null);
 
         [VtblIndex(23)]
-        HRESULT RemoveAttribute([NativeTypeName("PCWSTR")] ushort* name);
+        HRESULT RemoveAttribute([NativeTypeName("PCWSTR")] char* name);
 
         [VtblIndex(24)]
-        HRESULT SetTextValue([NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        HRESULT SetTextValue([NativeTypeName("const WCHAR *")] char* name, [NativeTypeName("UINT32")] uint nameCount);
 
         [VtblIndex(25)]
-        HRESULT GetTextValue([NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount);
+        HRESULT GetTextValue([NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount);
 
         [VtblIndex(26)]
         [return: NativeTypeName("UINT32")]
         uint GetTextValueLength();
 
         [VtblIndex(27)]
-        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute* value);
+        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgAttribute* value);
 
         [VtblIndex(28)]
-        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, [NativeTypeName("const void *")] void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
         [VtblIndex(29)]
-        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] ushort* value);
+        HRESULT SetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PCWSTR")] char* value);
 
         [VtblIndex(30)]
-        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const IID &")] Guid* riid, void** value);
+        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const IID &")] Guid* riid, void** value);
 
         [VtblIndex(31)]
-        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
+        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_POD_TYPE type, void* value, [NativeTypeName("UINT32")] uint valueSizeInBytes);
 
         [VtblIndex(32)]
-        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] ushort* value, [NativeTypeName("UINT32")] uint valueCount);
+        HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("PWSTR")] char* value, [NativeTypeName("UINT32")] uint valueCount);
 
         [VtblIndex(33)]
-        HRESULT GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength);
+        HRESULT GetAttributeValueLength([NativeTypeName("PCWSTR")] char* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength);
     }
 
     public partial struct Vtbl<TSelf>
@@ -544,7 +544,7 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
         public delegate* unmanaged<TSelf*, ID2D1SvgDocument**, void> GetDocument;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetTagName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetTagName;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetTagNameLength;
@@ -583,51 +583,51 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface, INativ
         public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> RemoveChild;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgElement**, int> CreateChild;
+        public delegate* unmanaged<TSelf*, char*, ID2D1SvgElement**, int> CreateChild;
 
         [NativeTypeName("BOOL (PCWSTR, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> IsAttributeSpecified;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> IsAttributeSpecified;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetSpecifiedAttributeCount;
 
         [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, BOOL*, int> GetSpecifiedAttributeName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, BOOL*, int> GetSpecifiedAttributeName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, BOOL*, int> GetSpecifiedAttributeNameLength;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RemoveAttribute;
+        public delegate* unmanaged<TSelf*, char*, int> RemoveAttribute;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetTextValue;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetTextValue;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetTextValue;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetTextValue;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetTextValueLength;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgAttribute *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgAttribute*, int> SetAttributeValue13;
+        public delegate* unmanaged<TSelf*, char*, ID2D1SvgAttribute*, int> SetAttributeValue13;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> SetAttributeValue14;
+        public delegate* unmanaged<TSelf*, char*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> SetAttributeValue14;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, int> SetAttributeValue15;
+        public delegate* unmanaged<TSelf*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, char*, int> SetAttributeValue15;
 
         [NativeTypeName("HRESULT (PCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetAttributeValue13;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> GetAttributeValue13;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> GetAttributeValue14;
+        public delegate* unmanaged<TSelf*, char*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> GetAttributeValue14;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, uint, int> GetAttributeValue15;
+        public delegate* unmanaged<TSelf*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, char*, uint, int> GetAttributeValue15;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int> GetAttributeValueLength;
+        public delegate* unmanaged<TSelf*, char*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int> GetAttributeValueLength;
     }
 }

@@ -59,9 +59,9 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     /// <include file='IAppxBundleManifestOptionalBundleInfo.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfo.GetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, ushort**, int>)(lpVtbl[4]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, char**, int>)(lpVtbl[4]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxBundleManifestOptionalBundleInfo.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfo.GetPackageInfoItems"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
         HRESULT GetPackageId(IAppxManifestPackageId** packageId);
 
         [VtblIndex(4)]
-        HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+        HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName);
 
         [VtblIndex(5)]
         HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems);
@@ -100,7 +100,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
         public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
+        public delegate* unmanaged<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfoEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;

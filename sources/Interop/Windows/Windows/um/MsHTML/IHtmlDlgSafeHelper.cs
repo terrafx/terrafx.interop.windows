@@ -65,9 +65,9 @@ public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHtmlDlgSafeHelper*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHtmlDlgSafeHelper*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface, 
     /// <include file='IHtmlDlgSafeHelper.xml' path='doc/member[@name="IHtmlDlgSafeHelper.getCharset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, VARIANT* charset)
+    public HRESULT getCharset([NativeTypeName("BSTR")] char* fontName, VARIANT* charset)
     {
-        return ((delegate* unmanaged<IHtmlDlgSafeHelper*, ushort*, VARIANT*, int>)(lpVtbl[8]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), fontName, charset);
+        return ((delegate* unmanaged<IHtmlDlgSafeHelper*, char*, VARIANT*, int>)(lpVtbl[8]))((IHtmlDlgSafeHelper*)Unsafe.AsPointer(ref this), fontName, charset);
     }
 
     /// <include file='IHtmlDlgSafeHelper.xml' path='doc/member[@name="IHtmlDlgSafeHelper.get_Fonts"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface, 
         HRESULT choosecolordlg(VARIANT initColor, VARIANT* rgbColor);
 
         [VtblIndex(8)]
-        HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, VARIANT* charset);
+        HRESULT getCharset([NativeTypeName("BSTR")] char* fontName, VARIANT* charset);
 
         [VtblIndex(9)]
         HRESULT get_Fonts(IDispatch** p);
@@ -144,7 +144,7 @@ public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -153,7 +153,7 @@ public unsafe partial struct IHtmlDlgSafeHelper : IHtmlDlgSafeHelper.Interface, 
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT*, int> choosecolordlg;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getCharset;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getCharset;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_Fonts;

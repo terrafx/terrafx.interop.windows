@@ -13,7 +13,7 @@ public unsafe partial struct NMTVGETINFOTIPW
 
     /// <include file='NMTVGETINFOTIPW.xml' path='doc/member[@name="NMTVGETINFOTIPW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='NMTVGETINFOTIPW.xml' path='doc/member[@name="NMTVGETINFOTIPW.cchTextMax"]/*' />
     public int cchTextMax;

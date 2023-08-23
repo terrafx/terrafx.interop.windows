@@ -89,9 +89,9 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
     /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.RegisterDuckNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification)
+    public HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] char* sessionID, IAudioVolumeDuckNotification* duckNotification)
     {
-        return ((delegate* unmanaged<IAudioSessionManager2*, ushort*, IAudioVolumeDuckNotification*, int>)(lpVtbl[8]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), sessionID, duckNotification);
+        return ((delegate* unmanaged<IAudioSessionManager2*, char*, IAudioVolumeDuckNotification*, int>)(lpVtbl[8]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), sessionID, duckNotification);
     }
 
     /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.UnregisterDuckNotification"]/*' />
@@ -114,7 +114,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification);
 
         [VtblIndex(8)]
-        HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification);
+        HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] char* sessionID, IAudioVolumeDuckNotification* duckNotification);
 
         [VtblIndex(9)]
         HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification);
@@ -148,7 +148,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         public delegate* unmanaged<TSelf*, IAudioSessionNotification*, int> UnregisterSessionNotification;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAudioVolumeDuckNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IAudioVolumeDuckNotification*, int> RegisterDuckNotification;
+        public delegate* unmanaged<TSelf*, char*, IAudioVolumeDuckNotification*, int> RegisterDuckNotification;
 
         [NativeTypeName("HRESULT (IAudioVolumeDuckNotification *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAudioVolumeDuckNotification*, int> UnregisterDuckNotification;

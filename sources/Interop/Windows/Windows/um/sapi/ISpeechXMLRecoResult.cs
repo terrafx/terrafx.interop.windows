@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechXMLRecoResult*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechXMLRecoResult*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,26 +161,26 @@ public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interfa
     /// <include file='ISpeechXMLRecoResult.xml' path='doc/member[@name="ISpeechXMLRecoResult.GetXMLResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult)
+    public HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] char** pResult)
     {
-        return ((delegate* unmanaged<ISpeechXMLRecoResult*, SPXMLRESULTOPTIONS, ushort**, int>)(lpVtbl[17]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), Options, pResult);
+        return ((delegate* unmanaged<ISpeechXMLRecoResult*, SPXMLRESULTOPTIONS, char**, int>)(lpVtbl[17]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), Options, pResult);
     }
 
     /// <include file='ISpeechXMLRecoResult.xml' path='doc/member[@name="ISpeechXMLRecoResult.GetXMLErrorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError)
+    public HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] char** ScriptLine, [NativeTypeName("BSTR *")] char** Source, [NativeTypeName("BSTR *")] char** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError)
     {
-        return ((delegate* unmanaged<ISpeechXMLRecoResult*, int*, ushort**, ushort**, ushort**, int*, short*, int>)(lpVtbl[18]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
+        return ((delegate* unmanaged<ISpeechXMLRecoResult*, int*, char**, char**, char**, int*, short*, int>)(lpVtbl[18]))((ISpeechXMLRecoResult*)Unsafe.AsPointer(ref this), LineNumber, ScriptLine, Source, Description, ResultCode, IsError);
     }
 
     public interface Interface : ISpeechRecoResult.Interface
     {
         [VtblIndex(17)]
-        HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] ushort** pResult);
+        HRESULT GetXMLResult(SPXMLRESULTOPTIONS Options, [NativeTypeName("BSTR *")] char** pResult);
 
         [VtblIndex(18)]
-        HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] ushort** ScriptLine, [NativeTypeName("BSTR *")] ushort** Source, [NativeTypeName("BSTR *")] ushort** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
+        HRESULT GetXMLErrorInfo([NativeTypeName("long *")] int* LineNumber, [NativeTypeName("BSTR *")] char** ScriptLine, [NativeTypeName("BSTR *")] char** Source, [NativeTypeName("BSTR *")] char** Description, [NativeTypeName("long *")] int* ResultCode, [NativeTypeName("VARIANT_BOOL *")] short* IsError);
     }
 
     public partial struct Vtbl<TSelf>
@@ -202,7 +202,7 @@ public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -238,9 +238,9 @@ public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interfa
         public delegate* unmanaged<TSelf*, SpeechDiscardType, int> DiscardResultInfo;
 
         [NativeTypeName("HRESULT (SPXMLRESULTOPTIONS, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPXMLRESULTOPTIONS, ushort**, int> GetXMLResult;
+        public delegate* unmanaged<TSelf*, SPXMLRESULTOPTIONS, char**, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (long *, BSTR *, BSTR *, BSTR *, long *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, ushort**, ushort**, ushort**, int*, short*, int> GetXMLErrorInfo;
+        public delegate* unmanaged<TSelf*, int*, char**, char**, char**, int*, short*, int> GetXMLErrorInfo;
     }
 }

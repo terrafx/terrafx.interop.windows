@@ -65,9 +65,9 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IRawCDImageCreator*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -169,17 +169,17 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_MediaCatalogNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, ushort*, int>)(lpVtbl[18]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IRawCDImageCreator*, char*, int>)(lpVtbl[18]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_MediaCatalogNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, ushort**, int>)(lpVtbl[19]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IRawCDImageCreator*, char**, int>)(lpVtbl[19]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_StartingTrackNumber"]/*' />
@@ -266,10 +266,10 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
         HRESULT get_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL *")] short* value);
 
         [VtblIndex(18)]
-        HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(19)]
-        HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(20)]
         HRESULT put_StartingTrackNumber([NativeTypeName("LONG")] int value);
@@ -309,7 +309,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -348,10 +348,10 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
         public delegate* unmanaged<TSelf*, short*, int> get_DisableGaplessAudio;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_MediaCatalogNumber;
+        public delegate* unmanaged<TSelf*, char*, int> put_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_MediaCatalogNumber;
+        public delegate* unmanaged<TSelf*, char**, int> get_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_StartingTrackNumber;

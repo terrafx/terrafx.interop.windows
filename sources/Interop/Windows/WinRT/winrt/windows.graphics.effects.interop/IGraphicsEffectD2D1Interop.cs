@@ -58,9 +58,9 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
     /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetNamedPropertyMapping"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] ushort* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping)
+    public HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] char* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping)
     {
-        return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, ushort*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int>)(lpVtbl[4]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), name, index, mapping);
+        return ((delegate* unmanaged<IGraphicsEffectD2D1Interop*, char*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int>)(lpVtbl[4]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), name, index, mapping);
     }
 
     /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetPropertyCount"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         HRESULT GetEffectId(Guid* id);
 
         [VtblIndex(4)]
-        HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] ushort* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping);
+        HRESULT GetNamedPropertyMapping([NativeTypeName("LPCWSTR")] char* name, uint* index, [NativeTypeName("ABI::Windows::Graphics::Effects::GRAPHICS_EFFECT_PROPERTY_MAPPING *")] GRAPHICS_EFFECT_PROPERTY_MAPPING* mapping);
 
         [VtblIndex(5)]
         HRESULT GetPropertyCount(uint* count);
@@ -132,7 +132,7 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         public delegate* unmanaged<TSelf*, Guid*, int> GetEffectId;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT *, GRAPHICS_EFFECT_PROPERTY_MAPPING *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int> GetNamedPropertyMapping;
+        public delegate* unmanaged<TSelf*, char*, uint*, GRAPHICS_EFFECT_PROPERTY_MAPPING*, int> GetNamedPropertyMapping;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetPropertyCount;

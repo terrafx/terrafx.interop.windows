@@ -49,26 +49,26 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
     /// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory.GetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDirectory([NativeTypeName("PWSTR")] ushort* pwzPath, [NativeTypeName("DWORD")] uint cchSize)
+    public HRESULT GetDirectory([NativeTypeName("PWSTR")] char* pwzPath, [NativeTypeName("DWORD")] uint cchSize)
     {
-        return ((delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, uint, int>)(lpVtbl[3]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath, cchSize);
+        return ((delegate* unmanaged<ICurrentWorkingDirectory*, char*, uint, int>)(lpVtbl[3]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath, cchSize);
     }
 
     /// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory.SetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetDirectory([NativeTypeName("PCWSTR")] ushort* pwzPath)
+    public HRESULT SetDirectory([NativeTypeName("PCWSTR")] char* pwzPath)
     {
-        return ((delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, int>)(lpVtbl[4]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath);
+        return ((delegate* unmanaged<ICurrentWorkingDirectory*, char*, int>)(lpVtbl[4]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDirectory([NativeTypeName("PWSTR")] ushort* pwzPath, [NativeTypeName("DWORD")] uint cchSize);
+        HRESULT GetDirectory([NativeTypeName("PWSTR")] char* pwzPath, [NativeTypeName("DWORD")] uint cchSize);
 
         [VtblIndex(4)]
-        HRESULT SetDirectory([NativeTypeName("PCWSTR")] ushort* pwzPath);
+        HRESULT SetDirectory([NativeTypeName("PCWSTR")] char* pwzPath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetDirectory;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetDirectory;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> SetDirectory;
     }
 }

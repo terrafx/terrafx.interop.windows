@@ -51,9 +51,9 @@ public unsafe partial struct IDxcCompilerArgs : IDxcCompilerArgs.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("LPCWSTR *")]
-    public ushort** GetArguments()
+    public char** GetArguments()
     {
-        return ((delegate* unmanaged<IDxcCompilerArgs*, ushort**>)(lpVtbl[3]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDxcCompilerArgs*, char**>)(lpVtbl[3]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDxcCompilerArgs.xml' path='doc/member[@name="IDxcCompilerArgs.GetCount"]/*' />
@@ -68,9 +68,9 @@ public unsafe partial struct IDxcCompilerArgs : IDxcCompilerArgs.Interface, INat
     /// <include file='IDxcCompilerArgs.xml' path='doc/member[@name="IDxcCompilerArgs.AddArguments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddArguments([NativeTypeName("LPCWSTR *")] ushort** pArguments, [NativeTypeName("UINT32")] uint argCount)
+    public HRESULT AddArguments([NativeTypeName("LPCWSTR *")] char** pArguments, [NativeTypeName("UINT32")] uint argCount)
     {
-        return ((delegate* unmanaged<IDxcCompilerArgs*, ushort**, uint, int>)(lpVtbl[5]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
+        return ((delegate* unmanaged<IDxcCompilerArgs*, char**, uint, int>)(lpVtbl[5]))((IDxcCompilerArgs*)Unsafe.AsPointer(ref this), pArguments, argCount);
     }
 
     /// <include file='IDxcCompilerArgs.xml' path='doc/member[@name="IDxcCompilerArgs.AddArgumentsUTF8"]/*' />
@@ -93,14 +93,14 @@ public unsafe partial struct IDxcCompilerArgs : IDxcCompilerArgs.Interface, INat
     {
         [VtblIndex(3)]
         [return: NativeTypeName("LPCWSTR *")]
-        ushort** GetArguments();
+        char** GetArguments();
 
         [VtblIndex(4)]
         [return: NativeTypeName("UINT32")]
         uint GetCount();
 
         [VtblIndex(5)]
-        HRESULT AddArguments([NativeTypeName("LPCWSTR *")] ushort** pArguments, [NativeTypeName("UINT32")] uint argCount);
+        HRESULT AddArguments([NativeTypeName("LPCWSTR *")] char** pArguments, [NativeTypeName("UINT32")] uint argCount);
 
         [VtblIndex(6)]
         HRESULT AddArgumentsUTF8([NativeTypeName("LPCSTR *")] sbyte** pArguments, [NativeTypeName("UINT32")] uint argCount);
@@ -122,13 +122,13 @@ public unsafe partial struct IDxcCompilerArgs : IDxcCompilerArgs.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("LPCWSTR *() __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**> GetArguments;
+        public delegate* unmanaged<TSelf*, char**> GetArguments;
 
         [NativeTypeName("UINT32 () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetCount;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint, int> AddArguments;
+        public delegate* unmanaged<TSelf*, char**, uint, int> AddArguments;
 
         [NativeTypeName("HRESULT (LPCSTR *, UINT32) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, sbyte**, uint, int> AddArgumentsUTF8;

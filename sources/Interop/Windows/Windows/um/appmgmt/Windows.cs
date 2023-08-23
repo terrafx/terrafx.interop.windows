@@ -18,12 +18,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UninstallApplication"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint UninstallApplication([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("DWORD")] uint dwStatus);
+    public static extern uint UninstallApplication([NativeTypeName("LPWSTR")] char* ProductCode, [NativeTypeName("DWORD")] uint dwStatus);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CommandLineFromMsiDescriptor"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CommandLineFromMsiDescriptor([NativeTypeName("LPWSTR")] ushort* Descriptor, [NativeTypeName("LPWSTR")] ushort* CommandLine, [NativeTypeName("DWORD *")] uint* CommandLineLength);
+    public static extern uint CommandLineFromMsiDescriptor([NativeTypeName("LPWSTR")] char* Descriptor, [NativeTypeName("LPWSTR")] char* CommandLine, [NativeTypeName("DWORD *")] uint* CommandLineLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagedApplications"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -37,7 +37,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLocalManagedApplicationData"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
-    public static extern void GetLocalManagedApplicationData([NativeTypeName("LPWSTR")] ushort* ProductCode, [NativeTypeName("LPWSTR *")] ushort** DisplayName, [NativeTypeName("LPWSTR *")] ushort** SupportUrl);
+    public static extern void GetLocalManagedApplicationData([NativeTypeName("LPWSTR")] char* ProductCode, [NativeTypeName("LPWSTR *")] char** DisplayName, [NativeTypeName("LPWSTR *")] char** SupportUrl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagedApplicationCategories"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]

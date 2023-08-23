@@ -49,17 +49,17 @@ public unsafe partial struct IClientSecurity : IClientSecurity.Interface, INativ
     /// <include file='IClientSecurity.xml' path='doc/member[@name="IClientSecurity.QueryBlanket"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT QueryBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites)
+    public HRESULT QueryBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] char** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites)
     {
-        return ((delegate* unmanaged<IClientSecurity*, IUnknown*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int>)(lpVtbl[3]))((IClientSecurity*)Unsafe.AsPointer(ref this), pProxy, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pAuthInfo, pCapabilites);
+        return ((delegate* unmanaged<IClientSecurity*, IUnknown*, uint*, uint*, char**, uint*, uint*, void**, uint*, int>)(lpVtbl[3]))((IClientSecurity*)Unsafe.AsPointer(ref this), pProxy, pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pAuthInfo, pCapabilites);
     }
 
     /// <include file='IClientSecurity.xml' path='doc/member[@name="IClientSecurity.SetBlanket"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] ushort* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities)
+    public HRESULT SetBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] char* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities)
     {
-        return ((delegate* unmanaged<IClientSecurity*, IUnknown*, uint, uint, ushort*, uint, uint, void*, uint, int>)(lpVtbl[4]))((IClientSecurity*)Unsafe.AsPointer(ref this), pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
+        return ((delegate* unmanaged<IClientSecurity*, IUnknown*, uint, uint, char*, uint, uint, void*, uint, int>)(lpVtbl[4]))((IClientSecurity*)Unsafe.AsPointer(ref this), pProxy, dwAuthnSvc, dwAuthzSvc, pServerPrincName, dwAuthnLevel, dwImpLevel, pAuthInfo, dwCapabilities);
     }
 
     /// <include file='IClientSecurity.xml' path='doc/member[@name="IClientSecurity.CopyProxy"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IClientSecurity : IClientSecurity.Interface, INativ
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT QueryBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites);
+        HRESULT QueryBlanket(IUnknown* pProxy, [NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] char** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pAuthInfo, [NativeTypeName("DWORD *")] uint* pCapabilites);
 
         [VtblIndex(4)]
-        HRESULT SetBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] ushort* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities);
+        HRESULT SetBlanket(IUnknown* pProxy, [NativeTypeName("DWORD")] uint dwAuthnSvc, [NativeTypeName("DWORD")] uint dwAuthzSvc, [NativeTypeName("OLECHAR *")] char* pServerPrincName, [NativeTypeName("DWORD")] uint dwAuthnLevel, [NativeTypeName("DWORD")] uint dwImpLevel, void* pAuthInfo, [NativeTypeName("DWORD")] uint dwCapabilities);
 
         [VtblIndex(5)]
         HRESULT CopyProxy(IUnknown* pProxy, IUnknown** ppCopy);
@@ -95,10 +95,10 @@ public unsafe partial struct IClientSecurity : IClientSecurity.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *, DWORD *, OLECHAR **, DWORD *, DWORD *, void **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint*, uint*, char**, uint*, uint*, void**, uint*, int> QueryBlanket;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD, DWORD, OLECHAR *, DWORD, DWORD, void *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, ushort*, uint, uint, void*, uint, int> SetBlanket;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, char*, uint, uint, void*, uint, int> SetBlanket;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, IUnknown**, int> CopyProxy;

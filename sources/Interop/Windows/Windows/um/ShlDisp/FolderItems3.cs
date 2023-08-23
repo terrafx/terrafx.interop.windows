@@ -65,9 +65,9 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<FolderItems3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<FolderItems3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,9 +129,9 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     /// <include file='FolderItems3.xml' path='doc/member[@name="FolderItems3.Filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT Filter([NativeTypeName("long")] int grfFlags, [NativeTypeName("BSTR")] ushort* bstrFileSpec)
+    public HRESULT Filter([NativeTypeName("long")] int grfFlags, [NativeTypeName("BSTR")] char* bstrFileSpec)
     {
-        return ((delegate* unmanaged<FolderItems3*, int, ushort*, int>)(lpVtbl[13]))((FolderItems3*)Unsafe.AsPointer(ref this), grfFlags, bstrFileSpec);
+        return ((delegate* unmanaged<FolderItems3*, int, char*, int>)(lpVtbl[13]))((FolderItems3*)Unsafe.AsPointer(ref this), grfFlags, bstrFileSpec);
     }
 
     /// <include file='FolderItems3.xml' path='doc/member[@name="FolderItems3.get_Verbs"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     public interface Interface : FolderItems2.Interface
     {
         [VtblIndex(13)]
-        HRESULT Filter([NativeTypeName("long")] int grfFlags, [NativeTypeName("BSTR")] ushort* bstrFileSpec);
+        HRESULT Filter([NativeTypeName("long")] int grfFlags, [NativeTypeName("BSTR")] char* bstrFileSpec);
 
         [VtblIndex(14)]
         HRESULT get_Verbs(FolderItemVerbs** ppfic);
@@ -170,7 +170,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -194,7 +194,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT, int> InvokeVerbEx;
 
         [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, int> Filter;
+        public delegate* unmanaged<TSelf*, int, char*, int> Filter;
 
         [NativeTypeName("HRESULT (FolderItemVerbs **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FolderItemVerbs**, int> get_Verbs;

@@ -89,41 +89,41 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findChildren"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT findChildren(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildren(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[8]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[8]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findChildrenEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT findChildrenEx(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenEx(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[9]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[9]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findChildrenExByAddr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT findChildrenExByAddr(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByAddr(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[10]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, isect, offset, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[10]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, isect, offset, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findChildrenExByVA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT findChildrenExByVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[11]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, va, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[11]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, va, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findChildrenExByRVA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT findChildrenExByRVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByRVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[12]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, rva, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[12]))((IDiaSession*)Unsafe.AsPointer(ref this), parent, symtag, name, compareFlags, rva, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findSymbolByAddr"]/*' />
@@ -193,9 +193,9 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT findFile(IDiaSymbol* pCompiland, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSourceFiles** ppResult)
+    public HRESULT findFile(IDiaSymbol* pCompiland, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSourceFiles** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, ushort*, uint, IDiaEnumSourceFiles**, int>)(lpVtbl[21]))((IDiaSession*)Unsafe.AsPointer(ref this), pCompiland, name, compareFlags, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, IDiaSymbol*, char*, uint, IDiaEnumSourceFiles**, int>)(lpVtbl[21]))((IDiaSession*)Unsafe.AsPointer(ref this), pCompiland, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findFileById"]/*' />
@@ -249,9 +249,9 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findInjectedSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT findInjectedSource([NativeTypeName("LPCOLESTR")] ushort* srcFile, IDiaEnumInjectedSources** ppResult)
+    public HRESULT findInjectedSource([NativeTypeName("LPCOLESTR")] char* srcFile, IDiaEnumInjectedSources** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, ushort*, IDiaEnumInjectedSources**, int>)(lpVtbl[28]))((IDiaSession*)Unsafe.AsPointer(ref this), srcFile, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, char*, IDiaEnumInjectedSources**, int>)(lpVtbl[28]))((IDiaSession*)Unsafe.AsPointer(ref this), srcFile, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.getEnumDebugStreams"]/*' />
@@ -329,9 +329,9 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findInlineesByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT findInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult)
+    public HRESULT findInlineesByName([NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[38]))((IDiaSession*)Unsafe.AsPointer(ref this), name, option, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[38]))((IDiaSession*)Unsafe.AsPointer(ref this), name, option, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findAcceleratorInlineeLinesByLinenum"]/*' />
@@ -361,9 +361,9 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.findAcceleratorInlineesByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
-    public HRESULT findAcceleratorInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult)
+    public HRESULT findAcceleratorInlineesByName([NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSession*, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[42]))((IDiaSession*)Unsafe.AsPointer(ref this), name, option, ppResult);
+        return ((delegate* unmanaged<IDiaSession*, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[42]))((IDiaSession*)Unsafe.AsPointer(ref this), name, option, ppResult);
     }
 
     /// <include file='IDiaSession.xml' path='doc/member[@name="IDiaSession.addressForVA"]/*' />
@@ -536,19 +536,19 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         HRESULT getSymbolsByAddr(IDiaEnumSymbolsByAddr** ppEnumbyAddr);
 
         [VtblIndex(8)]
-        HRESULT findChildren(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        HRESULT findChildren(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(9)]
-        HRESULT findChildrenEx(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenEx(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(10)]
-        HRESULT findChildrenExByAddr(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByAddr(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(11)]
-        HRESULT findChildrenExByVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(12)]
-        HRESULT findChildrenExByRVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByRVA(IDiaSymbol* parent, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(13)]
         HRESULT findSymbolByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol);
@@ -575,7 +575,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         HRESULT findSymbolByVAEx([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, IDiaSymbol** ppSymbol, [NativeTypeName("long *")] int* displacement);
 
         [VtblIndex(21)]
-        HRESULT findFile(IDiaSymbol* pCompiland, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSourceFiles** ppResult);
+        HRESULT findFile(IDiaSymbol* pCompiland, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSourceFiles** ppResult);
 
         [VtblIndex(22)]
         HRESULT findFileById([NativeTypeName("DWORD")] uint uniqueId, IDiaSourceFile** ppResult);
@@ -596,7 +596,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         HRESULT findLinesByLinenum(IDiaSymbol* compiland, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
 
         [VtblIndex(28)]
-        HRESULT findInjectedSource([NativeTypeName("LPCOLESTR")] ushort* srcFile, IDiaEnumInjectedSources** ppResult);
+        HRESULT findInjectedSource([NativeTypeName("LPCOLESTR")] char* srcFile, IDiaEnumInjectedSources** ppResult);
 
         [VtblIndex(29)]
         HRESULT getEnumDebugStreams(IDiaEnumDebugStreams** ppEnumDebugStreams);
@@ -626,7 +626,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         HRESULT findInlineeLinesByLinenum(IDiaSymbol* compiland, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
 
         [VtblIndex(38)]
-        HRESULT findInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
+        HRESULT findInlineesByName([NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(39)]
         HRESULT findAcceleratorInlineeLinesByLinenum(IDiaSymbol* parent, IDiaSourceFile* file, [NativeTypeName("DWORD")] uint linenum, [NativeTypeName("DWORD")] uint column, IDiaEnumLineNumbers** ppResult);
@@ -638,7 +638,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         HRESULT findSymbolsByRVAForAcceleratorPointerTag(IDiaSymbol* parent, [NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(42)]
-        HRESULT findAcceleratorInlineesByName([NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
+        HRESULT findAcceleratorInlineesByName([NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint option, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(43)]
         HRESULT addressForVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD *")] uint* pISect, [NativeTypeName("DWORD *")] uint* pOffset);
@@ -726,19 +726,19 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDiaEnumSymbolsByAddr**, int> getSymbolsByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildren;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildrenEx;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, enum SymTagEnum, IDiaSymbol **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByAddr;
@@ -765,7 +765,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ulong, SymTagEnum, IDiaSymbol**, int*, int> findSymbolByVAEx;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, LPCOLESTR, DWORD, IDiaEnumSourceFiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol*, ushort*, uint, IDiaEnumSourceFiles**, int> findFile;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, char*, uint, IDiaEnumSourceFiles**, int> findFile;
 
         [NativeTypeName("HRESULT (DWORD, IDiaSourceFile **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IDiaSourceFile**, int> findFileById;
@@ -786,7 +786,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findLinesByLinenum;
 
         [NativeTypeName("HRESULT (LPCOLESTR, IDiaEnumInjectedSources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDiaEnumInjectedSources**, int> findInjectedSource;
+        public delegate* unmanaged<TSelf*, char*, IDiaEnumInjectedSources**, int> findInjectedSource;
 
         [NativeTypeName("HRESULT (IDiaEnumDebugStreams **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDiaEnumDebugStreams**, int> getEnumDebugStreams;
@@ -816,7 +816,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByLinenum;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IDiaEnumSymbols**, int> findInlineesByName;
+        public delegate* unmanaged<TSelf*, char*, uint, IDiaEnumSymbols**, int> findInlineesByName;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSourceFile *, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findAcceleratorInlineeLinesByLinenum;
@@ -828,7 +828,7 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IDiaEnumSymbols**, int> findAcceleratorInlineesByName;
+        public delegate* unmanaged<TSelf*, char*, uint, IDiaEnumSymbols**, int> findAcceleratorInlineesByName;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong, uint*, uint*, int> addressForVA;

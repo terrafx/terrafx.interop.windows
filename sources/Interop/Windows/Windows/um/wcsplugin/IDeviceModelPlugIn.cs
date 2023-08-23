@@ -49,9 +49,9 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("BSTR")] ushort* bstrXml, uint cNumModels, uint iModelPosition)
+    public HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, uint cNumModels, uint iModelPosition)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, ushort*, uint, uint, int>)(lpVtbl[3]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, cNumModels, iModelPosition);
+        return ((delegate* unmanaged<IDeviceModelPlugIn*, char*, uint, uint, int>)(lpVtbl[3]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, cNumModels, iModelPosition);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetNumChannels"]/*' />
@@ -137,7 +137,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("BSTR")] ushort* bstrXml, uint cNumModels, uint iModelPosition);
+        HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, uint cNumModels, uint iModelPosition);
 
         [VtblIndex(4)]
         HRESULT GetNumChannels(uint* pNumChannels);
@@ -183,7 +183,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, uint, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetNumChannels;

@@ -51,15 +51,15 @@ public unsafe partial struct IMFHttpDownloadSessionProvider : IMFHttpDownloadSes
     /// <include file='IMFHttpDownloadSessionProvider.xml' path='doc/member[@name="IMFHttpDownloadSessionProvider.CreateHttpDownloadSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] ushort* wszScheme, IMFHttpDownloadSession** ppDownloadSession)
+    public HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] char* wszScheme, IMFHttpDownloadSession** ppDownloadSession)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadSessionProvider*, ushort*, IMFHttpDownloadSession**, int>)(lpVtbl[3]))((IMFHttpDownloadSessionProvider*)Unsafe.AsPointer(ref this), wszScheme, ppDownloadSession);
+        return ((delegate* unmanaged<IMFHttpDownloadSessionProvider*, char*, IMFHttpDownloadSession**, int>)(lpVtbl[3]))((IMFHttpDownloadSessionProvider*)Unsafe.AsPointer(ref this), wszScheme, ppDownloadSession);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] ushort* wszScheme, IMFHttpDownloadSession** ppDownloadSession);
+        HRESULT CreateHttpDownloadSession([NativeTypeName("LPCWSTR")] char* wszScheme, IMFHttpDownloadSession** ppDownloadSession);
     }
 
     public partial struct Vtbl<TSelf>
@@ -75,6 +75,6 @@ public unsafe partial struct IMFHttpDownloadSessionProvider : IMFHttpDownloadSes
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFHttpDownloadSession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFHttpDownloadSession**, int> CreateHttpDownloadSession;
+        public delegate* unmanaged<TSelf*, char*, IMFHttpDownloadSession**, int> CreateHttpDownloadSession;
     }
 }

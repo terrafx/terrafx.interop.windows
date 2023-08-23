@@ -65,9 +65,9 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IFileSystemImageResult2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     /// <inheritdoc cref="IFileSystemImageResult.get_DiscId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_DiscId([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_DiscId([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, ushort**, int>)(lpVtbl[11]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IFileSystemImageResult2*, char**, int>)(lpVtbl[11]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImageResult2.xml' path='doc/member[@name="IFileSystemImageResult2.get_ModifiedBlocks"]/*' />
@@ -151,7 +151,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -169,7 +169,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
         public delegate* unmanaged<TSelf*, int*, int> get_BlockSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_DiscId;
+        public delegate* unmanaged<TSelf*, char**, int> get_DiscId;
 
         [NativeTypeName("HRESULT (IBlockRangeList **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IBlockRangeList**, int> get_ModifiedBlocks;

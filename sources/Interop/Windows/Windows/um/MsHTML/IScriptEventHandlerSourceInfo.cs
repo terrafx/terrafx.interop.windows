@@ -49,15 +49,15 @@ public unsafe partial struct IScriptEventHandlerSourceInfo : IScriptEventHandler
     /// <include file='IScriptEventHandlerSourceInfo.xml' path='doc/member[@name="IScriptEventHandlerSourceInfo.GetSourceInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetSourceInfo([NativeTypeName("BSTR *")] ushort** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength)
+    public HRESULT GetSourceInfo([NativeTypeName("BSTR *")] char** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength)
     {
-        return ((delegate* unmanaged<IScriptEventHandlerSourceInfo*, ushort**, uint*, uint*, uint*, int>)(lpVtbl[3]))((IScriptEventHandlerSourceInfo*)Unsafe.AsPointer(ref this), pbstrFunctionName, line, column, cchLength);
+        return ((delegate* unmanaged<IScriptEventHandlerSourceInfo*, char**, uint*, uint*, uint*, int>)(lpVtbl[3]))((IScriptEventHandlerSourceInfo*)Unsafe.AsPointer(ref this), pbstrFunctionName, line, column, cchLength);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetSourceInfo([NativeTypeName("BSTR *")] ushort** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength);
+        HRESULT GetSourceInfo([NativeTypeName("BSTR *")] char** pbstrFunctionName, [NativeTypeName("UINT32 *")] uint* line, [NativeTypeName("UINT32 *")] uint* column, [NativeTypeName("UINT32 *")] uint* cchLength);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IScriptEventHandlerSourceInfo : IScriptEventHandler
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *, UINT32 *, UINT32 *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, uint*, uint*, int> GetSourceInfo;
+        public delegate* unmanaged<TSelf*, char**, uint*, uint*, uint*, int> GetSourceInfo;
     }
 }

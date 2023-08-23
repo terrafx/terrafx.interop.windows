@@ -83,17 +83,17 @@ public unsafe partial struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassF
     /// <include file='IMFMediaEngineClassFactoryEx.xml' path='doc/member[@name="IMFMediaEngineClassFactoryEx.CreateMediaKeys"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateMediaKeys([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* cdmStorePath, IMFMediaKeys** ppKeys)
+    public HRESULT CreateMediaKeys([NativeTypeName("BSTR")] char* keySystem, [NativeTypeName("BSTR")] char* cdmStorePath, IMFMediaKeys** ppKeys)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, IMFMediaKeys**, int>)(lpVtbl[7]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), keySystem, cdmStorePath, ppKeys);
+        return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, char*, char*, IMFMediaKeys**, int>)(lpVtbl[7]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), keySystem, cdmStorePath, ppKeys);
     }
 
     /// <include file='IMFMediaEngineClassFactoryEx.xml' path='doc/member[@name="IMFMediaEngineClassFactoryEx.IsTypeSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT IsTypeSupported([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, BOOL* isSupported)
+    public HRESULT IsTypeSupported([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR")] char* keySystem, BOOL* isSupported)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, ushort*, ushort*, BOOL*, int>)(lpVtbl[8]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), type, keySystem, isSupported);
+        return ((delegate* unmanaged<IMFMediaEngineClassFactoryEx*, char*, char*, BOOL*, int>)(lpVtbl[8]))((IMFMediaEngineClassFactoryEx*)Unsafe.AsPointer(ref this), type, keySystem, isSupported);
     }
 
     public interface Interface : IMFMediaEngineClassFactory.Interface
@@ -102,10 +102,10 @@ public unsafe partial struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassF
         HRESULT CreateMediaSourceExtension([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IMFMediaSourceExtension** ppMSE);
 
         [VtblIndex(7)]
-        HRESULT CreateMediaKeys([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* cdmStorePath, IMFMediaKeys** ppKeys);
+        HRESULT CreateMediaKeys([NativeTypeName("BSTR")] char* keySystem, [NativeTypeName("BSTR")] char* cdmStorePath, IMFMediaKeys** ppKeys);
 
         [VtblIndex(8)]
-        HRESULT IsTypeSupported([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, BOOL* isSupported);
+        HRESULT IsTypeSupported([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR")] char* keySystem, BOOL* isSupported);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,9 +133,9 @@ public unsafe partial struct IMFMediaEngineClassFactoryEx : IMFMediaEngineClassF
         public delegate* unmanaged<TSelf*, uint, IMFAttributes*, IMFMediaSourceExtension**, int> CreateMediaSourceExtension;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IMFMediaKeys **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IMFMediaKeys**, int> CreateMediaKeys;
+        public delegate* unmanaged<TSelf*, char*, char*, IMFMediaKeys**, int> CreateMediaKeys;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, BOOL*, int> IsTypeSupported;
+        public delegate* unmanaged<TSelf*, char*, char*, BOOL*, int> IsTypeSupported;
     }
 }

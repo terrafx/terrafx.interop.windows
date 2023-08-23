@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface, IN
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnReconversion*, ushort**, int>)(lpVtbl[3]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnReconversion*, char**, int>)(lpVtbl[3]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnReconversion.xml' path='doc/member[@name="ITfFnReconversion.QueryRange"]/*' />
@@ -103,7 +103,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;

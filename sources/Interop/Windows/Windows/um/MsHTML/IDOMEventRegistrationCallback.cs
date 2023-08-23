@@ -49,9 +49,9 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     /// <include file='IDOMEventRegistrationCallback.xml' path='doc/member[@name="IDOMEventRegistrationCallback.OnDOMEventListenerAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] ushort* pszEventType, IScriptEventHandler* pHandler)
+    public HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] char* pszEventType, IScriptEventHandler* pHandler)
     {
-        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, ushort*, IScriptEventHandler*, int>)(lpVtbl[3]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), pszEventType, pHandler);
+        return ((delegate* unmanaged<IDOMEventRegistrationCallback*, char*, IScriptEventHandler*, int>)(lpVtbl[3]))((IDOMEventRegistrationCallback*)Unsafe.AsPointer(ref this), pszEventType, pHandler);
     }
 
     /// <include file='IDOMEventRegistrationCallback.xml' path='doc/member[@name="IDOMEventRegistrationCallback.OnDOMEventListenerRemoved"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] ushort* pszEventType, IScriptEventHandler* pHandler);
+        HRESULT OnDOMEventListenerAdded([NativeTypeName("LPCWSTR")] char* pszEventType, IScriptEventHandler* pHandler);
 
         [VtblIndex(4)]
         HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie);
@@ -84,7 +84,7 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IScriptEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
+        public delegate* unmanaged<TSelf*, char*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong, int> OnDOMEventListenerRemoved;

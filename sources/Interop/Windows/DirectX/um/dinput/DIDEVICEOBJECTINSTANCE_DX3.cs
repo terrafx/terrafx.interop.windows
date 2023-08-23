@@ -31,5 +31,5 @@ public unsafe partial struct DIDEVICEOBJECTINSTANCE_DX3
 
     /// <include file='DIDEVICEOBJECTINSTANCE_DX3.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE_DX3.tszName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszName[260];
+    public fixed char tszName[260];
 }

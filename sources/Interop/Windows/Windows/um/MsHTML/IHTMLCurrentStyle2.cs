@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,25 +81,25 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[7]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[7]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[8]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[8]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[9]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[9]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_hasLayout"]/*' />
@@ -177,9 +177,9 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[19]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[19]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_zoom"]/*' />
@@ -193,17 +193,17 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_filter([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_filter([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[21]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[21]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int>)(lpVtbl[22]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle2*, char**, int>)(lpVtbl[22]))((IHTMLCurrentStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle2.xml' path='doc/member[@name="IHTMLCurrentStyle2.get_textKashidaSpace"]/*' />
@@ -225,13 +225,13 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
         HRESULT get_hasLayout([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -261,16 +261,16 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
         HRESULT get_scrollbarTrackColor(VARIANT* p);
 
         [VtblIndex(19)]
-        HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(20)]
         HRESULT get_zoom(VARIANT* p);
 
         [VtblIndex(21)]
-        HRESULT get_filter([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_filter([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
-        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(23)]
         HRESULT get_textKashidaSpace(VARIANT* p);
@@ -298,19 +298,19 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutFlow;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wordWrap;
+        public delegate* unmanaged<TSelf*, char**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_hasLayout;
@@ -340,16 +340,16 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface, 
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_writingMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_filter;
+        public delegate* unmanaged<TSelf*, char**, int> get_filter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlignLast;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashidaSpace;

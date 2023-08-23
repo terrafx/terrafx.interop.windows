@@ -65,9 +65,9 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IRulesApplied*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesApplied*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IRulesApplied*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesApplied*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,17 +105,17 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface, INativeGui
     /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.propertyIsInline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT propertyIsInline([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT propertyIsInline([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IRulesApplied*, ushort*, short*, int>)(lpVtbl[10]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
+        return ((delegate* unmanaged<IRulesApplied*, char*, short*, int>)(lpVtbl[10]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
     }
 
     /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.propertyIsInheritable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT propertyIsInheritable([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT propertyIsInheritable([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IRulesApplied*, ushort*, short*, int>)(lpVtbl[11]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
+        return ((delegate* unmanaged<IRulesApplied*, char*, short*, int>)(lpVtbl[11]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
     }
 
     /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.hasInheritableProperty"]/*' />
@@ -138,10 +138,10 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface, INativeGui
         HRESULT get_appliedRules(IHTMLStyleSheetRulesAppliedCollection** p);
 
         [VtblIndex(10)]
-        HRESULT propertyIsInline([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+        HRESULT propertyIsInline([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(11)]
-        HRESULT propertyIsInheritable([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+        HRESULT propertyIsInheritable([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(12)]
         HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -166,7 +166,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -181,10 +181,10 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IHTMLStyleSheetRulesAppliedCollection**, int> get_appliedRules;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> propertyIsInline;
+        public delegate* unmanaged<TSelf*, char*, short*, int> propertyIsInline;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> propertyIsInheritable;
+        public delegate* unmanaged<TSelf*, char*, short*, int> propertyIsInheritable;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> hasInheritableProperty;

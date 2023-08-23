@@ -75,17 +75,17 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
     /// <inheritdoc cref="IMFMediaEngine.SetSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
+    public HRESULT SetSource([NativeTypeName("BSTR")] char* pUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngineEx*, ushort*, int>)(lpVtbl[6]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pUrl);
+        return ((delegate* unmanaged<IMFMediaEngineEx*, char*, int>)(lpVtbl[6]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pUrl);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetCurrentSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
+    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] char** ppUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngineEx*, ushort**, int>)(lpVtbl[7]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), ppUrl);
+        return ((delegate* unmanaged<IMFMediaEngineEx*, char**, int>)(lpVtbl[7]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), ppUrl);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetNetworkState" />
@@ -131,9 +131,9 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
     /// <inheritdoc cref="IMFMediaEngine.CanPlayType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    public HRESULT CanPlayType([NativeTypeName("BSTR")] char* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaEngineEx*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), type, pAnswer);
+        return ((delegate* unmanaged<IMFMediaEngineEx*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), type, pAnswer);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetReadyState" />
@@ -387,9 +387,9 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
     /// <include file='IMFMediaEngineEx.xml' path='doc/member[@name="IMFMediaEngineEx.SetSourceFromByteStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
-    public HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("BSTR")] ushort* pURL)
+    public HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("BSTR")] char* pURL)
     {
-        return ((delegate* unmanaged<IMFMediaEngineEx*, IMFByteStream*, ushort*, int>)(lpVtbl[45]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pByteStream, pURL);
+        return ((delegate* unmanaged<IMFMediaEngineEx*, IMFByteStream*, char*, int>)(lpVtbl[45]))((IMFMediaEngineEx*)Unsafe.AsPointer(ref this), pByteStream, pURL);
     }
 
     /// <include file='IMFMediaEngineEx.xml' path='doc/member[@name="IMFMediaEngineEx.GetStatistics"]/*' />
@@ -683,7 +683,7 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
     public interface Interface : IMFMediaEngine.Interface
     {
         [VtblIndex(45)]
-        HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("BSTR")] ushort* pURL);
+        HRESULT SetSourceFromByteStream(IMFByteStream* pByteStream, [NativeTypeName("BSTR")] char* pURL);
 
         [VtblIndex(46)]
         HRESULT GetStatistics(MF_MEDIA_ENGINE_STATISTIC StatisticID, PROPVARIANT* pStatistic);
@@ -816,10 +816,10 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
         public delegate* unmanaged<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrentSource;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrentSource;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetNetworkState;
@@ -837,7 +837,7 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
         public delegate* unmanaged<TSelf*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged<TSelf*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetReadyState;
@@ -933,7 +933,7 @@ public unsafe partial struct IMFMediaEngineEx : IMFMediaEngineEx.Interface, INat
         public delegate* unmanaged<TSelf*, long*, int> OnVideoStreamTick;
 
         [NativeTypeName("HRESULT (IMFByteStream *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, ushort*, int> SetSourceFromByteStream;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, char*, int> SetSourceFromByteStream;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_STATISTIC, PROPVARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_STATISTIC, PROPVARIANT*, int> GetStatistics;

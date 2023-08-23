@@ -49,9 +49,9 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("BSTR")] ushort* bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD)
+    public HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD)
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, ushort*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int>)(lpVtbl[3]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, pSrcPlugIn, pDestPlugIn, pSrcGBD, pDestGBD);
+        return ((delegate* unmanaged<IGamutMapModelPlugIn*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int>)(lpVtbl[3]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, pSrcPlugIn, pDestPlugIn, pSrcGBD, pDestGBD);
     }
 
     /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn.SourceToDestinationAppearanceColors"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("BSTR")] ushort* bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD);
+        HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD);
 
         [VtblIndex(4)]
         HRESULT SourceToDestinationAppearanceColors(uint cColors, [NativeTypeName("const JChColorF *")] JChColorF* pInputColors, JChColorF* pOutputColors);
@@ -84,7 +84,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, IDeviceModelPlugIn *, IDeviceModelPlugIn *, GamutBoundaryDescription *, GamutBoundaryDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int> Initialize;
+        public delegate* unmanaged<TSelf*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int> Initialize;
 
         [NativeTypeName("HRESULT (UINT, const JChColorF *, JChColorF *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, JChColorF*, JChColorF*, int> SourceToDestinationAppearanceColors;

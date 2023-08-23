@@ -65,9 +65,9 @@ public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMUIEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMUIEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMUIEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMUIEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface, INativeGuid
     /// <include file='IDOMUIEvent.xml' path='doc/member[@name="IDOMUIEvent.initUIEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT initUIEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail)
+    public HRESULT initUIEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail)
     {
-        return ((delegate* unmanaged<IDOMUIEvent*, ushort*, short, short, IHTMLWindow2*, int, int>)(lpVtbl[9]))((IDOMUIEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail);
+        return ((delegate* unmanaged<IDOMUIEvent*, char*, short, short, IHTMLWindow2*, int, int>)(lpVtbl[9]))((IDOMUIEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, view, detail);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface, INativeGuid
         HRESULT get_detail([NativeTypeName("long *")] int* p);
 
         [VtblIndex(9)]
-        HRESULT initUIEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail);
+        HRESULT initUIEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* view, [NativeTypeName("long")] int detail);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IDOMUIEvent : IDOMUIEvent.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_detail;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int> initUIEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int> initUIEvent;
     }
 }

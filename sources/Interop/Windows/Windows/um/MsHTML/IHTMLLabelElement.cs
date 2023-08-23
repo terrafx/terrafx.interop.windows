@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLLabelElement : IHTMLLabelElement.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLLabelElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLLabelElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,48 +81,48 @@ public unsafe partial struct IHTMLLabelElement : IHTMLLabelElement.Interface, IN
     /// <include file='IHTMLLabelElement.xml' path='doc/member[@name="IHTMLLabelElement.put_htmlFor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_htmlFor([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_htmlFor([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLLabelElement*, ushort*, int>)(lpVtbl[7]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLLabelElement*, char*, int>)(lpVtbl[7]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLLabelElement.xml' path='doc/member[@name="IHTMLLabelElement.get_htmlFor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_htmlFor([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_htmlFor([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLLabelElement*, ushort**, int>)(lpVtbl[8]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLLabelElement*, char**, int>)(lpVtbl[8]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLLabelElement.xml' path='doc/member[@name="IHTMLLabelElement.put_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_accessKey([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLLabelElement*, ushort*, int>)(lpVtbl[9]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLLabelElement*, char*, int>)(lpVtbl[9]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLLabelElement.xml' path='doc/member[@name="IHTMLLabelElement.get_accessKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_accessKey([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLLabelElement*, ushort**, int>)(lpVtbl[10]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLLabelElement*, char**, int>)(lpVtbl[10]))((IHTMLLabelElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_htmlFor([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_htmlFor([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_htmlFor([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_htmlFor([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_accessKey([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_accessKey([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_accessKey([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_accessKey([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,21 +144,21 @@ public unsafe partial struct IHTMLLabelElement : IHTMLLabelElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_htmlFor;
+        public delegate* unmanaged<TSelf*, char*, int> put_htmlFor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_htmlFor;
+        public delegate* unmanaged<TSelf*, char**, int> get_htmlFor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_accessKey;
+        public delegate* unmanaged<TSelf*, char*, int> put_accessKey;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_accessKey;
+        public delegate* unmanaged<TSelf*, char**, int> get_accessKey;
     }
 }

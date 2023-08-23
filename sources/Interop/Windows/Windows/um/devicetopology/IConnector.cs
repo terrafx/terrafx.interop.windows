@@ -97,17 +97,17 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetConnectorIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId)
+    public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrConnectorId)
     {
-        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
+        return ((delegate* unmanaged<IConnector*, char**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetDeviceIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
+    public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId)
     {
-        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        return ((delegate* unmanaged<IConnector*, char**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -131,10 +131,10 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
         HRESULT GetConnectedTo(IConnector** ppConTo);
 
         [VtblIndex(9)]
-        HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
+        HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrConnectorId);
 
         [VtblIndex(10)]
-        HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+        HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -168,9 +168,9 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IConnector**, int> GetConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetConnectorIdConnectedTo;
+        public delegate* unmanaged<TSelf*, char**, int> GetConnectorIdConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceIdConnectedTo;
+        public delegate* unmanaged<TSelf*, char**, int> GetDeviceIdConnectedTo;
     }
 }

@@ -30,5 +30,5 @@ public unsafe partial struct OSVERSIONINFOW
 
     /// <include file='OSVERSIONINFOW.xml' path='doc/member[@name="OSVERSIONINFOW.szCSDVersion"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort szCSDVersion[128];
+    public fixed char szCSDVersion[128];
 }

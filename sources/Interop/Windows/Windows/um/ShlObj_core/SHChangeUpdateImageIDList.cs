@@ -29,7 +29,7 @@ public unsafe partial struct SHChangeUpdateImageIDList
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.szName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szName[260];
+    public fixed char szName[260];
 
     /// <include file='SHChangeUpdateImageIDList.xml' path='doc/member[@name="SHChangeUpdateImageIDList.cbZero"]/*' />
     public ushort cbZero;

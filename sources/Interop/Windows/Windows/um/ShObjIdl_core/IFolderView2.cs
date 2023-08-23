@@ -196,26 +196,26 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     [Obsolete]
-    public HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList)
+    public HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszPropList)
     {
-        return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int>)(lpVtbl[21]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
+        return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, char*, int>)(lpVtbl[21]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
     }
 
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetExtendedTileViewProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     [Obsolete]
-    public HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList)
+    public HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszPropList)
     {
-        return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, ushort*, int>)(lpVtbl[22]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
+        return ((delegate* unmanaged<IFolderView2*, ITEMIDLIST*, char*, int>)(lpVtbl[22]))((IFolderView2*)Unsafe.AsPointer(ref this), pidl, pszPropList);
     }
 
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT SetText(FVTEXTTYPE iType, [NativeTypeName("LPCWSTR")] ushort* pwszText)
+    public HRESULT SetText(FVTEXTTYPE iType, [NativeTypeName("LPCWSTR")] char* pwszText)
     {
-        return ((delegate* unmanaged<IFolderView2*, FVTEXTTYPE, ushort*, int>)(lpVtbl[23]))((IFolderView2*)Unsafe.AsPointer(ref this), iType, pwszText);
+        return ((delegate* unmanaged<IFolderView2*, FVTEXTTYPE, char*, int>)(lpVtbl[23]))((IFolderView2*)Unsafe.AsPointer(ref this), iType, pwszText);
     }
 
     /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.SetCurrentFolderFlags"]/*' />
@@ -380,14 +380,14 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface, INativeGuid
 
         [VtblIndex(21)]
         [Obsolete]
-        HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList);
+        HRESULT SetTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszPropList);
 
         [VtblIndex(22)]
         [Obsolete]
-        HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszPropList);
+        HRESULT SetExtendedTileViewProperties([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszPropList);
 
         [VtblIndex(23)]
-        HRESULT SetText(FVTEXTTYPE iType, [NativeTypeName("LPCWSTR")] ushort* pwszText);
+        HRESULT SetText(FVTEXTTYPE iType, [NativeTypeName("LPCWSTR")] char* pwszText);
 
         [VtblIndex(24)]
         HRESULT SetCurrentFolderFlags([NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwFlags);
@@ -514,14 +514,14 @@ public unsafe partial struct IFolderView2 : IFolderView2.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
         [Obsolete]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, int> SetTileViewProperties;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, char*, int> SetTileViewProperties;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCWSTR) __attribute__((stdcall))")]
         [Obsolete]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, int> SetExtendedTileViewProperties;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, char*, int> SetExtendedTileViewProperties;
 
         [NativeTypeName("HRESULT (FVTEXTTYPE, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FVTEXTTYPE, ushort*, int> SetText;
+        public delegate* unmanaged<TSelf*, FVTEXTTYPE, char*, int> SetText;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, int> SetCurrentFolderFlags;

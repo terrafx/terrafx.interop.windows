@@ -57,17 +57,17 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName)
+    public HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IBrowserService*, IShellView*, ushort*, int>)(lpVtbl[4]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pszName);
+        return ((delegate* unmanaged<IBrowserService*, IShellView*, char*, int>)(lpVtbl[4]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pszName);
     }
 
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.GetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName)
+    public HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] char* pszName, [NativeTypeName("DWORD")] uint cchName)
     {
-        return ((delegate* unmanaged<IBrowserService*, IShellView*, ushort*, uint, int>)(lpVtbl[5]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pszName, cchName);
+        return ((delegate* unmanaged<IBrowserService*, IShellView*, char*, uint, int>)(lpVtbl[5]))((IBrowserService*)Unsafe.AsPointer(ref this), psv, pszName, cchName);
     }
 
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.GetOleObject"]/*' />
@@ -105,25 +105,25 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.IEGetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, uint uFlags)
+    public HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] char* pwszName, uint uFlags)
     {
-        return ((delegate* unmanaged<IBrowserService*, ITEMIDLIST*, ushort*, uint, int>)(lpVtbl[10]))((IBrowserService*)Unsafe.AsPointer(ref this), pidl, pwszName, uFlags);
+        return ((delegate* unmanaged<IBrowserService*, ITEMIDLIST*, char*, uint, int>)(lpVtbl[10]))((IBrowserService*)Unsafe.AsPointer(ref this), pidl, pwszName, uFlags);
     }
 
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.IEParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
+    public HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] char* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
     {
-        return ((delegate* unmanaged<IBrowserService*, uint, ushort*, ITEMIDLIST**, int>)(lpVtbl[11]))((IBrowserService*)Unsafe.AsPointer(ref this), uiCP, pwszPath, ppidlOut);
+        return ((delegate* unmanaged<IBrowserService*, uint, char*, ITEMIDLIST**, int>)(lpVtbl[11]))((IBrowserService*)Unsafe.AsPointer(ref this), uiCP, pwszPath, ppidlOut);
     }
 
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.DisplayParseError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath)
+    public HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] char* pwszPath)
     {
-        return ((delegate* unmanaged<IBrowserService*, HRESULT, ushort*, int>)(lpVtbl[12]))((IBrowserService*)Unsafe.AsPointer(ref this), hres, pwszPath);
+        return ((delegate* unmanaged<IBrowserService*, HRESULT, char*, int>)(lpVtbl[12]))((IBrowserService*)Unsafe.AsPointer(ref this), hres, pwszPath);
     }
 
     /// <include file='IBrowserService.xml' path='doc/member[@name="IBrowserService.NavigateToPidl"]/*' />
@@ -293,10 +293,10 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
         HRESULT GetParentSite(IOleInPlaceSite** ppipsite);
 
         [VtblIndex(4)]
-        HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] ushort* pszName);
+        HRESULT SetTitle(IShellView* psv, [NativeTypeName("LPCWSTR")] char* pszName);
 
         [VtblIndex(5)]
-        HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint cchName);
+        HRESULT GetTitle(IShellView* psv, [NativeTypeName("LPWSTR")] char* pszName, [NativeTypeName("DWORD")] uint cchName);
 
         [VtblIndex(6)]
         HRESULT GetOleObject(IOleObject** ppobjv);
@@ -311,13 +311,13 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
         HRESULT IsControlWindowShown(uint id, BOOL* pfShown);
 
         [VtblIndex(10)]
-        HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] ushort* pwszName, uint uFlags);
+        HRESULT IEGetDisplayName([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPWSTR")] char* pwszName, uint uFlags);
 
         [VtblIndex(11)]
-        HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
+        HRESULT IEParseDisplayName(uint uiCP, [NativeTypeName("LPCWSTR")] char* pwszPath, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
 
         [VtblIndex(12)]
-        HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] ushort* pwszPath);
+        HRESULT DisplayParseError(HRESULT hres, [NativeTypeName("LPCWSTR")] char* pwszPath);
 
         [VtblIndex(13)]
         HRESULT NavigateToPidl([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("DWORD")] uint grfHLNF);
@@ -397,10 +397,10 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
         public delegate* unmanaged<TSelf*, IOleInPlaceSite**, int> GetParentSite;
 
         [NativeTypeName("HRESULT (IShellView *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, IShellView*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (IShellView *, LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ushort*, uint, int> GetTitle;
+        public delegate* unmanaged<TSelf*, IShellView*, char*, uint, int> GetTitle;
 
         [NativeTypeName("HRESULT (IOleObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IOleObject**, int> GetOleObject;
@@ -415,13 +415,13 @@ public unsafe partial struct IBrowserService : IBrowserService.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, BOOL*, int> IsControlWindowShown;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, uint, int> IEGetDisplayName;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, char*, uint, int> IEGetDisplayName;
 
         [NativeTypeName("HRESULT (UINT, LPCWSTR, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ITEMIDLIST**, int> IEParseDisplayName;
+        public delegate* unmanaged<TSelf*, uint, char*, ITEMIDLIST**, int> IEParseDisplayName;
 
         [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, ushort*, int> DisplayParseError;
+        public delegate* unmanaged<TSelf*, HRESULT, char*, int> DisplayParseError;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> NavigateToPidl;

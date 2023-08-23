@@ -97,25 +97,25 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface, INativeGuid
     /// <inheritdoc cref="ITypeLib.GetDocumentation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
+    public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] char** pBstrName, [NativeTypeName("BSTR *")] char** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] char** pBstrHelpFile)
     {
-        return ((delegate* unmanaged<ITypeLib2*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
+        return ((delegate* unmanaged<ITypeLib2*, int, char**, char**, uint*, char**, int>)(lpVtbl[9]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
     }
 
     /// <inheritdoc cref="ITypeLib.IsName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
+    public HRESULT IsName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
     {
-        return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
+        return ((delegate* unmanaged<ITypeLib2*, char*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
     }
 
     /// <inheritdoc cref="ITypeLib.FindName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
+    public HRESULT FindName([NativeTypeName("LPOLESTR")] char* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
     {
-        return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
+        return ((delegate* unmanaged<ITypeLib2*, char*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
     }
 
     /// <inheritdoc cref="ITypeLib.ReleaseTLibAttr" />
@@ -145,9 +145,9 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface, INativeGuid
     /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetDocumentation2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll)
+    public HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] char** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] char** pbstrHelpStringDll)
     {
-        return ((delegate* unmanaged<ITypeLib2*, int, uint, ushort**, uint*, ushort**, int>)(lpVtbl[15]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, lcid, pbstrHelpString, pdwHelpStringContext, pbstrHelpStringDll);
+        return ((delegate* unmanaged<ITypeLib2*, int, uint, char**, uint*, char**, int>)(lpVtbl[15]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, lcid, pbstrHelpString, pdwHelpStringContext, pbstrHelpStringDll);
     }
 
     /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetAllCustData"]/*' />
@@ -167,7 +167,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface, INativeGuid
         HRESULT GetLibStatistics([NativeTypeName("ULONG *")] uint* pcUniqueNames, [NativeTypeName("ULONG *")] uint* pcchUniqueNames);
 
         [VtblIndex(15)]
-        HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll);
+        HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] char** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] char** pbstrHelpStringDll);
 
         [VtblIndex(16)]
         HRESULT GetAllCustData(CUSTDATA* pCustData);
@@ -204,13 +204,13 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ITypeComp**, int> GetTypeComp;
 
         [NativeTypeName("HRESULT (INT, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+        public delegate* unmanaged<TSelf*, int, char**, char**, uint*, char**, int> GetDocumentation;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, BOOL*, int> IsName;
+        public delegate* unmanaged<TSelf*, char*, uint, BOOL*, int> IsName;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, MEMBERID *, USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
+        public delegate* unmanaged<TSelf*, char*, uint, ITypeInfo**, int*, ushort*, int> FindName;
 
         [NativeTypeName("void (TLIBATTR *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TLIBATTR*, void> ReleaseTLibAttr;
@@ -222,7 +222,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, uint*, int> GetLibStatistics;
 
         [NativeTypeName("HRESULT (INT, LCID, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, ushort**, uint*, ushort**, int> GetDocumentation2;
+        public delegate* unmanaged<TSelf*, int, uint, char**, uint*, char**, int> GetDocumentation2;
 
         [NativeTypeName("HRESULT (CUSTDATA *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, CUSTDATA*, int> GetAllCustData;

@@ -22,7 +22,7 @@ public unsafe partial struct CRYPT_OID_INFO
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.pwszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszName;
+    public char* pwszName;
 
     /// <include file='CRYPT_OID_INFO.xml' path='doc/member[@name="CRYPT_OID_INFO.dwGroupId"]/*' />
     [NativeTypeName("DWORD")]

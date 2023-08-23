@@ -65,9 +65,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_lexicalParent"]/*' />
@@ -209,9 +209,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_libraryName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_libraryName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_platform"]/*' />
@@ -289,17 +289,17 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_sourceFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_sourceFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_unused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_unused([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_thunkOrdinal"]/*' />
@@ -401,9 +401,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_symbolsFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
-    public HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_reference"]/*' />
@@ -617,9 +617,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_undecoratedName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(74)]
-    public HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_undecoratedName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_age"]/*' />
@@ -705,41 +705,41 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildren"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(85)]
-    public HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(86)]
-    public HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByAddr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(87)]
-    public HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByVA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(88)]
-    public HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByRVA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(89)]
-    public HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
+    public HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
+        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_targetSection"]/*' />
@@ -833,9 +833,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_undecoratedNameEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(101)]
-    public HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name)
+    public HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, ushort**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
+        return ((delegate* unmanaged<IDiaSymbol*, uint, char**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_noReturn"]/*' />
@@ -937,9 +937,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_compilerName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(114)]
-    public HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_compilerName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasAlloca"]/*' />
@@ -1545,9 +1545,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_objectFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(190)]
-    public HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_objectFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isAcceleratorGroupSharedLocal"]/*' />
@@ -1777,9 +1777,9 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_phaseName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(219)]
-    public HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_phaseName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ushort**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasControlFlowCheck"]/*' />
@@ -1943,7 +1943,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(5)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(6)]
         HRESULT get_lexicalParent(IDiaSymbol** pRetVal);
@@ -1997,7 +1997,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(23)]
-        HRESULT get_libraryName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_libraryName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(24)]
         HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -2027,10 +2027,10 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(33)]
-        HRESULT get_sourceFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_sourceFileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(34)]
-        HRESULT get_unused([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_unused([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(35)]
         HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -2069,7 +2069,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_guid(Guid* pRetVal);
 
         [VtblIndex(47)]
-        HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(48)]
         HRESULT get_reference(BOOL* pRetVal);
@@ -2150,7 +2150,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(74)]
-        HRESULT get_undecoratedName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_undecoratedName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(75)]
         HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -2183,19 +2183,19 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
 
         [VtblIndex(85)]
-        HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(86)]
-        HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(87)]
-        HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(88)]
-        HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(89)]
-        HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] ushort* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
+        HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult);
 
         [VtblIndex(90)]
         HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -2231,7 +2231,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(101)]
-        HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] ushort** name);
+        HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] char** name);
 
         [VtblIndex(102)]
         HRESULT get_noReturn(BOOL* pRetVal);
@@ -2270,7 +2270,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_hasSecurityChecks(BOOL* pRetVal);
 
         [VtblIndex(114)]
-        HRESULT get_compilerName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_compilerName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(115)]
         HRESULT get_hasAlloca(BOOL* pRetVal);
@@ -2498,7 +2498,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(190)]
-        HRESULT get_objectFileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_objectFileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(191)]
         HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal);
@@ -2585,7 +2585,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(219)]
-        HRESULT get_phaseName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_phaseName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(220)]
         HRESULT get_hasControlFlowCheck(BOOL* pRetVal);
@@ -2664,7 +2664,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_symTag;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_lexicalParent;
@@ -2718,7 +2718,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_access;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_libraryName;
+        public delegate* unmanaged<TSelf*, char**, int> get_libraryName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_platform;
@@ -2748,10 +2748,10 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_backEndBuild;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_sourceFileName;
+        public delegate* unmanaged<TSelf*, char**, int> get_sourceFileName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_unused;
+        public delegate* unmanaged<TSelf*, char**, int> get_unused;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_thunkOrdinal;
@@ -2790,7 +2790,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, int> get_guid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_symbolsFileName;
+        public delegate* unmanaged<TSelf*, char**, int> get_symbolsFileName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_reference;
@@ -2871,7 +2871,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_virtualBaseDispIndex;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_undecoratedName;
+        public delegate* unmanaged<TSelf*, char**, int> get_undecoratedName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_age;
@@ -2904,19 +2904,19 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_dataBytes;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
+        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildren;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildrenEx;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_targetSection;
@@ -2952,7 +2952,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_udtKind;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> get_undecoratedNameEx;
+        public delegate* unmanaged<TSelf*, uint, char**, int> get_undecoratedNameEx;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_noReturn;
@@ -2991,7 +2991,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, BOOL*, int> get_hasSecurityChecks;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_compilerName;
+        public delegate* unmanaged<TSelf*, char**, int> get_compilerName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_hasAlloca;
@@ -3219,7 +3219,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_baseSymbolId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_objectFileName;
+        public delegate* unmanaged<TSelf*, char**, int> get_objectFileName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
@@ -3306,7 +3306,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint*, int> get_finalLiveStaticSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_phaseName;
+        public delegate* unmanaged<TSelf*, char**, int> get_phaseName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_hasControlFlowCheck;

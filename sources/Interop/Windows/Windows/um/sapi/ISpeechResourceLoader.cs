@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechResourceLoader : ISpeechResourceLoader.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechResourceLoader*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechResourceLoader*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,37 +81,37 @@ public unsafe partial struct ISpeechResourceLoader : ISpeechResourceLoader.Inter
     /// <include file='ISpeechResourceLoader.xml' path='doc/member[@name="ISpeechResourceLoader.LoadResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LoadResource([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl)
+    public HRESULT LoadResource([NativeTypeName("BSTR")] char* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] char** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] char** pbstrRedirectUrl)
     {
-        return ((delegate* unmanaged<ISpeechResourceLoader*, ushort*, short, IUnknown**, ushort**, short*, ushort**, int>)(lpVtbl[7]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), bstrResourceUri, fAlwaysReload, pStream, pbstrMIMEType, pfModified, pbstrRedirectUrl);
+        return ((delegate* unmanaged<ISpeechResourceLoader*, char*, short, IUnknown**, char**, short*, char**, int>)(lpVtbl[7]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), bstrResourceUri, fAlwaysReload, pStream, pbstrMIMEType, pfModified, pbstrRedirectUrl);
     }
 
     /// <include file='ISpeechResourceLoader.xml' path='doc/member[@name="ISpeechResourceLoader.GetLocalCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetLocalCopy([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("BSTR *")] ushort** pbstrLocalPath, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl)
+    public HRESULT GetLocalCopy([NativeTypeName("BSTR")] char* bstrResourceUri, [NativeTypeName("BSTR *")] char** pbstrLocalPath, [NativeTypeName("BSTR *")] char** pbstrMIMEType, [NativeTypeName("BSTR *")] char** pbstrRedirectUrl)
     {
-        return ((delegate* unmanaged<ISpeechResourceLoader*, ushort*, ushort**, ushort**, ushort**, int>)(lpVtbl[8]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), bstrResourceUri, pbstrLocalPath, pbstrMIMEType, pbstrRedirectUrl);
+        return ((delegate* unmanaged<ISpeechResourceLoader*, char*, char**, char**, char**, int>)(lpVtbl[8]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), bstrResourceUri, pbstrLocalPath, pbstrMIMEType, pbstrRedirectUrl);
     }
 
     /// <include file='ISpeechResourceLoader.xml' path='doc/member[@name="ISpeechResourceLoader.ReleaseLocalCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath)
+    public HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] char* pbstrLocalPath)
     {
-        return ((delegate* unmanaged<ISpeechResourceLoader*, ushort*, int>)(lpVtbl[9]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), pbstrLocalPath);
+        return ((delegate* unmanaged<ISpeechResourceLoader*, char*, int>)(lpVtbl[9]))((ISpeechResourceLoader*)Unsafe.AsPointer(ref this), pbstrLocalPath);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT LoadResource([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+        HRESULT LoadResource([NativeTypeName("BSTR")] char* bstrResourceUri, [NativeTypeName("VARIANT_BOOL")] short fAlwaysReload, IUnknown** pStream, [NativeTypeName("BSTR *")] char** pbstrMIMEType, [NativeTypeName("VARIANT_BOOL *")] short* pfModified, [NativeTypeName("BSTR *")] char** pbstrRedirectUrl);
 
         [VtblIndex(8)]
-        HRESULT GetLocalCopy([NativeTypeName("BSTR")] ushort* bstrResourceUri, [NativeTypeName("BSTR *")] ushort** pbstrLocalPath, [NativeTypeName("BSTR *")] ushort** pbstrMIMEType, [NativeTypeName("BSTR *")] ushort** pbstrRedirectUrl);
+        HRESULT GetLocalCopy([NativeTypeName("BSTR")] char* bstrResourceUri, [NativeTypeName("BSTR *")] char** pbstrLocalPath, [NativeTypeName("BSTR *")] char** pbstrMIMEType, [NativeTypeName("BSTR *")] char** pbstrRedirectUrl);
 
         [VtblIndex(9)]
-        HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] ushort* pbstrLocalPath);
+        HRESULT ReleaseLocalCopy([NativeTypeName("BSTR")] char* pbstrLocalPath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct ISpeechResourceLoader : ISpeechResourceLoader.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, IUnknown **, BSTR *, VARIANT_BOOL *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, IUnknown**, ushort**, short*, ushort**, int> LoadResource;
+        public delegate* unmanaged<TSelf*, char*, short, IUnknown**, char**, short*, char**, int> LoadResource;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, ushort**, ushort**, int> GetLocalCopy;
+        public delegate* unmanaged<TSelf*, char*, char**, char**, char**, int> GetLocalCopy;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> ReleaseLocalCopy;
+        public delegate* unmanaged<TSelf*, char*, int> ReleaseLocalCopy;
     }
 }

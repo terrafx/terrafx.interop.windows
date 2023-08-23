@@ -50,9 +50,9 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
     /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.BeginEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public int BeginEvent([NativeTypeName("LPCWSTR")] ushort* Name)
+    public int BeginEvent([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, int>)(lpVtbl[3]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, int>)(lpVtbl[3]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.EndEvent"]/*' />
@@ -66,9 +66,9 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
     /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.SetMarker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public void SetMarker([NativeTypeName("LPCWSTR")] ushort* Name)
+    public void SetMarker([NativeTypeName("LPCWSTR")] char* Name)
     {
-        ((delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, void>)(lpVtbl[5]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
+        ((delegate* unmanaged<ID3DUserDefinedAnnotation*, char*, void>)(lpVtbl[5]))((ID3DUserDefinedAnnotation*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3DUserDefinedAnnotation.xml' path='doc/member[@name="ID3DUserDefinedAnnotation.GetStatus"]/*' />
@@ -82,13 +82,13 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        int BeginEvent([NativeTypeName("LPCWSTR")] ushort* Name);
+        int BeginEvent([NativeTypeName("LPCWSTR")] char* Name);
 
         [VtblIndex(4)]
         int EndEvent();
 
         [VtblIndex(5)]
-        void SetMarker([NativeTypeName("LPCWSTR")] ushort* Name);
+        void SetMarker([NativeTypeName("LPCWSTR")] char* Name);
 
         [VtblIndex(6)]
         BOOL GetStatus();
@@ -107,13 +107,13 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("INT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> BeginEvent;
+        public delegate* unmanaged<TSelf*, char*, int> BeginEvent;
 
         [NativeTypeName("INT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndEvent;
 
         [NativeTypeName("void (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void> SetMarker;
+        public delegate* unmanaged<TSelf*, char*, void> SetMarker;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> GetStatus;

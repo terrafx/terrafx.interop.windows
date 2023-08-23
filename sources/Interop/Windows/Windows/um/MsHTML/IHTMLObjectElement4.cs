@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLObjectElement4 : IHTMLObjectElement4.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLObjectElement4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLObjectElement4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,33 +89,33 @@ public unsafe partial struct IHTMLObjectElement4 : IHTMLObjectElement4.Interface
     /// <include file='IHTMLObjectElement4.xml' path='doc/member[@name="IHTMLObjectElement4.put_codeBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_codeBase([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_codeBase([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLObjectElement4*, ushort*, int>)(lpVtbl[8]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLObjectElement4*, char*, int>)(lpVtbl[8]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLObjectElement4.xml' path='doc/member[@name="IHTMLObjectElement4.get_codeBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_codeBase([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_codeBase([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLObjectElement4*, ushort**, int>)(lpVtbl[9]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLObjectElement4*, char**, int>)(lpVtbl[9]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLObjectElement4.xml' path='doc/member[@name="IHTMLObjectElement4.put_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_data([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_data([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLObjectElement4*, ushort*, int>)(lpVtbl[10]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLObjectElement4*, char*, int>)(lpVtbl[10]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLObjectElement4.xml' path='doc/member[@name="IHTMLObjectElement4.get_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_data([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLObjectElement4*, ushort**, int>)(lpVtbl[11]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLObjectElement4*, char**, int>)(lpVtbl[11]))((IHTMLObjectElement4*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -124,16 +124,16 @@ public unsafe partial struct IHTMLObjectElement4 : IHTMLObjectElement4.Interface
         HRESULT get_contentDocument(IDispatch** p);
 
         [VtblIndex(8)]
-        HRESULT put_codeBase([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_codeBase([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(9)]
-        HRESULT get_codeBase([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_codeBase([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT put_data([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_data([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(11)]
-        HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_data([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLObjectElement4 : IHTMLObjectElement4.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -164,15 +164,15 @@ public unsafe partial struct IHTMLObjectElement4 : IHTMLObjectElement4.Interface
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_contentDocument;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_codeBase;
+        public delegate* unmanaged<TSelf*, char*, int> put_codeBase;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_codeBase;
+        public delegate* unmanaged<TSelf*, char**, int> get_codeBase;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_data;
+        public delegate* unmanaged<TSelf*, char*, int> put_data;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_data;
+        public delegate* unmanaged<TSelf*, char**, int> get_data;
     }
 }

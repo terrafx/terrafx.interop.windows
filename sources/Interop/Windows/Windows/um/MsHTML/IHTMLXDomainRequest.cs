@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLXDomainRequest*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLXDomainRequest*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_responseText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_responseText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int>)(lpVtbl[7]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLXDomainRequest*, char**, int>)(lpVtbl[7]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_timeout"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_contentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_contentType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contentType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int>)(lpVtbl[10]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLXDomainRequest*, char**, int>)(lpVtbl[10]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_onprogress"]/*' />
@@ -185,9 +185,9 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl)
+    public HRESULT open([NativeTypeName("BSTR")] char* bstrMethod, [NativeTypeName("BSTR")] char* bstrUrl)
     {
-        return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort*, ushort*, int>)(lpVtbl[20]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl);
+        return ((delegate* unmanaged<IHTMLXDomainRequest*, char*, char*, int>)(lpVtbl[20]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl);
     }
 
     /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.send"]/*' />
@@ -201,7 +201,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_responseText([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT put_timeout([NativeTypeName("long")] int v);
@@ -210,7 +210,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         HRESULT get_timeout([NativeTypeName("long *")] int* p);
 
         [VtblIndex(10)]
-        HRESULT get_contentType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contentType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT put_onprogress(VARIANT v);
@@ -240,7 +240,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         HRESULT abort();
 
         [VtblIndex(20)]
-        HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl);
+        HRESULT open([NativeTypeName("BSTR")] char* bstrMethod, [NativeTypeName("BSTR")] char* bstrUrl);
 
         [VtblIndex(21)]
         HRESULT send(VARIANT varBody);
@@ -265,13 +265,13 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_responseText;
+        public delegate* unmanaged<TSelf*, char**, int> get_responseText;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_timeout;
@@ -280,7 +280,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         public delegate* unmanaged<TSelf*, int*, int> get_timeout;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contentType;
+        public delegate* unmanaged<TSelf*, char**, int> get_contentType;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onprogress;
@@ -310,7 +310,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         public delegate* unmanaged<TSelf*, int> abort;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> open;
+        public delegate* unmanaged<TSelf*, char*, char*, int> open;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> send;

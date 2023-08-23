@@ -51,26 +51,26 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     /// <include file='IAppxManifestProperties.xml' path='doc/member[@name="IAppxManifestProperties.GetBoolValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, BOOL* value)
+    public HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] char* name, BOOL* value)
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IAppxManifestProperties*, char*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IAppxManifestProperties.xml' path='doc/member[@name="IAppxManifestProperties.GetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value)
+    public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, ushort*, ushort**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged<IAppxManifestProperties*, char*, char**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] ushort* name, BOOL* value);
+        HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] char* name, BOOL* value);
 
         [VtblIndex(4)]
-        HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("LPWSTR *")] ushort** value);
+        HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("LPWSTR *")] char** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> GetBoolValue;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> GetBoolValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetStringValue;
     }
 }

@@ -22,7 +22,7 @@ public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1
 
     /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.VolumeName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* VolumeName;
+    public char* VolumeName;
 
     /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1.BaseIoSize"]/*' />
     [NativeTypeName("DWORD")]

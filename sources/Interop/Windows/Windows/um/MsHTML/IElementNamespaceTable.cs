@@ -49,15 +49,15 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
     /// <include file='IElementNamespaceTable.xml' path='doc/member[@name="IElementNamespaceTable.AddNamespace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory)
+    public HRESULT AddNamespace([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory)
     {
-        return ((delegate* unmanaged<IElementNamespaceTable*, ushort*, ushort*, int, VARIANT*, int>)(lpVtbl[3]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this), bstrNamespace, bstrUrn, lFlags, pvarFactory);
+        return ((delegate* unmanaged<IElementNamespaceTable*, char*, char*, int, VARIANT*, int>)(lpVtbl[3]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this), bstrNamespace, bstrUrn, lFlags, pvarFactory);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory);
+        HRESULT AddNamespace([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, VARIANT*, int> AddNamespace;
+        public delegate* unmanaged<TSelf*, char*, char*, int, VARIANT*, int> AddNamespace;
     }
 }

@@ -73,9 +73,9 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged<ITfLangBarItemBitmap*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.OnClick"]/*' />
@@ -136,7 +136,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;

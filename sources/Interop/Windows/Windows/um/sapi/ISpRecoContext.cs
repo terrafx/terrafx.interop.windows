@@ -201,9 +201,9 @@ public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface, INativeG
     /// <include file='ISpRecoContext.xml' path='doc/member[@name="ISpRecoContext.SetAdaptationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT SetAdaptationData([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch)
+    public HRESULT SetAdaptationData([NativeTypeName("LPCWSTR")] char* pAdaptationData, [NativeTypeName("const ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ISpRecoContext*, ushort*, uint, int>)(lpVtbl[22]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pAdaptationData, cch);
+        return ((delegate* unmanaged<ISpRecoContext*, char*, uint, int>)(lpVtbl[22]))((ISpRecoContext*)Unsafe.AsPointer(ref this), pAdaptationData, cch);
     }
 
     /// <include file='ISpRecoContext.xml' path='doc/member[@name="ISpRecoContext.Pause"]/*' />
@@ -300,7 +300,7 @@ public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface, INativeG
         HRESULT Bookmark(SPBOOKMARKOPTIONS Options, [NativeTypeName("ULONGLONG")] ulong ullStreamPosition, LPARAM lparamEvent);
 
         [VtblIndex(22)]
-        HRESULT SetAdaptationData([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch);
+        HRESULT SetAdaptationData([NativeTypeName("LPCWSTR")] char* pAdaptationData, [NativeTypeName("const ULONG")] uint cch);
 
         [VtblIndex(23)]
         HRESULT Pause([NativeTypeName("DWORD")] uint dwReserved);
@@ -397,7 +397,7 @@ public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface, INativeG
         public delegate* unmanaged<TSelf*, SPBOOKMARKOPTIONS, ulong, LPARAM, int> Bookmark;
 
         [NativeTypeName("HRESULT (LPCWSTR, const ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetAdaptationData;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetAdaptationData;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Pause;

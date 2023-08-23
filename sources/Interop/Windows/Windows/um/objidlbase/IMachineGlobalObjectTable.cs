@@ -49,17 +49,17 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
     /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.RegisterObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token)
+    public HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token)
     {
-        return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int>)(lpVtbl[3]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, @object, token);
+        return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, char*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int>)(lpVtbl[3]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, @object, token);
     }
 
     /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.GetObjectW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, riid, ppv);
+        return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)(lpVtbl[4]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, riid, ppv);
     }
 
     /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.RevokeObject"]/*' />
@@ -73,10 +73,10 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token);
+        HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token);
 
         [VtblIndex(4)]
-        HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(5)]
         HRESULT RevokeObject(MachineGlobalObjectTableRegistrationToken token);
@@ -95,10 +95,10 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, IUnknown *, MachineGlobalObjectTableRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int> RegisterObject;
+        public delegate* unmanaged<TSelf*, Guid*, char*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int> RegisterObject;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, Guid*, void**, int> GetObjectW;
+        public delegate* unmanaged<TSelf*, Guid*, char*, Guid*, void**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (MachineGlobalObjectTableRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MachineGlobalObjectTableRegistrationToken, int> RevokeObject;

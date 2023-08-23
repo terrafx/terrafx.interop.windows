@@ -14,5 +14,5 @@ public unsafe partial struct NEGOTIATE_CALLER_NAME_RESPONSE
 
     /// <include file='NEGOTIATE_CALLER_NAME_RESPONSE.xml' path='doc/member[@name="NEGOTIATE_CALLER_NAME_RESPONSE.CallerName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* CallerName;
+    public char* CallerName;
 }

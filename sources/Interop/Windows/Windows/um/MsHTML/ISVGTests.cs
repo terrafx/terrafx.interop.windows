@@ -65,9 +65,9 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGTests*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISVGTests*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     /// <include file='ISVGTests.xml' path='doc/member[@name="ISVGTests.hasExtension"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
+    public HRESULT hasExtension([NativeTypeName("BSTR")] char* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
     {
-        return ((delegate* unmanaged<ISVGTests*, ushort*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
+        return ((delegate* unmanaged<ISVGTests*, char*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
     }
 
     public interface Interface : IDispatch.Interface
@@ -122,7 +122,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
         HRESULT get_systemLanguage(ISVGStringList** p);
 
         [VtblIndex(10)]
-        HRESULT hasExtension([NativeTypeName("BSTR")] ushort* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+        HRESULT hasExtension([NativeTypeName("BSTR")] char* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,7 +144,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -159,6 +159,6 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ISVGStringList**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> hasExtension;
+        public delegate* unmanaged<TSelf*, char*, short*, int> hasExtension;
     }
 }

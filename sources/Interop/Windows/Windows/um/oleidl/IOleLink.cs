@@ -81,17 +81,17 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
+    public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IOleLink*, ushort*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged<IOleLink*, char*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
+    public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] char** ppszDisplayName)
     {
-        return ((delegate* unmanaged<IOleLink*, ushort**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
+        return ((delegate* unmanaged<IOleLink*, char**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.BindToSource"]/*' />
@@ -149,10 +149,10 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
         HRESULT GetSourceMoniker(IMoniker** ppmk);
 
         [VtblIndex(7)]
-        HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+        HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] char* pszStatusText);
 
         [VtblIndex(8)]
-        HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+        HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] char** ppszDisplayName);
 
         [VtblIndex(9)]
         HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc);
@@ -195,10 +195,10 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IMoniker**, int> GetSourceMoniker;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSourceDisplayName;
+        public delegate* unmanaged<TSelf*, char*, int> SetSourceDisplayName;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSourceDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetSourceDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IBindCtx *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IBindCtx*, int> BindToSource;

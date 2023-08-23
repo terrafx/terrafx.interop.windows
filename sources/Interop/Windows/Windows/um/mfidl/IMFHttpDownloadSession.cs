@@ -51,17 +51,17 @@ public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Int
     /// <include file='IMFHttpDownloadSession.xml' path='doc/member[@name="IMFHttpDownloadSession.SetServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetServer([NativeTypeName("LPCWSTR")] ushort* szServerName, [NativeTypeName("DWORD")] uint nPort)
+    public HRESULT SetServer([NativeTypeName("LPCWSTR")] char* szServerName, [NativeTypeName("DWORD")] uint nPort)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadSession*, ushort*, uint, int>)(lpVtbl[3]))((IMFHttpDownloadSession*)Unsafe.AsPointer(ref this), szServerName, nPort);
+        return ((delegate* unmanaged<IMFHttpDownloadSession*, char*, uint, int>)(lpVtbl[3]))((IMFHttpDownloadSession*)Unsafe.AsPointer(ref this), szServerName, nPort);
     }
 
     /// <include file='IMFHttpDownloadSession.xml' path='doc/member[@name="IMFHttpDownloadSession.CreateRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateRequest([NativeTypeName("LPCWSTR")] ushort* szObjectName, BOOL fBypassProxyCache, BOOL fSecure, [NativeTypeName("LPCWSTR")] ushort* szVerb, [NativeTypeName("LPCWSTR")] ushort* szReferrer, IMFHttpDownloadRequest** ppRequest)
+    public HRESULT CreateRequest([NativeTypeName("LPCWSTR")] char* szObjectName, BOOL fBypassProxyCache, BOOL fSecure, [NativeTypeName("LPCWSTR")] char* szVerb, [NativeTypeName("LPCWSTR")] char* szReferrer, IMFHttpDownloadRequest** ppRequest)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadSession*, ushort*, BOOL, BOOL, ushort*, ushort*, IMFHttpDownloadRequest**, int>)(lpVtbl[4]))((IMFHttpDownloadSession*)Unsafe.AsPointer(ref this), szObjectName, fBypassProxyCache, fSecure, szVerb, szReferrer, ppRequest);
+        return ((delegate* unmanaged<IMFHttpDownloadSession*, char*, BOOL, BOOL, char*, char*, IMFHttpDownloadRequest**, int>)(lpVtbl[4]))((IMFHttpDownloadSession*)Unsafe.AsPointer(ref this), szObjectName, fBypassProxyCache, fSecure, szVerb, szReferrer, ppRequest);
     }
 
     /// <include file='IMFHttpDownloadSession.xml' path='doc/member[@name="IMFHttpDownloadSession.Close"]/*' />
@@ -75,10 +75,10 @@ public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Int
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetServer([NativeTypeName("LPCWSTR")] ushort* szServerName, [NativeTypeName("DWORD")] uint nPort);
+        HRESULT SetServer([NativeTypeName("LPCWSTR")] char* szServerName, [NativeTypeName("DWORD")] uint nPort);
 
         [VtblIndex(4)]
-        HRESULT CreateRequest([NativeTypeName("LPCWSTR")] ushort* szObjectName, BOOL fBypassProxyCache, BOOL fSecure, [NativeTypeName("LPCWSTR")] ushort* szVerb, [NativeTypeName("LPCWSTR")] ushort* szReferrer, IMFHttpDownloadRequest** ppRequest);
+        HRESULT CreateRequest([NativeTypeName("LPCWSTR")] char* szObjectName, BOOL fBypassProxyCache, BOOL fSecure, [NativeTypeName("LPCWSTR")] char* szVerb, [NativeTypeName("LPCWSTR")] char* szReferrer, IMFHttpDownloadRequest** ppRequest);
 
         [VtblIndex(5)]
         HRESULT Close();
@@ -97,10 +97,10 @@ public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetServer;
+        public delegate* unmanaged<TSelf*, char*, uint, int> SetServer;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL, LPCWSTR, LPCWSTR, IMFHttpDownloadRequest **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, BOOL, ushort*, ushort*, IMFHttpDownloadRequest**, int> CreateRequest;
+        public delegate* unmanaged<TSelf*, char*, BOOL, BOOL, char*, char*, IMFHttpDownloadRequest**, int> CreateRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

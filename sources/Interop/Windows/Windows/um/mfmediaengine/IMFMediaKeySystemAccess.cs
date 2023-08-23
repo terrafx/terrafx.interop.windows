@@ -65,9 +65,9 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.get_KeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
+    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** pKeySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
+        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, char**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration);
 
         [VtblIndex(5)]
-        HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem);
+        HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** pKeySystem);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         public delegate* unmanaged<TSelf*, IPropertyStore**, int> get_SupportedConfiguration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged<TSelf*, char**, int> get_KeySystem;
     }
 }

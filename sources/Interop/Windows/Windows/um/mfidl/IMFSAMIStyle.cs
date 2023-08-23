@@ -65,17 +65,17 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.SetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle)
+    public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] char* pwszStyle)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, ushort*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
+        return ((delegate* unmanaged<IMFSAMIStyle*, char*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
     }
 
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
+    public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] char** ppwszStyle)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
+        return ((delegate* unmanaged<IMFSAMIStyle*, char**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,10 +87,10 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
         HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
 
         [VtblIndex(5)]
-        HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
+        HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] char* pwszStyle);
 
         [VtblIndex(6)]
-        HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
+        HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] char** ppwszStyle);
     }
 
     public partial struct Vtbl<TSelf>
@@ -112,9 +112,9 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetStyles;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSelectedStyle;
+        public delegate* unmanaged<TSelf*, char*, int> SetSelectedStyle;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSelectedStyle;
+        public delegate* unmanaged<TSelf*, char**, int> GetSelectedStyle;
     }
 }

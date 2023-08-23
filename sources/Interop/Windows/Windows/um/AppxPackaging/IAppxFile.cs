@@ -59,17 +59,17 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface, INativeGuid
     /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetContentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType)
+    public HRESULT GetContentType([NativeTypeName("LPWSTR *")] char** contentType)
     {
-        return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[4]))((IAppxFile*)Unsafe.AsPointer(ref this), contentType);
+        return ((delegate* unmanaged<IAppxFile*, char**, int>)(lpVtbl[4]))((IAppxFile*)Unsafe.AsPointer(ref this), contentType);
     }
 
     /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** fileName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** fileName)
     {
-        return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[5]))((IAppxFile*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IAppxFile*, char**, int>)(lpVtbl[5]))((IAppxFile*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetSize"]/*' />
@@ -94,10 +94,10 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface, INativeGuid
         HRESULT GetCompressionOption(APPX_COMPRESSION_OPTION* compressionOption);
 
         [VtblIndex(4)]
-        HRESULT GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType);
+        HRESULT GetContentType([NativeTypeName("LPWSTR *")] char** contentType);
 
         [VtblIndex(5)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** fileName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** fileName);
 
         [VtblIndex(6)]
         HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size);
@@ -122,10 +122,10 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, APPX_COMPRESSION_OPTION*, int> GetCompressionOption;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetContentType;
+        public delegate* unmanaged<TSelf*, char**, int> GetContentType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetSize;

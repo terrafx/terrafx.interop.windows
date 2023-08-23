@@ -81,9 +81,9 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetResourceDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] ushort** ppszDescription)
+    public HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] char** ppszDescription)
     {
-        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, ushort**, int>)(lpVtbl[7]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, ppszDescription);
+        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, char**, int>)(lpVtbl[7]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, ppszDescription);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.EnumResources"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pftCreation, [NativeTypeName("const FILETIME *")] FILETIME* pftWrite, [NativeTypeName("const FILETIME *")] FILETIME* pftAccess);
 
         [VtblIndex(7)]
-        HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] ushort** ppszDescription);
+        HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] char** ppszDescription);
 
         [VtblIndex(8)]
         HRESULT EnumResources(IEnumResources** ppenumr);
@@ -184,7 +184,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, ushort**, int> GetResourceDescription;
+        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, char**, int> GetResourceDescription;
 
         [NativeTypeName("HRESULT (IEnumResources **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumResources**, int> EnumResources;

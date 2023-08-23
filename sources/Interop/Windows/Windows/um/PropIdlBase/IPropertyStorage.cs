@@ -73,17 +73,17 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadPropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] ushort** rglpwstrName)
+    public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WritePropertyNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] ushort** rglpwstrName)
+    public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeletePropertyNames"]/*' />
@@ -154,10 +154,10 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
         HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec);
 
         [VtblIndex(6)]
-        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] ushort** rglpwstrName);
+        HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] char** rglpwstrName);
 
         [VtblIndex(7)]
-        HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] ushort** rglpwstrName);
+        HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] char** rglpwstrName);
 
         [VtblIndex(8)]
         HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid);
@@ -203,10 +203,10 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
         public delegate* unmanaged<TSelf*, uint, PROPSPEC*, int> DeleteMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> ReadPropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, const LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> WritePropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> WritePropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> DeletePropertyNames;

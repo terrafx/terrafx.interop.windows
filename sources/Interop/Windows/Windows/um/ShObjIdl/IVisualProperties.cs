@@ -105,9 +105,9 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetTheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList)
+    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszSubAppName, [NativeTypeName("LPCWSTR")] char* pszSubIdList)
     {
-        return ((delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
+        return ((delegate* unmanaged<IVisualProperties*, char*, char*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
     }
 
     public interface Interface : IUnknown.Interface
@@ -134,7 +134,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
         HRESULT GetFont(LOGFONTW* plf);
 
         [VtblIndex(10)]
-        HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
+        HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszSubAppName, [NativeTypeName("LPCWSTR")] char* pszSubIdList);
     }
 
     public partial struct Vtbl<TSelf>
@@ -171,6 +171,6 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
         public delegate* unmanaged<TSelf*, LOGFONTW*, int> GetFont;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetTheme;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetTheme;
     }
 }

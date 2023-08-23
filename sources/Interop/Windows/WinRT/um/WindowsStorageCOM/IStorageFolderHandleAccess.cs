@@ -52,15 +52,15 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
     /// <include file='IStorageFolderHandleAccess.xml' path='doc/member[@name="IStorageFolderHandleAccess.Create"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Create([NativeTypeName("LPCWSTR")] ushort* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)
+    public HRESULT Create([NativeTypeName("LPCWSTR")] char* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)
     {
-        return ((delegate* unmanaged<IStorageFolderHandleAccess*, ushort*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int>)(lpVtbl[3]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+        return ((delegate* unmanaged<IStorageFolderHandleAccess*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int>)(lpVtbl[3]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Create([NativeTypeName("LPCWSTR")] ushort* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle);
+        HRESULT Create([NativeTypeName("LPCWSTR")] char* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle);
     }
 
     public partial struct Vtbl<TSelf>
@@ -76,6 +76,6 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler *, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int> Create;
+        public delegate* unmanaged<TSelf*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int> Create;
     }
 }

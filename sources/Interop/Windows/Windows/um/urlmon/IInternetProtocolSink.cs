@@ -57,9 +57,9 @@ public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Inter
     /// <include file='IInternetProtocolSink.xml' path='doc/member[@name="IInternetProtocolSink.ReportProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ReportProgress([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText)
+    public HRESULT ReportProgress([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szStatusText)
     {
-        return ((delegate* unmanaged<IInternetProtocolSink*, uint, ushort*, int>)(lpVtbl[4]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), ulStatusCode, szStatusText);
+        return ((delegate* unmanaged<IInternetProtocolSink*, uint, char*, int>)(lpVtbl[4]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), ulStatusCode, szStatusText);
     }
 
     /// <include file='IInternetProtocolSink.xml' path='doc/member[@name="IInternetProtocolSink.ReportData"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Inter
     /// <include file='IInternetProtocolSink.xml' path='doc/member[@name="IInternetProtocolSink.ReportResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] ushort* szResult)
+    public HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] char* szResult)
     {
-        return ((delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, ushort*, int>)(lpVtbl[6]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), hrResult, dwError, szResult);
+        return ((delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, char*, int>)(lpVtbl[6]))((IInternetProtocolSink*)Unsafe.AsPointer(ref this), hrResult, dwError, szResult);
     }
 
     public interface Interface : IUnknown.Interface
@@ -84,13 +84,13 @@ public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Inter
         HRESULT Switch(PROTOCOLDATA* pProtocolData);
 
         [VtblIndex(4)]
-        HRESULT ReportProgress([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText);
+        HRESULT ReportProgress([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szStatusText);
 
         [VtblIndex(5)]
         HRESULT ReportData([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax);
 
         [VtblIndex(6)]
-        HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] ushort* szResult);
+        HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] char* szResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -109,12 +109,12 @@ public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Inter
         public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Switch;
 
         [NativeTypeName("HRESULT (ULONG, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> ReportProgress;
+        public delegate* unmanaged<TSelf*, uint, char*, int> ReportProgress;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, ULONG) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, uint, int> ReportData;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, uint, ushort*, int> ReportResult;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, char*, int> ReportResult;
     }
 }

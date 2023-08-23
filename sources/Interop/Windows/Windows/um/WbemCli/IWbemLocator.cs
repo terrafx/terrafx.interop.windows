@@ -49,15 +49,15 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface, INativeGuid
     /// <include file='IWbemLocator.xml' path='doc/member[@name="IWbemLocator.ConnectServer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace)
+    public HRESULT ConnectServer([NativeTypeName("const BSTR")] char* strNetworkResource, [NativeTypeName("const BSTR")] char* strUser, [NativeTypeName("const BSTR")] char* strPassword, [NativeTypeName("const BSTR")] char* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] char* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace)
     {
-        return ((delegate* unmanaged<IWbemLocator*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int>)(lpVtbl[3]))((IWbemLocator*)Unsafe.AsPointer(ref this), strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
+        return ((delegate* unmanaged<IWbemLocator*, char*, char*, char*, char*, int, char*, IWbemContext*, IWbemServices**, int>)(lpVtbl[3]))((IWbemLocator*)Unsafe.AsPointer(ref this), strNetworkResource, strUser, strPassword, strLocale, lSecurityFlags, strAuthority, pCtx, ppNamespace);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace);
+        HRESULT ConnectServer([NativeTypeName("const BSTR")] char* strNetworkResource, [NativeTypeName("const BSTR")] char* strUser, [NativeTypeName("const BSTR")] char* strPassword, [NativeTypeName("const BSTR")] char* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] char* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, const BSTR, const BSTR, long, const BSTR, IWbemContext *, IWbemServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int> ConnectServer;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, int, char*, IWbemContext*, IWbemServices**, int> ConnectServer;
     }
 }

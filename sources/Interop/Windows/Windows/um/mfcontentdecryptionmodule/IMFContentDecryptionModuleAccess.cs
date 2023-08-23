@@ -67,9 +67,9 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
     /// <include file='IMFContentDecryptionModuleAccess.xml' path='doc/member[@name="IMFContentDecryptionModuleAccess.GetKeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem)
+    public HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, ushort**, int>)(lpVtbl[5]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged<IMFContentDecryptionModuleAccess*, char**, int>)(lpVtbl[5]))((IMFContentDecryptionModuleAccess*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     public interface Interface : IUnknown.Interface
@@ -81,7 +81,7 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
         HRESULT GetConfiguration(IPropertyStore** configuration);
 
         [VtblIndex(5)]
-        HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem);
+        HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] char** keySystem);
     }
 
     public partial struct Vtbl<TSelf>
@@ -103,6 +103,6 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
         public delegate* unmanaged<TSelf*, IPropertyStore**, int> GetConfiguration;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetKeySystem;
+        public delegate* unmanaged<TSelf*, char**, int> GetKeySystem;
     }
 }

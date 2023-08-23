@@ -19,19 +19,19 @@ public unsafe partial struct MFNetCredentialManagerGetParam
 
     /// <include file='MFNetCredentialManagerGetParam.xml' path='doc/member[@name="MFNetCredentialManagerGetParam.pszUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszUrl;
+    public char* pszUrl;
 
     /// <include file='MFNetCredentialManagerGetParam.xml' path='doc/member[@name="MFNetCredentialManagerGetParam.pszSite"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszSite;
+    public char* pszSite;
 
     /// <include file='MFNetCredentialManagerGetParam.xml' path='doc/member[@name="MFNetCredentialManagerGetParam.pszRealm"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszRealm;
+    public char* pszRealm;
 
     /// <include file='MFNetCredentialManagerGetParam.xml' path='doc/member[@name="MFNetCredentialManagerGetParam.pszPackage"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszPackage;
+    public char* pszPackage;
 
     /// <include file='MFNetCredentialManagerGetParam.xml' path='doc/member[@name="MFNetCredentialManagerGetParam.nRetries"]/*' />
     [NativeTypeName("LONG")]

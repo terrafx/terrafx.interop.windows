@@ -65,9 +65,9 @@ public unsafe partial struct IEventException : IEventException.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IEventException*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IEventException*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IEventException*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IEventException*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IEventException : IEventException.Interface, INativ
     /// <include file='IEventException.xml' path='doc/member[@name="IEventException.get_message"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_message([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_message([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IEventException*, ushort**, int>)(lpVtbl[9]))((IEventException*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IEventException*, char**, int>)(lpVtbl[9]))((IEventException*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IEventException : IEventException.Interface, INativ
         HRESULT get_code([NativeTypeName("long *")] int* p);
 
         [VtblIndex(9)]
-        HRESULT get_message([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_message([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IEventException : IEventException.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IEventException : IEventException.Interface, INativ
         public delegate* unmanaged<TSelf*, int*, int> get_code;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_message;
+        public delegate* unmanaged<TSelf*, char**, int> get_message;
     }
 }

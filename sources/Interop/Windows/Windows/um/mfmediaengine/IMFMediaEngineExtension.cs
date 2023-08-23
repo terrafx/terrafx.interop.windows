@@ -51,17 +51,17 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.CanPlayType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] ushort* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    public HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] char* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, BOOL, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), AudioOnly, MimeType, pAnswer);
+        return ((delegate* unmanaged<IMFMediaEngineExtension*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), AudioOnly, MimeType, pAnswer);
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.BeginCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT BeginCreateObject([NativeTypeName("BSTR")] ushort* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
+    public HRESULT BeginCreateObject([NativeTypeName("BSTR")] char* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, ushort*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), bstrURL, pByteStream, type, ppIUnknownCancelCookie, pCallback, punkState);
+        return ((delegate* unmanaged<IMFMediaEngineExtension*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), bstrURL, pByteStream, type, ppIUnknownCancelCookie, pCallback, punkState);
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.CancelObjectCreation"]/*' />
@@ -83,10 +83,10 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] ushort* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+        HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] char* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
 
         [VtblIndex(4)]
-        HRESULT BeginCreateObject([NativeTypeName("BSTR")] ushort* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
+        HRESULT BeginCreateObject([NativeTypeName("BSTR")] char* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState);
 
         [VtblIndex(5)]
         HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie);
@@ -108,10 +108,10 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged<TSelf*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("HRESULT (BSTR, IMFByteStream *, MF_OBJECT_TYPE, IUnknown **, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
+        public delegate* unmanaged<TSelf*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, int> CancelObjectCreation;

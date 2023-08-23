@@ -22,11 +22,11 @@ public unsafe partial struct SRCCODEINFOW
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.Obj"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort Obj[261];
+    public fixed char Obj[261];
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.FileName"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort FileName[261];
+    public fixed char FileName[261];
 
     /// <include file='SRCCODEINFOW.xml' path='doc/member[@name="SRCCODEINFOW.LineNumber"]/*' />
     [NativeTypeName("DWORD")]

@@ -66,9 +66,9 @@ public unsafe partial struct IDxcOptimizer : IDxcOptimizer.Interface, INativeGui
     /// <include file='IDxcOptimizer.xml' path='doc/member[@name="IDxcOptimizer.RunOptimizer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT RunOptimizer(IDxcBlob* pBlob, [NativeTypeName("LPCWSTR *")] ushort** ppOptions, [NativeTypeName("UINT32")] uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+    public HRESULT RunOptimizer(IDxcBlob* pBlob, [NativeTypeName("LPCWSTR *")] char** ppOptions, [NativeTypeName("UINT32")] uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
     {
-        return ((delegate* unmanaged<IDxcOptimizer*, IDxcBlob*, ushort**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcOptimizer*)Unsafe.AsPointer(ref this), pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+        return ((delegate* unmanaged<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcOptimizer*)Unsafe.AsPointer(ref this), pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
     }
 
     public interface Interface : IUnknown.Interface
@@ -80,7 +80,7 @@ public unsafe partial struct IDxcOptimizer : IDxcOptimizer.Interface, INativeGui
         HRESULT GetAvailablePass([NativeTypeName("UINT32")] uint index, IDxcOptimizerPass** ppResult);
 
         [VtblIndex(5)]
-        HRESULT RunOptimizer(IDxcBlob* pBlob, [NativeTypeName("LPCWSTR *")] ushort** ppOptions, [NativeTypeName("UINT32")] uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText);
+        HRESULT RunOptimizer(IDxcBlob* pBlob, [NativeTypeName("LPCWSTR *")] char** ppOptions, [NativeTypeName("UINT32")] uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -102,6 +102,6 @@ public unsafe partial struct IDxcOptimizer : IDxcOptimizer.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, IDxcOptimizerPass**, int> GetAvailablePass;
 
         [NativeTypeName("HRESULT (IDxcBlob *, LPCWSTR *, UINT32, IDxcBlob **, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob*, ushort**, uint, IDxcBlob**, IDxcBlobEncoding**, int> RunOptimizer;
+        public delegate* unmanaged<TSelf*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int> RunOptimizer;
     }
 }

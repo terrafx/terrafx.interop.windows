@@ -73,9 +73,9 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged<ITfLangBarItemButton*, char**, int>)(lpVtbl[6]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.OnClick"]/*' />
@@ -113,9 +113,9 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
+    public HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
+        return ((delegate* unmanaged<ITfLangBarItemButton*, char**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
     }
 
     public interface Interface : ITfLangBarItem.Interface
@@ -133,7 +133,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
         HRESULT GetIcon(HICON* phIcon);
 
         [VtblIndex(11)]
-        HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
+        HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -158,7 +158,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
         public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
@@ -173,6 +173,6 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
         public delegate* unmanaged<TSelf*, HICON*, int> GetIcon;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, char**, int> GetText;
     }
 }

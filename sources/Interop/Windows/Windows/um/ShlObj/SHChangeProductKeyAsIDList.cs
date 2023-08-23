@@ -16,7 +16,7 @@ public unsafe partial struct SHChangeProductKeyAsIDList
 
     /// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList.wszProductKey"]/*' />
     [NativeTypeName("WCHAR[39]")]
-    public fixed ushort wszProductKey[39];
+    public fixed char wszProductKey[39];
 
     /// <include file='SHChangeProductKeyAsIDList.xml' path='doc/member[@name="SHChangeProductKeyAsIDList.cbZero"]/*' />
     public ushort cbZero;

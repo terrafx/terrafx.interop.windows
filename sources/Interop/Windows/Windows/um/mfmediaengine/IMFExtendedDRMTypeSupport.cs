@@ -49,15 +49,15 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
     /// <include file='IMFExtendedDRMTypeSupport.xml' path='doc/member[@name="IMFExtendedDRMTypeSupport.IsTypeSupportedEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT IsTypeSupportedEx([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    public HRESULT IsTypeSupportedEx([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR")] char* keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFExtendedDRMTypeSupport*, ushort*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFExtendedDRMTypeSupport*)Unsafe.AsPointer(ref this), type, keySystem, pAnswer);
+        return ((delegate* unmanaged<IMFExtendedDRMTypeSupport*, char*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFExtendedDRMTypeSupport*)Unsafe.AsPointer(ref this), type, keySystem, pAnswer);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT IsTypeSupportedEx([NativeTypeName("BSTR")] ushort* type, [NativeTypeName("BSTR")] ushort* keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+        HRESULT IsTypeSupportedEx([NativeTypeName("BSTR")] char* type, [NativeTypeName("BSTR")] char* keySystem, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSuppo
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> IsTypeSupportedEx;
+        public delegate* unmanaged<TSelf*, char*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> IsTypeSupportedEx;
     }
 }

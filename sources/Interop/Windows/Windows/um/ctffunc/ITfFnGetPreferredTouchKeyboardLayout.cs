@@ -51,9 +51,9 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, ushort**, int>)(lpVtbl[3]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnGetPreferredTouchKeyboardLayout*, char**, int>)(lpVtbl[3]))((ITfFnGetPreferredTouchKeyboardLayout*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetPreferredTouchKeyboardLayout.xml' path='doc/member[@name="ITfFnGetPreferredTouchKeyboardLayout.GetLayout"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfFnGetPreferredTouchKeyboardLayout : ITfFnGetPref
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (TKBLayoutType *, WORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TKBLayoutType*, ushort*, int> GetLayout;

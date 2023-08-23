@@ -24,5 +24,5 @@ public unsafe partial struct FILE_STREAM_INFO
 
     /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort StreamName[1];
+    public fixed char StreamName[1];
 }

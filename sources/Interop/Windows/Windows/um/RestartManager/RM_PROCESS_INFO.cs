@@ -13,11 +13,11 @@ public unsafe partial struct RM_PROCESS_INFO
 
     /// <include file='RM_PROCESS_INFO.xml' path='doc/member[@name="RM_PROCESS_INFO.strAppName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort strAppName[256];
+    public fixed char strAppName[256];
 
     /// <include file='RM_PROCESS_INFO.xml' path='doc/member[@name="RM_PROCESS_INFO.strServiceShortName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort strServiceShortName[64];
+    public fixed char strServiceShortName[64];
 
     /// <include file='RM_PROCESS_INFO.xml' path='doc/member[@name="RM_PROCESS_INFO.ApplicationType"]/*' />
     public RM_APP_TYPE ApplicationType;

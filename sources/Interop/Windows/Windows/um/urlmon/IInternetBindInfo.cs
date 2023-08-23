@@ -57,9 +57,9 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
     /// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo.GetBindString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
+    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] char** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, uint, ushort**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
+        return ((delegate* unmanaged<IInternetBindInfo*, uint, char**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
         HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo);
 
         [VtblIndex(4)]
-        HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
+        HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] char** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
         public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint, uint*, int> GetBindString;
+        public delegate* unmanaged<TSelf*, uint, char**, uint, uint*, int> GetBindString;
     }
 }

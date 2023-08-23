@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFrameBase2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLFrameBase2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -121,9 +121,9 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface, INativ
     /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_readyState([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameBase2*, ushort**, int>)(lpVtbl[12]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFrameBase2*, char**, int>)(lpVtbl[12]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.put_allowTransparency"]/*' />
@@ -160,7 +160,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface, INativ
         HRESULT get_onreadystatechange(VARIANT* p);
 
         [VtblIndex(12)]
-        HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_readyState([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
         HRESULT put_allowTransparency([NativeTypeName("VARIANT_BOOL")] short v);
@@ -188,7 +188,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -209,7 +209,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface, INativ
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onreadystatechange;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_readyState;
+        public delegate* unmanaged<TSelf*, char**, int> get_readyState;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_allowTransparency;

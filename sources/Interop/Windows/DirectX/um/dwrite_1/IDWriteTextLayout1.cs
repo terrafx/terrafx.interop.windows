@@ -195,9 +195,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, ushort*, uint, int>)(lpVtbl[21]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, char*, uint, int>)(lpVtbl[21]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
     }
 
     /// <inheritdoc cref="IDWriteTextFormat.GetFontWeight" />
@@ -244,9 +244,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextFormat.GetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize)
+    public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, ushort*, uint, int>)(lpVtbl[27]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), localeName, nameSize);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, char*, uint, int>)(lpVtbl[27]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), localeName, nameSize);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetMaxWidth" />
@@ -276,9 +276,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT SetFontFamilyName([NativeTypeName("const WCHAR *")] ushort* fontFamilyName, DWRITE_TEXT_RANGE textRange)
+    public HRESULT SetFontFamilyName([NativeTypeName("const WCHAR *")] char* fontFamilyName, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, ushort*, DWRITE_TEXT_RANGE, int>)(lpVtbl[31]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), fontFamilyName, textRange);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, char*, DWRITE_TEXT_RANGE, int>)(lpVtbl[31]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), fontFamilyName, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.SetFontWeight" />
@@ -356,9 +356,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextLayout.SetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT SetLocaleName([NativeTypeName("const WCHAR *")] ushort* localeName, DWRITE_TEXT_RANGE textRange)
+    public HRESULT SetLocaleName([NativeTypeName("const WCHAR *")] char* localeName, DWRITE_TEXT_RANGE textRange)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, ushort*, DWRITE_TEXT_RANGE, int>)(lpVtbl[41]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), localeName, textRange);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, char*, DWRITE_TEXT_RANGE, int>)(lpVtbl[41]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), localeName, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetMaxWidth" />
@@ -396,9 +396,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT GetFontFamilyName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+    public HRESULT GetFontFamilyName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[46]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), currentPosition, fontFamilyName, nameSize, textRange);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, uint, char*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[46]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), currentPosition, fontFamilyName, nameSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.GetFontWeight" />
@@ -484,9 +484,9 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
     /// <inheritdoc cref="IDWriteTextLayout.GetLocaleName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
-    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
+    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint currentPosition, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize, DWRITE_TEXT_RANGE* textRange = null)
     {
-        return ((delegate* unmanaged<IDWriteTextLayout1*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[57]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), currentPosition, localeName, nameSize, textRange);
+        return ((delegate* unmanaged<IDWriteTextLayout1*, uint, char*, uint, DWRITE_TEXT_RANGE*, int>)(lpVtbl[57]))((IDWriteTextLayout1*)Unsafe.AsPointer(ref this), currentPosition, localeName, nameSize, textRange);
     }
 
     /// <inheritdoc cref="IDWriteTextLayout.Draw" />
@@ -675,7 +675,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, uint> GetFontFamilyNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetFontFamilyName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
@@ -693,7 +693,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, uint> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float, int> SetMaxWidth;
@@ -705,7 +705,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, IDWriteFontCollection*, DWRITE_TEXT_RANGE, int> SetFontCollection;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_TEXT_RANGE, int> SetFontFamilyName;
+        public delegate* unmanaged<TSelf*, char*, DWRITE_TEXT_RANGE, int> SetFontFamilyName;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT, DWRITE_TEXT_RANGE, int> SetFontWeight;
@@ -735,7 +735,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, IDWriteTypography*, DWRITE_TEXT_RANGE, int> SetTypography;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_TEXT_RANGE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_TEXT_RANGE, int> SetLocaleName;
+        public delegate* unmanaged<TSelf*, char*, DWRITE_TEXT_RANGE, int> SetLocaleName;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float> GetMaxWidth;
@@ -750,7 +750,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetFontFamilyNameLength1;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int> GetFontFamilyName1;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, DWRITE_TEXT_RANGE*, int> GetFontFamilyName1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_WEIGHT *, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_WEIGHT*, DWRITE_TEXT_RANGE*, int> GetFontWeight1;
@@ -783,7 +783,7 @@ public unsafe partial struct IDWriteTextLayout1 : IDWriteTextLayout1.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint*, DWRITE_TEXT_RANGE*, int> GetLocaleNameLength1;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32, DWRITE_TEXT_RANGE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, DWRITE_TEXT_RANGE*, int> GetLocaleName1;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, DWRITE_TEXT_RANGE*, int> GetLocaleName1;
 
         [NativeTypeName("HRESULT (void *, IDWriteTextRenderer *, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*, IDWriteTextRenderer*, float, float, int> Draw;

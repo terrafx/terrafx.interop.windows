@@ -65,9 +65,9 @@ public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<INavigatorDoNotTrack*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<INavigatorDoNotTrack*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interfa
     /// <include file='INavigatorDoNotTrack.xml' path='doc/member[@name="INavigatorDoNotTrack.get_msDoNotTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<INavigatorDoNotTrack*, ushort**, int>)(lpVtbl[7]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<INavigatorDoNotTrack*, char**, int>)(lpVtbl[7]))((INavigatorDoNotTrack*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msDoNotTrack([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msDoNotTrack;
+        public delegate* unmanaged<TSelf*, char**, int> get_msDoNotTrack;
     }
 }

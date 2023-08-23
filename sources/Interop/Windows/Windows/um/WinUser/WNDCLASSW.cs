@@ -35,9 +35,9 @@ public unsafe partial struct WNDCLASSW
 
     /// <include file='WNDCLASSW.xml' path='doc/member[@name="WNDCLASSW.lpszMenuName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszMenuName;
+    public char* lpszMenuName;
 
     /// <include file='WNDCLASSW.xml' path='doc/member[@name="WNDCLASSW.lpszClassName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszClassName;
+    public char* lpszClassName;
 }

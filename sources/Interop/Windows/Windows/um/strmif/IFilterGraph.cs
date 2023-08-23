@@ -49,9 +49,9 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
     /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.AddFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
+    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] char* pName)
     {
-        return ((delegate* unmanaged<IFilterGraph*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IFilterGraph*)Unsafe.AsPointer(ref this), pFilter, pName);
+        return ((delegate* unmanaged<IFilterGraph*, IBaseFilter*, char*, int>)(lpVtbl[3]))((IFilterGraph*)Unsafe.AsPointer(ref this), pFilter, pName);
     }
 
     /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.RemoveFilter"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
     /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.FindFilterByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
+    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] char* pName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IFilterGraph*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph*)Unsafe.AsPointer(ref this), pName, ppFilter);
+        return ((delegate* unmanaged<IFilterGraph*, char*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph*)Unsafe.AsPointer(ref this), pName, ppFilter);
     }
 
     /// <include file='IFilterGraph.xml' path='doc/member[@name="IFilterGraph.ConnectDirect"]/*' />
@@ -113,7 +113,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName);
+        HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] char* pName);
 
         [VtblIndex(4)]
         HRESULT RemoveFilter(IBaseFilter* pFilter);
@@ -122,7 +122,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
         HRESULT EnumFilters(IEnumFilters** ppEnum);
 
         [VtblIndex(6)]
-        HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter);
+        HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] char* pName, IBaseFilter** ppFilter);
 
         [VtblIndex(7)]
         HRESULT ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
@@ -150,7 +150,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, ushort*, int> AddFilter;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, char*, int> AddFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilter;
@@ -159,7 +159,7 @@ public unsafe partial struct IFilterGraph : IFilterGraph.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumFilters;
 
         [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IBaseFilter**, int> FindFilterByName;
+        public delegate* unmanaged<TSelf*, char*, IBaseFilter**, int> FindFilterByName;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;

@@ -17,5 +17,5 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Name"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* Name;
+    public char* Name;
 }

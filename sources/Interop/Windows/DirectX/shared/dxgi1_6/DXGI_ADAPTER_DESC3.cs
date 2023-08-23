@@ -12,7 +12,7 @@ public unsafe partial struct DXGI_ADAPTER_DESC3
 {
     /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3.Description"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort Description[128];
+    public fixed char Description[128];
 
     /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3.VendorId"]/*' />
     public uint VendorId;

@@ -38,7 +38,7 @@ public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
 
     /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.pwszLanguage"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszLanguage;
+    public char* pwszLanguage;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwNumBits"]/*' />
     [UnscopedRef]

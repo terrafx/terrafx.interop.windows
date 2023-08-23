@@ -65,25 +65,25 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_filename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_filename([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_filename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[5]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[5]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_objectFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_objectFilename([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_objectFilename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[6]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[6]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_virtualFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_virtualFilename([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_virtualFilename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, ushort**, int>)(lpVtbl[7]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[7]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_sourceCompression"]/*' />
@@ -111,13 +111,13 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
         HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
         [VtblIndex(5)]
-        HRESULT get_filename([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_filename([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(6)]
-        HRESULT get_objectFilename([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_objectFilename([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(7)]
-        HRESULT get_virtualFilename([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_virtualFilename([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(8)]
         HRESULT get_sourceCompression([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -145,13 +145,13 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
         public delegate* unmanaged<TSelf*, ulong*, int> get_length;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_filename;
+        public delegate* unmanaged<TSelf*, char**, int> get_filename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_objectFilename;
+        public delegate* unmanaged<TSelf*, char**, int> get_objectFilename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_virtualFilename;
+        public delegate* unmanaged<TSelf*, char**, int> get_virtualFilename;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_sourceCompression;

@@ -65,25 +65,25 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface, INativeGuid
     /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.Navigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] ushort* pwzJumpLocation)
+    public HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] char* pwzJumpLocation)
     {
-        return ((delegate* unmanaged<IHlinkTarget*, uint, ushort*, int>)(lpVtbl[5]))((IHlinkTarget*)Unsafe.AsPointer(ref this), grfHLNF, pwzJumpLocation);
+        return ((delegate* unmanaged<IHlinkTarget*, uint, char*, int>)(lpVtbl[5]))((IHlinkTarget*)Unsafe.AsPointer(ref this), grfHLNF, pwzJumpLocation);
     }
 
     /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.GetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetMoniker([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation)
+    public HRESULT GetMoniker([NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation)
     {
-        return ((delegate* unmanaged<IHlinkTarget*, ushort*, uint, IMoniker**, int>)(lpVtbl[6]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, dwAssign, ppimkLocation);
+        return ((delegate* unmanaged<IHlinkTarget*, char*, uint, IMoniker**, int>)(lpVtbl[6]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, dwAssign, ppimkLocation);
     }
 
     /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName)
+    public HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPWSTR *")] char** ppwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int>)(lpVtbl[7]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, ppwzFriendlyName);
+        return ((delegate* unmanaged<IHlinkTarget*, char*, char**, int>)(lpVtbl[7]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, ppwzFriendlyName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -95,13 +95,13 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface, INativeGuid
         HRESULT GetBrowseContext(IHlinkBrowseContext** ppihlbc);
 
         [VtblIndex(5)]
-        HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] ushort* pwzJumpLocation);
+        HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] char* pwzJumpLocation);
 
         [VtblIndex(6)]
-        HRESULT GetMoniker([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation);
+        HRESULT GetMoniker([NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation);
 
         [VtblIndex(7)]
-        HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName);
+        HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPWSTR *")] char** ppwzFriendlyName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -123,12 +123,12 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHlinkBrowseContext**, int> GetBrowseContext;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> Navigate;
+        public delegate* unmanaged<TSelf*, uint, char*, int> Navigate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged<TSelf*, char*, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetFriendlyName;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnLangProfileUtil*, char**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil.RegisterActiveProfiles"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> RegisterActiveProfiles;

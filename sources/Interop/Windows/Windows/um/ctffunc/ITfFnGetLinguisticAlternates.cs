@@ -51,9 +51,9 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ushort**, int>)(lpVtbl[3]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, char**, int>)(lpVtbl[3]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates.GetAlternates"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetAlternates;

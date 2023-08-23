@@ -106,17 +106,17 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id)
+    public HRESULT SetId([NativeTypeName("PCWSTR")] char* id)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, ushort*, int>)(lpVtbl[10]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id);
+        return ((delegate* unmanaged<ID2D1SvgPaint*, char*, int>)(lpVtbl[10]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount)
+    public HRESULT GetId([NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, ushort*, uint, int>)(lpVtbl[11]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id, idCount);
+        return ((delegate* unmanaged<ID2D1SvgPaint*, char*, uint, int>)(lpVtbl[11]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id, idCount);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetIdLength"]/*' />
@@ -143,10 +143,10 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
         void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color);
 
         [VtblIndex(10)]
-        HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id);
+        HRESULT SetId([NativeTypeName("PCWSTR")] char* id);
 
         [VtblIndex(11)]
-        HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount);
+        HRESULT GetId([NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount);
 
         [VtblIndex(12)]
         [return: NativeTypeName("UINT32")]
@@ -187,10 +187,10 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
         public delegate* unmanaged<TSelf*, DXGI_RGBA*, void> GetColor;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetId;
+        public delegate* unmanaged<TSelf*, char*, int> SetId;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetId;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetId;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetIdLength;

@@ -17,5 +17,5 @@ public unsafe partial struct AASHELLMENUFILENAME
 
     /// <include file='AASHELLMENUFILENAME.xml' path='doc/member[@name="AASHELLMENUFILENAME.szFileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort szFileName[1];
+    public fixed char szFileName[1];
 }

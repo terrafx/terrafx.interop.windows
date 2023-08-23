@@ -57,9 +57,9 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetVersion([NativeTypeName("BSTR *")] ushort** pVersion)
+    public HRESULT GetVersion([NativeTypeName("BSTR *")] char** pVersion)
     {
-        return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[4]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
+        return ((delegate* unmanaged<ITypeLibRegistration*, char**, int>)(lpVtbl[4]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pVersion);
     }
 
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetLcid"]/*' />
@@ -73,25 +73,25 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetWin32Path"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path)
+    public HRESULT GetWin32Path([NativeTypeName("BSTR *")] char** pWin32Path)
     {
-        return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[6]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
+        return ((delegate* unmanaged<ITypeLibRegistration*, char**, int>)(lpVtbl[6]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin32Path);
     }
 
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetWin64Path"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path)
+    public HRESULT GetWin64Path([NativeTypeName("BSTR *")] char** pWin64Path)
     {
-        return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[7]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
+        return ((delegate* unmanaged<ITypeLibRegistration*, char**, int>)(lpVtbl[7]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pWin64Path);
     }
 
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pDisplayName)
     {
-        return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[8]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
+        return ((delegate* unmanaged<ITypeLibRegistration*, char**, int>)(lpVtbl[8]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pDisplayName);
     }
 
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetFlags"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
     /// <include file='ITypeLibRegistration.xml' path='doc/member[@name="ITypeLibRegistration.GetHelpDir"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir)
+    public HRESULT GetHelpDir([NativeTypeName("BSTR *")] char** pHelpDir)
     {
-        return ((delegate* unmanaged<ITypeLibRegistration*, ushort**, int>)(lpVtbl[10]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pHelpDir);
+        return ((delegate* unmanaged<ITypeLibRegistration*, char**, int>)(lpVtbl[10]))((ITypeLibRegistration*)Unsafe.AsPointer(ref this), pHelpDir);
     }
 
     public interface Interface : IUnknown.Interface
@@ -116,25 +116,25 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         HRESULT GetGuid(Guid* pGuid);
 
         [VtblIndex(4)]
-        HRESULT GetVersion([NativeTypeName("BSTR *")] ushort** pVersion);
+        HRESULT GetVersion([NativeTypeName("BSTR *")] char** pVersion);
 
         [VtblIndex(5)]
         HRESULT GetLcid([NativeTypeName("LCID *")] uint* pLcid);
 
         [VtblIndex(6)]
-        HRESULT GetWin32Path([NativeTypeName("BSTR *")] ushort** pWin32Path);
+        HRESULT GetWin32Path([NativeTypeName("BSTR *")] char** pWin32Path);
 
         [VtblIndex(7)]
-        HRESULT GetWin64Path([NativeTypeName("BSTR *")] ushort** pWin64Path);
+        HRESULT GetWin64Path([NativeTypeName("BSTR *")] char** pWin64Path);
 
         [VtblIndex(8)]
-        HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pDisplayName);
+        HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pDisplayName);
 
         [VtblIndex(9)]
         HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pFlags);
 
         [VtblIndex(10)]
-        HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir);
+        HRESULT GetHelpDir([NativeTypeName("BSTR *")] char** pHelpDir);
     }
 
     public partial struct Vtbl<TSelf>
@@ -153,24 +153,24 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         public delegate* unmanaged<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetVersion;
+        public delegate* unmanaged<TSelf*, char**, int> GetVersion;
 
         [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetLcid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetWin32Path;
+        public delegate* unmanaged<TSelf*, char**, int> GetWin32Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetWin64Path;
+        public delegate* unmanaged<TSelf*, char**, int> GetWin64Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetFlags;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetHelpDir;
+        public delegate* unmanaged<TSelf*, char**, int> GetHelpDir;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyleMedia : IHTMLStyleMedia.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleMedia*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyleMedia*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IHTMLStyleMedia : IHTMLStyleMedia.Interface, INativ
     /// <include file='IHTMLStyleMedia.xml' path='doc/member[@name="IHTMLStyleMedia.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleMedia*, ushort**, int>)(lpVtbl[7]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyleMedia*, char**, int>)(lpVtbl[7]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleMedia.xml' path='doc/member[@name="IHTMLStyleMedia.matchMedium"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT matchMedium([NativeTypeName("BSTR")] ushort* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches)
+    public HRESULT matchMedium([NativeTypeName("BSTR")] char* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches)
     {
-        return ((delegate* unmanaged<IHTMLStyleMedia*, ushort*, short*, int>)(lpVtbl[8]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), mediaQuery, matches);
+        return ((delegate* unmanaged<IHTMLStyleMedia*, char*, short*, int>)(lpVtbl[8]))((IHTMLStyleMedia*)Unsafe.AsPointer(ref this), mediaQuery, matches);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT matchMedium([NativeTypeName("BSTR")] ushort* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches);
+        HRESULT matchMedium([NativeTypeName("BSTR")] char* mediaQuery, [NativeTypeName("VARIANT_BOOL *")] short* matches);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IHTMLStyleMedia : IHTMLStyleMedia.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> matchMedium;
+        public delegate* unmanaged<TSelf*, char*, short*, int> matchMedium;
     }
 }

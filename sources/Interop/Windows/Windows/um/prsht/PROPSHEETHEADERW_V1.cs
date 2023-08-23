@@ -32,7 +32,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.pszCaption"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszCaption;
+    public char* pszCaption;
 
     /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.nPages"]/*' />
     public uint nPages;
@@ -62,7 +62,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszIcon"]/*' />
     [UnscopedRef]
-    public ref ushort* pszIcon
+    public ref char* pszIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -84,7 +84,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pStartPage"]/*' />
     [UnscopedRef]
-    public ref ushort* pStartPage
+    public ref char* pStartPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -126,7 +126,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszIcon;
+        public char* pszIcon;
     }
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pStartPage"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pStartPage;
+        public char* pStartPage;
     }
 
     /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union"]/*' />

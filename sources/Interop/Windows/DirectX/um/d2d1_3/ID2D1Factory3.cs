@@ -231,9 +231,9 @@ public unsafe partial struct ID2D1Factory3 : ID2D1Factory3.Interface, INativeGui
     /// <inheritdoc cref="ID2D1Factory1.RegisterEffectFromString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT RegisterEffectFromString([NativeTypeName("const IID &")] Guid* classId, [NativeTypeName("PCWSTR")] ushort* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory)
+    public HRESULT RegisterEffectFromString([NativeTypeName("const IID &")] Guid* classId, [NativeTypeName("PCWSTR")] char* propertyXml, [NativeTypeName("const D2D1_PROPERTY_BINDING *")] D2D1_PROPERTY_BINDING* bindings, [NativeTypeName("UINT32")] uint bindingsCount, [NativeTypeName("const PD2D1_EFFECT_FACTORY")] delegate* unmanaged<IUnknown**, HRESULT> effectFactory)
     {
-        return ((delegate* unmanaged<ID2D1Factory3*, Guid*, ushort*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int>)(lpVtbl[23]))((ID2D1Factory3*)Unsafe.AsPointer(ref this), classId, propertyXml, bindings, bindingsCount, effectFactory);
+        return ((delegate* unmanaged<ID2D1Factory3*, Guid*, char*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int>)(lpVtbl[23]))((ID2D1Factory3*)Unsafe.AsPointer(ref this), classId, propertyXml, bindings, bindingsCount, effectFactory);
     }
 
     /// <inheritdoc cref="ID2D1Factory1.UnregisterEffect" />
@@ -356,7 +356,7 @@ public unsafe partial struct ID2D1Factory3 : ID2D1Factory3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, Guid*, IStream*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromStream;
 
         [NativeTypeName("HRESULT (const IID &, PCWSTR, const D2D1_PROPERTY_BINDING *, UINT32, const PD2D1_EFFECT_FACTORY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromString;
+        public delegate* unmanaged<TSelf*, Guid*, char*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromString;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> UnregisterEffect;

@@ -14,5 +14,5 @@ public unsafe partial struct INHERITED_FROMW
 
     /// <include file='INHERITED_FROMW.xml' path='doc/member[@name="INHERITED_FROMW.AncestorName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* AncestorName;
+    public char* AncestorName;
 }

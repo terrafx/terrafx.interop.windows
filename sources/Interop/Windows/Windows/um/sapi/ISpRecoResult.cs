@@ -65,9 +65,9 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
+    public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] char** ppszCoMemText, byte* pbDisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
     /// <inheritdoc cref="ISpPhrase.Discard" />
@@ -177,7 +177,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
         public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Discard;

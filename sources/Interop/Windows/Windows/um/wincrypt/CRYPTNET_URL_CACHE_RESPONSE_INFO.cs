@@ -29,7 +29,7 @@ public unsafe partial struct CRYPTNET_URL_CACHE_RESPONSE_INFO
 
     /// <include file='CRYPTNET_URL_CACHE_RESPONSE_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_RESPONSE_INFO.pwszETag"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszETag;
+    public char* pwszETag;
 
     /// <include file='CRYPTNET_URL_CACHE_RESPONSE_INFO.xml' path='doc/member[@name="CRYPTNET_URL_CACHE_RESPONSE_INFO.dwProxyId"]/*' />
     [NativeTypeName("DWORD")]

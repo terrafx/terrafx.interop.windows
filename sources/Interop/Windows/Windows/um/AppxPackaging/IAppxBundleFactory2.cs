@@ -49,15 +49,15 @@ public unsafe partial struct IAppxBundleFactory2 : IAppxBundleFactory2.Interface
     /// <include file='IAppxBundleFactory2.xml' path='doc/member[@name="IAppxBundleFactory2.CreateBundleReader2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader)
+    public HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader)
     {
-        return ((delegate* unmanaged<IAppxBundleFactory2*, IStream*, ushort*, IAppxBundleReader**, int>)(lpVtbl[3]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, bundleReader);
+        return ((delegate* unmanaged<IAppxBundleFactory2*, IStream*, char*, IAppxBundleReader**, int>)(lpVtbl[3]))((IAppxBundleFactory2*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, bundleReader);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] ushort* expectedDigest, IAppxBundleReader** bundleReader);
+        HRESULT CreateBundleReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAppxBundleFactory2 : IAppxBundleFactory2.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxBundleReader**, int> CreateBundleReader2;
+        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxBundleReader**, int> CreateBundleReader2;
     }
 }

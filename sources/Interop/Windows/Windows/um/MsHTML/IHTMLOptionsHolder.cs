@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,17 +161,17 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.put_errorMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT put_errorMessage([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_errorMessage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int>)(lpVtbl[17]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char*, int>)(lpVtbl[17]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.get_errorMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_errorMessage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_errorMessage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int>)(lpVtbl[18]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char**, int>)(lpVtbl[18]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.put_errorDebug"]/*' />
@@ -201,17 +201,17 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.put_findText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT put_findText([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_findText([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int>)(lpVtbl[22]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char*, int>)(lpVtbl[22]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.get_findText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_findText([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_findText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int>)(lpVtbl[23]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char**, int>)(lpVtbl[23]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.put_anythingAfterFrameset"]/*' />
@@ -233,25 +233,25 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.sizes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT sizes([NativeTypeName("BSTR")] ushort* fontName, IHTMLFontSizesCollection** pSizesCollection)
+    public HRESULT sizes([NativeTypeName("BSTR")] char* fontName, IHTMLFontSizesCollection** pSizesCollection)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort*, IHTMLFontSizesCollection**, int>)(lpVtbl[26]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), fontName, pSizesCollection);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char*, IHTMLFontSizesCollection**, int>)(lpVtbl[26]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), fontName, pSizesCollection);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.openfiledlg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT openfiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName)
+    public HRESULT openfiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] char** pathName)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int>)(lpVtbl[27]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), initFile, initDir, filter, title, pathName);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, char**, int>)(lpVtbl[27]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), initFile, initDir, filter, title, pathName);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.savefiledlg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT savefiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName)
+    public HRESULT savefiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] char** pathName)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int>)(lpVtbl[28]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), initFile, initDir, filter, title, pathName);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, VARIANT, VARIANT, VARIANT, VARIANT, char**, int>)(lpVtbl[28]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), initFile, initDir, filter, title, pathName);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.choosecolordlg"]/*' />
@@ -281,17 +281,17 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.getCharset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, [NativeTypeName("long *")] int* charset)
+    public HRESULT getCharset([NativeTypeName("BSTR")] char* fontName, [NativeTypeName("long *")] int* charset)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort*, int*, int>)(lpVtbl[32]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), fontName, charset);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char*, int*, int>)(lpVtbl[32]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), fontName, charset);
     }
 
     /// <include file='IHTMLOptionsHolder.xml' path='doc/member[@name="IHTMLOptionsHolder.get_secureConnectionInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLOptionsHolder*, ushort**, int>)(lpVtbl[33]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLOptionsHolder*, char**, int>)(lpVtbl[33]))((IHTMLOptionsHolder*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -327,10 +327,10 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         HRESULT get_errorCode([NativeTypeName("long *")] int* p);
 
         [VtblIndex(17)]
-        HRESULT put_errorMessage([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_errorMessage([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(18)]
-        HRESULT get_errorMessage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_errorMessage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
         HRESULT put_errorDebug([NativeTypeName("VARIANT_BOOL")] short v);
@@ -342,10 +342,10 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         HRESULT get_unsecuredWindowOfDocument(IHTMLWindow2** p);
 
         [VtblIndex(22)]
-        HRESULT put_findText([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_findText([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(23)]
-        HRESULT get_findText([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_findText([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(24)]
         HRESULT put_anythingAfterFrameset([NativeTypeName("VARIANT_BOOL")] short v);
@@ -354,13 +354,13 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         HRESULT get_anythingAfterFrameset([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(26)]
-        HRESULT sizes([NativeTypeName("BSTR")] ushort* fontName, IHTMLFontSizesCollection** pSizesCollection);
+        HRESULT sizes([NativeTypeName("BSTR")] char* fontName, IHTMLFontSizesCollection** pSizesCollection);
 
         [VtblIndex(27)]
-        HRESULT openfiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName);
+        HRESULT openfiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] char** pathName);
 
         [VtblIndex(28)]
-        HRESULT savefiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] ushort** pathName);
+        HRESULT savefiledlg(VARIANT initFile, VARIANT initDir, VARIANT filter, VARIANT title, [NativeTypeName("BSTR *")] char** pathName);
 
         [VtblIndex(29)]
         HRESULT choosecolordlg(VARIANT initColor, [NativeTypeName("long *")] int* rgbColor);
@@ -372,10 +372,10 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         HRESULT isApartmentModel(IHTMLObjectElement* @object, [NativeTypeName("VARIANT_BOOL *")] short* fApartment);
 
         [VtblIndex(32)]
-        HRESULT getCharset([NativeTypeName("BSTR")] ushort* fontName, [NativeTypeName("long *")] int* charset);
+        HRESULT getCharset([NativeTypeName("BSTR")] char* fontName, [NativeTypeName("long *")] int* charset);
 
         [VtblIndex(33)]
-        HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_secureConnectionInfo([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -397,7 +397,7 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -433,10 +433,10 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_errorCode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_errorMessage;
+        public delegate* unmanaged<TSelf*, char*, int> put_errorMessage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_errorMessage;
+        public delegate* unmanaged<TSelf*, char**, int> get_errorMessage;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_errorDebug;
@@ -448,10 +448,10 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         public delegate* unmanaged<TSelf*, IHTMLWindow2**, int> get_unsecuredWindowOfDocument;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_findText;
+        public delegate* unmanaged<TSelf*, char*, int> put_findText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_findText;
+        public delegate* unmanaged<TSelf*, char**, int> get_findText;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_anythingAfterFrameset;
@@ -460,13 +460,13 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         public delegate* unmanaged<TSelf*, short*, int> get_anythingAfterFrameset;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLFontSizesCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLFontSizesCollection**, int> sizes;
+        public delegate* unmanaged<TSelf*, char*, IHTMLFontSizesCollection**, int> sizes;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int> openfiledlg;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, char**, int> openfiledlg;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, ushort**, int> savefiledlg;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, char**, int> savefiledlg;
 
         [NativeTypeName("HRESULT (VARIANT, long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int*, int> choosecolordlg;
@@ -478,9 +478,9 @@ public unsafe partial struct IHTMLOptionsHolder : IHTMLOptionsHolder.Interface, 
         public delegate* unmanaged<TSelf*, IHTMLObjectElement*, short*, int> isApartmentModel;
 
         [NativeTypeName("HRESULT (BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> getCharset;
+        public delegate* unmanaged<TSelf*, char*, int*, int> getCharset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_secureConnectionInfo;
+        public delegate* unmanaged<TSelf*, char**, int> get_secureConnectionInfo;
     }
 }

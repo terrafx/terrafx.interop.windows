@@ -14,7 +14,7 @@ public unsafe partial struct EnumType
 {
     /// <include file='EnumType.xml' path='doc/member[@name="EnumType.Name"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='EnumType.xml' path='doc/member[@name="EnumType.ValueInts"]/*' />
     public SAFEARRAY* ValueInts;

@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, ushort**, int>)(lpVtbl[3]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnGetSAPIObject*, char**, int>)(lpVtbl[3]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetSAPIObject.xml' path='doc/member[@name="ITfFnGetSAPIObject.Get"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (TfSapiObject, IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TfSapiObject, IUnknown**, int> Get;

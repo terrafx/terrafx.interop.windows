@@ -65,9 +65,9 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,9 +129,9 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
     /// <inheritdoc cref="IShellFolderViewDual.PopupItemMenu" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, FolderItem*, VARIANT, VARIANT, ushort**, int>)(lpVtbl[13]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, FolderItem*, VARIANT, VARIANT, char**, int>)(lpVtbl[13]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_Script" />
@@ -177,17 +177,17 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.get_GroupBy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_GroupBy([NativeTypeName("BSTR *")] ushort** pbstrGroupBy)
+    public HRESULT get_GroupBy([NativeTypeName("BSTR *")] char** pbstrGroupBy)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, ushort**, int>)(lpVtbl[19]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrGroupBy);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, char**, int>)(lpVtbl[19]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrGroupBy);
     }
 
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.put_GroupBy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT put_GroupBy([NativeTypeName("BSTR")] ushort* bstrGroupBy)
+    public HRESULT put_GroupBy([NativeTypeName("BSTR")] char* bstrGroupBy)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[20]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrGroupBy);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, char*, int>)(lpVtbl[20]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrGroupBy);
     }
 
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.get_FolderFlags"]/*' />
@@ -209,17 +209,17 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.get_SortColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_SortColumns([NativeTypeName("BSTR *")] ushort** pbstrSortColumns)
+    public HRESULT get_SortColumns([NativeTypeName("BSTR *")] char** pbstrSortColumns)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, ushort**, int>)(lpVtbl[23]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrSortColumns);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, char**, int>)(lpVtbl[23]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), pbstrSortColumns);
     }
 
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.put_SortColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT put_SortColumns([NativeTypeName("BSTR")] ushort* bstrSortColumns)
+    public HRESULT put_SortColumns([NativeTypeName("BSTR")] char* bstrSortColumns)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[24]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrSortColumns);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, char*, int>)(lpVtbl[24]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrSortColumns);
     }
 
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.put_IconSize"]/*' />
@@ -241,18 +241,18 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
     /// <include file='IShellFolderViewDual3.xml' path='doc/member[@name="IShellFolderViewDual3.FilterView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText)
+    public HRESULT FilterView([NativeTypeName("BSTR")] char* bstrFilterText)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual3*, ushort*, int>)(lpVtbl[27]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrFilterText);
+        return ((delegate* unmanaged<IShellFolderViewDual3*, char*, int>)(lpVtbl[27]))((IShellFolderViewDual3*)Unsafe.AsPointer(ref this), bstrFilterText);
     }
 
     public interface Interface : IShellFolderViewDual2.Interface
     {
         [VtblIndex(19)]
-        HRESULT get_GroupBy([NativeTypeName("BSTR *")] ushort** pbstrGroupBy);
+        HRESULT get_GroupBy([NativeTypeName("BSTR *")] char** pbstrGroupBy);
 
         [VtblIndex(20)]
-        HRESULT put_GroupBy([NativeTypeName("BSTR")] ushort* bstrGroupBy);
+        HRESULT put_GroupBy([NativeTypeName("BSTR")] char* bstrGroupBy);
 
         [VtblIndex(21)]
         HRESULT get_FolderFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
@@ -261,10 +261,10 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         HRESULT put_FolderFlags([NativeTypeName("DWORD")] uint dwFlags);
 
         [VtblIndex(23)]
-        HRESULT get_SortColumns([NativeTypeName("BSTR *")] ushort** pbstrSortColumns);
+        HRESULT get_SortColumns([NativeTypeName("BSTR *")] char** pbstrSortColumns);
 
         [VtblIndex(24)]
-        HRESULT put_SortColumns([NativeTypeName("BSTR")] ushort* bstrSortColumns);
+        HRESULT put_SortColumns([NativeTypeName("BSTR")] char* bstrSortColumns);
 
         [VtblIndex(25)]
         HRESULT put_IconSize(int iIconSize);
@@ -273,7 +273,7 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         HRESULT get_IconSize(int* piIconSize);
 
         [VtblIndex(27)]
-        HRESULT FilterView([NativeTypeName("BSTR")] ushort* bstrFilterText);
+        HRESULT FilterView([NativeTypeName("BSTR")] char* bstrFilterText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -295,7 +295,7 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -319,7 +319,7 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         public delegate* unmanaged<TSelf*, VARIANT*, int, int> SelectItem;
 
         [NativeTypeName("HRESULT (FolderItem *, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, ushort**, int> PopupItemMenu;
+        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, char**, int> PopupItemMenu;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_Script;
@@ -337,10 +337,10 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         public delegate* unmanaged<TSelf*, int, int> SelectItemRelative;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_GroupBy;
+        public delegate* unmanaged<TSelf*, char**, int> get_GroupBy;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_GroupBy;
+        public delegate* unmanaged<TSelf*, char*, int> put_GroupBy;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> get_FolderFlags;
@@ -349,10 +349,10 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         public delegate* unmanaged<TSelf*, uint, int> put_FolderFlags;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_SortColumns;
+        public delegate* unmanaged<TSelf*, char**, int> get_SortColumns;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_SortColumns;
+        public delegate* unmanaged<TSelf*, char*, int> put_SortColumns;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_IconSize;
@@ -361,6 +361,6 @@ public unsafe partial struct IShellFolderViewDual3 : IShellFolderViewDual3.Inter
         public delegate* unmanaged<TSelf*, int*, int> get_IconSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> FilterView;
+        public delegate* unmanaged<TSelf*, char*, int> FilterView;
     }
 }

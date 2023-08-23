@@ -65,26 +65,26 @@ public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, IN
     /// <include file='ISpPhoneConverter.xml' path='doc/member[@name="ISpPhoneConverter.PhoneToId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT PhoneToId([NativeTypeName("LPCWSTR")] ushort* pszPhone, [NativeTypeName("SPPHONEID *")] ushort* pId)
+    public HRESULT PhoneToId([NativeTypeName("LPCWSTR")] char* pszPhone, [NativeTypeName("SPPHONEID *")] char* pId)
     {
-        return ((delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pszPhone, pId);
+        return ((delegate* unmanaged<ISpPhoneConverter*, char*, char*, int>)(lpVtbl[5]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pszPhone, pId);
     }
 
     /// <include file='ISpPhoneConverter.xml' path='doc/member[@name="ISpPhoneConverter.IdToPhone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] ushort* pId, [NativeTypeName("WCHAR *")] ushort* pszPhone)
+    public HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] char* pId, [NativeTypeName("WCHAR *")] char* pszPhone)
     {
-        return ((delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int>)(lpVtbl[6]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pId, pszPhone);
+        return ((delegate* unmanaged<ISpPhoneConverter*, char*, char*, int>)(lpVtbl[6]))((ISpPhoneConverter*)Unsafe.AsPointer(ref this), pId, pszPhone);
     }
 
     public interface Interface : ISpObjectWithToken.Interface
     {
         [VtblIndex(5)]
-        HRESULT PhoneToId([NativeTypeName("LPCWSTR")] ushort* pszPhone, [NativeTypeName("SPPHONEID *")] ushort* pId);
+        HRESULT PhoneToId([NativeTypeName("LPCWSTR")] char* pszPhone, [NativeTypeName("SPPHONEID *")] char* pId);
 
         [VtblIndex(6)]
-        HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] ushort* pId, [NativeTypeName("WCHAR *")] ushort* pszPhone);
+        HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] char* pId, [NativeTypeName("WCHAR *")] char* pszPhone);
     }
 
     public partial struct Vtbl<TSelf>
@@ -106,9 +106,9 @@ public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, IN
         public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetObjectToken;
 
         [NativeTypeName("HRESULT (LPCWSTR, SPPHONEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> PhoneToId;
+        public delegate* unmanaged<TSelf*, char*, char*, int> PhoneToId;
 
         [NativeTypeName("HRESULT (PCSPPHONEID, WCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> IdToPhone;
+        public delegate* unmanaged<TSelf*, char*, char*, int> IdToPhone;
     }
 }

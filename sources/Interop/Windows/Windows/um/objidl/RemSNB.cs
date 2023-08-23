@@ -18,5 +18,5 @@ public unsafe partial struct RemSNB
 
     /// <include file='RemSNB.xml' path='doc/member[@name="RemSNB.rgString"]/*' />
     [NativeTypeName("OLECHAR[1]")]
-    public fixed ushort rgString[1];
+    public fixed char rgString[1];
 }

@@ -81,9 +81,9 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
     /// <include file='IPropertyEnumType.xml' path='doc/member[@name="IPropertyEnumType.GetDisplayText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] char** ppszDisplay)
     {
-        return ((delegate* unmanaged<IPropertyEnumType*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
+        return ((delegate* unmanaged<IPropertyEnumType*, char**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
     }
 
     public interface Interface : IUnknown.Interface
@@ -101,7 +101,7 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
         HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet);
 
         [VtblIndex(7)]
-        HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+        HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] char** ppszDisplay);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,6 +129,6 @@ public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface, IN
         public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeSetValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayText;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayText;
     }
 }

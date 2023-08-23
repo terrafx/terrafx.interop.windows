@@ -49,9 +49,9 @@ public unsafe partial struct IBindHost : IBindHost.Interface, INativeGuid
     /// <include file='IBindHost.xml' path='doc/member[@name="IBindHost.CreateMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateMoniker([NativeTypeName("LPOLESTR")] ushort* szName, IBindCtx* pBC, IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwReserved)
+    public HRESULT CreateMoniker([NativeTypeName("LPOLESTR")] char* szName, IBindCtx* pBC, IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IBindHost*, ushort*, IBindCtx*, IMoniker**, uint, int>)(lpVtbl[3]))((IBindHost*)Unsafe.AsPointer(ref this), szName, pBC, ppmk, dwReserved);
+        return ((delegate* unmanaged<IBindHost*, char*, IBindCtx*, IMoniker**, uint, int>)(lpVtbl[3]))((IBindHost*)Unsafe.AsPointer(ref this), szName, pBC, ppmk, dwReserved);
     }
 
     /// <include file='IBindHost.xml' path='doc/member[@name="IBindHost.MonikerBindToStorage"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IBindHost : IBindHost.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateMoniker([NativeTypeName("LPOLESTR")] ushort* szName, IBindCtx* pBC, IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwReserved);
+        HRESULT CreateMoniker([NativeTypeName("LPOLESTR")] char* szName, IBindCtx* pBC, IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwReserved);
 
         [VtblIndex(4)]
         HRESULT MonikerBindToStorage(IMoniker* pMk, IBindCtx* pBC, IBindStatusCallback* pBSC, [NativeTypeName("const IID &")] Guid* riid, void** ppvObj);
@@ -95,7 +95,7 @@ public unsafe partial struct IBindHost : IBindHost.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, IBindCtx *, IMoniker **, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IBindCtx*, IMoniker**, uint, int> CreateMoniker;
+        public delegate* unmanaged<TSelf*, char*, IBindCtx*, IMoniker**, uint, int> CreateMoniker;
 
         [NativeTypeName("HRESULT (IMoniker *, IBindCtx *, IBindStatusCallback *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, IBindStatusCallback*, Guid*, void**, int> MonikerBindToStorage;

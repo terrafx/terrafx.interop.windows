@@ -185,17 +185,17 @@ public unsafe partial struct IMoniker : IMoniker.Interface, INativeGuid
     /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
+    public HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] char** ppszDisplayName)
     {
-        return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort**, int>)(lpVtbl[20]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, ppszDisplayName);
+        return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, char**, int>)(lpVtbl[20]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, ppszDisplayName);
     }
 
     /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.ParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
+    public HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
     {
-        return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort*, uint*, IMoniker**, int>)(lpVtbl[21]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, pszDisplayName, pchEaten, ppmkOut);
+        return ((delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, char*, uint*, IMoniker**, int>)(lpVtbl[21]))((IMoniker*)Unsafe.AsPointer(ref this), pbc, pmkToLeft, pszDisplayName, pchEaten, ppmkOut);
     }
 
     /// <include file='IMoniker.xml' path='doc/member[@name="IMoniker.IsSystemMoniker"]/*' />
@@ -245,10 +245,10 @@ public unsafe partial struct IMoniker : IMoniker.Interface, INativeGuid
         HRESULT RelativePathTo(IMoniker* pmkOther, IMoniker** ppmkRelPath);
 
         [VtblIndex(20)]
-        HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+        HRESULT GetDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR *")] char** ppszDisplayName);
 
         [VtblIndex(21)]
-        HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut);
+        HRESULT ParseDisplayName(IBindCtx* pbc, IMoniker* pmkToLeft, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut);
 
         [VtblIndex(22)]
         HRESULT IsSystemMoniker([NativeTypeName("DWORD *")] uint* pdwMksys);
@@ -318,10 +318,10 @@ public unsafe partial struct IMoniker : IMoniker.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IMoniker*, IMoniker**, int> RelativePathTo;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, char*, uint*, IMoniker**, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> IsSystemMoniker;

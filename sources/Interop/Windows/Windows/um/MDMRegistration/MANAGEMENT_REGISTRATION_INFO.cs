@@ -17,9 +17,9 @@ public unsafe partial struct MANAGEMENT_REGISTRATION_INFO
 
     /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.pszUPN"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszUPN;
+    public char* pszUPN;
 
     /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.pszMDMServiceUri"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszMDMServiceUri;
+    public char* pszMDMServiceUri;
 }

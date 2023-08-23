@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechLexiconWord*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexiconWord*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechLexiconWord*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechLexiconWord*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface, 
     /// <include file='ISpeechLexiconWord.xml' path='doc/member[@name="ISpeechLexiconWord.get_Word"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Word([NativeTypeName("BSTR *")] ushort** Word)
+    public HRESULT get_Word([NativeTypeName("BSTR *")] char** Word)
     {
-        return ((delegate* unmanaged<ISpeechLexiconWord*, ushort**, int>)(lpVtbl[9]))((ISpeechLexiconWord*)Unsafe.AsPointer(ref this), Word);
+        return ((delegate* unmanaged<ISpeechLexiconWord*, char**, int>)(lpVtbl[9]))((ISpeechLexiconWord*)Unsafe.AsPointer(ref this), Word);
     }
 
     /// <include file='ISpeechLexiconWord.xml' path='doc/member[@name="ISpeechLexiconWord.get_Pronunciations"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface, 
         HRESULT get_Type(SpeechWordType* WordType);
 
         [VtblIndex(9)]
-        HRESULT get_Word([NativeTypeName("BSTR *")] ushort** Word);
+        HRESULT get_Word([NativeTypeName("BSTR *")] char** Word);
 
         [VtblIndex(10)]
         HRESULT get_Pronunciations(ISpeechLexiconPronunciations** Pronunciations);
@@ -144,7 +144,7 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -156,7 +156,7 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface, 
         public delegate* unmanaged<TSelf*, SpeechWordType*, int> get_Type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Word;
+        public delegate* unmanaged<TSelf*, char**, int> get_Word;
 
         [NativeTypeName("HRESULT (ISpeechLexiconPronunciations **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISpeechLexiconPronunciations**, int> get_Pronunciations;

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyleElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,25 +81,25 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.put_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_type([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_type([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, ushort*, int>)(lpVtbl[7]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyleElement*, char*, int>)(lpVtbl[7]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, ushort**, int>)(lpVtbl[8]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyleElement*, char**, int>)(lpVtbl[8]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_readyState([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, ushort**, int>)(lpVtbl[9]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyleElement*, char**, int>)(lpVtbl[9]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.put_onreadystatechange"]/*' />
@@ -177,29 +177,29 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.put_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT put_media([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_media([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, ushort*, int>)(lpVtbl[19]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyleElement*, char*, int>)(lpVtbl[19]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyleElement.xml' path='doc/member[@name="IHTMLStyleElement.get_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_media([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleElement*, ushort**, int>)(lpVtbl[20]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyleElement*, char**, int>)(lpVtbl[20]))((IHTMLStyleElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_type([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_readyState([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
         HRESULT put_onreadystatechange(VARIANT v);
@@ -229,10 +229,10 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
         HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(19)]
-        HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_media([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(20)]
-        HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_media([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -254,19 +254,19 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_type;
+        public delegate* unmanaged<TSelf*, char*, int> put_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_readyState;
+        public delegate* unmanaged<TSelf*, char**, int> get_readyState;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onreadystatechange;
@@ -296,9 +296,9 @@ public unsafe partial struct IHTMLStyleElement : IHTMLStyleElement.Interface, IN
         public delegate* unmanaged<TSelf*, short*, int> get_disabled;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_media;
+        public delegate* unmanaged<TSelf*, char*, int> put_media;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_media;
+        public delegate* unmanaged<TSelf*, char**, int> get_media;
     }
 }

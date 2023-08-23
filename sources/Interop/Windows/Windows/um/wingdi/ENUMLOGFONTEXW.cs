@@ -13,13 +13,13 @@ public unsafe partial struct ENUMLOGFONTEXW
 
     /// <include file='ENUMLOGFONTEXW.xml' path='doc/member[@name="ENUMLOGFONTEXW.elfFullName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort elfFullName[64];
+    public fixed char elfFullName[64];
 
     /// <include file='ENUMLOGFONTEXW.xml' path='doc/member[@name="ENUMLOGFONTEXW.elfStyle"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort elfStyle[32];
+    public fixed char elfStyle[32];
 
     /// <include file='ENUMLOGFONTEXW.xml' path='doc/member[@name="ENUMLOGFONTEXW.elfScript"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort elfScript[32];
+    public fixed char elfScript[32];
 }

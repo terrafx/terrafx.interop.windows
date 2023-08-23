@@ -13,5 +13,5 @@ public unsafe partial struct DISPLAYCONFIG_SOURCE_DEVICE_NAME
 
     /// <include file='DISPLAYCONFIG_SOURCE_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_SOURCE_DEVICE_NAME.viewGdiDeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort viewGdiDeviceName[32];
+    public fixed char viewGdiDeviceName[32];
 }

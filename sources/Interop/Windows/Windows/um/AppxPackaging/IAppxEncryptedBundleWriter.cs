@@ -51,9 +51,9 @@ public unsafe partial struct IAppxEncryptedBundleWriter : IAppxEncryptedBundleWr
     /// <include file='IAppxEncryptedBundleWriter.xml' path='doc/member[@name="IAppxEncryptedBundleWriter.AddPayloadPackageEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream)
+    public HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream)
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
+        return ((delegate* unmanaged<IAppxEncryptedBundleWriter*, char*, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
     }
 
     /// <include file='IAppxEncryptedBundleWriter.xml' path='doc/member[@name="IAppxEncryptedBundleWriter.Close"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter : IAppxEncryptedBundleWr
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream);
+        HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream);
 
         [VtblIndex(4)]
         HRESULT Close();
@@ -86,7 +86,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter : IAppxEncryptedBundleWr
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddPayloadPackageEncrypted;
+        public delegate* unmanaged<TSelf*, char*, IStream*, int> AddPayloadPackageEncrypted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

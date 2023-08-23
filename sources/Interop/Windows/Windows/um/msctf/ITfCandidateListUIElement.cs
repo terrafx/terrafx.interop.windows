@@ -49,9 +49,9 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, ushort**, int>)(lpVtbl[3]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged<ITfCandidateListUIElement*, char**, int>)(lpVtbl[3]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -113,9 +113,9 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr)
+    public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint, ushort**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
+        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint, char**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetPageIndex"]/*' />
@@ -157,7 +157,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         HRESULT GetSelection(uint* puIndex);
 
         [VtblIndex(11)]
-        HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr);
+        HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pstr);
 
         [VtblIndex(12)]
         HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt);
@@ -182,7 +182,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
@@ -206,7 +206,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         public delegate* unmanaged<TSelf*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetString;
 
         [NativeTypeName("HRESULT (UINT *, UINT, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, uint, uint*, int> GetPageIndex;

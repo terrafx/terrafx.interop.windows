@@ -83,9 +83,9 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface, IN
     /// <include file='IAppxBundleReader.xml' path='doc/member[@name="IAppxBundleReader.GetPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage)
+    public HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IAppxFile** payloadPackage)
     {
-        return ((delegate* unmanaged<IAppxBundleReader*, ushort*, IAppxFile**, int>)(lpVtbl[7]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), fileName, payloadPackage);
+        return ((delegate* unmanaged<IAppxBundleReader*, char*, IAppxFile**, int>)(lpVtbl[7]))((IAppxBundleReader*)Unsafe.AsPointer(ref this), fileName, payloadPackage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -103,7 +103,7 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface, IN
         HRESULT GetPayloadPackages(IAppxFilesEnumerator** payloadPackages);
 
         [VtblIndex(7)]
-        HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage);
+        HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IAppxFile** payloadPackage);
     }
 
     public partial struct Vtbl<TSelf>
@@ -131,6 +131,6 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface, IN
         public delegate* unmanaged<TSelf*, IAppxFilesEnumerator**, int> GetPayloadPackages;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IAppxFile**, int> GetPayloadPackage;
+        public delegate* unmanaged<TSelf*, char*, IAppxFile**, int> GetPayloadPackage;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDocument2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IXMLDocument2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDocument2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,49 +89,49 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_fileSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fileSize([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[8]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[8]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_fileModifiedDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[9]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[9]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_fileUpdatedDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[10]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[10]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_URL([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[11]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[11]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.put_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_URL([NativeTypeName("BSTR")] ushort* p)
+    public HRESULT put_URL([NativeTypeName("BSTR")] char* p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort*, int>)(lpVtbl[12]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char*, int>)(lpVtbl[12]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_mimeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_mimeType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[13]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[13]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_readyState"]/*' />
@@ -145,41 +145,41 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_charset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[15]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[15]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.put_charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT put_charset([NativeTypeName("BSTR")] ushort* p)
+    public HRESULT put_charset([NativeTypeName("BSTR")] char* p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort*, int>)(lpVtbl[16]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char*, int>)(lpVtbl[16]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_version"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_version([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_version([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[17]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[17]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_doctype"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_doctype([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_doctype([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[18]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[18]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.get_dtdURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_dtdURL([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dtdURL([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLDocument2*, ushort**, int>)(lpVtbl[19]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IXMLDocument2*, char**, int>)(lpVtbl[19]))((IXMLDocument2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLDocument2.xml' path='doc/member[@name="IXMLDocument2.createElement"]/*' />
@@ -212,40 +212,40 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
         HRESULT get_root(IXMLElement2** p);
 
         [VtblIndex(8)]
-        HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fileSize([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_URL([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
-        HRESULT put_URL([NativeTypeName("BSTR")] ushort* p);
+        HRESULT put_URL([NativeTypeName("BSTR")] char* p);
 
         [VtblIndex(13)]
-        HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_mimeType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(14)]
         HRESULT get_readyState([NativeTypeName("long *")] int* pl);
 
         [VtblIndex(15)]
-        HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_charset([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(16)]
-        HRESULT put_charset([NativeTypeName("BSTR")] ushort* p);
+        HRESULT put_charset([NativeTypeName("BSTR")] char* p);
 
         [VtblIndex(17)]
-        HRESULT get_version([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_version([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(18)]
-        HRESULT get_doctype([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_doctype([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
-        HRESULT get_dtdURL([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dtdURL([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(20)]
         HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement2** ppElem);
@@ -276,7 +276,7 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -285,40 +285,40 @@ public unsafe partial struct IXMLDocument2 : IXMLDocument2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IXMLElement2**, int> get_root;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileSize;
+        public delegate* unmanaged<TSelf*, char**, int> get_fileSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileModifiedDate;
+        public delegate* unmanaged<TSelf*, char**, int> get_fileModifiedDate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileUpdatedDate;
+        public delegate* unmanaged<TSelf*, char**, int> get_fileUpdatedDate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_URL;
+        public delegate* unmanaged<TSelf*, char**, int> get_URL;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_URL;
+        public delegate* unmanaged<TSelf*, char*, int> put_URL;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_mimeType;
+        public delegate* unmanaged<TSelf*, char**, int> get_mimeType;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_readyState;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_charset;
+        public delegate* unmanaged<TSelf*, char**, int> get_charset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_charset;
+        public delegate* unmanaged<TSelf*, char*, int> put_charset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_version;
+        public delegate* unmanaged<TSelf*, char**, int> get_version;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_doctype;
+        public delegate* unmanaged<TSelf*, char**, int> get_doctype;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dtdURL;
+        public delegate* unmanaged<TSelf*, char**, int> get_dtdURL;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, IXMLElement2 **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT, IXMLElement2**, int> createElement;

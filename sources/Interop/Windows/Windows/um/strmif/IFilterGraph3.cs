@@ -49,9 +49,9 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
     /// <inheritdoc cref="IFilterGraph.AddFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
+    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] char* pName)
     {
-        return ((delegate* unmanaged<IFilterGraph3*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pFilter, pName);
+        return ((delegate* unmanaged<IFilterGraph3*, IBaseFilter*, char*, int>)(lpVtbl[3]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pFilter, pName);
     }
 
     /// <inheritdoc cref="IFilterGraph.RemoveFilter" />
@@ -73,9 +73,9 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
     /// <inheritdoc cref="IFilterGraph.FindFilterByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
+    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] char* pName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IFilterGraph3*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pName, ppFilter);
+        return ((delegate* unmanaged<IFilterGraph3*, char*, IBaseFilter**, int>)(lpVtbl[6]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pName, ppFilter);
     }
 
     /// <inheritdoc cref="IFilterGraph.ConnectDirect" />
@@ -129,17 +129,17 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
     /// <inheritdoc cref="IGraphBuilder.RenderFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList)
+    public HRESULT RenderFile([NativeTypeName("LPCWSTR")] char* lpcwstrFile, [NativeTypeName("LPCWSTR")] char* lpcwstrPlayList)
     {
-        return ((delegate* unmanaged<IFilterGraph3*, ushort*, ushort*, int>)(lpVtbl[13]))((IFilterGraph3*)Unsafe.AsPointer(ref this), lpcwstrFile, lpcwstrPlayList);
+        return ((delegate* unmanaged<IFilterGraph3*, char*, char*, int>)(lpVtbl[13]))((IFilterGraph3*)Unsafe.AsPointer(ref this), lpcwstrFile, lpcwstrPlayList);
     }
 
     /// <inheritdoc cref="IGraphBuilder.AddSourceFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
+    public HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] char* lpcwstrFileName, [NativeTypeName("LPCWSTR")] char* lpcwstrFilterName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IFilterGraph3*, ushort*, ushort*, IBaseFilter**, int>)(lpVtbl[14]))((IFilterGraph3*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
+        return ((delegate* unmanaged<IFilterGraph3*, char*, char*, IBaseFilter**, int>)(lpVtbl[14]))((IFilterGraph3*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
     }
 
     /// <inheritdoc cref="IGraphBuilder.SetLogFile" />
@@ -169,9 +169,9 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
     /// <inheritdoc cref="IFilterGraph2.AddSourceFilterForMoniker" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT AddSourceFilterForMoniker(IMoniker* pMoniker, IBindCtx* pCtx, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
+    public HRESULT AddSourceFilterForMoniker(IMoniker* pMoniker, IBindCtx* pCtx, [NativeTypeName("LPCWSTR")] char* lpcwstrFilterName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IFilterGraph3*, IMoniker*, IBindCtx*, ushort*, IBaseFilter**, int>)(lpVtbl[18]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pMoniker, pCtx, lpcwstrFilterName, ppFilter);
+        return ((delegate* unmanaged<IFilterGraph3*, IMoniker*, IBindCtx*, char*, IBaseFilter**, int>)(lpVtbl[18]))((IFilterGraph3*)Unsafe.AsPointer(ref this), pMoniker, pCtx, lpcwstrFilterName, ppFilter);
     }
 
     /// <inheritdoc cref="IFilterGraph2.ReconnectEx" />
@@ -217,7 +217,7 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, ushort*, int> AddFilter;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, char*, int> AddFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilter;
@@ -226,7 +226,7 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumFilters;
 
         [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IBaseFilter**, int> FindFilterByName;
+        public delegate* unmanaged<TSelf*, char*, IBaseFilter**, int> FindFilterByName;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
@@ -247,10 +247,10 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IPin*, int> Render;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> RenderFile;
+        public delegate* unmanaged<TSelf*, char*, char*, int> RenderFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
+        public delegate* unmanaged<TSelf*, char*, char*, IBaseFilter**, int> AddSourceFilter;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, nuint, int> SetLogFile;
@@ -262,7 +262,7 @@ public unsafe partial struct IFilterGraph3 : IFilterGraph3.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> ShouldOperationContinue;
 
         [NativeTypeName("HRESULT (IMoniker *, IBindCtx *, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, ushort*, IBaseFilter**, int> AddSourceFilterForMoniker;
+        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, char*, IBaseFilter**, int> AddSourceFilterForMoniker;
 
         [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IPin*, AM_MEDIA_TYPE*, int> ReconnectEx;

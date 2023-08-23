@@ -49,15 +49,15 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
     /// <include file='IParseDisplayName.xml' path='doc/member[@name="IParseDisplayName.ParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
+    public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
     {
-        return ((delegate* unmanaged<IParseDisplayName*, IBindCtx*, ushort*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+        return ((delegate* unmanaged<IParseDisplayName*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut);
+        HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
     }
 }

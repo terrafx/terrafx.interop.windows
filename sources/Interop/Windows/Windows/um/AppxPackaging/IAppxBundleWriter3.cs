@@ -51,26 +51,26 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface, 
     /// <include file='IAppxBundleWriter3.xml' path='doc/member[@name="IAppxBundleWriter3.AddPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)
+    public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter3*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream);
+        return ((delegate* unmanaged<IAppxBundleWriter3*, char*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream);
     }
 
     /// <include file='IAppxBundleWriter3.xml' path='doc/member[@name="IAppxBundleWriter3.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Close([NativeTypeName("LPCWSTR")] ushort* hashMethodString)
+    public HRESULT Close([NativeTypeName("LPCWSTR")] char* hashMethodString)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter3*, ushort*, int>)(lpVtbl[4]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), hashMethodString);
+        return ((delegate* unmanaged<IAppxBundleWriter3*, char*, int>)(lpVtbl[4]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), hashMethodString);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream);
+        HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream);
 
         [VtblIndex(4)]
-        HRESULT Close([NativeTypeName("LPCWSTR")] ushort* hashMethodString);
+        HRESULT Close([NativeTypeName("LPCWSTR")] char* hashMethodString);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddPackageReference;
+        public delegate* unmanaged<TSelf*, char*, IStream*, int> AddPackageReference;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Close;
+        public delegate* unmanaged<TSelf*, char*, int> Close;
     }
 }

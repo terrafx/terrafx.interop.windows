@@ -10,7 +10,7 @@ public unsafe partial struct CERT_LOGOTYPE_DETAILS
 {
     /// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS.pwszMimeType"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszMimeType;
+    public char* pwszMimeType;
 
     /// <include file='CERT_LOGOTYPE_DETAILS.xml' path='doc/member[@name="CERT_LOGOTYPE_DETAILS.cHashedUrl"]/*' />
     [NativeTypeName("DWORD")]

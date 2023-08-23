@@ -22,7 +22,7 @@ public unsafe partial struct STRRET
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOleStr"]/*' />
     [UnscopedRef]
-    public ref ushort* pOleStr
+    public ref char* pOleStr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -60,7 +60,7 @@ public unsafe partial struct STRRET
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOleStr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pOleStr;
+        public char* pOleStr;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uOffset"]/*' />
         [FieldOffset(0)]

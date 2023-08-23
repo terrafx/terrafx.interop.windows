@@ -65,9 +65,9 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2Erase*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDiscFormat2Erase*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,17 +161,17 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface, IN
     /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_ClientName([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2Erase*, ushort*, int>)(lpVtbl[17]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2Erase*, char*, int>)(lpVtbl[17]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2Erase*, ushort**, int>)(lpVtbl[18]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2Erase*, char**, int>)(lpVtbl[18]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.EraseMedia"]/*' />
@@ -200,10 +200,10 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface, IN
         HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
 
         [VtblIndex(17)]
-        HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_ClientName([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(18)]
-        HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(19)]
         HRESULT EraseMedia();
@@ -228,7 +228,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -264,10 +264,10 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface, IN
         public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_ClientName;
+        public delegate* unmanaged<TSelf*, char*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ClientName;
+        public delegate* unmanaged<TSelf*, char**, int> get_ClientName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EraseMedia;

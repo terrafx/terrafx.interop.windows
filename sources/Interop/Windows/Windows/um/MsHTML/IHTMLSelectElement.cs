@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLSelectElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, ushort*, int>)(lpVtbl[11]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLSelectElement*, char*, int>)(lpVtbl[11]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[12]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLSelectElement*, char**, int>)(lpVtbl[12]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_options"]/*' />
@@ -169,25 +169,25 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[18]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLSelectElement*, char**, int>)(lpVtbl[18]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, ushort*, int>)(lpVtbl[19]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLSelectElement*, char*, int>)(lpVtbl[19]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[20]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLSelectElement*, char**, int>)(lpVtbl[20]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_disabled"]/*' />
@@ -285,10 +285,10 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
         HRESULT get_multiple([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(11)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
         HRESULT get_options(IDispatch** p);
@@ -306,13 +306,13 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
         HRESULT get_selectedIndex([NativeTypeName("long *")] int* p);
 
         [VtblIndex(18)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
-        HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_value([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(20)]
-        HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_value([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(21)]
         HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v);
@@ -364,7 +364,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -382,10 +382,10 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
         public delegate* unmanaged<TSelf*, short*, int> get_multiple;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_options;
@@ -403,13 +403,13 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_selectedIndex;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_value;
+        public delegate* unmanaged<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_value;
+        public delegate* unmanaged<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short, int> put_disabled;

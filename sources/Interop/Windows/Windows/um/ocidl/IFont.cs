@@ -49,17 +49,17 @@ public unsafe partial struct IFont : IFont.Interface, INativeGuid
     /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** pName)
     {
-        return ((delegate* unmanaged<IFont*, ushort**, int>)(lpVtbl[3]))((IFont*)Unsafe.AsPointer(ref this), pName);
+        return ((delegate* unmanaged<IFont*, char**, int>)(lpVtbl[3]))((IFont*)Unsafe.AsPointer(ref this), pName);
     }
 
     /// <include file='IFont.xml' path='doc/member[@name="IFont.put_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT put_Name([NativeTypeName("BSTR")] ushort* name)
+    public HRESULT put_Name([NativeTypeName("BSTR")] char* name)
     {
-        return ((delegate* unmanaged<IFont*, ushort*, int>)(lpVtbl[4]))((IFont*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IFont*, char*, int>)(lpVtbl[4]))((IFont*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IFont.xml' path='doc/member[@name="IFont.get_Size"]/*' />
@@ -241,10 +241,10 @@ public unsafe partial struct IFont : IFont.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pName);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** pName);
 
         [VtblIndex(4)]
-        HRESULT put_Name([NativeTypeName("BSTR")] ushort* name);
+        HRESULT put_Name([NativeTypeName("BSTR")] char* name);
 
         [VtblIndex(5)]
         HRESULT get_Size(CY* pSize);
@@ -326,10 +326,10 @@ public unsafe partial struct IFont : IFont.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Name;
+        public delegate* unmanaged<TSelf*, char*, int> put_Name;
 
         [NativeTypeName("HRESULT (CY *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, CY*, int> get_Size;

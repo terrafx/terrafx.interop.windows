@@ -49,15 +49,15 @@ public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
     /// <include file='IRootStorage.xml' path='doc/member[@name="IRootStorage.SwitchToFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile)
+    public HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] char* pszFile)
     {
-        return ((delegate* unmanaged<IRootStorage*, ushort*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
+        return ((delegate* unmanaged<IRootStorage*, char*, int>)(lpVtbl[3]))((IRootStorage*)Unsafe.AsPointer(ref this), pszFile);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] ushort* pszFile);
+        HRESULT SwitchToFile([NativeTypeName("LPOLESTR")] char* pszFile);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SwitchToFile;
+        public delegate* unmanaged<TSelf*, char*, int> SwitchToFile;
     }
 }

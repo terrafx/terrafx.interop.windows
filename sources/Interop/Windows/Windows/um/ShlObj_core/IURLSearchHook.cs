@@ -49,15 +49,15 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface, INativeG
     /// <include file='IURLSearchHook.xml' path='doc/member[@name="IURLSearchHook.Translate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
+    public HRESULT Translate([NativeTypeName("PWSTR")] char* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
     {
-        return ((delegate* unmanaged<IURLSearchHook*, ushort*, uint, int>)(lpVtbl[3]))((IURLSearchHook*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
+        return ((delegate* unmanaged<IURLSearchHook*, char*, uint, int>)(lpVtbl[3]))((IURLSearchHook*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Translate([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize);
+        HRESULT Translate([NativeTypeName("PWSTR")] char* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IURLSearchHook : IURLSearchHook.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> Translate;
+        public delegate* unmanaged<TSelf*, char*, uint, int> Translate;
     }
 }

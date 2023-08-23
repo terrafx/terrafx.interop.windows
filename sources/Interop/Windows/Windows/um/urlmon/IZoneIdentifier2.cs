@@ -73,17 +73,17 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.GetLastWriterPackageFamilyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
+    public HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, ushort**, int>)(lpVtbl[6]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged<IZoneIdentifier2*, char**, int>)(lpVtbl[6]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.SetLastWriterPackageFamilyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] ushort* packageFamilyName)
+    public HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] char* packageFamilyName)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, ushort*, int>)(lpVtbl[7]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged<IZoneIdentifier2*, char*, int>)(lpVtbl[7]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.RemoveLastWriterPackageFamilyName"]/*' />
@@ -121,10 +121,10 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     public interface Interface : IZoneIdentifier.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
+        HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName);
 
         [VtblIndex(7)]
-        HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] ushort* packageFamilyName);
+        HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] char* packageFamilyName);
 
         [VtblIndex(8)]
         HRESULT RemoveLastWriterPackageFamilyName();
@@ -161,10 +161,10 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
         public delegate* unmanaged<TSelf*, int> Remove;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLastWriterPackageFamilyName;
+        public delegate* unmanaged<TSelf*, char**, int> GetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetLastWriterPackageFamilyName;
+        public delegate* unmanaged<TSelf*, char*, int> SetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> RemoveLastWriterPackageFamilyName;

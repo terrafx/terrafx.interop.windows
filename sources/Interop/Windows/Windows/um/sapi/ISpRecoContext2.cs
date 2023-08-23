@@ -65,9 +65,9 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.SetAdaptationData2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] ushort* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance)
+    public HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] char* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] char* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance)
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, ushort*, uint, ushort*, uint, SPADAPTATIONRELEVANCE, int>)(lpVtbl[5]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
+        return ((delegate* unmanaged<ISpRecoContext2*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int>)(lpVtbl[5]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
         HRESULT GetGrammarOptions([NativeTypeName("DWORD *")] uint* peGrammarOptions);
 
         [VtblIndex(5)]
-        HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] ushort* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance);
+        HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] char* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] char* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint*, int> GetGrammarOptions;
 
         [NativeTypeName("HRESULT (LPCWSTR, const ULONG, LPCWSTR, DWORD, SPADAPTATIONRELEVANCE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, SPADAPTATIONRELEVANCE, int> SetAdaptationData2;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int> SetAdaptationData2;
     }
 }

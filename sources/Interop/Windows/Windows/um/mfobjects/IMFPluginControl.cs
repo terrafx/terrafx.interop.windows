@@ -49,25 +49,25 @@ public unsafe partial struct IMFPluginControl : IMFPluginControl.Interface, INat
     /// <include file='IMFPluginControl.xml' path='doc/member[@name="IMFPluginControl.GetPreferredClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] ushort* selector, [NativeTypeName("CLSID *")] Guid* clsid)
+    public HRESULT GetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] char* selector, [NativeTypeName("CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IMFPluginControl*, uint, ushort*, Guid*, int>)(lpVtbl[3]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, selector, clsid);
+        return ((delegate* unmanaged<IMFPluginControl*, uint, char*, Guid*, int>)(lpVtbl[3]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, selector, clsid);
     }
 
     /// <include file='IMFPluginControl.xml' path='doc/member[@name="IMFPluginControl.GetPreferredClsidByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("DWORD")] uint index, [NativeTypeName("LPWSTR *")] ushort** selector, [NativeTypeName("CLSID *")] Guid* clsid)
+    public HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("DWORD")] uint index, [NativeTypeName("LPWSTR *")] char** selector, [NativeTypeName("CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IMFPluginControl*, uint, uint, ushort**, Guid*, int>)(lpVtbl[4]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, index, selector, clsid);
+        return ((delegate* unmanaged<IMFPluginControl*, uint, uint, char**, Guid*, int>)(lpVtbl[4]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, index, selector, clsid);
     }
 
     /// <include file='IMFPluginControl.xml' path='doc/member[@name="IMFPluginControl.SetPreferredClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] ushort* selector, [NativeTypeName("const CLSID *")] Guid* clsid)
+    public HRESULT SetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] char* selector, [NativeTypeName("const CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IMFPluginControl*, uint, ushort*, Guid*, int>)(lpVtbl[5]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, selector, clsid);
+        return ((delegate* unmanaged<IMFPluginControl*, uint, char*, Guid*, int>)(lpVtbl[5]))((IMFPluginControl*)Unsafe.AsPointer(ref this), pluginType, selector, clsid);
     }
 
     /// <include file='IMFPluginControl.xml' path='doc/member[@name="IMFPluginControl.IsDisabled"]/*' />
@@ -97,13 +97,13 @@ public unsafe partial struct IMFPluginControl : IMFPluginControl.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] ushort* selector, [NativeTypeName("CLSID *")] Guid* clsid);
+        HRESULT GetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] char* selector, [NativeTypeName("CLSID *")] Guid* clsid);
 
         [VtblIndex(4)]
-        HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("DWORD")] uint index, [NativeTypeName("LPWSTR *")] ushort** selector, [NativeTypeName("CLSID *")] Guid* clsid);
+        HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("DWORD")] uint index, [NativeTypeName("LPWSTR *")] char** selector, [NativeTypeName("CLSID *")] Guid* clsid);
 
         [VtblIndex(5)]
-        HRESULT SetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] ushort* selector, [NativeTypeName("const CLSID *")] Guid* clsid);
+        HRESULT SetPreferredClsid([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("LPCWSTR")] char* selector, [NativeTypeName("const CLSID *")] Guid* clsid);
 
         [VtblIndex(6)]
         HRESULT IsDisabled([NativeTypeName("DWORD")] uint pluginType, [NativeTypeName("const IID &")] Guid* clsid);
@@ -128,13 +128,13 @@ public unsafe partial struct IMFPluginControl : IMFPluginControl.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, Guid*, int> GetPreferredClsid;
+        public delegate* unmanaged<TSelf*, uint, char*, Guid*, int> GetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPWSTR *, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ushort**, Guid*, int> GetPreferredClsidByIndex;
+        public delegate* unmanaged<TSelf*, uint, uint, char**, Guid*, int> GetPreferredClsidByIndex;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, const CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, Guid*, int> SetPreferredClsid;
+        public delegate* unmanaged<TSelf*, uint, char*, Guid*, int> SetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, const IID &) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, Guid*, int> IsDisabled;

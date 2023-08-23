@@ -23,5 +23,5 @@ public unsafe partial struct TRUSTEE_W
 
     /// <include file='TRUSTEE_W.xml' path='doc/member[@name="TRUSTEE_W.ptstrName"]/*' />
     [NativeTypeName("LPWCH")]
-    public ushort* ptstrName;
+    public char* ptstrName;
 }

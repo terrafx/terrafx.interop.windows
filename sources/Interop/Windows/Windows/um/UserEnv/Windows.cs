@@ -34,7 +34,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProfilesDirectoryW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetProfilesDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+    public static extern BOOL GetProfilesDirectoryW([NativeTypeName("LPWSTR")] char* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProfileType"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -49,11 +49,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteProfileW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL DeleteProfileW([NativeTypeName("LPCWSTR")] ushort* lpSidString, [NativeTypeName("LPCWSTR")] ushort* lpProfilePath, [NativeTypeName("LPCWSTR")] ushort* lpComputerName);
+    public static extern BOOL DeleteProfileW([NativeTypeName("LPCWSTR")] char* lpSidString, [NativeTypeName("LPCWSTR")] char* lpProfilePath, [NativeTypeName("LPCWSTR")] char* lpComputerName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProfile"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    public static extern HRESULT CreateProfile([NativeTypeName("LPCWSTR")] ushort* pszUserSid, [NativeTypeName("LPCWSTR")] ushort* pszUserName, [NativeTypeName("LPWSTR")] ushort* pszProfilePath, [NativeTypeName("DWORD")] uint cchProfilePath);
+    public static extern HRESULT CreateProfile([NativeTypeName("LPCWSTR")] char* pszUserSid, [NativeTypeName("LPCWSTR")] char* pszUserName, [NativeTypeName("LPWSTR")] char* pszProfilePath, [NativeTypeName("DWORD")] uint cchProfilePath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDefaultUserProfileDirectoryA"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -63,7 +63,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDefaultUserProfileDirectoryW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetDefaultUserProfileDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+    public static extern BOOL GetDefaultUserProfileDirectoryW([NativeTypeName("LPWSTR")] char* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAllUsersProfileDirectoryA"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -73,7 +73,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAllUsersProfileDirectoryW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetAllUsersProfileDirectoryW([NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+    public static extern BOOL GetAllUsersProfileDirectoryW([NativeTypeName("LPWSTR")] char* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserProfileDirectoryA"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -83,7 +83,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserProfileDirectoryW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetUserProfileDirectoryW(HANDLE hToken, [NativeTypeName("LPWSTR")] ushort* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
+    public static extern BOOL GetUserProfileDirectoryW(HANDLE hToken, [NativeTypeName("LPWSTR")] char* lpProfileDir, [NativeTypeName("LPDWORD")] uint* lpcchSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnvironmentBlock"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -103,7 +103,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpandEnvironmentStringsForUserW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ExpandEnvironmentStringsForUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDest, [NativeTypeName("DWORD")] uint dwSize);
+    public static extern BOOL ExpandEnvironmentStringsForUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] char* lpSrc, [NativeTypeName("LPWSTR")] char* lpDest, [NativeTypeName("DWORD")] uint dwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RefreshPolicy"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -143,7 +143,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGPOListW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetGPOListW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpHostName, [NativeTypeName("LPCWSTR")] ushort* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** pGPOList);
+    public static extern BOOL GetGPOListW(HANDLE hToken, [NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("LPCWSTR")] char* lpHostName, [NativeTypeName("LPCWSTR")] char* lpComputerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** pGPOList);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeGPOListA"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -163,7 +163,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppliedGPOListW"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetAppliedGPOListW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pMachineName, [NativeTypeName("PSID")] void* pSidUser, Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** ppGPOList);
+    public static extern uint GetAppliedGPOListW([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pMachineName, [NativeTypeName("PSID")] void* pSidUser, Guid* pGuidExtension, [NativeTypeName("PGROUP_POLICY_OBJECTW *")] GROUP_POLICY_OBJECTW** ppGPOList);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ProcessGroupPolicyCompleted"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -181,7 +181,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RsopFileAccessCheck"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
-    public static extern HRESULT RsopFileAccessCheck([NativeTypeName("LPWSTR")] ushort* pszFileName, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
+    public static extern HRESULT RsopFileAccessCheck([NativeTypeName("LPWSTR")] char* pszFileName, [NativeTypeName("PRSOPTOKEN")] void* pRsopToken, [NativeTypeName("DWORD")] uint dwDesiredAccessMask, [NativeTypeName("LPDWORD")] uint* pdwGrantedAccessMask, [NativeTypeName("LPBOOL")] BOOL* pbAccessStatus);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RsopSetPolicySettingStatus"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -194,17 +194,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GenerateGPNotification"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GenerateGPNotification(BOOL bMachine, [NativeTypeName("LPCWSTR")] ushort* lpwszMgmtProduct, [NativeTypeName("DWORD")] uint dwMgmtProductOptions);
+    public static extern uint GenerateGPNotification(BOOL bMachine, [NativeTypeName("LPCWSTR")] char* lpwszMgmtProduct, [NativeTypeName("DWORD")] uint dwMgmtProductOptions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAppContainerProfile"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PCWSTR")] ushort* pszDisplayName, [NativeTypeName("PCWSTR")] ushort* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
+    public static extern HRESULT CreateAppContainerProfile([NativeTypeName("PCWSTR")] char* pszAppContainerName, [NativeTypeName("PCWSTR")] char* pszDisplayName, [NativeTypeName("PCWSTR")] char* pszDescription, [NativeTypeName("PSID_AND_ATTRIBUTES")] SID_AND_ATTRIBUTES* pCapabilities, [NativeTypeName("DWORD")] uint dwCapabilityCount, [NativeTypeName("PSID *")] void** ppSidAppContainerSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteAppContainerProfile"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] ushort* pszAppContainerName);
+    public static extern HRESULT DeleteAppContainerProfile([NativeTypeName("PCWSTR")] char* pszAppContainerName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppContainerRegistryLocation"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
@@ -214,17 +214,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppContainerFolderPath"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] ushort* pszAppContainerSid, [NativeTypeName("PWSTR *")] ushort** ppszPath);
+    public static extern HRESULT GetAppContainerFolderPath([NativeTypeName("PCWSTR")] char* pszAppContainerSid, [NativeTypeName("PWSTR *")] char** ppszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
-    public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] ushort* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
+    public static extern HRESULT DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName([NativeTypeName("PSID")] void* psidAppContainerSid, [NativeTypeName("PCWSTR")] char* pszRestrictedAppContainerName, [NativeTypeName("PSID *")] void** ppsidRestrictedAppContainerSid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeriveAppContainerSidFromAppContainerName"]/*' />
     [DllImport("userenv", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] ushort* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
+    public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] char* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 
     [NativeTypeName("#define PI_NOUI 0x00000001")]
     public const int PI_NOUI = 0x00000001;
@@ -236,7 +236,7 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, PROFILEINFOW*, BOOL> LoadUserProfile => &LoadUserProfileW;
 
     [NativeTypeName("#define GetProfilesDirectory GetProfilesDirectoryW")]
-    public static delegate*<ushort*, uint*, BOOL> GetProfilesDirectory => &GetProfilesDirectoryW;
+    public static delegate*<char*, uint*, BOOL> GetProfilesDirectory => &GetProfilesDirectoryW;
 
     [NativeTypeName("#define PT_TEMPORARY 0x00000001")]
     public const int PT_TEMPORARY = 0x00000001;
@@ -251,19 +251,19 @@ public static unsafe partial class Windows
     public const int PT_ROAMING_PREEXISTING = 0x00000008;
 
     [NativeTypeName("#define DeleteProfile DeleteProfileW")]
-    public static delegate*<ushort*, ushort*, ushort*, BOOL> DeleteProfile => &DeleteProfileW;
+    public static delegate*<char*, char*, char*, BOOL> DeleteProfile => &DeleteProfileW;
 
     [NativeTypeName("#define GetDefaultUserProfileDirectory GetDefaultUserProfileDirectoryW")]
-    public static delegate*<ushort*, uint*, BOOL> GetDefaultUserProfileDirectory => &GetDefaultUserProfileDirectoryW;
+    public static delegate*<char*, uint*, BOOL> GetDefaultUserProfileDirectory => &GetDefaultUserProfileDirectoryW;
 
     [NativeTypeName("#define GetAllUsersProfileDirectory GetAllUsersProfileDirectoryW")]
-    public static delegate*<ushort*, uint*, BOOL> GetAllUsersProfileDirectory => &GetAllUsersProfileDirectoryW;
+    public static delegate*<char*, uint*, BOOL> GetAllUsersProfileDirectory => &GetAllUsersProfileDirectoryW;
 
     [NativeTypeName("#define GetUserProfileDirectory GetUserProfileDirectoryW")]
-    public static delegate*<HANDLE, ushort*, uint*, BOOL> GetUserProfileDirectory => &GetUserProfileDirectoryW;
+    public static delegate*<HANDLE, char*, uint*, BOOL> GetUserProfileDirectory => &GetUserProfileDirectoryW;
 
     [NativeTypeName("#define ExpandEnvironmentStringsForUser ExpandEnvironmentStringsForUserW")]
-    public static delegate*<HANDLE, ushort*, ushort*, uint, BOOL> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
+    public static delegate*<HANDLE, char*, char*, uint, BOOL> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
 
     [NativeTypeName("#define RP_FORCE 1")]
     public const int RP_FORCE = 1;
@@ -275,13 +275,13 @@ public static unsafe partial class Windows
     public const int GPC_BLOCK_POLICY = 0x00000001;
 
     [NativeTypeName("#define GetGPOList GetGPOListW")]
-    public static delegate*<HANDLE, ushort*, ushort*, ushort*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
+    public static delegate*<HANDLE, char*, char*, char*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
 
     [NativeTypeName("#define FreeGPOList FreeGPOListW")]
     public static delegate*<GROUP_POLICY_OBJECTW*, BOOL> FreeGPOList => &FreeGPOListW;
 
     [NativeTypeName("#define GetAppliedGPOList GetAppliedGPOListW")]
-    public static delegate*<uint, ushort*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList => &GetAppliedGPOListW;
+    public static delegate*<uint, char*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList => &GetAppliedGPOListW;
 
     [NativeTypeName("#define RSOP_USER_ACCESS_DENIED 0x00000001")]
     public const int RSOP_USER_ACCESS_DENIED = 0x00000001;

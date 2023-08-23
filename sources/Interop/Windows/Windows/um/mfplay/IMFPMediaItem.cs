@@ -57,9 +57,9 @@ public unsafe partial struct IMFPMediaItem : IMFPMediaItem.Interface, INativeGui
     /// <include file='IMFPMediaItem.xml' path='doc/member[@name="IMFPMediaItem.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL)
+    public HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppwszURL)
     {
-        return ((delegate* unmanaged<IMFPMediaItem*, ushort**, int>)(lpVtbl[4]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), ppwszURL);
+        return ((delegate* unmanaged<IMFPMediaItem*, char**, int>)(lpVtbl[4]))((IMFPMediaItem*)Unsafe.AsPointer(ref this), ppwszURL);
     }
 
     /// <include file='IMFPMediaItem.xml' path='doc/member[@name="IMFPMediaItem.GetObject"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IMFPMediaItem : IMFPMediaItem.Interface, INativeGui
         HRESULT GetMediaPlayer(IMFPMediaPlayer** ppMediaPlayer);
 
         [VtblIndex(4)]
-        HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL);
+        HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppwszURL);
 
         [VtblIndex(5)]
         HRESULT GetObject(IUnknown** ppIUnknown);
@@ -274,7 +274,7 @@ public unsafe partial struct IMFPMediaItem : IMFPMediaItem.Interface, INativeGui
         public delegate* unmanaged<TSelf*, IMFPMediaPlayer**, int> GetMediaPlayer;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, char**, int> GetURL;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown**, int> GetObject;

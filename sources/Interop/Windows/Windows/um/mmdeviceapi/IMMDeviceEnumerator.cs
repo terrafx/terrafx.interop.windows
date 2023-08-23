@@ -65,9 +65,9 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetDevice([NativeTypeName("LPCWSTR")] ushort* pwstrId, IMMDevice** ppDevice)
+    public HRESULT GetDevice([NativeTypeName("LPCWSTR")] char* pwstrId, IMMDevice** ppDevice)
     {
-        return ((delegate* unmanaged<IMMDeviceEnumerator*, ushort*, IMMDevice**, int>)(lpVtbl[5]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pwstrId, ppDevice);
+        return ((delegate* unmanaged<IMMDeviceEnumerator*, char*, IMMDevice**, int>)(lpVtbl[5]))((IMMDeviceEnumerator*)Unsafe.AsPointer(ref this), pwstrId, ppDevice);
     }
 
     /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.RegisterEndpointNotificationCallback"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
         HRESULT GetDefaultAudioEndpoint(EDataFlow dataFlow, ERole role, IMMDevice** ppEndpoint);
 
         [VtblIndex(5)]
-        HRESULT GetDevice([NativeTypeName("LPCWSTR")] ushort* pwstrId, IMMDevice** ppDevice);
+        HRESULT GetDevice([NativeTypeName("LPCWSTR")] char* pwstrId, IMMDevice** ppDevice);
 
         [VtblIndex(6)]
         HRESULT RegisterEndpointNotificationCallback(IMMNotificationClient* pClient);
@@ -123,7 +123,7 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
         public delegate* unmanaged<TSelf*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMMDevice**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, char*, IMMDevice**, int> GetDevice;
 
         [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;

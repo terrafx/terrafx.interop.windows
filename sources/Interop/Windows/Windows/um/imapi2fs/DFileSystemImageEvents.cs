@@ -65,9 +65,9 @@ public unsafe partial struct DFileSystemImageEvents : DFileSystemImageEvents.Int
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<DFileSystemImageEvents*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<DFileSystemImageEvents*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct DFileSystemImageEvents : DFileSystemImageEvents.Int
     /// <include file='DFileSystemImageEvents.xml' path='doc/member[@name="DFileSystemImageEvents.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors)
+    public HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] char* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors)
     {
-        return ((delegate* unmanaged<DFileSystemImageEvents*, IDispatch*, ushort*, int, int, int>)(lpVtbl[7]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), @object, currentFile, copiedSectors, totalSectors);
+        return ((delegate* unmanaged<DFileSystemImageEvents*, IDispatch*, char*, int, int, int>)(lpVtbl[7]))((DFileSystemImageEvents*)Unsafe.AsPointer(ref this), @object, currentFile, copiedSectors, totalSectors);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] ushort* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors);
+        HRESULT Update(IDispatch* @object, [NativeTypeName("BSTR")] char* currentFile, [NativeTypeName("LONG")] int copiedSectors, [NativeTypeName("LONG")] int totalSectors);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct DFileSystemImageEvents : DFileSystemImageEvents.Int
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch *, BSTR, LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, ushort*, int, int, int> Update;
+        public delegate* unmanaged<TSelf*, IDispatch*, char*, int, int, int> Update;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IMediaTypeInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IMediaTypeInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface, INativeG
     /// <include file='IMediaTypeInfo.xml' path='doc/member[@name="IMediaTypeInfo.get_Type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Type([NativeTypeName("BSTR *")] ushort** strType)
+    public HRESULT get_Type([NativeTypeName("BSTR *")] char** strType)
     {
-        return ((delegate* unmanaged<IMediaTypeInfo*, ushort**, int>)(lpVtbl[7]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
+        return ((delegate* unmanaged<IMediaTypeInfo*, char**, int>)(lpVtbl[7]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
     }
 
     /// <include file='IMediaTypeInfo.xml' path='doc/member[@name="IMediaTypeInfo.get_Subtype"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType)
+    public HRESULT get_Subtype([NativeTypeName("BSTR *")] char** strType)
     {
-        return ((delegate* unmanaged<IMediaTypeInfo*, ushort**, int>)(lpVtbl[8]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
+        return ((delegate* unmanaged<IMediaTypeInfo*, char**, int>)(lpVtbl[8]))((IMediaTypeInfo*)Unsafe.AsPointer(ref this), strType);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_Type([NativeTypeName("BSTR *")] ushort** strType);
+        HRESULT get_Type([NativeTypeName("BSTR *")] char** strType);
 
         [VtblIndex(8)]
-        HRESULT get_Subtype([NativeTypeName("BSTR *")] ushort** strType);
+        HRESULT get_Subtype([NativeTypeName("BSTR *")] char** strType);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IMediaTypeInfo : IMediaTypeInfo.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Type;
+        public delegate* unmanaged<TSelf*, char**, int> get_Type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Subtype;
+        public delegate* unmanaged<TSelf*, char**, int> get_Subtype;
     }
 }

@@ -57,17 +57,17 @@ public unsafe partial struct IWICMetadataQueryReader : IWICMetadataQueryReader.I
     /// <include file='IWICMetadataQueryReader.xml' path='doc/member[@name="IWICMetadataQueryReader.GetLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, uint* pcchActualLength)
+    public HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] char* wzNamespace, uint* pcchActualLength)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryReader*, uint, ushort*, uint*, int>)(lpVtbl[4]))((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
+        return ((delegate* unmanaged<IWICMetadataQueryReader*, uint, char*, uint*, int>)(lpVtbl[4]))((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
     }
 
     /// <include file='IWICMetadataQueryReader.xml' path='doc/member[@name="IWICMetadataQueryReader.GetMetadataByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue)
+    public HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryReader*, ushort*, PROPVARIANT*, int>)(lpVtbl[5]))((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), wzName, pvarValue);
+        return ((delegate* unmanaged<IWICMetadataQueryReader*, char*, PROPVARIANT*, int>)(lpVtbl[5]))((IWICMetadataQueryReader*)Unsafe.AsPointer(ref this), wzName, pvarValue);
     }
 
     /// <include file='IWICMetadataQueryReader.xml' path='doc/member[@name="IWICMetadataQueryReader.GetEnumerator"]/*' />
@@ -84,10 +84,10 @@ public unsafe partial struct IWICMetadataQueryReader : IWICMetadataQueryReader.I
         HRESULT GetContainerFormat(Guid* pguidContainerFormat);
 
         [VtblIndex(4)]
-        HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, uint* pcchActualLength);
+        HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] char* wzNamespace, uint* pcchActualLength);
 
         [VtblIndex(5)]
-        HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue);
+        HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue);
 
         [VtblIndex(6)]
         HRESULT GetEnumerator(IEnumString** ppIEnumString);
@@ -109,10 +109,10 @@ public unsafe partial struct IWICMetadataQueryReader : IWICMetadataQueryReader.I
         public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetLocation;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetLocation;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetMetadataByName;
+        public delegate* unmanaged<TSelf*, char*, PROPVARIANT*, int> GetMetadataByName;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumString**, int> GetEnumerator;

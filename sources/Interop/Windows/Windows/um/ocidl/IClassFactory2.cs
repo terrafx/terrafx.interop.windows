@@ -73,17 +73,17 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.RequestLicKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] ushort** pBstrKey)
+    public HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] char** pBstrKey)
     {
-        return ((delegate* unmanaged<IClassFactory2*, uint, ushort**, int>)(lpVtbl[6]))((IClassFactory2*)Unsafe.AsPointer(ref this), dwReserved, pBstrKey);
+        return ((delegate* unmanaged<IClassFactory2*, uint, char**, int>)(lpVtbl[6]))((IClassFactory2*)Unsafe.AsPointer(ref this), dwReserved, pBstrKey);
     }
 
     /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.CreateInstanceLic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)
+    public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)
     {
-        return ((delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, ushort*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
+        return ((delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, char*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
     }
 
     public interface Interface : IClassFactory.Interface
@@ -92,10 +92,10 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
         HRESULT GetLicInfo(LICINFO* pLicInfo);
 
         [VtblIndex(6)]
-        HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] ushort** pBstrKey);
+        HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] char** pBstrKey);
 
         [VtblIndex(7)]
-        HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj);
+        HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj);
     }
 
     public partial struct Vtbl<TSelf>
@@ -120,9 +120,9 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
         public delegate* unmanaged<TSelf*, LICINFO*, int> GetLicInfo;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> RequestLicKey;
+        public delegate* unmanaged<TSelf*, uint, char**, int> RequestLicKey;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *, const IID &, BSTR, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, Guid*, ushort*, void**, int> CreateInstanceLic;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, Guid*, char*, void**, int> CreateInstanceLic;
     }
 }

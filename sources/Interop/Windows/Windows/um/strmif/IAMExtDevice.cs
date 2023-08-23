@@ -57,17 +57,17 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    public HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[4]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
+        return ((delegate* unmanaged<IAMExtDevice*, char**, int>)(lpVtbl[4]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.get_ExternalDeviceVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    public HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtDevice*, ushort**, int>)(lpVtbl[5]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
+        return ((delegate* unmanaged<IAMExtDevice*, char**, int>)(lpVtbl[5]))((IAMExtDevice*)Unsafe.AsPointer(ref this), ppszData);
     }
 
     /// <include file='IAMExtDevice.xml' path='doc/member[@name="IAMExtDevice.put_DevicePower"]/*' />
@@ -116,10 +116,10 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
         HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
 
         [VtblIndex(4)]
-        HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        HRESULT get_ExternalDeviceID([NativeTypeName("LPOLESTR *")] char** ppszData);
 
         [VtblIndex(5)]
-        HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        HRESULT get_ExternalDeviceVersion([NativeTypeName("LPOLESTR *")] char** ppszData);
 
         [VtblIndex(6)]
         HRESULT put_DevicePower([NativeTypeName("long")] int PowerMode);
@@ -153,10 +153,10 @@ public unsafe partial struct IAMExtDevice : IAMExtDevice.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int, int*, double*, int> GetCapability;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ExternalDeviceID;
+        public delegate* unmanaged<TSelf*, char**, int> get_ExternalDeviceID;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ExternalDeviceVersion;
+        public delegate* unmanaged<TSelf*, char**, int> get_ExternalDeviceVersion;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> put_DevicePower;

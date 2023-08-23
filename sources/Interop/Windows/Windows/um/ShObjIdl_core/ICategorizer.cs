@@ -49,9 +49,9 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch)
+    public HRESULT GetDescription([NativeTypeName("LPWSTR")] char* pszDesc, uint cch)
     {
-        return ((delegate* unmanaged<ICategorizer*, ushort*, uint, int>)(lpVtbl[3]))((ICategorizer*)Unsafe.AsPointer(ref this), pszDesc, cch);
+        return ((delegate* unmanaged<ICategorizer*, char*, uint, int>)(lpVtbl[3]))((ICategorizer*)Unsafe.AsPointer(ref this), pszDesc, cch);
     }
 
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetCategory"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch);
+        HRESULT GetDescription([NativeTypeName("LPWSTR")] char* pszDesc, uint cch);
 
         [VtblIndex(4)]
         HRESULT GetCategory(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD *")] uint* rgCategoryIds);
@@ -106,7 +106,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetDescription;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetCategory;

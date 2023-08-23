@@ -57,9 +57,9 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.GetEnableURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus)
+    public HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] char** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, ushort**, uint*, MF_URL_TRUST_STATUS*, int>)(lpVtbl[4]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppwszURL, pcchURL, pTrustStatus);
+        return ((delegate* unmanaged<IMFContentEnabler*, char**, uint*, MF_URL_TRUST_STATUS*, int>)(lpVtbl[4]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppwszURL, pcchURL, pTrustStatus);
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.GetEnableData"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
         HRESULT GetEnableType(Guid* pType);
 
         [VtblIndex(4)]
-        HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] ushort** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus);
+        HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] char** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus);
 
         [VtblIndex(5)]
         HRESULT GetEnableData(byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData);
@@ -142,7 +142,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
         public delegate* unmanaged<TSelf*, Guid*, int> GetEnableType;
 
         [NativeTypeName("HRESULT (LPWSTR *, DWORD *, MF_URL_TRUST_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
+        public delegate* unmanaged<TSelf*, char**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte**, uint*, int> GetEnableData;

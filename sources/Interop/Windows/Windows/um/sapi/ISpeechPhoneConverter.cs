@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Inter
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechPhoneConverter*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechPhoneConverter*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,17 +97,17 @@ public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Inter
     /// <include file='ISpeechPhoneConverter.xml' path='doc/member[@name="ISpeechPhoneConverter.PhoneToId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT PhoneToId([NativeTypeName("const BSTR")] ushort* Phonemes, VARIANT* IdArray)
+    public HRESULT PhoneToId([NativeTypeName("const BSTR")] char* Phonemes, VARIANT* IdArray)
     {
-        return ((delegate* unmanaged<ISpeechPhoneConverter*, ushort*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), Phonemes, IdArray);
+        return ((delegate* unmanaged<ISpeechPhoneConverter*, char*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), Phonemes, IdArray);
     }
 
     /// <include file='ISpeechPhoneConverter.xml' path='doc/member[@name="ISpeechPhoneConverter.IdToPhone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] ushort** Phonemes)
+    public HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] char** Phonemes)
     {
-        return ((delegate* unmanaged<ISpeechPhoneConverter*, VARIANT, ushort**, int>)(lpVtbl[10]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), IdArray, Phonemes);
+        return ((delegate* unmanaged<ISpeechPhoneConverter*, VARIANT, char**, int>)(lpVtbl[10]))((ISpeechPhoneConverter*)Unsafe.AsPointer(ref this), IdArray, Phonemes);
     }
 
     public interface Interface : IDispatch.Interface
@@ -119,10 +119,10 @@ public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Inter
         HRESULT put_LanguageId([NativeTypeName("SpeechLanguageId")] int LanguageId);
 
         [VtblIndex(9)]
-        HRESULT PhoneToId([NativeTypeName("const BSTR")] ushort* Phonemes, VARIANT* IdArray);
+        HRESULT PhoneToId([NativeTypeName("const BSTR")] char* Phonemes, VARIANT* IdArray);
 
         [VtblIndex(10)]
-        HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] ushort** Phonemes);
+        HRESULT IdToPhone([NativeTypeName("const VARIANT")] VARIANT IdArray, [NativeTypeName("BSTR *")] char** Phonemes);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,7 +144,7 @@ public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Inter
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -156,9 +156,9 @@ public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Inter
         public delegate* unmanaged<TSelf*, int, int> put_LanguageId;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> PhoneToId;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> PhoneToId;
 
         [NativeTypeName("HRESULT (const VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, ushort**, int> IdToPhone;
+        public delegate* unmanaged<TSelf*, VARIANT, char**, int> IdToPhone;
     }
 }

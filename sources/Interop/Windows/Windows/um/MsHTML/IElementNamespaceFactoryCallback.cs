@@ -49,15 +49,15 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
     /// <include file='IElementNamespaceFactoryCallback.xml' path='doc/member[@name="IElementNamespaceFactoryCallback.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Resolve([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("BSTR")] ushort* bstrAttrs, IElementNamespace* pNamespace)
+    public HRESULT Resolve([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrTagName, [NativeTypeName("BSTR")] char* bstrAttrs, IElementNamespace* pNamespace)
     {
-        return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, ushort*, ushort*, ushort*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this), bstrNamespace, bstrTagName, bstrAttrs, pNamespace);
+        return ((delegate* unmanaged<IElementNamespaceFactoryCallback*, char*, char*, char*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactoryCallback*)Unsafe.AsPointer(ref this), bstrNamespace, bstrTagName, bstrAttrs, pNamespace);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Resolve([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("BSTR")] ushort* bstrAttrs, IElementNamespace* pNamespace);
+        HRESULT Resolve([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrTagName, [NativeTypeName("BSTR")] char* bstrAttrs, IElementNamespace* pNamespace);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementNamespaceFactoryCallback : IElementNamespac
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, IElementNamespace *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, IElementNamespace*, int> Resolve;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, IElementNamespace*, int> Resolve;
     }
 }

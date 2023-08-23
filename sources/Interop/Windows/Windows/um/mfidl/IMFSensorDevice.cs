@@ -75,9 +75,9 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
+    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
     {
-        return ((delegate* unmanaged<IMFSensorDevice*, ushort*, int, int*, int>)(lpVtbl[6]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
+        return ((delegate* unmanaged<IMFSensorDevice*, char*, int, int*, int>)(lpVtbl[6]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
     /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceAttributes"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
         HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags);
 
         [VtblIndex(6)]
-        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
+        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten);
 
         [VtblIndex(7)]
         HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes);
@@ -172,7 +172,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface, INativ
         public delegate* unmanaged<TSelf*, ulong*, int> GetFlags;
 
         [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetSymbolicLink;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetDeviceAttributes;

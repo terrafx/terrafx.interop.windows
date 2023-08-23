@@ -40,7 +40,7 @@ public partial struct KEY_EVENT_RECORD
         /// <include file='_uChar_e__Union.xml' path='doc/member[@name="_uChar_e__Union.UnicodeChar"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WCHAR")]
-        public ushort UnicodeChar;
+        public char UnicodeChar;
 
         /// <include file='_uChar_e__Union.xml' path='doc/member[@name="_uChar_e__Union.AsciiChar"]/*' />
         [FieldOffset(0)]

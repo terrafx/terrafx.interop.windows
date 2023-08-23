@@ -49,9 +49,9 @@ public unsafe partial struct IAMDeviceRemoval : IAMDeviceRemoval.Interface, INat
     /// <include file='IAMDeviceRemoval.xml' path='doc/member[@name="IAMDeviceRemoval.DeviceInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT DeviceInfo([NativeTypeName("CLSID *")] Guid* pclsidInterfaceClass, [NativeTypeName("LPWSTR *")] ushort** pwszSymbolicLink)
+    public HRESULT DeviceInfo([NativeTypeName("CLSID *")] Guid* pclsidInterfaceClass, [NativeTypeName("LPWSTR *")] char** pwszSymbolicLink)
     {
-        return ((delegate* unmanaged<IAMDeviceRemoval*, Guid*, ushort**, int>)(lpVtbl[3]))((IAMDeviceRemoval*)Unsafe.AsPointer(ref this), pclsidInterfaceClass, pwszSymbolicLink);
+        return ((delegate* unmanaged<IAMDeviceRemoval*, Guid*, char**, int>)(lpVtbl[3]))((IAMDeviceRemoval*)Unsafe.AsPointer(ref this), pclsidInterfaceClass, pwszSymbolicLink);
     }
 
     /// <include file='IAMDeviceRemoval.xml' path='doc/member[@name="IAMDeviceRemoval.Reassociate"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IAMDeviceRemoval : IAMDeviceRemoval.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT DeviceInfo([NativeTypeName("CLSID *")] Guid* pclsidInterfaceClass, [NativeTypeName("LPWSTR *")] ushort** pwszSymbolicLink);
+        HRESULT DeviceInfo([NativeTypeName("CLSID *")] Guid* pclsidInterfaceClass, [NativeTypeName("LPWSTR *")] char** pwszSymbolicLink);
 
         [VtblIndex(4)]
         HRESULT Reassociate();
@@ -95,7 +95,7 @@ public unsafe partial struct IAMDeviceRemoval : IAMDeviceRemoval.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, int> DeviceInfo;
+        public delegate* unmanaged<TSelf*, Guid*, char**, int> DeviceInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Reassociate;

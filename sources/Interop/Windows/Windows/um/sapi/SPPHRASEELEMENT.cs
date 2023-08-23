@@ -34,15 +34,15 @@ public unsafe partial struct SPPHRASEELEMENT
 
     /// <include file='SPPHRASEELEMENT.xml' path='doc/member[@name="SPPHRASEELEMENT.pszDisplayText"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszDisplayText;
+    public char* pszDisplayText;
 
     /// <include file='SPPHRASEELEMENT.xml' path='doc/member[@name="SPPHRASEELEMENT.pszLexicalForm"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszLexicalForm;
+    public char* pszLexicalForm;
 
     /// <include file='SPPHRASEELEMENT.xml' path='doc/member[@name="SPPHRASEELEMENT.pszPronunciation"]/*' />
     [NativeTypeName("const SPPHONEID *")]
-    public ushort* pszPronunciation;
+    public char* pszPronunciation;
 
     /// <include file='SPPHRASEELEMENT.xml' path='doc/member[@name="SPPHRASEELEMENT.bDisplayAttributes"]/*' />
     public byte bDisplayAttributes;

@@ -59,7 +59,7 @@ public unsafe partial struct EC_VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringVal"]/*' />
     [UnscopedRef]
-    public ref ushort* StringVal
+    public ref char* StringVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -103,7 +103,7 @@ public unsafe partial struct EC_VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringArr"]/*' />
     [UnscopedRef]
-    public ref ushort** StringArr
+    public ref char** StringArr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -144,7 +144,7 @@ public unsafe partial struct EC_VARIANT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringVal"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* StringVal;
+        public char* StringVal;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BinaryVal"]/*' />
         [FieldOffset(0)]
@@ -163,7 +163,7 @@ public unsafe partial struct EC_VARIANT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StringArr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR *")]
-        public ushort** StringArr;
+        public char** StringArr;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PropertyHandleVal"]/*' />
         [FieldOffset(0)]

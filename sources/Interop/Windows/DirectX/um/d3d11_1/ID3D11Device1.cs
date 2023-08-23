@@ -418,9 +418,9 @@ public unsafe partial struct ID3D11Device1 : ID3D11Device1.Interface, INativeGui
     /// <include file='ID3D11Device1.xml' path='doc/member[@name="ID3D11Device1.OpenSharedResourceByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
+    public HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource)
     {
-        return ((delegate* unmanaged<ID3D11Device1*, ushort*, uint, Guid*, void**, int>)(lpVtbl[49]))((ID3D11Device1*)Unsafe.AsPointer(ref this), lpName, dwDesiredAccess, returnedInterface, ppResource);
+        return ((delegate* unmanaged<ID3D11Device1*, char*, uint, Guid*, void**, int>)(lpVtbl[49]))((ID3D11Device1*)Unsafe.AsPointer(ref this), lpName, dwDesiredAccess, returnedInterface, ppResource);
     }
 
     public interface Interface : ID3D11Device.Interface
@@ -444,7 +444,7 @@ public unsafe partial struct ID3D11Device1 : ID3D11Device1.Interface, INativeGui
         HRESULT OpenSharedResource1(HANDLE hResource, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource);
 
         [VtblIndex(49)]
-        HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource);
+        HRESULT OpenSharedResourceByName([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("const IID &")] Guid* returnedInterface, void** ppResource);
     }
 
     public partial struct Vtbl<TSelf>
@@ -598,6 +598,6 @@ public unsafe partial struct ID3D11Device1 : ID3D11Device1.Interface, INativeGui
         public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, int> OpenSharedResource1;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, Guid*, void**, int> OpenSharedResourceByName;
+        public delegate* unmanaged<TSelf*, char*, uint, Guid*, void**, int> OpenSharedResourceByName;
     }
 }

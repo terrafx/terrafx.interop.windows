@@ -121,9 +121,9 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.Help"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir)
+    public HRESULT Help([NativeTypeName("LPCOLESTR")] char* pszHelpDir)
     {
-        return ((delegate* unmanaged<IPropertyPage*, ushort*, int>)(lpVtbl[12]))((IPropertyPage*)Unsafe.AsPointer(ref this), pszHelpDir);
+        return ((delegate* unmanaged<IPropertyPage*, char*, int>)(lpVtbl[12]))((IPropertyPage*)Unsafe.AsPointer(ref this), pszHelpDir);
     }
 
     /// <include file='IPropertyPage.xml' path='doc/member[@name="IPropertyPage.TranslateAccelerator"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
         HRESULT Apply();
 
         [VtblIndex(12)]
-        HRESULT Help([NativeTypeName("LPCOLESTR")] ushort* pszHelpDir);
+        HRESULT Help([NativeTypeName("LPCOLESTR")] char* pszHelpDir);
 
         [VtblIndex(13)]
         HRESULT TranslateAccelerator(MSG* pMsg);
@@ -210,7 +210,7 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> Apply;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Help;
+        public delegate* unmanaged<TSelf*, char*, int> Help;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MSG*, int> TranslateAccelerator;

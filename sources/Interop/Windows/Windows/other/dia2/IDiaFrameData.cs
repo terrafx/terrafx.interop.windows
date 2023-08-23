@@ -129,9 +129,9 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_program"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_program([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, ushort**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaFrameData*, char**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_systemExceptionHandling"]/*' />
@@ -223,7 +223,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
         HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(13)]
-        HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_program([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(14)]
         HRESULT get_systemExceptionHandling(BOOL* pRetVal);
@@ -290,7 +290,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint*, int> get_lengthSavedRegisters;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_program;
+        public delegate* unmanaged<TSelf*, char**, int> get_program;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> get_systemExceptionHandling;

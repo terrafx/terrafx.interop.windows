@@ -65,9 +65,9 @@ public unsafe partial struct DFConstraint : DFConstraint.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<DFConstraint*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DFConstraint*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<DFConstraint*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((DFConstraint*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct DFConstraint : DFConstraint.Interface, INativeGuid
     /// <include file='DFConstraint.xml' path='doc/member[@name="DFConstraint.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<DFConstraint*, ushort**, int>)(lpVtbl[7]))((DFConstraint*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<DFConstraint*, char**, int>)(lpVtbl[7]))((DFConstraint*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <include file='DFConstraint.xml' path='doc/member[@name="DFConstraint.get_Value"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct DFConstraint : DFConstraint.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** pbs);
 
         [VtblIndex(8)]
         HRESULT get_Value(VARIANT* pv);
@@ -122,13 +122,13 @@ public unsafe partial struct DFConstraint : DFConstraint.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_Value;

@@ -101,12 +101,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginRegisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+    public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSS([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] char* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginRegisterWorkQueueWithMMCSSEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] ushort* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
+    public static extern HRESULT MFBeginRegisterWorkQueueWithMMCSSEx([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPCWSTR")] char* wszClass, [NativeTypeName("DWORD")] uint dwTaskId, [NativeTypeName("LONG")] int lPriority, IMFAsyncCallback* pDoneCallback, IUnknown* pDoneState);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEndRegisterWorkQueueWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -122,7 +122,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSClass"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFGetWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPWSTR")] ushort* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
+    public static extern HRESULT MFGetWorkQueueMMCSSClass([NativeTypeName("DWORD")] uint dwWorkQueueId, [NativeTypeName("LPWSTR")] char* pwszClass, [NativeTypeName("DWORD *")] uint* pcchClass);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSTaskId"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -131,7 +131,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterPlatformWithMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
+    public static extern HRESULT MFRegisterPlatformWithMMCSS([NativeTypeName("PCWSTR")] char* wszClass, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("LONG")] int lPriority);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFUnregisterPlatformFromMMCSS"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -141,7 +141,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLockSharedWorkQueue"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] ushort* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
+    public static extern HRESULT MFLockSharedWorkQueue([NativeTypeName("PCWSTR")] char* wszClass, [NativeTypeName("LONG")] int BasePriority, [NativeTypeName("DWORD *")] uint* pdwTaskId, [NativeTypeName("DWORD *")] uint* pID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetWorkQueueMMCSSPriority"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -158,7 +158,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFileURL, IMFByteStream** ppIByteStream);
+    public static extern HRESULT MFCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] char* pwszFileURL, IMFByteStream** ppIByteStream);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTempFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -166,7 +166,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBeginCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] ushort* pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
+    public static extern HRESULT MFBeginCreateFile(MF_FILE_ACCESSMODE AccessMode, MF_FILE_OPENMODE OpenMode, MF_FILE_FLAGS fFlags, [NativeTypeName("LPCWSTR")] char* pwszFilePath, IMFAsyncCallback* pCallback, IUnknown* pState, IUnknown** ppCancelCookie);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEndCreateFile"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1717,7 +1717,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegister"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, Guid guidCategory, [NativeTypeName("LPWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
+    public static extern HRESULT MFTRegister([NativeTypeName("CLSID")] Guid clsidMFT, Guid guidCategory, [NativeTypeName("LPWSTR")] char* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, MFT_REGISTER_TYPE_INFO* pOutputTypes, IMFAttributes* pAttributes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregister"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1725,7 +1725,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegisterLocal"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
+    public static extern HRESULT MFTRegisterLocal(IClassFactory* pClassFactory, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregisterLocal"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1733,7 +1733,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTRegisterLocalByCLSID"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFTRegisterLocalByCLSID([NativeTypeName("const IID &")] Guid* clisdMFT, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
+    public static extern HRESULT MFTRegisterLocalByCLSID([NativeTypeName("const IID &")] Guid* clisdMFT, [NativeTypeName("const GUID &")] Guid* guidCategory, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("UINT32")] uint Flags, [NativeTypeName("UINT32")] uint cInputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pInputTypes, [NativeTypeName("UINT32")] uint cOutputTypes, [NativeTypeName("const MFT_REGISTER_TYPE_INFO *")] MFT_REGISTER_TYPE_INFO* pOutputTypes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTUnregisterLocalByCLSID"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1754,7 +1754,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTGetInfo"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] ushort** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
+    public static extern HRESULT MFTGetInfo([NativeTypeName("CLSID")] Guid clsidMFT, [NativeTypeName("LPWSTR *")] char** pszName, MFT_REGISTER_TYPE_INFO** ppInputTypes, [NativeTypeName("UINT32 *")] uint* pcInputTypes, MFT_REGISTER_TYPE_INFO** ppOutputTypes, [NativeTypeName("UINT32 *")] uint* pcOutputTypes, IMFAttributes** ppAttributes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetPluginControl"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1767,12 +1767,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterLocalSchemeHandler"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] ushort* szScheme, IMFActivate* pActivate);
+    public static extern HRESULT MFRegisterLocalSchemeHandler([NativeTypeName("PCWSTR")] char* szScheme, IMFActivate* pActivate);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRegisterLocalByteStreamHandler"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] ushort* szFileExtension, [NativeTypeName("PCWSTR")] ushort* szMimeType, IMFActivate* pActivate);
+    public static extern HRESULT MFRegisterLocalByteStreamHandler([NativeTypeName("PCWSTR")] char* szFileExtension, [NativeTypeName("PCWSTR")] char* szMimeType, IMFActivate* pActivate);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamWrapper"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1782,7 +1782,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaExtensionActivate"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] ushort* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+    public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] char* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMPEG4Format_Base

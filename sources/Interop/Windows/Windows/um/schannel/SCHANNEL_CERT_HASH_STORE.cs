@@ -25,5 +25,5 @@ public unsafe partial struct SCHANNEL_CERT_HASH_STORE
 
     /// <include file='SCHANNEL_CERT_HASH_STORE.xml' path='doc/member[@name="SCHANNEL_CERT_HASH_STORE.pwszStoreName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort pwszStoreName[128];
+    public fixed char pwszStoreName[128];
 }

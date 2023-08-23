@@ -49,9 +49,9 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.CreateEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
+    public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
+        return ((delegate* unmanaged<ITravelLogStg*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.TravelTo"]/*' />
@@ -73,9 +73,9 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.FindEntries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
+    public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszUrl, IEnumTravelLogEntry** ppenum)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
+        return ((delegate* unmanaged<ITravelLogStg*, uint, char*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.GetCount"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle);
+        HRESULT CreateEntry([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle);
 
         [VtblIndex(4)]
         HRESULT TravelTo(ITravelLogEntry* ptle);
@@ -114,7 +114,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
         HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum);
 
         [VtblIndex(6)]
-        HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum);
+        HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszUrl, IEnumTravelLogEntry** ppenum);
 
         [VtblIndex(7)]
         HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries);
@@ -139,7 +139,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ITravelLogEntry *, BOOL, ITravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
+        public delegate* unmanaged<TSelf*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
 
         [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITravelLogEntry*, int> TravelTo;
@@ -148,7 +148,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, IEnumTravelLogEntry**, int> EnumEntries;
 
         [NativeTypeName("HRESULT (TLENUMF, LPCWSTR, IEnumTravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, IEnumTravelLogEntry**, int> FindEntries;
+        public delegate* unmanaged<TSelf*, uint, char*, IEnumTravelLogEntry**, int> FindEntries;
 
         [NativeTypeName("HRESULT (TLENUMF, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetCount;

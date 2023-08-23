@@ -52,26 +52,26 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
     /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetErrorDetails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid)
+    public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] char** description, HRESULT* error, [NativeTypeName("BSTR *")] char** restrictedDescription, [NativeTypeName("BSTR *")] char** capabilitySid)
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, HRESULT*, ushort**, ushort**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
+        return ((delegate* unmanaged<IRestrictedErrorInfo*, char**, HRESULT*, char**, char**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
     }
 
     /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference)
+    public HRESULT GetReference([NativeTypeName("BSTR *")] char** reference)
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
+        return ((delegate* unmanaged<IRestrictedErrorInfo*, char**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid);
+        HRESULT GetErrorDetails([NativeTypeName("BSTR *")] char** description, HRESULT* error, [NativeTypeName("BSTR *")] char** restrictedDescription, [NativeTypeName("BSTR *")] char** capabilitySid);
 
         [VtblIndex(4)]
-        HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference);
+        HRESULT GetReference([NativeTypeName("BSTR *")] char** reference);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,9 +87,9 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *, HRESULT *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, HRESULT*, ushort**, ushort**, int> GetErrorDetails;
+        public delegate* unmanaged<TSelf*, char**, HRESULT*, char**, char**, int> GetErrorDetails;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetReference;
+        public delegate* unmanaged<TSelf*, char**, int> GetReference;
     }
 }

@@ -15,9 +15,9 @@ public unsafe partial struct EXTRASEARCH
 
     /// <include file='EXTRASEARCH.xml' path='doc/member[@name="EXTRASEARCH.wszFriendlyName"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort wszFriendlyName[80];
+    public fixed char wszFriendlyName[80];
 
     /// <include file='EXTRASEARCH.xml' path='doc/member[@name="EXTRASEARCH.wszUrl"]/*' />
     [NativeTypeName("WCHAR[2084]")]
-    public fixed ushort wszUrl[2084];
+    public fixed char wszUrl[2084];
 }

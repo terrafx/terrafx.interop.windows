@@ -59,9 +59,9 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.AddProfileFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] ushort* wzFilterSetString)
+    public HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] char* wzFilterSetString)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, uint, ushort*, int>)(lpVtbl[4]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, wzFilterSetString);
+        return ((delegate* unmanaged<IMFSensorProfile*, uint, char*, int>)(lpVtbl[4]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, wzFilterSetString);
     }
 
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.IsMediaTypeSupported"]/*' />
@@ -75,9 +75,9 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.AddBlockedControl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] ushort* wzBlockedControl)
+    public HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] char* wzBlockedControl)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, ushort*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
+        return ((delegate* unmanaged<IMFSensorProfile*, char*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,13 +86,13 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
         HRESULT GetProfileId(SENSORPROFILEID* pId);
 
         [VtblIndex(4)]
-        HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] ushort* wzFilterSetString);
+        HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] char* wzFilterSetString);
 
         [VtblIndex(5)]
         HRESULT IsMediaTypeSupported([NativeTypeName("UINT32")] uint StreamId, IMFMediaType* pMediaType, BOOL* pfSupported);
 
         [VtblIndex(6)]
-        HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] ushort* wzBlockedControl);
+        HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] char* wzBlockedControl);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
         public delegate* unmanaged<TSelf*, SENSORPROFILEID*, int> GetProfileId;
 
         [NativeTypeName("HRESULT (UINT32, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> AddProfileFilter;
+        public delegate* unmanaged<TSelf*, uint, char*, int> AddProfileFilter;
 
         [NativeTypeName("HRESULT (UINT32, IMFMediaType *, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IMFMediaType*, BOOL*, int> IsMediaTypeSupported;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddBlockedControl;
+        public delegate* unmanaged<TSelf*, char*, int> AddBlockedControl;
     }
 }

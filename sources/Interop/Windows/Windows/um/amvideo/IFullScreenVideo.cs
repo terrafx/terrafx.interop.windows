@@ -161,17 +161,17 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetCaption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption)
+    public HRESULT SetCaption([NativeTypeName("BSTR")] char* strCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, ushort*, int>)(lpVtbl[17]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged<IFullScreenVideo*, char*, int>)(lpVtbl[17]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetCaption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption)
+    public HRESULT GetCaption([NativeTypeName("BSTR *")] char** pstrCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, ushort**, int>)(lpVtbl[18]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pstrCaption);
+        return ((delegate* unmanaged<IFullScreenVideo*, char**, int>)(lpVtbl[18]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pstrCaption);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetDefault"]/*' />
@@ -227,10 +227,10 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
         HRESULT IsHideOnDeactivate();
 
         [VtblIndex(17)]
-        HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption);
+        HRESULT SetCaption([NativeTypeName("BSTR")] char* strCaption);
 
         [VtblIndex(18)]
-        HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption);
+        HRESULT GetCaption([NativeTypeName("BSTR *")] char** pstrCaption);
 
         [VtblIndex(19)]
         HRESULT SetDefault();
@@ -291,10 +291,10 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
         public delegate* unmanaged<TSelf*, int> IsHideOnDeactivate;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetCaption;
+        public delegate* unmanaged<TSelf*, char*, int> SetCaption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCaption;
+        public delegate* unmanaged<TSelf*, char**, int> GetCaption;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> SetDefault;

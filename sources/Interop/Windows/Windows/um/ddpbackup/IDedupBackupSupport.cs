@@ -49,15 +49,15 @@ public unsafe partial struct IDedupBackupSupport : IDedupBackupSupport.Interface
     /// <include file='IDedupBackupSupport.xml' path='doc/member[@name="IDedupBackupSupport.RestoreFiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RestoreFiles([NativeTypeName("ULONG")] uint NumberOfFiles, [NativeTypeName("BSTR *")] ushort** FileFullPaths, IDedupReadFileCallback* Store, [NativeTypeName("DWORD")] uint Flags, HRESULT* FileResults)
+    public HRESULT RestoreFiles([NativeTypeName("ULONG")] uint NumberOfFiles, [NativeTypeName("BSTR *")] char** FileFullPaths, IDedupReadFileCallback* Store, [NativeTypeName("DWORD")] uint Flags, HRESULT* FileResults)
     {
-        return ((delegate* unmanaged<IDedupBackupSupport*, uint, ushort**, IDedupReadFileCallback*, uint, HRESULT*, int>)(lpVtbl[3]))((IDedupBackupSupport*)Unsafe.AsPointer(ref this), NumberOfFiles, FileFullPaths, Store, Flags, FileResults);
+        return ((delegate* unmanaged<IDedupBackupSupport*, uint, char**, IDedupReadFileCallback*, uint, HRESULT*, int>)(lpVtbl[3]))((IDedupBackupSupport*)Unsafe.AsPointer(ref this), NumberOfFiles, FileFullPaths, Store, Flags, FileResults);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RestoreFiles([NativeTypeName("ULONG")] uint NumberOfFiles, [NativeTypeName("BSTR *")] ushort** FileFullPaths, IDedupReadFileCallback* Store, [NativeTypeName("DWORD")] uint Flags, HRESULT* FileResults);
+        HRESULT RestoreFiles([NativeTypeName("ULONG")] uint NumberOfFiles, [NativeTypeName("BSTR *")] char** FileFullPaths, IDedupReadFileCallback* Store, [NativeTypeName("DWORD")] uint Flags, HRESULT* FileResults);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IDedupBackupSupport : IDedupBackupSupport.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *, IDedupReadFileCallback *, DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, IDedupReadFileCallback*, uint, HRESULT*, int> RestoreFiles;
+        public delegate* unmanaged<TSelf*, uint, char**, IDedupReadFileCallback*, uint, HRESULT*, int> RestoreFiles;
     }
 }

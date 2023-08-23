@@ -186,9 +186,9 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.CreateColorContextFromFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext)
+    public HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext)
     {
-        return ((delegate* unmanaged<ID2D1EffectContext*, ushort*, ID2D1ColorContext**, int>)(lpVtbl[20]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), filename, colorContext);
+        return ((delegate* unmanaged<ID2D1EffectContext*, char*, ID2D1ColorContext**, int>)(lpVtbl[20]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), filename, colorContext);
     }
 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.CreateColorContextFromWicColorContext"]/*' />
@@ -269,7 +269,7 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
         HRESULT CreateColorContext(D2D1_COLOR_SPACE space, [NativeTypeName("const BYTE *")] byte* profile, [NativeTypeName("UINT32")] uint profileSize, ID2D1ColorContext** colorContext);
 
         [VtblIndex(20)]
-        HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] ushort* filename, ID2D1ColorContext** colorContext);
+        HRESULT CreateColorContextFromFilename([NativeTypeName("PCWSTR")] char* filename, ID2D1ColorContext** colorContext);
 
         [VtblIndex(21)]
         HRESULT CreateColorContextFromWicColorContext(IWICColorContext* wicColorContext, ID2D1ColorContext** colorContext);
@@ -345,7 +345,7 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
         public delegate* unmanaged<TSelf*, D2D1_COLOR_SPACE, byte*, uint, ID2D1ColorContext**, int> CreateColorContext;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
+        public delegate* unmanaged<TSelf*, char*, ID2D1ColorContext**, int> CreateColorContextFromFilename;
 
         [NativeTypeName("HRESULT (IWICColorContext *, ID2D1ColorContext **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IWICColorContext*, ID2D1ColorContext**, int> CreateColorContextFromWicColorContext;

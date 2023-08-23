@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLAttributeCollection2 : IHTMLAttributeCollectio
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLAttributeCollection2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLAttributeCollection2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLAttributeCollection2 : IHTMLAttributeCollectio
     /// <include file='IHTMLAttributeCollection2.xml' path='doc/member[@name="IHTMLAttributeCollection2.getNamedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT getNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** newretNode)
+    public HRESULT getNamedItem([NativeTypeName("BSTR")] char* bstrName, IHTMLDOMAttribute** newretNode)
     {
-        return ((delegate* unmanaged<IHTMLAttributeCollection2*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[7]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), bstrName, newretNode);
+        return ((delegate* unmanaged<IHTMLAttributeCollection2*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[7]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), bstrName, newretNode);
     }
 
     /// <include file='IHTMLAttributeCollection2.xml' path='doc/member[@name="IHTMLAttributeCollection2.setNamedItem"]/*' />
@@ -97,21 +97,21 @@ public unsafe partial struct IHTMLAttributeCollection2 : IHTMLAttributeCollectio
     /// <include file='IHTMLAttributeCollection2.xml' path='doc/member[@name="IHTMLAttributeCollection2.removeNamedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT removeNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** newretNode)
+    public HRESULT removeNamedItem([NativeTypeName("BSTR")] char* bstrName, IHTMLDOMAttribute** newretNode)
     {
-        return ((delegate* unmanaged<IHTMLAttributeCollection2*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[9]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), bstrName, newretNode);
+        return ((delegate* unmanaged<IHTMLAttributeCollection2*, char*, IHTMLDOMAttribute**, int>)(lpVtbl[9]))((IHTMLAttributeCollection2*)Unsafe.AsPointer(ref this), bstrName, newretNode);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT getNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** newretNode);
+        HRESULT getNamedItem([NativeTypeName("BSTR")] char* bstrName, IHTMLDOMAttribute** newretNode);
 
         [VtblIndex(8)]
         HRESULT setNamedItem(IHTMLDOMAttribute* ppNode, IHTMLDOMAttribute** newretNode);
 
         [VtblIndex(9)]
-        HRESULT removeNamedItem([NativeTypeName("BSTR")] ushort* bstrName, IHTMLDOMAttribute** newretNode);
+        HRESULT removeNamedItem([NativeTypeName("BSTR")] char* bstrName, IHTMLDOMAttribute** newretNode);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct IHTMLAttributeCollection2 : IHTMLAttributeCollectio
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> getNamedItem;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMAttribute**, int> getNamedItem;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute *, IHTMLDOMAttribute **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLDOMAttribute*, IHTMLDOMAttribute**, int> setNamedItem;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> removeNamedItem;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMAttribute**, int> removeNamedItem;
     }
 }

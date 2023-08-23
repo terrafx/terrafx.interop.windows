@@ -60,25 +60,25 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetLabel([NativeTypeName("LPWSTR *")] ushort** label)
+    public HRESULT GetLabel([NativeTypeName("LPWSTR *")] char** label)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, ushort**, int>)(lpVtbl[4]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
+        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[4]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.SetLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetLabel([NativeTypeName("LPCWSTR")] ushort* label)
+    public HRESULT SetLabel([NativeTypeName("LPCWSTR")] char* label)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, ushort*, int>)(lpVtbl[5]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
+        return ((delegate* unmanaged<IMFTimedTextTrack*, char*, int>)(lpVtbl[5]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language)
+    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, ushort**, int>)(lpVtbl[6]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), language);
+        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[6]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), language);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetTrackKind"]/*' />
@@ -100,9 +100,9 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetInBandMetadataTrackDispatchType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] ushort** dispatchType)
+    public HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] char** dispatchType)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, ushort**, int>)(lpVtbl[9]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), dispatchType);
+        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[9]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), dispatchType);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.IsActive"]/*' />
@@ -160,13 +160,13 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
         uint GetId();
 
         [VtblIndex(4)]
-        HRESULT GetLabel([NativeTypeName("LPWSTR *")] ushort** label);
+        HRESULT GetLabel([NativeTypeName("LPWSTR *")] char** label);
 
         [VtblIndex(5)]
-        HRESULT SetLabel([NativeTypeName("LPCWSTR")] ushort* label);
+        HRESULT SetLabel([NativeTypeName("LPCWSTR")] char* label);
 
         [VtblIndex(6)]
-        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language);
+        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language);
 
         [VtblIndex(7)]
         MF_TIMED_TEXT_TRACK_KIND GetTrackKind();
@@ -175,7 +175,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
         BOOL IsInBand();
 
         [VtblIndex(9)]
-        HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] ushort** dispatchType);
+        HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] char** dispatchType);
 
         [VtblIndex(10)]
         BOOL IsActive();
@@ -212,13 +212,13 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
         public delegate* unmanaged<TSelf*, uint> GetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLabel;
+        public delegate* unmanaged<TSelf*, char**, int> GetLabel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetLabel;
+        public delegate* unmanaged<TSelf*, char*, int> SetLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> GetLanguage;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
@@ -227,7 +227,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
         public delegate* unmanaged<TSelf*, int> IsInBand;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetInBandMetadataTrackDispatchType;
+        public delegate* unmanaged<TSelf*, char**, int> GetInBandMetadataTrackDispatchType;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> IsActive;

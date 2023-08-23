@@ -57,9 +57,9 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider.ProcessCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] ushort* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid)
+    public HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] char* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid)
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, ushort*, uint, ushort, int>)(lpVtbl[4]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), pszCommand, cch, langid);
+        return ((delegate* unmanaged<ISpeechCommandProvider*, char*, uint, ushort, int>)(lpVtbl[4]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), pszCommand, cch, langid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         HRESULT EnumSpeechCommands([NativeTypeName("LANGID")] ushort langid, IEnumSpeechCommands** ppEnum);
 
         [VtblIndex(4)]
-        HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] ushort* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid);
+        HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] char* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         public delegate* unmanaged<TSelf*, ushort, IEnumSpeechCommands**, int> EnumSpeechCommands;
 
         [NativeTypeName("HRESULT (const WCHAR *, ULONG, LANGID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort, int> ProcessCommand;
+        public delegate* unmanaged<TSelf*, char*, uint, ushort, int> ProcessCommand;
     }
 }

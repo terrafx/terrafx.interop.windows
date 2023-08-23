@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStorage2 : IHTMLStorage2.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStorage2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStorage2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStorage2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStorage2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IHTMLStorage2 : IHTMLStorage2.Interface, INativeGui
     /// <include file='IHTMLStorage2.xml' path='doc/member[@name="IHTMLStorage2.setItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT setItem([NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("BSTR")] ushort* bstrValue)
+    public HRESULT setItem([NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("BSTR")] char* bstrValue)
     {
-        return ((delegate* unmanaged<IHTMLStorage2*, ushort*, ushort*, int>)(lpVtbl[7]))((IHTMLStorage2*)Unsafe.AsPointer(ref this), bstrKey, bstrValue);
+        return ((delegate* unmanaged<IHTMLStorage2*, char*, char*, int>)(lpVtbl[7]))((IHTMLStorage2*)Unsafe.AsPointer(ref this), bstrKey, bstrValue);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT setItem([NativeTypeName("BSTR")] ushort* bstrKey, [NativeTypeName("BSTR")] ushort* bstrValue);
+        HRESULT setItem([NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("BSTR")] char* bstrValue);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IHTMLStorage2 : IHTMLStorage2.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> setItem;
+        public delegate* unmanaged<TSelf*, char*, char*, int> setItem;
     }
 }

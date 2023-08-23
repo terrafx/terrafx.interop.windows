@@ -97,17 +97,17 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     /// <inheritdoc cref="IInternetZoneManager.PromptAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT PromptAction([NativeTypeName("DWORD")] uint dwAction, HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwPromptFlags)
+    public HRESULT PromptAction([NativeTypeName("DWORD")] uint dwAction, HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("LPCWSTR")] char* pwszText, [NativeTypeName("DWORD")] uint dwPromptFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, HWND, ushort*, ushort*, uint, int>)(lpVtbl[9]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, hwndParent, pwszUrl, pwszText, dwPromptFlags);
+        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, HWND, char*, char*, uint, int>)(lpVtbl[9]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, hwndParent, pwszUrl, pwszText, dwPromptFlags);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.LogAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT LogAction([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwLogFlags)
+    public HRESULT LogAction([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("LPCWSTR")] char* pwszText, [NativeTypeName("DWORD")] uint dwLogFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, ushort*, ushort*, uint, int>)(lpVtbl[10]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, pwszUrl, pwszText, dwLogFlags);
+        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, char*, char*, uint, int>)(lpVtbl[10]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, pwszUrl, pwszText, dwLogFlags);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.CreateZoneEnumerator" />
@@ -198,10 +198,10 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
         public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, URLZONEREG, int> SetZoneActionPolicy;
 
         [NativeTypeName("HRESULT (DWORD, HWND, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HWND, ushort*, ushort*, uint, int> PromptAction;
+        public delegate* unmanaged<TSelf*, uint, HWND, char*, char*, uint, int> PromptAction;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, uint, int> LogAction;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, uint, int> LogAction;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, uint*, uint, int> CreateZoneEnumerator;

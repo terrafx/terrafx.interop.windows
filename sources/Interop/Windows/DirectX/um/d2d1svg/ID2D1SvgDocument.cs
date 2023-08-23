@@ -92,9 +92,9 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.FindElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement)
+    public HRESULT FindElementById([NativeTypeName("PCWSTR")] char* id, ID2D1SvgElement** svgElement)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, ushort*, ID2D1SvgElement**, int>)(lpVtbl[8]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
+        return ((delegate* unmanaged<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)(lpVtbl[8]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.Serialize"]/*' />
@@ -116,9 +116,9 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePaint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint)
+    public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] char* id, ID2D1SvgPaint** paint)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, ushort*, ID2D1SvgPaint**, int>)(lpVtbl[11]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
+        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int>)(lpVtbl[11]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreateStrokeDashArray"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
         void GetRoot(ID2D1SvgElement** root);
 
         [VtblIndex(8)]
-        HRESULT FindElementById([NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgElement** svgElement);
+        HRESULT FindElementById([NativeTypeName("PCWSTR")] char* id, ID2D1SvgElement** svgElement);
 
         [VtblIndex(9)]
         HRESULT Serialize(IStream* outputXmlStream, ID2D1SvgElement* subtree = null);
@@ -170,7 +170,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
         HRESULT Deserialize(IStream* inputXmlStream, ID2D1SvgElement** subtree);
 
         [VtblIndex(11)]
-        HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] ushort* id, ID2D1SvgPaint** paint);
+        HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] char* id, ID2D1SvgPaint** paint);
 
         [VtblIndex(12)]
         HRESULT CreateStrokeDashArray([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray);
@@ -210,7 +210,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
         public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetRoot;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgElement**, int> FindElementById;
+        public delegate* unmanaged<TSelf*, char*, ID2D1SvgElement**, int> FindElementById;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement*, int> Serialize;
@@ -219,7 +219,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
         public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement**, int> Deserialize;
 
         [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F *, PCWSTR, ID2D1SvgPaint **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, ushort*, ID2D1SvgPaint**, int> CreatePaint;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int> CreatePaint;
 
         [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, ID2D1SvgStrokeDashArray **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int> CreateStrokeDashArray;

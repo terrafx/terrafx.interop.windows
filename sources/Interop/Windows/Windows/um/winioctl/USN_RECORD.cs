@@ -61,5 +61,5 @@ public unsafe partial struct USN_RECORD
 
     /// <include file='USN_RECORD.xml' path='doc/member[@name="USN_RECORD.FileName"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort FileName[1];
+    public fixed char FileName[1];
 }

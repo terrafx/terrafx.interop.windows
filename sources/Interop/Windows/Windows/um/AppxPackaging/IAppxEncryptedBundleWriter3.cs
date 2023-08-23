@@ -51,26 +51,26 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
     /// <include file='IAppxEncryptedBundleWriter3.xml' path='doc/member[@name="IAppxEncryptedBundleWriter3.AddPayloadPackageEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
+    public HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
+        return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, char*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
     }
 
     /// <include file='IAppxEncryptedBundleWriter3.xml' path='doc/member[@name="IAppxEncryptedBundleWriter3.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
+    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
+        return ((delegate* unmanaged<IAppxEncryptedBundleWriter3*, char*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxEncryptedBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
+        HRESULT AddPayloadPackageEncrypted([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
 
         [VtblIndex(4)]
-        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
+        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddPayloadPackageEncrypted;
+        public delegate* unmanaged<TSelf*, char*, IStream*, BOOL, int> AddPayloadPackageEncrypted;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
+        public delegate* unmanaged<TSelf*, char*, IStream*, BOOL, int> AddExternalPackageReference;
     }
 }

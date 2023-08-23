@@ -21,5 +21,5 @@ public unsafe partial struct SYNCMGRHANDLERINFO
 
     /// <include file='SYNCMGRHANDLERINFO.xml' path='doc/member[@name="SYNCMGRHANDLERINFO.wszHandlerName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort wszHandlerName[32];
+    public fixed char wszHandlerName[32];
 }

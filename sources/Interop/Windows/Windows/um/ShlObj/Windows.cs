@@ -16,7 +16,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathQualify"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern void PathQualify([NativeTypeName("PWSTR")] ushort* psz);
+    public static extern void PathQualify([NativeTypeName("PWSTR")] char* psz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSlowA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -24,20 +24,20 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSlowW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL PathIsSlowW([NativeTypeName("LPCWSTR")] ushort* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
+    public static extern BOOL PathIsSlowW([NativeTypeName("LPCWSTR")] char* pszFile, [NativeTypeName("DWORD")] uint dwAttr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreatePropSheetExtArray"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] ushort* pszSubKey, uint max_iface);
+    public static extern HPSXA SHCreatePropSheetExtArray(HKEY hKey, [NativeTypeName("PCWSTR")] char* pszSubKey, uint max_iface);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenPropSheetW"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] ushort* pszCaption, [NativeTypeName("HKEY[]")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] ushort* pStartPage);
+    public static extern BOOL SHOpenPropSheetW([NativeTypeName("LPCWSTR")] char* pszCaption, [NativeTypeName("HKEY[]")] HKEY* ahkeys, uint ckeys, [NativeTypeName("const CLSID *")] Guid* pclsidDefault, IDataObject* pdtobj, IShellBrowser* psb, [NativeTypeName("LPCWSTR")] char* pStartPage);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SoftwareUpdateMessageBox"]/*' />
     [DllImport("shdocvw", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint SoftwareUpdateMessageBox(HWND hWnd, [NativeTypeName("PCWSTR")] ushort* pszDistUnit, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
+    public static extern uint SoftwareUpdateMessageBox(HWND hWnd, [NativeTypeName("PCWSTR")] char* pszDistUnit, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHMultiFileProperties"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -133,7 +133,7 @@ public static unsafe partial class Windows
     public const int SHCDF_UPDATEITEM = 0x00000001;
 
     [NativeTypeName("#define PathIsSlow PathIsSlowW")]
-    public static delegate*<ushort*, uint, BOOL> PathIsSlow => &PathIsSlowW;
+    public static delegate*<char*, uint, BOOL> PathIsSlow => &PathIsSlowW;
 
     [NativeTypeName("#define OPENPROPS_NONE 0x0000")]
     public const int OPENPROPS_NONE = 0x0000;
@@ -154,5 +154,5 @@ public static unsafe partial class Windows
     public const int CLOSEPROPS_DISCARD = 0x0001;
 
     [NativeTypeName("#define SHOpenPropSheet SHOpenPropSheetW")]
-    public static delegate*<ushort*, HKEY*, uint, Guid*, IDataObject*, IShellBrowser*, ushort*, BOOL> SHOpenPropSheet => &SHOpenPropSheetW;
+    public static delegate*<char*, HKEY*, uint, Guid*, IDataObject*, IShellBrowser*, char*, BOOL> SHOpenPropSheet => &SHOpenPropSheetW;
 }

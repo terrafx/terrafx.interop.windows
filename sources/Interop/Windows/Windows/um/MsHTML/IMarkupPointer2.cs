@@ -137,17 +137,17 @@ public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativ
     /// <inheritdoc cref="IMarkupPointer.Left" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+    public HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText)
     {
-        return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[14]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+        return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int>)(lpVtbl[14]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
     /// <inheritdoc cref="IMarkupPointer.Right" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+    public HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText)
     {
-        return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[15]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+        return ((delegate* unmanaged<IMarkupPointer2*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int>)(lpVtbl[15]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
     /// <inheritdoc cref="IMarkupPointer.CurrentScope" />
@@ -209,9 +209,9 @@ public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativ
     /// <inheritdoc cref="IMarkupPointer.FindTextW" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)
+    public HRESULT FindTextW([NativeTypeName("OLECHAR *")] char* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)
     {
-        return ((delegate* unmanaged<IMarkupPointer2*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pchFindText, dwFlags, pIEndMatch, pIEndSearch);
+        return ((delegate* unmanaged<IMarkupPointer2*, char*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupPointer2*)Unsafe.AsPointer(ref this), pchFindText, dwFlags, pIEndMatch, pIEndSearch);
     }
 
     /// <include file='IMarkupPointer2.xml' path='doc/member[@name="IMarkupPointer2.IsAtWordBreak"]/*' />
@@ -329,10 +329,10 @@ public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativ
         public delegate* unmanaged<TSelf*, IMarkupContainer*, BOOL, int> MoveToContainer;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Left;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int> Left;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Right;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int> Right;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLElement**, int> CurrentScope;
@@ -356,7 +356,7 @@ public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativ
         public delegate* unmanaged<TSelf*, MOVEUNIT_ACTION, int> MoveUnit;
 
         [NativeTypeName("HRESULT (OLECHAR *, DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
+        public delegate* unmanaged<TSelf*, char*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> IsAtWordBreak;

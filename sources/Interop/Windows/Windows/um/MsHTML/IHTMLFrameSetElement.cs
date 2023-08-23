@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_rows"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_rows([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rows([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int>)(lpVtbl[7]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[7]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_rows"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_rows([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rows([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int>)(lpVtbl[8]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[8]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_cols"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_cols([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_cols([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int>)(lpVtbl[9]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[9]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_cols"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_cols([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cols([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int>)(lpVtbl[10]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[10]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_border"]/*' />
@@ -145,17 +145,17 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_frameBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT put_frameBorder([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_frameBorder([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int>)(lpVtbl[15]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[15]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_frameBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_frameBorder([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_frameBorder([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int>)(lpVtbl[16]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[16]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_frameSpacing"]/*' />
@@ -177,17 +177,17 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort*, int>)(lpVtbl[19]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[19]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, ushort**, int>)(lpVtbl[20]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[20]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_onload"]/*' />
@@ -241,16 +241,16 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_rows([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rows([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_rows([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rows([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_cols([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_cols([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_cols([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cols([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT put_border(VARIANT v);
@@ -265,10 +265,10 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         HRESULT get_borderColor(VARIANT* p);
 
         [VtblIndex(15)]
-        HRESULT put_frameBorder([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_frameBorder([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(16)]
-        HRESULT get_frameBorder([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_frameBorder([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(17)]
         HRESULT put_frameSpacing(VARIANT v);
@@ -277,10 +277,10 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         HRESULT get_frameSpacing(VARIANT* p);
 
         [VtblIndex(19)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(20)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(21)]
         HRESULT put_onload(VARIANT v);
@@ -320,22 +320,22 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rows;
+        public delegate* unmanaged<TSelf*, char*, int> put_rows;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rows;
+        public delegate* unmanaged<TSelf*, char**, int> get_rows;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_cols;
+        public delegate* unmanaged<TSelf*, char*, int> put_cols;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cols;
+        public delegate* unmanaged<TSelf*, char**, int> get_cols;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_border;
@@ -350,10 +350,10 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_frameBorder;
+        public delegate* unmanaged<TSelf*, char*, int> put_frameBorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_frameBorder;
+        public delegate* unmanaged<TSelf*, char**, int> get_frameBorder;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_frameSpacing;
@@ -362,10 +362,10 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_frameSpacing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;

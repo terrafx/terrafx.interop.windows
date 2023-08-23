@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, ushort**, int>)(lpVtbl[3]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnShowHelp*, char**, int>)(lpVtbl[3]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnShowHelp.xml' path='doc/member[@name="ITfFnShowHelp.Show"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, int> Show;

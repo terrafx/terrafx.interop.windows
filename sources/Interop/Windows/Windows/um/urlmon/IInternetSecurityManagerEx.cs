@@ -65,41 +65,41 @@ public unsafe partial struct IInternetSecurityManagerEx : IInternetSecurityManag
     /// <inheritdoc cref="IInternetSecurityManager.MapUrlToZone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT MapUrlToZone([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT MapUrlToZone([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, uint*, uint, int>)(lpVtbl[5]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, pdwZone, dwFlags);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, char*, uint*, uint, int>)(lpVtbl[5]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, pdwZone, dwFlags);
     }
 
     /// <inheritdoc cref="IInternetSecurityManager.GetSecurityId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSecurityId([NativeTypeName("LPCWSTR")] ushort* pwszUrl, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
+    public HRESULT GetSecurityId([NativeTypeName("LPCWSTR")] char* pwszUrl, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, byte*, uint*, nuint, int>)(lpVtbl[6]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, pbSecurityId, pcbSecurityId, dwReserved);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, char*, byte*, uint*, nuint, int>)(lpVtbl[6]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, pbSecurityId, pcbSecurityId, dwReserved);
     }
 
     /// <inheritdoc cref="IInternetSecurityManager.ProcessUrlAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT ProcessUrlAction([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved)
+    public HRESULT ProcessUrlAction([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, int>)(lpVtbl[7]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, char*, uint, byte*, uint, byte*, uint, uint, uint, int>)(lpVtbl[7]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved);
     }
 
     /// <inheritdoc cref="IInternetSecurityManager.QueryCustomPolicy" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT QueryCustomPolicy([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved)
+    public HRESULT QueryCustomPolicy([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, Guid*, byte**, uint*, byte*, uint, uint, int>)(lpVtbl[8]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, char*, Guid*, byte**, uint*, byte*, uint, uint, int>)(lpVtbl[8]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
     }
 
     /// <inheritdoc cref="IInternetSecurityManager.SetZoneMapping" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetZoneMapping([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("LPCWSTR")] ushort* lpszPattern, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT SetZoneMapping([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("LPCWSTR")] char* lpszPattern, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, uint, ushort*, uint, int>)(lpVtbl[9]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), dwZone, lpszPattern, dwFlags);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, uint, char*, uint, int>)(lpVtbl[9]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), dwZone, lpszPattern, dwFlags);
     }
 
     /// <inheritdoc cref="IInternetSecurityManager.GetZoneMappings" />
@@ -113,15 +113,15 @@ public unsafe partial struct IInternetSecurityManagerEx : IInternetSecurityManag
     /// <include file='IInternetSecurityManagerEx.xml' path='doc/member[@name="IInternetSecurityManagerEx.ProcessUrlActionEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
+    public HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
     {
-        return ((delegate* unmanaged<IInternetSecurityManagerEx*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int>)(lpVtbl[11]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved, pdwOutFlags);
+        return ((delegate* unmanaged<IInternetSecurityManagerEx*, char*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int>)(lpVtbl[11]))((IInternetSecurityManagerEx*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved, pdwOutFlags);
     }
 
     public interface Interface : IInternetSecurityManager.Interface
     {
         [VtblIndex(11)]
-        HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags);
+        HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,24 +143,24 @@ public unsafe partial struct IInternetSecurityManagerEx : IInternetSecurityManag
         public delegate* unmanaged<TSelf*, IInternetSecurityMgrSite**, int> GetSecuritySite;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, uint, int> MapUrlToZone;
+        public delegate* unmanaged<TSelf*, char*, uint*, uint, int> MapUrlToZone;
 
         [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, byte*, uint*, nuint, int> GetSecurityId;
+        public delegate* unmanaged<TSelf*, char*, byte*, uint*, nuint, int> GetSecurityId;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
+        public delegate* unmanaged<TSelf*, char*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
 
         [NativeTypeName("HRESULT (LPCWSTR, const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
+        public delegate* unmanaged<TSelf*, char*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> SetZoneMapping;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> SetZoneMapping;
 
         [NativeTypeName("HRESULT (DWORD, IEnumString **, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IEnumString**, uint, int> GetZoneMappings;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int> ProcessUrlActionEx;
+        public delegate* unmanaged<TSelf*, char*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int> ProcessUrlActionEx;
     }
 }

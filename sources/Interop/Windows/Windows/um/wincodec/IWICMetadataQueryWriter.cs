@@ -57,17 +57,17 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
     /// <inheritdoc cref="IWICMetadataQueryReader.GetLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, uint* pcchActualLength)
+    public HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] char* wzNamespace, uint* pcchActualLength)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryWriter*, uint, ushort*, uint*, int>)(lpVtbl[4]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
+        return ((delegate* unmanaged<IWICMetadataQueryWriter*, uint, char*, uint*, int>)(lpVtbl[4]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
     }
 
     /// <inheritdoc cref="IWICMetadataQueryReader.GetMetadataByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue)
+    public HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int>)(lpVtbl[5]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
+        return ((delegate* unmanaged<IWICMetadataQueryWriter*, char*, PROPVARIANT*, int>)(lpVtbl[5]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
     }
 
     /// <inheritdoc cref="IWICMetadataQueryReader.GetEnumerator" />
@@ -81,26 +81,26 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
     /// <include file='IWICMetadataQueryWriter.xml' path='doc/member[@name="IWICMetadataQueryWriter.SetMetadataByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue)
+    public HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
+        return ((delegate* unmanaged<IWICMetadataQueryWriter*, char*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
     }
 
     /// <include file='IWICMetadataQueryWriter.xml' path='doc/member[@name="IWICMetadataQueryWriter.RemoveMetadataByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName)
+    public HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] char* wzName)
     {
-        return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, int>)(lpVtbl[8]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName);
+        return ((delegate* unmanaged<IWICMetadataQueryWriter*, char*, int>)(lpVtbl[8]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName);
     }
 
     public interface Interface : IWICMetadataQueryReader.Interface
     {
         [VtblIndex(7)]
-        HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
+        HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] char* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue);
 
         [VtblIndex(8)]
-        HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName);
+        HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] char* wzName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -119,18 +119,18 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetLocation;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetLocation;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetMetadataByName;
+        public delegate* unmanaged<TSelf*, char*, PROPVARIANT*, int> GetMetadataByName;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumString**, int> GetEnumerator;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> SetMetadataByName;
+        public delegate* unmanaged<TSelf*, char*, PROPVARIANT*, int> SetMetadataByName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RemoveMetadataByName;
+        public delegate* unmanaged<TSelf*, char*, int> RemoveMetadataByName;
     }
 }

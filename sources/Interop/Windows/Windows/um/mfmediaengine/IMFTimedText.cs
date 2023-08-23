@@ -67,25 +67,25 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface, INativeGuid
     /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddDataSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
+    public HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
     {
-        return ((delegate* unmanaged<IMFTimedText*, IMFByteStream*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[5]))((IMFTimedText*)Unsafe.AsPointer(ref this), byteStream, label, language, kind, isDefault, trackId);
+        return ((delegate* unmanaged<IMFTimedText*, IMFByteStream*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[5]))((IMFTimedText*)Unsafe.AsPointer(ref this), byteStream, label, language, kind, isDefault, trackId);
     }
 
     /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddDataSourceFromUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] ushort* url, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
+    public HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] char* url, [NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId)
     {
-        return ((delegate* unmanaged<IMFTimedText*, ushort*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[6]))((IMFTimedText*)Unsafe.AsPointer(ref this), url, label, language, kind, isDefault, trackId);
+        return ((delegate* unmanaged<IMFTimedText*, char*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int>)(lpVtbl[6]))((IMFTimedText*)Unsafe.AsPointer(ref this), url, label, language, kind, isDefault, trackId);
     }
 
     /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.AddTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddTrack([NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track)
+    public HRESULT AddTrack([NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track)
     {
-        return ((delegate* unmanaged<IMFTimedText*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int>)(lpVtbl[7]))((IMFTimedText*)Unsafe.AsPointer(ref this), label, language, kind, track);
+        return ((delegate* unmanaged<IMFTimedText*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int>)(lpVtbl[7]))((IMFTimedText*)Unsafe.AsPointer(ref this), label, language, kind, track);
     }
 
     /// <include file='IMFTimedText.xml' path='doc/member[@name="IMFTimedText.RemoveTrack"]/*' />
@@ -169,13 +169,13 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface, INativeGuid
         HRESULT SelectTrack([NativeTypeName("DWORD")] uint trackId, BOOL selected);
 
         [VtblIndex(5)]
-        HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
+        HRESULT AddDataSource(IMFByteStream* byteStream, [NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
 
         [VtblIndex(6)]
-        HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] ushort* url, [NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
+        HRESULT AddDataSourceFromUrl([NativeTypeName("LPCWSTR")] char* url, [NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, BOOL isDefault, [NativeTypeName("DWORD *")] uint* trackId);
 
         [VtblIndex(7)]
-        HRESULT AddTrack([NativeTypeName("LPCWSTR")] ushort* label, [NativeTypeName("LPCWSTR")] ushort* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track);
+        HRESULT AddTrack([NativeTypeName("LPCWSTR")] char* label, [NativeTypeName("LPCWSTR")] char* language, MF_TIMED_TEXT_TRACK_KIND kind, IMFTimedTextTrack** track);
 
         [VtblIndex(8)]
         HRESULT RemoveTrack(IMFTimedTextTrack* track);
@@ -224,13 +224,13 @@ public unsafe partial struct IMFTimedText : IMFTimedText.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, BOOL, int> SelectTrack;
 
         [NativeTypeName("HRESULT (IMFByteStream *, LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, BOOL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSource;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSource;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, BOOL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSourceFromUrl;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, BOOL, uint*, int> AddDataSourceFromUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int> AddTrack;
+        public delegate* unmanaged<TSelf*, char*, char*, MF_TIMED_TEXT_TRACK_KIND, IMFTimedTextTrack**, int> AddTrack;
 
         [NativeTypeName("HRESULT (IMFTimedTextTrack *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFTimedTextTrack*, int> RemoveTrack;

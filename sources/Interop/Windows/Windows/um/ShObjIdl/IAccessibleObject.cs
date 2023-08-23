@@ -49,15 +49,15 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface, IN
     /// <include file='IAccessibleObject.xml' path='doc/member[@name="IAccessibleObject.SetAccessibleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] ushort* pszName)
+    public HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IAccessibleObject*, ushort*, int>)(lpVtbl[3]))((IAccessibleObject*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged<IAccessibleObject*, char*, int>)(lpVtbl[3]))((IAccessibleObject*)Unsafe.AsPointer(ref this), pszName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] ushort* pszName);
+        HRESULT SetAccessibleName([NativeTypeName("LPCWSTR")] char* pszName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAccessibleObject : IAccessibleObject.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAccessibleName;
+        public delegate* unmanaged<TSelf*, char*, int> SetAccessibleName;
     }
 }

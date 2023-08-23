@@ -57,9 +57,9 @@ public unsafe partial struct ISearchBoxInfo : ISearchBoxInfo.Interface, INativeG
     /// <include file='ISearchBoxInfo.xml' path='doc/member[@name="ISearchBoxInfo.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** ppsz)
+    public HRESULT GetText([NativeTypeName("LPWSTR *")] char** ppsz)
     {
-        return ((delegate* unmanaged<ISearchBoxInfo*, ushort**, int>)(lpVtbl[4]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), ppsz);
+        return ((delegate* unmanaged<ISearchBoxInfo*, char**, int>)(lpVtbl[4]))((ISearchBoxInfo*)Unsafe.AsPointer(ref this), ppsz);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct ISearchBoxInfo : ISearchBoxInfo.Interface, INativeG
         HRESULT GetCondition([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(4)]
-        HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** ppsz);
+        HRESULT GetText([NativeTypeName("LPWSTR *")] char** ppsz);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct ISearchBoxInfo : ISearchBoxInfo.Interface, INativeG
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetCondition;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, char**, int> GetText;
     }
 }

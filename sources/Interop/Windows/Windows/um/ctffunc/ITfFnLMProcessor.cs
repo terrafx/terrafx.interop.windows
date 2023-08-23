@@ -49,9 +49,9 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ushort**, int>)(lpVtbl[3]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnLMProcessor*, char**, int>)(lpVtbl[3]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.QueryRange"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;

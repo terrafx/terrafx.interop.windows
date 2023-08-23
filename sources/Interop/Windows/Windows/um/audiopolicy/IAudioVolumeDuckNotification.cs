@@ -49,26 +49,26 @@ public unsafe partial struct IAudioVolumeDuckNotification : IAudioVolumeDuckNoti
     /// <include file='IAudioVolumeDuckNotification.xml' path='doc/member[@name="IAudioVolumeDuckNotification.OnVolumeDuckNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnVolumeDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, [NativeTypeName("UINT32")] uint countCommunicationSessions)
+    public HRESULT OnVolumeDuckNotification([NativeTypeName("LPCWSTR")] char* sessionID, [NativeTypeName("UINT32")] uint countCommunicationSessions)
     {
-        return ((delegate* unmanaged<IAudioVolumeDuckNotification*, ushort*, uint, int>)(lpVtbl[3]))((IAudioVolumeDuckNotification*)Unsafe.AsPointer(ref this), sessionID, countCommunicationSessions);
+        return ((delegate* unmanaged<IAudioVolumeDuckNotification*, char*, uint, int>)(lpVtbl[3]))((IAudioVolumeDuckNotification*)Unsafe.AsPointer(ref this), sessionID, countCommunicationSessions);
     }
 
     /// <include file='IAudioVolumeDuckNotification.xml' path='doc/member[@name="IAudioVolumeDuckNotification.OnVolumeUnduckNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID)
+    public HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] char* sessionID)
     {
-        return ((delegate* unmanaged<IAudioVolumeDuckNotification*, ushort*, int>)(lpVtbl[4]))((IAudioVolumeDuckNotification*)Unsafe.AsPointer(ref this), sessionID);
+        return ((delegate* unmanaged<IAudioVolumeDuckNotification*, char*, int>)(lpVtbl[4]))((IAudioVolumeDuckNotification*)Unsafe.AsPointer(ref this), sessionID);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnVolumeDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, [NativeTypeName("UINT32")] uint countCommunicationSessions);
+        HRESULT OnVolumeDuckNotification([NativeTypeName("LPCWSTR")] char* sessionID, [NativeTypeName("UINT32")] uint countCommunicationSessions);
 
         [VtblIndex(4)]
-        HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID);
+        HRESULT OnVolumeUnduckNotification([NativeTypeName("LPCWSTR")] char* sessionID);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IAudioVolumeDuckNotification : IAudioVolumeDuckNoti
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> OnVolumeDuckNotification;
+        public delegate* unmanaged<TSelf*, char*, uint, int> OnVolumeDuckNotification;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> OnVolumeUnduckNotification;
+        public delegate* unmanaged<TSelf*, char*, int> OnVolumeUnduckNotification;
     }
 }

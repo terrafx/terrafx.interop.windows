@@ -10,5 +10,5 @@ public unsafe partial struct USERNAME_TARGET_CREDENTIAL_INFO
 {
     /// <include file='USERNAME_TARGET_CREDENTIAL_INFO.xml' path='doc/member[@name="USERNAME_TARGET_CREDENTIAL_INFO.UserName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* UserName;
+    public char* UserName;
 }

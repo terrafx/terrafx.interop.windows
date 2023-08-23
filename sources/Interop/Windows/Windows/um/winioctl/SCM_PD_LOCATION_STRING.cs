@@ -18,5 +18,5 @@ public unsafe partial struct SCM_PD_LOCATION_STRING
 
     /// <include file='SCM_PD_LOCATION_STRING.xml' path='doc/member[@name="SCM_PD_LOCATION_STRING.Location"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Location[1];
+    public fixed char Location[1];
 }

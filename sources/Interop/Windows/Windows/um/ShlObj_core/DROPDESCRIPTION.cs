@@ -16,9 +16,9 @@ public unsafe partial struct DROPDESCRIPTION
 
     /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szMessage"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szMessage[260];
+    public fixed char szMessage[260];
 
     /// <include file='DROPDESCRIPTION.xml' path='doc/member[@name="DROPDESCRIPTION.szInsert"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szInsert[260];
+    public fixed char szInsert[260];
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyle2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,121 +81,121 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_tableLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_tableLayout([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[7]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[7]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_tableLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_tableLayout([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[8]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[8]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_borderCollapse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderCollapse([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[9]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[9]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_borderCollapse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderCollapse([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[10]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[10]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_direction([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_direction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[11]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[11]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_direction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[12]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[12]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_behavior([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[13]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[13]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_behavior([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[14]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[14]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.setExpression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT setExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("BSTR")] ushort* language = null)
+    public HRESULT setExpression([NativeTypeName("BSTR")] char* propname, [NativeTypeName("BSTR")] char* expression, [NativeTypeName("BSTR")] char* language = null)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, ushort*, ushort*, int>)(lpVtbl[15]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, expression, language);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, char*, char*, int>)(lpVtbl[15]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, expression, language);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.getExpression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT getExpression([NativeTypeName("BSTR")] ushort* propname, VARIANT* expression)
+    public HRESULT getExpression([NativeTypeName("BSTR")] char* propname, VARIANT* expression)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, VARIANT*, int>)(lpVtbl[16]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, expression);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, VARIANT*, int>)(lpVtbl[16]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, expression);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.removeExpression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT removeExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess)
+    public HRESULT removeExpression([NativeTypeName("BSTR")] char* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, short*, int>)(lpVtbl[17]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, pfSuccess);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, short*, int>)(lpVtbl[17]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), propname, pfSuccess);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_position"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT put_position([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_position([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[18]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[18]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_position"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_position([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_position([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[19]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[19]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_unicodeBidi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_unicodeBidi([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[20]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[20]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_unicodeBidi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[21]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[21]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_bottom"]/*' />
@@ -297,65 +297,65 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_imeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_imeMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[34]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[34]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_imeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_imeMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[35]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[35]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_rubyAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[36]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[36]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_rubyAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[37]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[37]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_rubyPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyPosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[38]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[38]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_rubyPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyPosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[39]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[39]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_rubyOverhang"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyOverhang([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[40]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[40]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_rubyOverhang"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[41]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[41]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_layoutGridChar"]/*' />
@@ -393,113 +393,113 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_layoutGridMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGridMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[46]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[46]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_layoutGridMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
-    public HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[47]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[47]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_layoutGridType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGridType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[48]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[48]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_layoutGridType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGridType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[49]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[49]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_layoutGrid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGrid([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[50]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[50]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_layoutGrid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGrid([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[51]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[51]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_wordBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_wordBreak([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[52]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[52]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_wordBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
-    public HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wordBreak([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[53]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[53]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_lineBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
-    public HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lineBreak([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[54]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[54]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_lineBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
-    public HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lineBreak([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[55]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[55]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_textJustify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
-    public HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textJustify([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[56]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[56]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_textJustify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
-    public HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textJustify([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[57]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[57]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_textJustifyTrim"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
-    public HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[58]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[58]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_textJustifyTrim"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
-    public HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[59]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[59]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_textKashida"]/*' />
@@ -521,113 +521,113 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_textAutospace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
-    public HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAutospace([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[62]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[62]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_textAutospace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
-    public HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAutospace([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[63]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[63]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_overflowX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
-    public HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_overflowX([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[64]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[64]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_overflowX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
-    public HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_overflowX([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[65]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[65]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_overflowY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
-    public HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_overflowY([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[66]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[66]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_overflowY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
-    public HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_overflowY([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[67]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[67]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.put_accelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
-    public HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_accelerator([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort*, int>)(lpVtbl[68]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLStyle2*, char*, int>)(lpVtbl[68]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle2.xml' path='doc/member[@name="IHTMLStyle2.get_accelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
-    public HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_accelerator([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle2*, ushort**, int>)(lpVtbl[69]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLStyle2*, char**, int>)(lpVtbl[69]))((IHTMLStyle2*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_tableLayout([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_tableLayout([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderCollapse([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderCollapse([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_direction([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_direction([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_behavior([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_behavior([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
-        HRESULT setExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("BSTR")] ushort* expression, [NativeTypeName("BSTR")] ushort* language = null);
+        HRESULT setExpression([NativeTypeName("BSTR")] char* propname, [NativeTypeName("BSTR")] char* expression, [NativeTypeName("BSTR")] char* language = null);
 
         [VtblIndex(16)]
-        HRESULT getExpression([NativeTypeName("BSTR")] ushort* propname, VARIANT* expression);
+        HRESULT getExpression([NativeTypeName("BSTR")] char* propname, VARIANT* expression);
 
         [VtblIndex(17)]
-        HRESULT removeExpression([NativeTypeName("BSTR")] ushort* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
+        HRESULT removeExpression([NativeTypeName("BSTR")] char* propname, [NativeTypeName("VARIANT_BOOL *")] short* pfSuccess);
 
         [VtblIndex(18)]
-        HRESULT put_position([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_position([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(19)]
-        HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_position([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(20)]
-        HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_unicodeBidi([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(21)]
-        HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
         HRESULT put_bottom(VARIANT v);
@@ -666,28 +666,28 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         HRESULT get_posRight(float* p);
 
         [VtblIndex(34)]
-        HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_imeMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(35)]
-        HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_imeMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(36)]
-        HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyAlign([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(37)]
-        HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyAlign([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(38)]
-        HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyPosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(39)]
-        HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyPosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(40)]
-        HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyOverhang([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(41)]
-        HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(42)]
         HRESULT put_layoutGridChar(VARIANT v);
@@ -702,46 +702,46 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         HRESULT get_layoutGridLine(VARIANT* p);
 
         [VtblIndex(46)]
-        HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGridMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(47)]
-        HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(48)]
-        HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGridType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(49)]
-        HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGridType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(50)]
-        HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGrid([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(51)]
-        HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGrid([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(52)]
-        HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_wordBreak([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(53)]
-        HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wordBreak([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(54)]
-        HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lineBreak([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(55)]
-        HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lineBreak([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(56)]
-        HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textJustify([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(57)]
-        HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textJustify([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(58)]
-        HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(59)]
-        HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(60)]
         HRESULT put_textKashida(VARIANT v);
@@ -750,28 +750,28 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         HRESULT get_textKashida(VARIANT* p);
 
         [VtblIndex(62)]
-        HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAutospace([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(63)]
-        HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAutospace([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(64)]
-        HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_overflowX([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(65)]
-        HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_overflowX([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(66)]
-        HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_overflowY([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(67)]
-        HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_overflowY([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(68)]
-        HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_accelerator([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(69)]
-        HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_accelerator([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -793,55 +793,55 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_tableLayout;
+        public delegate* unmanaged<TSelf*, char*, int> put_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_tableLayout;
+        public delegate* unmanaged<TSelf*, char**, int> get_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderCollapse;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderCollapse;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_direction;
+        public delegate* unmanaged<TSelf*, char*, int> put_direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_direction;
+        public delegate* unmanaged<TSelf*, char**, int> get_direction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_behavior;
+        public delegate* unmanaged<TSelf*, char*, int> put_behavior;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_behavior;
+        public delegate* unmanaged<TSelf*, char**, int> get_behavior;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> setExpression;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> setExpression;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getExpression;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getExpression;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> removeExpression;
+        public delegate* unmanaged<TSelf*, char*, short*, int> removeExpression;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_position;
+        public delegate* unmanaged<TSelf*, char*, int> put_position;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_position;
+        public delegate* unmanaged<TSelf*, char**, int> get_position;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_unicodeBidi;
+        public delegate* unmanaged<TSelf*, char*, int> put_unicodeBidi;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_unicodeBidi;
+        public delegate* unmanaged<TSelf*, char**, int> get_unicodeBidi;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_bottom;
@@ -880,28 +880,28 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, float*, int> get_posRight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_imeMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_imeMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_imeMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_imeMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyAlign;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyAlign;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyPosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyPosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyOverhang;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyOverhang;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyOverhang;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyOverhang;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_layoutGridChar;
@@ -916,46 +916,46 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_layoutGridLine;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridType;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridType;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGrid;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGrid;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_wordBreak;
+        public delegate* unmanaged<TSelf*, char*, int> put_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wordBreak;
+        public delegate* unmanaged<TSelf*, char**, int> get_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lineBreak;
+        public delegate* unmanaged<TSelf*, char*, int> put_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lineBreak;
+        public delegate* unmanaged<TSelf*, char**, int> get_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustify;
+        public delegate* unmanaged<TSelf*, char*, int> put_textJustify;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustify;
+        public delegate* unmanaged<TSelf*, char**, int> get_textJustify;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, char*, int> put_textJustifyTrim;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, char**, int> get_textJustifyTrim;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashida;
@@ -964,27 +964,27 @@ public unsafe partial struct IHTMLStyle2 : IHTMLStyle2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashida;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAutospace;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAutospace;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowX;
+        public delegate* unmanaged<TSelf*, char*, int> put_overflowX;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowX;
+        public delegate* unmanaged<TSelf*, char**, int> get_overflowX;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowY;
+        public delegate* unmanaged<TSelf*, char*, int> put_overflowY;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowY;
+        public delegate* unmanaged<TSelf*, char**, int> get_overflowY;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_accelerator;
+        public delegate* unmanaged<TSelf*, char*, int> put_accelerator;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_accelerator;
+        public delegate* unmanaged<TSelf*, char**, int> get_accelerator;
     }
 }

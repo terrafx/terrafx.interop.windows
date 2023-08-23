@@ -49,7 +49,7 @@ public unsafe partial struct SOUNDSENTRYW
 
     /// <include file='SOUNDSENTRYW.xml' path='doc/member[@name="SOUNDSENTRYW.lpszWindowsEffectDLL"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszWindowsEffectDLL;
+    public char* lpszWindowsEffectDLL;
 
     /// <include file='SOUNDSENTRYW.xml' path='doc/member[@name="SOUNDSENTRYW.iWindowsEffectOrdinal"]/*' />
     [NativeTypeName("DWORD")]

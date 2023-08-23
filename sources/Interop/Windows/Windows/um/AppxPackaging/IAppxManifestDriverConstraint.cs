@@ -49,9 +49,9 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
     /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int>)(lpVtbl[3]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IAppxManifestDriverConstraint*, char**, int>)(lpVtbl[3]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetMinVersion"]/*' />
@@ -65,21 +65,21 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
     /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetMinDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMinDate([NativeTypeName("LPWSTR *")] ushort** minDate)
+    public HRESULT GetMinDate([NativeTypeName("LPWSTR *")] char** minDate)
     {
-        return ((delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int>)(lpVtbl[5]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), minDate);
+        return ((delegate* unmanaged<IAppxManifestDriverConstraint*, char**, int>)(lpVtbl[5]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), minDate);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
         HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
 
         [VtblIndex(5)]
-        HRESULT GetMinDate([NativeTypeName("LPWSTR *")] ushort** minDate);
+        HRESULT GetMinDate([NativeTypeName("LPWSTR *")] char** minDate);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetMinDate;
+        public delegate* unmanaged<TSelf*, char**, int> GetMinDate;
     }
 }

@@ -10,7 +10,7 @@ public unsafe partial struct PARAMDATA
 {
     /// <include file='PARAMDATA.xml' path='doc/member[@name="PARAMDATA.szName"]/*' />
     [NativeTypeName("OLECHAR *")]
-    public ushort* szName;
+    public char* szName;
 
     /// <include file='PARAMDATA.xml' path='doc/member[@name="PARAMDATA.vt"]/*' />
     [NativeTypeName("VARTYPE")]

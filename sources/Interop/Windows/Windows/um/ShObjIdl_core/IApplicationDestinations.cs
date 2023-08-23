@@ -49,9 +49,9 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
+    public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, ushort*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged<IApplicationDestinations*, char*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.RemoveDestination"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID);
+        HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID);
 
         [VtblIndex(4)]
         HRESULT RemoveDestination(IUnknown* punk);
@@ -95,7 +95,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAppID;
+        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, int> RemoveDestination;

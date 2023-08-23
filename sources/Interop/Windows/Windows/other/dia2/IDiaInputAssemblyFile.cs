@@ -81,9 +81,9 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, char**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_version"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal);
 
         [VtblIndex(7)]
-        HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(8)]
         HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
@@ -140,7 +140,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         public delegate* unmanaged<TSelf*, BOOL*, int> get_pdbAvailableAtILMerge;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
+        public delegate* unmanaged<TSelf*, char**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_version;

@@ -65,9 +65,9 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IAMStats*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IAMStats*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IAMStats*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IAMStats*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,25 +97,25 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetValueByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
+    public HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] char** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
     {
-        return ((delegate* unmanaged<IAMStats*, int, ushort**, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[9]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, szName, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+        return ((delegate* unmanaged<IAMStats*, int, char**, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[9]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, szName, lCount, dLast, dAverage, dStdDev, dMin, dMax);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetValueByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetValueByName([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
+    public HRESULT GetValueByName([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
     {
-        return ((delegate* unmanaged<IAMStats*, ushort*, int*, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[10]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lIndex, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+        return ((delegate* unmanaged<IAMStats*, char*, int*, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[10]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lIndex, lCount, dLast, dAverage, dStdDev, dMin, dMax);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetIndex([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex)
+    public HRESULT GetIndex([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex)
     {
-        return ((delegate* unmanaged<IAMStats*, ushort*, int, int*, int>)(lpVtbl[11]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lCreate, plIndex);
+        return ((delegate* unmanaged<IAMStats*, char*, int, int*, int>)(lpVtbl[11]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lCreate, plIndex);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.AddValue"]/*' />
@@ -135,13 +135,13 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
         HRESULT get_Count([NativeTypeName("LONG *")] int* plCount);
 
         [VtblIndex(9)]
-        HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] ushort** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
+        HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] char** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
 
         [VtblIndex(10)]
-        HRESULT GetValueByName([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
+        HRESULT GetValueByName([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax);
 
         [VtblIndex(11)]
-        HRESULT GetIndex([NativeTypeName("BSTR")] ushort* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex);
+        HRESULT GetIndex([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex);
 
         [VtblIndex(12)]
         HRESULT AddValue([NativeTypeName("long")] int lIndex, double dValue);
@@ -166,7 +166,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -178,13 +178,13 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (long, BSTR *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
+        public delegate* unmanaged<TSelf*, int, char**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (BSTR, long *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
+        public delegate* unmanaged<TSelf*, char*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetIndex;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> GetIndex;
 
         [NativeTypeName("HRESULT (long, double) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, double, int> AddValue;

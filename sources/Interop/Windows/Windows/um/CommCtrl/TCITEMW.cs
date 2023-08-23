@@ -21,7 +21,7 @@ public unsafe partial struct TCITEMW
 
     /// <include file='TCITEMW.xml' path='doc/member[@name="TCITEMW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='TCITEMW.xml' path='doc/member[@name="TCITEMW.cchTextMax"]/*' />
     public int cchTextMax;

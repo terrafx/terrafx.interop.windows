@@ -49,48 +49,48 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.SetPropertyNum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int lValue)
+    public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int lValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, ushort*, int, int>)(lpVtbl[3]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, lValue);
+        return ((delegate* unmanaged<ISpProperties*, char*, int, int>)(lpVtbl[3]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, lValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.GetPropertyNum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG *")] int* plValue)
+    public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG *")] int* plValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, ushort*, int*, int>)(lpVtbl[4]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, plValue);
+        return ((delegate* unmanaged<ISpProperties*, char*, int*, int>)(lpVtbl[4]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, plValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.SetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPCWSTR")] ushort* pValue)
+    public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPCWSTR")] char* pValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, pValue);
+        return ((delegate* unmanaged<ISpProperties*, char*, char*, int>)(lpVtbl[5]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, pValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.GetPropertyString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue)
+    public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPWSTR *")] char** ppCoMemValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
+        return ((delegate* unmanaged<ISpProperties*, char*, char**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int lValue);
+        HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int lValue);
 
         [VtblIndex(4)]
-        HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG *")] int* plValue);
+        HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG *")] int* plValue);
 
         [VtblIndex(5)]
-        HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPCWSTR")] ushort* pValue);
+        HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPCWSTR")] char* pValue);
 
         [VtblIndex(6)]
-        HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue);
+        HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPWSTR *")] char** ppCoMemValue);
     }
 
     public partial struct Vtbl<TSelf>
@@ -106,15 +106,15 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> SetPropertyNum;
+        public delegate* unmanaged<TSelf*, char*, int, int> SetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetPropertyNum;
+        public delegate* unmanaged<TSelf*, char*, int*, int> GetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetPropertyString;
     }
 }

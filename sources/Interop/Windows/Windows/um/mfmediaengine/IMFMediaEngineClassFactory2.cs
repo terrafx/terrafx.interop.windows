@@ -51,15 +51,15 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
     /// <include file='IMFMediaEngineClassFactory2.xml' path='doc/member[@name="IMFMediaEngineClassFactory2.CreateMediaKeys2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* defaultCdmStorePath, [NativeTypeName("BSTR")] ushort* inprivateCdmStorePath, IMFMediaKeys** ppKeys)
+    public HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] char* keySystem, [NativeTypeName("BSTR")] char* defaultCdmStorePath, [NativeTypeName("BSTR")] char* inprivateCdmStorePath, IMFMediaKeys** ppKeys)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, ushort*, ushort*, ushort*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
+        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, char*, char*, char*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] ushort* keySystem, [NativeTypeName("BSTR")] ushort* defaultCdmStorePath, [NativeTypeName("BSTR")] ushort* inprivateCdmStorePath, IMFMediaKeys** ppKeys);
+        HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] char* keySystem, [NativeTypeName("BSTR")] char* defaultCdmStorePath, [NativeTypeName("BSTR")] char* inprivateCdmStorePath, IMFMediaKeys** ppKeys);
     }
 
     public partial struct Vtbl<TSelf>
@@ -75,6 +75,6 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, IMFMediaKeys **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, IMFMediaKeys**, int> CreateMediaKeys2;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, IMFMediaKeys**, int> CreateMediaKeys2;
     }
 }

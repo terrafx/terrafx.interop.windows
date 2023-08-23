@@ -65,9 +65,9 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
     /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.ConfirmOverwrite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] ushort* pszName)
+    public HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[5]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psiSource, psiDestParent, pszName);
+        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, IShellItem*, char*, int>)(lpVtbl[5]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psiSource, psiDestParent, pszName);
     }
 
     /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.ConfirmEncryptionLoss"]/*' />
@@ -81,17 +81,17 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
     /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.FileFailure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] ushort* pszRename, [NativeTypeName("ULONG")] uint cchRename)
+    public HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] char* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] char* pszRename, [NativeTypeName("ULONG")] uint cchRename)
     {
-        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, ushort*, uint, int>)(lpVtbl[7]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszItem, hrError, pszRename, cchRename);
+        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, char*, HRESULT, char*, uint, int>)(lpVtbl[7]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszItem, hrError, pszRename, cchRename);
     }
 
     /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.SubStreamFailure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszStreamName, HRESULT hrError)
+    public HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] char* pszStreamName, HRESULT hrError)
     {
-        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, int>)(lpVtbl[8]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszStreamName, hrError);
+        return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, char*, HRESULT, int>)(lpVtbl[8]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszStreamName, hrError);
     }
 
     /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.PropertyFailure"]/*' />
@@ -111,16 +111,16 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         HRESULT UpdateTransferState([NativeTypeName("TRANSFER_ADVISE_STATE")] uint ts);
 
         [VtblIndex(5)]
-        HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] ushort* pszName);
+        HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] char* pszName);
 
         [VtblIndex(6)]
         HRESULT ConfirmEncryptionLoss(IShellItem* psiSource);
 
         [VtblIndex(7)]
-        HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] ushort* pszRename, [NativeTypeName("ULONG")] uint cchRename);
+        HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] char* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] char* pszRename, [NativeTypeName("ULONG")] uint cchRename);
 
         [VtblIndex(8)]
-        HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszStreamName, HRESULT hrError);
+        HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] char* pszStreamName, HRESULT hrError);
 
         [VtblIndex(9)]
         HRESULT PropertyFailure(IShellItem* psi, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, HRESULT hrError);
@@ -145,16 +145,16 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         public delegate* unmanaged<TSelf*, uint, int> UpdateTransferState;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, int> ConfirmOverwrite;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, char*, int> ConfirmOverwrite;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, int> ConfirmEncryptionLoss;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, HRESULT, LPWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, HRESULT, ushort*, uint, int> FileFailure;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, HRESULT, char*, uint, int> FileFailure;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, HRESULT, int> SubStreamFailure;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, HRESULT, int> SubStreamFailure;
 
         [NativeTypeName("HRESULT (IShellItem *, const PROPERTYKEY *, HRESULT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem*, PROPERTYKEY*, HRESULT, int> PropertyFailure;

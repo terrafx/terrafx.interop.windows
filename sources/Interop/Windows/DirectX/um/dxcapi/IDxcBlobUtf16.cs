@@ -77,9 +77,9 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("LPCWSTR")]
-    public ushort* GetStringPointer()
+    public char* GetStringPointer()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf16*, ushort*>)(lpVtbl[6]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged<IDxcBlobUtf16*, char*>)(lpVtbl[6]))((IDxcBlobUtf16*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDxcBlobUtf16.xml' path='doc/member[@name="IDxcBlobUtf16.GetStringLength"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface, INativeGui
     {
         [VtblIndex(6)]
         [return: NativeTypeName("LPCWSTR")]
-        ushort* GetStringPointer();
+        char* GetStringPointer();
 
         [VtblIndex(7)]
         [return: NativeTypeName("SIZE_T")]
@@ -124,7 +124,7 @@ public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface, INativeGui
         public delegate* unmanaged<TSelf*, BOOL*, uint*, int> GetEncoding;
 
         [NativeTypeName("LPCWSTR () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*> GetStringPointer;
+        public delegate* unmanaged<TSelf*, char*> GetStringPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, nuint> GetStringLength;

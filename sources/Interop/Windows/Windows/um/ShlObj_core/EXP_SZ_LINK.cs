@@ -25,5 +25,5 @@ public unsafe partial struct EXP_SZ_LINK
 
     /// <include file='EXP_SZ_LINK.xml' path='doc/member[@name="EXP_SZ_LINK.swzTarget"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort swzTarget[260];
+    public fixed char swzTarget[260];
 }

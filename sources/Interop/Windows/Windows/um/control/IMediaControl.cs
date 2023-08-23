@@ -65,9 +65,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IMediaControl*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IMediaControl*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,17 +113,17 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.RenderFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RenderFile([NativeTypeName("BSTR")] ushort* strFilename)
+    public HRESULT RenderFile([NativeTypeName("BSTR")] char* strFilename)
     {
-        return ((delegate* unmanaged<IMediaControl*, ushort*, int>)(lpVtbl[11]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename);
+        return ((delegate* unmanaged<IMediaControl*, char*, int>)(lpVtbl[11]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.AddSourceFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT AddSourceFilter([NativeTypeName("BSTR")] ushort* strFilename, IDispatch** ppUnk)
+    public HRESULT AddSourceFilter([NativeTypeName("BSTR")] char* strFilename, IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IMediaControl*, ushort*, IDispatch**, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename, ppUnk);
+        return ((delegate* unmanaged<IMediaControl*, char*, IDispatch**, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename, ppUnk);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.get_FilterCollection"]/*' />
@@ -165,10 +165,10 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
         HRESULT GetState([NativeTypeName("LONG")] int msTimeout, [NativeTypeName("OAFilterState *")] int* pfs);
 
         [VtblIndex(11)]
-        HRESULT RenderFile([NativeTypeName("BSTR")] ushort* strFilename);
+        HRESULT RenderFile([NativeTypeName("BSTR")] char* strFilename);
 
         [VtblIndex(12)]
-        HRESULT AddSourceFilter([NativeTypeName("BSTR")] ushort* strFilename, IDispatch** ppUnk);
+        HRESULT AddSourceFilter([NativeTypeName("BSTR")] char* strFilename, IDispatch** ppUnk);
 
         [VtblIndex(13)]
         HRESULT get_FilterCollection(IDispatch** ppUnk);
@@ -199,7 +199,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -217,10 +217,10 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int, int*, int> GetState;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RenderFile;
+        public delegate* unmanaged<TSelf*, char*, int> RenderFile;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch**, int> AddSourceFilter;
+        public delegate* unmanaged<TSelf*, char*, IDispatch**, int> AddSourceFilter;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_FilterCollection;

@@ -50,7 +50,7 @@ public unsafe partial struct userSTGMEDIUM
             /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.lpszFileName"]/*' />
             [FieldOffset(0)]
             [NativeTypeName("LPOLESTR")]
-            public ushort* lpszFileName;
+            public char* lpszFileName;
 
             /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.pstm"]/*' />
             [FieldOffset(0)]

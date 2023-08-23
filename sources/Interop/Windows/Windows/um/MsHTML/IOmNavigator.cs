@@ -65,9 +65,9 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IOmNavigator*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,33 +81,33 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appCodeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_appCodeName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_appName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_appVersion([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userAgent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_userAgent([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.javaEnabled"]/*' />
@@ -161,57 +161,57 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
+    public HRESULT toString([NativeTypeName("BSTR *")] char** @string)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_cpuClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cpuClass([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_systemLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_browserLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_userLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_platform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_platform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appMinorVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_connectionSpeed"]/*' />
@@ -241,16 +241,16 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_appCodeName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_appName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_appVersion([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_userAgent([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
@@ -271,25 +271,25 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
         HRESULT get_opsProfile(IHTMLOpsProfile** p);
 
         [VtblIndex(17)]
-        HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+        HRESULT toString([NativeTypeName("BSTR *")] char** @string);
 
         [VtblIndex(18)]
-        HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cpuClass([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
-        HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_systemLanguage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(20)]
-        HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_browserLanguage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(21)]
-        HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_userLanguage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
-        HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_platform([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(23)]
-        HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(24)]
         HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
@@ -320,22 +320,22 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_appCodeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_appCodeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_appName;
+        public delegate* unmanaged<TSelf*, char**, int> get_appName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_appVersion;
+        public delegate* unmanaged<TSelf*, char**, int> get_appVersion;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_userAgent;
+        public delegate* unmanaged<TSelf*, char**, int> get_userAgent;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> javaEnabled;
@@ -356,25 +356,25 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHTMLOpsProfile**, int> get_opsProfile;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cpuClass;
+        public delegate* unmanaged<TSelf*, char**, int> get_cpuClass;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_systemLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_browserLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> get_browserLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_userLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> get_userLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_platform;
+        public delegate* unmanaged<TSelf*, char**, int> get_platform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_appMinorVersion;
+        public delegate* unmanaged<TSelf*, char**, int> get_appMinorVersion;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_connectionSpeed;

@@ -67,9 +67,9 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, ushort**, int>)(lpVtbl[5]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IAppxBlockMapFile*, char**, int>)(lpVtbl[5]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetUncompressedSize"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
         HRESULT GetLocalFileHeaderSize([NativeTypeName("UINT32 *")] uint* lfhSize);
 
         [VtblIndex(5)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(6)]
         HRESULT GetUncompressedSize([NativeTypeName("UINT64 *")] ulong* size);
@@ -125,7 +125,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
         public delegate* unmanaged<TSelf*, uint*, int> GetLocalFileHeaderSize;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetUncompressedSize;

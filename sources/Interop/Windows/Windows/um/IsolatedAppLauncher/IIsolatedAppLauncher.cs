@@ -49,15 +49,15 @@ public unsafe partial struct IIsolatedAppLauncher : IIsolatedAppLauncher.Interfa
     /// <include file='IIsolatedAppLauncher.xml' path='doc/member[@name="IIsolatedAppLauncher.Launch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Launch([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, [NativeTypeName("const IsolatedAppLauncherTelemetryParameters *")] IsolatedAppLauncherTelemetryParameters* telemetryParameters)
+    public HRESULT Launch([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* arguments, [NativeTypeName("const IsolatedAppLauncherTelemetryParameters *")] IsolatedAppLauncherTelemetryParameters* telemetryParameters)
     {
-        return ((delegate* unmanaged<IIsolatedAppLauncher*, ushort*, ushort*, IsolatedAppLauncherTelemetryParameters*, int>)(lpVtbl[3]))((IIsolatedAppLauncher*)Unsafe.AsPointer(ref this), appUserModelId, arguments, telemetryParameters);
+        return ((delegate* unmanaged<IIsolatedAppLauncher*, char*, char*, IsolatedAppLauncherTelemetryParameters*, int>)(lpVtbl[3]))((IIsolatedAppLauncher*)Unsafe.AsPointer(ref this), appUserModelId, arguments, telemetryParameters);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Launch([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, [NativeTypeName("const IsolatedAppLauncherTelemetryParameters *")] IsolatedAppLauncherTelemetryParameters* telemetryParameters);
+        HRESULT Launch([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* arguments, [NativeTypeName("const IsolatedAppLauncherTelemetryParameters *")] IsolatedAppLauncherTelemetryParameters* telemetryParameters);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IIsolatedAppLauncher : IIsolatedAppLauncher.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, const IsolatedAppLauncherTelemetryParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IsolatedAppLauncherTelemetryParameters*, int> Launch;
+        public delegate* unmanaged<TSelf*, char*, char*, IsolatedAppLauncherTelemetryParameters*, int> Launch;
     }
 }

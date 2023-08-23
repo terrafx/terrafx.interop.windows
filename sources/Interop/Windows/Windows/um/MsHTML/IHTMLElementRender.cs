@@ -57,9 +57,9 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     /// <include file='IHTMLElementRender.xml' path='doc/member[@name="IHTMLElementRender.SetDocumentPrinter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC)
+    public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] char* bstrPrinterName, HDC hDC)
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, ushort*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
+        return ((delegate* unmanaged<IHTMLElementRender*, char*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
         HRESULT DrawToDC(HDC hDC);
 
         [VtblIndex(4)]
-        HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC);
+        HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] char* bstrPrinterName, HDC hDC);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
         public delegate* unmanaged<TSelf*, HDC, int> DrawToDC;
 
         [NativeTypeName("HRESULT (BSTR, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, HDC, int> SetDocumentPrinter;
+        public delegate* unmanaged<TSelf*, char*, HDC, int> SetDocumentPrinter;
     }
 }

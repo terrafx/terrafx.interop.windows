@@ -49,9 +49,9 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface, INativ
     /// <include file='ISyncMgrHandler.xml' path='doc/member[@name="ISyncMgrHandler.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<ISyncMgrHandler*, ushort**, int>)(lpVtbl[3]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged<ISyncMgrHandler*, char**, int>)(lpVtbl[3]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <include file='ISyncMgrHandler.xml' path='doc/member[@name="ISyncMgrHandler.GetHandlerInfo"]/*' />
@@ -105,15 +105,15 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface, INativ
     /// <include file='ISyncMgrHandler.xml' path='doc/member[@name="ISyncMgrHandler.Synchronize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk)
+    public HRESULT Synchronize([NativeTypeName("LPCWSTR *")] char** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk)
     {
-        return ((delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int>)(lpVtbl[10]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszItemIDs, cItems, hwndOwner, pSessionCreator, punk);
+        return ((delegate* unmanaged<ISyncMgrHandler*, char**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int>)(lpVtbl[10]))((ISyncMgrHandler*)Unsafe.AsPointer(ref this), ppszItemIDs, cItems, hwndOwner, pSessionCreator, punk);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(4)]
         HRESULT GetHandlerInfo(ISyncMgrHandlerInfo** ppHandlerInfo);
@@ -134,7 +134,7 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface, INativ
         HRESULT Enable(BOOL fEnable);
 
         [VtblIndex(10)]
-        HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk);
+        HRESULT Synchronize([NativeTypeName("LPCWSTR *")] char** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk);
     }
 
     public partial struct Vtbl<TSelf>
@@ -150,7 +150,7 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (ISyncMgrHandlerInfo **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISyncMgrHandlerInfo**, int> GetHandlerInfo;
@@ -171,6 +171,6 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface, INativ
         public delegate* unmanaged<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT (LPCWSTR *, ULONG, HWND, ISyncMgrSessionCreator *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int> Synchronize;
+        public delegate* unmanaged<TSelf*, char**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int> Synchronize;
     }
 }

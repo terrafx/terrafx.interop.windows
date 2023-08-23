@@ -129,9 +129,9 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_fontName([NativeTypeName("TCHAR *")] ushort* p)
+    public HRESULT get_fontName([NativeTypeName("TCHAR *")] char* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, ushort*, int>)(lpVtbl[13]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLComputedStyle*, char*, int>)(lpVtbl[13]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_hasBgColor"]/*' />
@@ -231,7 +231,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
         HRESULT get_fontSize([NativeTypeName("long *")] int* p);
 
         [VtblIndex(13)]
-        HRESULT get_fontName([NativeTypeName("TCHAR *")] ushort* p);
+        HRESULT get_fontName([NativeTypeName("TCHAR *")] char* p);
 
         [VtblIndex(14)]
         HRESULT get_hasBgColor([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -301,7 +301,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
         public delegate* unmanaged<TSelf*, int*, int> get_fontSize;
 
         [NativeTypeName("HRESULT (TCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_fontName;
+        public delegate* unmanaged<TSelf*, char*, int> get_fontName;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_hasBgColor;

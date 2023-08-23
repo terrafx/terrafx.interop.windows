@@ -57,9 +57,9 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters)
+    public HRESULT SetParameters([NativeTypeName("LPCWSTR")] char* pszParameters)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
+        return ((delegate* unmanaged<IExecuteCommand*, char*, int>)(lpVtbl[4]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszParameters);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetPosition"]/*' />
@@ -89,9 +89,9 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.SetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory)
+    public HRESULT SetDirectory([NativeTypeName("LPCWSTR")] char* pszDirectory)
     {
-        return ((delegate* unmanaged<IExecuteCommand*, ushort*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
+        return ((delegate* unmanaged<IExecuteCommand*, char*, int>)(lpVtbl[8]))((IExecuteCommand*)Unsafe.AsPointer(ref this), pszDirectory);
     }
 
     /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.Execute"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         HRESULT SetKeyState([NativeTypeName("DWORD")] uint grfKeyState);
 
         [VtblIndex(4)]
-        HRESULT SetParameters([NativeTypeName("LPCWSTR")] ushort* pszParameters);
+        HRESULT SetParameters([NativeTypeName("LPCWSTR")] char* pszParameters);
 
         [VtblIndex(5)]
         HRESULT SetPosition(POINT pt);
@@ -120,7 +120,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         HRESULT SetNoShowUI(BOOL fNoShowUI);
 
         [VtblIndex(8)]
-        HRESULT SetDirectory([NativeTypeName("LPCWSTR")] ushort* pszDirectory);
+        HRESULT SetDirectory([NativeTypeName("LPCWSTR")] char* pszDirectory);
 
         [VtblIndex(9)]
         HRESULT Execute();
@@ -142,7 +142,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, int> SetKeyState;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetParameters;
+        public delegate* unmanaged<TSelf*, char*, int> SetParameters;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, POINT, int> SetPosition;
@@ -154,7 +154,7 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativ
         public delegate* unmanaged<TSelf*, BOOL, int> SetNoShowUI;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> SetDirectory;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Execute;

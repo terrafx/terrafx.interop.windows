@@ -49,26 +49,26 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTitle([NativeTypeName("LPWSTR *")] ushort** ppszTitle)
+    public HRESULT GetTitle([NativeTypeName("LPWSTR *")] char** ppszTitle)
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, ushort**, int>)(lpVtbl[3]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszTitle);
+        return ((delegate* unmanaged<ITravelLogEntry*, char**, int>)(lpVtbl[3]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszTitle);
     }
 
     /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
+    public HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL)
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, ushort**, int>)(lpVtbl[4]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszURL);
+        return ((delegate* unmanaged<ITravelLogEntry*, char**, int>)(lpVtbl[4]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetTitle([NativeTypeName("LPWSTR *")] ushort** ppszTitle);
+        HRESULT GetTitle([NativeTypeName("LPWSTR *")] char** ppszTitle);
 
         [VtblIndex(4)]
-        HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+        HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTitle;
+        public delegate* unmanaged<TSelf*, char**, int> GetTitle;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, char**, int> GetURL;
     }
 }

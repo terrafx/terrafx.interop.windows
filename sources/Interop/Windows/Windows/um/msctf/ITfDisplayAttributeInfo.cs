@@ -57,9 +57,9 @@ public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.I
     /// <include file='ITfDisplayAttributeInfo.xml' path='doc/member[@name="ITfDisplayAttributeInfo.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int>)(lpVtbl[4]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pbstrDesc);
+        return ((delegate* unmanaged<ITfDisplayAttributeInfo*, char**, int>)(lpVtbl[4]))((ITfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), pbstrDesc);
     }
 
     /// <include file='ITfDisplayAttributeInfo.xml' path='doc/member[@name="ITfDisplayAttributeInfo.GetAttributeInfo"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.I
         HRESULT GetGUID(Guid* pguid);
 
         [VtblIndex(4)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc);
 
         [VtblIndex(5)]
         HRESULT GetAttributeInfo(TF_DISPLAYATTRIBUTE* pda);
@@ -120,7 +120,7 @@ public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.I
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;

@@ -67,9 +67,9 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetActivityReportByDeviceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
+    public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] char* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, ushort*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
+        return ((delegate* unmanaged<IMFSensorActivitiesReport*, char*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
     }
 
     public interface Interface : IUnknown.Interface
@@ -81,7 +81,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport);
 
         [VtblIndex(5)]
-        HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
+        HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] char* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
     }
 
     public partial struct Vtbl<TSelf>
@@ -103,6 +103,6 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         public delegate* unmanaged<TSelf*, uint, IMFSensorActivityReport**, int> GetActivityReport;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFSensorActivityReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
+        public delegate* unmanaged<TSelf*, char*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
     }
 }

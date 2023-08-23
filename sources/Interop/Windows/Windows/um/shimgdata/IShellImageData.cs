@@ -241,9 +241,9 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.DisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch)
+    public HRESULT DisplayName([NativeTypeName("LPWSTR")] char* wszName, uint cch)
     {
-        return ((delegate* unmanaged<IShellImageData*, ushort*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
+        return ((delegate* unmanaged<IShellImageData*, char*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetResolution"]/*' />
@@ -361,7 +361,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
         HRESULT SetEncoderParams(IPropertyBag* pbagEnc);
 
         [VtblIndex(27)]
-        HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch);
+        HRESULT DisplayName([NativeTypeName("LPWSTR")] char* wszName, uint cch);
 
         [VtblIndex(28)]
         HRESULT GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY);
@@ -464,7 +464,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
         public delegate* unmanaged<TSelf*, IPropertyBag*, int> SetEncoderParams;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> DisplayName;
+        public delegate* unmanaged<TSelf*, char*, uint, int> DisplayName;
 
         [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, uint*, int> GetResolution;

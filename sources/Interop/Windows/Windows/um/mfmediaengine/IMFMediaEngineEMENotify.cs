@@ -49,9 +49,9 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     /// <include file='IMFMediaEngineEMENotify.xml' path='doc/member[@name="IMFMediaEngineEMENotify.Encrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] ushort* bstrInitDataType)
+    public void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] char* bstrInitDataType)
     {
-        ((delegate* unmanaged<IMFMediaEngineEMENotify*, byte*, uint, ushort*, void>)(lpVtbl[3]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), pbInitData, cb, bstrInitDataType);
+        ((delegate* unmanaged<IMFMediaEngineEMENotify*, byte*, uint, char*, void>)(lpVtbl[3]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), pbInitData, cb, bstrInitDataType);
     }
 
     /// <include file='IMFMediaEngineEMENotify.xml' path='doc/member[@name="IMFMediaEngineEMENotify.WaitingForKey"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] ushort* bstrInitDataType);
+        void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] char* bstrInitDataType);
 
         [VtblIndex(4)]
         void WaitingForKey();
@@ -84,7 +84,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (const BYTE *, DWORD, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, ushort*, void> Encrypted;
+        public delegate* unmanaged<TSelf*, byte*, uint, char*, void> Encrypted;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void> WaitingForKey;

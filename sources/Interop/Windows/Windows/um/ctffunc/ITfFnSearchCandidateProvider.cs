@@ -51,34 +51,34 @@ public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidate
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, ushort**, int>)(lpVtbl[3]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, char**, int>)(lpVtbl[3]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnSearchCandidateProvider.xml' path='doc/member[@name="ITfFnSearchCandidateProvider.GetSearchCandidates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetSearchCandidates([NativeTypeName("BSTR")] ushort* bstrQuery, [NativeTypeName("BSTR")] ushort* bstrApplicationId, ITfCandidateList** pplist)
+    public HRESULT GetSearchCandidates([NativeTypeName("BSTR")] char* bstrQuery, [NativeTypeName("BSTR")] char* bstrApplicationId, ITfCandidateList** pplist)
     {
-        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, ushort*, ushort*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), bstrQuery, bstrApplicationId, pplist);
+        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, char*, char*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), bstrQuery, bstrApplicationId, pplist);
     }
 
     /// <include file='ITfFnSearchCandidateProvider.xml' path='doc/member[@name="ITfFnSearchCandidateProvider.SetResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetResult([NativeTypeName("BSTR")] ushort* bstrQuery, [NativeTypeName("BSTR")] ushort* bstrApplicationID, [NativeTypeName("BSTR")] ushort* bstrResult)
+    public HRESULT SetResult([NativeTypeName("BSTR")] char* bstrQuery, [NativeTypeName("BSTR")] char* bstrApplicationID, [NativeTypeName("BSTR")] char* bstrResult)
     {
-        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, ushort*, ushort*, ushort*, int>)(lpVtbl[5]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), bstrQuery, bstrApplicationID, bstrResult);
+        return ((delegate* unmanaged<ITfFnSearchCandidateProvider*, char*, char*, char*, int>)(lpVtbl[5]))((ITfFnSearchCandidateProvider*)Unsafe.AsPointer(ref this), bstrQuery, bstrApplicationID, bstrResult);
     }
 
     public interface Interface : ITfFunction.Interface
     {
         [VtblIndex(4)]
-        HRESULT GetSearchCandidates([NativeTypeName("BSTR")] ushort* bstrQuery, [NativeTypeName("BSTR")] ushort* bstrApplicationId, ITfCandidateList** pplist);
+        HRESULT GetSearchCandidates([NativeTypeName("BSTR")] char* bstrQuery, [NativeTypeName("BSTR")] char* bstrApplicationId, ITfCandidateList** pplist);
 
         [VtblIndex(5)]
-        HRESULT SetResult([NativeTypeName("BSTR")] ushort* bstrQuery, [NativeTypeName("BSTR")] ushort* bstrApplicationID, [NativeTypeName("BSTR")] ushort* bstrResult);
+        HRESULT SetResult([NativeTypeName("BSTR")] char* bstrQuery, [NativeTypeName("BSTR")] char* bstrApplicationID, [NativeTypeName("BSTR")] char* bstrResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -94,12 +94,12 @@ public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidate
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ITfCandidateList**, int> GetSearchCandidates;
+        public delegate* unmanaged<TSelf*, char*, char*, ITfCandidateList**, int> GetSearchCandidates;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> SetResult;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> SetResult;
     }
 }

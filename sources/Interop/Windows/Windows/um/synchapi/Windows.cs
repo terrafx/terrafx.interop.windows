@@ -164,12 +164,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMutexW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateMutexW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, BOOL bInitialOwner, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE CreateMutexW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, BOOL bInitialOwner, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenMutexW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenMutexW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE OpenMutexW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEventA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -179,7 +179,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEventW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateEventW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, BOOL bManualReset, BOOL bInitialState, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE CreateEventW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, BOOL bManualReset, BOOL bInitialState, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenEventA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -189,17 +189,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenEventW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenEventW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE OpenEventW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenSemaphoreW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenSemaphoreW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE OpenSemaphoreW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWaitableTimerW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenWaitableTimerW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
+    public static extern HANDLE OpenWaitableTimerW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpTimerName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWaitableTimerEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -224,7 +224,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMutexExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateMutexExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+    public static extern HANDLE CreateMutexExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpMutexAttributes, [NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEventExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -234,17 +234,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEventExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateEventExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+    public static extern HANDLE CreateEventExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpEventAttributes, [NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSemaphoreExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateSemaphoreExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSemaphoreAttributes, [NativeTypeName("LONG")] int lInitialCount, [NativeTypeName("LONG")] int lMaximumCount, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+    public static extern HANDLE CreateSemaphoreExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSemaphoreAttributes, [NativeTypeName("LONG")] int lInitialCount, [NativeTypeName("LONG")] int lMaximumCount, [NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWaitableTimerExW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateWaitableTimerExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("LPCWSTR")] ushort* lpTimerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
+    public static extern HANDLE CreateWaitableTimerExW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, [NativeTypeName("LPCWSTR")] char* lpTimerName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwDesiredAccess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnterSynchronizationBarrier"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -295,12 +295,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSemaphoreW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateSemaphoreW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSemaphoreAttributes, [NativeTypeName("LONG")] int lInitialCount, [NativeTypeName("LONG")] int lMaximumCount, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE CreateSemaphoreW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSemaphoreAttributes, [NativeTypeName("LONG")] int lInitialCount, [NativeTypeName("LONG")] int lMaximumCount, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWaitableTimerW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCWSTR")] ushort* lpTimerName);
+    public static extern HANDLE CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCWSTR")] char* lpTimerName);
 
     [NativeTypeName("#define CONDITION_VARIABLE_LOCKMODE_SHARED RTL_CONDITION_VARIABLE_LOCKMODE_SHARED")]
     public const int CONDITION_VARIABLE_LOCKMODE_SHARED = 0x1;
@@ -312,34 +312,34 @@ public static unsafe partial class Windows
     public const int MUTEX_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001);
 
     [NativeTypeName("#define CreateMutex CreateMutexW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, ushort*, HANDLE> CreateMutex => &CreateMutexW;
+    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, char*, HANDLE> CreateMutex => &CreateMutexW;
 
     [NativeTypeName("#define OpenMutex OpenMutexW")]
-    public static delegate*<uint, BOOL, ushort*, HANDLE> OpenMutex => &OpenMutexW;
+    public static delegate*<uint, BOOL, char*, HANDLE> OpenMutex => &OpenMutexW;
 
     [NativeTypeName("#define CreateEvent CreateEventW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, BOOL, ushort*, HANDLE> CreateEvent => &CreateEventW;
+    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, BOOL, char*, HANDLE> CreateEvent => &CreateEventW;
 
     [NativeTypeName("#define OpenEvent OpenEventW")]
-    public static delegate*<uint, BOOL, ushort*, HANDLE> OpenEvent => &OpenEventW;
+    public static delegate*<uint, BOOL, char*, HANDLE> OpenEvent => &OpenEventW;
 
     [NativeTypeName("#define OpenSemaphore OpenSemaphoreW")]
-    public static delegate*<uint, BOOL, ushort*, HANDLE> OpenSemaphore => &OpenSemaphoreW;
+    public static delegate*<uint, BOOL, char*, HANDLE> OpenSemaphore => &OpenSemaphoreW;
 
     [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
-    public static delegate*<uint, BOOL, ushort*, HANDLE> OpenWaitableTimer => &OpenWaitableTimerW;
+    public static delegate*<uint, BOOL, char*, HANDLE> OpenWaitableTimer => &OpenWaitableTimerW;
 
     [NativeTypeName("#define CreateMutexEx CreateMutexExW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateMutexEx => &CreateMutexExW;
+    public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateMutexEx => &CreateMutexExW;
 
     [NativeTypeName("#define CreateEventEx CreateEventExW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateEventEx => &CreateEventExW;
+    public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateEventEx => &CreateEventExW;
 
     [NativeTypeName("#define CreateSemaphoreEx CreateSemaphoreExW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, uint, uint, HANDLE> CreateSemaphoreEx => &CreateSemaphoreExW;
+    public static delegate*<SECURITY_ATTRIBUTES*, int, int, char*, uint, uint, HANDLE> CreateSemaphoreEx => &CreateSemaphoreExW;
 
     [NativeTypeName("#define CreateWaitableTimerEx CreateWaitableTimerExW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, ushort*, uint, uint, HANDLE> CreateWaitableTimerEx => &CreateWaitableTimerExW;
+    public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateWaitableTimerEx => &CreateWaitableTimerExW;
 
     [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY 0x01")]
     public const int SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 0x01;
@@ -351,8 +351,8 @@ public static unsafe partial class Windows
     public const int SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 0x04;
 
     [NativeTypeName("#define CreateSemaphore CreateSemaphoreW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, int, int, ushort*, HANDLE> CreateSemaphore => &CreateSemaphoreW;
+    public static delegate*<SECURITY_ATTRIBUTES*, int, int, char*, HANDLE> CreateSemaphore => &CreateSemaphoreW;
 
     [NativeTypeName("#define CreateWaitableTimer CreateWaitableTimerW")]
-    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, ushort*, HANDLE> CreateWaitableTimer => &CreateWaitableTimerW;
+    public static delegate*<SECURITY_ATTRIBUTES*, BOOL, char*, HANDLE> CreateWaitableTimer => &CreateWaitableTimerW;
 }

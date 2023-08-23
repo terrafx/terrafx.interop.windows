@@ -49,9 +49,9 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     /// <include file='ISyncMgrRegister.xml' path='doc/member[@name="ISyncMgrRegister.RegisterSyncMgrHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] ushort* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags)
+    public HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] char* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags)
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, ushort*, uint, int>)(lpVtbl[3]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
+        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, char*, uint, int>)(lpVtbl[3]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
     }
 
     /// <include file='ISyncMgrRegister.xml' path='doc/member[@name="ISyncMgrRegister.UnregisterSyncMgrHandler"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] ushort* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags);
+        HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] char* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags);
 
         [VtblIndex(4)]
         HRESULT UnregisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("DWORD")] uint dwReserved);
@@ -95,7 +95,7 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
+        public delegate* unmanaged<TSelf*, Guid*, char*, uint, int> RegisterSyncMgrHandler;
 
         [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, uint, int> UnregisterSyncMgrHandler;

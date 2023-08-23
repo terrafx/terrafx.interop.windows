@@ -49,15 +49,15 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface, INativeGuid
     /// <include file='ITfFunction.xml' path='doc/member[@name="ITfFunction.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFunction*, ushort**, int>)(lpVtbl[3]))((ITfFunction*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFunction*, char**, int>)(lpVtbl[3]))((ITfFunction*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName);
+        HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ITfFunction : ITfFunction.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
     }
 }

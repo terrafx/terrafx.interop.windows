@@ -49,26 +49,26 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface, 
     /// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] ushort** strText)
+    public HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] char** strText)
     {
-        return ((delegate* unmanaged<IWbemObjectTextSrc*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int>)(lpVtbl[3]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, pObj, uObjTextFormat, pCtx, strText);
+        return ((delegate* unmanaged<IWbemObjectTextSrc*, int, IWbemClassObject*, uint, IWbemContext*, char**, int>)(lpVtbl[3]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, pObj, uObjTextFormat, pCtx, strText);
     }
 
     /// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc.CreateFromText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj)
+    public HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] char* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj)
     {
-        return ((delegate* unmanaged<IWbemObjectTextSrc*, int, ushort*, uint, IWbemContext*, IWbemClassObject**, int>)(lpVtbl[4]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, strText, uObjTextFormat, pCtx, pNewObj);
+        return ((delegate* unmanaged<IWbemObjectTextSrc*, int, char*, uint, IWbemContext*, IWbemClassObject**, int>)(lpVtbl[4]))((IWbemObjectTextSrc*)Unsafe.AsPointer(ref this), lFlags, strText, uObjTextFormat, pCtx, pNewObj);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] ushort** strText);
+        HRESULT GetText([NativeTypeName("long")] int lFlags, IWbemClassObject* pObj, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, [NativeTypeName("BSTR *")] char** strText);
 
         [VtblIndex(4)]
-        HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj);
+        HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] char* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject *, ULONG, IWbemContext *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, int, IWbemClassObject*, uint, IWbemContext*, char**, int> GetText;
 
         [NativeTypeName("HRESULT (long, BSTR, ULONG, IWbemContext *, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, uint, IWbemContext*, IWbemClassObject**, int> CreateFromText;
+        public delegate* unmanaged<TSelf*, int, char*, uint, IWbemContext*, IWbemClassObject**, int> CreateFromText;
     }
 }

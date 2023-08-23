@@ -76,9 +76,9 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle)
+    public HRESULT CreateInstance([NativeTypeName("BSTR")] char* typeName, [NativeTypeName("BSTR")] char* value, InstanceHandle* pInstanceHandle)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, ushort*, ushort*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
+        return ((delegate* unmanaged<IVisualTreeService*, char*, char*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetPropertyValuesChain"]/*' />
@@ -157,7 +157,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
         HRESULT GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums);
 
         [VtblIndex(6)]
-        HRESULT CreateInstance([NativeTypeName("BSTR")] ushort* typeName, [NativeTypeName("BSTR")] ushort* value, InstanceHandle* pInstanceHandle);
+        HRESULT CreateInstance([NativeTypeName("BSTR")] char* typeName, [NativeTypeName("BSTR")] char* value, InstanceHandle* pInstanceHandle);
 
         [VtblIndex(7)]
         HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues);
@@ -206,7 +206,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
         public delegate* unmanaged<TSelf*, uint*, EnumType**, int> GetEnums;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, char*, char*, InstanceHandle*, int> CreateInstance;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;

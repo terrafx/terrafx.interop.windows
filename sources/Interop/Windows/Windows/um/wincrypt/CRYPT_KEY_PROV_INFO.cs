@@ -10,11 +10,11 @@ public unsafe partial struct CRYPT_KEY_PROV_INFO
 {
     /// <include file='CRYPT_KEY_PROV_INFO.xml' path='doc/member[@name="CRYPT_KEY_PROV_INFO.pwszContainerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszContainerName;
+    public char* pwszContainerName;
 
     /// <include file='CRYPT_KEY_PROV_INFO.xml' path='doc/member[@name="CRYPT_KEY_PROV_INFO.pwszProvName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszProvName;
+    public char* pwszProvName;
 
     /// <include file='CRYPT_KEY_PROV_INFO.xml' path='doc/member[@name="CRYPT_KEY_PROV_INFO.dwProvType"]/*' />
     [NativeTypeName("DWORD")]

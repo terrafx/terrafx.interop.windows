@@ -90,9 +90,9 @@ public unsafe partial struct IDirectInput7W : IDirectInput7W.Interface, INativeG
     /// <inheritdoc cref="IDirectInput2W.FindDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPGUID")] Guid* param2)
+    public HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPGUID")] Guid* param2)
     {
-        return ((delegate* unmanaged<IDirectInput7W*, Guid*, ushort*, Guid*, int>)(lpVtbl[8]))((IDirectInput7W*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged<IDirectInput7W*, Guid*, char*, Guid*, int>)(lpVtbl[8]))((IDirectInput7W*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectInput7W.xml' path='doc/member[@name="IDirectInput7W.CreateDeviceEx"]/*' />
@@ -137,7 +137,7 @@ public unsafe partial struct IDirectInput7W : IDirectInput7W.Interface, INativeG
         public delegate* unmanaged<TSelf*, HINSTANCE, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR, LPGUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, Guid*, int> FindDevice;
+        public delegate* unmanaged<TSelf*, Guid*, char*, Guid*, int> FindDevice;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *, LPUNKNOWN) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, IUnknown*, int> CreateDeviceEx;

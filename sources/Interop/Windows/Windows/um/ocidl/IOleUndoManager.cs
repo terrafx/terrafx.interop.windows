@@ -121,17 +121,17 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.GetLastUndoDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, ushort**, int>)(lpVtbl[12]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged<IOleUndoManager*, char**, int>)(lpVtbl[12]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.GetLastRedoDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, ushort**, int>)(lpVtbl[13]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged<IOleUndoManager*, char**, int>)(lpVtbl[13]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.Enable"]/*' />
@@ -172,10 +172,10 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
         HRESULT EnumRedoable(IEnumOleUndoUnits** ppEnum);
 
         [VtblIndex(12)]
-        HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] char** pBstr);
 
         [VtblIndex(13)]
-        HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] char** pBstr);
 
         [VtblIndex(14)]
         HRESULT Enable(BOOL fEnable);
@@ -221,10 +221,10 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
         public delegate* unmanaged<TSelf*, IEnumOleUndoUnits**, int> EnumRedoable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLastUndoDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetLastUndoDescription;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLastRedoDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetLastRedoDescription;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, int> Enable;

@@ -75,17 +75,17 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
+    public HRESULT SetSource([NativeTypeName("BSTR")] char* pUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, ushort*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
+        return ((delegate* unmanaged<IMFMediaEngine*, char*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetCurrentSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
+    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] char** ppUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, ushort**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
+        return ((delegate* unmanaged<IMFMediaEngine*, char**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetNetworkState"]/*' />
@@ -131,9 +131,9 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.CanPlayType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    public HRESULT CanPlayType([NativeTypeName("BSTR")] char* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
+        return ((delegate* unmanaged<IMFMediaEngine*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetReadyState"]/*' />
@@ -396,10 +396,10 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
         HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements);
 
         [VtblIndex(6)]
-        HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl);
+        HRESULT SetSource([NativeTypeName("BSTR")] char* pUrl);
 
         [VtblIndex(7)]
-        HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl);
+        HRESULT GetCurrentSource([NativeTypeName("BSTR *")] char** ppUrl);
 
         [VtblIndex(8)]
         ushort GetNetworkState();
@@ -417,7 +417,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
         HRESULT Load();
 
         [VtblIndex(13)]
-        HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
+        HRESULT CanPlayType([NativeTypeName("BSTR")] char* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer);
 
         [VtblIndex(14)]
         ushort GetReadyState();
@@ -535,10 +535,10 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
         public delegate* unmanaged<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrentSource;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrentSource;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetNetworkState;
@@ -556,7 +556,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
         public delegate* unmanaged<TSelf*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged<TSelf*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetReadyState;

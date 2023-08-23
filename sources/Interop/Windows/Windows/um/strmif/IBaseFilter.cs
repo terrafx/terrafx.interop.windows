@@ -113,9 +113,9 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.FindPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin)
+    public HRESULT FindPin([NativeTypeName("LPCWSTR")] char* Id, IPin** ppPin)
     {
-        return ((delegate* unmanaged<IBaseFilter*, ushort*, IPin**, int>)(lpVtbl[11]))((IBaseFilter*)Unsafe.AsPointer(ref this), Id, ppPin);
+        return ((delegate* unmanaged<IBaseFilter*, char*, IPin**, int>)(lpVtbl[11]))((IBaseFilter*)Unsafe.AsPointer(ref this), Id, ppPin);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryFilterInfo"]/*' />
@@ -129,17 +129,17 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.JoinFilterGraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName)
+    public HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] char* pName)
     {
-        return ((delegate* unmanaged<IBaseFilter*, IFilterGraph*, ushort*, int>)(lpVtbl[13]))((IBaseFilter*)Unsafe.AsPointer(ref this), pGraph, pName);
+        return ((delegate* unmanaged<IBaseFilter*, IFilterGraph*, char*, int>)(lpVtbl[13]))((IBaseFilter*)Unsafe.AsPointer(ref this), pGraph, pName);
     }
 
     /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryVendorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo)
+    public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] char** pVendorInfo)
     {
-        return ((delegate* unmanaged<IBaseFilter*, ushort**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
+        return ((delegate* unmanaged<IBaseFilter*, char**, int>)(lpVtbl[14]))((IBaseFilter*)Unsafe.AsPointer(ref this), pVendorInfo);
     }
 
     public interface Interface : IMediaFilter.Interface
@@ -148,16 +148,16 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
         HRESULT EnumPins(IEnumPins** ppEnum);
 
         [VtblIndex(11)]
-        HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin);
+        HRESULT FindPin([NativeTypeName("LPCWSTR")] char* Id, IPin** ppPin);
 
         [VtblIndex(12)]
         HRESULT QueryFilterInfo(FILTER_INFO* pInfo);
 
         [VtblIndex(13)]
-        HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName);
+        HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] char* pName);
 
         [VtblIndex(14)]
-        HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo);
+        HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] char** pVendorInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -197,15 +197,15 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IEnumPins**, int> EnumPins;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IPin**, int> FindPin;
+        public delegate* unmanaged<TSelf*, char*, IPin**, int> FindPin;
 
         [NativeTypeName("HRESULT (FILTER_INFO *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FILTER_INFO*, int> QueryFilterInfo;
 
         [NativeTypeName("HRESULT (IFilterGraph *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFilterGraph*, ushort*, int> JoinFilterGraph;
+        public delegate* unmanaged<TSelf*, IFilterGraph*, char*, int> JoinFilterGraph;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> QueryVendorInfo;
+        public delegate* unmanaged<TSelf*, char**, int> QueryVendorInfo;
     }
 }

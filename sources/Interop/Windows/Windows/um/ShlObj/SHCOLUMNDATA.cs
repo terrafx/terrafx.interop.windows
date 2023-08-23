@@ -22,9 +22,9 @@ public unsafe partial struct SHCOLUMNDATA
 
     /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.pwszExt"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszExt;
+    public char* pwszExt;
 
     /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.wszFile"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszFile[260];
+    public fixed char wszFile[260];
 }

@@ -21,5 +21,5 @@ public unsafe partial struct MIXERCONTROLDETAILS_LISTTEXTW
 
     /// <include file='MIXERCONTROLDETAILS_LISTTEXTW.xml' path='doc/member[@name="MIXERCONTROLDETAILS_LISTTEXTW.szName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szName[64];
+    public fixed char szName[64];
 }

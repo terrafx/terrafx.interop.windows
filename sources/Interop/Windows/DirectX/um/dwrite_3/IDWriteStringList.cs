@@ -67,9 +67,9 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface, IN
     /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetLocaleName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size)
+    public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint size)
     {
-        return ((delegate* unmanaged<IDWriteStringList*, uint, ushort*, uint, int>)(lpVtbl[5]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, localeName, size);
+        return ((delegate* unmanaged<IDWriteStringList*, uint, char*, uint, int>)(lpVtbl[5]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, localeName, size);
     }
 
     /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetStringLength"]/*' />
@@ -83,9 +83,9 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface, IN
     /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
+    public HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize)
     {
-        return ((delegate* unmanaged<IDWriteStringList*, uint, ushort*, uint, int>)(lpVtbl[7]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, stringBuffer, stringBufferSize);
+        return ((delegate* unmanaged<IDWriteStringList*, uint, char*, uint, int>)(lpVtbl[7]))((IDWriteStringList*)Unsafe.AsPointer(ref this), listIndex, stringBuffer, stringBufferSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,13 +98,13 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface, IN
         HRESULT GetLocaleNameLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length);
 
         [VtblIndex(5)]
-        HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* localeName, [NativeTypeName("UINT32")] uint size);
+        HRESULT GetLocaleName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint size);
 
         [VtblIndex(6)]
         HRESULT GetStringLength([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("UINT32 *")] uint* length);
 
         [VtblIndex(7)]
-        HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
+        HRESULT GetString([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] char* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -126,12 +126,12 @@ public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetString;
     }
 }

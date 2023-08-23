@@ -57,17 +57,17 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface, INativ
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.GetPropertyDescriptionByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszCanonicalName, riid, ppv);
+        return ((delegate* unmanaged<IPropertySystem*, char*, Guid*, void**, int>)(lpVtbl[4]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszCanonicalName, riid, ppv);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.GetPropertyDescriptionListFromString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] char* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int>)(lpVtbl[5]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPropList, riid, ppv);
+        return ((delegate* unmanaged<IPropertySystem*, char*, Guid*, void**, int>)(lpVtbl[5]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPropList, riid, ppv);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.EnumeratePropertyDescriptions"]/*' />
@@ -81,33 +81,33 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface, INativ
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.FormatForDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint cchText)
+    public HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] char* pszText, [NativeTypeName("DWORD")] uint cchText)
     {
-        return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int>)(lpVtbl[7]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, pszText, cchText);
+        return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char*, uint, int>)(lpVtbl[7]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, pszText, cchText);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.FormatForDisplayAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    public HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] char** ppszDisplay)
     {
-        return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int>)(lpVtbl[8]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, ppszDisplay);
+        return ((delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char**, int>)(lpVtbl[8]))((IPropertySystem*)Unsafe.AsPointer(ref this), key, propvar, pdff, ppszDisplay);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.RegisterPropertySchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    public HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IPropertySystem*, ushort*, int>)(lpVtbl[9]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged<IPropertySystem*, char*, int>)(lpVtbl[9]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.UnregisterPropertySchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    public HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IPropertySystem*, ushort*, int>)(lpVtbl[10]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged<IPropertySystem*, char*, int>)(lpVtbl[10]))((IPropertySystem*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IPropertySystem.xml' path='doc/member[@name="IPropertySystem.RefreshPropertySchema"]/*' />
@@ -124,25 +124,25 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface, INativ
         HRESULT GetPropertyDescription([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(4)]
-        HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT GetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(5)]
-        HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT GetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] char* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(6)]
         HRESULT EnumeratePropertyDescriptions(PROPDESC_ENUMFILTER filterOn, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(7)]
-        HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint cchText);
+        HRESULT FormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR")] char* pszText, [NativeTypeName("DWORD")] uint cchText);
 
         [VtblIndex(8)]
-        HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+        HRESULT FormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] char** ppszDisplay);
 
         [VtblIndex(9)]
-        HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        HRESULT RegisterPropertySchema([NativeTypeName("LPCWSTR")] char* pszPath);
 
         [VtblIndex(10)]
-        HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        HRESULT UnregisterPropertySchema([NativeTypeName("LPCWSTR")] char* pszPath);
 
         [VtblIndex(11)]
         HRESULT RefreshPropertySchema();
@@ -164,25 +164,25 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface, INativ
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescription;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetPropertyDescriptionByName;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> GetPropertyDescriptionByName;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetPropertyDescriptionListFromString;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> GetPropertyDescriptionListFromString;
 
         [NativeTypeName("HRESULT (PROPDESC_ENUMFILTER, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPDESC_ENUMFILTER, Guid*, void**, int> EnumeratePropertyDescriptions;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int> FormatForDisplay;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char*, uint, int> FormatForDisplay;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplayAlloc;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, char**, int> FormatForDisplayAlloc;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RegisterPropertySchema;
+        public delegate* unmanaged<TSelf*, char*, int> RegisterPropertySchema;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> UnregisterPropertySchema;
+        public delegate* unmanaged<TSelf*, char*, int> UnregisterPropertySchema;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> RefreshPropertySchema;

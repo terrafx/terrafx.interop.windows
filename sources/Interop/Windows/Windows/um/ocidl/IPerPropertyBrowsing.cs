@@ -49,9 +49,9 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetDisplayString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, ushort**, int>)(lpVtbl[3]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pBstr);
+        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, char**, int>)(lpVtbl[3]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pBstr);
     }
 
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.MapPropertyToPage"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] char** pBstr);
 
         [VtblIndex(4)]
         HRESULT MapPropertyToPage([NativeTypeName("DISPID")] int dispID, [NativeTypeName("CLSID *")] Guid* pClsid);
@@ -106,7 +106,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> GetDisplayString;
+        public delegate* unmanaged<TSelf*, int, char**, int> GetDisplayString;
 
         [NativeTypeName("HRESULT (DISPID, CLSID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, int> MapPropertyToPage;

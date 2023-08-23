@@ -26,7 +26,7 @@ public unsafe partial struct WAVEINCAPS2W
 
     /// <include file='WAVEINCAPS2W.xml' path='doc/member[@name="WAVEINCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public fixed char szPname[32];
 
     /// <include file='WAVEINCAPS2W.xml' path='doc/member[@name="WAVEINCAPS2W.dwFormats"]/*' />
     [NativeTypeName("DWORD")]

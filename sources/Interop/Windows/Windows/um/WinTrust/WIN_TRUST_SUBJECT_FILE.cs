@@ -13,5 +13,5 @@ public unsafe partial struct WIN_TRUST_SUBJECT_FILE
 
     /// <include file='WIN_TRUST_SUBJECT_FILE.xml' path='doc/member[@name="WIN_TRUST_SUBJECT_FILE.lpPath"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpPath;
+    public char* lpPath;
 }

@@ -12,7 +12,7 @@ public unsafe partial struct STATSTG
 {
     /// <include file='STATSTG.xml' path='doc/member[@name="STATSTG.pwcsName"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* pwcsName;
+    public char* pwcsName;
 
     /// <include file='STATSTG.xml' path='doc/member[@name="STATSTG.type"]/*' />
     [NativeTypeName("DWORD")]

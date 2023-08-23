@@ -82,9 +82,9 @@ public unsafe partial struct ID3D11Fence : ID3D11Fence.Interface, INativeGuid
     /// <include file='ID3D11Fence.xml' path='doc/member[@name="ID3D11Fence.CreateSharedHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle)
+    public HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] char* lpName, HANDLE* pHandle)
     {
-        return ((delegate* unmanaged<ID3D11Fence*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int>)(lpVtbl[7]))((ID3D11Fence*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
+        return ((delegate* unmanaged<ID3D11Fence*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int>)(lpVtbl[7]))((ID3D11Fence*)Unsafe.AsPointer(ref this), pAttributes, dwAccess, lpName, pHandle);
     }
 
     /// <include file='ID3D11Fence.xml' path='doc/member[@name="ID3D11Fence.GetCompletedValue"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ID3D11Fence : ID3D11Fence.Interface, INativeGuid
     public interface Interface : ID3D11DeviceChild.Interface
     {
         [VtblIndex(7)]
-        HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle);
+        HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] char* lpName, HANDLE* pHandle);
 
         [VtblIndex(8)]
         [return: NativeTypeName("UINT64")]
@@ -142,7 +142,7 @@ public unsafe partial struct ID3D11Fence : ID3D11Fence.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged<TSelf*, SECURITY_ATTRIBUTES*, uint, char*, HANDLE*, int> CreateSharedHandle;
 
         [NativeTypeName("UINT64 () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong> GetCompletedValue;

@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseReplacement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseReplacement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechPhraseReplacement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseReplacement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement
     /// <include file='ISpeechPhraseReplacement.xml' path='doc/member[@name="ISpeechPhraseReplacement.get_Text"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text)
+    public HRESULT get_Text([NativeTypeName("BSTR *")] char** Text)
     {
-        return ((delegate* unmanaged<ISpeechPhraseReplacement*, ushort**, int>)(lpVtbl[8]))((ISpeechPhraseReplacement*)Unsafe.AsPointer(ref this), Text);
+        return ((delegate* unmanaged<ISpeechPhraseReplacement*, char**, int>)(lpVtbl[8]))((ISpeechPhraseReplacement*)Unsafe.AsPointer(ref this), Text);
     }
 
     /// <include file='ISpeechPhraseReplacement.xml' path='doc/member[@name="ISpeechPhraseReplacement.get_FirstElement"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement
         HRESULT get_DisplayAttributes(SpeechDisplayAttributes* DisplayAttributes);
 
         [VtblIndex(8)]
-        HRESULT get_Text([NativeTypeName("BSTR *")] ushort** Text);
+        HRESULT get_Text([NativeTypeName("BSTR *")] char** Text);
 
         [VtblIndex(9)]
         HRESULT get_FirstElement([NativeTypeName("long *")] int* FirstElement);
@@ -144,7 +144,7 @@ public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -153,7 +153,7 @@ public unsafe partial struct ISpeechPhraseReplacement : ISpeechPhraseReplacement
         public delegate* unmanaged<TSelf*, SpeechDisplayAttributes*, int> get_DisplayAttributes;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Text;
+        public delegate* unmanaged<TSelf*, char**, int> get_Text;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_FirstElement;

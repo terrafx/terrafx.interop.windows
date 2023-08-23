@@ -49,17 +49,17 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface, INativ
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnAdviseText*, ushort**, int>)(lpVtbl[3]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<ITfFnAdviseText*, char**, int>)(lpVtbl[3]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnAdviseText.xml' path='doc/member[@name="ITfFnAdviseText.OnTextUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
+    public HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch)
     {
-        return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ushort*, int, int>)(lpVtbl[4]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pchText, cch);
+        return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, char*, int, int>)(lpVtbl[4]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pchText, cch);
     }
 
     /// <include file='ITfFnAdviseText.xml' path='doc/member[@name="ITfFnAdviseText.OnLatticeUpdate"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface, INativ
     public interface Interface : ITfFunction.Interface
     {
         [VtblIndex(4)]
-        HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch);
+        HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch);
 
         [VtblIndex(5)]
         HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice);
@@ -92,10 +92,10 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, const WCHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ushort*, int, int> OnTextUpdate;
+        public delegate* unmanaged<TSelf*, ITfRange*, char*, int, int> OnTextUpdate;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfLMLattice *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITfRange*, ITfLMLattice*, int> OnLatticeUpdate;

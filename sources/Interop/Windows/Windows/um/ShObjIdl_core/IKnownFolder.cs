@@ -73,17 +73,17 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface, INativeGuid
     /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppszPath)
+    public HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] char** ppszPath)
     {
-        return ((delegate* unmanaged<IKnownFolder*, uint, ushort**, int>)(lpVtbl[6]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, ppszPath);
+        return ((delegate* unmanaged<IKnownFolder*, uint, char**, int>)(lpVtbl[6]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, ppszPath);
     }
 
     /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.SetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath)
+    public HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IKnownFolder*, uint, ushort*, int>)(lpVtbl[7]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, pszPath);
+        return ((delegate* unmanaged<IKnownFolder*, uint, char*, int>)(lpVtbl[7]))((IKnownFolder*)Unsafe.AsPointer(ref this), dwFlags, pszPath);
     }
 
     /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.GetIDList"]/*' />
@@ -130,10 +130,10 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface, INativeGuid
         HRESULT GetShellItem([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(6)]
-        HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppszPath);
+        HRESULT GetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] char** ppszPath);
 
         [VtblIndex(7)]
-        HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszPath);
+        HRESULT SetPath([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pszPath);
 
         [VtblIndex(8)]
         HRESULT GetIDList([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
@@ -170,10 +170,10 @@ public unsafe partial struct IKnownFolder : IKnownFolder.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetShellItem;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetPath;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetPath;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetPath;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetPath;
 
         [NativeTypeName("HRESULT (DWORD, LPITEMIDLIST *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, int> GetIDList;

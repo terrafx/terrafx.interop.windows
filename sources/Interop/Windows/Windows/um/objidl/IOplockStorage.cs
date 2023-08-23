@@ -49,26 +49,26 @@ public unsafe partial struct IOplockStorage : IOplockStorage.Interface, INativeG
     /// <include file='IOplockStorage.xml' path='doc/member[@name="IOplockStorage.CreateStorageEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen)
+    public HRESULT CreateStorageEx([NativeTypeName("LPCWSTR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen)
     {
-        return ((delegate* unmanaged<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
+        return ((delegate* unmanaged<IOplockStorage*, char*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
     }
 
     /// <include file='IOplockStorage.xml' path='doc/member[@name="IOplockStorage.OpenStorageEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OpenStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen)
+    public HRESULT OpenStorageEx([NativeTypeName("LPCWSTR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen)
     {
-        return ((delegate* unmanaged<IOplockStorage*, ushort*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[4]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
+        return ((delegate* unmanaged<IOplockStorage*, char*, uint, uint, uint, Guid*, void**, int>)(lpVtbl[4]))((IOplockStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, stgfmt, grfAttrs, riid, ppstgOpen);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen);
+        HRESULT CreateStorageEx([NativeTypeName("LPCWSTR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen);
 
         [VtblIndex(4)]
-        HRESULT OpenStorageEx([NativeTypeName("LPCWSTR")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen);
+        HRESULT OpenStorageEx([NativeTypeName("LPCWSTR")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, [NativeTypeName("const IID &")] Guid* riid, void** ppstgOpen);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IOplockStorage : IOplockStorage.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint, uint, Guid*, void**, int> CreateStorageEx;
+        public delegate* unmanaged<TSelf*, char*, uint, uint, uint, Guid*, void**, int> CreateStorageEx;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint, uint, Guid*, void**, int> OpenStorageEx;
+        public delegate* unmanaged<TSelf*, char*, uint, uint, uint, Guid*, void**, int> OpenStorageEx;
     }
 }

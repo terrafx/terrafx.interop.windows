@@ -67,9 +67,9 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.ActivateClassById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] char* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, ushort*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), id, pStream, riid, ppv);
+        return ((delegate* unmanaged<IMFPMPHostApp*, char*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), id, pStream, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -81,7 +81,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
         HRESULT UnlockProcess();
 
         [VtblIndex(5)]
-        HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] char* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
     public partial struct Vtbl<TSelf>
@@ -103,6 +103,6 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int> UnlockProcess;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, Guid*, void**, int> ActivateClassById;
+        public delegate* unmanaged<TSelf*, char*, IStream*, Guid*, void**, int> ActivateClassById;
     }
 }

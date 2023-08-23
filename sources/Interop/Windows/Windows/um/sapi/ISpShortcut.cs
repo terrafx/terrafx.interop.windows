@@ -49,17 +49,17 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.AddShortcut"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType)
+    public HRESULT AddShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType)
     {
-        return ((delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int>)(lpVtbl[3]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
+        return ((delegate* unmanaged<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[3]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.RemoveShortcut"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType)
+    public HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType)
     {
-        return ((delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int>)(lpVtbl[4]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
+        return ((delegate* unmanaged<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[4]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetShortcuts"]/*' />
@@ -113,10 +113,10 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType);
+        HRESULT AddShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType);
 
         [VtblIndex(4)]
-        HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType);
+        HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType);
 
         [VtblIndex(5)]
         HRESULT GetShortcuts([NativeTypeName("WORD")] ushort LangID, SPSHORTCUTPAIRLIST* pShortcutpairList);
@@ -150,10 +150,10 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int> AddShortcut;
+        public delegate* unmanaged<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> AddShortcut;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int> RemoveShortcut;
+        public delegate* unmanaged<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> RemoveShortcut;
 
         [NativeTypeName("HRESULT (WORD, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort, SPSHORTCUTPAIRLIST*, int> GetShortcuts;

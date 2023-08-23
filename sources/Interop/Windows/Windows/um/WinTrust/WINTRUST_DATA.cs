@@ -49,7 +49,7 @@ public unsafe partial struct WINTRUST_DATA
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pwszURLReference"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszURLReference;
+    public char* pwszURLReference;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwProvFlags"]/*' />
     [NativeTypeName("DWORD")]

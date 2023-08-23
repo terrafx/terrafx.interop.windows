@@ -49,9 +49,9 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache.GetCredential"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetCredential([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags)
+    public HRESULT GetCredential([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags)
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, ushort*, ushort*, uint, IMFNetCredential**, uint*, int>)(lpVtbl[3]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pszUrl, pszRealm, dwAuthenticationFlags, ppCred, pdwRequirementsFlags);
+        return ((delegate* unmanaged<IMFNetCredentialCache*, char*, char*, uint, IMFNetCredential**, uint*, int>)(lpVtbl[3]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pszUrl, pszRealm, dwAuthenticationFlags, ppCred, pdwRequirementsFlags);
     }
 
     /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache.SetGood"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetCredential([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags);
+        HRESULT GetCredential([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags);
 
         [VtblIndex(4)]
         HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood);
@@ -95,7 +95,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, IMFNetCredential **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, IMFNetCredential**, uint*, int> GetCredential;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, IMFNetCredential**, uint*, int> GetCredential;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFNetCredential*, BOOL, int> SetGood;

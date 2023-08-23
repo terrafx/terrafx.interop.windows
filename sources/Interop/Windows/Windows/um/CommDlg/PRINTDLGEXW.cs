@@ -65,7 +65,7 @@ public unsafe partial struct PRINTDLGEXW
 
     /// <include file='PRINTDLGEXW.xml' path='doc/member[@name="PRINTDLGEXW.lpPrintTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpPrintTemplateName;
+    public char* lpPrintTemplateName;
 
     /// <include file='PRINTDLGEXW.xml' path='doc/member[@name="PRINTDLGEXW.lpCallback"]/*' />
     [NativeTypeName("LPUNKNOWN")]

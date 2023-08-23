@@ -65,9 +65,9 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer.UpdateBalloon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, TfLBBalloonStyle, ushort*, uint, int>)(lpVtbl[5]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), style, pch, cch);
+        return ((delegate* unmanaged<ITfSpeechUIServer*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[5]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), style, pch, cch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
         HRESULT ShowUI(BOOL fShow);
 
         [VtblIndex(5)]
-        HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch);
+        HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
         public delegate* unmanaged<TSelf*, BOOL, int> ShowUI;
 
         [NativeTypeName("HRESULT (TfLBBalloonStyle, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, ushort*, uint, int> UpdateBalloon;
+        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
     }
 }

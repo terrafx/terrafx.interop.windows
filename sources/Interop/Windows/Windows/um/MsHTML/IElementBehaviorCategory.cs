@@ -49,15 +49,15 @@ public unsafe partial struct IElementBehaviorCategory : IElementBehaviorCategory
     /// <include file='IElementBehaviorCategory.xml' path='doc/member[@name="IElementBehaviorCategory.GetCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetCategory([NativeTypeName("LPOLESTR *")] ushort** ppchCategory)
+    public HRESULT GetCategory([NativeTypeName("LPOLESTR *")] char** ppchCategory)
     {
-        return ((delegate* unmanaged<IElementBehaviorCategory*, ushort**, int>)(lpVtbl[3]))((IElementBehaviorCategory*)Unsafe.AsPointer(ref this), ppchCategory);
+        return ((delegate* unmanaged<IElementBehaviorCategory*, char**, int>)(lpVtbl[3]))((IElementBehaviorCategory*)Unsafe.AsPointer(ref this), ppchCategory);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetCategory([NativeTypeName("LPOLESTR *")] ushort** ppchCategory);
+        HRESULT GetCategory([NativeTypeName("LPOLESTR *")] char** ppchCategory);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementBehaviorCategory : IElementBehaviorCategory
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCategory;
+        public delegate* unmanaged<TSelf*, char**, int> GetCategory;
     }
 }

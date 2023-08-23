@@ -81,9 +81,9 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.GetFolderByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetFolderByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, IKnownFolder** ppkf)
+    public HRESULT GetFolderByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, ushort*, IKnownFolder**, int>)(lpVtbl[7]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszCanonicalName, ppkf);
+        return ((delegate* unmanaged<IKnownFolderManager*, char*, IKnownFolder**, int>)(lpVtbl[7]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszCanonicalName, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.RegisterFolder"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FindFolderFromPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindFolderFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, FFFP_MODE mode, IKnownFolder** ppkf)
+    public HRESULT FindFolderFromPath([NativeTypeName("LPCWSTR")] char* pszPath, FFFP_MODE mode, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, ushort*, FFFP_MODE, IKnownFolder**, int>)(lpVtbl[10]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszPath, mode, ppkf);
+        return ((delegate* unmanaged<IKnownFolderManager*, char*, FFFP_MODE, IKnownFolder**, int>)(lpVtbl[10]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszPath, mode, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FindFolderFromIDList"]/*' />
@@ -121,9 +121,9 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.Redirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] ushort** ppszError)
+    public HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] char** ppszError)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int>)(lpVtbl[12]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
+        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, char*, uint, Guid*, char**, int>)(lpVtbl[12]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,7 +141,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         HRESULT GetFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, IKnownFolder** ppkf);
 
         [VtblIndex(7)]
-        HRESULT GetFolderByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, IKnownFolder** ppkf);
+        HRESULT GetFolderByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, IKnownFolder** ppkf);
 
         [VtblIndex(8)]
         HRESULT RegisterFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("const KNOWNFOLDER_DEFINITION *")] KNOWNFOLDER_DEFINITION* pKFD);
@@ -150,13 +150,13 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         HRESULT UnregisterFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid);
 
         [VtblIndex(10)]
-        HRESULT FindFolderFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, FFFP_MODE mode, IKnownFolder** ppkf);
+        HRESULT FindFolderFromPath([NativeTypeName("LPCWSTR")] char* pszPath, FFFP_MODE mode, IKnownFolder** ppkf);
 
         [VtblIndex(11)]
         HRESULT FindFolderFromIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IKnownFolder** ppkf);
 
         [VtblIndex(12)]
-        HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] ushort** ppszError);
+        HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] char** ppszError);
     }
 
     public partial struct Vtbl<TSelf>
@@ -184,7 +184,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         public delegate* unmanaged<TSelf*, Guid*, IKnownFolder**, int> GetFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IKnownFolder**, int> GetFolderByName;
+        public delegate* unmanaged<TSelf*, char*, IKnownFolder**, int> GetFolderByName;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, const KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
@@ -193,12 +193,12 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         public delegate* unmanaged<TSelf*, Guid*, int> UnregisterFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, FFFP_MODE, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
+        public delegate* unmanaged<TSelf*, char*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IKnownFolder **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, HWND, KF_REDIRECT_FLAGS, LPCWSTR, UINT, const KNOWNFOLDERID *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int> Redirect;
+        public delegate* unmanaged<TSelf*, Guid*, HWND, uint, char*, uint, Guid*, char**, int> Redirect;
     }
 }

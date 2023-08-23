@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDataTransfer : IHTMLDataTransfer.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,81 +81,81 @@ public unsafe partial struct IHTMLDataTransfer : IHTMLDataTransfer.Interface, IN
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.setData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT setData([NativeTypeName("BSTR")] ushort* format, VARIANT* data, [NativeTypeName("VARIANT_BOOL *")] short* pret)
+    public HRESULT setData([NativeTypeName("BSTR")] char* format, VARIANT* data, [NativeTypeName("VARIANT_BOOL *")] short* pret)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort*, VARIANT*, short*, int>)(lpVtbl[7]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, data, pret);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char*, VARIANT*, short*, int>)(lpVtbl[7]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, data, pret);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.getData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT getData([NativeTypeName("BSTR")] ushort* format, VARIANT* pvarRet)
+    public HRESULT getData([NativeTypeName("BSTR")] char* format, VARIANT* pvarRet)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, pvarRet);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, pvarRet);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.clearData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT clearData([NativeTypeName("BSTR")] ushort* format, [NativeTypeName("VARIANT_BOOL *")] short* pret)
+    public HRESULT clearData([NativeTypeName("BSTR")] char* format, [NativeTypeName("VARIANT_BOOL *")] short* pret)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort*, short*, int>)(lpVtbl[9]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, pret);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char*, short*, int>)(lpVtbl[9]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), format, pret);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.put_dropEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_dropEffect([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_dropEffect([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort*, int>)(lpVtbl[10]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char*, int>)(lpVtbl[10]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.get_dropEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_dropEffect([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dropEffect([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort**, int>)(lpVtbl[11]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char**, int>)(lpVtbl[11]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.put_effectAllowed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_effectAllowed([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_effectAllowed([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort*, int>)(lpVtbl[12]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char*, int>)(lpVtbl[12]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDataTransfer.xml' path='doc/member[@name="IHTMLDataTransfer.get_effectAllowed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_effectAllowed([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_effectAllowed([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDataTransfer*, ushort**, int>)(lpVtbl[13]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDataTransfer*, char**, int>)(lpVtbl[13]))((IHTMLDataTransfer*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT setData([NativeTypeName("BSTR")] ushort* format, VARIANT* data, [NativeTypeName("VARIANT_BOOL *")] short* pret);
+        HRESULT setData([NativeTypeName("BSTR")] char* format, VARIANT* data, [NativeTypeName("VARIANT_BOOL *")] short* pret);
 
         [VtblIndex(8)]
-        HRESULT getData([NativeTypeName("BSTR")] ushort* format, VARIANT* pvarRet);
+        HRESULT getData([NativeTypeName("BSTR")] char* format, VARIANT* pvarRet);
 
         [VtblIndex(9)]
-        HRESULT clearData([NativeTypeName("BSTR")] ushort* format, [NativeTypeName("VARIANT_BOOL *")] short* pret);
+        HRESULT clearData([NativeTypeName("BSTR")] char* format, [NativeTypeName("VARIANT_BOOL *")] short* pret);
 
         [VtblIndex(10)]
-        HRESULT put_dropEffect([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_dropEffect([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(11)]
-        HRESULT get_dropEffect([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dropEffect([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
-        HRESULT put_effectAllowed([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_effectAllowed([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(13)]
-        HRESULT get_effectAllowed([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_effectAllowed([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -177,30 +177,30 @@ public unsafe partial struct IHTMLDataTransfer : IHTMLDataTransfer.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, short*, int> setData;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, short*, int> setData;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getData;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getData;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> clearData;
+        public delegate* unmanaged<TSelf*, char*, short*, int> clearData;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dropEffect;
+        public delegate* unmanaged<TSelf*, char*, int> put_dropEffect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dropEffect;
+        public delegate* unmanaged<TSelf*, char**, int> get_dropEffect;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_effectAllowed;
+        public delegate* unmanaged<TSelf*, char*, int> put_effectAllowed;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_effectAllowed;
+        public delegate* unmanaged<TSelf*, char**, int> get_effectAllowed;
     }
 }

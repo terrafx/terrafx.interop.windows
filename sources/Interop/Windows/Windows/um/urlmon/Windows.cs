@@ -15,15 +15,15 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateURLMoniker"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CreateURLMoniker([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+    public static extern HRESULT CreateURLMoniker([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateURLMonikerEx"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CreateURLMonikerEx([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT CreateURLMonikerEx([NativeTypeName("LPMONIKER")] IMoniker* pMkCtx, [NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassURL"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT GetClassURL([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("CLSID *")] Guid* pClsID);
+    public static extern HRESULT GetClassURL([NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("CLSID *")] Guid* pClsID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAsyncBindCtx"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -39,7 +39,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MkParseDisplayNameEx"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT MkParseDisplayNameEx(IBindCtx* pbc, [NativeTypeName("LPCWSTR")] ushort* szDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+    public static extern HRESULT MkParseDisplayNameEx(IBindCtx* pbc, [NativeTypeName("LPCWSTR")] char* szDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterBindStatusCallback"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -51,15 +51,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassFileOrMime"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT GetClassFileOrMime([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szFilename, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] ushort* szMime, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("CLSID *")] Guid* pclsid);
+    public static extern HRESULT GetClassFileOrMime([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] char* szFilename, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] char* szMime, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("CLSID *")] Guid* pclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsValidURL"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT IsValidURL([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT IsValidURL([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetClassObjectFromURL"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoGetClassObjectFromURL([NativeTypeName("const IID &")] Guid* rCLASSID, [NativeTypeName("LPCWSTR")] ushort* szCODE, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPBINDCTX")] IBindCtx* pBindCtx, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+    public static extern HRESULT CoGetClassObjectFromURL([NativeTypeName("const IID &")] Guid* rCLASSID, [NativeTypeName("LPCWSTR")] char* szCODE, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] char* szTYPE, [NativeTypeName("LPBINDCTX")] IBindCtx* pBindCtx, [NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IEInstallScope"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -115,7 +115,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindMimeFromData"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT FindMimeFromData([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* pwzUrl, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] ushort* pwzMimeProposed, [NativeTypeName("DWORD")] uint dwMimeFlags, [NativeTypeName("LPWSTR *")] ushort** ppwzMimeOut, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT FindMimeFromData([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] char* pwzUrl, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbSize, [NativeTypeName("LPCWSTR")] char* pwzMimeProposed, [NativeTypeName("DWORD")] uint dwMimeFlags, [NativeTypeName("LPWSTR *")] char** ppwzMimeOut, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ObtainUserAgentString"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -135,11 +135,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateUri"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CreateUri([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
+    public static extern HRESULT CreateUri([NativeTypeName("LPCWSTR")] char* pwzURI, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateUriWithFragment"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CreateUriWithFragment([NativeTypeName("LPCWSTR")] ushort* pwzURI, [NativeTypeName("LPCWSTR")] ushort* pwzFragment, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
+    public static extern HRESULT CreateUriWithFragment([NativeTypeName("LPCWSTR")] char* pwzURI, [NativeTypeName("LPCWSTR")] char* pwzFragment, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppURI);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateUriFromMultiByteString"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -151,11 +151,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HlinkSimpleNavigateToString"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT HlinkSimpleNavigateToString([NativeTypeName("LPCWSTR")] ushort* szTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT HlinkSimpleNavigateToString([NativeTypeName("LPCWSTR")] char* szTarget, [NativeTypeName("LPCWSTR")] char* szLocation, [NativeTypeName("LPCWSTR")] char* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HlinkSimpleNavigateToMoniker"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT HlinkSimpleNavigateToMoniker(IMoniker* pmkTarget, [NativeTypeName("LPCWSTR")] ushort* szLocation, [NativeTypeName("LPCWSTR")] ushort* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT HlinkSimpleNavigateToMoniker(IMoniker* pmkTarget, [NativeTypeName("LPCWSTR")] char* szLocation, [NativeTypeName("LPCWSTR")] char* szTargetFrameName, IUnknown* pUnk, IBindCtx* pbc, IBindStatusCallback* param5, [NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenStreamA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -163,7 +163,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenStreamW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT URLOpenStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
+    public static extern HRESULT URLOpenStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenPullStreamA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -171,7 +171,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenPullStreamW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT URLOpenPullStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
+    public static extern HRESULT URLOpenPullStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param3);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToFileA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -179,7 +179,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToFileW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT URLDownloadToFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPCWSTR")] ushort* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
+    public static extern HRESULT URLDownloadToFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPCWSTR")] char* param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToCacheFileA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -187,7 +187,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToCacheFileW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT URLDownloadToCacheFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPWSTR")] ushort* param2, [NativeTypeName("DWORD")] uint cchFileName, [NativeTypeName("DWORD")] uint param4, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param5);
+    public static extern HRESULT URLDownloadToCacheFileW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPWSTR")] char* param2, [NativeTypeName("DWORD")] uint cchFileName, [NativeTypeName("DWORD")] uint param4, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param5);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenBlockingStreamA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -195,7 +195,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenBlockingStreamW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT URLOpenBlockingStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("LPSTREAM *")] IStream** param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
+    public static extern HRESULT URLOpenBlockingStreamW([NativeTypeName("LPUNKNOWN")] IUnknown* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPSTREAM *")] IStream** param2, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPBINDSTATUSCALLBACK")] IBindStatusCallback* param4);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HlinkGoBack"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -207,7 +207,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HlinkNavigateString"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT HlinkNavigateString(IUnknown* pUnk, [NativeTypeName("LPCWSTR")] ushort* szTarget);
+    public static extern HRESULT HlinkNavigateString(IUnknown* pUnk, [NativeTypeName("LPCWSTR")] char* szTarget);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HlinkNavigateMoniker"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -215,19 +215,19 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetParseUrl"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetParseUrl([NativeTypeName("LPCWSTR")] ushort* pwzUrl, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT CoInternetParseUrl([NativeTypeName("LPCWSTR")] char* pwzUrl, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetParseIUri"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetParseIUri(IUri* pIUri, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pwzResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+    public static extern HRESULT CoInternetParseIUri(IUri* pIUri, PARSEACTION ParseAction, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pwzResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetCombineUrl"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetCombineUrl([NativeTypeName("LPCWSTR")] ushort* pwzBaseUrl, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("LPWSTR")] ushort* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT CoInternetCombineUrl([NativeTypeName("LPCWSTR")] char* pwzBaseUrl, [NativeTypeName("LPCWSTR")] char* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, [NativeTypeName("LPWSTR")] char* pszResult, [NativeTypeName("DWORD")] uint cchResult, [NativeTypeName("DWORD *")] uint* pcchResult, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetCombineUrlEx"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetCombineUrlEx(IUri* pBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
+    public static extern HRESULT CoInternetCombineUrlEx(IUri* pBaseUri, [NativeTypeName("LPCWSTR")] char* pwzRelativeUrl, [NativeTypeName("DWORD")] uint dwCombineFlags, IUri** ppCombinedUri, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetCombineIUri"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -235,15 +235,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetCompareUrl"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetCompareUrl([NativeTypeName("LPCWSTR")] ushort* pwzUrl1, [NativeTypeName("LPCWSTR")] ushort* pwzUrl2, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT CoInternetCompareUrl([NativeTypeName("LPCWSTR")] char* pwzUrl1, [NativeTypeName("LPCWSTR")] char* pwzUrl2, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetGetProtocolFlags"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetGetProtocolFlags([NativeTypeName("LPCWSTR")] ushort* pwzUrl, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT CoInternetGetProtocolFlags([NativeTypeName("LPCWSTR")] char* pwzUrl, [NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetQueryInfo"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetQueryInfo([NativeTypeName("LPCWSTR")] ushort* pwzUrl, QUERYOPTION QueryOptions, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cbBuffer, [NativeTypeName("DWORD *")] uint* pcbBuffer, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT CoInternetQueryInfo([NativeTypeName("LPCWSTR")] char* pwzUrl, QUERYOPTION QueryOptions, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cbBuffer, [NativeTypeName("DWORD *")] uint* pcbBuffer, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetGetSession"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -251,11 +251,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetGetSecurityUrl"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetGetSecurityUrl([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPWSTR *")] ushort** ppwszSecUrl, PSUACTION psuAction, [NativeTypeName("DWORD")] uint dwReserved);
+    public static extern HRESULT CoInternetGetSecurityUrl([NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("LPWSTR *")] char** ppwszSecUrl, PSUACTION psuAction, [NativeTypeName("DWORD")] uint dwReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AsyncInstallDistributionUnit"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT AsyncInstallDistributionUnit([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPCWSTR")] ushort* szTYPE, [NativeTypeName("LPCWSTR")] ushort* szExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] ushort* szURL, IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags);
+    public static extern HRESULT AsyncInstallDistributionUnit([NativeTypeName("LPCWSTR")] char* szDistUnit, [NativeTypeName("LPCWSTR")] char* szTYPE, [NativeTypeName("LPCWSTR")] char* szExt, [NativeTypeName("DWORD")] uint dwFileVersionMS, [NativeTypeName("DWORD")] uint dwFileVersionLS, [NativeTypeName("LPCWSTR")] char* szURL, IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetGetSecurityUrlEx"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -271,7 +271,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetIsFeatureEnabledForUrl"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetIsFeatureEnabledForUrl(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* szURL, IInternetSecurityManager* pSecMgr);
+    public static extern HRESULT CoInternetIsFeatureEnabledForUrl(INTERNETFEATURELIST FeatureEntry, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* szURL, IInternetSecurityManager* pSecMgr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetIsFeatureEnabledForIUri"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -279,7 +279,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetIsFeatureZoneElevationEnabled"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT CoInternetIsFeatureZoneElevationEnabled([NativeTypeName("LPCWSTR")] ushort* szFromURL, [NativeTypeName("LPCWSTR")] ushort* szToURL, IInternetSecurityManager* pSecMgr, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT CoInternetIsFeatureZoneElevationEnabled([NativeTypeName("LPCWSTR")] char* szFromURL, [NativeTypeName("LPCWSTR")] char* szToURL, IInternetSecurityManager* pSecMgr, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyStgMedium"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -296,7 +296,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IEGetUserPrivateNamespaceName"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
     [return: NativeTypeName("PWSTR")]
-    public static extern ushort* IEGetUserPrivateNamespaceName();
+    public static extern char* IEGetUserPrivateNamespaceName();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInternetCreateSecurityManager"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -308,11 +308,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSoftwareUpdateInfo"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT GetSoftwareUpdateInfo([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
+    public static extern HRESULT GetSoftwareUpdateInfo([NativeTypeName("LPCWSTR")] char* szDistUnit, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* psdi);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSoftwareUpdateAdvertisementState"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern HRESULT SetSoftwareUpdateAdvertisementState([NativeTypeName("LPCWSTR")] ushort* szDistUnit, [NativeTypeName("DWORD")] uint dwAdState, [NativeTypeName("DWORD")] uint dwAdvertisedVersionMS, [NativeTypeName("DWORD")] uint dwAdvertisedVersionLS);
+    public static extern HRESULT SetSoftwareUpdateAdvertisementState([NativeTypeName("LPCWSTR")] char* szDistUnit, [NativeTypeName("DWORD")] uint dwAdState, [NativeTypeName("DWORD")] uint dwAdvertisedVersionMS, [NativeTypeName("DWORD")] uint dwAdvertisedVersionLS);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLoggingEnabledA"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -320,7 +320,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLoggingEnabledW"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
-    public static extern BOOL IsLoggingEnabledW([NativeTypeName("LPCWSTR")] ushort* pwszUrl);
+    public static extern BOOL IsLoggingEnabledW([NativeTypeName("LPCWSTR")] char* pwszUrl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteHitLogging"]/*' />
     [DllImport("urlmon", ExactSpelling = true)]
@@ -417,19 +417,19 @@ public static unsafe partial class Windows
     public const int URLOSTRM_GETNEWESTVERSION = 0x3;
 
     [NativeTypeName("#define URLOpenStream URLOpenStreamW")]
-    public static delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, HRESULT> URLOpenStream => &URLOpenStreamW;
+    public static delegate*<IUnknown*, char*, uint, IBindStatusCallback*, HRESULT> URLOpenStream => &URLOpenStreamW;
 
     [NativeTypeName("#define URLOpenPullStream URLOpenPullStreamW")]
-    public static delegate*<IUnknown*, ushort*, uint, IBindStatusCallback*, HRESULT> URLOpenPullStream => &URLOpenPullStreamW;
+    public static delegate*<IUnknown*, char*, uint, IBindStatusCallback*, HRESULT> URLOpenPullStream => &URLOpenPullStreamW;
 
     [NativeTypeName("#define URLDownloadToFile URLDownloadToFileW")]
-    public static delegate*<IUnknown*, ushort*, ushort*, uint, IBindStatusCallback*, HRESULT> URLDownloadToFile => &URLDownloadToFileW;
+    public static delegate*<IUnknown*, char*, char*, uint, IBindStatusCallback*, HRESULT> URLDownloadToFile => &URLDownloadToFileW;
 
     [NativeTypeName("#define URLDownloadToCacheFile URLDownloadToCacheFileW")]
-    public static delegate*<IUnknown*, ushort*, ushort*, uint, uint, IBindStatusCallback*, HRESULT> URLDownloadToCacheFile => &URLDownloadToCacheFileW;
+    public static delegate*<IUnknown*, char*, char*, uint, uint, IBindStatusCallback*, HRESULT> URLDownloadToCacheFile => &URLDownloadToCacheFileW;
 
     [NativeTypeName("#define URLOpenBlockingStream URLOpenBlockingStreamW")]
-    public static delegate*<IUnknown*, ushort*, IStream**, uint, IBindStatusCallback*, HRESULT> URLOpenBlockingStream => &URLOpenBlockingStreamW;
+    public static delegate*<IUnknown*, char*, IStream**, uint, IBindStatusCallback*, HRESULT> URLOpenBlockingStream => &URLOpenBlockingStreamW;
 
     [NativeTypeName("#define PARSE_ENCODE PARSE_ENCODE_IS_UNESCAPE")]
     public const PARSEACTION PARSE_ENCODE = PARSE_ENCODE_IS_UNESCAPE;
@@ -438,22 +438,22 @@ public static unsafe partial class Windows
     public const PARSEACTION PARSE_DECODE = PARSE_DECODE_IS_ESCAPE;
 
     [NativeTypeName("#define OInetParseUrl CoInternetParseUrl")]
-    public static delegate*<ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, HRESULT> OInetParseUrl => &CoInternetParseUrl;
+    public static delegate*<char*, PARSEACTION, uint, char*, uint, uint*, uint, HRESULT> OInetParseUrl => &CoInternetParseUrl;
 
     [NativeTypeName("#define OInetCombineUrl CoInternetCombineUrl")]
-    public static delegate*<ushort*, ushort*, uint, ushort*, uint, uint*, uint, HRESULT> OInetCombineUrl => &CoInternetCombineUrl;
+    public static delegate*<char*, char*, uint, char*, uint, uint*, uint, HRESULT> OInetCombineUrl => &CoInternetCombineUrl;
 
     [NativeTypeName("#define OInetCombineUrlEx CoInternetCombineUrlEx")]
-    public static delegate*<IUri*, ushort*, uint, IUri**, nuint, HRESULT> OInetCombineUrlEx => &CoInternetCombineUrlEx;
+    public static delegate*<IUri*, char*, uint, IUri**, nuint, HRESULT> OInetCombineUrlEx => &CoInternetCombineUrlEx;
 
     [NativeTypeName("#define OInetCombineIUri CoInternetCombineIUri")]
     public static delegate*<IUri*, IUri*, uint, IUri**, nuint, HRESULT> OInetCombineIUri => &CoInternetCombineIUri;
 
     [NativeTypeName("#define OInetCompareUrl CoInternetCompareUrl")]
-    public static delegate*<ushort*, ushort*, uint, HRESULT> OInetCompareUrl => &CoInternetCompareUrl;
+    public static delegate*<char*, char*, uint, HRESULT> OInetCompareUrl => &CoInternetCompareUrl;
 
     [NativeTypeName("#define OInetQueryInfo CoInternetQueryInfo")]
-    public static delegate*<ushort*, QUERYOPTION, uint, void*, uint, uint*, uint, HRESULT> OInetQueryInfo => &CoInternetQueryInfo;
+    public static delegate*<char*, QUERYOPTION, uint, void*, uint, uint*, uint, HRESULT> OInetQueryInfo => &CoInternetQueryInfo;
 
     [NativeTypeName("#define OInetGetSession CoInternetGetSession")]
     public static delegate*<uint, IInternetSession**, uint, HRESULT> OInetGetSession => &CoInternetGetSession;
@@ -489,7 +489,7 @@ public static unsafe partial class Windows
     public const int SOFTDIST_ADSTATE_INSTALLED = 0x00000003;
 
     [NativeTypeName("#define IsLoggingEnabled IsLoggingEnabledW")]
-    public static delegate*<ushort*, BOOL> IsLoggingEnabled => &IsLoggingEnabledW;
+    public static delegate*<char*, BOOL> IsLoggingEnabled => &IsLoggingEnabledW;
 
     [NativeTypeName("#define CONFIRMSAFETYACTION_LOADOBJECT 0x00000001")]
     public const int CONFIRMSAFETYACTION_LOADOBJECT = 0x00000001;

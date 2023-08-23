@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLImgElement3 : IHTMLImgElement3.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLImgElement3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,92 +81,92 @@ public unsafe partial struct IHTMLImgElement3 : IHTMLImgElement3.Interface, INat
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.put_longDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_longDesc([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_longDesc([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort*, int>)(lpVtbl[7]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char*, int>)(lpVtbl[7]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.get_longDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_longDesc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_longDesc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort**, int>)(lpVtbl[8]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char**, int>)(lpVtbl[8]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.put_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_vrml([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort*, int>)(lpVtbl[9]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char*, int>)(lpVtbl[9]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.get_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_vrml([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort**, int>)(lpVtbl[10]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char**, int>)(lpVtbl[10]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.put_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lowsrc([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort*, int>)(lpVtbl[11]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char*, int>)(lpVtbl[11]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.get_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lowsrc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort**, int>)(lpVtbl[12]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char**, int>)(lpVtbl[12]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.put_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_dynsrc([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort*, int>)(lpVtbl[13]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char*, int>)(lpVtbl[13]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLImgElement3.xml' path='doc/member[@name="IHTMLImgElement3.get_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dynsrc([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLImgElement3*, ushort**, int>)(lpVtbl[14]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLImgElement3*, char**, int>)(lpVtbl[14]))((IHTMLImgElement3*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_longDesc([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_longDesc([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_longDesc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_longDesc([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_vrml([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_vrml([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lowsrc([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lowsrc([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_dynsrc([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dynsrc([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,33 +188,33 @@ public unsafe partial struct IHTMLImgElement3 : IHTMLImgElement3.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_longDesc;
+        public delegate* unmanaged<TSelf*, char*, int> put_longDesc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_longDesc;
+        public delegate* unmanaged<TSelf*, char**, int> get_longDesc;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_vrml;
+        public delegate* unmanaged<TSelf*, char*, int> put_vrml;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_vrml;
+        public delegate* unmanaged<TSelf*, char**, int> get_vrml;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lowsrc;
+        public delegate* unmanaged<TSelf*, char*, int> put_lowsrc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lowsrc;
+        public delegate* unmanaged<TSelf*, char**, int> get_lowsrc;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dynsrc;
+        public delegate* unmanaged<TSelf*, char*, int> put_dynsrc;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dynsrc;
+        public delegate* unmanaged<TSelf*, char**, int> get_dynsrc;
     }
 }

@@ -51,9 +51,9 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IMFTimedTextRegion*, char**, int>)(lpVtbl[3]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetPosition"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
         HRESULT GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType);
@@ -196,7 +196,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPosition;

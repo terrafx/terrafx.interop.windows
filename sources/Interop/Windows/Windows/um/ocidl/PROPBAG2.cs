@@ -28,7 +28,7 @@ public unsafe partial struct PROPBAG2
 
     /// <include file='PROPBAG2.xml' path='doc/member[@name="PROPBAG2.pstrName"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* pstrName;
+    public char* pstrName;
 
     /// <include file='PROPBAG2.xml' path='doc/member[@name="PROPBAG2.clsid"]/*' />
     [NativeTypeName("CLSID")]

@@ -14,11 +14,11 @@ public unsafe partial struct PERSIST_FOLDER_TARGET_INFO
 
     /// <include file='PERSIST_FOLDER_TARGET_INFO.xml' path='doc/member[@name="PERSIST_FOLDER_TARGET_INFO.szTargetParsingName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szTargetParsingName[260];
+    public fixed char szTargetParsingName[260];
 
     /// <include file='PERSIST_FOLDER_TARGET_INFO.xml' path='doc/member[@name="PERSIST_FOLDER_TARGET_INFO.szNetworkProvider"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szNetworkProvider[260];
+    public fixed char szNetworkProvider[260];
 
     /// <include file='PERSIST_FOLDER_TARGET_INFO.xml' path='doc/member[@name="PERSIST_FOLDER_TARGET_INFO.dwAttributes"]/*' />
     [NativeTypeName("DWORD")]

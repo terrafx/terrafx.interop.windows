@@ -65,9 +65,9 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -257,17 +257,17 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_ClientName([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort*, int>)(lpVtbl[29]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, char*, int>)(lpVtbl[29]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort**, int>)(lpVtbl[30]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, char**, int>)(lpVtbl[30]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_RequestedWriteSpeed"]/*' />
@@ -372,10 +372,10 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value);
 
         [VtblIndex(29)]
-        HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_ClientName([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(30)]
-        HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(31)]
         HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
@@ -415,7 +415,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -487,10 +487,10 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_ClientName;
+        public delegate* unmanaged<TSelf*, char*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ClientName;
+        public delegate* unmanaged<TSelf*, char**, int> get_ClientName;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_RequestedWriteSpeed;

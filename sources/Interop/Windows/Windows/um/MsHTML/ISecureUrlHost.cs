@@ -49,15 +49,15 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
     /// <include file='ISecureUrlHost.xml' path='doc/member[@name="ISecureUrlHost.ValidateSecureUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
+    public HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] char* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ISecureUrlHost*, BOOL*, ushort*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
+        return ((delegate* unmanaged<ISecureUrlHost*, BOOL*, char*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags);
+        HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] char* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *, OLECHAR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, ushort*, uint, int> ValidateSecureUrl;
+        public delegate* unmanaged<TSelf*, BOOL*, char*, uint, int> ValidateSecureUrl;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetDocString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc)
+    public HRESULT SetDocString([NativeTypeName("LPOLESTR")] char* pStrDoc)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, ushort*, int>)(lpVtbl[5]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrDoc);
+        return ((delegate* unmanaged<ICreateTypeInfo*, char*, int>)(lpVtbl[5]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrDoc);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetHelpContext"]/*' />
@@ -129,9 +129,9 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetSchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema)
+    public HRESULT SetSchema([NativeTypeName("LPOLESTR")] char* pStrSchema)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, ushort*, int>)(lpVtbl[13]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrSchema);
+        return ((delegate* unmanaged<ICreateTypeInfo*, char*, int>)(lpVtbl[13]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), pStrSchema);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.AddVarDesc"]/*' />
@@ -145,17 +145,17 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetFuncAndParamNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames)
+    public HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort**, uint, int>)(lpVtbl[15]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, rgszNames, cNames);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char**, uint, int>)(lpVtbl[15]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, rgszNames, cNames);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetVarName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] ushort* szName)
+    public HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] char* szName)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int>)(lpVtbl[16]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szName);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char*, int>)(lpVtbl[16]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szName);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetTypeDescAlias"]/*' />
@@ -169,25 +169,25 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.DefineFuncAsDllEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName)
+    public HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] char* szDllName, [NativeTypeName("LPOLESTR")] char* szProcName)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, ushort*, int>)(lpVtbl[18]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDllName, szProcName);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char*, char*, int>)(lpVtbl[18]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDllName, szProcName);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetFuncDocString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
+    public HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] char* szDocString)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int>)(lpVtbl[19]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char*, int>)(lpVtbl[19]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetVarDocString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString)
+    public HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] char* szDocString)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int>)(lpVtbl[20]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char*, int>)(lpVtbl[20]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, szDocString);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetFuncHelpContext"]/*' />
@@ -209,9 +209,9 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetMops"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT SetMops(uint index, [NativeTypeName("BSTR")] ushort* bstrMops)
+    public HRESULT SetMops(uint index, [NativeTypeName("BSTR")] char* bstrMops)
     {
-        return ((delegate* unmanaged<ICreateTypeInfo*, uint, ushort*, int>)(lpVtbl[23]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, bstrMops);
+        return ((delegate* unmanaged<ICreateTypeInfo*, uint, char*, int>)(lpVtbl[23]))((ICreateTypeInfo*)Unsafe.AsPointer(ref this), index, bstrMops);
     }
 
     /// <include file='ICreateTypeInfo.xml' path='doc/member[@name="ICreateTypeInfo.SetTypeIdldesc"]/*' />
@@ -239,7 +239,7 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         HRESULT SetTypeFlags(uint uTypeFlags);
 
         [VtblIndex(5)]
-        HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* pStrDoc);
+        HRESULT SetDocString([NativeTypeName("LPOLESTR")] char* pStrDoc);
 
         [VtblIndex(6)]
         HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
@@ -263,28 +263,28 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         HRESULT SetAlignment([NativeTypeName("WORD")] ushort cbAlignment);
 
         [VtblIndex(13)]
-        HRESULT SetSchema([NativeTypeName("LPOLESTR")] ushort* pStrSchema);
+        HRESULT SetSchema([NativeTypeName("LPOLESTR")] char* pStrSchema);
 
         [VtblIndex(14)]
         HRESULT AddVarDesc(uint index, VARDESC* pVarDesc);
 
         [VtblIndex(15)]
-        HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames);
+        HRESULT SetFuncAndParamNames(uint index, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames);
 
         [VtblIndex(16)]
-        HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] ushort* szName);
+        HRESULT SetVarName(uint index, [NativeTypeName("LPOLESTR")] char* szName);
 
         [VtblIndex(17)]
         HRESULT SetTypeDescAlias(TYPEDESC* pTDescAlias);
 
         [VtblIndex(18)]
-        HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] ushort* szDllName, [NativeTypeName("LPOLESTR")] ushort* szProcName);
+        HRESULT DefineFuncAsDllEntry(uint index, [NativeTypeName("LPOLESTR")] char* szDllName, [NativeTypeName("LPOLESTR")] char* szProcName);
 
         [VtblIndex(19)]
-        HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
+        HRESULT SetFuncDocString(uint index, [NativeTypeName("LPOLESTR")] char* szDocString);
 
         [VtblIndex(20)]
-        HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] ushort* szDocString);
+        HRESULT SetVarDocString(uint index, [NativeTypeName("LPOLESTR")] char* szDocString);
 
         [VtblIndex(21)]
         HRESULT SetFuncHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
@@ -293,7 +293,7 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         HRESULT SetVarHelpContext(uint index, [NativeTypeName("DWORD")] uint dwHelpContext);
 
         [VtblIndex(23)]
-        HRESULT SetMops(uint index, [NativeTypeName("BSTR")] ushort* bstrMops);
+        HRESULT SetMops(uint index, [NativeTypeName("BSTR")] char* bstrMops);
 
         [VtblIndex(24)]
         HRESULT SetTypeIdldesc(IDLDESC* pIdlDesc);
@@ -321,7 +321,7 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, int> SetTypeFlags;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDocString;
+        public delegate* unmanaged<TSelf*, char*, int> SetDocString;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;
@@ -345,28 +345,28 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         public delegate* unmanaged<TSelf*, ushort, int> SetAlignment;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSchema;
+        public delegate* unmanaged<TSelf*, char*, int> SetSchema;
 
         [NativeTypeName("HRESULT (UINT, VARDESC *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, VARDESC*, int> AddVarDesc;
 
         [NativeTypeName("HRESULT (UINT, LPOLESTR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint, int> SetFuncAndParamNames;
+        public delegate* unmanaged<TSelf*, uint, char**, uint, int> SetFuncAndParamNames;
 
         [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetVarName;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetVarName;
 
         [NativeTypeName("HRESULT (TYPEDESC *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TYPEDESC*, int> SetTypeDescAlias;
 
         [NativeTypeName("HRESULT (UINT, LPOLESTR, LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> DefineFuncAsDllEntry;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, int> DefineFuncAsDllEntry;
 
         [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetFuncDocString;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetFuncDocString;
 
         [NativeTypeName("HRESULT (UINT, LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetVarDocString;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetVarDocString;
 
         [NativeTypeName("HRESULT (UINT, DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, int> SetFuncHelpContext;
@@ -375,7 +375,7 @@ public unsafe partial struct ICreateTypeInfo : ICreateTypeInfo.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, int> SetVarHelpContext;
 
         [NativeTypeName("HRESULT (UINT, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetMops;
+        public delegate* unmanaged<TSelf*, uint, char*, int> SetMops;
 
         [NativeTypeName("HRESULT (IDLDESC *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDLDESC*, int> SetTypeIdldesc;

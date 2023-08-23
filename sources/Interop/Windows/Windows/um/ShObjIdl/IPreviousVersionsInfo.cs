@@ -49,15 +49,15 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
     /// <include file='IPreviousVersionsInfo.xml' path='doc/member[@name="IPreviousVersionsInfo.AreSnapshotsAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
+    public HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] char* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable)
     {
-        return ((delegate* unmanaged<IPreviousVersionsInfo*, ushort*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
+        return ((delegate* unmanaged<IPreviousVersionsInfo*, char*, BOOL, BOOL*, int>)(lpVtbl[3]))((IPreviousVersionsInfo*)Unsafe.AsPointer(ref this), pszPath, fOkToBeSlow, pfAvailable);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
+        HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] char* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, BOOL*, int> AreSnapshotsAvailable;
+        public delegate* unmanaged<TSelf*, char*, BOOL, BOOL*, int> AreSnapshotsAvailable;
     }
 }

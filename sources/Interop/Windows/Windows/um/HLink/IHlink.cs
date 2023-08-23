@@ -65,65 +65,65 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.SetMonikerReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetMonikerReference([NativeTypeName("DWORD")] uint grfHLSETF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation)
+    public HRESULT SetMonikerReference([NativeTypeName("DWORD")] uint grfHLSETF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation)
     {
-        return ((delegate* unmanaged<IHlink*, uint, IMoniker*, ushort*, int>)(lpVtbl[5]))((IHlink*)Unsafe.AsPointer(ref this), grfHLSETF, pimkTarget, pwzLocation);
+        return ((delegate* unmanaged<IHlink*, uint, IMoniker*, char*, int>)(lpVtbl[5]))((IHlink*)Unsafe.AsPointer(ref this), grfHLSETF, pimkTarget, pwzLocation);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetMonikerReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetMonikerReference([NativeTypeName("DWORD")] uint dwWhichRef, IMoniker** ppimkTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation)
+    public HRESULT GetMonikerReference([NativeTypeName("DWORD")] uint dwWhichRef, IMoniker** ppimkTarget, [NativeTypeName("LPWSTR *")] char** ppwzLocation)
     {
-        return ((delegate* unmanaged<IHlink*, uint, IMoniker**, ushort**, int>)(lpVtbl[6]))((IHlink*)Unsafe.AsPointer(ref this), dwWhichRef, ppimkTarget, ppwzLocation);
+        return ((delegate* unmanaged<IHlink*, uint, IMoniker**, char**, int>)(lpVtbl[6]))((IHlink*)Unsafe.AsPointer(ref this), dwWhichRef, ppimkTarget, ppwzLocation);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.SetStringReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetStringReference([NativeTypeName("DWORD")] uint grfHLSETF, [NativeTypeName("LPCWSTR")] ushort* pwzTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation)
+    public HRESULT SetStringReference([NativeTypeName("DWORD")] uint grfHLSETF, [NativeTypeName("LPCWSTR")] char* pwzTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation)
     {
-        return ((delegate* unmanaged<IHlink*, uint, ushort*, ushort*, int>)(lpVtbl[7]))((IHlink*)Unsafe.AsPointer(ref this), grfHLSETF, pwzTarget, pwzLocation);
+        return ((delegate* unmanaged<IHlink*, uint, char*, char*, int>)(lpVtbl[7]))((IHlink*)Unsafe.AsPointer(ref this), grfHLSETF, pwzTarget, pwzLocation);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetStringReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetStringReference([NativeTypeName("DWORD")] uint dwWhichRef, [NativeTypeName("LPWSTR *")] ushort** ppwzTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation)
+    public HRESULT GetStringReference([NativeTypeName("DWORD")] uint dwWhichRef, [NativeTypeName("LPWSTR *")] char** ppwzTarget, [NativeTypeName("LPWSTR *")] char** ppwzLocation)
     {
-        return ((delegate* unmanaged<IHlink*, uint, ushort**, ushort**, int>)(lpVtbl[8]))((IHlink*)Unsafe.AsPointer(ref this), dwWhichRef, ppwzTarget, ppwzLocation);
+        return ((delegate* unmanaged<IHlink*, uint, char**, char**, int>)(lpVtbl[8]))((IHlink*)Unsafe.AsPointer(ref this), dwWhichRef, ppwzTarget, ppwzLocation);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.SetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    public HRESULT SetFriendlyName([NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlink*, ushort*, int>)(lpVtbl[9]))((IHlink*)Unsafe.AsPointer(ref this), pwzFriendlyName);
+        return ((delegate* unmanaged<IHlink*, char*, int>)(lpVtbl[9]))((IHlink*)Unsafe.AsPointer(ref this), pwzFriendlyName);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFriendlyName([NativeTypeName("DWORD")] uint grfHLFNAMEF, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName)
+    public HRESULT GetFriendlyName([NativeTypeName("DWORD")] uint grfHLFNAMEF, [NativeTypeName("LPWSTR *")] char** ppwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlink*, uint, ushort**, int>)(lpVtbl[10]))((IHlink*)Unsafe.AsPointer(ref this), grfHLFNAMEF, ppwzFriendlyName);
+        return ((delegate* unmanaged<IHlink*, uint, char**, int>)(lpVtbl[10]))((IHlink*)Unsafe.AsPointer(ref this), grfHLFNAMEF, ppwzFriendlyName);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.SetTargetFrameName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetTargetFrameName([NativeTypeName("LPCWSTR")] ushort* pwzTargetFrameName)
+    public HRESULT SetTargetFrameName([NativeTypeName("LPCWSTR")] char* pwzTargetFrameName)
     {
-        return ((delegate* unmanaged<IHlink*, ushort*, int>)(lpVtbl[11]))((IHlink*)Unsafe.AsPointer(ref this), pwzTargetFrameName);
+        return ((delegate* unmanaged<IHlink*, char*, int>)(lpVtbl[11]))((IHlink*)Unsafe.AsPointer(ref this), pwzTargetFrameName);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetTargetFrameName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetTargetFrameName([NativeTypeName("LPWSTR *")] ushort** ppwzTargetFrameName)
+    public HRESULT GetTargetFrameName([NativeTypeName("LPWSTR *")] char** ppwzTargetFrameName)
     {
-        return ((delegate* unmanaged<IHlink*, ushort**, int>)(lpVtbl[12]))((IHlink*)Unsafe.AsPointer(ref this), ppwzTargetFrameName);
+        return ((delegate* unmanaged<IHlink*, char**, int>)(lpVtbl[12]))((IHlink*)Unsafe.AsPointer(ref this), ppwzTargetFrameName);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetMiscStatus"]/*' />
@@ -145,17 +145,17 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.SetAdditionalParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SetAdditionalParams([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalParams)
+    public HRESULT SetAdditionalParams([NativeTypeName("LPCWSTR")] char* pwzAdditionalParams)
     {
-        return ((delegate* unmanaged<IHlink*, ushort*, int>)(lpVtbl[15]))((IHlink*)Unsafe.AsPointer(ref this), pwzAdditionalParams);
+        return ((delegate* unmanaged<IHlink*, char*, int>)(lpVtbl[15]))((IHlink*)Unsafe.AsPointer(ref this), pwzAdditionalParams);
     }
 
     /// <include file='IHlink.xml' path='doc/member[@name="IHlink.GetAdditionalParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetAdditionalParams([NativeTypeName("LPWSTR *")] ushort** ppwzAdditionalParams)
+    public HRESULT GetAdditionalParams([NativeTypeName("LPWSTR *")] char** ppwzAdditionalParams)
     {
-        return ((delegate* unmanaged<IHlink*, ushort**, int>)(lpVtbl[16]))((IHlink*)Unsafe.AsPointer(ref this), ppwzAdditionalParams);
+        return ((delegate* unmanaged<IHlink*, char**, int>)(lpVtbl[16]))((IHlink*)Unsafe.AsPointer(ref this), ppwzAdditionalParams);
     }
 
     public interface Interface : IUnknown.Interface
@@ -167,28 +167,28 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
         HRESULT GetHlinkSite(IHlinkSite** ppihlSite, [NativeTypeName("DWORD *")] uint* pdwSiteData);
 
         [VtblIndex(5)]
-        HRESULT SetMonikerReference([NativeTypeName("DWORD")] uint grfHLSETF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation);
+        HRESULT SetMonikerReference([NativeTypeName("DWORD")] uint grfHLSETF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation);
 
         [VtblIndex(6)]
-        HRESULT GetMonikerReference([NativeTypeName("DWORD")] uint dwWhichRef, IMoniker** ppimkTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation);
+        HRESULT GetMonikerReference([NativeTypeName("DWORD")] uint dwWhichRef, IMoniker** ppimkTarget, [NativeTypeName("LPWSTR *")] char** ppwzLocation);
 
         [VtblIndex(7)]
-        HRESULT SetStringReference([NativeTypeName("DWORD")] uint grfHLSETF, [NativeTypeName("LPCWSTR")] ushort* pwzTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation);
+        HRESULT SetStringReference([NativeTypeName("DWORD")] uint grfHLSETF, [NativeTypeName("LPCWSTR")] char* pwzTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation);
 
         [VtblIndex(8)]
-        HRESULT GetStringReference([NativeTypeName("DWORD")] uint dwWhichRef, [NativeTypeName("LPWSTR *")] ushort** ppwzTarget, [NativeTypeName("LPWSTR *")] ushort** ppwzLocation);
+        HRESULT GetStringReference([NativeTypeName("DWORD")] uint dwWhichRef, [NativeTypeName("LPWSTR *")] char** ppwzTarget, [NativeTypeName("LPWSTR *")] char** ppwzLocation);
 
         [VtblIndex(9)]
-        HRESULT SetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        HRESULT SetFriendlyName([NativeTypeName("LPCWSTR")] char* pwzFriendlyName);
 
         [VtblIndex(10)]
-        HRESULT GetFriendlyName([NativeTypeName("DWORD")] uint grfHLFNAMEF, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName);
+        HRESULT GetFriendlyName([NativeTypeName("DWORD")] uint grfHLFNAMEF, [NativeTypeName("LPWSTR *")] char** ppwzFriendlyName);
 
         [VtblIndex(11)]
-        HRESULT SetTargetFrameName([NativeTypeName("LPCWSTR")] ushort* pwzTargetFrameName);
+        HRESULT SetTargetFrameName([NativeTypeName("LPCWSTR")] char* pwzTargetFrameName);
 
         [VtblIndex(12)]
-        HRESULT GetTargetFrameName([NativeTypeName("LPWSTR *")] ushort** ppwzTargetFrameName);
+        HRESULT GetTargetFrameName([NativeTypeName("LPWSTR *")] char** ppwzTargetFrameName);
 
         [VtblIndex(13)]
         HRESULT GetMiscStatus([NativeTypeName("DWORD *")] uint* pdwStatus);
@@ -197,10 +197,10 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
         HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPBC")] IBindCtx* pibc, IBindStatusCallback* pibsc, IHlinkBrowseContext* pihlbc);
 
         [VtblIndex(15)]
-        HRESULT SetAdditionalParams([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalParams);
+        HRESULT SetAdditionalParams([NativeTypeName("LPCWSTR")] char* pwzAdditionalParams);
 
         [VtblIndex(16)]
-        HRESULT GetAdditionalParams([NativeTypeName("LPWSTR *")] ushort** ppwzAdditionalParams);
+        HRESULT GetAdditionalParams([NativeTypeName("LPWSTR *")] char** ppwzAdditionalParams);
     }
 
     public partial struct Vtbl<TSelf>
@@ -222,28 +222,28 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IHlinkSite**, uint*, int> GetHlinkSite;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, int> SetMonikerReference;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, int> SetMonikerReference;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker **, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker**, ushort**, int> GetMonikerReference;
+        public delegate* unmanaged<TSelf*, uint, IMoniker**, char**, int> GetMonikerReference;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> SetStringReference;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, int> SetStringReference;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, ushort**, int> GetStringReference;
+        public delegate* unmanaged<TSelf*, uint, char**, char**, int> GetStringReference;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetFriendlyName;
+        public delegate* unmanaged<TSelf*, char*, int> SetFriendlyName;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTargetFrameName;
+        public delegate* unmanaged<TSelf*, char*, int> SetTargetFrameName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTargetFrameName;
+        public delegate* unmanaged<TSelf*, char**, int> GetTargetFrameName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetMiscStatus;
@@ -252,9 +252,9 @@ public unsafe partial struct IHlink : IHlink.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, IBindCtx*, IBindStatusCallback*, IHlinkBrowseContext*, int> Navigate;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAdditionalParams;
+        public delegate* unmanaged<TSelf*, char*, int> SetAdditionalParams;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetAdditionalParams;
+        public delegate* unmanaged<TSelf*, char**, int> GetAdditionalParams;
     }
 }

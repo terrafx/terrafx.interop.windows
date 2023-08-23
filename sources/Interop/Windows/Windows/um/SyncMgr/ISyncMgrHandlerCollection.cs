@@ -57,9 +57,9 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     /// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection.BindToHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT BindToHandler([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), pszHandlerID, riid, ppv);
+        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, char*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), pszHandlerID, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         HRESULT GetHandlerEnumerator(IEnumString** ppenum);
 
         [VtblIndex(4)]
-        HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT BindToHandler([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         public delegate* unmanaged<TSelf*, IEnumString**, int> GetHandlerEnumerator;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> BindToHandler;
     }
 }

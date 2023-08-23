@@ -49,9 +49,9 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
     /// <inheritdoc cref="IInternetProtocolRoot.Start" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Start([NativeTypeName("LPCWSTR")] ushort* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
+    public HRESULT Start([NativeTypeName("LPCWSTR")] char* szUrl, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved)
     {
-        return ((delegate* unmanaged<IInternetProtocol*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[3]))((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
+        return ((delegate* unmanaged<IInternetProtocol*, char*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int>)(lpVtbl[3]))((IInternetProtocol*)Unsafe.AsPointer(ref this), szUrl, pOIProtSink, pOIBindInfo, grfPI, dwReserved);
     }
 
     /// <inheritdoc cref="IInternetProtocolRoot.Continue" />
@@ -154,7 +154,7 @@ public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
+        public delegate* unmanaged<TSelf*, char*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
 
         [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Continue;

@@ -73,9 +73,9 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.InitializeProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
+    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] char** ppszTitle, [NativeTypeName("LPWSTR *")] char** ppszCancel)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
+        return ((delegate* unmanaged<INamespaceWalkCB*, char**, char**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,7 +90,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
         HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [VtblIndex(6)]
-        HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel);
+        HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] char** ppszTitle, [NativeTypeName("LPWSTR *")] char** ppszCancel);
     }
 
     public partial struct Vtbl<TSelf>
@@ -115,6 +115,6 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
         public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> InitializeProgressDialog;
+        public delegate* unmanaged<TSelf*, char**, char**, int> InitializeProgressDialog;
     }
 }

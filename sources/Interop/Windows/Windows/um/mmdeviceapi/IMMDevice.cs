@@ -65,9 +65,9 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId)
+    public HRESULT GetId([NativeTypeName("LPWSTR *")] char** ppstrId)
     {
-        return ((delegate* unmanaged<IMMDevice*, ushort**, int>)(lpVtbl[5]))((IMMDevice*)Unsafe.AsPointer(ref this), ppstrId);
+        return ((delegate* unmanaged<IMMDevice*, char**, int>)(lpVtbl[5]))((IMMDevice*)Unsafe.AsPointer(ref this), ppstrId);
     }
 
     /// <include file='IMMDevice.xml' path='doc/member[@name="IMMDevice.GetState"]/*' />
@@ -87,7 +87,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
         HRESULT OpenPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** ppProperties);
 
         [VtblIndex(5)]
-        HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppstrId);
+        HRESULT GetId([NativeTypeName("LPWSTR *")] char** ppstrId);
 
         [VtblIndex(6)]
         HRESULT GetState([NativeTypeName("DWORD *")] uint* pdwState);
@@ -112,7 +112,7 @@ public unsafe partial struct IMMDevice : IMMDevice.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, IPropertyStore**, int> OpenPropertyStore;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetId;
+        public delegate* unmanaged<TSelf*, char**, int> GetId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetState;

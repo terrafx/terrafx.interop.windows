@@ -49,9 +49,9 @@ public unsafe partial struct IUserNotification2 : IUserNotification2.Interface, 
     /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2.SetBalloonInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetBalloonInfo([NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint dwInfoFlags)
+    public HRESULT SetBalloonInfo([NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszText, [NativeTypeName("DWORD")] uint dwInfoFlags)
     {
-        return ((delegate* unmanaged<IUserNotification2*, ushort*, ushort*, uint, int>)(lpVtbl[3]))((IUserNotification2*)Unsafe.AsPointer(ref this), pszTitle, pszText, dwInfoFlags);
+        return ((delegate* unmanaged<IUserNotification2*, char*, char*, uint, int>)(lpVtbl[3]))((IUserNotification2*)Unsafe.AsPointer(ref this), pszTitle, pszText, dwInfoFlags);
     }
 
     /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2.SetBalloonRetry"]/*' />
@@ -65,9 +65,9 @@ public unsafe partial struct IUserNotification2 : IUserNotification2.Interface, 
     /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2.SetIconInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetIconInfo(HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszToolTip)
+    public HRESULT SetIconInfo(HICON hIcon, [NativeTypeName("LPCWSTR")] char* pszToolTip)
     {
-        return ((delegate* unmanaged<IUserNotification2*, HICON, ushort*, int>)(lpVtbl[5]))((IUserNotification2*)Unsafe.AsPointer(ref this), hIcon, pszToolTip);
+        return ((delegate* unmanaged<IUserNotification2*, HICON, char*, int>)(lpVtbl[5]))((IUserNotification2*)Unsafe.AsPointer(ref this), hIcon, pszToolTip);
     }
 
     /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2.Show"]/*' />
@@ -81,27 +81,27 @@ public unsafe partial struct IUserNotification2 : IUserNotification2.Interface, 
     /// <include file='IUserNotification2.xml' path='doc/member[@name="IUserNotification2.PlaySoundW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT PlaySoundW([NativeTypeName("LPCWSTR")] ushort* pszSoundName)
+    public HRESULT PlaySoundW([NativeTypeName("LPCWSTR")] char* pszSoundName)
     {
-        return ((delegate* unmanaged<IUserNotification2*, ushort*, int>)(lpVtbl[7]))((IUserNotification2*)Unsafe.AsPointer(ref this), pszSoundName);
+        return ((delegate* unmanaged<IUserNotification2*, char*, int>)(lpVtbl[7]))((IUserNotification2*)Unsafe.AsPointer(ref this), pszSoundName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetBalloonInfo([NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszText, [NativeTypeName("DWORD")] uint dwInfoFlags);
+        HRESULT SetBalloonInfo([NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszText, [NativeTypeName("DWORD")] uint dwInfoFlags);
 
         [VtblIndex(4)]
         HRESULT SetBalloonRetry([NativeTypeName("DWORD")] uint dwShowTime, [NativeTypeName("DWORD")] uint dwInterval, uint cRetryCount);
 
         [VtblIndex(5)]
-        HRESULT SetIconInfo(HICON hIcon, [NativeTypeName("LPCWSTR")] ushort* pszToolTip);
+        HRESULT SetIconInfo(HICON hIcon, [NativeTypeName("LPCWSTR")] char* pszToolTip);
 
         [VtblIndex(6)]
         HRESULT Show(IQueryContinue* pqc, [NativeTypeName("DWORD")] uint dwContinuePollInterval, IUserNotificationCallback* pSink);
 
         [VtblIndex(7)]
-        HRESULT PlaySoundW([NativeTypeName("LPCWSTR")] ushort* pszSoundName);
+        HRESULT PlaySoundW([NativeTypeName("LPCWSTR")] char* pszSoundName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -117,18 +117,18 @@ public unsafe partial struct IUserNotification2 : IUserNotification2.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> SetBalloonInfo;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, int> SetBalloonInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, UINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetBalloonRetry;
 
         [NativeTypeName("HRESULT (HICON, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HICON, ushort*, int> SetIconInfo;
+        public delegate* unmanaged<TSelf*, HICON, char*, int> SetIconInfo;
 
         [NativeTypeName("HRESULT (IQueryContinue *, DWORD, IUserNotificationCallback *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IQueryContinue*, uint, IUserNotificationCallback*, int> Show;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> PlaySoundW;
+        public delegate* unmanaged<TSelf*, char*, int> PlaySoundW;
     }
 }

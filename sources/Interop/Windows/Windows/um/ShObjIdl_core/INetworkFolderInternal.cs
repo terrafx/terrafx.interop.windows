@@ -65,9 +65,9 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     /// <include file='INetworkFolderInternal.xml' path='doc/member[@name="INetworkFolderInternal.GetProvider"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider)
+    public HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] char* provider)
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, ushort*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
+        return ((delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, char*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
         HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** idList);
 
         [VtblIndex(5)]
-        HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider);
+        HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] char* provider);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
         public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, UINT, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint, ushort*, int> GetProvider;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint, char*, int> GetProvider;
     }
 }

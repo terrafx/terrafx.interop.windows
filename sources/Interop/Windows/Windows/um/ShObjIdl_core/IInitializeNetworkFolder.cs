@@ -49,15 +49,15 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
     /// <include file='IInitializeNetworkFolder.xml' path='doc/member[@name="IInitializeNetworkFolder.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider)
+    public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] char* pszResName, [NativeTypeName("LPCWSTR")] char* pszProvider)
     {
-        return ((delegate* unmanaged<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, ushort*, ushort*, int>)(lpVtbl[3]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), pidl, pidlTarget, uDisplayType, pszResName, pszProvider);
+        return ((delegate* unmanaged<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int>)(lpVtbl[3]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), pidl, pidlTarget, uDisplayType, pszResName, pszProvider);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider);
+        HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] char* pszResName, [NativeTypeName("LPCWSTR")] char* pszProvider);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCITEMIDLIST, UINT, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ITEMIDLIST*, uint, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int> Initialize;
     }
 }

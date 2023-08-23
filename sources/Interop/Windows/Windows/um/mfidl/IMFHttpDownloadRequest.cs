@@ -51,9 +51,9 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
     /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.AddHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddHeader([NativeTypeName("LPCWSTR")] ushort* szHeader)
+    public HRESULT AddHeader([NativeTypeName("LPCWSTR")] char* szHeader)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadRequest*, ushort*, int>)(lpVtbl[3]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), szHeader);
+        return ((delegate* unmanaged<IMFHttpDownloadRequest*, char*, int>)(lpVtbl[3]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), szHeader);
     }
 
     /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.BeginSendRequest"]/*' />
@@ -107,17 +107,17 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
     /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.QueryHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT QueryHeader([NativeTypeName("LPCWSTR")] ushort* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] ushort** ppszHeaderValue)
+    public HRESULT QueryHeader([NativeTypeName("LPCWSTR")] char* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] char** ppszHeaderValue)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadRequest*, ushort*, uint, ushort**, int>)(lpVtbl[10]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), szHeaderName, dwIndex, ppszHeaderValue);
+        return ((delegate* unmanaged<IMFHttpDownloadRequest*, char*, uint, char**, int>)(lpVtbl[10]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), szHeaderName, dwIndex, ppszHeaderValue);
     }
 
     /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
+    public HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL)
     {
-        return ((delegate* unmanaged<IMFHttpDownloadRequest*, ushort**, int>)(lpVtbl[11]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), ppszURL);
+        return ((delegate* unmanaged<IMFHttpDownloadRequest*, char**, int>)(lpVtbl[11]))((IMFHttpDownloadRequest*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
     /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.HasNullSourceOrigin"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddHeader([NativeTypeName("LPCWSTR")] ushort* szHeader);
+        HRESULT AddHeader([NativeTypeName("LPCWSTR")] char* szHeader);
 
         [VtblIndex(4)]
         HRESULT BeginSendRequest([NativeTypeName("const BYTE *")] byte* pbPayload, [NativeTypeName("ULONG")] uint cbPayload, IMFAsyncCallback* pCallback, IUnknown* punkState);
@@ -200,10 +200,10 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
         HRESULT EndReadPayload(IMFAsyncResult* pResult, [NativeTypeName("QWORD *")] ulong* pqwOffset, [NativeTypeName("ULONG *")] uint* pcbRead);
 
         [VtblIndex(10)]
-        HRESULT QueryHeader([NativeTypeName("LPCWSTR")] ushort* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] ushort** ppszHeaderValue);
+        HRESULT QueryHeader([NativeTypeName("LPCWSTR")] char* szHeaderName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR *")] char** ppszHeaderValue);
 
         [VtblIndex(11)]
-        HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL);
+        HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL);
 
         [VtblIndex(12)]
         HRESULT HasNullSourceOrigin(BOOL* pfNullSourceOrigin);
@@ -240,7 +240,7 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddHeader;
+        public delegate* unmanaged<TSelf*, char*, int> AddHeader;
 
         [NativeTypeName("HRESULT (const BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginSendRequest;
@@ -261,10 +261,10 @@ public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Int
         public delegate* unmanaged<TSelf*, IMFAsyncResult*, ulong*, uint*, int> EndReadPayload;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> QueryHeader;
+        public delegate* unmanaged<TSelf*, char*, uint, char**, int> QueryHeader;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, char**, int> GetURL;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> HasNullSourceOrigin;

@@ -81,9 +81,9 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.GetCategoryName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch)
+    public HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] char* pszName, uint cch)
     {
-        return ((delegate* unmanaged<ICategoryProvider*, Guid*, ushort*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
+        return ((delegate* unmanaged<ICategoryProvider*, Guid*, char*, uint, int>)(lpVtbl[7]))((ICategoryProvider*)Unsafe.AsPointer(ref this), pguid, pszName, cch);
     }
 
     /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.CreateCategory"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
         HRESULT EnumCategories(IEnumGUID** penum);
 
         [VtblIndex(7)]
-        HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] ushort* pszName, uint cch);
+        HRESULT GetCategoryName([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("LPWSTR")] char* pszName, uint cch);
 
         [VtblIndex(8)]
         HRESULT CreateCategory([NativeTypeName("const GUID *")] Guid* pguid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
@@ -140,7 +140,7 @@ public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, IN
         public delegate* unmanaged<TSelf*, IEnumGUID**, int> EnumCategories;
 
         [NativeTypeName("HRESULT (const GUID *, LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> GetCategoryName;
+        public delegate* unmanaged<TSelf*, Guid*, char*, uint, int> GetCategoryName;
 
         [NativeTypeName("HRESULT (const GUID *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> CreateCategory;

@@ -49,15 +49,15 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
     /// <include file='IQueryCancelAutoPlay.xml' path='doc/member[@name="IQueryCancelAutoPlay.AllowAutoPlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber)
+    public HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] char* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber)
     {
-        return ((delegate* unmanaged<IQueryCancelAutoPlay*, ushort*, uint, ushort*, uint, int>)(lpVtbl[3]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), pszPath, dwContentType, pszLabel, dwSerialNumber);
+        return ((delegate* unmanaged<IQueryCancelAutoPlay*, char*, uint, char*, uint, int>)(lpVtbl[3]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), pszPath, dwContentType, pszLabel, dwSerialNumber);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber);
+        HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] char* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, int> AllowAutoPlay;
+        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, int> AllowAutoPlay;
     }
 }

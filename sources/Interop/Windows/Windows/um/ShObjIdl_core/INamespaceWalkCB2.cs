@@ -73,9 +73,9 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface, IN
     /// <inheritdoc cref="INamespaceWalkCB.InitializeProgressDialog" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
+    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] char** ppszTitle, [NativeTypeName("LPWSTR *")] char** ppszCancel)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB2*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
+        return ((delegate* unmanaged<INamespaceWalkCB2*, char**, char**, int>)(lpVtbl[6]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
     }
 
     /// <include file='INamespaceWalkCB2.xml' path='doc/member[@name="INamespaceWalkCB2.WalkComplete"]/*' />
@@ -114,7 +114,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface, IN
         public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> InitializeProgressDialog;
+        public delegate* unmanaged<TSelf*, char**, char**, int> InitializeProgressDialog;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HRESULT, int> WalkComplete;

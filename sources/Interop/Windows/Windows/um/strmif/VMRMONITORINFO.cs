@@ -23,11 +23,11 @@ public unsafe partial struct VMRMONITORINFO
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.szDevice"]/*' />
     [NativeTypeName("wchar_t[32]")]
-    public fixed ushort szDevice[32];
+    public fixed char szDevice[32];
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.szDescription"]/*' />
     [NativeTypeName("wchar_t[256]")]
-    public fixed ushort szDescription[256];
+    public fixed char szDescription[256];
 
     /// <include file='VMRMONITORINFO.xml' path='doc/member[@name="VMRMONITORINFO.liDriverVersion"]/*' />
     public LARGE_INTEGER liDriverVersion;

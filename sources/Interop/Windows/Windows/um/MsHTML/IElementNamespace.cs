@@ -49,15 +49,15 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface, IN
     /// <include file='IElementNamespace.xml' path='doc/member[@name="IElementNamespace.AddTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddTag([NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("LONG")] int lFlags)
+    public HRESULT AddTag([NativeTypeName("BSTR")] char* bstrTagName, [NativeTypeName("LONG")] int lFlags)
     {
-        return ((delegate* unmanaged<IElementNamespace*, ushort*, int, int>)(lpVtbl[3]))((IElementNamespace*)Unsafe.AsPointer(ref this), bstrTagName, lFlags);
+        return ((delegate* unmanaged<IElementNamespace*, char*, int, int>)(lpVtbl[3]))((IElementNamespace*)Unsafe.AsPointer(ref this), bstrTagName, lFlags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddTag([NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("LONG")] int lFlags);
+        HRESULT AddTag([NativeTypeName("BSTR")] char* bstrTagName, [NativeTypeName("LONG")] int lFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> AddTag;
+        public delegate* unmanaged<TSelf*, char*, int, int> AddTag;
     }
 }

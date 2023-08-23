@@ -65,9 +65,9 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
     /// <inheritdoc cref="IMarkupServices.CreateElement" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateElement(ELEMENT_TAG_ID tagID, [NativeTypeName("OLECHAR *")] ushort* pchAttributes, IHTMLElement** ppElement)
+    public HRESULT CreateElement(ELEMENT_TAG_ID tagID, [NativeTypeName("OLECHAR *")] char* pchAttributes, IHTMLElement** ppElement)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, ushort*, IHTMLElement**, int>)(lpVtbl[5]))((IMarkupServices2*)Unsafe.AsPointer(ref this), tagID, pchAttributes, ppElement);
+        return ((delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, char*, IHTMLElement**, int>)(lpVtbl[5]))((IMarkupServices2*)Unsafe.AsPointer(ref this), tagID, pchAttributes, ppElement);
     }
 
     /// <inheritdoc cref="IMarkupServices.CloneElement" />
@@ -121,17 +121,17 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
     /// <inheritdoc cref="IMarkupServices.InsertText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pchText, [NativeTypeName("long")] int cch, IMarkupPointer* pPointerTarget)
+    public HRESULT InsertText([NativeTypeName("OLECHAR *")] char* pchText, [NativeTypeName("long")] int cch, IMarkupPointer* pPointerTarget)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ushort*, int, IMarkupPointer*, int>)(lpVtbl[12]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchText, cch, pPointerTarget);
+        return ((delegate* unmanaged<IMarkupServices2*, char*, int, IMarkupPointer*, int>)(lpVtbl[12]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchText, cch, pPointerTarget);
     }
 
     /// <inheritdoc cref="IMarkupServices.ParseString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT ParseString([NativeTypeName("OLECHAR *")] ushort* pchHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* ppPointerStart, IMarkupPointer* ppPointerFinish)
+    public HRESULT ParseString([NativeTypeName("OLECHAR *")] char* pchHTML, [NativeTypeName("DWORD")] uint dwFlags, IMarkupContainer** ppContainerResult, IMarkupPointer* ppPointerStart, IMarkupPointer* ppPointerFinish)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ushort*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[13]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchHTML, dwFlags, ppContainerResult, ppPointerStart, ppPointerFinish);
+        return ((delegate* unmanaged<IMarkupServices2*, char*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[13]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchHTML, dwFlags, ppContainerResult, ppPointerStart, ppPointerFinish);
     }
 
     /// <inheritdoc cref="IMarkupServices.ParseGlobal" />
@@ -161,17 +161,17 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
     /// <inheritdoc cref="IMarkupServices.GetTagIDForName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetTagIDForName([NativeTypeName("BSTR")] ushort* bstrName, ELEMENT_TAG_ID* ptagId)
+    public HRESULT GetTagIDForName([NativeTypeName("BSTR")] char* bstrName, ELEMENT_TAG_ID* ptagId)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ushort*, ELEMENT_TAG_ID*, int>)(lpVtbl[17]))((IMarkupServices2*)Unsafe.AsPointer(ref this), bstrName, ptagId);
+        return ((delegate* unmanaged<IMarkupServices2*, char*, ELEMENT_TAG_ID*, int>)(lpVtbl[17]))((IMarkupServices2*)Unsafe.AsPointer(ref this), bstrName, ptagId);
     }
 
     /// <inheritdoc cref="IMarkupServices.GetNameForTagID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetNameForTagID(ELEMENT_TAG_ID tagId, [NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetNameForTagID(ELEMENT_TAG_ID tagId, [NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, ushort**, int>)(lpVtbl[18]))((IMarkupServices2*)Unsafe.AsPointer(ref this), tagId, pbstrName);
+        return ((delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, char**, int>)(lpVtbl[18]))((IMarkupServices2*)Unsafe.AsPointer(ref this), tagId, pbstrName);
     }
 
     /// <inheritdoc cref="IMarkupServices.MovePointersToRange" />
@@ -193,9 +193,9 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
     /// <inheritdoc cref="IMarkupServices.BeginUndoUnit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT BeginUndoUnit([NativeTypeName("OLECHAR *")] ushort* pchTitle)
+    public HRESULT BeginUndoUnit([NativeTypeName("OLECHAR *")] char* pchTitle)
     {
-        return ((delegate* unmanaged<IMarkupServices2*, ushort*, int>)(lpVtbl[21]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchTitle);
+        return ((delegate* unmanaged<IMarkupServices2*, char*, int>)(lpVtbl[21]))((IMarkupServices2*)Unsafe.AsPointer(ref this), pchTitle);
     }
 
     /// <inheritdoc cref="IMarkupServices.EndUndoUnit" />
@@ -261,7 +261,7 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
         public delegate* unmanaged<TSelf*, IMarkupContainer**, int> CreateMarkupContainer;
 
         [NativeTypeName("HRESULT (ELEMENT_TAG_ID, OLECHAR *, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, ushort*, IHTMLElement**, int> CreateElement;
+        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, char*, IHTMLElement**, int> CreateElement;
 
         [NativeTypeName("HRESULT (IHTMLElement *, IHTMLElement **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLElement*, IHTMLElement**, int> CloneElement;
@@ -282,10 +282,10 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
         public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> Move;
 
         [NativeTypeName("HRESULT (OLECHAR *, long, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, IMarkupPointer*, int> InsertText;
+        public delegate* unmanaged<TSelf*, char*, int, IMarkupPointer*, int> InsertText;
 
         [NativeTypeName("HRESULT (OLECHAR *, DWORD, IMarkupContainer **, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseString;
+        public delegate* unmanaged<TSelf*, char*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseString;
 
         [NativeTypeName("HRESULT (HGLOBAL, DWORD, IMarkupContainer **, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HGLOBAL, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseGlobal;
@@ -297,10 +297,10 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
         public delegate* unmanaged<TSelf*, IHTMLElement*, ELEMENT_TAG_ID*, int> GetElementTagId;
 
         [NativeTypeName("HRESULT (BSTR, ELEMENT_TAG_ID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ELEMENT_TAG_ID*, int> GetTagIDForName;
+        public delegate* unmanaged<TSelf*, char*, ELEMENT_TAG_ID*, int> GetTagIDForName;
 
         [NativeTypeName("HRESULT (ELEMENT_TAG_ID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, ushort**, int> GetNameForTagID;
+        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, char**, int> GetNameForTagID;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLTxtRange*, IMarkupPointer*, IMarkupPointer*, int> MovePointersToRange;
@@ -309,7 +309,7 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface, INat
         public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IHTMLTxtRange*, int> MoveRangeToPointers;
 
         [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> BeginUndoUnit;
+        public delegate* unmanaged<TSelf*, char*, int> BeginUndoUnit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndUndoUnit;

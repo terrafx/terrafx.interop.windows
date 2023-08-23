@@ -91,9 +91,9 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.AddSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
+    public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] char* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, char*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.RemoveSourceBuffer"]/*' />
@@ -115,9 +115,9 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.IsTypeSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
+    public BOOL IsTypeSupported([NativeTypeName("BSTR")] char* type)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, char*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetSourceBuffer"]/*' />
@@ -146,7 +146,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         HRESULT SetDuration(double duration);
 
         [VtblIndex(8)]
-        HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
+        HRESULT AddSourceBuffer([NativeTypeName("BSTR")] char* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
 
         [VtblIndex(9)]
         HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer);
@@ -155,7 +155,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         HRESULT SetEndOfStream(MF_MSE_ERROR error);
 
         [VtblIndex(11)]
-        BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type);
+        BOOL IsTypeSupported([NativeTypeName("BSTR")] char* type);
 
         [VtblIndex(12)]
         IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex);
@@ -189,7 +189,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         public delegate* unmanaged<TSelf*, double, int> SetDuration;
 
         [NativeTypeName("HRESULT (BSTR, IMFSourceBufferNotify *, IMFSourceBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
+        public delegate* unmanaged<TSelf*, char*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
 
         [NativeTypeName("HRESULT (IMFSourceBuffer *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMFSourceBuffer*, int> RemoveSourceBuffer;
@@ -198,7 +198,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         public delegate* unmanaged<TSelf*, MF_MSE_ERROR, int> SetEndOfStream;
 
         [NativeTypeName("BOOL (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> IsTypeSupported;
+        public delegate* unmanaged<TSelf*, char*, int> IsTypeSupported;
 
         [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;

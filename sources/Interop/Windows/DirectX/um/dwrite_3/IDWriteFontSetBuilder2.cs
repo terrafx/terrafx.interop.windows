@@ -98,9 +98,9 @@ public unsafe partial struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder2.Int
     /// <include file='IDWriteFontSetBuilder2.xml' path='doc/member[@name="IDWriteFontSetBuilder2.AddFontFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AddFontFile([NativeTypeName("const WCHAR *")] ushort* filePath)
+    public HRESULT AddFontFile([NativeTypeName("const WCHAR *")] char* filePath)
     {
-        return ((delegate* unmanaged<IDWriteFontSetBuilder2*, ushort*, int>)(lpVtbl[9]))((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), filePath);
+        return ((delegate* unmanaged<IDWriteFontSetBuilder2*, char*, int>)(lpVtbl[9]))((IDWriteFontSetBuilder2*)Unsafe.AsPointer(ref this), filePath);
     }
 
     public interface Interface : IDWriteFontSetBuilder1.Interface
@@ -109,7 +109,7 @@ public unsafe partial struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder2.Int
         HRESULT AddFont(IDWriteFontFile* fontFile, [NativeTypeName("UINT32")] uint fontFaceIndex, DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, [NativeTypeName("const DWRITE_FONT_AXIS_RANGE *")] DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount, [NativeTypeName("const DWRITE_FONT_PROPERTY *")] DWRITE_FONT_PROPERTY* properties, [NativeTypeName("UINT32")] uint propertyCount);
 
         [VtblIndex(9)]
-        HRESULT AddFontFile([NativeTypeName("const WCHAR *")] ushort* filePath);
+        HRESULT AddFontFile([NativeTypeName("const WCHAR *")] char* filePath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,6 +143,6 @@ public unsafe partial struct IDWriteFontSetBuilder2 : IDWriteFontSetBuilder2.Int
         public delegate* unmanaged<TSelf*, IDWriteFontFile*, uint, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, DWRITE_FONT_AXIS_RANGE*, uint, DWRITE_FONT_PROPERTY*, uint, int> AddFont;
 
         [NativeTypeName("HRESULT (const WCHAR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddFontFile1;
+        public delegate* unmanaged<TSelf*, char*, int> AddFontFile1;
     }
 }

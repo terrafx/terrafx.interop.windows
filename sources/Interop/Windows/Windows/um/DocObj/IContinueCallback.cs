@@ -57,9 +57,9 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface, IN
     /// <include file='IContinueCallback.xml' path='doc/member[@name="IContinueCallback.FContinuePrinting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus)
+    public HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] char* pwszPrintStatus)
     {
-        return ((delegate* unmanaged<IContinueCallback*, int, int, ushort*, int>)(lpVtbl[4]))((IContinueCallback*)Unsafe.AsPointer(ref this), nCntPrinted, nCurPage, pwszPrintStatus);
+        return ((delegate* unmanaged<IContinueCallback*, int, int, char*, int>)(lpVtbl[4]))((IContinueCallback*)Unsafe.AsPointer(ref this), nCntPrinted, nCurPage, pwszPrintStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,7 +68,7 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface, IN
         HRESULT FContinue();
 
         [VtblIndex(4)]
-        HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus);
+        HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] char* pwszPrintStatus);
     }
 
     public partial struct Vtbl<TSelf>
@@ -87,6 +87,6 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface, IN
         public delegate* unmanaged<TSelf*, int> FContinue;
 
         [NativeTypeName("HRESULT (LONG, LONG, wchar_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort*, int> FContinuePrinting;
+        public delegate* unmanaged<TSelf*, int, int, char*, int> FContinuePrinting;
     }
 }

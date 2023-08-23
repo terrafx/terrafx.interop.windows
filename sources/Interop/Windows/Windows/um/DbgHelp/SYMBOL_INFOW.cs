@@ -66,5 +66,5 @@ public unsafe partial struct SYMBOL_INFOW
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Name"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Name[1];
+    public fixed char Name[1];
 }

@@ -73,17 +73,17 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
     /// <inheritdoc cref="IBindStatusCallback.OnProgress" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText)
+    public HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szStatusText)
     {
-        return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, uint, uint, ushort*, int>)(lpVtbl[6]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
+        return ((delegate* unmanaged<IBindStatusCallbackEx*, uint, uint, uint, char*, int>)(lpVtbl[6]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
     }
 
     /// <inheritdoc cref="IBindStatusCallback.OnStopBinding" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] ushort* szError)
+    public HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] char* szError)
     {
-        return ((delegate* unmanaged<IBindStatusCallbackEx*, HRESULT, ushort*, int>)(lpVtbl[7]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), hresult, szError);
+        return ((delegate* unmanaged<IBindStatusCallbackEx*, HRESULT, char*, int>)(lpVtbl[7]))((IBindStatusCallbackEx*)Unsafe.AsPointer(ref this), hresult, szError);
     }
 
     /// <inheritdoc cref="IBindStatusCallback.GetBindInfo" />
@@ -146,10 +146,10 @@ public unsafe partial struct IBindStatusCallbackEx : IBindStatusCallbackEx.Inter
         public delegate* unmanaged<TSelf*, uint, int> OnLowResource;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, ushort*, int> OnProgress;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, char*, int> OnProgress;
 
         [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, ushort*, int> OnStopBinding;
+        public delegate* unmanaged<TSelf*, HRESULT, char*, int> OnStopBinding;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;

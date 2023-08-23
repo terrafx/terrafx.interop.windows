@@ -57,33 +57,33 @@ public unsafe partial struct IAudioSessionControl : IAudioSessionControl.Interfa
     /// <include file='IAudioSessionControl.xml' path='doc/member[@name="IAudioSessionControl.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pRetVal)
+    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IAudioSessionControl*, ushort**, int>)(lpVtbl[4]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IAudioSessionControl*, char**, int>)(lpVtbl[4]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IAudioSessionControl.xml' path='doc/member[@name="IAudioSessionControl.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext)
+    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* Value, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionControl*, ushort*, Guid*, int>)(lpVtbl[5]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), Value, EventContext);
+        return ((delegate* unmanaged<IAudioSessionControl*, char*, Guid*, int>)(lpVtbl[5]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), Value, EventContext);
     }
 
     /// <include file='IAudioSessionControl.xml' path='doc/member[@name="IAudioSessionControl.GetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pRetVal)
+    public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IAudioSessionControl*, ushort**, int>)(lpVtbl[6]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IAudioSessionControl*, char**, int>)(lpVtbl[6]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IAudioSessionControl.xml' path='doc/member[@name="IAudioSessionControl.SetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext)
+    public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] char* Value, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionControl*, ushort*, Guid*, int>)(lpVtbl[7]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), Value, EventContext);
+        return ((delegate* unmanaged<IAudioSessionControl*, char*, Guid*, int>)(lpVtbl[7]))((IAudioSessionControl*)Unsafe.AsPointer(ref this), Value, EventContext);
     }
 
     /// <include file='IAudioSessionControl.xml' path='doc/member[@name="IAudioSessionControl.GetGroupingParam"]/*' />
@@ -124,16 +124,16 @@ public unsafe partial struct IAudioSessionControl : IAudioSessionControl.Interfa
         HRESULT GetState(AudioSessionState* pRetVal);
 
         [VtblIndex(4)]
-        HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+        HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** pRetVal);
 
         [VtblIndex(5)]
-        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
+        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
 
         [VtblIndex(6)]
-        HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pRetVal);
+        HRESULT GetIconPath([NativeTypeName("LPWSTR *")] char** pRetVal);
 
         [VtblIndex(7)]
-        HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
+        HRESULT SetIconPath([NativeTypeName("LPCWSTR")] char* Value, [NativeTypeName("LPCGUID")] Guid* EventContext);
 
         [VtblIndex(8)]
         HRESULT GetGroupingParam(Guid* pRetVal);
@@ -164,16 +164,16 @@ public unsafe partial struct IAudioSessionControl : IAudioSessionControl.Interfa
         public delegate* unmanaged<TSelf*, AudioSessionState*, int> GetState;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, char*, Guid*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetIconPath;
+        public delegate* unmanaged<TSelf*, char**, int> GetIconPath;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> SetIconPath;
+        public delegate* unmanaged<TSelf*, char*, Guid*, int> SetIconPath;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGroupingParam;

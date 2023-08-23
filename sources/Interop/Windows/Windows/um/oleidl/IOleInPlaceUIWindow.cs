@@ -89,9 +89,9 @@ public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface
     /// <include file='IOleInPlaceUIWindow.xml' path='doc/member[@name="IOleInPlaceUIWindow.SetActiveObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName)
+    public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] char* pszObjName)
     {
-        return ((delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, ushort*, int>)(lpVtbl[8]))((IOleInPlaceUIWindow*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
+        return ((delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, char*, int>)(lpVtbl[8]))((IOleInPlaceUIWindow*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -106,7 +106,7 @@ public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface
         HRESULT SetBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths);
 
         [VtblIndex(8)]
-        HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName);
+        HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] char* pszObjName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -137,6 +137,6 @@ public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface
         public delegate* unmanaged<TSelf*, RECT*, int> SetBorderSpace;
 
         [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
+        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, char*, int> SetActiveObject;
     }
 }

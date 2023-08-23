@@ -60,33 +60,33 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
     /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pURL)
+    public HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pURL)
     {
-        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[4]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pURL);
+        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, char**, int>)(lpVtbl[4]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pURL);
     }
 
     /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType)
+    public HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pType)
     {
-        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[5]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pType);
+        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, char**, int>)(lpVtbl[5]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pType);
     }
 
     /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pMedia)
+    public HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pMedia)
     {
-        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[6]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pMedia);
+        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, char**, int>)(lpVtbl[6]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pMedia);
     }
 
     /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.AddElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddElement([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia)
+    public HRESULT AddElement([NativeTypeName("BSTR")] char* pURL, [NativeTypeName("BSTR")] char* pType, [NativeTypeName("BSTR")] char* pMedia)
     {
-        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, ushort*, ushort*, ushort*, int>)(lpVtbl[7]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), pURL, pType, pMedia);
+        return ((delegate* unmanaged<IMFMediaEngineSrcElements*, char*, char*, char*, int>)(lpVtbl[7]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), pURL, pType, pMedia);
     }
 
     /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.RemoveAllElements"]/*' />
@@ -104,16 +104,16 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         uint GetLength();
 
         [VtblIndex(4)]
-        HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pURL);
+        HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pURL);
 
         [VtblIndex(5)]
-        HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType);
+        HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pType);
 
         [VtblIndex(6)]
-        HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pMedia);
+        HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] char** pMedia);
 
         [VtblIndex(7)]
-        HRESULT AddElement([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia);
+        HRESULT AddElement([NativeTypeName("BSTR")] char* pURL, [NativeTypeName("BSTR")] char* pType, [NativeTypeName("BSTR")] char* pMedia);
 
         [VtblIndex(8)]
         HRESULT RemoveAllElements();
@@ -135,16 +135,16 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetURL;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, uint, ushort**, int> GetType;
+        public new delegate* unmanaged<TSelf*, uint, char**, int> GetType;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetMedia;
+        public delegate* unmanaged<TSelf*, uint, char**, int> GetMedia;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> AddElement;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> AddElement;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> RemoveAllElements;

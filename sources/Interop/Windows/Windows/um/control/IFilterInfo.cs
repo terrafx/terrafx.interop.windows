@@ -65,9 +65,9 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFilterInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IFilterInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,25 +81,25 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.FindPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindPin([NativeTypeName("BSTR")] ushort* strPinID, IDispatch** ppUnk)
+    public HRESULT FindPin([NativeTypeName("BSTR")] char* strPinID, IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IFilterInfo*, ushort*, IDispatch**, int>)(lpVtbl[7]))((IFilterInfo*)Unsafe.AsPointer(ref this), strPinID, ppUnk);
+        return ((delegate* unmanaged<IFilterInfo*, char*, IDispatch**, int>)(lpVtbl[7]))((IFilterInfo*)Unsafe.AsPointer(ref this), strPinID, ppUnk);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** strName)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** strName)
     {
-        return ((delegate* unmanaged<IFilterInfo*, ushort**, int>)(lpVtbl[8]))((IFilterInfo*)Unsafe.AsPointer(ref this), strName);
+        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[8]))((IFilterInfo*)Unsafe.AsPointer(ref this), strName);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_VendorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_VendorInfo([NativeTypeName("BSTR *")] ushort** strVendorInfo)
+    public HRESULT get_VendorInfo([NativeTypeName("BSTR *")] char** strVendorInfo)
     {
-        return ((delegate* unmanaged<IFilterInfo*, ushort**, int>)(lpVtbl[9]))((IFilterInfo*)Unsafe.AsPointer(ref this), strVendorInfo);
+        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[9]))((IFilterInfo*)Unsafe.AsPointer(ref this), strVendorInfo);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Filter"]/*' />
@@ -129,29 +129,29 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Filename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_Filename([NativeTypeName("BSTR *")] ushort** pstrFilename)
+    public HRESULT get_Filename([NativeTypeName("BSTR *")] char** pstrFilename)
     {
-        return ((delegate* unmanaged<IFilterInfo*, ushort**, int>)(lpVtbl[13]))((IFilterInfo*)Unsafe.AsPointer(ref this), pstrFilename);
+        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[13]))((IFilterInfo*)Unsafe.AsPointer(ref this), pstrFilename);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.put_Filename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT put_Filename([NativeTypeName("BSTR")] ushort* strFilename)
+    public HRESULT put_Filename([NativeTypeName("BSTR")] char* strFilename)
     {
-        return ((delegate* unmanaged<IFilterInfo*, ushort*, int>)(lpVtbl[14]))((IFilterInfo*)Unsafe.AsPointer(ref this), strFilename);
+        return ((delegate* unmanaged<IFilterInfo*, char*, int>)(lpVtbl[14]))((IFilterInfo*)Unsafe.AsPointer(ref this), strFilename);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT FindPin([NativeTypeName("BSTR")] ushort* strPinID, IDispatch** ppUnk);
+        HRESULT FindPin([NativeTypeName("BSTR")] char* strPinID, IDispatch** ppUnk);
 
         [VtblIndex(8)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** strName);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** strName);
 
         [VtblIndex(9)]
-        HRESULT get_VendorInfo([NativeTypeName("BSTR *")] ushort** strVendorInfo);
+        HRESULT get_VendorInfo([NativeTypeName("BSTR *")] char** strVendorInfo);
 
         [VtblIndex(10)]
         HRESULT get_Filter(IUnknown** ppUnk);
@@ -163,10 +163,10 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
         HRESULT get_IsFileSource([NativeTypeName("LONG *")] int* pbIsSource);
 
         [VtblIndex(13)]
-        HRESULT get_Filename([NativeTypeName("BSTR *")] ushort** pstrFilename);
+        HRESULT get_Filename([NativeTypeName("BSTR *")] char** pstrFilename);
 
         [VtblIndex(14)]
-        HRESULT put_Filename([NativeTypeName("BSTR")] ushort* strFilename);
+        HRESULT put_Filename([NativeTypeName("BSTR")] char* strFilename);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,19 +188,19 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IDispatch**, int> FindPin;
+        public delegate* unmanaged<TSelf*, char*, IDispatch**, int> FindPin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VendorInfo;
+        public delegate* unmanaged<TSelf*, char**, int> get_VendorInfo;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown**, int> get_Filter;
@@ -212,9 +212,9 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_IsFileSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Filename;
+        public delegate* unmanaged<TSelf*, char**, int> get_Filename;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Filename;
+        public delegate* unmanaged<TSelf*, char*, int> put_Filename;
     }
 }

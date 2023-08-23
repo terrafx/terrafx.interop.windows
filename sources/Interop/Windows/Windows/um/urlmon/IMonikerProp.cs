@@ -49,15 +49,15 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
     /// <include file='IMonikerProp.xml' path='doc/member[@name="IMonikerProp.PutProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] ushort* val)
+    public HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] char* val)
     {
-        return ((delegate* unmanaged<IMonikerProp*, MONIKERPROPERTY, ushort*, int>)(lpVtbl[3]))((IMonikerProp*)Unsafe.AsPointer(ref this), mkp, val);
+        return ((delegate* unmanaged<IMonikerProp*, MONIKERPROPERTY, char*, int>)(lpVtbl[3]))((IMonikerProp*)Unsafe.AsPointer(ref this), mkp, val);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] ushort* val);
+        HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] char* val);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MONIKERPROPERTY, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MONIKERPROPERTY, ushort*, int> PutProperty;
+        public delegate* unmanaged<TSelf*, MONIKERPROPERTY, char*, int> PutProperty;
     }
 }

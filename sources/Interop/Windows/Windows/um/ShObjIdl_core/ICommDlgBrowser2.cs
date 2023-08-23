@@ -81,9 +81,9 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
     /// <include file='ICommDlgBrowser2.xml' path='doc/member[@name="ICommDlgBrowser2.GetDefaultMenuText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax)
+    public HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] char* pszText, int cchMax)
     {
-        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, ushort*, int, int>)(lpVtbl[7]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
+        return ((delegate* unmanaged<ICommDlgBrowser2*, IShellView*, char*, int, int>)(lpVtbl[7]))((ICommDlgBrowser2*)Unsafe.AsPointer(ref this), ppshv, pszText, cchMax);
     }
 
     /// <include file='ICommDlgBrowser2.xml' path='doc/member[@name="ICommDlgBrowser2.GetViewFlags"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
         HRESULT Notify(IShellView* ppshv, [NativeTypeName("DWORD")] uint dwNotifyType);
 
         [VtblIndex(7)]
-        HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] ushort* pszText, int cchMax);
+        HRESULT GetDefaultMenuText(IShellView* ppshv, [NativeTypeName("LPWSTR")] char* pszText, int cchMax);
 
         [VtblIndex(8)]
         HRESULT GetViewFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
@@ -131,7 +131,7 @@ public unsafe partial struct ICommDlgBrowser2 : ICommDlgBrowser2.Interface, INat
         public delegate* unmanaged<TSelf*, IShellView*, uint, int> Notify;
 
         [NativeTypeName("HRESULT (IShellView *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, ushort*, int, int> GetDefaultMenuText;
+        public delegate* unmanaged<TSelf*, IShellView*, char*, int, int> GetDefaultMenuText;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetViewFlags;

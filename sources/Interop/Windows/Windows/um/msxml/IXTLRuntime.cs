@@ -65,9 +65,9 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXTLRuntime*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IXTLRuntime*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXTLRuntime*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <inheritdoc cref="IXMLDOMNode.get_nodeName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** name)
+    public HRESULT get_nodeName([NativeTypeName("BSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[7]))((IXTLRuntime*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[7]))((IXTLRuntime*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_nodeValue" />
@@ -225,25 +225,25 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <inheritdoc cref="IXMLDOMNode.get_nodeTypeString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT get_nodeTypeString([NativeTypeName("BSTR *")] ushort** nodeType)
+    public HRESULT get_nodeTypeString([NativeTypeName("BSTR *")] char** nodeType)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[25]))((IXTLRuntime*)Unsafe.AsPointer(ref this), nodeType);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[25]))((IXTLRuntime*)Unsafe.AsPointer(ref this), nodeType);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_text" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT get_text([NativeTypeName("BSTR *")] ushort** text)
+    public HRESULT get_text([NativeTypeName("BSTR *")] char** text)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[26]))((IXTLRuntime*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[26]))((IXTLRuntime*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.put_text" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT put_text([NativeTypeName("BSTR")] ushort* text)
+    public HRESULT put_text([NativeTypeName("BSTR")] char* text)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort*, int>)(lpVtbl[27]))((IXTLRuntime*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged<IXTLRuntime*, char*, int>)(lpVtbl[27]))((IXTLRuntime*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_specified" />
@@ -289,41 +289,41 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <inheritdoc cref="IXMLDOMNode.put_dataType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT put_dataType([NativeTypeName("BSTR")] ushort* dataTypeName)
+    public HRESULT put_dataType([NativeTypeName("BSTR")] char* dataTypeName)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort*, int>)(lpVtbl[33]))((IXTLRuntime*)Unsafe.AsPointer(ref this), dataTypeName);
+        return ((delegate* unmanaged<IXTLRuntime*, char*, int>)(lpVtbl[33]))((IXTLRuntime*)Unsafe.AsPointer(ref this), dataTypeName);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_xml" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT get_xml([NativeTypeName("BSTR *")] ushort** xmlString)
+    public HRESULT get_xml([NativeTypeName("BSTR *")] char** xmlString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[34]))((IXTLRuntime*)Unsafe.AsPointer(ref this), xmlString);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[34]))((IXTLRuntime*)Unsafe.AsPointer(ref this), xmlString);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.transformNode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] ushort** xmlString)
+    public HRESULT transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] char** xmlString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, IXMLDOMNode*, ushort**, int>)(lpVtbl[35]))((IXTLRuntime*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
+        return ((delegate* unmanaged<IXTLRuntime*, IXMLDOMNode*, char**, int>)(lpVtbl[35]))((IXTLRuntime*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.selectNodes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT selectNodes([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNodeList** resultList)
+    public HRESULT selectNodes([NativeTypeName("BSTR")] char* queryString, IXMLDOMNodeList** resultList)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXTLRuntime*)Unsafe.AsPointer(ref this), queryString, resultList);
+        return ((delegate* unmanaged<IXTLRuntime*, char*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXTLRuntime*)Unsafe.AsPointer(ref this), queryString, resultList);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.selectSingleNode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT selectSingleNode([NativeTypeName("BSTR")] ushort* queryString, IXMLDOMNode** resultNode)
+    public HRESULT selectSingleNode([NativeTypeName("BSTR")] char* queryString, IXMLDOMNode** resultNode)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXTLRuntime*)Unsafe.AsPointer(ref this), queryString, resultNode);
+        return ((delegate* unmanaged<IXTLRuntime*, char*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXTLRuntime*)Unsafe.AsPointer(ref this), queryString, resultNode);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_parsed" />
@@ -337,25 +337,25 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <inheritdoc cref="IXMLDOMNode.get_namespaceURI" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] ushort** namespaceURI)
+    public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] char** namespaceURI)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[39]))((IXTLRuntime*)Unsafe.AsPointer(ref this), namespaceURI);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[39]))((IXTLRuntime*)Unsafe.AsPointer(ref this), namespaceURI);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_prefix" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT get_prefix([NativeTypeName("BSTR *")] ushort** prefixString)
+    public HRESULT get_prefix([NativeTypeName("BSTR *")] char** prefixString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[40]))((IXTLRuntime*)Unsafe.AsPointer(ref this), prefixString);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[40]))((IXTLRuntime*)Unsafe.AsPointer(ref this), prefixString);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.get_baseName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT get_baseName([NativeTypeName("BSTR *")] ushort** nameString)
+    public HRESULT get_baseName([NativeTypeName("BSTR *")] char** nameString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort**, int>)(lpVtbl[41]))((IXTLRuntime*)Unsafe.AsPointer(ref this), nameString);
+        return ((delegate* unmanaged<IXTLRuntime*, char**, int>)(lpVtbl[41]))((IXTLRuntime*)Unsafe.AsPointer(ref this), nameString);
     }
 
     /// <inheritdoc cref="IXMLDOMNode.transformNodeToObject" />
@@ -393,9 +393,9 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.ancestorChildNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT ancestorChildNumber([NativeTypeName("BSTR")] ushort* bstrNodeName, IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber)
+    public HRESULT ancestorChildNumber([NativeTypeName("BSTR")] char* bstrNodeName, IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, ushort*, IXMLDOMNode*, int*, int>)(lpVtbl[46]))((IXTLRuntime*)Unsafe.AsPointer(ref this), bstrNodeName, pNode, pNumber);
+        return ((delegate* unmanaged<IXTLRuntime*, char*, IXMLDOMNode*, int*, int>)(lpVtbl[46]))((IXTLRuntime*)Unsafe.AsPointer(ref this), bstrNodeName, pNode, pNumber);
     }
 
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.absoluteChildNumber"]/*' />
@@ -409,33 +409,33 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.formatIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT formatIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString)
+    public HRESULT formatIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR")] char* bstrFormat, [NativeTypeName("BSTR *")] char** pbstrFormattedString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, int, ushort*, ushort**, int>)(lpVtbl[48]))((IXTLRuntime*)Unsafe.AsPointer(ref this), lIndex, bstrFormat, pbstrFormattedString);
+        return ((delegate* unmanaged<IXTLRuntime*, int, char*, char**, int>)(lpVtbl[48]))((IXTLRuntime*)Unsafe.AsPointer(ref this), lIndex, bstrFormat, pbstrFormattedString);
     }
 
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.formatNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT formatNumber(double dblNumber, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString)
+    public HRESULT formatNumber(double dblNumber, [NativeTypeName("BSTR")] char* bstrFormat, [NativeTypeName("BSTR *")] char** pbstrFormattedString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, double, ushort*, ushort**, int>)(lpVtbl[49]))((IXTLRuntime*)Unsafe.AsPointer(ref this), dblNumber, bstrFormat, pbstrFormattedString);
+        return ((delegate* unmanaged<IXTLRuntime*, double, char*, char**, int>)(lpVtbl[49]))((IXTLRuntime*)Unsafe.AsPointer(ref this), dblNumber, bstrFormat, pbstrFormattedString);
     }
 
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.formatDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT formatDate(VARIANT varDate, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString)
+    public HRESULT formatDate(VARIANT varDate, [NativeTypeName("BSTR")] char* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] char** pbstrFormattedString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, VARIANT, ushort*, VARIANT, ushort**, int>)(lpVtbl[50]))((IXTLRuntime*)Unsafe.AsPointer(ref this), varDate, bstrFormat, varDestLocale, pbstrFormattedString);
+        return ((delegate* unmanaged<IXTLRuntime*, VARIANT, char*, VARIANT, char**, int>)(lpVtbl[50]))((IXTLRuntime*)Unsafe.AsPointer(ref this), varDate, bstrFormat, varDestLocale, pbstrFormattedString);
     }
 
     /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.formatTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString)
+    public HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] char* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] char** pbstrFormattedString)
     {
-        return ((delegate* unmanaged<IXTLRuntime*, VARIANT, ushort*, VARIANT, ushort**, int>)(lpVtbl[51]))((IXTLRuntime*)Unsafe.AsPointer(ref this), varTime, bstrFormat, varDestLocale, pbstrFormattedString);
+        return ((delegate* unmanaged<IXTLRuntime*, VARIANT, char*, VARIANT, char**, int>)(lpVtbl[51]))((IXTLRuntime*)Unsafe.AsPointer(ref this), varTime, bstrFormat, varDestLocale, pbstrFormattedString);
     }
 
     public interface Interface : IXMLDOMNode.Interface
@@ -450,22 +450,22 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
         HRESULT childNumber(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
 
         [VtblIndex(46)]
-        HRESULT ancestorChildNumber([NativeTypeName("BSTR")] ushort* bstrNodeName, IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
+        HRESULT ancestorChildNumber([NativeTypeName("BSTR")] char* bstrNodeName, IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
 
         [VtblIndex(47)]
         HRESULT absoluteChildNumber(IXMLDOMNode* pNode, [NativeTypeName("long *")] int* pNumber);
 
         [VtblIndex(48)]
-        HRESULT formatIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+        HRESULT formatIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR")] char* bstrFormat, [NativeTypeName("BSTR *")] char** pbstrFormattedString);
 
         [VtblIndex(49)]
-        HRESULT formatNumber(double dblNumber, [NativeTypeName("BSTR")] ushort* bstrFormat, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+        HRESULT formatNumber(double dblNumber, [NativeTypeName("BSTR")] char* bstrFormat, [NativeTypeName("BSTR *")] char** pbstrFormattedString);
 
         [VtblIndex(50)]
-        HRESULT formatDate(VARIANT varDate, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+        HRESULT formatDate(VARIANT varDate, [NativeTypeName("BSTR")] char* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] char** pbstrFormattedString);
 
         [VtblIndex(51)]
-        HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] ushort* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] ushort** pbstrFormattedString);
+        HRESULT formatTime(VARIANT varTime, [NativeTypeName("BSTR")] char* bstrFormat, VARIANT varDestLocale, [NativeTypeName("BSTR *")] char** pbstrFormattedString);
     }
 
     public partial struct Vtbl<TSelf>
@@ -487,13 +487,13 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_nodeName;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeValue;
@@ -547,13 +547,13 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, short, IXMLDOMNode**, int> cloneNode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeTypeString;
+        public delegate* unmanaged<TSelf*, char**, int> get_nodeTypeString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_text;
+        public delegate* unmanaged<TSelf*, char**, int> get_text;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_text;
+        public delegate* unmanaged<TSelf*, char*, int> put_text;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_specified;
@@ -571,31 +571,31 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_dataType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dataType;
+        public delegate* unmanaged<TSelf*, char*, int> put_dataType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_xml;
+        public delegate* unmanaged<TSelf*, char**, int> get_xml;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, ushort**, int> transformNode;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, char**, int> transformNode;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNodeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNodeList**, int> selectNodes;
+        public delegate* unmanaged<TSelf*, char*, IXMLDOMNodeList**, int> selectNodes;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNode**, int> selectSingleNode;
+        public delegate* unmanaged<TSelf*, char*, IXMLDOMNode**, int> selectSingleNode;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> get_parsed;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_namespaceURI;
+        public delegate* unmanaged<TSelf*, char**, int> get_namespaceURI;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_prefix;
+        public delegate* unmanaged<TSelf*, char**, int> get_prefix;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_baseName;
+        public delegate* unmanaged<TSelf*, char**, int> get_baseName;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
@@ -610,21 +610,21 @@ public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IXMLDOMNode*, int*, int> childNumber;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNode*, int*, int> ancestorChildNumber;
+        public delegate* unmanaged<TSelf*, char*, IXMLDOMNode*, int*, int> ancestorChildNumber;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IXMLDOMNode*, int*, int> absoluteChildNumber;
 
         [NativeTypeName("HRESULT (long, BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, ushort**, int> formatIndex;
+        public delegate* unmanaged<TSelf*, int, char*, char**, int> formatIndex;
 
         [NativeTypeName("HRESULT (double, BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, ushort*, ushort**, int> formatNumber;
+        public delegate* unmanaged<TSelf*, double, char*, char**, int> formatNumber;
 
         [NativeTypeName("HRESULT (VARIANT, BSTR, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, ushort*, VARIANT, ushort**, int> formatDate;
+        public delegate* unmanaged<TSelf*, VARIANT, char*, VARIANT, char**, int> formatDate;
 
         [NativeTypeName("HRESULT (VARIANT, BSTR, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, ushort*, VARIANT, ushort**, int> formatTime;
+        public delegate* unmanaged<TSelf*, VARIANT, char*, VARIANT, char**, int> formatTime;
     }
 }

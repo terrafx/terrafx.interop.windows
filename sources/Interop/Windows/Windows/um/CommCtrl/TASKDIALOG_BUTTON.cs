@@ -16,5 +16,5 @@ public unsafe partial struct TASKDIALOG_BUTTON
 
     /// <include file='TASKDIALOG_BUTTON.xml' path='doc/member[@name="TASKDIALOG_BUTTON.pszButtonText"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pszButtonText;
+    public char* pszButtonText;
 }

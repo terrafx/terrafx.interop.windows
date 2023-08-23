@@ -13,9 +13,9 @@ public unsafe partial struct NOTIFICATION_USER_INPUT_DATA
 {
     /// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA.Key"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* Key;
+    public char* Key;
 
     /// <include file='NOTIFICATION_USER_INPUT_DATA.xml' path='doc/member[@name="NOTIFICATION_USER_INPUT_DATA.Value"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* Value;
+    public char* Value;
 }

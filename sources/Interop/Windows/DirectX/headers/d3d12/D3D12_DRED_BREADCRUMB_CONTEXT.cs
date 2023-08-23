@@ -13,5 +13,5 @@ public unsafe partial struct D3D12_DRED_BREADCRUMB_CONTEXT
 
     /// <include file='D3D12_DRED_BREADCRUMB_CONTEXT.xml' path='doc/member[@name="D3D12_DRED_BREADCRUMB_CONTEXT.pContextString"]/*' />
     [NativeTypeName("const wchar_t *")]
-    public ushort* pContextString;
+    public char* pContextString;
 }

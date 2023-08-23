@@ -121,9 +121,9 @@ public unsafe partial struct ITfKeystrokeMgr : ITfKeystrokeMgr.Interface, INativ
     /// <include file='ITfKeystrokeMgr.xml' path='doc/member[@name="ITfKeystrokeMgr.PreserveKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT PreserveKey([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* prekey, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc)
+    public HRESULT PreserveKey([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* prekey, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc)
     {
-        return ((delegate* unmanaged<ITfKeystrokeMgr*, uint, Guid*, TF_PRESERVEDKEY*, ushort*, uint, int>)(lpVtbl[12]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), tid, rguid, prekey, pchDesc, cchDesc);
+        return ((delegate* unmanaged<ITfKeystrokeMgr*, uint, Guid*, TF_PRESERVEDKEY*, char*, uint, int>)(lpVtbl[12]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), tid, rguid, prekey, pchDesc, cchDesc);
     }
 
     /// <include file='ITfKeystrokeMgr.xml' path='doc/member[@name="ITfKeystrokeMgr.UnpreserveKey"]/*' />
@@ -137,17 +137,17 @@ public unsafe partial struct ITfKeystrokeMgr : ITfKeystrokeMgr.Interface, INativ
     /// <include file='ITfKeystrokeMgr.xml' path='doc/member[@name="ITfKeystrokeMgr.SetPreservedKeyDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT SetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc)
+    public HRESULT SetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc)
     {
-        return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, ushort*, uint, int>)(lpVtbl[14]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pchDesc, cchDesc);
+        return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, char*, uint, int>)(lpVtbl[14]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pchDesc, cchDesc);
     }
 
     /// <include file='ITfKeystrokeMgr.xml' path='doc/member[@name="ITfKeystrokeMgr.GetPreservedKeyDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    public HRESULT GetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, ushort**, int>)(lpVtbl[15]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
+        return ((delegate* unmanaged<ITfKeystrokeMgr*, Guid*, char**, int>)(lpVtbl[15]))((ITfKeystrokeMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
     }
 
     /// <include file='ITfKeystrokeMgr.xml' path='doc/member[@name="ITfKeystrokeMgr.SimulatePreservedKey"]/*' />
@@ -188,16 +188,16 @@ public unsafe partial struct ITfKeystrokeMgr : ITfKeystrokeMgr.Interface, INativ
         HRESULT IsPreservedKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey, BOOL* pfRegistered);
 
         [VtblIndex(12)]
-        HRESULT PreserveKey([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* prekey, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
+        HRESULT PreserveKey([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* prekey, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
 
         [VtblIndex(13)]
         HRESULT UnpreserveKey([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey);
 
         [VtblIndex(14)]
-        HRESULT SetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
+        HRESULT SetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc);
 
         [VtblIndex(15)]
-        HRESULT GetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        HRESULT GetPreservedKeyDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] char** pbstrDesc);
 
         [VtblIndex(16)]
         HRESULT SimulatePreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten);
@@ -243,16 +243,16 @@ public unsafe partial struct ITfKeystrokeMgr : ITfKeystrokeMgr.Interface, INativ
         public delegate* unmanaged<TSelf*, Guid*, TF_PRESERVEDKEY*, BOOL*, int> IsPreservedKey;
 
         [NativeTypeName("HRESULT (TfClientId, const GUID &, const TF_PRESERVEDKEY *, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, TF_PRESERVEDKEY*, ushort*, uint, int> PreserveKey;
+        public delegate* unmanaged<TSelf*, uint, Guid*, TF_PRESERVEDKEY*, char*, uint, int> PreserveKey;
 
         [NativeTypeName("HRESULT (const GUID &, const TF_PRESERVEDKEY *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, TF_PRESERVEDKEY*, int> UnpreserveKey;
 
         [NativeTypeName("HRESULT (const GUID &, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> SetPreservedKeyDescription;
+        public delegate* unmanaged<TSelf*, Guid*, char*, uint, int> SetPreservedKeyDescription;
 
         [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, int> GetPreservedKeyDescription;
+        public delegate* unmanaged<TSelf*, Guid*, char**, int> GetPreservedKeyDescription;
 
         [NativeTypeName("HRESULT (ITfContext *, const GUID &, BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ITfContext*, Guid*, BOOL*, int> SimulatePreservedKey;

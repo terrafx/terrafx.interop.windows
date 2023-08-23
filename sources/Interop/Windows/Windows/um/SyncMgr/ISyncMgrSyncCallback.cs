@@ -49,33 +49,33 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.ReportProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ReportProgress([NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, [NativeTypeName("ULONG")] uint uCurrentStep, [NativeTypeName("ULONG")] uint uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest)
+    public HRESULT ReportProgress([NativeTypeName("LPCWSTR")] char* pszItemID, [NativeTypeName("LPCWSTR")] char* pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, [NativeTypeName("ULONG")] uint uCurrentStep, [NativeTypeName("ULONG")] uint uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, ushort*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int>)(lpVtbl[3]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID, pszProgressText, nStatus, uCurrentStep, uMaxStep, pnCancelRequest);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, char*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int>)(lpVtbl[3]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID, pszProgressText, nStatus, uCurrentStep, uMaxStep, pnCancelRequest);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.SetHandlerProgressText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetHandlerProgressText([NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest)
+    public HRESULT SetHandlerProgressText([NativeTypeName("LPCWSTR")] char* pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, SYNCMGR_CANCEL_REQUEST*, int>)(lpVtbl[4]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszProgressText, pnCancelRequest);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, SYNCMGR_CANCEL_REQUEST*, int>)(lpVtbl[4]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszProgressText, pnCancelRequest);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.ReportEventW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT ReportEventW([NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszDescription, [NativeTypeName("LPCWSTR")] ushort* pszLinkText, [NativeTypeName("LPCWSTR")] ushort* pszLinkReference, [NativeTypeName("LPCWSTR")] ushort* pszContext, Guid* pguidEventID)
+    public HRESULT ReportEventW([NativeTypeName("LPCWSTR")] char* pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszDescription, [NativeTypeName("LPCWSTR")] char* pszLinkText, [NativeTypeName("LPCWSTR")] char* pszLinkReference, [NativeTypeName("LPCWSTR")] char* pszContext, Guid* pguidEventID)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, ushort*, ushort*, ushort*, ushort*, ushort*, Guid*, int>)(lpVtbl[5]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID, nLevel, nFlags, pszName, pszDescription, pszLinkText, pszLinkReference, pszContext, pguidEventID);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, char*, char*, char*, char*, char*, Guid*, int>)(lpVtbl[5]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID, nLevel, nFlags, pszName, pszDescription, pszLinkText, pszLinkReference, pszContext, pguidEventID);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.CanContinue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CanContinue([NativeTypeName("LPCWSTR")] ushort* pszItemID)
+    public HRESULT CanContinue([NativeTypeName("LPCWSTR")] char* pszItemID)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int>)(lpVtbl[6]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, int>)(lpVtbl[6]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.QueryForAdditionalItems"]/*' />
@@ -89,9 +89,9 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.AddItemToSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT AddItemToSession([NativeTypeName("LPCWSTR")] ushort* pszItemID)
+    public HRESULT AddItemToSession([NativeTypeName("LPCWSTR")] char* pszItemID)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int>)(lpVtbl[8]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, int>)(lpVtbl[8]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.AddIUnknownToSession"]/*' />
@@ -113,9 +113,9 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.CommitItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CommitItem([NativeTypeName("LPCWSTR")] ushort* pszItemID)
+    public HRESULT CommitItem([NativeTypeName("LPCWSTR")] char* pszItemID)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int>)(lpVtbl[11]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
+        return ((delegate* unmanaged<ISyncMgrSyncCallback*, char*, int>)(lpVtbl[11]))((ISyncMgrSyncCallback*)Unsafe.AsPointer(ref this), pszItemID);
     }
 
     /// <include file='ISyncMgrSyncCallback.xml' path='doc/member[@name="ISyncMgrSyncCallback.ReportManualSync"]/*' />
@@ -129,22 +129,22 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ReportProgress([NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, [NativeTypeName("ULONG")] uint uCurrentStep, [NativeTypeName("ULONG")] uint uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
+        HRESULT ReportProgress([NativeTypeName("LPCWSTR")] char* pszItemID, [NativeTypeName("LPCWSTR")] char* pszProgressText, SYNCMGR_PROGRESS_STATUS nStatus, [NativeTypeName("ULONG")] uint uCurrentStep, [NativeTypeName("ULONG")] uint uMaxStep, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
 
         [VtblIndex(4)]
-        HRESULT SetHandlerProgressText([NativeTypeName("LPCWSTR")] ushort* pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
+        HRESULT SetHandlerProgressText([NativeTypeName("LPCWSTR")] char* pszProgressText, SYNCMGR_CANCEL_REQUEST* pnCancelRequest);
 
         [VtblIndex(5)]
-        HRESULT ReportEventW([NativeTypeName("LPCWSTR")] ushort* pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszDescription, [NativeTypeName("LPCWSTR")] ushort* pszLinkText, [NativeTypeName("LPCWSTR")] ushort* pszLinkReference, [NativeTypeName("LPCWSTR")] ushort* pszContext, Guid* pguidEventID);
+        HRESULT ReportEventW([NativeTypeName("LPCWSTR")] char* pszItemID, SYNCMGR_EVENT_LEVEL nLevel, SYNCMGR_EVENT_FLAGS nFlags, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszDescription, [NativeTypeName("LPCWSTR")] char* pszLinkText, [NativeTypeName("LPCWSTR")] char* pszLinkReference, [NativeTypeName("LPCWSTR")] char* pszContext, Guid* pguidEventID);
 
         [VtblIndex(6)]
-        HRESULT CanContinue([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+        HRESULT CanContinue([NativeTypeName("LPCWSTR")] char* pszItemID);
 
         [VtblIndex(7)]
         HRESULT QueryForAdditionalItems(IEnumString** ppenumItemIDs, IEnumUnknown** ppenumPunks);
 
         [VtblIndex(8)]
-        HRESULT AddItemToSession([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+        HRESULT AddItemToSession([NativeTypeName("LPCWSTR")] char* pszItemID);
 
         [VtblIndex(9)]
         HRESULT AddIUnknownToSession(IUnknown* punk);
@@ -153,7 +153,7 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
         HRESULT ProposeItem(ISyncMgrSyncItem* pNewItem);
 
         [VtblIndex(11)]
-        HRESULT CommitItem([NativeTypeName("LPCWSTR")] ushort* pszItemID);
+        HRESULT CommitItem([NativeTypeName("LPCWSTR")] char* pszItemID);
 
         [VtblIndex(12)]
         HRESULT ReportManualSync();
@@ -172,22 +172,22 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_PROGRESS_STATUS, ULONG, ULONG, SYNCMGR_CANCEL_REQUEST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int> ReportProgress;
+        public delegate* unmanaged<TSelf*, char*, char*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int> ReportProgress;
 
         [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_CANCEL_REQUEST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SYNCMGR_CANCEL_REQUEST*, int> SetHandlerProgressText;
+        public delegate* unmanaged<TSelf*, char*, SYNCMGR_CANCEL_REQUEST*, int> SetHandlerProgressText;
 
         [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, ushort*, ushort*, ushort*, ushort*, ushort*, Guid*, int> ReportEventW;
+        public delegate* unmanaged<TSelf*, char*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, char*, char*, char*, char*, char*, Guid*, int> ReportEventW;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> CanContinue;
+        public delegate* unmanaged<TSelf*, char*, int> CanContinue;
 
         [NativeTypeName("HRESULT (IEnumString **, IEnumUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumString**, IEnumUnknown**, int> QueryForAdditionalItems;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddItemToSession;
+        public delegate* unmanaged<TSelf*, char*, int> AddItemToSession;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, int> AddIUnknownToSession;
@@ -196,7 +196,7 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
         public delegate* unmanaged<TSelf*, ISyncMgrSyncItem*, int> ProposeItem;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> CommitItem;
+        public delegate* unmanaged<TSelf*, char*, int> CommitItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> ReportManualSync;

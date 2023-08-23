@@ -81,9 +81,9 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<IRecordInfo*, ushort**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged<IRecordInfo*, char**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetSize"]/*' />
@@ -105,41 +105,41 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetField"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged<IRecordInfo*, void*, char*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNoCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
+    public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, ushort*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
+        return ((delegate* unmanaged<IRecordInfo*, void*, char*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutField"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutFieldNoCopy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField)
+    public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint, void*, ushort*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames)
+    public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] char** rgBstrNames)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint*, ushort**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
+        return ((delegate* unmanaged<IRecordInfo*, uint*, char**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.IsMatchingType"]/*' />
@@ -190,7 +190,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
         HRESULT GetGuid(Guid* pguid);
 
         [VtblIndex(7)]
-        HRESULT GetName([NativeTypeName("BSTR *")] ushort** pbstrName);
+        HRESULT GetName([NativeTypeName("BSTR *")] char** pbstrName);
 
         [VtblIndex(8)]
         HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize);
@@ -199,19 +199,19 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
         HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo);
 
         [VtblIndex(10)]
-        HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
         [VtblIndex(11)]
-        HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray);
+        HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray);
 
         [VtblIndex(12)]
-        HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
         [VtblIndex(13)]
-        HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] ushort* szFieldName, VARIANT* pvarField);
+        HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField);
 
         [VtblIndex(14)]
-        HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] ushort** rgBstrNames);
+        HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] char** rgBstrNames);
 
         [VtblIndex(15)]
         BOOL IsMatchingType(IRecordInfo* pRecordInfo);
@@ -252,7 +252,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetSize;
@@ -261,19 +261,19 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, ushort*, VARIANT*, int> GetField;
+        public delegate* unmanaged<TSelf*, void*, char*, VARIANT*, int> GetField;
 
         [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, ushort*, VARIANT*, void**, int> GetFieldNoCopy;
+        public delegate* unmanaged<TSelf*, void*, char*, VARIANT*, void**, int> GetFieldNoCopy;
 
         [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, ushort*, VARIANT*, int> PutField;
+        public delegate* unmanaged<TSelf*, uint, void*, char*, VARIANT*, int> PutField;
 
         [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, ushort*, VARIANT*, int> PutFieldNoCopy;
+        public delegate* unmanaged<TSelf*, uint, void*, char*, VARIANT*, int> PutFieldNoCopy;
 
         [NativeTypeName("HRESULT (ULONG *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetFieldNames;
+        public delegate* unmanaged<TSelf*, uint*, char**, int> GetFieldNames;
 
         [NativeTypeName("BOOL (IRecordInfo *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IRecordInfo*, int> IsMatchingType;

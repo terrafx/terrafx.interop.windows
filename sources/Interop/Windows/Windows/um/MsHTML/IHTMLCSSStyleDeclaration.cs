@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,105 +97,105 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.getPropertyValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT getPropertyValue([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyValue)
+    public HRESULT getPropertyValue([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyValue)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyValue);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, char**, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyValue);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.getPropertyPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT getPropertyPriority([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyPriority)
+    public HRESULT getPropertyPriority([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyPriority)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyPriority);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, char**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyPriority);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.removeProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT removeProperty([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyValue)
+    public HRESULT removeProperty([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyValue)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyValue);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, char**, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pbstrPropertyValue);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.setProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT setProperty([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvarPropertyValue, VARIANT* pvarPropertyPriority = null)
+    public HRESULT setProperty([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvarPropertyValue, VARIANT* pvarPropertyPriority = null)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pvarPropertyValue, pvarPropertyPriority);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), bstrPropertyName, pvarPropertyValue, pvarPropertyPriority);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrPropertyName)
+    public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pbstrPropertyName)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, int, ushort**, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), index, pbstrPropertyName);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, int, char**, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), index, pbstrPropertyName);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontFamily"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT put_fontFamily([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fontFamily([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fontFamily"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT get_fontFamily([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fontFamily([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT put_fontStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fontStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fontStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_fontStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fontStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontVariant"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT put_fontVariant([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fontVariant([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fontVariant"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_fontVariant([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fontVariant([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT put_fontWeight([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fontWeight([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fontWeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_fontWeight([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fontWeight([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontSize"]/*' />
@@ -217,17 +217,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT put_font([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_font([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT get_font([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_font([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_color"]/*' />
@@ -249,17 +249,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_background"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT put_background([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_background([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_background"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_background([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_background([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundColor"]/*' />
@@ -281,65 +281,65 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT put_backgroundImage([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundImage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT get_backgroundImage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundImage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundRepeat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT put_backgroundRepeat([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundRepeat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundRepeat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundAttachment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT put_backgroundAttachment([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundAttachment([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundAttachment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT put_backgroundPosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundPosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT get_backgroundPosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundPosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundPositionX"]/*' />
@@ -409,17 +409,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textDecoration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT put_textDecoration([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textDecoration([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[48]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[48]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textDecoration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textDecoration([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[49]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[49]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_verticalAlign"]/*' />
@@ -441,33 +441,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT put_textTransform([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textTransform([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[52]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[52]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
-    public HRESULT get_textTransform([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textTransform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[53]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[53]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
-    public HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[54]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[54]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
-    public HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[55]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[55]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textIndent"]/*' />
@@ -569,17 +569,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_margin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
-    public HRESULT put_margin([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_margin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[68]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[68]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_margin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
-    public HRESULT get_margin([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_margin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[69]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[69]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_paddingTop"]/*' />
@@ -649,113 +649,113 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_padding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(78)]
-    public HRESULT put_padding([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_padding([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[78]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[78]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_padding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(79)]
-    public HRESULT get_padding([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_padding([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[79]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[79]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_border"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(80)]
-    public HRESULT put_border([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_border([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[80]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[80]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_border"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(81)]
-    public HRESULT get_border([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_border([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[81]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[81]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(82)]
-    public HRESULT put_borderTop([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderTop([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[82]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[82]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(83)]
-    public HRESULT get_borderTop([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderTop([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[83]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[83]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderRight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(84)]
-    public HRESULT put_borderRight([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderRight([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[84]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[84]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderRight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(85)]
-    public HRESULT get_borderRight([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderRight([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[85]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[85]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderBottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(86)]
-    public HRESULT put_borderBottom([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderBottom([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[86]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[86]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderBottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(87)]
-    public HRESULT get_borderBottom([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderBottom([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[87]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[87]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(88)]
-    public HRESULT put_borderLeft([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderLeft([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[88]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[88]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(89)]
-    public HRESULT get_borderLeft([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderLeft([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[89]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[89]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(90)]
-    public HRESULT put_borderColor([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderColor([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[90]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[90]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(91)]
-    public HRESULT get_borderColor([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderColor([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[91]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[91]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTopColor"]/*' />
@@ -825,17 +825,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(100)]
-    public HRESULT put_borderWidth([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderWidth([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[100]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[100]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(101)]
-    public HRESULT get_borderWidth([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderWidth([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[101]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[101]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTopWidth"]/*' />
@@ -905,81 +905,81 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(110)]
-    public HRESULT put_borderStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[110]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[110]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(111)]
-    public HRESULT get_borderStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[111]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[111]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTopStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(112)]
-    public HRESULT put_borderTopStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderTopStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[112]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[112]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderTopStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(113)]
-    public HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[113]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[113]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderRightStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(114)]
-    public HRESULT put_borderRightStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderRightStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[114]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[114]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderRightStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(115)]
-    public HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[115]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[115]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderBottomStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(116)]
-    public HRESULT put_borderBottomStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderBottomStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[116]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[116]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderBottomStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(117)]
-    public HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[117]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[117]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderLeftStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(118)]
-    public HRESULT put_borderLeftStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderLeftStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[118]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[118]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderLeftStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(119)]
-    public HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[119]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[119]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_width"]/*' />
@@ -1017,145 +1017,145 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_styleFloat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(124)]
-    public HRESULT put_styleFloat([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_styleFloat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[124]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[124]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_styleFloat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(125)]
-    public HRESULT get_styleFloat([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_styleFloat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[125]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[125]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(126)]
-    public HRESULT put_clear([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_clear([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[126]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[126]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(127)]
-    public HRESULT get_clear([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_clear([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[127]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[127]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_display"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(128)]
-    public HRESULT put_display([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_display([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[128]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[128]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_display"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(129)]
-    public HRESULT get_display([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_display([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[129]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[129]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_visibility"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(130)]
-    public HRESULT put_visibility([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_visibility([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[130]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[130]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_visibility"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(131)]
-    public HRESULT get_visibility([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_visibility([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[131]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[131]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_listStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(132)]
-    public HRESULT put_listStyleType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_listStyleType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[132]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[132]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_listStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(133)]
-    public HRESULT get_listStyleType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_listStyleType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[133]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[133]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_listStylePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(134)]
-    public HRESULT put_listStylePosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_listStylePosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[134]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[134]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_listStylePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(135)]
-    public HRESULT get_listStylePosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_listStylePosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[135]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[135]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_listStyleImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(136)]
-    public HRESULT put_listStyleImage([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_listStyleImage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[136]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[136]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_listStyleImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(137)]
-    public HRESULT get_listStyleImage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_listStyleImage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[137]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[137]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_listStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(138)]
-    public HRESULT put_listStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_listStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[138]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[138]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_listStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(139)]
-    public HRESULT get_listStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_listStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[139]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[139]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_whiteSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(140)]
-    public HRESULT put_whiteSpace([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_whiteSpace([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[140]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[140]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_whiteSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(141)]
-    public HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_whiteSpace([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[141]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[141]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_top"]/*' />
@@ -1209,209 +1209,209 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_overflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(148)]
-    public HRESULT put_overflow([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_overflow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[148]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[148]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_overflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(149)]
-    public HRESULT get_overflow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_overflow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[149]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[149]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_pageBreakBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(150)]
-    public HRESULT put_pageBreakBefore([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_pageBreakBefore([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[150]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[150]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_pageBreakBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(151)]
-    public HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[151]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[151]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_pageBreakAfter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(152)]
-    public HRESULT put_pageBreakAfter([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_pageBreakAfter([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[152]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[152]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_pageBreakAfter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(153)]
-    public HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[153]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[153]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(154)]
-    public HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_cssText([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[154]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[154]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_cssText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(155)]
-    public HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cssText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[155]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[155]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_cursor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(156)]
-    public HRESULT put_cursor([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_cursor([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[156]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[156]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_cursor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(157)]
-    public HRESULT get_cursor([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cursor([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[157]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[157]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_clip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(158)]
-    public HRESULT put_clip([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_clip([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[158]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[158]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_clip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(159)]
-    public HRESULT get_clip([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_clip([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[159]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[159]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(160)]
-    public HRESULT put_filter([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_filter([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[160]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[160]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_filter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(161)]
-    public HRESULT get_filter([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_filter([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[161]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[161]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_tableLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(162)]
-    public HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_tableLayout([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[162]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[162]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_tableLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(163)]
-    public HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_tableLayout([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[163]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[163]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderCollapse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(164)]
-    public HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderCollapse([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[164]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[164]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderCollapse"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(165)]
-    public HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderCollapse([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[165]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[165]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(166)]
-    public HRESULT put_direction([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_direction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[166]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[166]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(167)]
-    public HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_direction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[167]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[167]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(168)]
-    public HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_behavior([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[168]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[168]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_behavior"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(169)]
-    public HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_behavior([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[169]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[169]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_position"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(170)]
-    public HRESULT put_position([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_position([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[170]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[170]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_position"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(171)]
-    public HRESULT get_position([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_position([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[171]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[171]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_unicodeBidi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(172)]
-    public HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_unicodeBidi([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[172]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[172]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_unicodeBidi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(173)]
-    public HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[173]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[173]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_bottom"]/*' />
@@ -1449,65 +1449,65 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_imeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(178)]
-    public HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_imeMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[178]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[178]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_imeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(179)]
-    public HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_imeMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[179]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[179]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_rubyAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(180)]
-    public HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[180]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[180]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_rubyAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(181)]
-    public HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[181]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[181]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_rubyPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(182)]
-    public HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyPosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[182]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[182]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_rubyPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(183)]
-    public HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyPosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[183]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[183]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_rubyOverhang"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(184)]
-    public HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_rubyOverhang([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[184]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[184]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_rubyOverhang"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(185)]
-    public HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[185]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[185]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_layoutGridChar"]/*' />
@@ -1545,129 +1545,129 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_layoutGridMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(190)]
-    public HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGridMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[190]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[190]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_layoutGridMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(191)]
-    public HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[191]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[191]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_layoutGridType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(192)]
-    public HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGridType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[192]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[192]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_layoutGridType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(193)]
-    public HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGridType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[193]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[193]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_layoutGrid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(194)]
-    public HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutGrid([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[194]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[194]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_layoutGrid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(195)]
-    public HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutGrid([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[195]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[195]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textAutospace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(196)]
-    public HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAutospace([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[196]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[196]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textAutospace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(197)]
-    public HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAutospace([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[197]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[197]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_wordBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(198)]
-    public HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_wordBreak([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[198]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[198]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_wordBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(199)]
-    public HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wordBreak([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[199]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[199]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_lineBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(200)]
-    public HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_lineBreak([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[200]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[200]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_lineBreak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(201)]
-    public HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_lineBreak([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[201]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[201]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textJustify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(202)]
-    public HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textJustify([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[202]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[202]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textJustify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(203)]
-    public HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textJustify([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[203]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[203]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textJustifyTrim"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(204)]
-    public HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[204]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[204]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textJustifyTrim"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(205)]
-    public HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[205]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[205]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textKashida"]/*' />
@@ -1689,65 +1689,65 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_overflowX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(208)]
-    public HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_overflowX([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[208]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[208]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_overflowX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(209)]
-    public HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_overflowX([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[209]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[209]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_overflowY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(210)]
-    public HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_overflowY([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[210]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[210]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_overflowY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(211)]
-    public HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_overflowY([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[211]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[211]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_accelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(212)]
-    public HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_accelerator([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[212]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[212]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_accelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(213)]
-    public HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_accelerator([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[213]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[213]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(214)]
-    public HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_layoutFlow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[214]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[214]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(215)]
-    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[215]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[215]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_zoom"]/*' />
@@ -1769,33 +1769,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(218)]
-    public HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_wordWrap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[218]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[218]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(219)]
-    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[219]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[219]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(220)]
-    public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[220]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[220]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(221)]
-    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[221]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[221]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_scrollbarBaseColor"]/*' />
@@ -1929,33 +1929,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(238)]
-    public HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_writingMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[238]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[238]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(239)]
-    public HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[239]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[239]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(240)]
-    public HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAlignLast([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[240]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[240]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(241)]
-    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[241]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[241]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textKashidaSpace"]/*' />
@@ -1977,17 +1977,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textOverflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(244)]
-    public HRESULT put_textOverflow([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textOverflow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[244]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[244]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textOverflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(245)]
-    public HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textOverflow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[245]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[245]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_minHeight"]/*' />
@@ -2009,17 +2009,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_msInterpolationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(248)]
-    public HRESULT put_msInterpolationMode([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_msInterpolationMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[248]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[248]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_msInterpolationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(249)]
-    public HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[249]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[249]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_maxHeight"]/*' />
@@ -2073,81 +2073,81 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_content"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(256)]
-    public HRESULT put_content([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_content([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[256]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[256]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_content"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(257)]
-    public HRESULT get_content([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_content([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[257]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[257]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_captionSide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(258)]
-    public HRESULT put_captionSide([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_captionSide([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[258]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[258]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_captionSide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(259)]
-    public HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_captionSide([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[259]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[259]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_counterIncrement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(260)]
-    public HRESULT put_counterIncrement([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_counterIncrement([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[260]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[260]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_counterIncrement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(261)]
-    public HRESULT get_counterIncrement([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_counterIncrement([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[261]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[261]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_counterReset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(262)]
-    public HRESULT put_counterReset([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_counterReset([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[262]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[262]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_counterReset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(263)]
-    public HRESULT get_counterReset([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_counterReset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[263]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[263]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_outline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(264)]
-    public HRESULT put_outline([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_outline([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[264]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[264]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_outline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(265)]
-    public HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_outline([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[265]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[265]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_outlineWidth"]/*' />
@@ -2169,17 +2169,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_outlineStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(268)]
-    public HRESULT put_outlineStyle([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_outlineStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[268]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[268]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_outlineStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(269)]
-    public HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_outlineStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[269]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[269]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_outlineColor"]/*' />
@@ -2201,33 +2201,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_boxSizing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(272)]
-    public HRESULT put_boxSizing([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_boxSizing([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[272]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[272]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_boxSizing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(273)]
-    public HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_boxSizing([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[273]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[273]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(274)]
-    public HRESULT put_borderSpacing([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderSpacing([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[274]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[274]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(275)]
-    public HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderSpacing([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[275]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[275]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_orphans"]/*' />
@@ -2265,81 +2265,81 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_pageBreakInside"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(280)]
-    public HRESULT put_pageBreakInside([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_pageBreakInside([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[280]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[280]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_pageBreakInside"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(281)]
-    public HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[281]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[281]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_emptyCells"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(282)]
-    public HRESULT put_emptyCells([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_emptyCells([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[282]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[282]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_emptyCells"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(283)]
-    public HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_emptyCells([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[283]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[283]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_msBlockProgression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(284)]
-    public HRESULT put_msBlockProgression([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_msBlockProgression([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[284]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[284]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_msBlockProgression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(285)]
-    public HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[285]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[285]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_quotes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(286)]
-    public HRESULT put_quotes([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_quotes([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[286]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[286]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_quotes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(287)]
-    public HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_quotes([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[287]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[287]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_alignmentBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(288)]
-    public HRESULT put_alignmentBaseline([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_alignmentBaseline([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[288]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[288]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_alignmentBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(289)]
-    public HRESULT get_alignmentBaseline([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_alignmentBaseline([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[289]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[289]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_baselineShift"]/*' />
@@ -2361,17 +2361,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_dominantBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(292)]
-    public HRESULT put_dominantBaseline([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_dominantBaseline([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[292]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[292]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_dominantBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(293)]
-    public HRESULT get_dominantBaseline([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_dominantBaseline([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[293]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[293]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontSizeAdjust"]/*' />
@@ -2393,17 +2393,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fontStretch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(296)]
-    public HRESULT put_fontStretch([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fontStretch([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[296]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[296]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fontStretch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(297)]
-    public HRESULT get_fontStretch([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fontStretch([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[297]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[297]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_opacity"]/*' />
@@ -2425,49 +2425,49 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_clipPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(300)]
-    public HRESULT put_clipPath([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_clipPath([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[300]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[300]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_clipPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(301)]
-    public HRESULT get_clipPath([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_clipPath([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[301]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[301]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_clipRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(302)]
-    public HRESULT put_clipRule([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_clipRule([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[302]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[302]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_clipRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(303)]
-    public HRESULT get_clipRule([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_clipRule([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[303]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[303]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fill"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(304)]
-    public HRESULT put_fill([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fill([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[304]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[304]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fill"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(305)]
-    public HRESULT get_fill([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fill([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[305]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[305]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fillOpacity"]/*' />
@@ -2489,17 +2489,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_fillRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(308)]
-    public HRESULT put_fillRule([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_fillRule([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[308]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[308]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_fillRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(309)]
-    public HRESULT get_fillRule([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_fillRule([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[309]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[309]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_kerning"]/*' />
@@ -2521,97 +2521,97 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_marker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(312)]
-    public HRESULT put_marker([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_marker([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[312]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[312]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_marker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(313)]
-    public HRESULT get_marker([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_marker([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[313]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[313]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_markerEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(314)]
-    public HRESULT put_markerEnd([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_markerEnd([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[314]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[314]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_markerEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(315)]
-    public HRESULT get_markerEnd([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_markerEnd([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[315]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[315]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_markerMid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(316)]
-    public HRESULT put_markerMid([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_markerMid([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[316]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[316]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_markerMid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(317)]
-    public HRESULT get_markerMid([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_markerMid([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[317]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[317]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_markerStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(318)]
-    public HRESULT put_markerStart([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_markerStart([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[318]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[318]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_markerStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(319)]
-    public HRESULT get_markerStart([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_markerStart([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[319]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[319]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_mask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(320)]
-    public HRESULT put_mask([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_mask([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[320]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[320]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_mask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(321)]
-    public HRESULT get_mask([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_mask([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[321]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[321]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_pointerEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(322)]
-    public HRESULT put_pointerEvents([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_pointerEvents([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[322]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[322]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_pointerEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(323)]
-    public HRESULT get_pointerEvents([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_pointerEvents([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[323]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[323]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_stopColor"]/*' />
@@ -2649,33 +2649,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_stroke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(328)]
-    public HRESULT put_stroke([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_stroke([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[328]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[328]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_stroke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(329)]
-    public HRESULT get_stroke([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_stroke([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[329]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[329]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_strokeDasharray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(330)]
-    public HRESULT put_strokeDasharray([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_strokeDasharray([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[330]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[330]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_strokeDasharray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(331)]
-    public HRESULT get_strokeDasharray([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_strokeDasharray([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[331]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[331]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_strokeDashoffset"]/*' />
@@ -2697,33 +2697,33 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_strokeLinecap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(334)]
-    public HRESULT put_strokeLinecap([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_strokeLinecap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[334]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[334]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_strokeLinecap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(335)]
-    public HRESULT get_strokeLinecap([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_strokeLinecap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[335]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[335]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_strokeLinejoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(336)]
-    public HRESULT put_strokeLinejoin([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_strokeLinejoin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[336]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[336]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_strokeLinejoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(337)]
-    public HRESULT get_strokeLinejoin([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_strokeLinejoin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[337]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[337]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_strokeMiterlimit"]/*' />
@@ -2777,17 +2777,17 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_textAnchor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(344)]
-    public HRESULT put_textAnchor([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_textAnchor([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[344]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[344]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_textAnchor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(345)]
-    public HRESULT get_textAnchor([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textAnchor([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[345]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[345]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_glyphOrientationHorizontal"]/*' />
@@ -2825,81 +2825,81 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(350)]
-    public HRESULT put_borderRadius([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderRadius([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[350]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[350]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(351)]
-    public HRESULT get_borderRadius([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderRadius([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[351]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[351]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTopLeftRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(352)]
-    public HRESULT put_borderTopLeftRadius([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderTopLeftRadius([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[352]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[352]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderTopLeftRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(353)]
-    public HRESULT get_borderTopLeftRadius([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderTopLeftRadius([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[353]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[353]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderTopRightRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(354)]
-    public HRESULT put_borderTopRightRadius([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderTopRightRadius([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[354]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[354]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderTopRightRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(355)]
-    public HRESULT get_borderTopRightRadius([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderTopRightRadius([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[355]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[355]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderBottomRightRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(356)]
-    public HRESULT put_borderBottomRightRadius([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderBottomRightRadius([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[356]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[356]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderBottomRightRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(357)]
-    public HRESULT get_borderBottomRightRadius([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderBottomRightRadius([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[357]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[357]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_borderBottomLeftRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(358)]
-    public HRESULT put_borderBottomLeftRadius([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_borderBottomLeftRadius([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[358]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[358]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_borderBottomLeftRadius"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(359)]
-    public HRESULT get_borderBottomLeftRadius([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderBottomLeftRadius([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[359]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[359]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_clipTop"]/*' />
@@ -2961,113 +2961,113 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_cssFloat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(367)]
-    public HRESULT put_cssFloat([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_cssFloat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[367]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[367]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_cssFloat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(368)]
-    public HRESULT get_cssFloat([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cssFloat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[368]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[368]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundClip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(369)]
-    public HRESULT put_backgroundClip([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundClip([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[369]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[369]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundClip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(370)]
-    public HRESULT get_backgroundClip([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundClip([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[370]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[370]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(371)]
-    public HRESULT put_backgroundOrigin([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundOrigin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[371]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[371]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(372)]
-    public HRESULT get_backgroundOrigin([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundOrigin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[372]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[372]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_backgroundSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(373)]
-    public HRESULT put_backgroundSize([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_backgroundSize([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[373]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[373]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_backgroundSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(374)]
-    public HRESULT get_backgroundSize([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_backgroundSize([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[374]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[374]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_boxShadow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(375)]
-    public HRESULT put_boxShadow([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_boxShadow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[375]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[375]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_boxShadow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(376)]
-    public HRESULT get_boxShadow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_boxShadow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[376]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[376]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_msTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(377)]
-    public HRESULT put_msTransform([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_msTransform([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[377]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[377]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_msTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(378)]
-    public HRESULT get_msTransform([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msTransform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[378]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[378]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.put_msTransformOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(379)]
-    public HRESULT put_msTransformOrigin([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_msTransformOrigin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int>)(lpVtbl[379]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char*, int>)(lpVtbl[379]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration.get_msTransformOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(380)]
-    public HRESULT get_msTransformOrigin([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msTransformOrigin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int>)(lpVtbl[380]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration*, char**, int>)(lpVtbl[380]))((IHTMLCSSStyleDeclaration*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -3079,43 +3079,43 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_parentRule(VARIANT* p);
 
         [VtblIndex(9)]
-        HRESULT getPropertyValue([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyValue);
+        HRESULT getPropertyValue([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyValue);
 
         [VtblIndex(10)]
-        HRESULT getPropertyPriority([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyPriority);
+        HRESULT getPropertyPriority([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyPriority);
 
         [VtblIndex(11)]
-        HRESULT removeProperty([NativeTypeName("BSTR")] ushort* bstrPropertyName, [NativeTypeName("BSTR *")] ushort** pbstrPropertyValue);
+        HRESULT removeProperty([NativeTypeName("BSTR")] char* bstrPropertyName, [NativeTypeName("BSTR *")] char** pbstrPropertyValue);
 
         [VtblIndex(12)]
-        HRESULT setProperty([NativeTypeName("BSTR")] ushort* bstrPropertyName, VARIANT* pvarPropertyValue, VARIANT* pvarPropertyPriority = null);
+        HRESULT setProperty([NativeTypeName("BSTR")] char* bstrPropertyName, VARIANT* pvarPropertyValue, VARIANT* pvarPropertyPriority = null);
 
         [VtblIndex(13)]
-        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] ushort** pbstrPropertyName);
+        HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pbstrPropertyName);
 
         [VtblIndex(14)]
-        HRESULT put_fontFamily([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fontFamily([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(15)]
-        HRESULT get_fontFamily([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fontFamily([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(16)]
-        HRESULT put_fontStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fontStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(17)]
-        HRESULT get_fontStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fontStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(18)]
-        HRESULT put_fontVariant([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fontVariant([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(19)]
-        HRESULT get_fontVariant([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fontVariant([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(20)]
-        HRESULT put_fontWeight([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fontWeight([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(21)]
-        HRESULT get_fontWeight([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fontWeight([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
         HRESULT put_fontSize(VARIANT v);
@@ -3124,10 +3124,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_fontSize(VARIANT* p);
 
         [VtblIndex(24)]
-        HRESULT put_font([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_font([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(25)]
-        HRESULT get_font([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_font([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(26)]
         HRESULT put_color(VARIANT v);
@@ -3136,10 +3136,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_color(VARIANT* p);
 
         [VtblIndex(28)]
-        HRESULT put_background([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_background([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(29)]
-        HRESULT get_background([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_background([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(30)]
         HRESULT put_backgroundColor(VARIANT v);
@@ -3148,28 +3148,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_backgroundColor(VARIANT* p);
 
         [VtblIndex(32)]
-        HRESULT put_backgroundImage([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundImage([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(33)]
-        HRESULT get_backgroundImage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundImage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(34)]
-        HRESULT put_backgroundRepeat([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundRepeat([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(35)]
-        HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundRepeat([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(36)]
-        HRESULT put_backgroundAttachment([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundAttachment([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(37)]
-        HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundAttachment([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(38)]
-        HRESULT put_backgroundPosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundPosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(39)]
-        HRESULT get_backgroundPosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundPosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(40)]
         HRESULT put_backgroundPositionX(VARIANT v);
@@ -3196,10 +3196,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_letterSpacing(VARIANT* p);
 
         [VtblIndex(48)]
-        HRESULT put_textDecoration([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textDecoration([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(49)]
-        HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textDecoration([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(50)]
         HRESULT put_verticalAlign(VARIANT v);
@@ -3208,16 +3208,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_verticalAlign(VARIANT* p);
 
         [VtblIndex(52)]
-        HRESULT put_textTransform([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textTransform([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(53)]
-        HRESULT get_textTransform([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textTransform([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(54)]
-        HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAlign([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(55)]
-        HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAlign([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(56)]
         HRESULT put_textIndent(VARIANT v);
@@ -3256,10 +3256,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_marginLeft(VARIANT* p);
 
         [VtblIndex(68)]
-        HRESULT put_margin([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_margin([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(69)]
-        HRESULT get_margin([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_margin([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(70)]
         HRESULT put_paddingTop(VARIANT v);
@@ -3286,46 +3286,46 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_paddingLeft(VARIANT* p);
 
         [VtblIndex(78)]
-        HRESULT put_padding([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_padding([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(79)]
-        HRESULT get_padding([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_padding([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(80)]
-        HRESULT put_border([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_border([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(81)]
-        HRESULT get_border([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_border([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(82)]
-        HRESULT put_borderTop([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderTop([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(83)]
-        HRESULT get_borderTop([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderTop([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(84)]
-        HRESULT put_borderRight([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderRight([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(85)]
-        HRESULT get_borderRight([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderRight([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(86)]
-        HRESULT put_borderBottom([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderBottom([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(87)]
-        HRESULT get_borderBottom([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderBottom([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(88)]
-        HRESULT put_borderLeft([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderLeft([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(89)]
-        HRESULT get_borderLeft([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderLeft([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(90)]
-        HRESULT put_borderColor([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderColor([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(91)]
-        HRESULT get_borderColor([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderColor([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(92)]
         HRESULT put_borderTopColor(VARIANT v);
@@ -3352,10 +3352,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_borderLeftColor(VARIANT* p);
 
         [VtblIndex(100)]
-        HRESULT put_borderWidth([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderWidth([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(101)]
-        HRESULT get_borderWidth([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderWidth([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(102)]
         HRESULT put_borderTopWidth(VARIANT v);
@@ -3382,34 +3382,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_borderLeftWidth(VARIANT* p);
 
         [VtblIndex(110)]
-        HRESULT put_borderStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(111)]
-        HRESULT get_borderStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(112)]
-        HRESULT put_borderTopStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderTopStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(113)]
-        HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderTopStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(114)]
-        HRESULT put_borderRightStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderRightStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(115)]
-        HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderRightStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(116)]
-        HRESULT put_borderBottomStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderBottomStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(117)]
-        HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderBottomStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(118)]
-        HRESULT put_borderLeftStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderLeftStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(119)]
-        HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderLeftStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(120)]
         HRESULT put_width(VARIANT v);
@@ -3424,58 +3424,58 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_height(VARIANT* p);
 
         [VtblIndex(124)]
-        HRESULT put_styleFloat([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_styleFloat([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(125)]
-        HRESULT get_styleFloat([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_styleFloat([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(126)]
-        HRESULT put_clear([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_clear([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(127)]
-        HRESULT get_clear([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_clear([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(128)]
-        HRESULT put_display([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_display([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(129)]
-        HRESULT get_display([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_display([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(130)]
-        HRESULT put_visibility([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_visibility([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(131)]
-        HRESULT get_visibility([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_visibility([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(132)]
-        HRESULT put_listStyleType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_listStyleType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(133)]
-        HRESULT get_listStyleType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_listStyleType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(134)]
-        HRESULT put_listStylePosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_listStylePosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(135)]
-        HRESULT get_listStylePosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_listStylePosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(136)]
-        HRESULT put_listStyleImage([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_listStyleImage([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(137)]
-        HRESULT get_listStyleImage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_listStyleImage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(138)]
-        HRESULT put_listStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_listStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(139)]
-        HRESULT get_listStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_listStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(140)]
-        HRESULT put_whiteSpace([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_whiteSpace([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(141)]
-        HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_whiteSpace([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(142)]
         HRESULT put_top(VARIANT v);
@@ -3496,82 +3496,82 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_zIndex(VARIANT* p);
 
         [VtblIndex(148)]
-        HRESULT put_overflow([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_overflow([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(149)]
-        HRESULT get_overflow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_overflow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(150)]
-        HRESULT put_pageBreakBefore([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_pageBreakBefore([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(151)]
-        HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_pageBreakBefore([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(152)]
-        HRESULT put_pageBreakAfter([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_pageBreakAfter([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(153)]
-        HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_pageBreakAfter([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(154)]
-        HRESULT put_cssText([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_cssText([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(155)]
-        HRESULT get_cssText([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cssText([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(156)]
-        HRESULT put_cursor([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_cursor([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(157)]
-        HRESULT get_cursor([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cursor([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(158)]
-        HRESULT put_clip([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_clip([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(159)]
-        HRESULT get_clip([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_clip([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(160)]
-        HRESULT put_filter([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_filter([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(161)]
-        HRESULT get_filter([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_filter([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(162)]
-        HRESULT put_tableLayout([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_tableLayout([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(163)]
-        HRESULT get_tableLayout([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_tableLayout([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(164)]
-        HRESULT put_borderCollapse([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderCollapse([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(165)]
-        HRESULT get_borderCollapse([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderCollapse([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(166)]
-        HRESULT put_direction([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_direction([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(167)]
-        HRESULT get_direction([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_direction([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(168)]
-        HRESULT put_behavior([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_behavior([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(169)]
-        HRESULT get_behavior([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_behavior([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(170)]
-        HRESULT put_position([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_position([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(171)]
-        HRESULT get_position([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_position([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(172)]
-        HRESULT put_unicodeBidi([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_unicodeBidi([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(173)]
-        HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_unicodeBidi([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(174)]
         HRESULT put_bottom(VARIANT v);
@@ -3586,28 +3586,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_right(VARIANT* p);
 
         [VtblIndex(178)]
-        HRESULT put_imeMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_imeMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(179)]
-        HRESULT get_imeMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_imeMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(180)]
-        HRESULT put_rubyAlign([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyAlign([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(181)]
-        HRESULT get_rubyAlign([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyAlign([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(182)]
-        HRESULT put_rubyPosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyPosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(183)]
-        HRESULT get_rubyPosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyPosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(184)]
-        HRESULT put_rubyOverhang([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_rubyOverhang([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(185)]
-        HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_rubyOverhang([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(186)]
         HRESULT put_layoutGridChar(VARIANT v);
@@ -3622,52 +3622,52 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_layoutGridLine(VARIANT* p);
 
         [VtblIndex(190)]
-        HRESULT put_layoutGridMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGridMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(191)]
-        HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGridMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(192)]
-        HRESULT put_layoutGridType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGridType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(193)]
-        HRESULT get_layoutGridType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGridType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(194)]
-        HRESULT put_layoutGrid([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutGrid([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(195)]
-        HRESULT get_layoutGrid([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutGrid([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(196)]
-        HRESULT put_textAutospace([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAutospace([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(197)]
-        HRESULT get_textAutospace([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAutospace([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(198)]
-        HRESULT put_wordBreak([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_wordBreak([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(199)]
-        HRESULT get_wordBreak([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wordBreak([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(200)]
-        HRESULT put_lineBreak([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_lineBreak([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(201)]
-        HRESULT get_lineBreak([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_lineBreak([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(202)]
-        HRESULT put_textJustify([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textJustify([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(203)]
-        HRESULT get_textJustify([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textJustify([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(204)]
-        HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textJustifyTrim([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(205)]
-        HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textJustifyTrim([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(206)]
         HRESULT put_textKashida(VARIANT v);
@@ -3676,28 +3676,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_textKashida(VARIANT* p);
 
         [VtblIndex(208)]
-        HRESULT put_overflowX([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_overflowX([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(209)]
-        HRESULT get_overflowX([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_overflowX([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(210)]
-        HRESULT put_overflowY([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_overflowY([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(211)]
-        HRESULT get_overflowY([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_overflowY([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(212)]
-        HRESULT put_accelerator([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_accelerator([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(213)]
-        HRESULT get_accelerator([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_accelerator([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(214)]
-        HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_layoutFlow([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(215)]
-        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(216)]
         HRESULT put_zoom(VARIANT v);
@@ -3706,16 +3706,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_zoom(VARIANT* p);
 
         [VtblIndex(218)]
-        HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_wordWrap([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(219)]
-        HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(220)]
-        HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(221)]
-        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(222)]
         HRESULT put_scrollbarBaseColor(VARIANT v);
@@ -3766,16 +3766,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_scrollbarTrackColor(VARIANT* p);
 
         [VtblIndex(238)]
-        HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_writingMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(239)]
-        HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(240)]
-        HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAlignLast([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(241)]
-        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(242)]
         HRESULT put_textKashidaSpace(VARIANT v);
@@ -3784,10 +3784,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_textKashidaSpace(VARIANT* p);
 
         [VtblIndex(244)]
-        HRESULT put_textOverflow([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textOverflow([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(245)]
-        HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textOverflow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(246)]
         HRESULT put_minHeight(VARIANT v);
@@ -3796,10 +3796,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_minHeight(VARIANT* p);
 
         [VtblIndex(248)]
-        HRESULT put_msInterpolationMode([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_msInterpolationMode([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(249)]
-        HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(250)]
         HRESULT put_maxHeight(VARIANT v);
@@ -3820,34 +3820,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_maxWidth(VARIANT* p);
 
         [VtblIndex(256)]
-        HRESULT put_content([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_content([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(257)]
-        HRESULT get_content([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_content([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(258)]
-        HRESULT put_captionSide([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_captionSide([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(259)]
-        HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_captionSide([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(260)]
-        HRESULT put_counterIncrement([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_counterIncrement([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(261)]
-        HRESULT get_counterIncrement([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_counterIncrement([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(262)]
-        HRESULT put_counterReset([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_counterReset([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(263)]
-        HRESULT get_counterReset([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_counterReset([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(264)]
-        HRESULT put_outline([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_outline([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(265)]
-        HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_outline([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(266)]
         HRESULT put_outlineWidth(VARIANT v);
@@ -3856,10 +3856,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_outlineWidth(VARIANT* p);
 
         [VtblIndex(268)]
-        HRESULT put_outlineStyle([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_outlineStyle([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(269)]
-        HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_outlineStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(270)]
         HRESULT put_outlineColor(VARIANT v);
@@ -3868,16 +3868,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_outlineColor(VARIANT* p);
 
         [VtblIndex(272)]
-        HRESULT put_boxSizing([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_boxSizing([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(273)]
-        HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_boxSizing([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(274)]
-        HRESULT put_borderSpacing([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderSpacing([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(275)]
-        HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderSpacing([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(276)]
         HRESULT put_orphans(VARIANT v);
@@ -3892,34 +3892,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_widows(VARIANT* p);
 
         [VtblIndex(280)]
-        HRESULT put_pageBreakInside([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_pageBreakInside([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(281)]
-        HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(282)]
-        HRESULT put_emptyCells([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_emptyCells([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(283)]
-        HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_emptyCells([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(284)]
-        HRESULT put_msBlockProgression([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_msBlockProgression([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(285)]
-        HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(286)]
-        HRESULT put_quotes([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_quotes([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(287)]
-        HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_quotes([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(288)]
-        HRESULT put_alignmentBaseline([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_alignmentBaseline([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(289)]
-        HRESULT get_alignmentBaseline([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_alignmentBaseline([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(290)]
         HRESULT put_baselineShift(VARIANT v);
@@ -3928,10 +3928,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_baselineShift(VARIANT* p);
 
         [VtblIndex(292)]
-        HRESULT put_dominantBaseline([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_dominantBaseline([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(293)]
-        HRESULT get_dominantBaseline([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_dominantBaseline([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(294)]
         HRESULT put_fontSizeAdjust(VARIANT v);
@@ -3940,10 +3940,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_fontSizeAdjust(VARIANT* p);
 
         [VtblIndex(296)]
-        HRESULT put_fontStretch([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fontStretch([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(297)]
-        HRESULT get_fontStretch([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fontStretch([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(298)]
         HRESULT put_opacity(VARIANT v);
@@ -3952,22 +3952,22 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_opacity(VARIANT* p);
 
         [VtblIndex(300)]
-        HRESULT put_clipPath([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_clipPath([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(301)]
-        HRESULT get_clipPath([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_clipPath([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(302)]
-        HRESULT put_clipRule([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_clipRule([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(303)]
-        HRESULT get_clipRule([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_clipRule([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(304)]
-        HRESULT put_fill([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fill([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(305)]
-        HRESULT get_fill([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fill([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(306)]
         HRESULT put_fillOpacity(VARIANT v);
@@ -3976,10 +3976,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_fillOpacity(VARIANT* p);
 
         [VtblIndex(308)]
-        HRESULT put_fillRule([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_fillRule([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(309)]
-        HRESULT get_fillRule([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_fillRule([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(310)]
         HRESULT put_kerning(VARIANT v);
@@ -3988,40 +3988,40 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_kerning(VARIANT* p);
 
         [VtblIndex(312)]
-        HRESULT put_marker([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_marker([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(313)]
-        HRESULT get_marker([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_marker([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(314)]
-        HRESULT put_markerEnd([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_markerEnd([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(315)]
-        HRESULT get_markerEnd([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_markerEnd([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(316)]
-        HRESULT put_markerMid([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_markerMid([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(317)]
-        HRESULT get_markerMid([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_markerMid([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(318)]
-        HRESULT put_markerStart([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_markerStart([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(319)]
-        HRESULT get_markerStart([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_markerStart([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(320)]
-        HRESULT put_mask([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_mask([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(321)]
-        HRESULT get_mask([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_mask([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(322)]
-        HRESULT put_pointerEvents([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_pointerEvents([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(323)]
-        HRESULT get_pointerEvents([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_pointerEvents([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(324)]
         HRESULT put_stopColor(VARIANT v);
@@ -4036,16 +4036,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_stopOpacity(VARIANT* p);
 
         [VtblIndex(328)]
-        HRESULT put_stroke([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_stroke([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(329)]
-        HRESULT get_stroke([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_stroke([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(330)]
-        HRESULT put_strokeDasharray([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_strokeDasharray([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(331)]
-        HRESULT get_strokeDasharray([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_strokeDasharray([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(332)]
         HRESULT put_strokeDashoffset(VARIANT v);
@@ -4054,16 +4054,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_strokeDashoffset(VARIANT* p);
 
         [VtblIndex(334)]
-        HRESULT put_strokeLinecap([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_strokeLinecap([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(335)]
-        HRESULT get_strokeLinecap([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_strokeLinecap([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(336)]
-        HRESULT put_strokeLinejoin([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_strokeLinejoin([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(337)]
-        HRESULT get_strokeLinejoin([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_strokeLinejoin([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(338)]
         HRESULT put_strokeMiterlimit(VARIANT v);
@@ -4084,10 +4084,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_strokeWidth(VARIANT* p);
 
         [VtblIndex(344)]
-        HRESULT put_textAnchor([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_textAnchor([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(345)]
-        HRESULT get_textAnchor([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textAnchor([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(346)]
         HRESULT put_glyphOrientationHorizontal(VARIANT v);
@@ -4102,34 +4102,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_glyphOrientationVertical(VARIANT* p);
 
         [VtblIndex(350)]
-        HRESULT put_borderRadius([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderRadius([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(351)]
-        HRESULT get_borderRadius([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderRadius([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(352)]
-        HRESULT put_borderTopLeftRadius([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderTopLeftRadius([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(353)]
-        HRESULT get_borderTopLeftRadius([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderTopLeftRadius([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(354)]
-        HRESULT put_borderTopRightRadius([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderTopRightRadius([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(355)]
-        HRESULT get_borderTopRightRadius([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderTopRightRadius([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(356)]
-        HRESULT put_borderBottomRightRadius([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderBottomRightRadius([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(357)]
-        HRESULT get_borderBottomRightRadius([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderBottomRightRadius([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(358)]
-        HRESULT put_borderBottomLeftRadius([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_borderBottomLeftRadius([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(359)]
-        HRESULT get_borderBottomLeftRadius([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderBottomLeftRadius([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(360)]
         HRESULT put_clipTop(VARIANT v);
@@ -4153,46 +4153,46 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_clipLeft(VARIANT* p);
 
         [VtblIndex(367)]
-        HRESULT put_cssFloat([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_cssFloat([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(368)]
-        HRESULT get_cssFloat([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cssFloat([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(369)]
-        HRESULT put_backgroundClip([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundClip([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(370)]
-        HRESULT get_backgroundClip([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundClip([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(371)]
-        HRESULT put_backgroundOrigin([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundOrigin([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(372)]
-        HRESULT get_backgroundOrigin([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundOrigin([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(373)]
-        HRESULT put_backgroundSize([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_backgroundSize([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(374)]
-        HRESULT get_backgroundSize([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_backgroundSize([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(375)]
-        HRESULT put_boxShadow([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_boxShadow([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(376)]
-        HRESULT get_boxShadow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_boxShadow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(377)]
-        HRESULT put_msTransform([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_msTransform([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(378)]
-        HRESULT get_msTransform([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msTransform([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(379)]
-        HRESULT put_msTransformOrigin([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_msTransformOrigin([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(380)]
-        HRESULT get_msTransformOrigin([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msTransformOrigin([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -4214,7 +4214,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -4226,43 +4226,43 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_parentRule;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getPropertyValue;
+        public delegate* unmanaged<TSelf*, char*, char**, int> getPropertyValue;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getPropertyPriority;
+        public delegate* unmanaged<TSelf*, char*, char**, int> getPropertyPriority;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> removeProperty;
+        public delegate* unmanaged<TSelf*, char*, char**, int> removeProperty;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, VARIANT*, int> setProperty;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, VARIANT*, int> setProperty;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> item;
+        public delegate* unmanaged<TSelf*, int, char**, int> item;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fontFamily;
+        public delegate* unmanaged<TSelf*, char*, int> put_fontFamily;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fontFamily;
+        public delegate* unmanaged<TSelf*, char**, int> get_fontFamily;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fontStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_fontStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fontStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_fontStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fontVariant;
+        public delegate* unmanaged<TSelf*, char*, int> put_fontVariant;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fontVariant;
+        public delegate* unmanaged<TSelf*, char**, int> get_fontVariant;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fontWeight;
+        public delegate* unmanaged<TSelf*, char*, int> put_fontWeight;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fontWeight;
+        public delegate* unmanaged<TSelf*, char**, int> get_fontWeight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_fontSize;
@@ -4271,10 +4271,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_fontSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_font;
+        public delegate* unmanaged<TSelf*, char*, int> put_font;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_font;
+        public delegate* unmanaged<TSelf*, char**, int> get_font;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_color;
@@ -4283,10 +4283,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_color;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_background;
+        public delegate* unmanaged<TSelf*, char*, int> put_background;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_background;
+        public delegate* unmanaged<TSelf*, char**, int> get_background;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_backgroundColor;
@@ -4295,28 +4295,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_backgroundColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundImage;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundImage;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundRepeat;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundRepeat;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundAttachment;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundAttachment;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundPosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundPosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundPosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_backgroundPositionX;
@@ -4343,10 +4343,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_letterSpacing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textDecoration;
+        public delegate* unmanaged<TSelf*, char*, int> put_textDecoration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textDecoration;
+        public delegate* unmanaged<TSelf*, char**, int> get_textDecoration;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_verticalAlign;
@@ -4355,16 +4355,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_verticalAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textTransform;
+        public delegate* unmanaged<TSelf*, char*, int> put_textTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textTransform;
+        public delegate* unmanaged<TSelf*, char**, int> get_textTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlign;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlign;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_textIndent;
@@ -4403,10 +4403,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_margin;
+        public delegate* unmanaged<TSelf*, char*, int> put_margin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_margin;
+        public delegate* unmanaged<TSelf*, char**, int> get_margin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_paddingTop;
@@ -4433,46 +4433,46 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_paddingLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_padding;
+        public delegate* unmanaged<TSelf*, char*, int> put_padding;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_padding;
+        public delegate* unmanaged<TSelf*, char**, int> get_padding;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_border;
+        public delegate* unmanaged<TSelf*, char*, int> put_border;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_border;
+        public delegate* unmanaged<TSelf*, char**, int> get_border;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTop;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderTop;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTop;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderTop;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRight;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderRight;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRight;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderRight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottom;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderBottom;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottom;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderBottom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderLeft;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderLeft;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderLeft;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderColor;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderColor;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_borderTopColor;
@@ -4499,10 +4499,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderLeftColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderWidth;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderWidth;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_borderTopWidth;
@@ -4529,34 +4529,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderLeftWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderTopStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderTopStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRightStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderRightStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRightStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderRightStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderBottomStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderBottomStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderLeftStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderLeftStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderLeftStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderLeftStyle;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_width;
@@ -4571,58 +4571,58 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_styleFloat;
+        public delegate* unmanaged<TSelf*, char*, int> put_styleFloat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_styleFloat;
+        public delegate* unmanaged<TSelf*, char**, int> get_styleFloat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_clear;
+        public delegate* unmanaged<TSelf*, char*, int> put_clear;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_clear;
+        public delegate* unmanaged<TSelf*, char**, int> get_clear;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_display;
+        public delegate* unmanaged<TSelf*, char*, int> put_display;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_display;
+        public delegate* unmanaged<TSelf*, char**, int> get_display;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_visibility;
+        public delegate* unmanaged<TSelf*, char*, int> put_visibility;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_visibility;
+        public delegate* unmanaged<TSelf*, char**, int> get_visibility;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyleType;
+        public delegate* unmanaged<TSelf*, char*, int> put_listStyleType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyleType;
+        public delegate* unmanaged<TSelf*, char**, int> get_listStyleType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_listStylePosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_listStylePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_listStylePosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_listStylePosition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyleImage;
+        public delegate* unmanaged<TSelf*, char*, int> put_listStyleImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyleImage;
+        public delegate* unmanaged<TSelf*, char**, int> get_listStyleImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_listStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_listStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_whiteSpace;
+        public delegate* unmanaged<TSelf*, char*, int> put_whiteSpace;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_whiteSpace;
+        public delegate* unmanaged<TSelf*, char**, int> get_whiteSpace;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_top;
@@ -4643,82 +4643,82 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_zIndex;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_overflow;
+        public delegate* unmanaged<TSelf*, char*, int> put_overflow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_overflow;
+        public delegate* unmanaged<TSelf*, char**, int> get_overflow;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakBefore;
+        public delegate* unmanaged<TSelf*, char*, int> put_pageBreakBefore;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakBefore;
+        public delegate* unmanaged<TSelf*, char**, int> get_pageBreakBefore;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakAfter;
+        public delegate* unmanaged<TSelf*, char*, int> put_pageBreakAfter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakAfter;
+        public delegate* unmanaged<TSelf*, char**, int> get_pageBreakAfter;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_cssText;
+        public delegate* unmanaged<TSelf*, char*, int> put_cssText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cssText;
+        public delegate* unmanaged<TSelf*, char**, int> get_cssText;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_cursor;
+        public delegate* unmanaged<TSelf*, char*, int> put_cursor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cursor;
+        public delegate* unmanaged<TSelf*, char**, int> get_cursor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_clip;
+        public delegate* unmanaged<TSelf*, char*, int> put_clip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_clip;
+        public delegate* unmanaged<TSelf*, char**, int> get_clip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_filter;
+        public delegate* unmanaged<TSelf*, char*, int> put_filter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_filter;
+        public delegate* unmanaged<TSelf*, char**, int> get_filter;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_tableLayout;
+        public delegate* unmanaged<TSelf*, char*, int> put_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_tableLayout;
+        public delegate* unmanaged<TSelf*, char**, int> get_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderCollapse;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderCollapse;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_direction;
+        public delegate* unmanaged<TSelf*, char*, int> put_direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_direction;
+        public delegate* unmanaged<TSelf*, char**, int> get_direction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_behavior;
+        public delegate* unmanaged<TSelf*, char*, int> put_behavior;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_behavior;
+        public delegate* unmanaged<TSelf*, char**, int> get_behavior;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_position;
+        public delegate* unmanaged<TSelf*, char*, int> put_position;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_position;
+        public delegate* unmanaged<TSelf*, char**, int> get_position;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_unicodeBidi;
+        public delegate* unmanaged<TSelf*, char*, int> put_unicodeBidi;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_unicodeBidi;
+        public delegate* unmanaged<TSelf*, char**, int> get_unicodeBidi;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_bottom;
@@ -4733,28 +4733,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_right;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_imeMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_imeMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_imeMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_imeMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyAlign;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyAlign;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyPosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyPosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyOverhang;
+        public delegate* unmanaged<TSelf*, char*, int> put_rubyOverhang;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyOverhang;
+        public delegate* unmanaged<TSelf*, char**, int> get_rubyOverhang;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_layoutGridChar;
@@ -4769,52 +4769,52 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_layoutGridLine;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridType;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridType;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGrid;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGrid;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAutospace;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAutospace;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_wordBreak;
+        public delegate* unmanaged<TSelf*, char*, int> put_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wordBreak;
+        public delegate* unmanaged<TSelf*, char**, int> get_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_lineBreak;
+        public delegate* unmanaged<TSelf*, char*, int> put_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_lineBreak;
+        public delegate* unmanaged<TSelf*, char**, int> get_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustify;
+        public delegate* unmanaged<TSelf*, char*, int> put_textJustify;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustify;
+        public delegate* unmanaged<TSelf*, char**, int> get_textJustify;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, char*, int> put_textJustifyTrim;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, char**, int> get_textJustifyTrim;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashida;
@@ -4823,28 +4823,28 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashida;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowX;
+        public delegate* unmanaged<TSelf*, char*, int> put_overflowX;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowX;
+        public delegate* unmanaged<TSelf*, char**, int> get_overflowX;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowY;
+        public delegate* unmanaged<TSelf*, char*, int> put_overflowY;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowY;
+        public delegate* unmanaged<TSelf*, char**, int> get_overflowY;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_accelerator;
+        public delegate* unmanaged<TSelf*, char*, int> put_accelerator;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_accelerator;
+        public delegate* unmanaged<TSelf*, char**, int> get_accelerator;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutFlow;
+        public delegate* unmanaged<TSelf*, char*, int> put_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutFlow;
+        public delegate* unmanaged<TSelf*, char**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_zoom;
@@ -4853,16 +4853,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_wordWrap;
+        public delegate* unmanaged<TSelf*, char*, int> put_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wordWrap;
+        public delegate* unmanaged<TSelf*, char**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, char*, int> put_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, char**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarBaseColor;
@@ -4913,16 +4913,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_writingMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_writingMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_writingMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlignLast;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAlignLast;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlignLast;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashidaSpace;
@@ -4931,10 +4931,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashidaSpace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textOverflow;
+        public delegate* unmanaged<TSelf*, char*, int> put_textOverflow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textOverflow;
+        public delegate* unmanaged<TSelf*, char**, int> get_textOverflow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_minHeight;
@@ -4943,10 +4943,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_minHeight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, char*, int> put_msInterpolationMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_msInterpolationMode;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_maxHeight;
@@ -4967,34 +4967,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_content;
+        public delegate* unmanaged<TSelf*, char*, int> put_content;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_content;
+        public delegate* unmanaged<TSelf*, char**, int> get_content;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_captionSide;
+        public delegate* unmanaged<TSelf*, char*, int> put_captionSide;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_captionSide;
+        public delegate* unmanaged<TSelf*, char**, int> get_captionSide;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_counterIncrement;
+        public delegate* unmanaged<TSelf*, char*, int> put_counterIncrement;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_counterIncrement;
+        public delegate* unmanaged<TSelf*, char**, int> get_counterIncrement;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_counterReset;
+        public delegate* unmanaged<TSelf*, char*, int> put_counterReset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_counterReset;
+        public delegate* unmanaged<TSelf*, char**, int> get_counterReset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_outline;
+        public delegate* unmanaged<TSelf*, char*, int> put_outline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_outline;
+        public delegate* unmanaged<TSelf*, char**, int> get_outline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_outlineWidth;
@@ -5003,10 +5003,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_outlineStyle;
+        public delegate* unmanaged<TSelf*, char*, int> put_outlineStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_outlineStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_outlineStyle;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_outlineColor;
@@ -5015,16 +5015,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_boxSizing;
+        public delegate* unmanaged<TSelf*, char*, int> put_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_boxSizing;
+        public delegate* unmanaged<TSelf*, char**, int> get_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderSpacing;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderSpacing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderSpacing;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderSpacing;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_orphans;
@@ -5039,34 +5039,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_widows;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakInside;
+        public delegate* unmanaged<TSelf*, char*, int> put_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakInside;
+        public delegate* unmanaged<TSelf*, char**, int> get_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_emptyCells;
+        public delegate* unmanaged<TSelf*, char*, int> put_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_emptyCells;
+        public delegate* unmanaged<TSelf*, char**, int> get_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_msBlockProgression;
+        public delegate* unmanaged<TSelf*, char*, int> put_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msBlockProgression;
+        public delegate* unmanaged<TSelf*, char**, int> get_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_quotes;
+        public delegate* unmanaged<TSelf*, char*, int> put_quotes;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_quotes;
+        public delegate* unmanaged<TSelf*, char**, int> get_quotes;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_alignmentBaseline;
+        public delegate* unmanaged<TSelf*, char*, int> put_alignmentBaseline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_alignmentBaseline;
+        public delegate* unmanaged<TSelf*, char**, int> get_alignmentBaseline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_baselineShift;
@@ -5075,10 +5075,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_baselineShift;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_dominantBaseline;
+        public delegate* unmanaged<TSelf*, char*, int> put_dominantBaseline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_dominantBaseline;
+        public delegate* unmanaged<TSelf*, char**, int> get_dominantBaseline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_fontSizeAdjust;
@@ -5087,10 +5087,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_fontSizeAdjust;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fontStretch;
+        public delegate* unmanaged<TSelf*, char*, int> put_fontStretch;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fontStretch;
+        public delegate* unmanaged<TSelf*, char**, int> get_fontStretch;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_opacity;
@@ -5099,22 +5099,22 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_opacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_clipPath;
+        public delegate* unmanaged<TSelf*, char*, int> put_clipPath;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_clipPath;
+        public delegate* unmanaged<TSelf*, char**, int> get_clipPath;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_clipRule;
+        public delegate* unmanaged<TSelf*, char*, int> put_clipRule;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_clipRule;
+        public delegate* unmanaged<TSelf*, char**, int> get_clipRule;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fill;
+        public delegate* unmanaged<TSelf*, char*, int> put_fill;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fill;
+        public delegate* unmanaged<TSelf*, char**, int> get_fill;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_fillOpacity;
@@ -5123,10 +5123,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_fillOpacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_fillRule;
+        public delegate* unmanaged<TSelf*, char*, int> put_fillRule;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fillRule;
+        public delegate* unmanaged<TSelf*, char**, int> get_fillRule;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_kerning;
@@ -5135,40 +5135,40 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_kerning;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_marker;
+        public delegate* unmanaged<TSelf*, char*, int> put_marker;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_marker;
+        public delegate* unmanaged<TSelf*, char**, int> get_marker;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_markerEnd;
+        public delegate* unmanaged<TSelf*, char*, int> put_markerEnd;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_markerEnd;
+        public delegate* unmanaged<TSelf*, char**, int> get_markerEnd;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_markerMid;
+        public delegate* unmanaged<TSelf*, char*, int> put_markerMid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_markerMid;
+        public delegate* unmanaged<TSelf*, char**, int> get_markerMid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_markerStart;
+        public delegate* unmanaged<TSelf*, char*, int> put_markerStart;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_markerStart;
+        public delegate* unmanaged<TSelf*, char**, int> get_markerStart;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_mask;
+        public delegate* unmanaged<TSelf*, char*, int> put_mask;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_mask;
+        public delegate* unmanaged<TSelf*, char**, int> get_mask;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_pointerEvents;
+        public delegate* unmanaged<TSelf*, char*, int> put_pointerEvents;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_pointerEvents;
+        public delegate* unmanaged<TSelf*, char**, int> get_pointerEvents;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_stopColor;
@@ -5183,16 +5183,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_stopOpacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_stroke;
+        public delegate* unmanaged<TSelf*, char*, int> put_stroke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_stroke;
+        public delegate* unmanaged<TSelf*, char**, int> get_stroke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeDasharray;
+        public delegate* unmanaged<TSelf*, char*, int> put_strokeDasharray;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeDasharray;
+        public delegate* unmanaged<TSelf*, char**, int> get_strokeDasharray;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeDashoffset;
@@ -5201,16 +5201,16 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeDashoffset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeLinecap;
+        public delegate* unmanaged<TSelf*, char*, int> put_strokeLinecap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeLinecap;
+        public delegate* unmanaged<TSelf*, char**, int> get_strokeLinecap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeLinejoin;
+        public delegate* unmanaged<TSelf*, char*, int> put_strokeLinejoin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeLinejoin;
+        public delegate* unmanaged<TSelf*, char**, int> get_strokeLinejoin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeMiterlimit;
@@ -5231,10 +5231,10 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_textAnchor;
+        public delegate* unmanaged<TSelf*, char*, int> put_textAnchor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textAnchor;
+        public delegate* unmanaged<TSelf*, char**, int> get_textAnchor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_glyphOrientationHorizontal;
@@ -5249,34 +5249,34 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_glyphOrientationVertical;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRadius;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRadius;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopLeftRadius;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderTopLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopLeftRadius;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderTopLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopRightRadius;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderTopRightRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopRightRadius;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderTopRightRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomRightRadius;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderBottomRightRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomRightRadius;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderBottomRightRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomLeftRadius;
+        public delegate* unmanaged<TSelf*, char*, int> put_borderBottomLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomLeftRadius;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderBottomLeftRadius;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_clipTop;
@@ -5300,45 +5300,45 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_clipLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_cssFloat;
+        public delegate* unmanaged<TSelf*, char*, int> put_cssFloat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cssFloat;
+        public delegate* unmanaged<TSelf*, char**, int> get_cssFloat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundClip;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundClip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundClip;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundClip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundOrigin;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundOrigin;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundSize;
+        public delegate* unmanaged<TSelf*, char*, int> put_backgroundSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundSize;
+        public delegate* unmanaged<TSelf*, char**, int> get_backgroundSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_boxShadow;
+        public delegate* unmanaged<TSelf*, char*, int> put_boxShadow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_boxShadow;
+        public delegate* unmanaged<TSelf*, char**, int> get_boxShadow;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_msTransform;
+        public delegate* unmanaged<TSelf*, char*, int> put_msTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msTransform;
+        public delegate* unmanaged<TSelf*, char**, int> get_msTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_msTransformOrigin;
+        public delegate* unmanaged<TSelf*, char*, int> put_msTransformOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msTransformOrigin;
+        public delegate* unmanaged<TSelf*, char**, int> get_msTransformOrigin;
     }
 }

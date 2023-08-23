@@ -31,7 +31,7 @@ public unsafe partial struct DIDEVICEOBJECTINSTANCE
 
     /// <include file='DIDEVICEOBJECTINSTANCE.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE.tszName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort tszName[260];
+    public fixed char tszName[260];
 
     /// <include file='DIDEVICEOBJECTINSTANCE.xml' path='doc/member[@name="DIDEVICEOBJECTINSTANCE.dwFFMaxForce"]/*' />
     [NativeTypeName("DWORD")]

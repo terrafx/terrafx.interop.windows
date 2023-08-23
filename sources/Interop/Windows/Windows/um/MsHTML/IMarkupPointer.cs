@@ -137,17 +137,17 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
     /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+    public HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText)
     {
-        return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[14]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+        return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int>)(lpVtbl[14]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
     /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.Right"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText)
+    public HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText)
     {
-        return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int>)(lpVtbl[15]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
+        return ((delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int>)(lpVtbl[15]))((IMarkupPointer*)Unsafe.AsPointer(ref this), fMove, pContext, ppElement, pcch, pchText);
     }
 
     /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.CurrentScope"]/*' />
@@ -209,9 +209,9 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
     /// <include file='IMarkupPointer.xml' path='doc/member[@name="IMarkupPointer.FindTextW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)
+    public HRESULT FindTextW([NativeTypeName("OLECHAR *")] char* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch)
     {
-        return ((delegate* unmanaged<IMarkupPointer*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pchFindText, dwFlags, pIEndMatch, pIEndSearch);
+        return ((delegate* unmanaged<IMarkupPointer*, char*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[23]))((IMarkupPointer*)Unsafe.AsPointer(ref this), pchFindText, dwFlags, pIEndMatch, pIEndSearch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -250,10 +250,10 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
         HRESULT MoveToContainer(IMarkupContainer* pContainer, BOOL fAtStart);
 
         [VtblIndex(14)]
-        HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText);
+        HRESULT Left(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText);
 
         [VtblIndex(15)]
-        HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] ushort* pchText);
+        HRESULT Right(BOOL fMove, MARKUP_CONTEXT_TYPE* pContext, IHTMLElement** ppElement, [NativeTypeName("long *")] int* pcch, [NativeTypeName("OLECHAR *")] char* pchText);
 
         [VtblIndex(16)]
         HRESULT CurrentScope(IHTMLElement** ppElemCurrent);
@@ -277,7 +277,7 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
         HRESULT MoveUnit(MOVEUNIT_ACTION muAction);
 
         [VtblIndex(23)]
-        HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch);
+        HRESULT FindTextW([NativeTypeName("OLECHAR *")] char* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch);
     }
 
     public partial struct Vtbl<TSelf>
@@ -326,10 +326,10 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
         public delegate* unmanaged<TSelf*, IMarkupContainer*, BOOL, int> MoveToContainer;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Left;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int> Left;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Right;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, char*, int> Right;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLElement**, int> CurrentScope;
@@ -353,6 +353,6 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface, INativeG
         public delegate* unmanaged<TSelf*, MOVEUNIT_ACTION, int> MoveUnit;
 
         [NativeTypeName("HRESULT (OLECHAR *, DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
+        public delegate* unmanaged<TSelf*, char*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
     }
 }

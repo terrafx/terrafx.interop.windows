@@ -51,9 +51,9 @@ public unsafe partial struct IAppxBlockMapReader : IAppxBlockMapReader.Interface
     /// <include file='IAppxBlockMapReader.xml' path='doc/member[@name="IAppxBlockMapReader.GetFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetFile([NativeTypeName("LPCWSTR")] ushort* filename, IAppxBlockMapFile** file)
+    public HRESULT GetFile([NativeTypeName("LPCWSTR")] char* filename, IAppxBlockMapFile** file)
     {
-        return ((delegate* unmanaged<IAppxBlockMapReader*, ushort*, IAppxBlockMapFile**, int>)(lpVtbl[3]))((IAppxBlockMapReader*)Unsafe.AsPointer(ref this), filename, file);
+        return ((delegate* unmanaged<IAppxBlockMapReader*, char*, IAppxBlockMapFile**, int>)(lpVtbl[3]))((IAppxBlockMapReader*)Unsafe.AsPointer(ref this), filename, file);
     }
 
     /// <include file='IAppxBlockMapReader.xml' path='doc/member[@name="IAppxBlockMapReader.GetFiles"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAppxBlockMapReader : IAppxBlockMapReader.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetFile([NativeTypeName("LPCWSTR")] ushort* filename, IAppxBlockMapFile** file);
+        HRESULT GetFile([NativeTypeName("LPCWSTR")] char* filename, IAppxBlockMapFile** file);
 
         [VtblIndex(4)]
         HRESULT GetFiles(IAppxBlockMapFilesEnumerator** enumerator);
@@ -108,7 +108,7 @@ public unsafe partial struct IAppxBlockMapReader : IAppxBlockMapReader.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxBlockMapFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IAppxBlockMapFile**, int> GetFile;
+        public delegate* unmanaged<TSelf*, char*, IAppxBlockMapFile**, int> GetFile;
 
         [NativeTypeName("HRESULT (IAppxBlockMapFilesEnumerator **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IAppxBlockMapFilesEnumerator**, int> GetFiles;

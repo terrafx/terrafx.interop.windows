@@ -49,9 +49,9 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.EvaluateUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, BOOL* pfAllowed)
+    public HRESULT EvaluateUrl([NativeTypeName("BSTR")] char* bstrUrl, BOOL* pfAllowed)
     {
-        return ((delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
+        return ((delegate* unmanaged<ITrackingProtection*, char*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
     }
 
     /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.GetEnabled"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, BOOL* pfAllowed);
+        HRESULT EvaluateUrl([NativeTypeName("BSTR")] char* bstrUrl, BOOL* pfAllowed);
 
         [VtblIndex(4)]
         HRESULT GetEnabled(BOOL* pfEnabled);
@@ -84,7 +84,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> EvaluateUrl;
+        public delegate* unmanaged<TSelf*, char*, BOOL*, int> EvaluateUrl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> GetEnabled;

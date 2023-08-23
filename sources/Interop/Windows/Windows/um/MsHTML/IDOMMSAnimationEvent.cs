@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMSAnimationEvent : IDOMMSAnimationEvent.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMSAnimationEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMSAnimationEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IDOMMSAnimationEvent : IDOMMSAnimationEvent.Interfa
     /// <include file='IDOMMSAnimationEvent.xml' path='doc/member[@name="IDOMMSAnimationEvent.get_animationName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_animationName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_animationName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMMSAnimationEvent*, ushort**, int>)(lpVtbl[7]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMMSAnimationEvent*, char**, int>)(lpVtbl[7]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMSAnimationEvent.xml' path='doc/member[@name="IDOMMSAnimationEvent.get_elapsedTime"]/*' />
@@ -97,21 +97,21 @@ public unsafe partial struct IDOMMSAnimationEvent : IDOMMSAnimationEvent.Interfa
     /// <include file='IDOMMSAnimationEvent.xml' path='doc/member[@name="IDOMMSAnimationEvent.initMSAnimationEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT initMSAnimationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* animationName, float elapsedTime)
+    public HRESULT initMSAnimationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* animationName, float elapsedTime)
     {
-        return ((delegate* unmanaged<IDOMMSAnimationEvent*, ushort*, short, short, ushort*, float, int>)(lpVtbl[9]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, animationName, elapsedTime);
+        return ((delegate* unmanaged<IDOMMSAnimationEvent*, char*, short, short, char*, float, int>)(lpVtbl[9]))((IDOMMSAnimationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, animationName, elapsedTime);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_animationName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_animationName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_elapsedTime(float* p);
 
         [VtblIndex(9)]
-        HRESULT initMSAnimationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] ushort* animationName, float elapsedTime);
+        HRESULT initMSAnimationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("BSTR")] char* animationName, float elapsedTime);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct IDOMMSAnimationEvent : IDOMMSAnimationEvent.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_animationName;
+        public delegate* unmanaged<TSelf*, char**, int> get_animationName;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, float*, int> get_elapsedTime;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, BSTR, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, ushort*, float, int> initMSAnimationEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, char*, float, int> initMSAnimationEvent;
     }
 }

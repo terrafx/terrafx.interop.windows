@@ -52,16 +52,16 @@ public unsafe partial struct INotificationActivationCallback : INotificationActi
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [SupportedOSPlatform("windows10.0")]
-    public HRESULT Activate([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count)
+    public HRESULT Activate([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count)
     {
-        return ((delegate* unmanaged<INotificationActivationCallback*, ushort*, ushort*, NOTIFICATION_USER_INPUT_DATA*, uint, int>)(lpVtbl[3]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), appUserModelId, invokedArgs, data, count);
+        return ((delegate* unmanaged<INotificationActivationCallback*, char*, char*, NOTIFICATION_USER_INPUT_DATA*, uint, int>)(lpVtbl[3]))((INotificationActivationCallback*)Unsafe.AsPointer(ref this), appUserModelId, invokedArgs, data, count);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
         [SupportedOSPlatform("windows10.0")]
-        HRESULT Activate([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count);
+        HRESULT Activate([NativeTypeName("LPCWSTR")] char* appUserModelId, [NativeTypeName("LPCWSTR")] char* invokedArgs, [NativeTypeName("const NOTIFICATION_USER_INPUT_DATA *")] NOTIFICATION_USER_INPUT_DATA* data, [NativeTypeName("ULONG")] uint count);
     }
 
     public partial struct Vtbl<TSelf>
@@ -78,6 +78,6 @@ public unsafe partial struct INotificationActivationCallback : INotificationActi
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, const NOTIFICATION_USER_INPUT_DATA *, ULONG) __attribute__((stdcall))")]
         [SupportedOSPlatform("windows10.0")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, NOTIFICATION_USER_INPUT_DATA*, uint, int> Activate;
+        public delegate* unmanaged<TSelf*, char*, char*, NOTIFICATION_USER_INPUT_DATA*, uint, int> Activate;
     }
 }

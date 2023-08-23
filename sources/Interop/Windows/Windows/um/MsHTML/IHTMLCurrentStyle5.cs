@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_captionSide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_captionSide([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[7]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[7]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_outline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_outline([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[8]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[8]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_outlineWidth"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_outlineStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_outlineStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[10]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[10]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_outlineColor"]/*' />
@@ -121,17 +121,17 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_boxSizing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_boxSizing([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[12]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[12]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_borderSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_borderSpacing([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[13]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[13]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_orphans"]/*' />
@@ -153,57 +153,57 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_pageBreakInside"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[16]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[16]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_emptyCells"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_emptyCells([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[17]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[17]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_msBlockProgression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[18]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[18]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle5.xml' path='doc/member[@name="IHTMLCurrentStyle5.get_quotes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_quotes([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int>)(lpVtbl[19]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle5*, char**, int>)(lpVtbl[19]))((IHTMLCurrentStyle5*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_captionSide([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_captionSide([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_outline([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_outline([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
         HRESULT get_outlineWidth(VARIANT* p);
 
         [VtblIndex(10)]
-        HRESULT get_outlineStyle([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_outlineStyle([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT get_outlineColor(VARIANT* p);
 
         [VtblIndex(12)]
-        HRESULT get_boxSizing([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_boxSizing([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT get_borderSpacing([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_borderSpacing([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(14)]
         HRESULT get_orphans(VARIANT* p);
@@ -212,16 +212,16 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
         HRESULT get_widows(VARIANT* p);
 
         [VtblIndex(16)]
-        HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_pageBreakInside([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(17)]
-        HRESULT get_emptyCells([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_emptyCells([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(18)]
-        HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msBlockProgression([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
-        HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_quotes([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -243,31 +243,31 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_captionSide;
+        public delegate* unmanaged<TSelf*, char**, int> get_captionSide;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_outline;
+        public delegate* unmanaged<TSelf*, char**, int> get_outline;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_outlineStyle;
+        public delegate* unmanaged<TSelf*, char**, int> get_outlineStyle;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_boxSizing;
+        public delegate* unmanaged<TSelf*, char**, int> get_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_borderSpacing;
+        public delegate* unmanaged<TSelf*, char**, int> get_borderSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_orphans;
@@ -276,15 +276,15 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface, 
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_widows;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakInside;
+        public delegate* unmanaged<TSelf*, char**, int> get_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_emptyCells;
+        public delegate* unmanaged<TSelf*, char**, int> get_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msBlockProgression;
+        public delegate* unmanaged<TSelf*, char**, int> get_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_quotes;
+        public delegate* unmanaged<TSelf*, char**, int> get_quotes;
     }
 }

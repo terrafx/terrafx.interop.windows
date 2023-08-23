@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLAppBehavior3 : IHTMLAppBehavior3.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLAppBehavior3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IHTMLAppBehavior3 : IHTMLAppBehavior3.Interface, IN
     /// <include file='IHTMLAppBehavior3.xml' path='doc/member[@name="IHTMLAppBehavior3.put_navigable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_navigable([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_navigable([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior3*, ushort*, int>)(lpVtbl[7]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLAppBehavior3*, char*, int>)(lpVtbl[7]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLAppBehavior3.xml' path='doc/member[@name="IHTMLAppBehavior3.get_navigable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_navigable([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_navigable([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLAppBehavior3*, ushort**, int>)(lpVtbl[8]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLAppBehavior3*, char**, int>)(lpVtbl[8]))((IHTMLAppBehavior3*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_navigable([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_navigable([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_navigable([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_navigable([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IHTMLAppBehavior3 : IHTMLAppBehavior3.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_navigable;
+        public delegate* unmanaged<TSelf*, char*, int> put_navigable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_navigable;
+        public delegate* unmanaged<TSelf*, char**, int> get_navigable;
     }
 }

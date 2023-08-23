@@ -65,9 +65,9 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<FolderItem2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItem2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<FolderItem2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItem2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,25 +97,25 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
     /// <inheritdoc cref="FolderItem.get_Name" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<FolderItem2*, ushort**, int>)(lpVtbl[9]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<FolderItem2*, char**, int>)(lpVtbl[9]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="FolderItem.put_Name" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_Name([NativeTypeName("BSTR")] ushort* bs)
+    public HRESULT put_Name([NativeTypeName("BSTR")] char* bs)
     {
-        return ((delegate* unmanaged<FolderItem2*, ushort*, int>)(lpVtbl[10]))((FolderItem2*)Unsafe.AsPointer(ref this), bs);
+        return ((delegate* unmanaged<FolderItem2*, char*, int>)(lpVtbl[10]))((FolderItem2*)Unsafe.AsPointer(ref this), bs);
     }
 
     /// <inheritdoc cref="FolderItem.get_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Path([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<FolderItem2*, ushort**, int>)(lpVtbl[11]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<FolderItem2*, char**, int>)(lpVtbl[11]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="FolderItem.get_GetLink" />
@@ -193,9 +193,9 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
     /// <inheritdoc cref="FolderItem.get_Type" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_Type([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Type([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<FolderItem2*, ushort**, int>)(lpVtbl[21]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<FolderItem2*, char**, int>)(lpVtbl[21]))((FolderItem2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="FolderItem.Verbs" />
@@ -225,9 +225,9 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
     /// <include file='FolderItem2.xml' path='doc/member[@name="FolderItem2.ExtendedProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT ExtendedProperty([NativeTypeName("BSTR")] ushort* bstrPropName, VARIANT* pvRet)
+    public HRESULT ExtendedProperty([NativeTypeName("BSTR")] char* bstrPropName, VARIANT* pvRet)
     {
-        return ((delegate* unmanaged<FolderItem2*, ushort*, VARIANT*, int>)(lpVtbl[25]))((FolderItem2*)Unsafe.AsPointer(ref this), bstrPropName, pvRet);
+        return ((delegate* unmanaged<FolderItem2*, char*, VARIANT*, int>)(lpVtbl[25]))((FolderItem2*)Unsafe.AsPointer(ref this), bstrPropName, pvRet);
     }
 
     public interface Interface : FolderItem.Interface
@@ -236,7 +236,7 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
         HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs);
 
         [VtblIndex(25)]
-        HRESULT ExtendedProperty([NativeTypeName("BSTR")] ushort* bstrPropName, VARIANT* pvRet);
+        HRESULT ExtendedProperty([NativeTypeName("BSTR")] char* bstrPropName, VARIANT* pvRet);
     }
 
     public partial struct Vtbl<TSelf>
@@ -258,7 +258,7 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -270,13 +270,13 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Name;
+        public delegate* unmanaged<TSelf*, char*, int> put_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Path;
+        public delegate* unmanaged<TSelf*, char**, int> get_Path;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_GetLink;
@@ -306,7 +306,7 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_Size;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Type;
+        public delegate* unmanaged<TSelf*, char**, int> get_Type;
 
         [NativeTypeName("HRESULT (FolderItemVerbs **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, FolderItemVerbs**, int> Verbs;
@@ -318,6 +318,6 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT, VARIANT, int> InvokeVerbEx;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> ExtendedProperty;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> ExtendedProperty;
     }
 }

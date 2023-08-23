@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMAttribute4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDOMAttribute4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,33 +97,33 @@ public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface, 
     /// <include file='IHTMLDOMAttribute4.xml' path='doc/member[@name="IHTMLDOMAttribute4.get_nodeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_nodeName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDOMAttribute4*, ushort**, int>)(lpVtbl[9]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDOMAttribute4*, char**, int>)(lpVtbl[9]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDOMAttribute4.xml' path='doc/member[@name="IHTMLDOMAttribute4.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDOMAttribute4*, ushort**, int>)(lpVtbl[10]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDOMAttribute4*, char**, int>)(lpVtbl[10]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDOMAttribute4.xml' path='doc/member[@name="IHTMLDOMAttribute4.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDOMAttribute4*, ushort*, int>)(lpVtbl[11]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLDOMAttribute4*, char*, int>)(lpVtbl[11]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDOMAttribute4.xml' path='doc/member[@name="IHTMLDOMAttribute4.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDOMAttribute4*, ushort**, int>)(lpVtbl[12]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDOMAttribute4*, char**, int>)(lpVtbl[12]))((IHTMLDOMAttribute4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDOMAttribute4.xml' path='doc/member[@name="IHTMLDOMAttribute4.get_firstChild"]/*' />
@@ -191,16 +191,16 @@ public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface, 
         HRESULT get_nodeValue(VARIANT* p);
 
         [VtblIndex(9)]
-        HRESULT get_nodeName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_nodeName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_value([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_value([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
         HRESULT get_firstChild(IHTMLDOMNode** p);
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -255,16 +255,16 @@ public unsafe partial struct IHTMLDOMAttribute4 : IHTMLDOMAttribute4.Interface, 
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeName;
+        public delegate* unmanaged<TSelf*, char**, int> get_nodeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_value;
+        public delegate* unmanaged<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_value;
+        public delegate* unmanaged<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLDOMNode**, int> get_firstChild;

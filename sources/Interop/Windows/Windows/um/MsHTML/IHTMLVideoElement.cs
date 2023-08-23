@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLVideoElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLVideoElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -129,17 +129,17 @@ public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface, IN
     /// <include file='IHTMLVideoElement.xml' path='doc/member[@name="IHTMLVideoElement.put_poster"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_poster([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_poster([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLVideoElement*, ushort*, int>)(lpVtbl[13]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLVideoElement*, char*, int>)(lpVtbl[13]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLVideoElement.xml' path='doc/member[@name="IHTMLVideoElement.get_poster"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_poster([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLVideoElement*, ushort**, int>)(lpVtbl[14]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLVideoElement*, char**, int>)(lpVtbl[14]))((IHTMLVideoElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -163,10 +163,10 @@ public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface, IN
         HRESULT get_videoHeight([NativeTypeName("ULONG *")] uint* p);
 
         [VtblIndex(13)]
-        HRESULT put_poster([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_poster([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_poster([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_poster([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,7 +188,7 @@ public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -212,9 +212,9 @@ public unsafe partial struct IHTMLVideoElement : IHTMLVideoElement.Interface, IN
         public delegate* unmanaged<TSelf*, uint*, int> get_videoHeight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_poster;
+        public delegate* unmanaged<TSelf*, char*, int> put_poster;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_poster;
+        public delegate* unmanaged<TSelf*, char**, int> get_poster;
     }
 }

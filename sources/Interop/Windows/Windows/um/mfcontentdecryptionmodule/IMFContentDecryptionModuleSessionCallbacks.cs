@@ -51,9 +51,9 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     /// <include file='IMFContentDecryptionModuleSessionCallbacks.xml' path='doc/member[@name="IMFContentDecryptionModuleSessionCallbacks.KeyMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] ushort* destinationURL)
+    public HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] char* destinationURL)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, ushort*, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), messageType, message, messageSize, destinationURL);
+        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), messageType, message, messageSize, destinationURL);
     }
 
     /// <include file='IMFContentDecryptionModuleSessionCallbacks.xml' path='doc/member[@name="IMFContentDecryptionModuleSessionCallbacks.KeyStatusChanged"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] ushort* destinationURL);
+        HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] char* destinationURL);
 
         [VtblIndex(4)]
         HRESULT KeyStatusChanged();
@@ -86,7 +86,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_MESSAGETYPE, const BYTE *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, ushort*, int> KeyMessage;
+        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int> KeyMessage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> KeyStatusChanged;

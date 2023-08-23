@@ -49,15 +49,15 @@ public unsafe partial struct IAppxDigestProvider : IAppxDigestProvider.Interface
     /// <include file='IAppxDigestProvider.xml' path='doc/member[@name="IAppxDigestProvider.GetDigest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDigest([NativeTypeName("LPWSTR *")] ushort** digest)
+    public HRESULT GetDigest([NativeTypeName("LPWSTR *")] char** digest)
     {
-        return ((delegate* unmanaged<IAppxDigestProvider*, ushort**, int>)(lpVtbl[3]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), digest);
+        return ((delegate* unmanaged<IAppxDigestProvider*, char**, int>)(lpVtbl[3]))((IAppxDigestProvider*)Unsafe.AsPointer(ref this), digest);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDigest([NativeTypeName("LPWSTR *")] ushort** digest);
+        HRESULT GetDigest([NativeTypeName("LPWSTR *")] char** digest);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAppxDigestProvider : IAppxDigestProvider.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDigest;
+        public delegate* unmanaged<TSelf*, char**, int> GetDigest;
     }
 }

@@ -36,7 +36,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoLoadLibrary"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HINSTANCE CoLoadLibrary([NativeTypeName("LPOLESTR")] ushort* lpszLibName, BOOL bAutoFree);
+    public static extern HINSTANCE CoLoadLibrary([NativeTypeName("LPOLESTR")] char* lpszLibName, BOOL bAutoFree);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoFreeLibrary"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -48,7 +48,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetInstanceFromFile"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, [NativeTypeName("CLSID *")] Guid* pClsid, IUnknown* punkOuter, [NativeTypeName("DWORD")] uint dwClsCtx, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("OLECHAR *")] ushort* pwszName, [NativeTypeName("DWORD")] uint dwCount, MULTI_QI* pResults);
+    public static extern HRESULT CoGetInstanceFromFile(COSERVERINFO* pServerInfo, [NativeTypeName("CLSID *")] Guid* pClsid, IUnknown* punkOuter, [NativeTypeName("DWORD")] uint dwClsCtx, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("OLECHAR *")] char* pwszName, [NativeTypeName("DWORD")] uint dwCount, MULTI_QI* pResults);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetInstanceFromIStorage"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -100,11 +100,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgGetIFillLockBytesOnFile"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgGetIFillLockBytesOnFile([NativeTypeName("const OLECHAR *")] ushort* pwcsName, IFillLockBytes** ppflb);
+    public static extern HRESULT StgGetIFillLockBytesOnFile([NativeTypeName("const OLECHAR *")] char* pwcsName, IFillLockBytes** ppflb);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInstall"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoInstall(IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwFlags, uCLSSPEC* pClassSpec, QUERYCONTEXT* pQuery, [NativeTypeName("LPWSTR")] ushort* pszCodeBase);
+    public static extern HRESULT CoInstall(IBindCtx* pbc, [NativeTypeName("DWORD")] uint dwFlags, uCLSSPEC* pClassSpec, QUERYCONTEXT* pQuery, [NativeTypeName("LPWSTR")] char* pszCodeBase);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.BindMoniker"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -112,11 +112,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoGetObject"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CoGetObject([NativeTypeName("LPCWSTR")] ushort* pszName, BIND_OPTS* pBindOptions, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT CoGetObject([NativeTypeName("LPCWSTR")] char* pszName, BIND_OPTS* pBindOptions, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MkParseDisplayName"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT MkParseDisplayName([NativeTypeName("LPBC")] IBindCtx* pbc, [NativeTypeName("LPCOLESTR")] ushort* szUserName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+    public static extern HRESULT MkParseDisplayName([NativeTypeName("LPBC")] IBindCtx* pbc, [NativeTypeName("LPCOLESTR")] char* szUserName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MonikerRelativePathTo"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -136,7 +136,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassFile"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT GetClassFile([NativeTypeName("LPCOLESTR")] ushort* szFilename, [NativeTypeName("CLSID *")] Guid* pclsid);
+    public static extern HRESULT GetClassFile([NativeTypeName("LPCOLESTR")] char* szFilename, [NativeTypeName("CLSID *")] Guid* pclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateClassMoniker"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -144,11 +144,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMoniker"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CreateFileMoniker([NativeTypeName("LPCOLESTR")] ushort* lpszPathName, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+    public static extern HRESULT CreateFileMoniker([NativeTypeName("LPCOLESTR")] char* lpszPathName, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateItemMoniker"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT CreateItemMoniker([NativeTypeName("LPCOLESTR")] ushort* lpszDelim, [NativeTypeName("LPCOLESTR")] ushort* lpszItem, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
+    public static extern HRESULT CreateItemMoniker([NativeTypeName("LPCOLESTR")] char* lpszDelim, [NativeTypeName("LPCOLESTR")] char* lpszItem, [NativeTypeName("LPMONIKER *")] IMoniker** ppmk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAntiMoniker"]/*' />
     [DllImport("ole32", ExactSpelling = true)]

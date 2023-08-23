@@ -65,9 +65,9 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IClientCaps*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IClientCaps*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IClientCaps*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IClientCaps*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,33 +97,33 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_cpuClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_cpuClass([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[9]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IClientCaps*, char**, int>)(lpVtbl[9]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_systemLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[10]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IClientCaps*, char**, int>)(lpVtbl[10]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_userLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_userLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[11]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IClientCaps*, char**, int>)(lpVtbl[11]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_platform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_platform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[12]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IClientCaps*, char**, int>)(lpVtbl[12]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_connectionSpeed"]/*' />
@@ -193,41 +193,41 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.get_connectionType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_connectionType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_connectionType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort**, int>)(lpVtbl[21]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IClientCaps*, char**, int>)(lpVtbl[21]))((IClientCaps*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.isComponentInstalled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT isComponentInstalled([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT isComponentInstalled([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, short*, int>)(lpVtbl[22]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer, p);
+        return ((delegate* unmanaged<IClientCaps*, char*, char*, char*, short*, int>)(lpVtbl[22]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer, p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.getComponentVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT getComponentVersion([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrVer)
+    public HRESULT getComponentVersion([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR *")] char** pbstrVer)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort**, int>)(lpVtbl[23]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, pbstrVer);
+        return ((delegate* unmanaged<IClientCaps*, char*, char*, char**, int>)(lpVtbl[23]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, pbstrVer);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.compareVersions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT compareVersions([NativeTypeName("BSTR")] ushort* bstrVer1, [NativeTypeName("BSTR")] ushort* bstrVer2, [NativeTypeName("long *")] int* p)
+    public HRESULT compareVersions([NativeTypeName("BSTR")] char* bstrVer1, [NativeTypeName("BSTR")] char* bstrVer2, [NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, int*, int>)(lpVtbl[24]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrVer1, bstrVer2, p);
+        return ((delegate* unmanaged<IClientCaps*, char*, char*, int*, int>)(lpVtbl[24]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrVer1, bstrVer2, p);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.addComponentRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT addComponentRequest([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer = null)
+    public HRESULT addComponentRequest([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bStrVer = null)
     {
-        return ((delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, int>)(lpVtbl[25]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer);
+        return ((delegate* unmanaged<IClientCaps*, char*, char*, char*, int>)(lpVtbl[25]))((IClientCaps*)Unsafe.AsPointer(ref this), bstrName, bstrUrl, bStrVer);
     }
 
     /// <include file='IClientCaps.xml' path='doc/member[@name="IClientCaps.doComponentRequest"]/*' />
@@ -255,16 +255,16 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
         HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(9)]
-        HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_cpuClass([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_systemLanguage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_userLanguage([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(12)]
-        HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_platform([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
         HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
@@ -291,19 +291,19 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
         HRESULT get_availWidth([NativeTypeName("long *")] int* p);
 
         [VtblIndex(21)]
-        HRESULT get_connectionType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_connectionType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(22)]
-        HRESULT isComponentInstalled([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p);
+        HRESULT isComponentInstalled([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bStrVer, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(23)]
-        HRESULT getComponentVersion([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrVer);
+        HRESULT getComponentVersion([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR *")] char** pbstrVer);
 
         [VtblIndex(24)]
-        HRESULT compareVersions([NativeTypeName("BSTR")] ushort* bstrVer1, [NativeTypeName("BSTR")] ushort* bstrVer2, [NativeTypeName("long *")] int* p);
+        HRESULT compareVersions([NativeTypeName("BSTR")] char* bstrVer1, [NativeTypeName("BSTR")] char* bstrVer2, [NativeTypeName("long *")] int* p);
 
         [VtblIndex(25)]
-        HRESULT addComponentRequest([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bStrVer = null);
+        HRESULT addComponentRequest([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bStrVer = null);
 
         [VtblIndex(26)]
         HRESULT doComponentRequest([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -331,7 +331,7 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -343,16 +343,16 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, short*, int> get_cookieEnabled;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_cpuClass;
+        public delegate* unmanaged<TSelf*, char**, int> get_cpuClass;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_systemLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_userLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> get_userLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_platform;
+        public delegate* unmanaged<TSelf*, char**, int> get_platform;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_connectionSpeed;
@@ -379,19 +379,19 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_availWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_connectionType;
+        public delegate* unmanaged<TSelf*, char**, int> get_connectionType;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, short*, int> isComponentInstalled;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, short*, int> isComponentInstalled;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort**, int> getComponentVersion;
+        public delegate* unmanaged<TSelf*, char*, char*, char**, int> getComponentVersion;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int*, int> compareVersions;
+        public delegate* unmanaged<TSelf*, char*, char*, int*, int> compareVersions;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> addComponentRequest;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, int> addComponentRequest;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> doComponentRequest;

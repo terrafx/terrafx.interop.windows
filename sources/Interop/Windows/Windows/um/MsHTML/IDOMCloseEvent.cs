@@ -65,9 +65,9 @@ public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMCloseEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCloseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMCloseEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCloseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, INativeG
     /// <include file='IDOMCloseEvent.xml' path='doc/member[@name="IDOMCloseEvent.initCloseEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT initCloseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] ushort* reason)
+    public HRESULT initCloseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] char* reason)
     {
-        return ((delegate* unmanaged<IDOMCloseEvent*, ushort*, short, short, short, int, ushort*, int>)(lpVtbl[8]))((IDOMCloseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, wasClean, code, reason);
+        return ((delegate* unmanaged<IDOMCloseEvent*, char*, short, short, short, int, char*, int>)(lpVtbl[8]))((IDOMCloseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, wasClean, code, reason);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, INativeG
         HRESULT get_wasClean([NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(8)]
-        HRESULT initCloseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] ushort* reason);
+        HRESULT initCloseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, [NativeTypeName("VARIANT_BOOL")] short wasClean, [NativeTypeName("long")] int code, [NativeTypeName("BSTR")] char* reason);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IDOMCloseEvent : IDOMCloseEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, short*, int> get_wasClean;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, short, int, ushort*, int> initCloseEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, short, int, char*, int> initCloseEvent;
     }
 }

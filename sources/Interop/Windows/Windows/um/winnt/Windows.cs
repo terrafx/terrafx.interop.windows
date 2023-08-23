@@ -93,7 +93,7 @@ public static partial class Windows
     public const sbyte ANSI_NULL = ((sbyte)(0));
 
     [NativeTypeName("#define UNICODE_NULL ((WCHAR)0)")]
-    public const ushort UNICODE_NULL = ((ushort)(0));
+    public const char UNICODE_NULL = ((char)(0));
 
     [NativeTypeName("#define UNICODE_STRING_MAX_BYTES ((WORD  ) 65534)")]
     public const ushort UNICODE_STRING_MAX_BYTES = ((ushort)(65534));

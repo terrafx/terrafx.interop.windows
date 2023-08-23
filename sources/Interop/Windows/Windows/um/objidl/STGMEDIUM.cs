@@ -69,7 +69,7 @@ public unsafe partial struct STGMEDIUM
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpszFileName"]/*' />
     [UnscopedRef]
-    public ref ushort* lpszFileName
+    public ref char* lpszFileName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -123,7 +123,7 @@ public unsafe partial struct STGMEDIUM
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpszFileName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* lpszFileName;
+        public char* lpszFileName;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pstm"]/*' />
         [FieldOffset(0)]

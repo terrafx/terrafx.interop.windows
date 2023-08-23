@@ -67,9 +67,9 @@ public unsafe partial struct IDWriteFontCollection1 : IDWriteFontCollection1.Int
     /// <inheritdoc cref="IDWriteFontCollection.FindFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT FindFamilyName([NativeTypeName("const WCHAR *")] ushort* familyName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
+    public HRESULT FindFamilyName([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection1*, ushort*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection1*)Unsafe.AsPointer(ref this), familyName, index, exists);
+        return ((delegate* unmanaged<IDWriteFontCollection1*, char*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection1*)Unsafe.AsPointer(ref this), familyName, index, exists);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFromFontFace" />
@@ -124,7 +124,7 @@ public unsafe partial struct IDWriteFontCollection1 : IDWriteFontCollection1.Int
         public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, BOOL*, int> FindFamilyName;
+        public delegate* unmanaged<TSelf*, char*, uint*, BOOL*, int> FindFamilyName;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;

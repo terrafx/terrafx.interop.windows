@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLNamespaceCollection : IHTMLNamespaceCollection
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLNamespaceCollection*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLNamespaceCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLNamespaceCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLNamespaceCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct IHTMLNamespaceCollection : IHTMLNamespaceCollection
     /// <include file='IHTMLNamespaceCollection.xml' path='doc/member[@name="IHTMLNamespaceCollection.add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, VARIANT implementationUrl, IDispatch** ppNamespace)
+    public HRESULT add([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrUrn, VARIANT implementationUrl, IDispatch** ppNamespace)
     {
-        return ((delegate* unmanaged<IHTMLNamespaceCollection*, ushort*, ushort*, VARIANT, IDispatch**, int>)(lpVtbl[9]))((IHTMLNamespaceCollection*)Unsafe.AsPointer(ref this), bstrNamespace, bstrUrn, implementationUrl, ppNamespace);
+        return ((delegate* unmanaged<IHTMLNamespaceCollection*, char*, char*, VARIANT, IDispatch**, int>)(lpVtbl[9]))((IHTMLNamespaceCollection*)Unsafe.AsPointer(ref this), bstrNamespace, bstrUrn, implementationUrl, ppNamespace);
     }
 
     public interface Interface : IDispatch.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IHTMLNamespaceCollection : IHTMLNamespaceCollection
         HRESULT item(VARIANT index, IDispatch** ppNamespace);
 
         [VtblIndex(9)]
-        HRESULT add([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, VARIANT implementationUrl, IDispatch** ppNamespace);
+        HRESULT add([NativeTypeName("BSTR")] char* bstrNamespace, [NativeTypeName("BSTR")] char* bstrUrn, VARIANT implementationUrl, IDispatch** ppNamespace);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,7 +133,7 @@ public unsafe partial struct IHTMLNamespaceCollection : IHTMLNamespaceCollection
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -145,6 +145,6 @@ public unsafe partial struct IHTMLNamespaceCollection : IHTMLNamespaceCollection
         public delegate* unmanaged<TSelf*, VARIANT, IDispatch**, int> item;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT, IDispatch**, int> add;
+        public delegate* unmanaged<TSelf*, char*, char*, VARIANT, IDispatch**, int> add;
     }
 }

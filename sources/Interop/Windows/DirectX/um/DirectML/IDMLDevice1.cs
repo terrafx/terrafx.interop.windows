@@ -74,9 +74,9 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     /// <inheritdoc cref="IDMLObject.SetName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("PCWSTR")] ushort* name)
+    public HRESULT SetName([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, ushort*, int>)(lpVtbl[6]))((IDMLDevice1*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<IDMLDevice1*, char*, int>)(lpVtbl[6]))((IDMLDevice1*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IDMLDevice.CheckFeatureSupport" />
@@ -195,7 +195,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (DML_FEATURE, UINT, const void *, UINT, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DML_FEATURE, uint, void*, uint, void*, int> CheckFeatureSupport;

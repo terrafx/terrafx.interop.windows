@@ -65,9 +65,9 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface, INat
     /// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient.LoadHistoryPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] ushort* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition)
+    public HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] char* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition)
     {
-        return ((delegate* unmanaged<ITravelLogClient*, ushort*, uint, int>)(lpVtbl[5]))((ITravelLogClient*)Unsafe.AsPointer(ref this), pszUrlLocation, dwPosition);
+        return ((delegate* unmanaged<ITravelLogClient*, char*, uint, int>)(lpVtbl[5]))((ITravelLogClient*)Unsafe.AsPointer(ref this), pszUrlLocation, dwPosition);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,7 +79,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface, INat
         HRESULT GetWindowData(IStream* pStream, [NativeTypeName("LPWINDOWDATA")] WINDOWDATA* pWinData);
 
         [VtblIndex(5)]
-        HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] ushort* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition);
+        HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] char* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition);
     }
 
     public partial struct Vtbl<TSelf>
@@ -101,6 +101,6 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface, INat
         public delegate* unmanaged<TSelf*, IStream*, WINDOWDATA*, int> GetWindowData;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> LoadHistoryPosition;
+        public delegate* unmanaged<TSelf*, char*, uint, int> LoadHistoryPosition;
     }
 }

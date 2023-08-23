@@ -73,25 +73,25 @@ public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface, INativeGui
     /// <include file='IDiscRecorder.xml' path='doc/member[@name="IDiscRecorder.GetDisplayNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDisplayNames([NativeTypeName("BSTR *")] ushort** pbstrVendorID, [NativeTypeName("BSTR *")] ushort** pbstrProductID, [NativeTypeName("BSTR *")] ushort** pbstrRevision)
+    public HRESULT GetDisplayNames([NativeTypeName("BSTR *")] char** pbstrVendorID, [NativeTypeName("BSTR *")] char** pbstrProductID, [NativeTypeName("BSTR *")] char** pbstrRevision)
     {
-        return ((delegate* unmanaged<IDiscRecorder*, ushort**, ushort**, ushort**, int>)(lpVtbl[6]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrVendorID, pbstrProductID, pbstrRevision);
+        return ((delegate* unmanaged<IDiscRecorder*, char**, char**, char**, int>)(lpVtbl[6]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrVendorID, pbstrProductID, pbstrRevision);
     }
 
     /// <include file='IDiscRecorder.xml' path='doc/member[@name="IDiscRecorder.GetBasePnPID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetBasePnPID([NativeTypeName("BSTR *")] ushort** pbstrBasePnPID)
+    public HRESULT GetBasePnPID([NativeTypeName("BSTR *")] char** pbstrBasePnPID)
     {
-        return ((delegate* unmanaged<IDiscRecorder*, ushort**, int>)(lpVtbl[7]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrBasePnPID);
+        return ((delegate* unmanaged<IDiscRecorder*, char**, int>)(lpVtbl[7]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrBasePnPID);
     }
 
     /// <include file='IDiscRecorder.xml' path='doc/member[@name="IDiscRecorder.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath)
+    public HRESULT GetPath([NativeTypeName("BSTR *")] char** pbstrPath)
     {
-        return ((delegate* unmanaged<IDiscRecorder*, ushort**, int>)(lpVtbl[8]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrPath);
+        return ((delegate* unmanaged<IDiscRecorder*, char**, int>)(lpVtbl[8]))((IDiscRecorder*)Unsafe.AsPointer(ref this), pbstrPath);
     }
 
     /// <include file='IDiscRecorder.xml' path='doc/member[@name="IDiscRecorder.GetRecorderProperties"]/*' />
@@ -178,13 +178,13 @@ public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface, INativeGui
         HRESULT GetRecorderType([NativeTypeName("long *")] int* fTypeCode);
 
         [VtblIndex(6)]
-        HRESULT GetDisplayNames([NativeTypeName("BSTR *")] ushort** pbstrVendorID, [NativeTypeName("BSTR *")] ushort** pbstrProductID, [NativeTypeName("BSTR *")] ushort** pbstrRevision);
+        HRESULT GetDisplayNames([NativeTypeName("BSTR *")] char** pbstrVendorID, [NativeTypeName("BSTR *")] char** pbstrProductID, [NativeTypeName("BSTR *")] char** pbstrRevision);
 
         [VtblIndex(7)]
-        HRESULT GetBasePnPID([NativeTypeName("BSTR *")] ushort** pbstrBasePnPID);
+        HRESULT GetBasePnPID([NativeTypeName("BSTR *")] char** pbstrBasePnPID);
 
         [VtblIndex(8)]
-        HRESULT GetPath([NativeTypeName("BSTR *")] ushort** pbstrPath);
+        HRESULT GetPath([NativeTypeName("BSTR *")] char** pbstrPath);
 
         [VtblIndex(9)]
         HRESULT GetRecorderProperties(IPropertyStorage** ppPropStg);
@@ -236,13 +236,13 @@ public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface, INativeGui
         public delegate* unmanaged<TSelf*, int*, int> GetRecorderType;
 
         [NativeTypeName("HRESULT (BSTR *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, ushort**, int> GetDisplayNames;
+        public delegate* unmanaged<TSelf*, char**, char**, char**, int> GetDisplayNames;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetBasePnPID;
+        public delegate* unmanaged<TSelf*, char**, int> GetBasePnPID;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetPath;
+        public delegate* unmanaged<TSelf*, char**, int> GetPath;
 
         [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IPropertyStorage**, int> GetRecorderProperties;

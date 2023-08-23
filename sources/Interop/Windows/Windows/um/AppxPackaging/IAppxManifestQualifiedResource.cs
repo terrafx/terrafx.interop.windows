@@ -49,9 +49,9 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource.GetLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language)
+    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, ushort**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), language);
+        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, char**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), language);
     }
 
     /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource.GetScale"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language);
+        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language);
 
         [VtblIndex(4)]
         HRESULT GetScale([NativeTypeName("UINT32 *")] uint* scale);
@@ -95,7 +95,7 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
+        public delegate* unmanaged<TSelf*, char**, int> GetLanguage;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetScale;

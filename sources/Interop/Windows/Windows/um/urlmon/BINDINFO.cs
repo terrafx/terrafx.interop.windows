@@ -16,7 +16,7 @@ public unsafe partial struct BINDINFO
 
     /// <include file='BINDINFO.xml' path='doc/member[@name="BINDINFO.szExtraInfo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szExtraInfo;
+    public char* szExtraInfo;
 
     /// <include file='BINDINFO.xml' path='doc/member[@name="BINDINFO.stgmedData"]/*' />
     public STGMEDIUM stgmedData;
@@ -31,7 +31,7 @@ public unsafe partial struct BINDINFO
 
     /// <include file='BINDINFO.xml' path='doc/member[@name="BINDINFO.szCustomVerb"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szCustomVerb;
+    public char* szCustomVerb;
 
     /// <include file='BINDINFO.xml' path='doc/member[@name="BINDINFO.cbstgmedData"]/*' />
     [NativeTypeName("DWORD")]

@@ -67,9 +67,9 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, ushort**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo*, char**, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo.GetOffset"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         HRESULT GetPackageId(IAppxManifestPackageId** packageId);
 
         [VtblIndex(5)]
-        HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+        HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName);
 
         [VtblIndex(6)]
         HRESULT GetOffset([NativeTypeName("UINT64 *")] ulong* offset);
@@ -136,7 +136,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo : IAppxBundleManifes
         public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
+        public delegate* unmanaged<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong*, int> GetOffset;

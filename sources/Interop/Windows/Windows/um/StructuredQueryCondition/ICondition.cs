@@ -105,25 +105,25 @@ public unsafe partial struct ICondition : ICondition.Interface, INativeGuid
     /// <include file='ICondition.xml' path='doc/member[@name="ICondition.GetComparisonInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
+    public HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] char** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
     {
-        return ((delegate* unmanaged<ICondition*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
+        return ((delegate* unmanaged<ICondition*, char**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
     }
 
     /// <include file='ICondition.xml' path='doc/member[@name="ICondition.GetValueType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName)
+    public HRESULT GetValueType([NativeTypeName("LPWSTR *")] char** ppszValueTypeName)
     {
-        return ((delegate* unmanaged<ICondition*, ushort**, int>)(lpVtbl[11]))((ICondition*)Unsafe.AsPointer(ref this), ppszValueTypeName);
+        return ((delegate* unmanaged<ICondition*, char**, int>)(lpVtbl[11]))((ICondition*)Unsafe.AsPointer(ref this), ppszValueTypeName);
     }
 
     /// <include file='ICondition.xml' path='doc/member[@name="ICondition.GetValueNormalization"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization)
+    public HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] char** ppszNormalization)
     {
-        return ((delegate* unmanaged<ICondition*, ushort**, int>)(lpVtbl[12]))((ICondition*)Unsafe.AsPointer(ref this), ppszNormalization);
+        return ((delegate* unmanaged<ICondition*, char**, int>)(lpVtbl[12]))((ICondition*)Unsafe.AsPointer(ref this), ppszNormalization);
     }
 
     /// <include file='ICondition.xml' path='doc/member[@name="ICondition.GetInputTerms"]/*' />
@@ -151,13 +151,13 @@ public unsafe partial struct ICondition : ICondition.Interface, INativeGuid
         HRESULT GetSubConditions([NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
         [VtblIndex(10)]
-        HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
+        HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] char** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
 
         [VtblIndex(11)]
-        HRESULT GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName);
+        HRESULT GetValueType([NativeTypeName("LPWSTR *")] char** ppszValueTypeName);
 
         [VtblIndex(12)]
-        HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization);
+        HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] char** ppszNormalization);
 
         [VtblIndex(13)]
         HRESULT GetInputTerms(IRichChunk** ppPropertyTerm, IRichChunk** ppOperationTerm, IRichChunk** ppValueTerm);
@@ -200,13 +200,13 @@ public unsafe partial struct ICondition : ICondition.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSubConditions;
 
         [NativeTypeName("HRESULT (LPWSTR *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
+        public delegate* unmanaged<TSelf*, char**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetValueType;
+        public delegate* unmanaged<TSelf*, char**, int> GetValueType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetValueNormalization;
+        public delegate* unmanaged<TSelf*, char**, int> GetValueNormalization;
 
         [NativeTypeName("HRESULT (IRichChunk **, IRichChunk **, IRichChunk **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;

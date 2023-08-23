@@ -49,17 +49,17 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
     /// <inheritdoc cref="IPropertyBag.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Read([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog)
+    public HRESULT Read([NativeTypeName("LPCOLESTR")] char* pszPropName, VARIANT* pVar, IErrorLog* pErrorLog)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
+        return ((delegate* unmanaged<IMediaPropertyBag*, char*, VARIANT*, IErrorLog*, int>)(lpVtbl[3]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar, pErrorLog);
     }
 
     /// <inheritdoc cref="IPropertyBag.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar)
+    public HRESULT Write([NativeTypeName("LPCOLESTR")] char* pszPropName, VARIANT* pVar)
     {
-        return ((delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, int>)(lpVtbl[4]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
+        return ((delegate* unmanaged<IMediaPropertyBag*, char*, VARIANT*, int>)(lpVtbl[4]))((IMediaPropertyBag*)Unsafe.AsPointer(ref this), pszPropName, pVar);
     }
 
     /// <include file='IMediaPropertyBag.xml' path='doc/member[@name="IMediaPropertyBag.EnumProperty"]/*' />
@@ -89,10 +89,10 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IErrorLog*, int> Read;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, IErrorLog*, int> Read;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> Write;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> Write;
 
         [NativeTypeName("HRESULT (ULONG, VARIANT *, VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, VARIANT*, VARIANT*, int> EnumProperty;

@@ -82,9 +82,9 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
     /// <include file='IDxcUtils.xml' path='doc/member[@name="IDxcUtils.LoadFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LoadFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
+    public HRESULT LoadFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* pCodePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcUtils*, ushort*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[7]))((IDxcUtils*)Unsafe.AsPointer(ref this), pFileName, pCodePage, pBlobEncoding);
+        return ((delegate* unmanaged<IDxcUtils*, char*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[7]))((IDxcUtils*)Unsafe.AsPointer(ref this), pFileName, pCodePage, pBlobEncoding);
     }
 
     /// <include file='IDxcUtils.xml' path='doc/member[@name="IDxcUtils.CreateReadOnlyStreamFromBlob"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
     /// <include file='IDxcUtils.xml' path='doc/member[@name="IDxcUtils.BuildArguments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT BuildArguments([NativeTypeName("LPCWSTR")] ushort* pSourceName, [NativeTypeName("LPCWSTR")] ushort* pEntryPoint, [NativeTypeName("LPCWSTR")] ushort* pTargetProfile, [NativeTypeName("LPCWSTR *")] ushort** pArguments, [NativeTypeName("UINT32")] uint argCount, [NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount, IDxcCompilerArgs** ppArgs)
+    public HRESULT BuildArguments([NativeTypeName("LPCWSTR")] char* pSourceName, [NativeTypeName("LPCWSTR")] char* pEntryPoint, [NativeTypeName("LPCWSTR")] char* pTargetProfile, [NativeTypeName("LPCWSTR *")] char** pArguments, [NativeTypeName("UINT32")] uint argCount, [NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount, IDxcCompilerArgs** ppArgs)
     {
-        return ((delegate* unmanaged<IDxcUtils*, ushort*, ushort*, ushort*, ushort**, uint, DxcDefine*, uint, IDxcCompilerArgs**, int>)(lpVtbl[14]))((IDxcUtils*)Unsafe.AsPointer(ref this), pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
+        return ((delegate* unmanaged<IDxcUtils*, char*, char*, char*, char**, uint, DxcDefine*, uint, IDxcCompilerArgs**, int>)(lpVtbl[14]))((IDxcUtils*)Unsafe.AsPointer(ref this), pSourceName, pEntryPoint, pTargetProfile, pArguments, argCount, pDefines, defineCount, ppArgs);
     }
 
     /// <include file='IDxcUtils.xml' path='doc/member[@name="IDxcUtils.GetPDBContents"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
         HRESULT CreateBlob([NativeTypeName("LPCVOID")] void* pData, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
 
         [VtblIndex(7)]
-        HRESULT LoadFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* pCodePage, IDxcBlobEncoding** pBlobEncoding);
+        HRESULT LoadFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* pCodePage, IDxcBlobEncoding** pBlobEncoding);
 
         [VtblIndex(8)]
         HRESULT CreateReadOnlyStreamFromBlob(IDxcBlob* pBlob, IStream** ppStream);
@@ -187,7 +187,7 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
         HRESULT CreateReflection([NativeTypeName("const DxcBuffer *")] DxcBuffer* pData, [NativeTypeName("const IID &")] Guid* iid, void** ppvReflection);
 
         [VtblIndex(14)]
-        HRESULT BuildArguments([NativeTypeName("LPCWSTR")] ushort* pSourceName, [NativeTypeName("LPCWSTR")] ushort* pEntryPoint, [NativeTypeName("LPCWSTR")] ushort* pTargetProfile, [NativeTypeName("LPCWSTR *")] ushort** pArguments, [NativeTypeName("UINT32")] uint argCount, [NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount, IDxcCompilerArgs** ppArgs);
+        HRESULT BuildArguments([NativeTypeName("LPCWSTR")] char* pSourceName, [NativeTypeName("LPCWSTR")] char* pEntryPoint, [NativeTypeName("LPCWSTR")] char* pTargetProfile, [NativeTypeName("LPCWSTR *")] char** pArguments, [NativeTypeName("UINT32")] uint argCount, [NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount, IDxcCompilerArgs** ppArgs);
 
         [VtblIndex(15)]
         HRESULT GetPDBContents(IDxcBlob* pPDBBlob, IDxcBlob** ppHash, IDxcBlob** ppContainer);
@@ -218,7 +218,7 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlob;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT32 *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, IDxcBlobEncoding**, int> LoadFile;
+        public delegate* unmanaged<TSelf*, char*, uint*, IDxcBlobEncoding**, int> LoadFile;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IStream **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDxcBlob*, IStream**, int> CreateReadOnlyStreamFromBlob;
@@ -239,7 +239,7 @@ public unsafe partial struct IDxcUtils : IDxcUtils.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, DxcBuffer*, Guid*, void**, int> CreateReflection;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR *, UINT32, const DxcDefine *, UINT32, IDxcCompilerArgs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort**, uint, DxcDefine*, uint, IDxcCompilerArgs**, int> BuildArguments;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, char**, uint, DxcDefine*, uint, IDxcCompilerArgs**, int> BuildArguments;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlob **, IDxcBlob **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDxcBlob*, IDxcBlob**, IDxcBlob**, int> GetPDBContents;

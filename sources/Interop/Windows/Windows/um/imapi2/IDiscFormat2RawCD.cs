@@ -65,9 +65,9 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2RawCD*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDiscFormat2RawCD*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -249,17 +249,17 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IN
     /// <include file='IDiscFormat2RawCD.xml' path='doc/member[@name="IDiscFormat2RawCD.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_ClientName([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2RawCD*, ushort*, int>)(lpVtbl[28]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2RawCD*, char*, int>)(lpVtbl[28]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2RawCD.xml' path='doc/member[@name="IDiscFormat2RawCD.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2RawCD*, ushort**, int>)(lpVtbl[29]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged<IDiscFormat2RawCD*, char**, int>)(lpVtbl[29]))((IDiscFormat2RawCD*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2RawCD.xml' path='doc/member[@name="IDiscFormat2RawCD.get_RequestedWriteSpeed"]/*' />
@@ -361,10 +361,10 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IN
         HRESULT get_RequestedSectorType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value);
 
         [VtblIndex(28)]
-        HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_ClientName([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(29)]
-        HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(30)]
         HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value);
@@ -404,7 +404,7 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -473,10 +473,10 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, IN
         public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_RequestedSectorType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_ClientName;
+        public delegate* unmanaged<TSelf*, char*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ClientName;
+        public delegate* unmanaged<TSelf*, char**, int> get_ClientName;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_RequestedWriteSpeed;

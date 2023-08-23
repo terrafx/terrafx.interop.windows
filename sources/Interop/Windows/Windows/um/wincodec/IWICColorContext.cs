@@ -49,9 +49,9 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename)
+    public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename)
     {
-        return ((delegate* unmanaged<IWICColorContext*, ushort*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
+        return ((delegate* unmanaged<IWICColorContext*, char*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromMemory"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename);
+        HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename);
 
         [VtblIndex(4)]
         HRESULT InitializeFromMemory([NativeTypeName("const BYTE *")] byte* pbBuffer, uint cbBufferSize);
@@ -128,7 +128,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InitializeFromFilename;
+        public delegate* unmanaged<TSelf*, char*, int> InitializeFromFilename;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint, int> InitializeFromMemory;

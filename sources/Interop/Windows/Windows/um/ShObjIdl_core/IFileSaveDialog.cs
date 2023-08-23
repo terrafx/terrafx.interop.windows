@@ -145,41 +145,41 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     /// <inheritdoc cref="IFileDialog.SetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
+    public HRESULT SetFileName([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort*, int>)(lpVtbl[15]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[15]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <inheritdoc cref="IFileDialog.GetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** pszName)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort**, int>)(lpVtbl[16]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged<IFileSaveDialog*, char**, int>)(lpVtbl[16]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <inheritdoc cref="IFileDialog.SetTitle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort*, int>)(lpVtbl[17]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszTitle);
+        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[17]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
     /// <inheritdoc cref="IFileDialog.SetOkButtonLabel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
+    public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] char* pszText)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort*, int>)(lpVtbl[18]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszText);
+        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[18]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszText);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFileNameLabel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
+    public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort*, int>)(lpVtbl[19]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszLabel);
+        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[19]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszLabel);
     }
 
     /// <inheritdoc cref="IFileDialog.GetResult" />
@@ -201,9 +201,9 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     /// <inheritdoc cref="IFileDialog.SetDefaultExtension" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
+    public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] char* pszDefaultExtension)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, ushort*, int>)(lpVtbl[22]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
+        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[22]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
     }
 
     /// <inheritdoc cref="IFileDialog.Close" />
@@ -345,19 +345,19 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
         public delegate* unmanaged<TSelf*, IShellItem**, int> GetCurrentSelection;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetFileName;
+        public delegate* unmanaged<TSelf*, char*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
+        public delegate* unmanaged<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetOkButtonLabel;
+        public delegate* unmanaged<TSelf*, char*, int> SetOkButtonLabel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetFileNameLabel;
+        public delegate* unmanaged<TSelf*, char*, int> SetFileNameLabel;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IShellItem**, int> GetResult;
@@ -366,7 +366,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
         public delegate* unmanaged<TSelf*, IShellItem*, FDAP, int> AddPlace;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDefaultExtension;
+        public delegate* unmanaged<TSelf*, char*, int> SetDefaultExtension;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HRESULT, int> Close;

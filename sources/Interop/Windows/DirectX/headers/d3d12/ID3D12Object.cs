@@ -74,9 +74,9 @@ public unsafe partial struct ID3D12Object : ID3D12Object.Interface, INativeGuid
     /// <include file='ID3D12Object.xml' path='doc/member[@name="ID3D12Object.SetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+    public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12Object*, ushort*, int>)(lpVtbl[6]))((ID3D12Object*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged<ID3D12Object*, char*, int>)(lpVtbl[6]))((ID3D12Object*)Unsafe.AsPointer(ref this), Name);
     }
 
     public interface Interface : IUnknown.Interface
@@ -91,7 +91,7 @@ public unsafe partial struct ID3D12Object : ID3D12Object.Interface, INativeGuid
         HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData);
 
         [VtblIndex(6)]
-        HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name);
+        HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name);
     }
 
     public partial struct Vtbl<TSelf>
@@ -116,6 +116,6 @@ public unsafe partial struct ID3D12Object : ID3D12Object.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, char*, int> SetName;
     }
 }

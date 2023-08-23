@@ -49,15 +49,15 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
     /// <include file='ITfFnBalloon.xml' path='doc/member[@name="ITfFnBalloon.UpdateBalloon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfFnBalloon*, TfLBBalloonStyle, ushort*, uint, int>)(lpVtbl[3]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), style, pch, cch);
+        return ((delegate* unmanaged<ITfFnBalloon*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[3]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), style, pch, cch);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch);
+        HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfLBBalloonStyle, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, ushort*, uint, int> UpdateBalloon;
+        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
     }
 }

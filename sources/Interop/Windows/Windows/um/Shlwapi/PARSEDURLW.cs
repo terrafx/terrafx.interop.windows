@@ -14,14 +14,14 @@ public unsafe partial struct PARSEDURLW
 
     /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.pszProtocol"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszProtocol;
+    public char* pszProtocol;
 
     /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.cchProtocol"]/*' />
     public uint cchProtocol;
 
     /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.pszSuffix"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszSuffix;
+    public char* pszSuffix;
 
     /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.cchSuffix"]/*' />
     public uint cchSuffix;

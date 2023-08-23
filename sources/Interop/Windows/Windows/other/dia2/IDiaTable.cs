@@ -89,9 +89,9 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface, INativeGuid
     /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaTable*, ushort**, int>)(lpVtbl[8]))((IDiaTable*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaTable*, char**, int>)(lpVtbl[8]))((IDiaTable*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.get_Count"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface, INativeGuid
         HRESULT get__NewEnum(IUnknown** pRetVal);
 
         [VtblIndex(8)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(9)]
         HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
@@ -153,7 +153,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_Count;

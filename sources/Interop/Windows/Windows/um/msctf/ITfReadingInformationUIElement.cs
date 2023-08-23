@@ -49,9 +49,9 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int>)(lpVtbl[3]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[3]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -97,9 +97,9 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr)
+    public HRESULT GetString([NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int>)(lpVtbl[9]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pstr);
+        return ((delegate* unmanaged<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[9]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pstr);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetMaxReadingStringLength"]/*' />
@@ -135,7 +135,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         HRESULT GetContext(ITfContext** ppic);
 
         [VtblIndex(9)]
-        HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
+        HRESULT GetString([NativeTypeName("BSTR *")] char** pstr);
 
         [VtblIndex(10)]
         HRESULT GetMaxReadingStringLength(uint* pcchMax);
@@ -160,7 +160,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
@@ -178,7 +178,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         public delegate* unmanaged<TSelf*, ITfContext**, int> GetContext;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, char**, int> GetString;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetMaxReadingStringLength;

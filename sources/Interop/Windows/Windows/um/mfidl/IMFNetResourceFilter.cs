@@ -51,26 +51,26 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnRedirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnRedirect([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel)
+    public HRESULT OnRedirect([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel)
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
+        return ((delegate* unmanaged<IMFNetResourceFilter*, char*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
     }
 
     /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnSendingRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl)
+    public HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] char* pszUrl)
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, ushort*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
+        return ((delegate* unmanaged<IMFNetResourceFilter*, char*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnRedirect([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel);
+        HRESULT OnRedirect([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel);
 
         [VtblIndex(4)]
-        HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl);
+        HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] char* pszUrl);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> OnRedirect;
+        public delegate* unmanaged<TSelf*, char*, short*, int> OnRedirect;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> OnSendingRequest;
+        public delegate* unmanaged<TSelf*, char*, int> OnSendingRequest;
     }
 }

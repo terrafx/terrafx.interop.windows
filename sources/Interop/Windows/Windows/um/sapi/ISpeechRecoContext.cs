@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecoContext*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechRecoContext*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -97,9 +97,9 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
     /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.get_RequestedUIType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] ushort** UIType)
+    public HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] char** UIType)
     {
-        return ((delegate* unmanaged<ISpeechRecoContext*, ushort**, int>)(lpVtbl[9]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), UIType);
+        return ((delegate* unmanaged<ISpeechRecoContext*, char**, int>)(lpVtbl[9]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), UIType);
     }
 
     /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.putref_Voice"]/*' />
@@ -273,9 +273,9 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
     /// <include file='ISpeechRecoContext.xml' path='doc/member[@name="ISpeechRecoContext.SetAdaptationData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT SetAdaptationData([NativeTypeName("BSTR")] ushort* AdaptationString)
+    public HRESULT SetAdaptationData([NativeTypeName("BSTR")] char* AdaptationString)
     {
-        return ((delegate* unmanaged<ISpeechRecoContext*, ushort*, int>)(lpVtbl[31]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), AdaptationString);
+        return ((delegate* unmanaged<ISpeechRecoContext*, char*, int>)(lpVtbl[31]))((ISpeechRecoContext*)Unsafe.AsPointer(ref this), AdaptationString);
     }
 
     public interface Interface : IDispatch.Interface
@@ -287,7 +287,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
         HRESULT get_AudioInputInterferenceStatus(SpeechInterference* Interference);
 
         [VtblIndex(9)]
-        HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] ushort** UIType);
+        HRESULT get_RequestedUIType([NativeTypeName("BSTR *")] char** UIType);
 
         [VtblIndex(10)]
         HRESULT putref_Voice(ISpeechVoice* Voice);
@@ -353,7 +353,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
         HRESULT Bookmark(SpeechBookmarkOptions Options, VARIANT StreamPos, VARIANT BookmarkId);
 
         [VtblIndex(31)]
-        HRESULT SetAdaptationData([NativeTypeName("BSTR")] ushort* AdaptationString);
+        HRESULT SetAdaptationData([NativeTypeName("BSTR")] char* AdaptationString);
     }
 
     public partial struct Vtbl<TSelf>
@@ -375,7 +375,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -387,7 +387,7 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
         public delegate* unmanaged<TSelf*, SpeechInterference*, int> get_AudioInputInterferenceStatus;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_RequestedUIType;
+        public delegate* unmanaged<TSelf*, char**, int> get_RequestedUIType;
 
         [NativeTypeName("HRESULT (ISpeechVoice *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISpeechVoice*, int> putref_Voice;
@@ -453,6 +453,6 @@ public unsafe partial struct ISpeechRecoContext : ISpeechRecoContext.Interface, 
         public delegate* unmanaged<TSelf*, SpeechBookmarkOptions, VARIANT, VARIANT, int> Bookmark;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAdaptationData;
+        public delegate* unmanaged<TSelf*, char*, int> SetAdaptationData;
     }
 }

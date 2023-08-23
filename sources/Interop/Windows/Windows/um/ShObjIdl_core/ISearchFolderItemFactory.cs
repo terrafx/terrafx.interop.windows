@@ -49,9 +49,9 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName)
+    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszDisplayName)
     {
-        return ((delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
+        return ((delegate* unmanaged<ISearchFolderItemFactory*, char*, int>)(lpVtbl[3]))((ISearchFolderItemFactory*)Unsafe.AsPointer(ref this), pszDisplayName);
     }
 
     /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.SetFolderTypeID"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszDisplayName);
+        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszDisplayName);
 
         [VtblIndex(4)]
         HRESULT SetFolderTypeID([NativeTypeName("FOLDERTYPEID")] Guid ftid);
@@ -194,7 +194,7 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, char*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (FOLDERTYPEID) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid, int> SetFolderTypeID;

@@ -18,7 +18,7 @@ public unsafe partial struct COAUTHINFO
 
     /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.pwszServerPrincName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszServerPrincName;
+    public char* pwszServerPrincName;
 
     /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwAuthnLevel"]/*' />
     [NativeTypeName("DWORD")]

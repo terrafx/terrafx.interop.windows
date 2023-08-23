@@ -49,9 +49,9 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
+    public HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, ushort*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, pwszURL, pAttributes, riid, ppvObject);
+        return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, char*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, pwszURL, pAttributes, riid, ppvObject);
     }
 
     /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromObject"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
+        HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
         [VtblIndex(4)]
         HRESULT CreateInstanceFromObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
@@ -84,7 +84,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
+        public delegate* unmanaged<TSelf*, Guid*, char*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromObject;

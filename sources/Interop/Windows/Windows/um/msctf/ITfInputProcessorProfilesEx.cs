@@ -65,9 +65,9 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
     /// <inheritdoc cref="ITfInputProcessorProfiles.AddLanguageProfile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex)
+    public HRESULT AddLanguageProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] char* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, int>)(lpVtbl[5]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex);
+        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, char*, uint, char*, uint, uint, int>)(lpVtbl[5]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex);
     }
 
     /// <inheritdoc cref="ITfInputProcessorProfiles.RemoveLanguageProfile" />
@@ -121,9 +121,9 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
     /// <inheritdoc cref="ITfInputProcessorProfiles.GetLanguageProfileDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetLanguageProfileDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BSTR *")] ushort** pbstrProfile)
+    public HRESULT GetLanguageProfileDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("BSTR *")] char** pbstrProfile)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, ushort**, int>)(lpVtbl[12]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pbstrProfile);
+        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, char**, int>)(lpVtbl[12]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pbstrProfile);
     }
 
     /// <inheritdoc cref="ITfInputProcessorProfiles.GetCurrentLanguage" />
@@ -193,15 +193,15 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
     /// <include file='ITfInputProcessorProfilesEx.xml' path='doc/member[@name="ITfInputProcessorProfilesEx.SetLanguageProfileDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId)
+    public HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] char* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId)
     {
-        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, ushort*, uint, uint, int>)(lpVtbl[21]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchFile, cchFile, uResId);
+        return ((delegate* unmanaged<ITfInputProcessorProfilesEx*, Guid*, ushort, Guid*, char*, uint, uint, int>)(lpVtbl[21]))((ITfInputProcessorProfilesEx*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchFile, cchFile, uResId);
     }
 
     public interface Interface : ITfInputProcessorProfiles.Interface
     {
         [VtblIndex(21)]
-        HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId);
+        HRESULT SetLanguageProfileDisplayName([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] char* pchFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uResId);
     }
 
     public partial struct Vtbl<TSelf>
@@ -223,7 +223,7 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
         public delegate* unmanaged<TSelf*, Guid*, int> Unregister;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, int> AddLanguageProfile;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, char*, uint, char*, uint, uint, int> AddLanguageProfile;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, int> RemoveLanguageProfile;
@@ -244,7 +244,7 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
         public delegate* unmanaged<TSelf*, Guid*, ushort*, Guid*, int> GetActiveLanguageProfile;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, ushort**, int> GetLanguageProfileDescription;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, char**, int> GetLanguageProfileDescription;
 
         [NativeTypeName("HRESULT (LANGID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> GetCurrentLanguage;
@@ -271,6 +271,6 @@ public unsafe partial struct ITfInputProcessorProfilesEx : ITfInputProcessorProf
         public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, HKL, int> SubstituteKeyboardLayout;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, ushort*, uint, uint, int> SetLanguageProfileDisplayName;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, char*, uint, uint, int> SetLanguageProfileDisplayName;
     }
 }

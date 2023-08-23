@@ -57,15 +57,15 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     /// <include file='ICodeInstall.xml' path='doc/member[@name="ICodeInstall.OnCodeInstallProblem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szDestination, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwReserved)
+    public HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szDestination, [NativeTypeName("LPCWSTR")] char* szSource, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ICodeInstall*, uint, ushort*, ushort*, uint, int>)(lpVtbl[4]))((ICodeInstall*)Unsafe.AsPointer(ref this), ulStatusCode, szDestination, szSource, dwReserved);
+        return ((delegate* unmanaged<ICodeInstall*, uint, char*, char*, uint, int>)(lpVtbl[4]))((ICodeInstall*)Unsafe.AsPointer(ref this), ulStatusCode, szDestination, szSource, dwReserved);
     }
 
     public interface Interface : IWindowForBindingUI.Interface
     {
         [VtblIndex(4)]
-        HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szDestination, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwReserved);
+        HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szDestination, [NativeTypeName("LPCWSTR")] char* szSource, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,6 +84,6 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (ULONG, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, uint, int> OnCodeInstallProblem;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, uint, int> OnCodeInstallProblem;
     }
 }

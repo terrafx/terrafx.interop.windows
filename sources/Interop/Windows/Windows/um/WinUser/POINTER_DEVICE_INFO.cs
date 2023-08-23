@@ -33,5 +33,5 @@ public unsafe partial struct POINTER_DEVICE_INFO
 
     /// <include file='POINTER_DEVICE_INFO.xml' path='doc/member[@name="POINTER_DEVICE_INFO.productString"]/*' />
     [NativeTypeName("WCHAR[520]")]
-    public fixed ushort productString[520];
+    public fixed char productString[520];
 }

@@ -66,9 +66,9 @@ public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLo
     /// <include file='IDWriteLocalFontFileLoader.xml' path='doc/member[@name="IDWriteLocalFontFileLoader.GetFilePathFromKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize)
+    public HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] char* filePath, [NativeTypeName("UINT32")] uint filePathSize)
     {
-        return ((delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, ushort*, uint, int>)(lpVtbl[5]))((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, filePath, filePathSize);
+        return ((delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, char*, uint, int>)(lpVtbl[5]))((IDWriteLocalFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, filePath, filePathSize);
     }
 
     /// <include file='IDWriteLocalFontFileLoader.xml' path='doc/member[@name="IDWriteLocalFontFileLoader.GetLastWriteTimeFromKey"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLo
         HRESULT GetFilePathLengthFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("UINT32 *")] uint* filePathLength);
 
         [VtblIndex(5)]
-        HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] ushort* filePath, [NativeTypeName("UINT32")] uint filePathSize);
+        HRESULT GetFilePathFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, [NativeTypeName("WCHAR *")] char* filePath, [NativeTypeName("UINT32")] uint filePathSize);
 
         [VtblIndex(6)]
         HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime);
@@ -110,7 +110,7 @@ public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLo
         public delegate* unmanaged<TSelf*, void*, uint, uint*, int> GetFilePathLengthFromKey;
 
         [NativeTypeName("HRESULT (const void *, UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, ushort*, uint, int> GetFilePathFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, char*, uint, int> GetFilePathFromKey;
 
         [NativeTypeName("HRESULT (const void *, UINT32, FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*, uint, FILETIME*, int> GetLastWriteTimeFromKey;

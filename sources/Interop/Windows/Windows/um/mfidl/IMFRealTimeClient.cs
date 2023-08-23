@@ -49,9 +49,9 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface, IN
     /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.RegisterThreads"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClass)
+    public HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] char* wszClass)
     {
-        return ((delegate* unmanaged<IMFRealTimeClient*, uint, ushort*, int>)(lpVtbl[3]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this), dwTaskIndex, wszClass);
+        return ((delegate* unmanaged<IMFRealTimeClient*, uint, char*, int>)(lpVtbl[3]))((IMFRealTimeClient*)Unsafe.AsPointer(ref this), dwTaskIndex, wszClass);
     }
 
     /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.UnregisterThreads"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface, IN
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] ushort* wszClass);
+        HRESULT RegisterThreads([NativeTypeName("DWORD")] uint dwTaskIndex, [NativeTypeName("LPCWSTR")] char* wszClass);
 
         [VtblIndex(4)]
         HRESULT UnregisterThreads();
@@ -95,7 +95,7 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, int> RegisterThreads;
+        public delegate* unmanaged<TSelf*, uint, char*, int> RegisterThreads;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> UnregisterThreads;

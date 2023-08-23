@@ -65,9 +65,9 @@ public unsafe partial struct IHTCDescBehavior : IHTCDescBehavior.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTCDescBehavior*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTCDescBehavior*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IHTCDescBehavior : IHTCDescBehavior.Interface, INat
     /// <include file='IHTCDescBehavior.xml' path='doc/member[@name="IHTCDescBehavior.get_urn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_urn([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_urn([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTCDescBehavior*, ushort**, int>)(lpVtbl[7]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTCDescBehavior*, char**, int>)(lpVtbl[7]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTCDescBehavior.xml' path='doc/member[@name="IHTCDescBehavior.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTCDescBehavior*, ushort**, int>)(lpVtbl[8]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTCDescBehavior*, char**, int>)(lpVtbl[8]))((IHTCDescBehavior*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_urn([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_urn([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IHTCDescBehavior : IHTCDescBehavior.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_urn;
+        public delegate* unmanaged<TSelf*, char**, int> get_urn;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
     }
 }

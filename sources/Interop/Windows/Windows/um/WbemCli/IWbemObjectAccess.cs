@@ -57,33 +57,33 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.Get" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Get([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor)
+    public HRESULT Get([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, int*, int*, int>)(lpVtbl[4]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, pType, plFlavor);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int, VARIANT*, int*, int*, int>)(lpVtbl[4]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, pType, plFlavor);
     }
 
     /// <inheritdoc cref="IWbemClassObject.Put" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT Put([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE")] int Type)
+    public HRESULT Put([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pVal, [NativeTypeName("CIMTYPE")] int Type)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, int, int>)(lpVtbl[5]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, Type);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int, VARIANT*, int, int>)(lpVtbl[5]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pVal, Type);
     }
 
     /// <inheritdoc cref="IWbemClassObject.Delete" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Delete([NativeTypeName("LPCWSTR")] ushort* wszName)
+    public HRESULT Delete([NativeTypeName("LPCWSTR")] char* wszName)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int>)(lpVtbl[6]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int>)(lpVtbl[6]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName);
     }
 
     /// <inheritdoc cref="IWbemClassObject.GetNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetNames([NativeTypeName("LPCWSTR")] ushort* wszQualifierName, [NativeTypeName("long")] int lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames)
+    public HRESULT GetNames([NativeTypeName("LPCWSTR")] char* wszQualifierName, [NativeTypeName("long")] int lFlags, VARIANT* pQualifierVal, SAFEARRAY** pNames)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int, VARIANT*, SAFEARRAY**, int>)(lpVtbl[7]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszQualifierName, lFlags, pQualifierVal, pNames);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int, VARIANT*, SAFEARRAY**, int>)(lpVtbl[7]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszQualifierName, lFlags, pQualifierVal, pNames);
     }
 
     /// <inheritdoc cref="IWbemClassObject.BeginEnumeration" />
@@ -97,9 +97,9 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.Next" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** strName, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor)
+    public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** strName, VARIANT* pVal, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plFlavor)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, int, ushort**, VARIANT*, int*, int*, int>)(lpVtbl[9]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, strName, pVal, pType, plFlavor);
+        return ((delegate* unmanaged<IWbemObjectAccess*, int, char**, VARIANT*, int*, int*, int>)(lpVtbl[9]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, strName, pVal, pType, plFlavor);
     }
 
     /// <inheritdoc cref="IWbemClassObject.EndEnumeration" />
@@ -113,9 +113,9 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.GetPropertyQualifierSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetPropertyQualifierSet([NativeTypeName("LPCWSTR")] ushort* wszProperty, IWbemQualifierSet** ppQualSet)
+    public HRESULT GetPropertyQualifierSet([NativeTypeName("LPCWSTR")] char* wszProperty, IWbemQualifierSet** ppQualSet)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, IWbemQualifierSet**, int>)(lpVtbl[11]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszProperty, ppQualSet);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, IWbemQualifierSet**, int>)(lpVtbl[11]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszProperty, ppQualSet);
     }
 
     /// <inheritdoc cref="IWbemClassObject.Clone" />
@@ -129,9 +129,9 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.GetObjectText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetObjectText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrObjectText)
+    public HRESULT GetObjectText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrObjectText)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, int, ushort**, int>)(lpVtbl[13]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, pstrObjectText);
+        return ((delegate* unmanaged<IWbemObjectAccess*, int, char**, int>)(lpVtbl[13]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, pstrObjectText);
     }
 
     /// <inheritdoc cref="IWbemClassObject.SpawnDerivedClass" />
@@ -161,41 +161,41 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.GetPropertyOrigin" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetPropertyOrigin([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("BSTR *")] ushort** pstrClassName)
+    public HRESULT GetPropertyOrigin([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("BSTR *")] char** pstrClassName)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, ushort**, int>)(lpVtbl[17]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, pstrClassName);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, char**, int>)(lpVtbl[17]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, pstrClassName);
     }
 
     /// <inheritdoc cref="IWbemClassObject.InheritsFrom" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT InheritsFrom([NativeTypeName("LPCWSTR")] ushort* strAncestor)
+    public HRESULT InheritsFrom([NativeTypeName("LPCWSTR")] char* strAncestor)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int>)(lpVtbl[18]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), strAncestor);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int>)(lpVtbl[18]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), strAncestor);
     }
 
     /// <inheritdoc cref="IWbemClassObject.GetMethod" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT GetMethod([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature)
+    public HRESULT GetMethod([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int, IWbemClassObject**, IWbemClassObject**, int>)(lpVtbl[19]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, ppInSignature, ppOutSignature);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int, IWbemClassObject**, IWbemClassObject**, int>)(lpVtbl[19]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, ppInSignature, ppOutSignature);
     }
 
     /// <inheritdoc cref="IWbemClassObject.PutMethod" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT PutMethod([NativeTypeName("LPCWSTR")] ushort* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature)
+    public HRESULT PutMethod([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, IWbemClassObject* pInSignature, IWbemClassObject* pOutSignature)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int, IWbemClassObject*, IWbemClassObject*, int>)(lpVtbl[20]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pInSignature, pOutSignature);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int, IWbemClassObject*, IWbemClassObject*, int>)(lpVtbl[20]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName, lFlags, pInSignature, pOutSignature);
     }
 
     /// <inheritdoc cref="IWbemClassObject.DeleteMethod" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT DeleteMethod([NativeTypeName("LPCWSTR")] ushort* wszName)
+    public HRESULT DeleteMethod([NativeTypeName("LPCWSTR")] char* wszName)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int>)(lpVtbl[21]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int>)(lpVtbl[21]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszName);
     }
 
     /// <inheritdoc cref="IWbemClassObject.BeginMethodEnumeration" />
@@ -209,9 +209,9 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.NextMethod" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT NextMethod([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature)
+    public HRESULT NextMethod([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, IWbemClassObject** ppInSignature, IWbemClassObject** ppOutSignature)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, int, ushort**, IWbemClassObject**, IWbemClassObject**, int>)(lpVtbl[23]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, pstrName, ppInSignature, ppOutSignature);
+        return ((delegate* unmanaged<IWbemObjectAccess*, int, char**, IWbemClassObject**, IWbemClassObject**, int>)(lpVtbl[23]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lFlags, pstrName, ppInSignature, ppOutSignature);
     }
 
     /// <inheritdoc cref="IWbemClassObject.EndMethodEnumeration" />
@@ -225,25 +225,25 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <inheritdoc cref="IWbemClassObject.GetMethodQualifierSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT GetMethodQualifierSet([NativeTypeName("LPCWSTR")] ushort* wszMethod, IWbemQualifierSet** ppQualSet)
+    public HRESULT GetMethodQualifierSet([NativeTypeName("LPCWSTR")] char* wszMethod, IWbemQualifierSet** ppQualSet)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, IWbemQualifierSet**, int>)(lpVtbl[25]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszMethod, ppQualSet);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, IWbemQualifierSet**, int>)(lpVtbl[25]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszMethod, ppQualSet);
     }
 
     /// <inheritdoc cref="IWbemClassObject.GetMethodOrigin" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT GetMethodOrigin([NativeTypeName("LPCWSTR")] ushort* wszMethodName, [NativeTypeName("BSTR *")] ushort** pstrClassName)
+    public HRESULT GetMethodOrigin([NativeTypeName("LPCWSTR")] char* wszMethodName, [NativeTypeName("BSTR *")] char** pstrClassName)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, ushort**, int>)(lpVtbl[26]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszMethodName, pstrClassName);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, char**, int>)(lpVtbl[26]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszMethodName, pstrClassName);
     }
 
     /// <include file='IWbemObjectAccess.xml' path='doc/member[@name="IWbemObjectAccess.GetPropertyHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT GetPropertyHandle([NativeTypeName("LPCWSTR")] ushort* wszPropertyName, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plHandle)
+    public HRESULT GetPropertyHandle([NativeTypeName("LPCWSTR")] char* wszPropertyName, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plHandle)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, ushort*, int*, int*, int>)(lpVtbl[27]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszPropertyName, pType, plHandle);
+        return ((delegate* unmanaged<IWbemObjectAccess*, char*, int*, int*, int>)(lpVtbl[27]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), wszPropertyName, pType, plHandle);
     }
 
     /// <include file='IWbemObjectAccess.xml' path='doc/member[@name="IWbemObjectAccess.WritePropertyValue"]/*' />
@@ -297,9 +297,9 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     /// <include file='IWbemObjectAccess.xml' path='doc/member[@name="IWbemObjectAccess.GetPropertyInfoByHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT GetPropertyInfoByHandle([NativeTypeName("long")] int lHandle, [NativeTypeName("BSTR *")] ushort** pstrName, [NativeTypeName("CIMTYPE *")] int* pType)
+    public HRESULT GetPropertyInfoByHandle([NativeTypeName("long")] int lHandle, [NativeTypeName("BSTR *")] char** pstrName, [NativeTypeName("CIMTYPE *")] int* pType)
     {
-        return ((delegate* unmanaged<IWbemObjectAccess*, int, ushort**, int*, int>)(lpVtbl[34]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lHandle, pstrName, pType);
+        return ((delegate* unmanaged<IWbemObjectAccess*, int, char**, int*, int>)(lpVtbl[34]))((IWbemObjectAccess*)Unsafe.AsPointer(ref this), lHandle, pstrName, pType);
     }
 
     /// <include file='IWbemObjectAccess.xml' path='doc/member[@name="IWbemObjectAccess.Lock"]/*' />
@@ -321,7 +321,7 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
     public interface Interface : IWbemClassObject.Interface
     {
         [VtblIndex(27)]
-        HRESULT GetPropertyHandle([NativeTypeName("LPCWSTR")] ushort* wszPropertyName, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plHandle);
+        HRESULT GetPropertyHandle([NativeTypeName("LPCWSTR")] char* wszPropertyName, [NativeTypeName("CIMTYPE *")] int* pType, [NativeTypeName("long *")] int* plHandle);
 
         [VtblIndex(28)]
         HRESULT WritePropertyValue([NativeTypeName("long")] int lHandle, [NativeTypeName("long")] int lNumBytes, [NativeTypeName("const byte *")] byte* aData);
@@ -342,7 +342,7 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
         HRESULT WriteQWORD([NativeTypeName("long")] int lHandle, [NativeTypeName("unsigned long long")] ulong pw);
 
         [VtblIndex(34)]
-        HRESULT GetPropertyInfoByHandle([NativeTypeName("long")] int lHandle, [NativeTypeName("BSTR *")] ushort** pstrName, [NativeTypeName("CIMTYPE *")] int* pType);
+        HRESULT GetPropertyInfoByHandle([NativeTypeName("long")] int lHandle, [NativeTypeName("BSTR *")] char** pstrName, [NativeTypeName("CIMTYPE *")] int* pType);
 
         [VtblIndex(35)]
         HRESULT Lock([NativeTypeName("long")] int lFlags);
@@ -367,34 +367,34 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
         public delegate* unmanaged<TSelf*, IWbemQualifierSet**, int> GetQualifierSet;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int*, int*, int> Get;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int*, int*, int> Get;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, CIMTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int, int> Put;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int, int> Put;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> Delete;
+        public delegate* unmanaged<TSelf*, char*, int> Delete;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, SAFEARRAY**, int> GetNames;
+        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, SAFEARRAY**, int> GetNames;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *, CIMTYPE *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, VARIANT*, int*, int*, int> Next;
+        public delegate* unmanaged<TSelf*, int, char**, VARIANT*, int*, int*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndEnumeration;
 
         [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IWbemQualifierSet**, int> GetPropertyQualifierSet;
+        public delegate* unmanaged<TSelf*, char*, IWbemQualifierSet**, int> GetPropertyQualifierSet;
 
         [NativeTypeName("HRESULT (IWbemClassObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IWbemClassObject**, int> Clone;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> GetObjectText;
+        public delegate* unmanaged<TSelf*, int, char**, int> GetObjectText;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> SpawnDerivedClass;
@@ -406,37 +406,37 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
         public delegate* unmanaged<TSelf*, int, IWbemClassObject*, int> CompareTo;
 
         [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetPropertyOrigin;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetPropertyOrigin;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> InheritsFrom;
+        public delegate* unmanaged<TSelf*, char*, int> InheritsFrom;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, IWbemClassObject**, IWbemClassObject**, int> GetMethod;
+        public delegate* unmanaged<TSelf*, char*, int, IWbemClassObject**, IWbemClassObject**, int> GetMethod;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, IWbemClassObject *, IWbemClassObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, IWbemClassObject*, IWbemClassObject*, int> PutMethod;
+        public delegate* unmanaged<TSelf*, char*, int, IWbemClassObject*, IWbemClassObject*, int> PutMethod;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteMethod;
+        public delegate* unmanaged<TSelf*, char*, int> DeleteMethod;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> BeginMethodEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, IWbemClassObject **, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, IWbemClassObject**, IWbemClassObject**, int> NextMethod;
+        public delegate* unmanaged<TSelf*, int, char**, IWbemClassObject**, IWbemClassObject**, int> NextMethod;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> EndMethodEnumeration;
 
         [NativeTypeName("HRESULT (LPCWSTR, IWbemQualifierSet **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IWbemQualifierSet**, int> GetMethodQualifierSet;
+        public delegate* unmanaged<TSelf*, char*, IWbemQualifierSet**, int> GetMethodQualifierSet;
 
         [NativeTypeName("HRESULT (LPCWSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetMethodOrigin;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetMethodOrigin;
 
         [NativeTypeName("HRESULT (LPCWSTR, CIMTYPE *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int*, int> GetPropertyHandle;
+        public delegate* unmanaged<TSelf*, char*, int*, int*, int> GetPropertyHandle;
 
         [NativeTypeName("HRESULT (long, long, const byte *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int, byte*, int> WritePropertyValue;
@@ -457,7 +457,7 @@ public unsafe partial struct IWbemObjectAccess : IWbemObjectAccess.Interface, IN
         public delegate* unmanaged<TSelf*, int, ulong, int> WriteQWORD;
 
         [NativeTypeName("HRESULT (long, BSTR *, CIMTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int*, int> GetPropertyInfoByHandle;
+        public delegate* unmanaged<TSelf*, int, char**, int*, int> GetPropertyInfoByHandle;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> Lock;

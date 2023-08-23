@@ -49,37 +49,37 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
     /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.CreateOutputPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateOutputPin(AM_MEDIA_TYPE* pMediaType, [NativeTypeName("LPWSTR")] ushort* pszPinName, IPin** ppIPin)
+    public HRESULT CreateOutputPin(AM_MEDIA_TYPE* pMediaType, [NativeTypeName("LPWSTR")] char* pszPinName, IPin** ppIPin)
     {
-        return ((delegate* unmanaged<IMpeg2Demultiplexer*, AM_MEDIA_TYPE*, ushort*, IPin**, int>)(lpVtbl[3]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pMediaType, pszPinName, ppIPin);
+        return ((delegate* unmanaged<IMpeg2Demultiplexer*, AM_MEDIA_TYPE*, char*, IPin**, int>)(lpVtbl[3]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pMediaType, pszPinName, ppIPin);
     }
 
     /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.SetOutputPinMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetOutputPinMediaType([NativeTypeName("LPWSTR")] ushort* pszPinName, AM_MEDIA_TYPE* pMediaType)
+    public HRESULT SetOutputPinMediaType([NativeTypeName("LPWSTR")] char* pszPinName, AM_MEDIA_TYPE* pMediaType)
     {
-        return ((delegate* unmanaged<IMpeg2Demultiplexer*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pszPinName, pMediaType);
+        return ((delegate* unmanaged<IMpeg2Demultiplexer*, char*, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pszPinName, pMediaType);
     }
 
     /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.DeleteOutputPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] ushort* pszPinName)
+    public HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] char* pszPinName)
     {
-        return ((delegate* unmanaged<IMpeg2Demultiplexer*, ushort*, int>)(lpVtbl[5]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pszPinName);
+        return ((delegate* unmanaged<IMpeg2Demultiplexer*, char*, int>)(lpVtbl[5]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pszPinName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateOutputPin(AM_MEDIA_TYPE* pMediaType, [NativeTypeName("LPWSTR")] ushort* pszPinName, IPin** ppIPin);
+        HRESULT CreateOutputPin(AM_MEDIA_TYPE* pMediaType, [NativeTypeName("LPWSTR")] char* pszPinName, IPin** ppIPin);
 
         [VtblIndex(4)]
-        HRESULT SetOutputPinMediaType([NativeTypeName("LPWSTR")] ushort* pszPinName, AM_MEDIA_TYPE* pMediaType);
+        HRESULT SetOutputPinMediaType([NativeTypeName("LPWSTR")] char* pszPinName, AM_MEDIA_TYPE* pMediaType);
 
         [VtblIndex(5)]
-        HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] ushort* pszPinName);
+        HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] char* pszPinName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -95,12 +95,12 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *, LPWSTR, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, ushort*, IPin**, int> CreateOutputPin;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, char*, IPin**, int> CreateOutputPin;
 
         [NativeTypeName("HRESULT (LPWSTR, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetOutputPinMediaType;
+        public delegate* unmanaged<TSelf*, char*, AM_MEDIA_TYPE*, int> SetOutputPinMediaType;
 
         [NativeTypeName("HRESULT (LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteOutputPin;
+        public delegate* unmanaged<TSelf*, char*, int> DeleteOutputPin;
     }
 }

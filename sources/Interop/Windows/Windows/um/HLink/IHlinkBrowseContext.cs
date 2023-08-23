@@ -89,25 +89,25 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.SetInitialHlink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    public HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, ushort*, ushort*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
+        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, char*, char*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.OnNavigateHlink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID)
+    public HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.UpdateHlink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName)
+    public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, ushort*, ushort*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
+        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.EnumNavigationStack"]/*' />
@@ -176,13 +176,13 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
         HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi);
 
         [VtblIndex(8)]
-        HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName);
 
         [VtblIndex(9)]
-        HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID);
+        HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID);
 
         [VtblIndex(10)]
-        HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
+        HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName);
 
         [VtblIndex(11)]
         HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem);
@@ -231,13 +231,13 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
         public delegate* unmanaged<TSelf*, HLBWINFO*, int> GetBrowseWindowInfo;
 
         [NativeTypeName("HRESULT (IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, ushort*, ushort*, int> SetInitialHlink;
+        public delegate* unmanaged<TSelf*, IMoniker*, char*, char*, int> SetInitialHlink;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, uint*, int> OnNavigateHlink;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, uint*, int> OnNavigateHlink;
 
         [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, int> UpdateHlink;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IEnumHLITEM **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;

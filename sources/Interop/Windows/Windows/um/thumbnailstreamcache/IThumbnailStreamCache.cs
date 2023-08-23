@@ -51,26 +51,26 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.GetThumbnailStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream)
+    public HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream)
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, ushort*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int>)(lpVtbl[3]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, options, requestedThumbnailSize, thumbnailSize, thumbnailStream);
+        return ((delegate* unmanaged<IThumbnailStreamCache*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int>)(lpVtbl[3]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, options, requestedThumbnailSize, thumbnailSize, thumbnailStream);
     }
 
     /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.SetThumbnailStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream)
+    public HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream)
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, ushort*, ulong, SIZE, IStream*, int>)(lpVtbl[4]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, thumbnailSize, thumbnailStream);
+        return ((delegate* unmanaged<IThumbnailStreamCache*, char*, ulong, SIZE, IStream*, int>)(lpVtbl[4]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, thumbnailSize, thumbnailStream);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream);
+        HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream);
 
         [VtblIndex(4)]
-        HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] ushort* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream);
+        HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream);
     }
 
     public partial struct Vtbl<TSelf>
@@ -86,9 +86,9 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG, ThumbnailStreamCacheOptions, UINT, SIZE *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int> GetThumbnailStream;
+        public delegate* unmanaged<TSelf*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int> GetThumbnailStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG, SIZE, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ulong, SIZE, IStream*, int> SetThumbnailStream;
+        public delegate* unmanaged<TSelf*, char*, ulong, SIZE, IStream*, int> SetThumbnailStream;
     }
 }

@@ -39,11 +39,11 @@ public unsafe partial struct CREATESTRUCTW
 
     /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.lpszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszName;
+    public char* lpszName;
 
     /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.lpszClass"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpszClass;
+    public char* lpszClass;
 
     /// <include file='CREATESTRUCTW.xml' path='doc/member[@name="CREATESTRUCTW.dwExStyle"]/*' />
     [NativeTypeName("DWORD")]

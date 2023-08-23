@@ -57,9 +57,9 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.GetCategoryDesc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] ushort** pszDesc)
+    public HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] char** pszDesc)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, uint, ushort**, int>)(lpVtbl[4]))((ICatInformation*)Unsafe.AsPointer(ref this), rcatid, lcid, pszDesc);
+        return ((delegate* unmanaged<ICatInformation*, Guid*, uint, char**, int>)(lpVtbl[4]))((ICatInformation*)Unsafe.AsPointer(ref this), rcatid, lcid, pszDesc);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumClassesOfCategories"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
         HRESULT EnumCategories([NativeTypeName("LCID")] uint lcid, IEnumCATEGORYINFO** ppenumCategoryInfo);
 
         [VtblIndex(4)]
-        HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] ushort** pszDesc);
+        HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] char** pszDesc);
 
         [VtblIndex(5)]
         HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq, IEnumGUID** ppenumClsid);
@@ -131,7 +131,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, IEnumCATEGORYINFO**, int> EnumCategories;
 
         [NativeTypeName("HRESULT (REFCATID, LCID, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, ushort**, int> GetCategoryDesc;
+        public delegate* unmanaged<TSelf*, Guid*, uint, char**, int> GetCategoryDesc;
 
         [NativeTypeName("HRESULT (ULONG, const CATID *, ULONG, const CATID *, IEnumGUID **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, Guid*, uint, Guid*, IEnumGUID**, int> EnumClassesOfCategories;

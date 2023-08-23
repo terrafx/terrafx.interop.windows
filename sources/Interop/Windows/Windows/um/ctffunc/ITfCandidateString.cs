@@ -49,9 +49,9 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr)
+    public HRESULT GetString([NativeTypeName("BSTR *")] char** pbstr)
     {
-        return ((delegate* unmanaged<ITfCandidateString*, ushort**, int>)(lpVtbl[3]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pbstr);
+        return ((delegate* unmanaged<ITfCandidateString*, char**, int>)(lpVtbl[3]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pbstr);
     }
 
     /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetIndex"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr);
+        HRESULT GetString([NativeTypeName("BSTR *")] char** pbstr);
 
         [VtblIndex(4)]
         HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex);
@@ -84,7 +84,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, char**, int> GetString;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetIndex;

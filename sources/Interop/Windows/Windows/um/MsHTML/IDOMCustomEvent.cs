@@ -65,9 +65,9 @@ public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMCustomEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCustomEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMCustomEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCustomEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface, INativ
     /// <include file='IDOMCustomEvent.xml' path='doc/member[@name="IDOMCustomEvent.initCustomEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT initCustomEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail)
+    public HRESULT initCustomEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail)
     {
-        return ((delegate* unmanaged<IDOMCustomEvent*, ushort*, short, short, VARIANT*, int>)(lpVtbl[8]))((IDOMCustomEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, detail);
+        return ((delegate* unmanaged<IDOMCustomEvent*, char*, short, short, VARIANT*, int>)(lpVtbl[8]))((IDOMCustomEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, detail);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface, INativ
         HRESULT get_detail(VARIANT* p);
 
         [VtblIndex(8)]
-        HRESULT initCustomEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail);
+        HRESULT initCustomEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, VARIANT* detail);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IDOMCustomEvent : IDOMCustomEvent.Interface, INativ
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_detail;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, VARIANT*, int> initCustomEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, VARIANT*, int> initCustomEvent;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] ushort** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched)
+    public HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] char** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched)
     {
-        return ((delegate* unmanaged<IEnumDMO*, uint, Guid*, ushort**, uint*, int>)(lpVtbl[3]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToFetch, pCLSID, Names, pcItemsFetched);
+        return ((delegate* unmanaged<IEnumDMO*, uint, Guid*, char**, uint*, int>)(lpVtbl[3]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToFetch, pCLSID, Names, pcItemsFetched);
     }
 
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Skip"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] ushort** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched);
+        HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] char** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched);
 
         [VtblIndex(4)]
         HRESULT Skip([NativeTypeName("DWORD")] uint cItemsToSkip);
@@ -106,7 +106,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, CLSID *, LPWSTR *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, ushort**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, Guid*, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, int> Skip;

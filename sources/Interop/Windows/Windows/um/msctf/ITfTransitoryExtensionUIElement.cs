@@ -49,9 +49,9 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, char**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -105,7 +105,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;

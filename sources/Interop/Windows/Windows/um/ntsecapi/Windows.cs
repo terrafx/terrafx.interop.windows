@@ -2013,7 +2013,7 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("BOOLEAN")]
-    public static extern byte AuditLookupCategoryNameW([NativeTypeName("const GUID *")] Guid* pAuditCategoryGuid, [NativeTypeName("PWSTR *")] ushort** ppszCategoryName);
+    public static extern byte AuditLookupCategoryNameW([NativeTypeName("const GUID *")] Guid* pAuditCategoryGuid, [NativeTypeName("PWSTR *")] char** ppszCategoryName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditLookupCategoryNameA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -2025,7 +2025,7 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("BOOLEAN")]
-    public static extern byte AuditLookupSubCategoryNameW([NativeTypeName("const GUID *")] Guid* pAuditSubCategoryGuid, [NativeTypeName("PWSTR *")] ushort** ppszSubCategoryName);
+    public static extern byte AuditLookupSubCategoryNameW([NativeTypeName("const GUID *")] Guid* pAuditSubCategoryGuid, [NativeTypeName("PWSTR *")] char** ppszSubCategoryName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditLookupSubCategoryNameA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -2061,7 +2061,7 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("BOOLEAN")]
-    public static extern byte AuditSetGlobalSaclW([NativeTypeName("PCWSTR")] ushort* ObjectTypeName, [NativeTypeName("PACL")] ACL* Acl);
+    public static extern byte AuditSetGlobalSaclW([NativeTypeName("PCWSTR")] char* ObjectTypeName, [NativeTypeName("PACL")] ACL* Acl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditSetGlobalSaclA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -2073,7 +2073,7 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("BOOLEAN")]
-    public static extern byte AuditQueryGlobalSaclW([NativeTypeName("PCWSTR")] ushort* ObjectTypeName, [NativeTypeName("PACL *")] ACL** Acl);
+    public static extern byte AuditQueryGlobalSaclW([NativeTypeName("PCWSTR")] char* ObjectTypeName, [NativeTypeName("PACL *")] ACL** Acl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditQueryGlobalSaclA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -2221,16 +2221,16 @@ public static unsafe partial class Windows
     public const int AUDIT_GENERIC_EXECUTE = (((0x00020000)));
 
     [NativeTypeName("#define AuditLookupCategoryName AuditLookupCategoryNameW")]
-    public static delegate*<Guid*, ushort**, byte> AuditLookupCategoryName => &AuditLookupCategoryNameW;
+    public static delegate*<Guid*, char**, byte> AuditLookupCategoryName => &AuditLookupCategoryNameW;
 
     [NativeTypeName("#define AuditLookupSubCategoryName AuditLookupSubCategoryNameW")]
-    public static delegate*<Guid*, ushort**, byte> AuditLookupSubCategoryName => &AuditLookupSubCategoryNameW;
+    public static delegate*<Guid*, char**, byte> AuditLookupSubCategoryName => &AuditLookupSubCategoryNameW;
 
     [NativeTypeName("#define AuditSetGlobalSacl AuditSetGlobalSaclW")]
-    public static delegate*<ushort*, ACL*, byte> AuditSetGlobalSacl => &AuditSetGlobalSaclW;
+    public static delegate*<char*, ACL*, byte> AuditSetGlobalSacl => &AuditSetGlobalSaclW;
 
     [NativeTypeName("#define AuditQueryGlobalSacl AuditQueryGlobalSaclW")]
-    public static delegate*<ushort*, ACL**, byte> AuditQueryGlobalSacl => &AuditQueryGlobalSaclW;
+    public static delegate*<char*, ACL**, byte> AuditQueryGlobalSacl => &AuditQueryGlobalSaclW;
 
     [NativeTypeName("#define PKU2U_PACKAGE_NAME_A \"pku2u\"")]
     public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => "pku2u"u8;

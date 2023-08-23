@@ -97,17 +97,17 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface, INativeGuid
     /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RegisterObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown* punk)
+    public HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] char* pszKey, IUnknown* punk)
     {
-        return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown*, int>)(lpVtbl[9]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, punk);
+        return ((delegate* unmanaged<IBindCtx*, char*, IUnknown*, int>)(lpVtbl[9]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, punk);
     }
 
     /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.GetObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown** ppunk)
+    public HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] char* pszKey, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown**, int>)(lpVtbl[10]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, ppunk);
+        return ((delegate* unmanaged<IBindCtx*, char*, IUnknown**, int>)(lpVtbl[10]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, ppunk);
     }
 
     /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.EnumObjectParam"]/*' />
@@ -121,9 +121,9 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface, INativeGuid
     /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RevokeObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey)
+    public HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] char* pszKey)
     {
-        return ((delegate* unmanaged<IBindCtx*, ushort*, int>)(lpVtbl[12]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey);
+        return ((delegate* unmanaged<IBindCtx*, char*, int>)(lpVtbl[12]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey);
     }
 
     public interface Interface : IUnknown.Interface
@@ -147,16 +147,16 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface, INativeGuid
         HRESULT GetRunningObjectTable(IRunningObjectTable** pprot);
 
         [VtblIndex(9)]
-        HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown* punk);
+        HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] char* pszKey, IUnknown* punk);
 
         [VtblIndex(10)]
-        HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown** ppunk);
+        HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] char* pszKey, IUnknown** ppunk);
 
         [VtblIndex(11)]
         HRESULT EnumObjectParam(IEnumString** ppenum);
 
         [VtblIndex(12)]
-        HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey);
+        HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] char* pszKey);
     }
 
     public partial struct Vtbl<TSelf>
@@ -190,15 +190,15 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IRunningObjectTable**, int> GetRunningObjectTable;
 
         [NativeTypeName("HRESULT (LPOLESTR, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IUnknown*, int> RegisterObjectParam;
+        public delegate* unmanaged<TSelf*, char*, IUnknown*, int> RegisterObjectParam;
 
         [NativeTypeName("HRESULT (LPOLESTR, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IUnknown**, int> GetObjectParam;
+        public delegate* unmanaged<TSelf*, char*, IUnknown**, int> GetObjectParam;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IEnumString**, int> EnumObjectParam;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> RevokeObjectParam;
+        public delegate* unmanaged<TSelf*, char*, int> RevokeObjectParam;
     }
 }

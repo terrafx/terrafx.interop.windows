@@ -65,9 +65,9 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IShellLinkDual2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,65 +81,65 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativ
     /// <inheritdoc cref="IShellLinkDual.get_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Path([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[7]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char**, int>)(lpVtbl[7]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.put_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_Path([NativeTypeName("BSTR")] ushort* bs)
+    public HRESULT put_Path([NativeTypeName("BSTR")] char* bs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[8]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char*, int>)(lpVtbl[8]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.get_Description" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Description([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Description([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[9]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char**, int>)(lpVtbl[9]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.put_Description" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_Description([NativeTypeName("BSTR")] ushort* bs)
+    public HRESULT put_Description([NativeTypeName("BSTR")] char* bs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[10]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char*, int>)(lpVtbl[10]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.get_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[11]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char**, int>)(lpVtbl[11]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.put_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* bs)
+    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] char* bs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[12]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char*, int>)(lpVtbl[12]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.get_Arguments" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_Arguments([NativeTypeName("BSTR *")] ushort** pbs)
+    public HRESULT get_Arguments([NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[13]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char**, int>)(lpVtbl[13]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.put_Arguments" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT put_Arguments([NativeTypeName("BSTR")] ushort* bs)
+    public HRESULT put_Arguments([NativeTypeName("BSTR")] char* bs)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[14]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
+        return ((delegate* unmanaged<IShellLinkDual2*, char*, int>)(lpVtbl[14]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
     /// <inheritdoc cref="IShellLinkDual.get_Hotkey" />
@@ -185,17 +185,17 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativ
     /// <inheritdoc cref="IShellLinkDual.GetIconLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetIconLocation([NativeTypeName("BSTR *")] ushort** pbs, int* piIcon)
+    public HRESULT GetIconLocation([NativeTypeName("BSTR *")] char** pbs, int* piIcon)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int*, int>)(lpVtbl[20]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs, piIcon);
+        return ((delegate* unmanaged<IShellLinkDual2*, char**, int*, int>)(lpVtbl[20]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs, piIcon);
     }
 
     /// <inheritdoc cref="IShellLinkDual.SetIconLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT SetIconLocation([NativeTypeName("BSTR")] ushort* bs, int iIcon)
+    public HRESULT SetIconLocation([NativeTypeName("BSTR")] char* bs, int iIcon)
     {
-        return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int, int>)(lpVtbl[21]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs, iIcon);
+        return ((delegate* unmanaged<IShellLinkDual2*, char*, int, int>)(lpVtbl[21]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs, iIcon);
     }
 
     /// <inheritdoc cref="IShellLinkDual.Save" />
@@ -239,34 +239,34 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Path;
+        public delegate* unmanaged<TSelf*, char**, int> get_Path;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Path;
+        public delegate* unmanaged<TSelf*, char*, int> put_Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Description;
+        public delegate* unmanaged<TSelf*, char**, int> get_Description;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Description;
+        public delegate* unmanaged<TSelf*, char*, int> put_Description;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, char**, int> get_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, char*, int> put_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Arguments;
+        public delegate* unmanaged<TSelf*, char**, int> get_Arguments;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Arguments;
+        public delegate* unmanaged<TSelf*, char*, int> put_Arguments;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int*, int> get_Hotkey;
@@ -284,10 +284,10 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface, INativ
         public delegate* unmanaged<TSelf*, int, int> Resolve;
 
         [NativeTypeName("HRESULT (BSTR *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int*, int> GetIconLocation;
+        public delegate* unmanaged<TSelf*, char**, int*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT (BSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> SetIconLocation;
+        public delegate* unmanaged<TSelf*, char*, int, int> SetIconLocation;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> Save;

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaRule*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCSSMediaRule*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface, IN
     /// <include file='IHTMLCSSMediaRule.xml' path='doc/member[@name="IHTMLCSSMediaRule.insertRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT insertRule([NativeTypeName("BSTR")] ushort* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
+    public HRESULT insertRule([NativeTypeName("BSTR")] char* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaRule*, ushort*, int, int*, int>)(lpVtbl[10]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), bstrRule, lIndex, plNewIndex);
+        return ((delegate* unmanaged<IHTMLCSSMediaRule*, char*, int, int*, int>)(lpVtbl[10]))((IHTMLCSSMediaRule*)Unsafe.AsPointer(ref this), bstrRule, lIndex, plNewIndex);
     }
 
     /// <include file='IHTMLCSSMediaRule.xml' path='doc/member[@name="IHTMLCSSMediaRule.deleteRule"]/*' />
@@ -130,7 +130,7 @@ public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface, IN
         HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p);
 
         [VtblIndex(10)]
-        HRESULT insertRule([NativeTypeName("BSTR")] ushort* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+        HRESULT insertRule([NativeTypeName("BSTR")] char* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
 
         [VtblIndex(11)]
         HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1);
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -170,7 +170,7 @@ public unsafe partial struct IHTMLCSSMediaRule : IHTMLCSSMediaRule.Interface, IN
         public delegate* unmanaged<TSelf*, IHTMLStyleSheetRulesCollection**, int> get_cssRules;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> insertRule;
+        public delegate* unmanaged<TSelf*, char*, int, int*, int> insertRule;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int> deleteRule;

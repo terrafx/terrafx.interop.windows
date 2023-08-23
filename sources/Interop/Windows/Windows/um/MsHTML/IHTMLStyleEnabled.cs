@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyleEnabled : IHTMLStyleEnabled.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,26 +81,26 @@ public unsafe partial struct IHTMLStyleEnabled : IHTMLStyleEnabled.Interface, IN
     /// <include file='IHTMLStyleEnabled.xml' path='doc/member[@name="IHTMLStyleEnabled.msGetPropertyEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    public HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short*, int>)(lpVtbl[7]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, p);
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, char*, short*, int>)(lpVtbl[7]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, p);
     }
 
     /// <include file='IHTMLStyleEnabled.xml' path='doc/member[@name="IHTMLStyleEnabled.msPutPropertyEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b)
+    public HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL")] short b)
     {
-        return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short, int>)(lpVtbl[8]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, b);
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, char*, short, int>)(lpVtbl[8]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, b);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+        HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
         [VtblIndex(8)]
-        HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b);
+        HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] char* name, [NativeTypeName("VARIANT_BOOL")] short b);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,15 +122,15 @@ public unsafe partial struct IHTMLStyleEnabled : IHTMLStyleEnabled.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> msGetPropertyEnabled;
+        public delegate* unmanaged<TSelf*, char*, short*, int> msGetPropertyEnabled;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> msPutPropertyEnabled;
+        public delegate* unmanaged<TSelf*, char*, short, int> msPutPropertyEnabled;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLParamElement2 : IHTMLParamElement2.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLParamElement2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,92 +81,92 @@ public unsafe partial struct IHTMLParamElement2 : IHTMLParamElement2.Interface, 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort*, int>)(lpVtbl[7]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char*, int>)(lpVtbl[7]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort**, int>)(lpVtbl[8]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char**, int>)(lpVtbl[8]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.put_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_type([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_type([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort*, int>)(lpVtbl[9]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char*, int>)(lpVtbl[9]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort**, int>)(lpVtbl[10]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char**, int>)(lpVtbl[10]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort*, int>)(lpVtbl[11]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char*, int>)(lpVtbl[11]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort**, int>)(lpVtbl[12]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char**, int>)(lpVtbl[12]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.put_valueType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_valueType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_valueType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort*, int>)(lpVtbl[13]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char*, int>)(lpVtbl[13]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLParamElement2.xml' path='doc/member[@name="IHTMLParamElement2.get_valueType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_valueType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_valueType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLParamElement2*, ushort**, int>)(lpVtbl[14]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLParamElement2*, char**, int>)(lpVtbl[14]))((IHTMLParamElement2*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT put_name([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_name([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(8)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT put_type([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_type([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(10)]
-        HRESULT get_type([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_type([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
-        HRESULT put_value([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_value([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(12)]
-        HRESULT get_value([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_value([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT put_valueType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_valueType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_valueType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_valueType([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,33 +188,33 @@ public unsafe partial struct IHTMLParamElement2 : IHTMLParamElement2.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_type;
+        public delegate* unmanaged<TSelf*, char*, int> put_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_type;
+        public delegate* unmanaged<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_value;
+        public delegate* unmanaged<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_value;
+        public delegate* unmanaged<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_valueType;
+        public delegate* unmanaged<TSelf*, char*, int> put_valueType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_valueType;
+        public delegate* unmanaged<TSelf*, char**, int> get_valueType;
     }
 }

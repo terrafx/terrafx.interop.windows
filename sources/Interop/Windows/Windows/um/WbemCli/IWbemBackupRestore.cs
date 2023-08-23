@@ -49,26 +49,26 @@ public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, 
     /// <include file='IWbemBackupRestore.xml' path='doc/member[@name="IWbemBackupRestore.Backup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Backup([NativeTypeName("LPCWSTR")] char* strBackupToFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, ushort*, int, int>)(lpVtbl[3]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
+        return ((delegate* unmanaged<IWbemBackupRestore*, char*, int, int>)(lpVtbl[3]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strBackupToFile, lFlags);
     }
 
     /// <include file='IWbemBackupRestore.xml' path='doc/member[@name="IWbemBackupRestore.Restore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
+    public HRESULT Restore([NativeTypeName("LPCWSTR")] char* strRestoreFromFile, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemBackupRestore*, ushort*, int, int>)(lpVtbl[4]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
+        return ((delegate* unmanaged<IWbemBackupRestore*, char*, int, int>)(lpVtbl[4]))((IWbemBackupRestore*)Unsafe.AsPointer(ref this), strRestoreFromFile, lFlags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Backup([NativeTypeName("LPCWSTR")] ushort* strBackupToFile, [NativeTypeName("long")] int lFlags);
+        HRESULT Backup([NativeTypeName("LPCWSTR")] char* strBackupToFile, [NativeTypeName("long")] int lFlags);
 
         [VtblIndex(4)]
-        HRESULT Restore([NativeTypeName("LPCWSTR")] ushort* strRestoreFromFile, [NativeTypeName("long")] int lFlags);
+        HRESULT Restore([NativeTypeName("LPCWSTR")] char* strRestoreFromFile, [NativeTypeName("long")] int lFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IWbemBackupRestore : IWbemBackupRestore.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Backup;
+        public delegate* unmanaged<TSelf*, char*, int, int> Backup;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> Restore;
+        public delegate* unmanaged<TSelf*, char*, int, int> Restore;
     }
 }

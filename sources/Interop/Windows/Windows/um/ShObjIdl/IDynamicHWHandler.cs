@@ -49,15 +49,15 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface, IN
     /// <include file='IDynamicHWHandler.xml' path='doc/member[@name="IDynamicHWHandler.GetDynamicInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction)
+    public HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] char** ppszAction)
     {
-        return ((delegate* unmanaged<IDynamicHWHandler*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this), pszDeviceID, dwContentType, ppszAction);
+        return ((delegate* unmanaged<IDynamicHWHandler*, char*, uint, char**, int>)(lpVtbl[3]))((IDynamicHWHandler*)Unsafe.AsPointer(ref this), pszDeviceID, dwContentType, ppszAction);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction);
+        HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] char** ppszAction);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> GetDynamicInfo;
+        public delegate* unmanaged<TSelf*, char*, uint, char**, int> GetDynamicInfo;
     }
 }

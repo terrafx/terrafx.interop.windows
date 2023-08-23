@@ -65,9 +65,9 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.UpdateText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact)
+    public HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] char* pszText, BOOL fMayCompact)
     {
-        return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
+        return ((delegate* unmanaged<IActionProgress*, SPTEXT, char*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.QueryCancel"]/*' />
@@ -103,7 +103,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
         HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal);
 
         [VtblIndex(5)]
-        HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact);
+        HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] char* pszText, BOOL fMayCompact);
 
         [VtblIndex(6)]
         HRESULT QueryCancel(BOOL* pfCancelled);
@@ -134,7 +134,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
         public delegate* unmanaged<TSelf*, ulong, ulong, int> UpdateProgress;
 
         [NativeTypeName("HRESULT (SPTEXT, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPTEXT, ushort*, BOOL, int> UpdateText;
+        public delegate* unmanaged<TSelf*, SPTEXT, char*, BOOL, int> UpdateText;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> QueryCancel;

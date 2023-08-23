@@ -67,9 +67,9 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
     /// <inheritdoc cref="IDWriteFontCollection.FindFamilyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT FindFamilyName([NativeTypeName("const WCHAR *")] ushort* familyName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
+    public HRESULT FindFamilyName([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection2*, ushort*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this), familyName, index, exists);
+        return ((delegate* unmanaged<IDWriteFontCollection2*, char*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this), familyName, index, exists);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFromFontFace" />
@@ -107,9 +107,9 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
     /// <include file='IDWriteFontCollection2.xml' path='doc/member[@name="IDWriteFontCollection2.GetMatchingFonts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] ushort* familyName, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontList2** fontList)
+    public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection2*, ushort*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int>)(lpVtbl[10]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this), familyName, fontAxisValues, fontAxisValueCount, fontList);
+        return ((delegate* unmanaged<IDWriteFontCollection2*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int>)(lpVtbl[10]))((IDWriteFontCollection2*)Unsafe.AsPointer(ref this), familyName, fontAxisValues, fontAxisValueCount, fontList);
     }
 
     /// <include file='IDWriteFontCollection2.xml' path='doc/member[@name="IDWriteFontCollection2.GetFontFamilyModel"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
         HRESULT GetFontFamily([NativeTypeName("UINT32")] uint index, IDWriteFontFamily2** fontFamily);
 
         [VtblIndex(10)]
-        HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] ushort* familyName, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontList2** fontList);
+        HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontList2** fontList);
 
         [VtblIndex(11)]
         DWRITE_FONT_FAMILY_MODEL GetFontFamilyModel();
@@ -162,7 +162,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
         public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, BOOL*, int> FindFamilyName;
+        public delegate* unmanaged<TSelf*, char*, uint*, BOOL*, int> FindFamilyName;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;
@@ -177,7 +177,7 @@ public unsafe partial struct IDWriteFontCollection2 : IDWriteFontCollection2.Int
         public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily2**, int> GetFontFamily2;
 
         [NativeTypeName("HRESULT (const WCHAR *, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontList2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
+        public delegate* unmanaged<TSelf*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
 
         [NativeTypeName("DWRITE_FONT_FAMILY_MODEL () __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;

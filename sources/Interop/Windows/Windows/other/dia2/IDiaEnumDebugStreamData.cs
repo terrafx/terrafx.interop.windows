@@ -65,9 +65,9 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
     /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int>)(lpVtbl[5]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged<IDiaEnumDebugStreamData*, char**, int>)(lpVtbl[5]))((IDiaEnumDebugStreamData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumDebugStreamData.xml' path='doc/member[@name="IDiaEnumDebugStreamData.Item"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal);
 
         [VtblIndex(5)]
-        HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(6)]
         HRESULT Item([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
@@ -156,7 +156,7 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint, uint*, byte*, int> Item;

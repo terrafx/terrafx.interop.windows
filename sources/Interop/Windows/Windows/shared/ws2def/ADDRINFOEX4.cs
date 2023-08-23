@@ -28,7 +28,7 @@ public unsafe partial struct ADDRINFOEX4
 
     /// <include file='ADDRINFOEX4.xml' path='doc/member[@name="ADDRINFOEX4.ai_canonname"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* ai_canonname;
+    public char* ai_canonname;
 
     /// <include file='ADDRINFOEX4.xml' path='doc/member[@name="ADDRINFOEX4.ai_addr"]/*' />
     [NativeTypeName("struct sockaddr *")]
@@ -53,7 +53,7 @@ public unsafe partial struct ADDRINFOEX4
 
     /// <include file='ADDRINFOEX4.xml' path='doc/member[@name="ADDRINFOEX4.ai_fqdn"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* ai_fqdn;
+    public char* ai_fqdn;
 
     /// <include file='ADDRINFOEX4.xml' path='doc/member[@name="ADDRINFOEX4.ai_interfaceindex"]/*' />
     public int ai_interfaceindex;

@@ -66,9 +66,9 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+    public HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, ushort*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pFileName, codePage, pBlobEncoding);
+        return ((delegate* unmanaged<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pFileName, codePage, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingFromPinned"]/*' />
@@ -136,7 +136,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         HRESULT CreateBlobFromBlob(IDxcBlob* pBlob, [NativeTypeName("UINT32")] uint offset, [NativeTypeName("UINT32")] uint length, IDxcBlob** ppResult);
 
         [VtblIndex(5)]
-        HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding);
+        HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding);
 
         [VtblIndex(6)]
         HRESULT CreateBlobWithEncodingFromPinned([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
@@ -179,7 +179,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IDxcBlob*, uint, uint, IDxcBlob**, int> CreateBlobFromBlob;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT32 *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, IDxcBlobEncoding**, int> CreateBlobFromFile;
+        public delegate* unmanaged<TSelf*, char*, uint*, IDxcBlobEncoding**, int> CreateBlobFromFile;
 
         [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingFromPinned;

@@ -65,9 +65,9 @@ public unsafe partial struct IDOMParser : IDOMParser.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMParser*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMParser*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMParser*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMParser*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,15 +81,15 @@ public unsafe partial struct IDOMParser : IDOMParser.Interface, INativeGuid
     /// <include file='IDOMParser.xml' path='doc/member[@name="IDOMParser.parseFromString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT parseFromString([NativeTypeName("BSTR")] ushort* xmlSource, [NativeTypeName("BSTR")] ushort* mimeType, IHTMLDocument2** ppNode)
+    public HRESULT parseFromString([NativeTypeName("BSTR")] char* xmlSource, [NativeTypeName("BSTR")] char* mimeType, IHTMLDocument2** ppNode)
     {
-        return ((delegate* unmanaged<IDOMParser*, ushort*, ushort*, IHTMLDocument2**, int>)(lpVtbl[7]))((IDOMParser*)Unsafe.AsPointer(ref this), xmlSource, mimeType, ppNode);
+        return ((delegate* unmanaged<IDOMParser*, char*, char*, IHTMLDocument2**, int>)(lpVtbl[7]))((IDOMParser*)Unsafe.AsPointer(ref this), xmlSource, mimeType, ppNode);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT parseFromString([NativeTypeName("BSTR")] ushort* xmlSource, [NativeTypeName("BSTR")] ushort* mimeType, IHTMLDocument2** ppNode);
+        HRESULT parseFromString([NativeTypeName("BSTR")] char* xmlSource, [NativeTypeName("BSTR")] char* mimeType, IHTMLDocument2** ppNode);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,12 +111,12 @@ public unsafe partial struct IDOMParser : IDOMParser.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IHTMLDocument2**, int> parseFromString;
+        public delegate* unmanaged<TSelf*, char*, char*, IHTMLDocument2**, int> parseFromString;
     }
 }

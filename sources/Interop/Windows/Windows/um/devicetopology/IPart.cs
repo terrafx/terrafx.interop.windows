@@ -49,9 +49,9 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName)
     {
-        return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
+        return ((delegate* unmanaged<IPart*, char**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetLocalId"]/*' />
@@ -65,9 +65,9 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetGlobalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId)
+    public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] char** ppwstrGlobalId)
     {
-        return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
+        return ((delegate* unmanaged<IPart*, char**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetPartType"]/*' />
@@ -153,13 +153,13 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName);
 
         [VtblIndex(4)]
         HRESULT GetLocalId(uint* pnId);
 
         [VtblIndex(5)]
-        HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId);
+        HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] char** ppwstrGlobalId);
 
         [VtblIndex(6)]
         HRESULT GetPartType(PartType* pPartType);
@@ -205,13 +205,13 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint*, int> GetLocalId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetGlobalId;
+        public delegate* unmanaged<TSelf*, char**, int> GetGlobalId;
 
         [NativeTypeName("HRESULT (PartType *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PartType*, int> GetPartType;

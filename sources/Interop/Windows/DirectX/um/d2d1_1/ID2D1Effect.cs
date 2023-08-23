@@ -22,7 +22,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
 
     public void** lpVtbl;
 
-    public HRESULT SetValueByName([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public HRESULT SetValueByName([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
         return SetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
@@ -32,7 +32,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
         return SetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
-    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] ushort* name, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
         return GetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
@@ -96,9 +96,9 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Properties.GetPropertyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] ushort* name, [NativeTypeName("UINT32")] uint nameCount)
+    public HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
     {
-        return ((delegate* unmanaged<ID2D1Effect*, uint, ushort*, uint, int>)(lpVtbl[4]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
+        return ((delegate* unmanaged<ID2D1Effect*, uint, char*, uint, int>)(lpVtbl[4]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetPropertyNameLength" />
@@ -122,17 +122,17 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT32")]
-    public uint GetPropertyIndex([NativeTypeName("PCWSTR")] ushort* name)
+    public uint GetPropertyIndex([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<ID2D1Effect*, ushort*, uint>)(lpVtbl[7]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged<ID2D1Effect*, char*, uint>)(lpVtbl[7]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="ID2D1Properties.SetValueByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public HRESULT SetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
-        return ((delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[8]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
+        return ((delegate* unmanaged<ID2D1Effect*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[8]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
     }
 
     /// <inheritdoc cref="ID2D1Properties.SetValue" />
@@ -146,9 +146,9 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Properties.GetValueByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] ushort* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
-        return ((delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[10]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
+        return ((delegate* unmanaged<ID2D1Effect*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[10]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetValue" />
@@ -252,7 +252,7 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> GetPropertyCount;
 
         [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetPropertyName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int> GetPropertyName;
 
         [NativeTypeName("UINT32 (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint> GetPropertyNameLength;
@@ -261,16 +261,16 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
         public new delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE> GetType;
 
         [NativeTypeName("UINT32 (PCWSTR) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint> GetPropertyIndex;
+        public delegate* unmanaged<TSelf*, char*, uint> GetPropertyIndex;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValueByName1;
+        public delegate* unmanaged<TSelf*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValueByName1;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValue1;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValueByName1;
+        public delegate* unmanaged<TSelf*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValueByName1;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValue1;

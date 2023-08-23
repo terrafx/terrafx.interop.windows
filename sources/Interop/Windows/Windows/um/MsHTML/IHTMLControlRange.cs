@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLControlRange*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -121,65 +121,65 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface, IN
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT queryCommandSupported([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT queryCommandSupported([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int>)(lpVtbl[12]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short*, int>)(lpVtbl[12]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT queryCommandEnabled([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT queryCommandEnabled([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int>)(lpVtbl[13]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short*, int>)(lpVtbl[13]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT queryCommandState([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT queryCommandState([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int>)(lpVtbl[14]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short*, int>)(lpVtbl[14]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandIndeterm"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int>)(lpVtbl[15]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short*, int>)(lpVtbl[15]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT queryCommandText([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("BSTR *")] ushort** pcmdText)
+    public HRESULT queryCommandText([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("BSTR *")] char** pcmdText)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, ushort**, int>)(lpVtbl[16]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pcmdText);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, char**, int>)(lpVtbl[16]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pcmdText);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.queryCommandValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT queryCommandValue([NativeTypeName("BSTR")] ushort* cmdID, VARIANT* pcmdValue)
+    public HRESULT queryCommandValue([NativeTypeName("BSTR")] char* cmdID, VARIANT* pcmdValue)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, VARIANT*, int>)(lpVtbl[17]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pcmdValue);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, VARIANT*, int>)(lpVtbl[17]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pcmdValue);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.execCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT execCommand([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT execCommand([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short, VARIANT, short*, int>)(lpVtbl[18]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, showUI, value, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short, VARIANT, short*, int>)(lpVtbl[18]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, showUI, value, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.execCommandShowHelp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
+    public HRESULT execCommandShowHelp([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet)
     {
-        return ((delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int>)(lpVtbl[19]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
+        return ((delegate* unmanaged<IHTMLControlRange*, char*, short*, int>)(lpVtbl[19]))((IHTMLControlRange*)Unsafe.AsPointer(ref this), cmdID, pfRet);
     }
 
     /// <include file='IHTMLControlRange.xml' path='doc/member[@name="IHTMLControlRange.commonParentElement"]/*' />
@@ -216,28 +216,28 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface, IN
         HRESULT scrollIntoView(VARIANT varargStart);
 
         [VtblIndex(12)]
-        HRESULT queryCommandSupported([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT queryCommandSupported([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(13)]
-        HRESULT queryCommandEnabled([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT queryCommandEnabled([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(14)]
-        HRESULT queryCommandState([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT queryCommandState([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(15)]
-        HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT queryCommandIndeterm([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(16)]
-        HRESULT queryCommandText([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("BSTR *")] ushort** pcmdText);
+        HRESULT queryCommandText([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("BSTR *")] char** pcmdText);
 
         [VtblIndex(17)]
-        HRESULT queryCommandValue([NativeTypeName("BSTR")] ushort* cmdID, VARIANT* pcmdValue);
+        HRESULT queryCommandValue([NativeTypeName("BSTR")] char* cmdID, VARIANT* pcmdValue);
 
         [VtblIndex(18)]
-        HRESULT execCommand([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT execCommand([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL")] short showUI, VARIANT value, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(19)]
-        HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
+        HRESULT execCommandShowHelp([NativeTypeName("BSTR")] char* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
 
         [VtblIndex(20)]
         HRESULT commonParentElement(IHTMLElement** parent);
@@ -265,7 +265,7 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -286,28 +286,28 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface, IN
         public delegate* unmanaged<TSelf*, VARIANT, int> scrollIntoView;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandSupported;
+        public delegate* unmanaged<TSelf*, char*, short*, int> queryCommandSupported;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandEnabled;
+        public delegate* unmanaged<TSelf*, char*, short*, int> queryCommandEnabled;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandState;
+        public delegate* unmanaged<TSelf*, char*, short*, int> queryCommandState;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandIndeterm;
+        public delegate* unmanaged<TSelf*, char*, short*, int> queryCommandIndeterm;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> queryCommandText;
+        public delegate* unmanaged<TSelf*, char*, char**, int> queryCommandText;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> queryCommandValue;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> queryCommandValue;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, VARIANT, short*, int> execCommand;
+        public delegate* unmanaged<TSelf*, char*, short, VARIANT, short*, int> execCommand;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> execCommandShowHelp;
+        public delegate* unmanaged<TSelf*, char*, short*, int> execCommandShowHelp;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IHTMLElement**, int> commonParentElement;

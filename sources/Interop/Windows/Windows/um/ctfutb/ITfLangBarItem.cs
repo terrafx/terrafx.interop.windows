@@ -73,9 +73,9 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface, INativeG
     /// <include file='ITfLangBarItem.xml' path='doc/member[@name="ITfLangBarItem.GetTooltipString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItem*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged<ITfLangBarItem*, char**, int>)(lpVtbl[6]))((ITfLangBarItem*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,7 +90,7 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface, INativeG
         HRESULT Show(BOOL fShow);
 
         [VtblIndex(6)]
-        HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip);
+        HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip);
     }
 
     public partial struct Vtbl<TSelf>
@@ -115,6 +115,6 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface, INativeG
         public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
     }
 }

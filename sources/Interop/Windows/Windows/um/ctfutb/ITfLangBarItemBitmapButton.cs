@@ -73,9 +73,9 @@ public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapBu
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemBitmapButton.xml' path='doc/member[@name="ITfLangBarItemBitmapButton.OnClick"]/*' />
@@ -121,9 +121,9 @@ public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapBu
     /// <include file='ITfLangBarItemBitmapButton.xml' path='doc/member[@name="ITfLangBarItemBitmapButton.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
+    public HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, ushort**, int>)(lpVtbl[12]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrText);
+        return ((delegate* unmanaged<ITfLangBarItemBitmapButton*, char**, int>)(lpVtbl[12]))((ITfLangBarItemBitmapButton*)Unsafe.AsPointer(ref this), pbstrText);
     }
 
     public interface Interface : ITfLangBarItem.Interface
@@ -144,7 +144,7 @@ public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapBu
         HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask);
 
         [VtblIndex(12)]
-        HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
+        HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText);
     }
 
     public partial struct Vtbl<TSelf>
@@ -169,7 +169,7 @@ public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapBu
         public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
@@ -187,6 +187,6 @@ public unsafe partial struct ITfLangBarItemBitmapButton : ITfLangBarItemBitmapBu
         public delegate* unmanaged<TSelf*, int, int, uint, HBITMAP*, HBITMAP*, int> DrawBitmap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, char**, int> GetText;
     }
 }

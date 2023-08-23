@@ -65,9 +65,9 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMWheelEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMWheelEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -113,9 +113,9 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface, INativeG
     /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.initWheelEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT initWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode)
+    public HRESULT initWheelEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode)
     {
-        return ((delegate* unmanaged<IDOMWheelEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int, int, uint, int>)(lpVtbl[11]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, buttonArg, relatedTargetArg, modifiersListArg, deltaX, deltaY, deltaZ, deltaMode);
+        return ((delegate* unmanaged<IDOMWheelEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, char*, int, int, int, uint, int>)(lpVtbl[11]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, buttonArg, relatedTargetArg, modifiersListArg, deltaX, deltaY, deltaZ, deltaMode);
     }
 
     public interface Interface : IDispatch.Interface
@@ -133,7 +133,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface, INativeG
         HRESULT get_deltaMode([NativeTypeName("ULONG *")] uint* p);
 
         [VtblIndex(11)]
-        HRESULT initWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode);
+        HRESULT initWheelEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] char* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode);
     }
 
     public partial struct Vtbl<TSelf>
@@ -155,7 +155,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -173,6 +173,6 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint*, int> get_deltaMode;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, USHORT, IEventTarget *, BSTR, long, long, long, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, ushort*, int, int, int, uint, int> initWheelEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, ushort, IEventTarget*, char*, int, int, int, uint, int> initWheelEvent;
     }
 }

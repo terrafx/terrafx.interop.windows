@@ -49,9 +49,9 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
     /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.FunctionName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName)
+    public HRESULT FunctionName([NativeTypeName("BSTR *")] char** pbstrFunctionName)
     {
-        return ((delegate* unmanaged<IScriptEventHandler*, ushort**, int>)(lpVtbl[3]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pbstrFunctionName);
+        return ((delegate* unmanaged<IScriptEventHandler*, char**, int>)(lpVtbl[3]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pbstrFunctionName);
     }
 
     /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.DebugDocumentContext"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName);
+        HRESULT FunctionName([NativeTypeName("BSTR *")] char** pbstrFunctionName);
 
         [VtblIndex(4)]
         HRESULT DebugDocumentContext(IUnknown** ppDebugDocumentContext);
@@ -117,7 +117,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> FunctionName;
+        public delegate* unmanaged<TSelf*, char**, int> FunctionName;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown**, int> DebugDocumentContext;

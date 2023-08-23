@@ -65,9 +65,9 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISVGSVGElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -145,33 +145,33 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_contentScriptType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_contentScriptType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[15]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ISVGSVGElement*, char*, int>)(lpVtbl[15]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_contentScriptType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contentScriptType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[16]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ISVGSVGElement*, char**, int>)(lpVtbl[16]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.put_contentStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_contentStyleType([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[17]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<ISVGSVGElement*, char*, int>)(lpVtbl[17]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.get_contentStyleType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_contentStyleType([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[18]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<ISVGSVGElement*, char**, int>)(lpVtbl[18]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.putref_viewport"]/*' />
@@ -497,9 +497,9 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
     /// <include file='ISVGSVGElement.xml' path='doc/member[@name="ISVGSVGElement.getElementById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
-    public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)
+    public HRESULT getElementById([NativeTypeName("BSTR")] char* elementId, IHTMLElement** pResult)
     {
-        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
+        return ((delegate* unmanaged<ISVGSVGElement*, char*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
     }
 
     public interface Interface : IDispatch.Interface
@@ -529,16 +529,16 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
         HRESULT get_height(ISVGAnimatedLength** p);
 
         [VtblIndex(15)]
-        HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_contentScriptType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(16)]
-        HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contentScriptType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(17)]
-        HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_contentStyleType([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(18)]
-        HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_contentStyleType([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(19)]
         HRESULT putref_viewport(ISVGRect* v);
@@ -661,7 +661,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
         HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult);
 
         [VtblIndex(59)]
-        HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult);
+        HRESULT getElementById([NativeTypeName("BSTR")] char* elementId, IHTMLElement** pResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -683,7 +683,7 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -713,16 +713,16 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
         public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_contentScriptType;
+        public delegate* unmanaged<TSelf*, char*, int> put_contentScriptType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contentScriptType;
+        public delegate* unmanaged<TSelf*, char**, int> get_contentScriptType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_contentStyleType;
+        public delegate* unmanaged<TSelf*, char*, int> put_contentStyleType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_contentStyleType;
+        public delegate* unmanaged<TSelf*, char**, int> get_contentStyleType;
 
         [NativeTypeName("HRESULT (ISVGRect *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISVGRect*, int> putref_viewport;
@@ -845,6 +845,6 @@ public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface, INativeG
         public delegate* unmanaged<TSelf*, ISVGMatrix*, ISVGTransform**, int> createSVGTransformFromMatrix;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLElement**, int> getElementById;
+        public delegate* unmanaged<TSelf*, char*, IHTMLElement**, int> getElementById;
     }
 }

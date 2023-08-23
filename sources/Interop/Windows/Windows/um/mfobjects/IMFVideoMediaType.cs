@@ -121,17 +121,17 @@ public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface, IN
     /// <inheritdoc cref="IMFAttributes.GetString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
+    public HRESULT GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] char* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
     {
-        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
+        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, char*, uint, uint*, int>)(lpVtbl[12]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
     }
 
     /// <inheritdoc cref="IMFAttributes.GetAllocatedString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
+    public HRESULT GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] char** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
     {
-        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
+        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, char**, uint*, int>)(lpVtbl[13]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
     }
 
     /// <inheritdoc cref="IMFAttributes.GetBlobSize" />
@@ -225,9 +225,9 @@ public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface, IN
     /// <inheritdoc cref="IMFAttributes.SetString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
+    public HRESULT SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] char* wszValue)
     {
-        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, wszValue);
+        return ((delegate* unmanaged<IMFVideoMediaType*, Guid*, char*, int>)(lpVtbl[25]))((IMFVideoMediaType*)Unsafe.AsPointer(ref this), guidKey, wszValue);
     }
 
     /// <inheritdoc cref="IMFAttributes.SetBlob" />
@@ -393,10 +393,10 @@ public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface, IN
         public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, Guid*, char*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint*, int> GetAllocatedString;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint*, int> GetAllocatedString;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetBlobSize;
@@ -432,7 +432,7 @@ public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface, IN
         public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, int> SetString;
+        public delegate* unmanaged<TSelf*, Guid*, char*, int> SetString;
 
         [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, byte*, uint, int> SetBlob;

@@ -49,15 +49,15 @@ public unsafe partial struct IXmlResolver : IXmlResolver.Interface, INativeGuid
     /// <include file='IXmlResolver.xml' path='doc/member[@name="IXmlResolver.ResolveUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT ResolveUri([NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] ushort* pwszSystemIdentifier, IUnknown** ppResolvedInput)
+    public HRESULT ResolveUri([NativeTypeName("LPCWSTR")] char* pwszBaseUri, [NativeTypeName("LPCWSTR")] char* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] char* pwszSystemIdentifier, IUnknown** ppResolvedInput)
     {
-        return ((delegate* unmanaged<IXmlResolver*, ushort*, ushort*, ushort*, IUnknown**, int>)(lpVtbl[3]))((IXmlResolver*)Unsafe.AsPointer(ref this), pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, ppResolvedInput);
+        return ((delegate* unmanaged<IXmlResolver*, char*, char*, char*, IUnknown**, int>)(lpVtbl[3]))((IXmlResolver*)Unsafe.AsPointer(ref this), pwszBaseUri, pwszPublicIdentifier, pwszSystemIdentifier, ppResolvedInput);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT ResolveUri([NativeTypeName("LPCWSTR")] ushort* pwszBaseUri, [NativeTypeName("LPCWSTR")] ushort* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] ushort* pwszSystemIdentifier, IUnknown** ppResolvedInput);
+        HRESULT ResolveUri([NativeTypeName("LPCWSTR")] char* pwszBaseUri, [NativeTypeName("LPCWSTR")] char* pwszPublicIdentifier, [NativeTypeName("LPCWSTR")] char* pwszSystemIdentifier, IUnknown** ppResolvedInput);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IXmlResolver : IXmlResolver.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, IUnknown**, int> ResolveUri;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, IUnknown**, int> ResolveUri;
     }
 }

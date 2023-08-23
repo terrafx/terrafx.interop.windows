@@ -10,7 +10,7 @@ public unsafe partial struct MIB_IFROW
 {
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.wszName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort wszName[256];
+    public fixed char wszName[256];
 
     /// <include file='MIB_IFROW.xml' path='doc/member[@name="MIB_IFROW.dwIndex"]/*' />
     [NativeTypeName("IF_INDEX")]

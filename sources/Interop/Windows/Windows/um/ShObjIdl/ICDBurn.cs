@@ -49,9 +49,9 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn.GetRecorderDriveLetter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch)
+    public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] char* pszDrive, uint cch)
     {
-        return ((delegate* unmanaged<ICDBurn*, ushort*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
+        return ((delegate* unmanaged<ICDBurn*, char*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
     }
 
     /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn.Burn"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch);
+        HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] char* pszDrive, uint cch);
 
         [VtblIndex(4)]
         HRESULT Burn(HWND hwnd);
@@ -95,7 +95,7 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetRecorderDriveLetter;
+        public delegate* unmanaged<TSelf*, char*, uint, int> GetRecorderDriveLetter;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, HWND, int> Burn;

@@ -51,9 +51,9 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** text)
+    public HRESULT GetText([NativeTypeName("LPWSTR *")] char** text)
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged<IMFTimedTextFormattedText*, char**, int>)(lpVtbl[3]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText.GetSubformattingCount"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetText([NativeTypeName("LPWSTR *")] ushort** text);
+        HRESULT GetText([NativeTypeName("LPWSTR *")] char** text);
 
         [VtblIndex(4)]
         [return: NativeTypeName("DWORD")]
@@ -99,7 +99,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, char**, int> GetText;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint> GetSubformattingCount;

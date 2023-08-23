@@ -75,17 +75,17 @@ public unsafe partial struct IMFMediaSharingEngine : IMFMediaSharingEngine.Inter
     /// <inheritdoc cref="IMFMediaEngine.SetSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
+    public HRESULT SetSource([NativeTypeName("BSTR")] char* pUrl)
     {
-        return ((delegate* unmanaged<IMFMediaSharingEngine*, ushort*, int>)(lpVtbl[6]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), pUrl);
+        return ((delegate* unmanaged<IMFMediaSharingEngine*, char*, int>)(lpVtbl[6]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), pUrl);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetCurrentSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
+    public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] char** ppUrl)
     {
-        return ((delegate* unmanaged<IMFMediaSharingEngine*, ushort**, int>)(lpVtbl[7]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), ppUrl);
+        return ((delegate* unmanaged<IMFMediaSharingEngine*, char**, int>)(lpVtbl[7]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), ppUrl);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetNetworkState" />
@@ -131,9 +131,9 @@ public unsafe partial struct IMFMediaSharingEngine : IMFMediaSharingEngine.Inter
     /// <inheritdoc cref="IMFMediaEngine.CanPlayType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
+    public HRESULT CanPlayType([NativeTypeName("BSTR")] char* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaSharingEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
+        return ((delegate* unmanaged<IMFMediaSharingEngine*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaSharingEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
     }
 
     /// <inheritdoc cref="IMFMediaEngine.GetReadyState" />
@@ -420,10 +420,10 @@ public unsafe partial struct IMFMediaSharingEngine : IMFMediaSharingEngine.Inter
         public delegate* unmanaged<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrentSource;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurrentSource;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetNetworkState;
@@ -441,7 +441,7 @@ public unsafe partial struct IMFMediaSharingEngine : IMFMediaSharingEngine.Inter
         public delegate* unmanaged<TSelf*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged<TSelf*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort> GetReadyState;

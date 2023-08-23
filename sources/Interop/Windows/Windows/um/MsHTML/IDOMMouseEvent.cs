@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMouseEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,17 +161,17 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.initMouseEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg)
+    public HRESULT initMouseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int>)(lpVtbl[17]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg);
+        return ((delegate* unmanaged<IDOMMouseEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int>)(lpVtbl[17]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.getModifierState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated)
+    public HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, short*, int>)(lpVtbl[18]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), keyArg, activated);
+        return ((delegate* unmanaged<IDOMMouseEvent*, char*, short*, int>)(lpVtbl[18]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), keyArg, activated);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_buttons"]/*' />
@@ -303,10 +303,10 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
         HRESULT get_relatedTarget(IEventTarget** p);
 
         [VtblIndex(17)]
-        HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
+        HRESULT initMouseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
 
         [VtblIndex(18)]
-        HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
+        HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
 
         [VtblIndex(19)]
         HRESULT get_buttons(ushort* p);
@@ -364,7 +364,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -400,10 +400,10 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
         public delegate* unmanaged<TSelf*, IEventTarget**, int> get_relatedTarget;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, USHORT, IEventTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> getModifierState;
+        public delegate* unmanaged<TSelf*, char*, short*, int> getModifierState;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> get_buttons;

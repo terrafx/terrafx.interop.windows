@@ -49,15 +49,15 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface, 
     /// <include file='IAMPhysicalPinInfo.xml' path='doc/member[@name="IAMPhysicalPinInfo.GetPhysicalType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType)
+    public HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] char** ppszType)
     {
-        return ((delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
+        return ((delegate* unmanaged<IAMPhysicalPinInfo*, int*, char**, int>)(lpVtbl[3]))((IAMPhysicalPinInfo*)Unsafe.AsPointer(ref this), pType, ppszType);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType);
+        HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] char** ppszType);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface, 
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, ushort**, int> GetPhysicalType;
+        public delegate* unmanaged<TSelf*, int*, char**, int> GetPhysicalType;
     }
 }

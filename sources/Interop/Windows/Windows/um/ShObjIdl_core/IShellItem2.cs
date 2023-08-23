@@ -65,9 +65,9 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
     /// <inheritdoc cref="IShellItem.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetDisplayName(SIGDN sigdnName, [NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IShellItem2*, SIGDN, ushort**, int>)(lpVtbl[5]))((IShellItem2*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
+        return ((delegate* unmanaged<IShellItem2*, SIGDN, char**, int>)(lpVtbl[5]))((IShellItem2*)Unsafe.AsPointer(ref this), sigdnName, ppszName);
     }
 
     /// <inheritdoc cref="IShellItem.GetAttributes" />
@@ -161,9 +161,9 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
     /// <include file='IShellItem2.xml' path='doc/member[@name="IShellItem2.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetString([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** ppsz)
+    public HRESULT GetString([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] char** ppsz)
     {
-        return ((delegate* unmanaged<IShellItem2*, PROPERTYKEY*, ushort**, int>)(lpVtbl[17]))((IShellItem2*)Unsafe.AsPointer(ref this), key, ppsz);
+        return ((delegate* unmanaged<IShellItem2*, PROPERTYKEY*, char**, int>)(lpVtbl[17]))((IShellItem2*)Unsafe.AsPointer(ref this), key, ppsz);
     }
 
     /// <include file='IShellItem2.xml' path='doc/member[@name="IShellItem2.GetUInt32"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
         HRESULT GetInt32([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, int* pi);
 
         [VtblIndex(17)]
-        HRESULT GetString([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] ushort** ppsz);
+        HRESULT GetString([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("LPWSTR *")] char** ppsz);
 
         [VtblIndex(18)]
         HRESULT GetUInt32([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("ULONG *")] uint* pui);
@@ -251,7 +251,7 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IShellItem**, int> GetParent;
 
         [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIGDN, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, SIGDN, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetAttributes;
@@ -287,7 +287,7 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, int*, int> GetInt32;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, char**, int> GetString;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, ULONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, uint*, int> GetUInt32;

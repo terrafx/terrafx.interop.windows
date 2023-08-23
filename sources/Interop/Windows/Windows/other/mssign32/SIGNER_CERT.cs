@@ -29,7 +29,7 @@ public unsafe partial struct SIGNER_CERT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszSpcFile"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszSpcFile
+    public ref char* pwszSpcFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -67,7 +67,7 @@ public unsafe partial struct SIGNER_CERT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszSpcFile"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pwszSpcFile;
+        public char* pwszSpcFile;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCertStoreInfo"]/*' />
         [FieldOffset(0)]

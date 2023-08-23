@@ -65,9 +65,9 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMutationEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMMutationEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,25 +89,25 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
     /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_prevValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_prevValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_prevValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[8]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMMutationEvent*, char**, int>)(lpVtbl[8]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_newValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_newValue([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[9]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMMutationEvent*, char**, int>)(lpVtbl[9]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_attrName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_attrName([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_attrName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[10]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMMutationEvent*, char**, int>)(lpVtbl[10]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_attrChange"]/*' />
@@ -121,9 +121,9 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
     /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.initMutationEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT initMutationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] ushort* prevValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* attrNameArg, ushort attrChangeArg)
+    public HRESULT initMutationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] char* prevValueArg, [NativeTypeName("BSTR")] char* newValueArg, [NativeTypeName("BSTR")] char* attrNameArg, ushort attrChangeArg)
     {
-        return ((delegate* unmanaged<IDOMMutationEvent*, ushort*, short, short, IDispatch*, ushort*, ushort*, ushort*, ushort, int>)(lpVtbl[12]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, relatedNodeArg, prevValueArg, newValueArg, attrNameArg, attrChangeArg);
+        return ((delegate* unmanaged<IDOMMutationEvent*, char*, short, short, IDispatch*, char*, char*, char*, ushort, int>)(lpVtbl[12]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, relatedNodeArg, prevValueArg, newValueArg, attrNameArg, attrChangeArg);
     }
 
     public interface Interface : IDispatch.Interface
@@ -132,19 +132,19 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
         HRESULT get_relatedNode(IDispatch** p);
 
         [VtblIndex(8)]
-        HRESULT get_prevValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_prevValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(9)]
-        HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_newValue([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(10)]
-        HRESULT get_attrName([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_attrName([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(11)]
         HRESULT get_attrChange(ushort* p);
 
         [VtblIndex(12)]
-        HRESULT initMutationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] ushort* prevValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* attrNameArg, ushort attrChangeArg);
+        HRESULT initMutationEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] char* prevValueArg, [NativeTypeName("BSTR")] char* newValueArg, [NativeTypeName("BSTR")] char* attrNameArg, ushort attrChangeArg);
     }
 
     public partial struct Vtbl<TSelf>
@@ -166,7 +166,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -175,18 +175,18 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface, IN
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_relatedNode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_prevValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_prevValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_newValue;
+        public delegate* unmanaged<TSelf*, char**, int> get_newValue;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_attrName;
+        public delegate* unmanaged<TSelf*, char**, int> get_attrName;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ushort*, int> get_attrChange;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IDispatch *, BSTR, BSTR, BSTR, USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IDispatch*, ushort*, ushort*, ushort*, ushort, int> initMutationEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IDispatch*, char*, char*, char*, ushort, int> initMutationEvent;
     }
 }

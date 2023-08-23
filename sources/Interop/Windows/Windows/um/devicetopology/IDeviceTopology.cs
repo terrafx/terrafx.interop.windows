@@ -89,9 +89,9 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
+    public HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, ushort**, int>)(lpVtbl[8]))((IDeviceTopology*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        return ((delegate* unmanaged<IDeviceTopology*, char**, int>)(lpVtbl[8]))((IDeviceTopology*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSignalPath"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
         HRESULT GetPartById(uint nId, IPart** ppPart);
 
         [VtblIndex(8)]
-        HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+        HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId);
 
         [VtblIndex(9)]
         HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts);
@@ -154,7 +154,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, IPart**, int> GetPartById;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceId;
+        public delegate* unmanaged<TSelf*, char**, int> GetDeviceId;
 
         [NativeTypeName("HRESULT (IPart *, IPart *, BOOL, IPartsList **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;

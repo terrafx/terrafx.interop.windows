@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCurrentStyle3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
     /// <include file='IHTMLCurrentStyle3.xml' path='doc/member[@name="IHTMLCurrentStyle3.get_textOverflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_textOverflow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle3*, ushort**, int>)(lpVtbl[7]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle3*, char**, int>)(lpVtbl[7]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle3.xml' path='doc/member[@name="IHTMLCurrentStyle3.get_minHeight"]/*' />
@@ -105,15 +105,15 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
     /// <include file='IHTMLCurrentStyle3.xml' path='doc/member[@name="IHTMLCurrentStyle3.get_whiteSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_whiteSpace([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle3*, ushort**, int>)(lpVtbl[10]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle3*, char**, int>)(lpVtbl[10]))((IHTMLCurrentStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_textOverflow([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_textOverflow([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_minHeight(VARIANT* p);
@@ -122,7 +122,7 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
         HRESULT get_wordSpacing(VARIANT* p);
 
         [VtblIndex(10)]
-        HRESULT get_whiteSpace([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_whiteSpace([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -144,13 +144,13 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_textOverflow;
+        public delegate* unmanaged<TSelf*, char**, int> get_textOverflow;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_minHeight;
@@ -159,6 +159,6 @@ public unsafe partial struct IHTMLCurrentStyle3 : IHTMLCurrentStyle3.Interface, 
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_wordSpacing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_whiteSpace;
+        public delegate* unmanaged<TSelf*, char**, int> get_whiteSpace;
     }
 }

@@ -65,9 +65,9 @@ public unsafe partial struct IDOMCompositionEvent : IDOMCompositionEvent.Interfa
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMCompositionEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDOMCompositionEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,37 +81,37 @@ public unsafe partial struct IDOMCompositionEvent : IDOMCompositionEvent.Interfa
     /// <include file='IDOMCompositionEvent.xml' path='doc/member[@name="IDOMCompositionEvent.get_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_data([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMCompositionEvent*, ushort**, int>)(lpVtbl[7]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMCompositionEvent*, char**, int>)(lpVtbl[7]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMCompositionEvent.xml' path='doc/member[@name="IDOMCompositionEvent.initCompositionEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT initCompositionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* data, [NativeTypeName("BSTR")] ushort* locale)
+    public HRESULT initCompositionEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* data, [NativeTypeName("BSTR")] char* locale)
     {
-        return ((delegate* unmanaged<IDOMCompositionEvent*, ushort*, short, short, IHTMLWindow2*, ushort*, ushort*, int>)(lpVtbl[8]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, data, locale);
+        return ((delegate* unmanaged<IDOMCompositionEvent*, char*, short, short, IHTMLWindow2*, char*, char*, int>)(lpVtbl[8]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, data, locale);
     }
 
     /// <include file='IDOMCompositionEvent.xml' path='doc/member[@name="IDOMCompositionEvent.get_locale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_locale([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IDOMCompositionEvent*, ushort**, int>)(lpVtbl[9]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IDOMCompositionEvent*, char**, int>)(lpVtbl[9]))((IDOMCompositionEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_data([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_data([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
-        HRESULT initCompositionEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] ushort* data, [NativeTypeName("BSTR")] ushort* locale);
+        HRESULT initCompositionEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("BSTR")] char* data, [NativeTypeName("BSTR")] char* locale);
 
         [VtblIndex(9)]
-        HRESULT get_locale([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_locale([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -133,18 +133,18 @@ public unsafe partial struct IDOMCompositionEvent : IDOMCompositionEvent.Interfa
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_data;
+        public delegate* unmanaged<TSelf*, char**, int> get_data;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, ushort*, ushort*, int> initCompositionEvent;
+        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, char*, char*, int> initCompositionEvent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_locale;
+        public delegate* unmanaged<TSelf*, char**, int> get_locale;
     }
 }

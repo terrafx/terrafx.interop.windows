@@ -73,9 +73,9 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
     /// <inheritdoc cref="IWICComponentInfo.GetAuthor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
+    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] char* wzAuthor, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[6]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetVendorGUID" />
@@ -89,25 +89,25 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
     /// <inheritdoc cref="IWICComponentInfo.GetVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
+    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] char* wzVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[8]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetSpecVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
+    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] char* wzSpecVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[9]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetFriendlyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)
+    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] char* wzFriendlyName, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[10]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[10]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
     }
 
     /// <inheritdoc cref="IWICMetadataHandlerInfo.GetMetadataFormat" />
@@ -129,17 +129,17 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
     /// <inheritdoc cref="IWICMetadataHandlerInfo.GetDeviceManufacturer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] ushort* wzDeviceManufacturer, uint* pcchActual)
+    public HRESULT GetDeviceManufacturer(uint cchDeviceManufacturer, [NativeTypeName("WCHAR *")] char* wzDeviceManufacturer, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[13]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[13]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchDeviceManufacturer, wzDeviceManufacturer, pcchActual);
     }
 
     /// <inheritdoc cref="IWICMetadataHandlerInfo.GetDeviceModels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] ushort* wzDeviceModels, uint* pcchActual)
+    public HRESULT GetDeviceModels(uint cchDeviceModels, [NativeTypeName("WCHAR *")] char* wzDeviceModels, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int>)(lpVtbl[14]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchDeviceModels, wzDeviceModels, pcchActual);
+        return ((delegate* unmanaged<IWICMetadataReaderInfo*, uint, char*, uint*, int>)(lpVtbl[14]))((IWICMetadataReaderInfo*)Unsafe.AsPointer(ref this), cchDeviceModels, wzDeviceModels, pcchActual);
     }
 
     /// <inheritdoc cref="IWICMetadataHandlerInfo.DoesRequireFullStream" />
@@ -224,19 +224,19 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
         public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetMetadataFormat;
@@ -245,10 +245,10 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
         public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> GetContainerFormats;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetDeviceManufacturer;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceModels;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetDeviceModels;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> DoesRequireFullStream;

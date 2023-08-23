@@ -49,25 +49,25 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface, INat
     /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszName)
+    public HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[3]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszName);
+        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, char**, int>)(lpVtbl[3]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszName);
     }
 
     /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszIcon)
+    public HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszIcon)
     {
-        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[4]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszIcon);
+        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, char**, int>)(lpVtbl[4]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszIcon);
     }
 
     /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetToolTip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszInfotip)
+    public HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszInfotip)
     {
-        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[5]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszInfotip);
+        return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, char**, int>)(lpVtbl[5]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszInfotip);
     }
 
     /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetCanonicalName"]/*' />
@@ -113,13 +113,13 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface, INat
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszName);
+        HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszName);
 
         [VtblIndex(4)]
-        HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszIcon);
+        HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszIcon);
 
         [VtblIndex(5)]
-        HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszInfotip);
+        HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] char** ppszInfotip);
 
         [VtblIndex(6)]
         HRESULT GetCanonicalName(Guid* pguidCommandName);
@@ -150,13 +150,13 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface, INat
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray*, ushort**, int> GetTitle;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, char**, int> GetTitle;
 
         [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray*, ushort**, int> GetIcon;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, char**, int> GetIcon;
 
         [NativeTypeName("HRESULT (IShellItemArray *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray*, ushort**, int> GetToolTip;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, char**, int> GetToolTip;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetCanonicalName;

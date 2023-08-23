@@ -12,11 +12,11 @@ public static unsafe partial class WinRT
 {
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsCreateString"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT WindowsCreateString([NativeTypeName("PCNZWCH")] ushort* sourceString, [NativeTypeName("UINT32")] uint length, HSTRING* @string);
+    public static extern HRESULT WindowsCreateString([NativeTypeName("PCNZWCH")] char* sourceString, [NativeTypeName("UINT32")] uint length, HSTRING* @string);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsCreateStringReference"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT WindowsCreateStringReference([NativeTypeName("PCWSTR")] ushort* sourceString, [NativeTypeName("UINT32")] uint length, HSTRING_HEADER* hstringHeader, HSTRING* @string);
+    public static extern HRESULT WindowsCreateStringReference([NativeTypeName("PCWSTR")] char* sourceString, [NativeTypeName("UINT32")] uint length, HSTRING_HEADER* hstringHeader, HSTRING* @string);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsDeleteString"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -34,7 +34,7 @@ public static unsafe partial class WinRT
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsGetStringRawBuffer"]/*' />
     [DllImport("combase", ExactSpelling = true)]
     [return: NativeTypeName("PCWSTR")]
-    public static extern ushort* WindowsGetStringRawBuffer(HSTRING @string, [NativeTypeName("UINT32 *")] uint* length);
+    public static extern char* WindowsGetStringRawBuffer(HSTRING @string, [NativeTypeName("UINT32 *")] uint* length);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsIsStringEmpty"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -74,7 +74,7 @@ public static unsafe partial class WinRT
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsPreallocateStringBuffer"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT WindowsPreallocateStringBuffer([NativeTypeName("UINT32")] uint length, [NativeTypeName("WCHAR **")] ushort** charBuffer, HSTRING_BUFFER* bufferHandle);
+    public static extern HRESULT WindowsPreallocateStringBuffer([NativeTypeName("UINT32")] uint length, [NativeTypeName("WCHAR **")] char** charBuffer, HSTRING_BUFFER* bufferHandle);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WindowsPromoteStringBuffer"]/*' />
     [DllImport("combase", ExactSpelling = true)]

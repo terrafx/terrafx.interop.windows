@@ -145,17 +145,17 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetIcon([NativeTypeName("LPWSTR *")] ushort** ppszIcon)
+    public HRESULT GetIcon([NativeTypeName("LPWSTR *")] char** ppszIcon)
     {
-        return ((delegate* unmanaged<IShellLibrary*, ushort**, int>)(lpVtbl[15]))((IShellLibrary*)Unsafe.AsPointer(ref this), ppszIcon);
+        return ((delegate* unmanaged<IShellLibrary*, char**, int>)(lpVtbl[15]))((IShellLibrary*)Unsafe.AsPointer(ref this), ppszIcon);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT SetIcon([NativeTypeName("LPCWSTR")] ushort* pszIcon)
+    public HRESULT SetIcon([NativeTypeName("LPCWSTR")] char* pszIcon)
     {
-        return ((delegate* unmanaged<IShellLibrary*, ushort*, int>)(lpVtbl[16]))((IShellLibrary*)Unsafe.AsPointer(ref this), pszIcon);
+        return ((delegate* unmanaged<IShellLibrary*, char*, int>)(lpVtbl[16]))((IShellLibrary*)Unsafe.AsPointer(ref this), pszIcon);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Commit"]/*' />
@@ -169,17 +169,17 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
+    public HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[18]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
+        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[18]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SaveInKnownFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
+    public HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[19]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
+        return ((delegate* unmanaged<IShellLibrary*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[19]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -221,19 +221,19 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
         HRESULT SetFolderType([NativeTypeName("const FOLDERTYPEID &")] Guid* ftid);
 
         [VtblIndex(15)]
-        HRESULT GetIcon([NativeTypeName("LPWSTR *")] ushort** ppszIcon);
+        HRESULT GetIcon([NativeTypeName("LPWSTR *")] char** ppszIcon);
 
         [VtblIndex(16)]
-        HRESULT SetIcon([NativeTypeName("LPCWSTR")] ushort* pszIcon);
+        HRESULT SetIcon([NativeTypeName("LPCWSTR")] char* pszIcon);
 
         [VtblIndex(17)]
         HRESULT Commit();
 
         [VtblIndex(18)]
-        HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo);
+        HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo);
 
         [VtblIndex(19)]
-        HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo);
+        HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -285,18 +285,18 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
         public delegate* unmanaged<TSelf*, Guid*, int> SetFolderType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetIcon;
+        public delegate* unmanaged<TSelf*, char**, int> GetIcon;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetIcon;
+        public delegate* unmanaged<TSelf*, char*, int> SetIcon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int> Save;
+        public delegate* unmanaged<TSelf*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> Save;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int> SaveInKnownFolder;
+        public delegate* unmanaged<TSelf*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> SaveInKnownFolder;
     }
 }

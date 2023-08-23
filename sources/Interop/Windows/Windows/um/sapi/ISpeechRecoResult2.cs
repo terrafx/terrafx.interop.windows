@@ -65,9 +65,9 @@ public unsafe partial struct ISpeechRecoResult2 : ISpeechRecoResult2.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecoResult2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<ISpeechRecoResult2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -161,15 +161,15 @@ public unsafe partial struct ISpeechRecoResult2 : ISpeechRecoResult2.Interface, 
     /// <include file='ISpeechRecoResult2.xml' path='doc/member[@name="ISpeechRecoResult2.SetTextFeedback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
+    public HRESULT SetTextFeedback([NativeTypeName("BSTR")] char* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful)
     {
-        return ((delegate* unmanaged<ISpeechRecoResult2*, ushort*, short, int>)(lpVtbl[17]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
+        return ((delegate* unmanaged<ISpeechRecoResult2*, char*, short, int>)(lpVtbl[17]))((ISpeechRecoResult2*)Unsafe.AsPointer(ref this), Feedback, WasSuccessful);
     }
 
     public interface Interface : ISpeechRecoResult.Interface
     {
         [VtblIndex(17)]
-        HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
+        HRESULT SetTextFeedback([NativeTypeName("BSTR")] char* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
     }
 
     public partial struct Vtbl<TSelf>
@@ -191,7 +191,7 @@ public unsafe partial struct ISpeechRecoResult2 : ISpeechRecoResult2.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -227,6 +227,6 @@ public unsafe partial struct ISpeechRecoResult2 : ISpeechRecoResult2.Interface, 
         public delegate* unmanaged<TSelf*, SpeechDiscardType, int> DiscardResultInfo;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, int> SetTextFeedback;
+        public delegate* unmanaged<TSelf*, char*, short, int> SetTextFeedback;
     }
 }

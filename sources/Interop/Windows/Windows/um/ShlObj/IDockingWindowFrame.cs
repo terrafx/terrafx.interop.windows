@@ -65,9 +65,9 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.AddToolbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags)
+    public HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, ushort*, uint, int>)(lpVtbl[5]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, pwszItem, dwAddFlags);
+        return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, char*, uint, int>)(lpVtbl[5]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, pwszItem, dwAddFlags);
     }
 
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.RemoveToolbar"]/*' />
@@ -81,21 +81,21 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.FindToolbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindToolbar([NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    public HRESULT FindToolbar([NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, ushort*, Guid*, void**, int>)(lpVtbl[7]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), pwszItem, riid, ppv);
+        return ((delegate* unmanaged<IDockingWindowFrame*, char*, Guid*, void**, int>)(lpVtbl[7]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), pwszItem, riid, ppv);
     }
 
     public interface Interface : IOleWindow.Interface
     {
         [VtblIndex(5)]
-        HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags);
+        HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags);
 
         [VtblIndex(6)]
         HRESULT RemoveToolbar(IUnknown* punkSrc, [NativeTypeName("DWORD")] uint dwRemoveFlags);
 
         [VtblIndex(7)]
-        HRESULT FindToolbar([NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+        HRESULT FindToolbar([NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
     public partial struct Vtbl<TSelf>
@@ -117,12 +117,12 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *, PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, ushort*, uint, int> AddToolbar;
+        public delegate* unmanaged<TSelf*, IUnknown*, char*, uint, int> AddToolbar;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IUnknown*, uint, int> RemoveToolbar;
 
         [NativeTypeName("HRESULT (PCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> FindToolbar;
+        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> FindToolbar;
     }
 }

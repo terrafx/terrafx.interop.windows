@@ -49,26 +49,26 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface, INativeGui
     /// <include file='IExtractIconW.xml' path='doc/member[@name="IExtractIconW.GetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] ushort* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags)
+    public HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] char* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags)
     {
-        return ((delegate* unmanaged<IExtractIconW*, uint, ushort*, uint, int*, uint*, int>)(lpVtbl[3]))((IExtractIconW*)Unsafe.AsPointer(ref this), uFlags, pszIconFile, cchMax, piIndex, pwFlags);
+        return ((delegate* unmanaged<IExtractIconW*, uint, char*, uint, int*, uint*, int>)(lpVtbl[3]))((IExtractIconW*)Unsafe.AsPointer(ref this), uFlags, pszIconFile, cchMax, piIndex, pwFlags);
     }
 
     /// <include file='IExtractIconW.xml' path='doc/member[@name="IExtractIconW.Extract"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)
+    public HRESULT Extract([NativeTypeName("PCWSTR")] char* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize)
     {
-        return ((delegate* unmanaged<IExtractIconW*, ushort*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
+        return ((delegate* unmanaged<IExtractIconW*, char*, uint, HICON*, HICON*, uint, int>)(lpVtbl[4]))((IExtractIconW*)Unsafe.AsPointer(ref this), pszFile, nIconIndex, phiconLarge, phiconSmall, nIconSize);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] ushort* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags);
+        HRESULT GetIconLocation(uint uFlags, [NativeTypeName("PWSTR")] char* pszIconFile, uint cchMax, int* piIndex, uint* pwFlags);
 
         [VtblIndex(4)]
-        HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
+        HRESULT Extract([NativeTypeName("PCWSTR")] char* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, PWSTR, UINT, int *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int*, uint*, int> GetIconLocation;
+        public delegate* unmanaged<TSelf*, uint, char*, uint, int*, uint*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT (PCWSTR, UINT, HICON *, HICON *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, HICON*, HICON*, uint, int> Extract;
+        public delegate* unmanaged<TSelf*, char*, uint, HICON*, HICON*, uint, int> Extract;
     }
 }

@@ -13,7 +13,7 @@ public unsafe partial struct NMDATETIMESTRINGW
 
     /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.pszUserString"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszUserString;
+    public char* pszUserString;
 
     /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.st"]/*' />
     public SYSTEMTIME st;

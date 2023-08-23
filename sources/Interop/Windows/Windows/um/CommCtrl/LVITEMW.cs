@@ -25,7 +25,7 @@ public unsafe partial struct LVITEMW
 
     /// <include file='LVITEMW.xml' path='doc/member[@name="LVITEMW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='LVITEMW.xml' path='doc/member[@name="LVITEMW.cchTextMax"]/*' />
     public int cchTextMax;

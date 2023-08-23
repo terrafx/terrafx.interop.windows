@@ -105,25 +105,25 @@ public unsafe partial struct ICondition2 : ICondition2.Interface, INativeGuid
     /// <inheritdoc cref="ICondition.GetComparisonInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] ushort** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
+    public HRESULT GetComparisonInfo([NativeTypeName("LPWSTR *")] char** ppszPropertyName, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar)
     {
-        return ((delegate* unmanaged<ICondition2*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition2*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
+        return ((delegate* unmanaged<ICondition2*, char**, CONDITION_OPERATION*, PROPVARIANT*, int>)(lpVtbl[10]))((ICondition2*)Unsafe.AsPointer(ref this), ppszPropertyName, pcop, ppropvar);
     }
 
     /// <inheritdoc cref="ICondition.GetValueType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetValueType([NativeTypeName("LPWSTR *")] ushort** ppszValueTypeName)
+    public HRESULT GetValueType([NativeTypeName("LPWSTR *")] char** ppszValueTypeName)
     {
-        return ((delegate* unmanaged<ICondition2*, ushort**, int>)(lpVtbl[11]))((ICondition2*)Unsafe.AsPointer(ref this), ppszValueTypeName);
+        return ((delegate* unmanaged<ICondition2*, char**, int>)(lpVtbl[11]))((ICondition2*)Unsafe.AsPointer(ref this), ppszValueTypeName);
     }
 
     /// <inheritdoc cref="ICondition.GetValueNormalization" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] ushort** ppszNormalization)
+    public HRESULT GetValueNormalization([NativeTypeName("LPWSTR *")] char** ppszNormalization)
     {
-        return ((delegate* unmanaged<ICondition2*, ushort**, int>)(lpVtbl[12]))((ICondition2*)Unsafe.AsPointer(ref this), ppszNormalization);
+        return ((delegate* unmanaged<ICondition2*, char**, int>)(lpVtbl[12]))((ICondition2*)Unsafe.AsPointer(ref this), ppszNormalization);
     }
 
     /// <inheritdoc cref="ICondition.GetInputTerms" />
@@ -145,9 +145,9 @@ public unsafe partial struct ICondition2 : ICondition2.Interface, INativeGuid
     /// <include file='ICondition2.xml' path='doc/member[@name="ICondition2.GetLocale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetLocale([NativeTypeName("LPWSTR *")] ushort** ppszLocaleName)
+    public HRESULT GetLocale([NativeTypeName("LPWSTR *")] char** ppszLocaleName)
     {
-        return ((delegate* unmanaged<ICondition2*, ushort**, int>)(lpVtbl[15]))((ICondition2*)Unsafe.AsPointer(ref this), ppszLocaleName);
+        return ((delegate* unmanaged<ICondition2*, char**, int>)(lpVtbl[15]))((ICondition2*)Unsafe.AsPointer(ref this), ppszLocaleName);
     }
 
     /// <include file='ICondition2.xml' path='doc/member[@name="ICondition2.GetLeafConditionInfo"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct ICondition2 : ICondition2.Interface, INativeGuid
     public interface Interface : ICondition.Interface
     {
         [VtblIndex(15)]
-        HRESULT GetLocale([NativeTypeName("LPWSTR *")] ushort** ppszLocaleName);
+        HRESULT GetLocale([NativeTypeName("LPWSTR *")] char** ppszLocaleName);
 
         [VtblIndex(16)]
         HRESULT GetLeafConditionInfo(PROPERTYKEY* ppropkey, CONDITION_OPERATION* pcop, PROPVARIANT* ppropvar);
@@ -201,13 +201,13 @@ public unsafe partial struct ICondition2 : ICondition2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSubConditions;
 
         [NativeTypeName("HRESULT (LPWSTR *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
+        public delegate* unmanaged<TSelf*, char**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetValueType;
+        public delegate* unmanaged<TSelf*, char**, int> GetValueType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetValueNormalization;
+        public delegate* unmanaged<TSelf*, char**, int> GetValueNormalization;
 
         [NativeTypeName("HRESULT (IRichChunk **, IRichChunk **, IRichChunk **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;
@@ -216,7 +216,7 @@ public unsafe partial struct ICondition2 : ICondition2.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, ICondition**, int> Clone;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLocale;
+        public delegate* unmanaged<TSelf*, char**, int> GetLocale;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PROPERTYKEY*, CONDITION_OPERATION*, PROPVARIANT*, int> GetLeafConditionInfo;

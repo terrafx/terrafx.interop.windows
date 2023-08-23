@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface, INativ
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLUniqueName*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLUniqueName*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLUniqueName*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLUniqueName*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface, INativ
     /// <include file='IHTMLUniqueName.xml' path='doc/member[@name="IHTMLUniqueName.get_uniqueID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_uniqueID([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLUniqueName*, ushort**, int>)(lpVtbl[8]))((IHTMLUniqueName*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLUniqueName*, char**, int>)(lpVtbl[8]))((IHTMLUniqueName*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface, INativ
         HRESULT get_uniqueNumber([NativeTypeName("long *")] int* p);
 
         [VtblIndex(8)]
-        HRESULT get_uniqueID([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_uniqueID([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface, INativ
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IHTMLUniqueName : IHTMLUniqueName.Interface, INativ
         public delegate* unmanaged<TSelf*, int*, int> get_uniqueNumber;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_uniqueID;
+        public delegate* unmanaged<TSelf*, char**, int> get_uniqueID;
     }
 }

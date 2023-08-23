@@ -51,9 +51,9 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.SetDropSourceEnterpriseId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity)
+    public HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] char* identity)
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, ushort*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
+        return ((delegate* unmanaged<IEnterpriseDropTarget*, char*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
     }
 
     /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.IsEvaluatingEdpPolicy"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity);
+        HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] char* identity);
 
         [VtblIndex(4)]
         HRESULT IsEvaluatingEdpPolicy(BOOL* value);
@@ -86,7 +86,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDropSourceEnterpriseId;
+        public delegate* unmanaged<TSelf*, char*, int> SetDropSourceEnterpriseId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> IsEvaluatingEdpPolicy;

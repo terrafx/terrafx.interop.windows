@@ -49,9 +49,9 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
     /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.EnumConflicts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT EnumConflicts([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, IEnumSyncMgrConflict** ppEnum)
+    public HRESULT EnumConflicts([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR")] char* pszItemID, IEnumSyncMgrConflict** ppEnum)
     {
-        return ((delegate* unmanaged<ISyncMgrConflictStore*, ushort*, ushort*, IEnumSyncMgrConflict**, int>)(lpVtbl[3]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pszHandlerID, pszItemID, ppEnum);
+        return ((delegate* unmanaged<ISyncMgrConflictStore*, char*, char*, IEnumSyncMgrConflict**, int>)(lpVtbl[3]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pszHandlerID, pszItemID, ppEnum);
     }
 
     /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.BindToConflict"]/*' />
@@ -73,15 +73,15 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
     /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCount([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts)
+    public HRESULT GetCount([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR")] char* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts)
     {
-        return ((delegate* unmanaged<ISyncMgrConflictStore*, ushort*, ushort*, uint*, int>)(lpVtbl[6]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pszHandlerID, pszItemID, pnConflicts);
+        return ((delegate* unmanaged<ISyncMgrConflictStore*, char*, char*, uint*, int>)(lpVtbl[6]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pszHandlerID, pszItemID, pnConflicts);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT EnumConflicts([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, IEnumSyncMgrConflict** ppEnum);
+        HRESULT EnumConflicts([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR")] char* pszItemID, IEnumSyncMgrConflict** ppEnum);
 
         [VtblIndex(4)]
         HRESULT BindToConflict([NativeTypeName("const SYNCMGR_CONFLICT_ID_INFO *")] SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
@@ -90,7 +90,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         HRESULT RemoveConflicts([NativeTypeName("const SYNCMGR_CONFLICT_ID_INFO *")] SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, [NativeTypeName("DWORD")] uint cConflicts);
 
         [VtblIndex(6)]
-        HRESULT GetCount([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts);
+        HRESULT GetCount([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR")] char* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts);
     }
 
     public partial struct Vtbl<TSelf>
@@ -106,7 +106,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IEnumSyncMgrConflict **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IEnumSyncMgrConflict**, int> EnumConflicts;
+        public delegate* unmanaged<TSelf*, char*, char*, IEnumSyncMgrConflict**, int> EnumConflicts;
 
         [NativeTypeName("HRESULT (const SYNCMGR_CONFLICT_ID_INFO *, const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, Guid*, void**, int> BindToConflict;
@@ -115,6 +115,6 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, uint, int> RemoveConflicts;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, char*, char*, uint*, int> GetCount;
     }
 }

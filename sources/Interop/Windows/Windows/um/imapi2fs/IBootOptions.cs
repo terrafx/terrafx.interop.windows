@@ -65,9 +65,9 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IBootOptions*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IBootOptions*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IBootOptions*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IBootOptions*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,17 +89,17 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
     /// <include file='IBootOptions.xml' path='doc/member[@name="IBootOptions.get_Manufacturer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Manufacturer([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_Manufacturer([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IBootOptions*, ushort**, int>)(lpVtbl[8]))((IBootOptions*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged<IBootOptions*, char**, int>)(lpVtbl[8]))((IBootOptions*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IBootOptions.xml' path='doc/member[@name="IBootOptions.put_Manufacturer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT put_Manufacturer([NativeTypeName("BSTR")] ushort* newVal)
+    public HRESULT put_Manufacturer([NativeTypeName("BSTR")] char* newVal)
     {
-        return ((delegate* unmanaged<IBootOptions*, ushort*, int>)(lpVtbl[9]))((IBootOptions*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged<IBootOptions*, char*, int>)(lpVtbl[9]))((IBootOptions*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <include file='IBootOptions.xml' path='doc/member[@name="IBootOptions.get_PlatformId"]/*' />
@@ -156,10 +156,10 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
         HRESULT get_BootImage(IStream** pVal);
 
         [VtblIndex(8)]
-        HRESULT get_Manufacturer([NativeTypeName("BSTR *")] ushort** pVal);
+        HRESULT get_Manufacturer([NativeTypeName("BSTR *")] char** pVal);
 
         [VtblIndex(9)]
-        HRESULT put_Manufacturer([NativeTypeName("BSTR")] ushort* newVal);
+        HRESULT put_Manufacturer([NativeTypeName("BSTR")] char* newVal);
 
         [VtblIndex(10)]
         HRESULT get_PlatformId(PlatformId* pVal);
@@ -199,7 +199,7 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -208,10 +208,10 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IStream**, int> get_BootImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Manufacturer;
+        public delegate* unmanaged<TSelf*, char**, int> get_Manufacturer;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_Manufacturer;
+        public delegate* unmanaged<TSelf*, char*, int> put_Manufacturer;
 
         [NativeTypeName("HRESULT (PlatformId *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, PlatformId*, int> get_PlatformId;

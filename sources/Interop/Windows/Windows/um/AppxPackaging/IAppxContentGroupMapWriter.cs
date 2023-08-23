@@ -51,17 +51,17 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.AddAutomaticGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] ushort* groupName)
+    public HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] char* groupName)
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int>)(lpVtbl[3]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), groupName);
+        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[3]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), groupName);
     }
 
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.AddAutomaticFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] ushort* fileName)
+    public HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] char* fileName)
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int>)(lpVtbl[4]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[4]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.Close"]/*' />
@@ -75,10 +75,10 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] ushort* groupName);
+        HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] char* groupName);
 
         [VtblIndex(4)]
-        HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] ushort* fileName);
+        HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] char* fileName);
 
         [VtblIndex(5)]
         HRESULT Close();
@@ -97,10 +97,10 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddAutomaticGroup;
+        public delegate* unmanaged<TSelf*, char*, int> AddAutomaticGroup;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> AddAutomaticFile;
+        public delegate* unmanaged<TSelf*, char*, int> AddAutomaticFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int> Close;

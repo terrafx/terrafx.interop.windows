@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,17 +81,17 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.substringData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString)
+    public HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] char** pbstrsubString)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, int, ushort**, int>)(lpVtbl[7]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, Count, pbstrsubString);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, int, char**, int>)(lpVtbl[7]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, Count, pbstrsubString);
     }
 
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.insertData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring)
+    public HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] char* bstrstring)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, ushort*, int>)(lpVtbl[8]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, bstrstring);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, char*, int>)(lpVtbl[8]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, bstrstring);
     }
 
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.deleteData"]/*' />
@@ -105,9 +105,9 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.replaceData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring)
+    public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] char* bstrstring)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, int, ushort*, int>)(lpVtbl[10]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, Count, bstrstring);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, int, int, char*, int>)(lpVtbl[10]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), offset, Count, bstrstring);
     }
 
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.splitText"]/*' />
@@ -121,17 +121,17 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.get_wholeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_wholeText([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_wholeText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, ushort**, int>)(lpVtbl[12]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, char**, int>)(lpVtbl[12]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.replaceWholeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT replaceWholeText([NativeTypeName("BSTR")] ushort* bstrText, IHTMLDOMNode** ppRetNode)
+    public HRESULT replaceWholeText([NativeTypeName("BSTR")] char* bstrText, IHTMLDOMNode** ppRetNode)
     {
-        return ((delegate* unmanaged<IHTMLDOMTextNode3*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[13]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), bstrText, ppRetNode);
+        return ((delegate* unmanaged<IHTMLDOMTextNode3*, char*, IHTMLDOMNode**, int>)(lpVtbl[13]))((IHTMLDOMTextNode3*)Unsafe.AsPointer(ref this), bstrText, ppRetNode);
     }
 
     /// <include file='IHTMLDOMTextNode3.xml' path='doc/member[@name="IHTMLDOMTextNode3.hasAttributes"]/*' />
@@ -153,25 +153,25 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString);
+        HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] char** pbstrsubString);
 
         [VtblIndex(8)]
-        HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring);
+        HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] char* bstrstring);
 
         [VtblIndex(9)]
         HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count);
 
         [VtblIndex(10)]
-        HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring);
+        HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] char* bstrstring);
 
         [VtblIndex(11)]
         HRESULT splitText([NativeTypeName("long")] int offset, IHTMLDOMNode** pRetNode);
 
         [VtblIndex(12)]
-        HRESULT get_wholeText([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_wholeText([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(13)]
-        HRESULT replaceWholeText([NativeTypeName("BSTR")] ushort* bstrText, IHTMLDOMNode** ppRetNode);
+        HRESULT replaceWholeText([NativeTypeName("BSTR")] char* bstrText, IHTMLDOMNode** ppRetNode);
 
         [VtblIndex(14)]
         HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
@@ -199,31 +199,31 @@ public unsafe partial struct IHTMLDOMTextNode3 : IHTMLDOMTextNode3.Interface, IN
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort**, int> substringData;
+        public delegate* unmanaged<TSelf*, int, int, char**, int> substringData;
 
         [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort*, int> insertData;
+        public delegate* unmanaged<TSelf*, int, char*, int> insertData;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, int, int> deleteData;
 
         [NativeTypeName("HRESULT (long, long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ushort*, int> replaceData;
+        public delegate* unmanaged<TSelf*, int, int, char*, int> replaceData;
 
         [NativeTypeName("HRESULT (long, IHTMLDOMNode **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, IHTMLDOMNode**, int> splitText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_wholeText;
+        public delegate* unmanaged<TSelf*, char**, int> get_wholeText;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMNode**, int> replaceWholeText;
+        public delegate* unmanaged<TSelf*, char*, IHTMLDOMNode**, int> replaceWholeText;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, short*, int> hasAttributes;

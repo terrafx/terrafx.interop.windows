@@ -62,12 +62,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMappingW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateFileMappingW(HANDLE hFile, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpFileMappingAttributes, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint dwMaximumSizeHigh, [NativeTypeName("DWORD")] uint dwMaximumSizeLow, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE CreateFileMappingW(HANDLE hFile, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpFileMappingAttributes, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint dwMaximumSizeHigh, [NativeTypeName("DWORD")] uint dwMaximumSizeLow, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenFileMappingW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE OpenFileMappingW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HANDLE OpenFileMappingW([NativeTypeName("DWORD")] uint dwDesiredAccess, BOOL bInheritHandle, [NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MapViewOfFile"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -161,7 +161,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMappingNumaW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateFileMappingNumaW(HANDLE hFile, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpFileMappingAttributes, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint dwMaximumSizeHigh, [NativeTypeName("DWORD")] uint dwMaximumSizeLow, [NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint nndPreferred);
+    public static extern HANDLE CreateFileMappingNumaW(HANDLE hFile, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpFileMappingAttributes, [NativeTypeName("DWORD")] uint flProtect, [NativeTypeName("DWORD")] uint dwMaximumSizeHigh, [NativeTypeName("DWORD")] uint dwMaximumSizeLow, [NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint nndPreferred);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrefetchVirtualMemory"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -173,7 +173,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HANDLE CreateFileMappingFromApp(HANDLE hFile, [NativeTypeName("PSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name);
+    public static extern HANDLE CreateFileMappingFromApp(HANDLE hFile, [NativeTypeName("PSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MapViewOfFileFromApp"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -273,7 +273,7 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0")]
-    public static extern HANDLE OpenFileMappingFromApp([NativeTypeName("ULONG")] uint DesiredAccess, BOOL InheritHandle, [NativeTypeName("PCWSTR")] ushort* Name);
+    public static extern HANDLE OpenFileMappingFromApp([NativeTypeName("ULONG")] uint DesiredAccess, BOOL InheritHandle, [NativeTypeName("PCWSTR")] char* Name);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryVirtualMemoryInformation"]/*' />
     [DllImport("api-ms-win-core-memory-l1-1-4", ExactSpelling = true)]
@@ -334,16 +334,16 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMapping2"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] ushort* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
+    public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]
-    public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, ushort*, HANDLE> CreateFileMapping => &CreateFileMappingW;
+    public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, HANDLE> CreateFileMapping => &CreateFileMappingW;
 
     [NativeTypeName("#define OpenFileMapping OpenFileMappingW")]
-    public static delegate*<uint, BOOL, ushort*, HANDLE> OpenFileMapping => &OpenFileMappingW;
+    public static delegate*<uint, BOOL, char*, HANDLE> OpenFileMapping => &OpenFileMappingW;
 
     [NativeTypeName("#define CreateFileMappingNuma CreateFileMappingNumaW")]
-    public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, ushort*, uint, HANDLE> CreateFileMappingNuma => &CreateFileMappingNumaW;
+    public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, uint, HANDLE> CreateFileMappingNuma => &CreateFileMappingNumaW;
 
     [NativeTypeName("#define MEHC_PATROL_SCRUBBER_PRESENT 0x1")]
     public const int MEHC_PATROL_SCRUBBER_PRESENT = 0x1;

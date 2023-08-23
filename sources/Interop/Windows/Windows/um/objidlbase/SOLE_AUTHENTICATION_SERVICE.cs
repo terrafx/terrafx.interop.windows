@@ -18,7 +18,7 @@ public unsafe partial struct SOLE_AUTHENTICATION_SERVICE
 
     /// <include file='SOLE_AUTHENTICATION_SERVICE.xml' path='doc/member[@name="SOLE_AUTHENTICATION_SERVICE.pPrincipalName"]/*' />
     [NativeTypeName("OLECHAR *")]
-    public ushort* pPrincipalName;
+    public char* pPrincipalName;
 
     /// <include file='SOLE_AUTHENTICATION_SERVICE.xml' path='doc/member[@name="SOLE_AUTHENTICATION_SERVICE.hr"]/*' />
     public HRESULT hr;

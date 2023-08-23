@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLStyleSheet2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -89,9 +89,9 @@ public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface, INat
     /// <include file='IHTMLStyleSheet2.xml' path='doc/member[@name="IHTMLStyleSheet2.addPageRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
+    public HRESULT addPageRule([NativeTypeName("BSTR")] char* bstrSelector, [NativeTypeName("BSTR")] char* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet2*, ushort*, ushort*, int, int*, int>)(lpVtbl[8]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), bstrSelector, bstrStyle, lIndex, plNewIndex);
+        return ((delegate* unmanaged<IHTMLStyleSheet2*, char*, char*, int, int*, int>)(lpVtbl[8]))((IHTMLStyleSheet2*)Unsafe.AsPointer(ref this), bstrSelector, bstrStyle, lIndex, plNewIndex);
     }
 
     public interface Interface : IDispatch.Interface
@@ -100,7 +100,7 @@ public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface, INat
         HRESULT get_pages(IHTMLStyleSheetPagesCollection** p);
 
         [VtblIndex(8)]
-        HRESULT addPageRule([NativeTypeName("BSTR")] ushort* bstrSelector, [NativeTypeName("BSTR")] ushort* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
+        HRESULT addPageRule([NativeTypeName("BSTR")] char* bstrSelector, [NativeTypeName("BSTR")] char* bstrStyle, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex);
     }
 
     public partial struct Vtbl<TSelf>
@@ -122,7 +122,7 @@ public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -131,6 +131,6 @@ public unsafe partial struct IHTMLStyleSheet2 : IHTMLStyleSheet2.Interface, INat
         public delegate* unmanaged<TSelf*, IHTMLStyleSheetPagesCollection**, int> get_pages;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, int*, int> addPageRule;
+        public delegate* unmanaged<TSelf*, char*, char*, int, int*, int> addPageRule;
     }
 }

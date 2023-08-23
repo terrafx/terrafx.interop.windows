@@ -57,9 +57,9 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, ushort**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
+        return ((delegate* unmanaged<ITfFunctionProvider*, char**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
     }
 
     /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetFunction"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         HRESULT GetType(Guid* pguid);
 
         [VtblIndex(4)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc);
 
         [VtblIndex(5)]
         HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
@@ -98,7 +98,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         public new delegate* unmanaged<TSelf*, Guid*, int> GetType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, Guid*, IUnknown**, int> GetFunction;

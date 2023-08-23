@@ -65,33 +65,33 @@ public unsafe partial struct IPersistFile : IPersistFile.Interface, INativeGuid
     /// <include file='IPersistFile.xml' path='doc/member[@name="IPersistFile.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("DWORD")] uint dwMode)
+    public HRESULT Load([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("DWORD")] uint dwMode)
     {
-        return ((delegate* unmanaged<IPersistFile*, ushort*, uint, int>)(lpVtbl[5]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, dwMode);
+        return ((delegate* unmanaged<IPersistFile*, char*, uint, int>)(lpVtbl[5]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, dwMode);
     }
 
     /// <include file='IPersistFile.xml' path='doc/member[@name="IPersistFile.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, BOOL fRemember)
+    public HRESULT Save([NativeTypeName("LPCOLESTR")] char* pszFileName, BOOL fRemember)
     {
-        return ((delegate* unmanaged<IPersistFile*, ushort*, BOOL, int>)(lpVtbl[6]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
+        return ((delegate* unmanaged<IPersistFile*, char*, BOOL, int>)(lpVtbl[6]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName, fRemember);
     }
 
     /// <include file='IPersistFile.xml' path='doc/member[@name="IPersistFile.SaveCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SaveCompleted([NativeTypeName("LPCOLESTR")] ushort* pszFileName)
+    public HRESULT SaveCompleted([NativeTypeName("LPCOLESTR")] char* pszFileName)
     {
-        return ((delegate* unmanaged<IPersistFile*, ushort*, int>)(lpVtbl[7]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName);
+        return ((delegate* unmanaged<IPersistFile*, char*, int>)(lpVtbl[7]))((IPersistFile*)Unsafe.AsPointer(ref this), pszFileName);
     }
 
     /// <include file='IPersistFile.xml' path='doc/member[@name="IPersistFile.GetCurFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName)
+    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName)
     {
-        return ((delegate* unmanaged<IPersistFile*, ushort**, int>)(lpVtbl[8]))((IPersistFile*)Unsafe.AsPointer(ref this), ppszFileName);
+        return ((delegate* unmanaged<IPersistFile*, char**, int>)(lpVtbl[8]))((IPersistFile*)Unsafe.AsPointer(ref this), ppszFileName);
     }
 
     public interface Interface : IPersist.Interface
@@ -100,16 +100,16 @@ public unsafe partial struct IPersistFile : IPersistFile.Interface, INativeGuid
         HRESULT IsDirty();
 
         [VtblIndex(5)]
-        HRESULT Load([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("DWORD")] uint dwMode);
+        HRESULT Load([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("DWORD")] uint dwMode);
 
         [VtblIndex(6)]
-        HRESULT Save([NativeTypeName("LPCOLESTR")] ushort* pszFileName, BOOL fRemember);
+        HRESULT Save([NativeTypeName("LPCOLESTR")] char* pszFileName, BOOL fRemember);
 
         [VtblIndex(7)]
-        HRESULT SaveCompleted([NativeTypeName("LPCOLESTR")] ushort* pszFileName);
+        HRESULT SaveCompleted([NativeTypeName("LPCOLESTR")] char* pszFileName);
 
         [VtblIndex(8)]
-        HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName);
+        HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -131,15 +131,15 @@ public unsafe partial struct IPersistFile : IPersistFile.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> Load;
+        public delegate* unmanaged<TSelf*, char*, uint, int> Load;
 
         [NativeTypeName("HRESULT (LPCOLESTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, char*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SaveCompleted;
+        public delegate* unmanaged<TSelf*, char*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetCurFile;
+        public delegate* unmanaged<TSelf*, char**, int> GetCurFile;
     }
 }

@@ -49,9 +49,9 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     /// <inheritdoc cref="IAutoComplete.Init" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] ushort* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] ushort* pwszQuickComplete)
+    public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] char* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] char* pwszQuickComplete)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, HWND, IUnknown*, ushort*, ushort*, int>)(lpVtbl[3]))((IAutoComplete2*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
+        return ((delegate* unmanaged<IAutoComplete2*, HWND, IUnknown*, char*, char*, int>)(lpVtbl[3]))((IAutoComplete2*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
     }
 
     /// <inheritdoc cref="IAutoComplete.Enable" />
@@ -100,7 +100,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IUnknown*, ushort*, ushort*, int> Init;
+        public delegate* unmanaged<TSelf*, HWND, IUnknown*, char*, char*, int> Init;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL, int> Enable;

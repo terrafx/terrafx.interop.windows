@@ -65,33 +65,33 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName)
+    public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged<IMFAudioPolicy*, char*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName)
+    public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** pszName)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged<IMFAudioPolicy*, char**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged<IMFAudioPolicy*, char*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath)
+    public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] char** pszPath)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged<IMFAudioPolicy*, char**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     public interface Interface : IUnknown.Interface
@@ -103,16 +103,16 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
         HRESULT GetGroupingParam(Guid* pguidClass);
 
         [VtblIndex(5)]
-        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName);
+        HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszName);
 
         [VtblIndex(6)]
-        HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName);
+        HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** pszName);
 
         [VtblIndex(7)]
-        HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        HRESULT SetIconPath([NativeTypeName("LPCWSTR")] char* pszPath);
 
         [VtblIndex(8)]
-        HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath);
+        HRESULT GetIconPath([NativeTypeName("LPWSTR *")] char** pszPath);
     }
 
     public partial struct Vtbl<TSelf>
@@ -134,15 +134,15 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
         public delegate* unmanaged<TSelf*, Guid*, int> GetGroupingParam;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, char*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetIconPath;
+        public delegate* unmanaged<TSelf*, char*, int> SetIconPath;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetIconPath;
+        public delegate* unmanaged<TSelf*, char**, int> GetIconPath;
     }
 }

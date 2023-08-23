@@ -13,7 +13,7 @@ public unsafe partial struct LVFINDINFOW
 
     /// <include file='LVFINDINFOW.xml' path='doc/member[@name="LVFINDINFOW.psz"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* psz;
+    public char* psz;
 
     /// <include file='LVFINDINFOW.xml' path='doc/member[@name="LVFINDINFOW.lParam"]/*' />
     public LPARAM lParam;

@@ -14,7 +14,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
 {
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.Name"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.ValueType"]/*' />
     [NativeTypeName("WORD")]
@@ -53,7 +53,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.ppString"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PWSTR *")]
-        public ushort** ppString;
+        public char** ppString;
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pFqbn"]/*' />
         [FieldOffset(0)]

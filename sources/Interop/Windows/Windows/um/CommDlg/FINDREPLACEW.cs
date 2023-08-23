@@ -24,11 +24,11 @@ public unsafe partial struct FINDREPLACEW
 
     /// <include file='FINDREPLACEW.xml' path='doc/member[@name="FINDREPLACEW.lpstrFindWhat"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrFindWhat;
+    public char* lpstrFindWhat;
 
     /// <include file='FINDREPLACEW.xml' path='doc/member[@name="FINDREPLACEW.lpstrReplaceWith"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpstrReplaceWith;
+    public char* lpstrReplaceWith;
 
     /// <include file='FINDREPLACEW.xml' path='doc/member[@name="FINDREPLACEW.wFindWhatLen"]/*' />
     [NativeTypeName("WORD")]
@@ -47,5 +47,5 @@ public unsafe partial struct FINDREPLACEW
 
     /// <include file='FINDREPLACEW.xml' path='doc/member[@name="FINDREPLACEW.lpTemplateName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTemplateName;
+    public char* lpTemplateName;
 }

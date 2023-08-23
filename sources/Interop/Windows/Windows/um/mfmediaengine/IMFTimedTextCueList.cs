@@ -74,17 +74,17 @@ public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface
     /// <include file='IMFTimedTextCueList.xml' path='doc/member[@name="IMFTimedTextCueList.GetCueByOriginalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCueByOriginalId([NativeTypeName("LPCWSTR")] ushort* originalId, IMFTimedTextCue** cue)
+    public HRESULT GetCueByOriginalId([NativeTypeName("LPCWSTR")] char* originalId, IMFTimedTextCue** cue)
     {
-        return ((delegate* unmanaged<IMFTimedTextCueList*, ushort*, IMFTimedTextCue**, int>)(lpVtbl[6]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), originalId, cue);
+        return ((delegate* unmanaged<IMFTimedTextCueList*, char*, IMFTimedTextCue**, int>)(lpVtbl[6]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), originalId, cue);
     }
 
     /// <include file='IMFTimedTextCueList.xml' path='doc/member[@name="IMFTimedTextCueList.AddTextCue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddTextCue(double start, double duration, [NativeTypeName("LPCWSTR")] ushort* text, IMFTimedTextCue** cue)
+    public HRESULT AddTextCue(double start, double duration, [NativeTypeName("LPCWSTR")] char* text, IMFTimedTextCue** cue)
     {
-        return ((delegate* unmanaged<IMFTimedTextCueList*, double, double, ushort*, IMFTimedTextCue**, int>)(lpVtbl[7]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), start, duration, text, cue);
+        return ((delegate* unmanaged<IMFTimedTextCueList*, double, double, char*, IMFTimedTextCue**, int>)(lpVtbl[7]))((IMFTimedTextCueList*)Unsafe.AsPointer(ref this), start, duration, text, cue);
     }
 
     /// <include file='IMFTimedTextCueList.xml' path='doc/member[@name="IMFTimedTextCueList.AddDataCue"]/*' />
@@ -116,10 +116,10 @@ public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface
         HRESULT GetCueById([NativeTypeName("DWORD")] uint id, IMFTimedTextCue** cue);
 
         [VtblIndex(6)]
-        HRESULT GetCueByOriginalId([NativeTypeName("LPCWSTR")] ushort* originalId, IMFTimedTextCue** cue);
+        HRESULT GetCueByOriginalId([NativeTypeName("LPCWSTR")] char* originalId, IMFTimedTextCue** cue);
 
         [VtblIndex(7)]
-        HRESULT AddTextCue(double start, double duration, [NativeTypeName("LPCWSTR")] ushort* text, IMFTimedTextCue** cue);
+        HRESULT AddTextCue(double start, double duration, [NativeTypeName("LPCWSTR")] char* text, IMFTimedTextCue** cue);
 
         [VtblIndex(8)]
         HRESULT AddDataCue(double start, double duration, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("DWORD")] uint dataSize, IMFTimedTextCue** cue);
@@ -150,10 +150,10 @@ public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface
         public delegate* unmanaged<TSelf*, uint, IMFTimedTextCue**, int> GetCueById;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFTimedTextCue**, int> GetCueByOriginalId;
+        public delegate* unmanaged<TSelf*, char*, IMFTimedTextCue**, int> GetCueByOriginalId;
 
         [NativeTypeName("HRESULT (double, double, LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, ushort*, IMFTimedTextCue**, int> AddTextCue;
+        public delegate* unmanaged<TSelf*, double, double, char*, IMFTimedTextCue**, int> AddTextCue;
 
         [NativeTypeName("HRESULT (double, double, const BYTE *, DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, double, double, byte*, uint, IMFTimedTextCue**, int> AddDataCue;

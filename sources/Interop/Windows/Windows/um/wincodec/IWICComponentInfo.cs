@@ -73,9 +73,9 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface, IN
     /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetAuthor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
+    public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] char* wzAuthor, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
+        return ((delegate* unmanaged<IWICComponentInfo*, uint, char*, uint*, int>)(lpVtbl[6]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
     /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetVendorGUID"]/*' />
@@ -89,25 +89,25 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface, IN
     /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
+    public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] char* wzVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
+        return ((delegate* unmanaged<IWICComponentInfo*, uint, char*, uint*, int>)(lpVtbl[8]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
     /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetSpecVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
+    public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] char* wzSpecVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
+        return ((delegate* unmanaged<IWICComponentInfo*, uint, char*, uint*, int>)(lpVtbl[9]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
     /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)
+    public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] char* wzFriendlyName, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[10]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
+        return ((delegate* unmanaged<IWICComponentInfo*, uint, char*, uint*, int>)(lpVtbl[10]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
     }
 
     public interface Interface : IUnknown.Interface
@@ -122,19 +122,19 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface, IN
         HRESULT GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus);
 
         [VtblIndex(6)]
-        HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual);
+        HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] char* wzAuthor, uint* pcchActual);
 
         [VtblIndex(7)]
         HRESULT GetVendorGUID(Guid* pguidVendor);
 
         [VtblIndex(8)]
-        HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual);
+        HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] char* wzVersion, uint* pcchActual);
 
         [VtblIndex(9)]
-        HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual);
+        HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] char* wzSpecVersion, uint* pcchActual);
 
         [VtblIndex(10)]
-        HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual);
+        HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] char* wzFriendlyName, uint* pcchActual);
     }
 
     public partial struct Vtbl<TSelf>
@@ -159,18 +159,18 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface, IN
         public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetFriendlyName;
     }
 }

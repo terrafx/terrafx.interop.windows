@@ -49,26 +49,26 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, INativ
     /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits.GetValidCharacters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] ushort** ppwszValidChars, [NativeTypeName("LPWSTR *")] ushort** ppwszInvalidChars)
+    public HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] char** ppwszValidChars, [NativeTypeName("LPWSTR *")] char** ppwszInvalidChars)
     {
-        return ((delegate* unmanaged<IItemNameLimits*, ushort**, ushort**, int>)(lpVtbl[3]))((IItemNameLimits*)Unsafe.AsPointer(ref this), ppwszValidChars, ppwszInvalidChars);
+        return ((delegate* unmanaged<IItemNameLimits*, char**, char**, int>)(lpVtbl[3]))((IItemNameLimits*)Unsafe.AsPointer(ref this), ppwszValidChars, ppwszInvalidChars);
     }
 
     /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits.GetMaxLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen)
+    public HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] char* pszName, int* piMaxNameLen)
     {
-        return ((delegate* unmanaged<IItemNameLimits*, ushort*, int*, int>)(lpVtbl[4]))((IItemNameLimits*)Unsafe.AsPointer(ref this), pszName, piMaxNameLen);
+        return ((delegate* unmanaged<IItemNameLimits*, char*, int*, int>)(lpVtbl[4]))((IItemNameLimits*)Unsafe.AsPointer(ref this), pszName, piMaxNameLen);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] ushort** ppwszValidChars, [NativeTypeName("LPWSTR *")] ushort** ppwszInvalidChars);
+        HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] char** ppwszValidChars, [NativeTypeName("LPWSTR *")] char** ppwszInvalidChars);
 
         [VtblIndex(4)]
-        HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen);
+        HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] char* pszName, int* piMaxNameLen);
     }
 
     public partial struct Vtbl<TSelf>
@@ -84,9 +84,9 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> GetValidCharacters;
+        public delegate* unmanaged<TSelf*, char**, char**, int> GetValidCharacters;
 
         [NativeTypeName("HRESULT (LPCWSTR, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetMaxLength;
+        public delegate* unmanaged<TSelf*, char*, int*, int> GetMaxLength;
     }
 }

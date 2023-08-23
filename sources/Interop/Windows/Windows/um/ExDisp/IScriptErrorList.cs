@@ -65,9 +65,9 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INat
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IScriptErrorList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IScriptErrorList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IScriptErrorList*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IScriptErrorList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -137,17 +137,17 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INat
     /// <include file='IScriptErrorList.xml' path='doc/member[@name="IScriptErrorList.getErrorMsg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT getErrorMsg([NativeTypeName("BSTR *")] ushort** pstr)
+    public HRESULT getErrorMsg([NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<IScriptErrorList*, ushort**, int>)(lpVtbl[14]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
+        return ((delegate* unmanaged<IScriptErrorList*, char**, int>)(lpVtbl[14]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
     }
 
     /// <include file='IScriptErrorList.xml' path='doc/member[@name="IScriptErrorList.getErrorUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT getErrorUrl([NativeTypeName("BSTR *")] ushort** pstr)
+    public HRESULT getErrorUrl([NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<IScriptErrorList*, ushort**, int>)(lpVtbl[15]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
+        return ((delegate* unmanaged<IScriptErrorList*, char**, int>)(lpVtbl[15]))((IScriptErrorList*)Unsafe.AsPointer(ref this), pstr);
     }
 
     /// <include file='IScriptErrorList.xml' path='doc/member[@name="IScriptErrorList.getAlwaysShowLockState"]/*' />
@@ -214,10 +214,10 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INat
         HRESULT getErrorCode([NativeTypeName("LONG *")] int* plCode);
 
         [VtblIndex(14)]
-        HRESULT getErrorMsg([NativeTypeName("BSTR *")] ushort** pstr);
+        HRESULT getErrorMsg([NativeTypeName("BSTR *")] char** pstr);
 
         [VtblIndex(15)]
-        HRESULT getErrorUrl([NativeTypeName("BSTR *")] ushort** pstr);
+        HRESULT getErrorUrl([NativeTypeName("BSTR *")] char** pstr);
 
         [VtblIndex(16)]
         HRESULT getAlwaysShowLockState(BOOL* pfAlwaysShowLocked);
@@ -254,7 +254,7 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INat
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -281,10 +281,10 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INat
         public delegate* unmanaged<TSelf*, int*, int> getErrorCode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> getErrorMsg;
+        public delegate* unmanaged<TSelf*, char**, int> getErrorMsg;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> getErrorUrl;
+        public delegate* unmanaged<TSelf*, char**, int> getErrorUrl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, BOOL*, int> getAlwaysShowLockState;

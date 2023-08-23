@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLDocument4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -121,25 +121,25 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.createDocumentFromUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bstrOptions, IHTMLDocument2** newDoc)
+    public HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bstrOptions, IHTMLDocument2** newDoc)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort*, ushort*, IHTMLDocument2**, int>)(lpVtbl[12]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), bstrUrl, bstrOptions, newDoc);
+        return ((delegate* unmanaged<IHTMLDocument4*, char*, char*, IHTMLDocument2**, int>)(lpVtbl[12]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), bstrUrl, bstrOptions, newDoc);
     }
 
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.put_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT put_media([NativeTypeName("BSTR")] ushort* v)
+    public HRESULT put_media([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort*, int>)(lpVtbl[13]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged<IHTMLDocument4*, char*, int>)(lpVtbl[13]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.get_media"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_media([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_media([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort**, int>)(lpVtbl[14]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument4*, char**, int>)(lpVtbl[14]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.createEventObject"]/*' />
@@ -153,17 +153,17 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.fireEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled)
+    public HRESULT fireEvent([NativeTypeName("BSTR")] char* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort*, VARIANT*, short*, int>)(lpVtbl[16]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), bstrEventName, pvarEventObject, pfCancelled);
+        return ((delegate* unmanaged<IHTMLDocument4*, char*, VARIANT*, short*, int>)(lpVtbl[16]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), bstrEventName, pvarEventObject, pfCancelled);
     }
 
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.createRenderStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT createRenderStyle([NativeTypeName("BSTR")] ushort* v, IHTMLRenderStyle** ppIHTMLRenderStyle)
+    public HRESULT createRenderStyle([NativeTypeName("BSTR")] char* v, IHTMLRenderStyle** ppIHTMLRenderStyle)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort*, IHTMLRenderStyle**, int>)(lpVtbl[17]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), v, ppIHTMLRenderStyle);
+        return ((delegate* unmanaged<IHTMLDocument4*, char*, IHTMLRenderStyle**, int>)(lpVtbl[17]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), v, ppIHTMLRenderStyle);
     }
 
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.put_oncontrolselect"]/*' />
@@ -185,9 +185,9 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
     /// <include file='IHTMLDocument4.xml' path='doc/member[@name="IHTMLDocument4.get_URLUnencoded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDocument4*, ushort**, int>)(lpVtbl[20]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLDocument4*, char**, int>)(lpVtbl[20]))((IHTMLDocument4*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -208,22 +208,22 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
         HRESULT get_namespaces(IDispatch** p);
 
         [VtblIndex(12)]
-        HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] ushort* bstrUrl, [NativeTypeName("BSTR")] ushort* bstrOptions, IHTMLDocument2** newDoc);
+        HRESULT createDocumentFromUrl([NativeTypeName("BSTR")] char* bstrUrl, [NativeTypeName("BSTR")] char* bstrOptions, IHTMLDocument2** newDoc);
 
         [VtblIndex(13)]
-        HRESULT put_media([NativeTypeName("BSTR")] ushort* v);
+        HRESULT put_media([NativeTypeName("BSTR")] char* v);
 
         [VtblIndex(14)]
-        HRESULT get_media([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_media([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(15)]
         HRESULT createEventObject(VARIANT* pvarEventObject, IHTMLEventObj** ppEventObj);
 
         [VtblIndex(16)]
-        HRESULT fireEvent([NativeTypeName("BSTR")] ushort* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
+        HRESULT fireEvent([NativeTypeName("BSTR")] char* bstrEventName, VARIANT* pvarEventObject, [NativeTypeName("VARIANT_BOOL *")] short* pfCancelled);
 
         [VtblIndex(17)]
-        HRESULT createRenderStyle([NativeTypeName("BSTR")] ushort* v, IHTMLRenderStyle** ppIHTMLRenderStyle);
+        HRESULT createRenderStyle([NativeTypeName("BSTR")] char* v, IHTMLRenderStyle** ppIHTMLRenderStyle);
 
         [VtblIndex(18)]
         HRESULT put_oncontrolselect(VARIANT v);
@@ -232,7 +232,7 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
         HRESULT get_oncontrolselect(VARIANT* p);
 
         [VtblIndex(20)]
-        HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_URLUnencoded([NativeTypeName("BSTR *")] char** p);
     }
 
     public partial struct Vtbl<TSelf>
@@ -254,7 +254,7 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -275,22 +275,22 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
         public delegate* unmanaged<TSelf*, IDispatch**, int> get_namespaces;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IHTMLDocument2**, int> createDocumentFromUrl;
+        public delegate* unmanaged<TSelf*, char*, char*, IHTMLDocument2**, int> createDocumentFromUrl;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_media;
+        public delegate* unmanaged<TSelf*, char*, int> put_media;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_media;
+        public delegate* unmanaged<TSelf*, char**, int> get_media;
 
         [NativeTypeName("HRESULT (VARIANT *, IHTMLEventObj **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, IHTMLEventObj**, int> createEventObject;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, short*, int> fireEvent;
+        public delegate* unmanaged<TSelf*, char*, VARIANT*, short*, int> fireEvent;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLRenderStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IHTMLRenderStyle**, int> createRenderStyle;
+        public delegate* unmanaged<TSelf*, char*, IHTMLRenderStyle**, int> createRenderStyle;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_oncontrolselect;
@@ -299,6 +299,6 @@ public unsafe partial struct IHTMLDocument4 : IHTMLDocument4.Interface, INativeG
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncontrolselect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_URLUnencoded;
+        public delegate* unmanaged<TSelf*, char**, int> get_URLUnencoded;
     }
 }

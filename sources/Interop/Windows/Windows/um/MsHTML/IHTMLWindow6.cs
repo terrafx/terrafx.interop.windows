@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLWindow6*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLWindow6*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -137,17 +137,17 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
     /// <include file='IHTMLWindow6.xml' path='doc/member[@name="IHTMLWindow6.postMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT postMessage([NativeTypeName("BSTR")] ushort* msg, VARIANT targetOrigin)
+    public HRESULT postMessage([NativeTypeName("BSTR")] char* msg, VARIANT targetOrigin)
     {
-        return ((delegate* unmanaged<IHTMLWindow6*, ushort*, VARIANT, int>)(lpVtbl[14]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), msg, targetOrigin);
+        return ((delegate* unmanaged<IHTMLWindow6*, char*, VARIANT, int>)(lpVtbl[14]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), msg, targetOrigin);
     }
 
     /// <include file='IHTMLWindow6.xml' path='doc/member[@name="IHTMLWindow6.toStaticHTML"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT toStaticHTML([NativeTypeName("BSTR")] ushort* bstrHTML, [NativeTypeName("BSTR *")] ushort** pbstrStaticHTML)
+    public HRESULT toStaticHTML([NativeTypeName("BSTR")] char* bstrHTML, [NativeTypeName("BSTR *")] char** pbstrStaticHTML)
     {
-        return ((delegate* unmanaged<IHTMLWindow6*, ushort*, ushort**, int>)(lpVtbl[15]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), bstrHTML, pbstrStaticHTML);
+        return ((delegate* unmanaged<IHTMLWindow6*, char*, char**, int>)(lpVtbl[15]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), bstrHTML, pbstrStaticHTML);
     }
 
     /// <include file='IHTMLWindow6.xml' path='doc/member[@name="IHTMLWindow6.put_onmessage"]/*' />
@@ -169,9 +169,9 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
     /// <include file='IHTMLWindow6.xml' path='doc/member[@name="IHTMLWindow6.msWriteProfilerMark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] ushort* bstrProfilerMarkName)
+    public HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] char* bstrProfilerMarkName)
     {
-        return ((delegate* unmanaged<IHTMLWindow6*, ushort*, int>)(lpVtbl[18]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), bstrProfilerMarkName);
+        return ((delegate* unmanaged<IHTMLWindow6*, char*, int>)(lpVtbl[18]))((IHTMLWindow6*)Unsafe.AsPointer(ref this), bstrProfilerMarkName);
     }
 
     public interface Interface : IDispatch.Interface
@@ -198,10 +198,10 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
         HRESULT get_maxConnectionsPerServer([NativeTypeName("long *")] int* p);
 
         [VtblIndex(14)]
-        HRESULT postMessage([NativeTypeName("BSTR")] ushort* msg, VARIANT targetOrigin);
+        HRESULT postMessage([NativeTypeName("BSTR")] char* msg, VARIANT targetOrigin);
 
         [VtblIndex(15)]
-        HRESULT toStaticHTML([NativeTypeName("BSTR")] ushort* bstrHTML, [NativeTypeName("BSTR *")] ushort** pbstrStaticHTML);
+        HRESULT toStaticHTML([NativeTypeName("BSTR")] char* bstrHTML, [NativeTypeName("BSTR *")] char** pbstrStaticHTML);
 
         [VtblIndex(16)]
         HRESULT put_onmessage(VARIANT v);
@@ -210,7 +210,7 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
         HRESULT get_onmessage(VARIANT* p);
 
         [VtblIndex(18)]
-        HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] ushort* bstrProfilerMarkName);
+        HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] char* bstrProfilerMarkName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -232,7 +232,7 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
@@ -259,10 +259,10 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, int*, int> get_maxConnectionsPerServer;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> postMessage;
+        public delegate* unmanaged<TSelf*, char*, VARIANT, int> postMessage;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> toStaticHTML;
+        public delegate* unmanaged<TSelf*, char*, char**, int> toStaticHTML;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT, int> put_onmessage;
@@ -271,6 +271,6 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_onmessage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> msWriteProfilerMark;
+        public delegate* unmanaged<TSelf*, char*, int> msWriteProfilerMark;
     }
 }

@@ -49,15 +49,15 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface, IN
     /// <include file='INewWindowManager.xml' path='doc/member[@name="INewWindowManager.EvaluateNewWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszUrlContext, [NativeTypeName("LPCWSTR")] ushort* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime)
+    public HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszUrlContext, [NativeTypeName("LPCWSTR")] char* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime)
     {
-        return ((delegate* unmanaged<INewWindowManager*, ushort*, ushort*, ushort*, ushort*, BOOL, uint, uint, int>)(lpVtbl[3]))((INewWindowManager*)Unsafe.AsPointer(ref this), pszUrl, pszName, pszUrlContext, pszFeatures, fReplace, dwFlags, dwUserActionTime);
+        return ((delegate* unmanaged<INewWindowManager*, char*, char*, char*, char*, BOOL, uint, uint, int>)(lpVtbl[3]))((INewWindowManager*)Unsafe.AsPointer(ref this), pszUrl, pszName, pszUrlContext, pszFeatures, fReplace, dwFlags, dwUserActionTime);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszUrlContext, [NativeTypeName("LPCWSTR")] ushort* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime);
+        HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszUrlContext, [NativeTypeName("LPCWSTR")] char* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime);
     }
 
     public partial struct Vtbl<TSelf>
@@ -73,6 +73,6 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface, IN
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, BOOL, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, BOOL, uint, uint, int> EvaluateNewWindow;
+        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, BOOL, uint, uint, int> EvaluateNewWindow;
     }
 }

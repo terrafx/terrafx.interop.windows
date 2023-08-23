@@ -65,9 +65,9 @@ public unsafe partial struct IHTMLCurrentStyle4 : IHTMLCurrentStyle4.Interface, 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle4*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IHTMLCurrentStyle4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCurrentStyle4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -81,9 +81,9 @@ public unsafe partial struct IHTMLCurrentStyle4 : IHTMLCurrentStyle4.Interface, 
     /// <include file='IHTMLCurrentStyle4.xml' path='doc/member[@name="IHTMLCurrentStyle4.get_msInterpolationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] ushort** p)
+    public HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCurrentStyle4*, ushort**, int>)(lpVtbl[7]))((IHTMLCurrentStyle4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged<IHTMLCurrentStyle4*, char**, int>)(lpVtbl[7]))((IHTMLCurrentStyle4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCurrentStyle4.xml' path='doc/member[@name="IHTMLCurrentStyle4.get_maxHeight"]/*' />
@@ -113,7 +113,7 @@ public unsafe partial struct IHTMLCurrentStyle4 : IHTMLCurrentStyle4.Interface, 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] ushort** p);
+        HRESULT get_msInterpolationMode([NativeTypeName("BSTR *")] char** p);
 
         [VtblIndex(8)]
         HRESULT get_maxHeight(VARIANT* p);
@@ -144,13 +144,13 @@ public unsafe partial struct IHTMLCurrentStyle4 : IHTMLCurrentStyle4.Interface, 
         public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, char**, int> get_msInterpolationMode;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxHeight;

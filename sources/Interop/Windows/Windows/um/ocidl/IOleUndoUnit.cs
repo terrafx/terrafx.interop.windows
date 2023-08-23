@@ -57,9 +57,9 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged<IOleUndoUnit*, char**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetUnitType"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
         HRESULT Do(IOleUndoManager* pUndoManager);
 
         [VtblIndex(4)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstr);
 
         [VtblIndex(5)]
         HRESULT GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID);
@@ -109,7 +109,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
         public delegate* unmanaged<TSelf*, IOleUndoManager*, int> Do;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, int*, int> GetUnitType;

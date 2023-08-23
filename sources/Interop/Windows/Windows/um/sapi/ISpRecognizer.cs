@@ -49,33 +49,33 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     /// <inheritdoc cref="ISpProperties.SetPropertyNum" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG")] int lValue)
+    public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int lValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ushort*, int, int>)(lpVtbl[3]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, lValue);
+        return ((delegate* unmanaged<ISpRecognizer*, char*, int, int>)(lpVtbl[3]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, lValue);
     }
 
     /// <inheritdoc cref="ISpProperties.GetPropertyNum" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LONG *")] int* plValue)
+    public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG *")] int* plValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ushort*, int*, int>)(lpVtbl[4]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, plValue);
+        return ((delegate* unmanaged<ISpRecognizer*, char*, int*, int>)(lpVtbl[4]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, plValue);
     }
 
     /// <inheritdoc cref="ISpProperties.SetPropertyString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPCWSTR")] ushort* pValue)
+    public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPCWSTR")] char* pValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, pValue);
+        return ((delegate* unmanaged<ISpRecognizer*, char*, char*, int>)(lpVtbl[5]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, pValue);
     }
 
     /// <inheritdoc cref="ISpProperties.GetPropertyString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue)
+    public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPWSTR *")] char** ppCoMemValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
+        return ((delegate* unmanaged<ISpRecognizer*, char*, char**, int>)(lpVtbl[6]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecognizer"]/*' />
@@ -185,17 +185,17 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
+    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+        return ((delegate* unmanaged<ISpRecognizer*, char*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
+    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, HWND, ushort*, ushort*, void*, uint, int>)(lpVtbl[21]))((ISpRecognizer*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+        return ((delegate* unmanaged<ISpRecognizer*, HWND, char*, char*, void*, uint, int>)(lpVtbl[21]))((ISpRecognizer*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.EmulateRecognition"]/*' />
@@ -248,10 +248,10 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
         HRESULT GetFormat(SPSTREAMFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX);
 
         [VtblIndex(20)]
-        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
+        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
 
         [VtblIndex(21)]
-        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
+        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
 
         [VtblIndex(22)]
         HRESULT EmulateRecognition(ISpPhrase* pPhrase);
@@ -270,16 +270,16 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> SetPropertyNum;
+        public delegate* unmanaged<TSelf*, char*, int, int> SetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetPropertyNum;
+        public delegate* unmanaged<TSelf*, char*, int*, int> GetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetPropertyString;
+        public delegate* unmanaged<TSelf*, char*, char**, int> GetPropertyString;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetRecognizer;
@@ -321,10 +321,10 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
         public delegate* unmanaged<TSelf*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int> GetFormat;
 
         [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*, uint, BOOL*, int> IsUISupported;
+        public delegate* unmanaged<TSelf*, char*, void*, uint, BOOL*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
+        public delegate* unmanaged<TSelf*, HWND, char*, char*, void*, uint, int> DisplayUI;
 
         [NativeTypeName("HRESULT (ISpPhrase *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ISpPhrase*, int> EmulateRecognition;

@@ -73,9 +73,9 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Next([NativeTypeName("BSTR *")] ushort** pbstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags)
+    public HRESULT Next([NativeTypeName("BSTR *")] char** pbstrUrl, [NativeTypeName("BSTR *")] char** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags)
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, ushort**, ushort**, int*, uint*, int>)(lpVtbl[6]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pbstrUrl, pbstrPolicyRef, pdwReserved, pdwPrivacyFlags);
+        return ((delegate* unmanaged<IEnumPrivacyRecords*, char**, char**, int*, uint*, int>)(lpVtbl[6]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pbstrUrl, pbstrPolicyRef, pdwReserved, pdwPrivacyFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,7 +90,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         HRESULT GetPrivacyImpacted(BOOL* pState);
 
         [VtblIndex(6)]
-        HRESULT Next([NativeTypeName("BSTR *")] ushort** pbstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags);
+        HRESULT Next([NativeTypeName("BSTR *")] char** pbstrUrl, [NativeTypeName("BSTR *")] char** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags);
     }
 
     public partial struct Vtbl<TSelf>
@@ -115,6 +115,6 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         public delegate* unmanaged<TSelf*, BOOL*, int> GetPrivacyImpacted;
 
         [NativeTypeName("HRESULT (BSTR *, BSTR *, LONG *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, int*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, char**, char**, int*, uint*, int> Next;
     }
 }

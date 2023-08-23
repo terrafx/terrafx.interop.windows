@@ -13,11 +13,11 @@ public unsafe partial struct NMTTDISPINFOW
 
     /// <include file='NMTTDISPINFOW.xml' path='doc/member[@name="NMTTDISPINFOW.lpszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszText;
+    public char* lpszText;
 
     /// <include file='NMTTDISPINFOW.xml' path='doc/member[@name="NMTTDISPINFOW.szText"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort szText[80];
+    public fixed char szText[80];
 
     /// <include file='NMTTDISPINFOW.xml' path='doc/member[@name="NMTTDISPINFOW.hinst"]/*' />
     public HINSTANCE hinst;

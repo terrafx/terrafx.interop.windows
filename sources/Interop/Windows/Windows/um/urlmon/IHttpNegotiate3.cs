@@ -49,17 +49,17 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
     /// <inheritdoc cref="IHttpNegotiate.BeginningTransaction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] ushort* szURL, [NativeTypeName("LPCWSTR")] ushort* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalHeaders)
+    public HRESULT BeginningTransaction([NativeTypeName("LPCWSTR")] char* szURL, [NativeTypeName("LPCWSTR")] char* szHeaders, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPWSTR *")] char** pszAdditionalHeaders)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, ushort*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
+        return ((delegate* unmanaged<IHttpNegotiate3*, char*, char*, uint, char**, int>)(lpVtbl[3]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), szURL, szHeaders, dwReserved, pszAdditionalHeaders);
     }
 
     /// <inheritdoc cref="IHttpNegotiate.OnResponse" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] ushort* szResponseHeaders, [NativeTypeName("LPCWSTR")] ushort* szRequestHeaders, [NativeTypeName("LPWSTR *")] ushort** pszAdditionalRequestHeaders)
+    public HRESULT OnResponse([NativeTypeName("DWORD")] uint dwResponseCode, [NativeTypeName("LPCWSTR")] char* szResponseHeaders, [NativeTypeName("LPCWSTR")] char* szRequestHeaders, [NativeTypeName("LPWSTR *")] char** pszAdditionalRequestHeaders)
     {
-        return ((delegate* unmanaged<IHttpNegotiate3*, uint, ushort*, ushort*, ushort**, int>)(lpVtbl[4]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
+        return ((delegate* unmanaged<IHttpNegotiate3*, uint, char*, char*, char**, int>)(lpVtbl[4]))((IHttpNegotiate3*)Unsafe.AsPointer(ref this), dwResponseCode, szResponseHeaders, szRequestHeaders, pszAdditionalRequestHeaders);
     }
 
     /// <inheritdoc cref="IHttpNegotiate2.GetRootSecurityId" />
@@ -97,10 +97,10 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface, INativ
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, ushort**, int> BeginningTransaction;
+        public delegate* unmanaged<TSelf*, char*, char*, uint, char**, int> BeginningTransaction;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, ushort**, int> OnResponse;
+        public delegate* unmanaged<TSelf*, uint, char*, char*, char**, int> OnResponse;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, byte*, uint*, nuint, int> GetRootSecurityId;
