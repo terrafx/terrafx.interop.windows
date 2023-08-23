@@ -54,7 +54,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(3)]
     public bool IsValid()
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, byte>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter*, bool>)(lpVtbl[3]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsAttributeSupported"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(4)]
     public bool IsAttributeSupported([NativeTypeName("const GUID &")] Guid* attributeGUID)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, byte>)(lpVtbl[4]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter*, Guid*, bool>)(lpVtbl[4]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), attributeGUID);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.IsPropertySupported"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(5)]
     public bool IsPropertySupported(DXCoreAdapterProperty property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, byte>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, bool>)(lpVtbl[5]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.GetProperty"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(8)]
     public bool IsQueryStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, bool>)(lpVtbl[8]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.QueryState"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
     [VtblIndex(10)]
     public bool IsSetStateSupported(DXCoreAdapterState property)
     {
-        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, byte>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, bool>)(lpVtbl[10]))((IDXCoreAdapter*)Unsafe.AsPointer(ref this), property);
     }
 
     /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.SetState"]/*' />
@@ -175,13 +175,13 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
         public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> IsValid;
+        public delegate* unmanaged<TSelf*, bool> IsValid;
 
         [NativeTypeName("bool (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, byte> IsAttributeSupported;
+        public delegate* unmanaged<TSelf*, Guid*, bool> IsAttributeSupported;
 
         [NativeTypeName("bool (DXCoreAdapterProperty) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, byte> IsPropertySupported;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, bool> IsPropertySupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t, void *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
@@ -190,13 +190,13 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeG
         public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXCoreAdapterState, byte> IsQueryStateSupported;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterState, bool> IsQueryStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, void *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXCoreAdapterState, byte> IsSetStateSupported;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterState, bool> IsSetStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, const void *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;

@@ -102,7 +102,7 @@ public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeIn
     [VtblIndex(9)]
     public bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, byte>)(lpVtbl[9]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), inputIndex) != 0;
+        return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), inputIndex);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.IsOutputValid"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeIn
     [VtblIndex(10)]
     public bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
     {
-        return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, byte>)(lpVtbl[10]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex) != 0;
+        return ((delegate* unmanaged<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.GetInputEdgeDescription"]/*' />
@@ -183,10 +183,10 @@ public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeIn
         public delegate* unmanaged<TSelf*, uint> GetOutputCount;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte> IsInputValid;
+        public delegate* unmanaged<TSelf*, uint, bool> IsInputValid;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte> IsOutputValid;
+        public delegate* unmanaged<TSelf*, uint, bool> IsOutputValid;
 
         [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;

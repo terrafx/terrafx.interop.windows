@@ -77,7 +77,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(6)]
     public bool IsCpuData()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IMLOperatorTensor*, bool>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsDataInterface"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(7)]
     public bool IsDataInterface()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IMLOperatorTensor*, bool>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetData"]/*' />
@@ -151,10 +151,10 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
         public delegate* unmanaged<TSelf*, MLOperatorTensorDataType> GetTensorDataType;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> IsCpuData;
+        public delegate* unmanaged<TSelf*, bool> IsCpuData;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> IsDataInterface;
+        public delegate* unmanaged<TSelf*, bool> IsDataInterface;
 
         [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, void*> GetData;

@@ -71,7 +71,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [VtblIndex(5)]
     public bool IsStale()
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, byte>)(lpVtbl[5]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapterList*, bool>)(lpVtbl[5]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXCoreAdapterList.xml' path='doc/member[@name="IDXCoreAdapterList.GetFactory"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
     [VtblIndex(8)]
     public bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference)
     {
-        return ((delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, byte>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference) != 0;
+        return ((delegate* unmanaged<IDXCoreAdapterList*, DXCoreAdapterPreference, bool>)(lpVtbl[8]))((IDXCoreAdapterList*)Unsafe.AsPointer(ref this), preference);
     }
 
     public interface Interface : IUnknown.Interface
@@ -139,7 +139,7 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
         public delegate* unmanaged<TSelf*, uint> GetAdapterCount;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> IsStale;
+        public delegate* unmanaged<TSelf*, bool> IsStale;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, Guid*, void**, int> GetFactory;
@@ -148,6 +148,6 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface, 
         public delegate* unmanaged<TSelf*, uint, DXCoreAdapterPreference*, int> Sort;
 
         [NativeTypeName("bool (DXCoreAdapterPreference) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterPreference, bool> IsAdapterPreferenceSupported;
     }
 }

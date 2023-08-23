@@ -16,6 +16,7 @@ exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
 generate-cpp-attributes
+generate-disable-runtime-marshalling
 generate-doc-includes
 generate-file-scoped-namespaces
 generate-guid-member

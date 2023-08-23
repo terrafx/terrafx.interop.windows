@@ -68,7 +68,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
     [VtblIndex(5)]
     public bool HasOutputShapeDescription()
     {
-        return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, byte>)(lpVtbl[5]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IMLOperatorTensorShapeDescription*, bool>)(lpVtbl[5]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetOutputTensorDimensionCount"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         public delegate* unmanaged<TSelf*, uint, uint, uint*, int> GetInputTensorShape;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> HasOutputShapeDescription;
+        public delegate* unmanaged<TSelf*, bool> HasOutputShapeDescription;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, uint*, int> GetOutputTensorDimensionCount;

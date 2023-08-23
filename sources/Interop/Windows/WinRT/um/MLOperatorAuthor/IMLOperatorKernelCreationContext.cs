@@ -102,7 +102,7 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
     [VtblIndex(9)]
     public bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte>)(lpVtbl[9]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), inputIndex) != 0;
+        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), inputIndex);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.IsOutputValid"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
     [VtblIndex(10)]
     public bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
     {
-        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte>)(lpVtbl[10]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), outputIndex) != 0;
+        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), outputIndex);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetInputEdgeDescription"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
     [VtblIndex(13)]
     public bool HasTensorShapeDescription()
     {
-        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, byte>)(lpVtbl[13]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this)) != 0;
+        return ((delegate* unmanaged<IMLOperatorKernelCreationContext*, bool>)(lpVtbl[13]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetTensorShapeDescription"]/*' />
@@ -216,10 +216,10 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
         public delegate* unmanaged<TSelf*, uint> GetOutputCount;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte> IsInputValid;
+        public delegate* unmanaged<TSelf*, uint, bool> IsInputValid;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte> IsOutputValid;
+        public delegate* unmanaged<TSelf*, uint, bool> IsOutputValid;
 
         [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
@@ -228,7 +228,7 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
         public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetOutputEdgeDescription;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte> HasTensorShapeDescription;
+        public delegate* unmanaged<TSelf*, bool> HasTensorShapeDescription;
 
         [NativeTypeName("HRESULT (IMLOperatorTensorShapeDescription **) const noexcept __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, IMLOperatorTensorShapeDescription**, int> GetTensorShapeDescription;
