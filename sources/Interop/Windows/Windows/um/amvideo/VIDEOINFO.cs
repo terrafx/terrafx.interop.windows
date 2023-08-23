@@ -45,7 +45,7 @@ public unsafe partial struct VIDEOINFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.bmiColors.AsSpan();
+            return Anonymous.bmiColors;
         }
     }
 

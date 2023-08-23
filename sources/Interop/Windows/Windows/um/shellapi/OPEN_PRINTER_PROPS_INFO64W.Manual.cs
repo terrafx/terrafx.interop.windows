@@ -11,7 +11,7 @@ public unsafe partial struct OPEN_PRINTER_PROPS_INFO64W
     public uint dwSize;
 
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSheetName;
+    public char* pszSheetName;
 
     public uint uSheetIndex;
 

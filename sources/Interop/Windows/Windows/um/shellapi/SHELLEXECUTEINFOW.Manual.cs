@@ -88,7 +88,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpVerb
+    public ref char* lpVerb
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -106,7 +106,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpFile
+    public ref char* lpFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -124,7 +124,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpParameters
+    public ref char* lpParameters
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -142,7 +142,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpDirectory
+    public ref char* lpDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -211,7 +211,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
 
     [NativeTypeName("LPCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpClass
+    public ref char* lpClass
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

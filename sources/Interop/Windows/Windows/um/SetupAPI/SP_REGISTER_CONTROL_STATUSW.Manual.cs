@@ -53,7 +53,7 @@ public unsafe partial struct SP_REGISTER_CONTROL_STATUSW
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* FileName
+    public ref char* FileName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

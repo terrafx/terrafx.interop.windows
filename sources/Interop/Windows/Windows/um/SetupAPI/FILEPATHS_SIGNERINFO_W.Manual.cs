@@ -35,7 +35,7 @@ public unsafe partial struct FILEPATHS_SIGNERINFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Target
+    public ref char* Target
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -53,7 +53,7 @@ public unsafe partial struct FILEPATHS_SIGNERINFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Source
+    public ref char* Source
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -106,7 +106,7 @@ public unsafe partial struct FILEPATHS_SIGNERINFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* DigitalSigner
+    public ref char* DigitalSigner
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -124,7 +124,7 @@ public unsafe partial struct FILEPATHS_SIGNERINFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* Version
+    public ref char* Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -142,7 +142,7 @@ public unsafe partial struct FILEPATHS_SIGNERINFO_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* CatalogFile
+    public ref char* CatalogFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

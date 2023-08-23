@@ -58,9 +58,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDispatchEx*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDispatchEx*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged<IDispatchEx*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDispatchEx*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,9 +72,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDispID([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID *")] int* pid)
+    public HRESULT GetDispID([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID *")] int* pid)
     {
-        return ((delegate* unmanaged<IDispatchEx*, ushort*, uint, int*, int>)(lpVtbl[7]))((IDispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex, pid);
+        return ((delegate* unmanaged<IDispatchEx*, char*, uint, int*, int>)(lpVtbl[7]))((IDispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex, pid);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -86,9 +86,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT DeleteMemberByName([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex)
+    public HRESULT DeleteMemberByName([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("DWORD")] uint grfdex)
     {
-        return ((delegate* unmanaged<IDispatchEx*, ushort*, uint, int>)(lpVtbl[9]))((IDispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex);
+        return ((delegate* unmanaged<IDispatchEx*, char*, uint, int>)(lpVtbl[9]))((IDispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,9 +107,9 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetMemberName([NativeTypeName("DISPID")] int id, [NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetMemberName([NativeTypeName("DISPID")] int id, [NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<IDispatchEx*, int, ushort**, int>)(lpVtbl[12]))((IDispatchEx*)Unsafe.AsPointer(ref this), id, pbstrName);
+        return ((delegate* unmanaged<IDispatchEx*, int, char**, int>)(lpVtbl[12]))((IDispatchEx*)Unsafe.AsPointer(ref this), id, pbstrName);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -129,13 +129,13 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT GetDispID([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID *")] int* pid);
+        HRESULT GetDispID([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID *")] int* pid);
 
         [VtblIndex(8)]
         HRESULT InvokeEx([NativeTypeName("DISPID")] int id, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdp, VARIANT* pvarRes, EXCEPINFO* pei, IServiceProvider* pspCaller);
 
         [VtblIndex(9)]
-        HRESULT DeleteMemberByName([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex);
+        HRESULT DeleteMemberByName([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("DWORD")] uint grfdex);
 
         [VtblIndex(10)]
         HRESULT DeleteMemberByDispID([NativeTypeName("DISPID")] int id);
@@ -144,7 +144,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
         HRESULT GetMemberProperties([NativeTypeName("DISPID")] int id, [NativeTypeName("DWORD")] uint grfdexFetch, [NativeTypeName("DWORD *")] uint* pgrfdex);
 
         [VtblIndex(12)]
-        HRESULT GetMemberName([NativeTypeName("DISPID")] int id, [NativeTypeName("BSTR *")] ushort** pbstrName);
+        HRESULT GetMemberName([NativeTypeName("DISPID")] int id, [NativeTypeName("BSTR *")] char** pbstrName);
 
         [VtblIndex(13)]
         HRESULT GetNextDispID([NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID")] int id, [NativeTypeName("DISPID *")] int* pid);
@@ -171,19 +171,19 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
         public delegate* unmanaged<IDispatchEx*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDispatchEx*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<IDispatchEx*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDispatchEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, DWORD, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDispatchEx*, ushort*, uint, int*, int> GetDispID;
+        public delegate* unmanaged<IDispatchEx*, char*, uint, int*, int> GetDispID;
 
         [NativeTypeName("HRESULT (DISPID, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, IServiceProvider *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDispatchEx*, int, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, IServiceProvider*, int> InvokeEx;
 
         [NativeTypeName("HRESULT (BSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDispatchEx*, ushort*, uint, int> DeleteMemberByName;
+        public delegate* unmanaged<IDispatchEx*, char*, uint, int> DeleteMemberByName;
 
         [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
         public delegate* unmanaged<IDispatchEx*, int, int> DeleteMemberByDispID;
@@ -192,7 +192,7 @@ public unsafe partial struct IDispatchEx : IDispatch.Interface, INativeGuid
         public delegate* unmanaged<IDispatchEx*, int, uint, uint*, int> GetMemberProperties;
 
         [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDispatchEx*, int, ushort**, int> GetMemberName;
+        public delegate* unmanaged<IDispatchEx*, int, char**, int> GetMemberName;
 
         [NativeTypeName("HRESULT (DWORD, DISPID, DISPID *) __attribute__((stdcall))")]
         public delegate* unmanaged<IDispatchEx*, uint, int, int*, int> GetNextDispID;

@@ -244,16 +244,6 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHGetLocalizedName([NativeTypeName("PCWSTR")] char* pszPath, [NativeTypeName("PWSTR")] char* pszResModule, uint cch, int* pidsRes);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxA"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int ShellMessageBoxA(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpcText, [NativeTypeName("LPCSTR")] sbyte* lpcTitle, uint fuStyle, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShellMessageBoxW"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int ShellMessageBoxW(HINSTANCE hAppInst, HWND hWnd, [NativeTypeName("LPCWSTR")] char* lpcText, [NativeTypeName("LPCWSTR")] char* lpcTitle, uint fuStyle, __arglist);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLFNDriveA"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern BOOL IsLFNDriveA([NativeTypeName("LPCSTR")] sbyte* pszPath);

@@ -15,7 +15,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out OPENFILENAMEA tmp);
-            return unchecked((nuint)(((byte*)(&tmp)->lpTemplateName) - ((byte*)(&tmp))) + (uint)sizeof(ushort*));
+            return unchecked((nuint)(((byte*)(&tmp)->lpTemplateName) - ((byte*)(&tmp))) + (uint)sizeof(char*));
         }
     }
 
@@ -25,7 +25,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out OPENFILENAMEW tmp);
-            return unchecked((nuint)(((byte*)(&tmp)->lpTemplateName) - ((byte*)(&tmp))) + (uint)sizeof(ushort*));
+            return unchecked((nuint)(((byte*)(&tmp)->lpTemplateName) - ((byte*)(&tmp))) + (uint)sizeof(char*));
         }
     }
 

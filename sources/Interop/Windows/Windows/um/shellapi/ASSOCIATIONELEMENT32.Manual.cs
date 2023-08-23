@@ -15,5 +15,5 @@ public unsafe partial struct ASSOCIATIONELEMENT32
     public HKEY hkClass;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* pszClass;
+    public char* pszClass;
 }

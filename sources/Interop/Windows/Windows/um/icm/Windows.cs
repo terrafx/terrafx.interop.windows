@@ -172,7 +172,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterCMMW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL RegisterCMMW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("DWORD")] uint cmmID, [NativeTypeName("PCWSTR")] ushort* pCMMdll);
+    public static extern BOOL RegisterCMMW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("DWORD")] uint cmmID, [NativeTypeName("PCWSTR")] char* pCMMdll);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterCMMA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -182,7 +182,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterCMMW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL UnregisterCMMW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("DWORD")] uint cmmID);
+    public static extern BOOL UnregisterCMMW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("DWORD")] uint cmmID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectCMM"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -197,7 +197,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectoryW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetColorDirectoryW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PWSTR")] ushort* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
+    public static extern BOOL GetColorDirectoryW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PWSTR")] char* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallColorProfileA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -207,7 +207,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallColorProfileW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL InstallColorProfileW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PCWSTR")] ushort* pProfileName);
+    public static extern BOOL InstallColorProfileW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PCWSTR")] char* pProfileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UninstallColorProfileA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -217,7 +217,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UninstallColorProfileW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL UninstallColorProfileW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PCWSTR")] ushort* pProfileName, BOOL bDelete);
+    public static extern BOOL UninstallColorProfileW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PCWSTR")] char* pProfileName, BOOL bDelete);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumColorProfilesA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -227,7 +227,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumColorProfilesW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL EnumColorProfilesW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PENUMTYPEW")] ENUMTYPEW* pEnumRecord, [NativeTypeName("PBYTE")] byte* pEnumerationBuffer, [NativeTypeName("PDWORD")] uint* pdwSizeOfEnumerationBuffer, [NativeTypeName("PDWORD")] uint* pnProfiles);
+    public static extern BOOL EnumColorProfilesW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PENUMTYPEW")] ENUMTYPEW* pEnumRecord, [NativeTypeName("PBYTE")] byte* pEnumerationBuffer, [NativeTypeName("PDWORD")] uint* pdwSizeOfEnumerationBuffer, [NativeTypeName("PDWORD")] uint* pnProfiles);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetStandardColorSpaceProfileA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -237,7 +237,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetStandardColorSpaceProfileW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetStandardColorSpaceProfileW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("PCWSTR")] ushort* pProfileName);
+    public static extern BOOL SetStandardColorSpaceProfileW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("PCWSTR")] char* pProfileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStandardColorSpaceProfileA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -247,7 +247,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStandardColorSpaceProfileW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetStandardColorSpaceProfileW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("DWORD")] uint dwSCS, [NativeTypeName("PWSTR")] ushort* pBuffer, [NativeTypeName("PDWORD")] uint* pcbSize);
+    public static extern BOOL GetStandardColorSpaceProfileW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("DWORD")] uint dwSCS, [NativeTypeName("PWSTR")] char* pBuffer, [NativeTypeName("PDWORD")] uint* pcbSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssociateColorProfileWithDeviceA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -258,7 +258,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssociateColorProfileWithDeviceW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AssociateColorProfileWithDeviceW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PCWSTR")] ushort* pProfileName, [NativeTypeName("PCWSTR")] ushort* pDeviceName);
+    public static extern BOOL AssociateColorProfileWithDeviceW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PCWSTR")] char* pProfileName, [NativeTypeName("PCWSTR")] char* pDeviceName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DisassociateColorProfileFromDeviceA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -268,7 +268,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DisassociateColorProfileFromDeviceW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL DisassociateColorProfileFromDeviceW([NativeTypeName("PCWSTR")] ushort* pMachineName, [NativeTypeName("PCWSTR")] ushort* pProfileName, [NativeTypeName("PCWSTR")] ushort* pDeviceName);
+    public static extern BOOL DisassociateColorProfileFromDeviceW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PCWSTR")] char* pProfileName, [NativeTypeName("PCWSTR")] char* pDeviceName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupColorMatchingW"]/*' />
     [DllImport("icmui", ExactSpelling = true)]
@@ -283,12 +283,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsAssociateColorProfileWithDevice"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsAssociateColorProfileWithDevice(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* pProfileName, [NativeTypeName("PCWSTR")] ushort* pDeviceName);
+    public static extern BOOL WcsAssociateColorProfileWithDevice(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* pProfileName, [NativeTypeName("PCWSTR")] char* pDeviceName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsDisassociateColorProfileFromDevice"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsDisassociateColorProfileFromDevice(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* pProfileName, [NativeTypeName("PCWSTR")] ushort* pDeviceName);
+    public static extern BOOL WcsDisassociateColorProfileFromDevice(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* pProfileName, [NativeTypeName("PCWSTR")] char* pDeviceName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsEnumColorProfilesSize"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -303,17 +303,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsGetDefaultColorProfileSize"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsGetDefaultColorProfileSize(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("PDWORD")] uint* pcbProfileName);
+    public static extern BOOL WcsGetDefaultColorProfileSize(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("PDWORD")] uint* pcbProfileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsGetDefaultColorProfile"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsGetDefaultColorProfile(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("DWORD")] uint cbProfileName, [NativeTypeName("LPWSTR")] ushort* pProfileName);
+    public static extern BOOL WcsGetDefaultColorProfile(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("DWORD")] uint cbProfileName, [NativeTypeName("LPWSTR")] char* pProfileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsSetDefaultColorProfile"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsSetDefaultColorProfile(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("LPCWSTR")] ushort* pProfileName);
+    public static extern BOOL WcsSetDefaultColorProfile(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* pDeviceName, COLORPROFILETYPE cptColorProfileType, COLORPROFILESUBTYPE cpstColorProfileSubType, [NativeTypeName("DWORD")] uint dwProfileID, [NativeTypeName("LPCWSTR")] char* pProfileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsSetDefaultRenderingIntent"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -328,12 +328,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsGetUsePerUserProfiles"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsGetUsePerUserProfiles([NativeTypeName("LPCWSTR")] ushort* pDeviceName, [NativeTypeName("DWORD")] uint dwDeviceClass, [NativeTypeName("PBOOL")] BOOL* pUsePerUserProfiles);
+    public static extern BOOL WcsGetUsePerUserProfiles([NativeTypeName("LPCWSTR")] char* pDeviceName, [NativeTypeName("DWORD")] uint dwDeviceClass, [NativeTypeName("PBOOL")] BOOL* pUsePerUserProfiles);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsSetUsePerUserProfiles"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WcsSetUsePerUserProfiles([NativeTypeName("LPCWSTR")] ushort* pDeviceName, [NativeTypeName("DWORD")] uint dwDeviceClass, BOOL usePerUserProfiles);
+    public static extern BOOL WcsSetUsePerUserProfiles([NativeTypeName("LPCWSTR")] char* pDeviceName, [NativeTypeName("DWORD")] uint dwDeviceClass, BOOL usePerUserProfiles);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsTranslateColors"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -461,27 +461,27 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileAddDisplayAssociation"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern HRESULT ColorProfileAddDisplayAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* profileName, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, BOOL setAsDefault, BOOL associateAsAdvancedColor);
+    public static extern HRESULT ColorProfileAddDisplayAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* profileName, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, BOOL setAsDefault, BOOL associateAsAdvancedColor);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileRemoveDisplayAssociation"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern HRESULT ColorProfileRemoveDisplayAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* profileName, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, BOOL dissociateAdvancedColor);
+    public static extern HRESULT ColorProfileRemoveDisplayAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* profileName, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, BOOL dissociateAdvancedColor);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileSetDisplayDefaultAssociation"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern HRESULT ColorProfileSetDisplayDefaultAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] ushort* profileName, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID);
+    public static extern HRESULT ColorProfileSetDisplayDefaultAssociation(WCS_PROFILE_MANAGEMENT_SCOPE scope, [NativeTypeName("PCWSTR")] char* profileName, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileGetDisplayList"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern HRESULT ColorProfileGetDisplayList(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, [NativeTypeName("LPWSTR **")] ushort*** profileList, [NativeTypeName("PDWORD")] uint* profileCount);
+    public static extern HRESULT ColorProfileGetDisplayList(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, [NativeTypeName("LPWSTR **")] char*** profileList, [NativeTypeName("PDWORD")] uint* profileCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileGetDisplayDefault"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static extern HRESULT ColorProfileGetDisplayDefault(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, [NativeTypeName("LPWSTR *")] ushort** profileName);
+    public static extern HRESULT ColorProfileGetDisplayDefault(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, COLORPROFILETYPE profileType, COLORPROFILESUBTYPE profileSubType, [NativeTypeName("LPWSTR *")] char** profileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileGetDisplayUserScope"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
@@ -786,7 +786,7 @@ public static unsafe partial class Windows
     public const int CMS_TARGETOVERFLOW = 0x20000000;
 
     [NativeTypeName("#define InstallColorProfile InstallColorProfileW")]
-    public static delegate*<ushort*, ushort*, BOOL> InstallColorProfile => &InstallColorProfileW;
+    public static delegate*<char*, char*, BOOL> InstallColorProfile => &InstallColorProfileW;
 
     [NativeTypeName("#define CreateColorTransform CreateColorTransformW")]
     public static delegate*<LOGCOLORSPACEW*, HPROFILE, HPROFILE, uint, HTRANSFORM> CreateColorTransform => &CreateColorTransformW;
@@ -798,32 +798,32 @@ public static unsafe partial class Windows
     public static delegate*<LOGCOLORSPACEW*, byte**, BOOL> CreateProfileFromLogColorSpace => &CreateProfileFromLogColorSpaceW;
 
     [NativeTypeName("#define RegisterCMM RegisterCMMW")]
-    public static delegate*<ushort*, uint, ushort*, BOOL> RegisterCMM => &RegisterCMMW;
+    public static delegate*<char*, uint, char*, BOOL> RegisterCMM => &RegisterCMMW;
 
     [NativeTypeName("#define UnregisterCMM UnregisterCMMW")]
-    public static delegate*<ushort*, uint, BOOL> UnregisterCMM => &UnregisterCMMW;
+    public static delegate*<char*, uint, BOOL> UnregisterCMM => &UnregisterCMMW;
 
     [NativeTypeName("#define GetColorDirectory GetColorDirectoryW")]
-    public static delegate*<ushort*, ushort*, uint*, BOOL> GetColorDirectory => &GetColorDirectoryW;
+    public static delegate*<char*, char*, uint*, BOOL> GetColorDirectory => &GetColorDirectoryW;
 
     [NativeTypeName("#define UninstallColorProfile UninstallColorProfileW")]
-    public static delegate*<ushort*, ushort*, BOOL, BOOL> UninstallColorProfile => &UninstallColorProfileW;
+    public static delegate*<char*, char*, BOOL, BOOL> UninstallColorProfile => &UninstallColorProfileW;
 
     [NativeTypeName("#define AssociateColorProfileWithDevice AssociateColorProfileWithDeviceW")]
     [SupportedOSPlatform("windows10.0.19043.0")]
-    public static delegate*<ushort*, ushort*, ushort*, BOOL> AssociateColorProfileWithDevice => &AssociateColorProfileWithDeviceW;
+    public static delegate*<char*, char*, char*, BOOL> AssociateColorProfileWithDevice => &AssociateColorProfileWithDeviceW;
 
     [NativeTypeName("#define DisassociateColorProfileFromDevice DisassociateColorProfileFromDeviceW")]
-    public static delegate*<ushort*, ushort*, ushort*, BOOL> DisassociateColorProfileFromDevice => &DisassociateColorProfileFromDeviceW;
+    public static delegate*<char*, char*, char*, BOOL> DisassociateColorProfileFromDevice => &DisassociateColorProfileFromDeviceW;
 
     [NativeTypeName("#define EnumColorProfiles EnumColorProfilesW")]
-    public static delegate*<ushort*, ENUMTYPEW*, byte*, uint*, uint*, BOOL> EnumColorProfiles => &EnumColorProfilesW;
+    public static delegate*<char*, ENUMTYPEW*, byte*, uint*, uint*, BOOL> EnumColorProfiles => &EnumColorProfilesW;
 
     [NativeTypeName("#define SetStandardColorSpaceProfile SetStandardColorSpaceProfileW")]
-    public static delegate*<ushort*, uint, ushort*, BOOL> SetStandardColorSpaceProfile => &SetStandardColorSpaceProfileW;
+    public static delegate*<char*, uint, char*, BOOL> SetStandardColorSpaceProfile => &SetStandardColorSpaceProfileW;
 
     [NativeTypeName("#define GetStandardColorSpaceProfile GetStandardColorSpaceProfileW")]
-    public static delegate*<ushort*, uint, ushort*, uint*, BOOL> GetStandardColorSpaceProfile => &GetStandardColorSpaceProfileW;
+    public static delegate*<char*, uint, char*, uint*, BOOL> GetStandardColorSpaceProfile => &GetStandardColorSpaceProfileW;
 
     [NativeTypeName("#define SetupColorMatching SetupColorMatchingW")]
     public static delegate*<COLORMATCHSETUPW*, BOOL> SetupColorMatching => &SetupColorMatchingW;

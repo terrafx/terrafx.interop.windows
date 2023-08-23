@@ -16,25 +16,25 @@ public unsafe partial struct SP_FILE_COPY_PARAMS32_W
     public HSPFILEQ QueueHandle;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourceRootPath;
+    public char* SourceRootPath;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourcePath;
+    public char* SourcePath;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourceFilename;
+    public char* SourceFilename;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourceDescription;
+    public char* SourceDescription;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SourceTagfile;
+    public char* SourceTagfile;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* TargetDirectory;
+    public char* TargetDirectory;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* TargetFilename;
+    public char* TargetFilename;
 
     [NativeTypeName("DWORD")]
     public uint CopyStyle;
@@ -42,5 +42,5 @@ public unsafe partial struct SP_FILE_COPY_PARAMS32_W
     public HINF LayoutInf;
 
     [NativeTypeName("PCWSTR")]
-    public ushort* SecurityDescriptor;
+    public char* SecurityDescriptor;
 }

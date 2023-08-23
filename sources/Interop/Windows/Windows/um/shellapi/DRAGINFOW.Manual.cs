@@ -86,7 +86,7 @@ public unsafe partial struct DRAGINFOW
 
     [NativeTypeName("PZZWSTR")]
     [UnscopedRef]
-    public ref ushort* lpFileList
+    public ref char* lpFileList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

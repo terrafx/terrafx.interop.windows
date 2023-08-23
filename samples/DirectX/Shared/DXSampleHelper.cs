@@ -45,7 +45,7 @@ public static unsafe class DXSampleHelper
     {
         fixed (char* pName = name)
         {
-            _ = pObject->SetName((ushort*)pName);
+            _ = pObject->SetName(pName);
         }
     }
 

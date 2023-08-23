@@ -69,7 +69,7 @@ public unsafe partial struct SHFILEOPSTRUCTW
 
     [NativeTypeName("PCZZWSTR")]
     [UnscopedRef]
-    public ref ushort* pFrom
+    public ref char* pFrom
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -87,7 +87,7 @@ public unsafe partial struct SHFILEOPSTRUCTW
 
     [NativeTypeName("PCZZWSTR")]
     [UnscopedRef]
-    public ref ushort* pTo
+    public ref char* pTo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -158,7 +158,7 @@ public unsafe partial struct SHFILEOPSTRUCTW
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* lpszProgressTitle
+    public ref char* lpszProgressTitle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

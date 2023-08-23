@@ -42,13 +42,13 @@ public unsafe class HelloTriangle11 : HelloWindow11
             {
                 var entryPoint = 0x00006E69614D5356;    // VSMain
                 var target = 0x0000305F345F7376;        // vs_4_0
-                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, vertexShaderBlob.GetAddressOf(), null));
+                ThrowIfFailed(D3DCompileFromFile(fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, vertexShaderBlob.GetAddressOf(), null));
 
                 ThrowIfFailed(D3DDevice->CreateVertexShader(vertexShaderBlob.Get()->GetBufferPointer(), vertexShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, vertexShader));
 
                 entryPoint = 0x00006E69614D5350;        // PSMain
                 target = 0x0000305F345F7370;            // ps_4_0
-                ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, pixelShaderBlob.GetAddressOf(), null));
+                ThrowIfFailed(D3DCompileFromFile(fileName, null, null, (sbyte*)&entryPoint, (sbyte*)&target, 0, 0, pixelShaderBlob.GetAddressOf(), null));
 
                 ThrowIfFailed(D3DDevice->CreatePixelShader(pixelShaderBlob.Get()->GetBufferPointer(), pixelShaderBlob.Get()->GetBufferSize(), pClassLinkage: null, pixelShader));
             }

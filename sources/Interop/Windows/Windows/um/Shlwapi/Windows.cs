@@ -297,14 +297,6 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern int wvnsprintfW([NativeTypeName("PWSTR")] char* pszDest, int cchDest, [NativeTypeName("PCWSTR")] char* pszFmt, [NativeTypeName("va_list")] sbyte* arglist);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfA"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern int wnsprintfA([NativeTypeName("PSTR")] sbyte* pszDest, int cchDest, [NativeTypeName("PCSTR")] sbyte* pszFmt, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wnsprintfW"]/*' />
-    [DllImport("shlwapi", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern int wnsprintfW([NativeTypeName("PWSTR")] char* pszDest, int cchDest, [NativeTypeName("PCWSTR")] char* pszFmt, __arglist);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToStrA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern HRESULT StrRetToStrA(STRRET* pstr, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPSTR *")] sbyte** ppsz);

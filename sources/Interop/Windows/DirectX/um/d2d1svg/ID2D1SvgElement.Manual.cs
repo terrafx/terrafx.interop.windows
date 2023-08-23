@@ -10,27 +10,27 @@ namespace TerraFX.Interop.DirectX;
 
 public unsafe partial struct ID2D1SvgElement
 {
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgAttribute** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgAttribute** value)
     {
         return GetAttributeValue(name, __uuidof<ID2D1SvgAttribute>(), (void**)value);
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgPaint** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgPaint** value)
     {
         return GetAttributeValue(name, __uuidof<ID2D1SvgPaint>(), (void**)value);
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgStrokeDashArray** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgStrokeDashArray** value)
     {
         return GetAttributeValue(name, __uuidof<ID2D1SvgStrokeDashArray>(), (void**)value);
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgPointCollection** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgPointCollection** value)
     {
         return GetAttributeValue(name, __uuidof<ID2D1SvgPointCollection>(), (void**)value);
     }
 
-    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] ushort* name, ID2D1SvgPathData** value)
+    public HRESULT GetAttributeValue([NativeTypeName("PCWSTR")] char* name, ID2D1SvgPathData** value)
     {
         return GetAttributeValue(name, __uuidof<ID2D1SvgPathData>(), (void**)value);
     }

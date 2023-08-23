@@ -70,7 +70,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourceRootPath
+    public ref char* SourceRootPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -88,7 +88,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourcePath
+    public ref char* SourcePath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -106,7 +106,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourceFilename
+    public ref char* SourceFilename
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -124,7 +124,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourceDescription
+    public ref char* SourceDescription
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -142,7 +142,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SourceTagfile
+    public ref char* SourceTagfile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -160,7 +160,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* TargetDirectory
+    public ref char* TargetDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -178,7 +178,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* TargetFilename
+    public ref char* TargetFilename
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -231,7 +231,7 @@ public unsafe partial struct SP_FILE_COPY_PARAMS_W
 
     [NativeTypeName("PCWSTR")]
     [UnscopedRef]
-    public ref ushort* SecurityDescriptor
+    public ref char* SecurityDescriptor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

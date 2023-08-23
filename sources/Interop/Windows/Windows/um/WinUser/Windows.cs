@@ -21,16 +21,6 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern int wvsprintfW([NativeTypeName("LPWSTR")] char* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfA"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1, __arglist);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintfW([NativeTypeName("LPWSTR")] char* param0, [NativeTypeName("LPCWSTR")] char* param1, __arglist);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]

@@ -14,7 +14,7 @@ public unsafe partial struct DRAGINFO64W
     public BOOL fNC;
 
     [NativeTypeName("PZZWSTR")]
-    public ushort* lpFileList;
+    public char* lpFileList;
 
     [NativeTypeName("DWORD")]
     public uint grfKeyState;
