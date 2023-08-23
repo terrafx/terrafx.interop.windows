@@ -17,7 +17,7 @@ public partial struct COMSTAT
     public uint fCtsHold
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -34,7 +34,7 @@ public partial struct COMSTAT
     public uint fDsrHold
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -51,7 +51,7 @@ public partial struct COMSTAT
     public uint fRlsdHold
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -68,7 +68,7 @@ public partial struct COMSTAT
     public uint fXoffHold
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -85,7 +85,7 @@ public partial struct COMSTAT
     public uint fXoffSent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x1u;
         }
@@ -102,7 +102,7 @@ public partial struct COMSTAT
     public uint fEof
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 5) & 0x1u;
         }
@@ -119,7 +119,7 @@ public partial struct COMSTAT
     public uint fTxim
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 6) & 0x1u;
         }
@@ -136,7 +136,7 @@ public partial struct COMSTAT
     public uint fReserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 7) & 0x1FFFFFFu;
         }

@@ -3,10 +3,7 @@
 // Ported from d3d12.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -21,29 +18,9 @@ public partial struct D3D12_RT_FORMAT_ARRAY
     public uint NumRenderTargets;
 
     /// <include file='_RTFormats_e__FixedBuffer.xml' path='doc/member[@name="_RTFormats_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
     public partial struct _RTFormats_e__FixedBuffer
     {
         public DXGI_FORMAT e0;
-        public DXGI_FORMAT e1;
-        public DXGI_FORMAT e2;
-        public DXGI_FORMAT e3;
-        public DXGI_FORMAT e4;
-        public DXGI_FORMAT e5;
-        public DXGI_FORMAT e6;
-        public DXGI_FORMAT e7;
-
-        [UnscopedRef]
-        public ref DXGI_FORMAT this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

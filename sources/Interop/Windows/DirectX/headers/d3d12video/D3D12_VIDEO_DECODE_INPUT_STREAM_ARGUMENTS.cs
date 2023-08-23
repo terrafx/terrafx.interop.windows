@@ -3,10 +3,7 @@
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -30,31 +27,9 @@ public unsafe partial struct D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS
     public ID3D12VideoDecoderHeap* pHeap;
 
     /// <include file='_FrameArguments_e__FixedBuffer.xml' path='doc/member[@name="_FrameArguments_e__FixedBuffer"]/*' />
+    [InlineArray(10)]
     public partial struct _FrameArguments_e__FixedBuffer
     {
         public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e0;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e1;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e2;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e3;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e4;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e5;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e6;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e7;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e8;
-        public D3D12_VIDEO_DECODE_FRAME_ARGUMENT e9;
-
-        [UnscopedRef]
-        public ref D3D12_VIDEO_DECODE_FRAME_ARGUMENT this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<D3D12_VIDEO_DECODE_FRAME_ARGUMENT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 10);
     }
 }

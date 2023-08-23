@@ -28,7 +28,7 @@ public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
     public byte ReadOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x1u);
         }
@@ -45,7 +45,7 @@ public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
     public byte Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 1) & 0x7Fu);
         }

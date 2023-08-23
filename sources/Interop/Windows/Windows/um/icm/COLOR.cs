@@ -9,13 +9,9 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-/// <include file='COLOR.xml' path='doc/member[@name="COLOR"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct COLOR
 {
-    [NativeTypeName("#define COLOR_MATCH_VERSION 0x0200")]
-    public const int COLOR_MATCH_VERSION = 0x0200;
-
     /// <include file='COLOR.xml' path='doc/member[@name="COLOR.gray"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct GRAYCOLOR")]
@@ -98,4 +94,7 @@ public unsafe partial struct COLOR
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.reserved2"]/*' />
         public void* reserved2;
     }
+
+    [NativeTypeName("#define COLOR_MATCH_VERSION 0x0200")]
+    public const int COLOR_MATCH_VERSION = 0x0200;
 }

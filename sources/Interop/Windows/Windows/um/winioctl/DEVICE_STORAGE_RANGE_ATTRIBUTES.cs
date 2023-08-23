@@ -39,7 +39,7 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
     public uint IsRangeBad
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsRangeBad;
         }
@@ -75,7 +75,7 @@ public partial struct DEVICE_STORAGE_RANGE_ATTRIBUTES
             public uint IsRangeBad
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }

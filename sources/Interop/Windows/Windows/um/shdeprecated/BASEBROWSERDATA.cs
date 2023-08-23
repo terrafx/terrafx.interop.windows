@@ -39,7 +39,7 @@ public unsafe partial struct BASEBROWSERDATA
     public uint _fCreatingViewWindow
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }

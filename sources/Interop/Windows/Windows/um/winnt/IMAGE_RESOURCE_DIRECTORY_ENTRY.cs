@@ -24,7 +24,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint NameOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Anonymous.NameOffset;
         }
@@ -40,7 +40,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint NameIsString
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Anonymous.NameIsString;
         }
@@ -89,7 +89,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint OffsetToDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.OffsetToDirectory;
         }
@@ -105,7 +105,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint DataIsDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.DataIsDirectory;
         }
@@ -146,7 +146,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint NameOffset
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x7FFFFFFFu;
                 }
@@ -163,7 +163,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint NameIsString
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }
@@ -201,7 +201,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint OffsetToDirectory
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x7FFFFFFFu;
                 }
@@ -218,7 +218,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint DataIsDirectory
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }

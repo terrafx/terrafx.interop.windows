@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint EnableUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableUserShadowStack;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint AuditUserShadowStack
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditUserShadowStack;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint SetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SetContextIpValidation;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint AuditSetContextIpValidation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditSetContextIpValidation;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint EnableUserShadowStackStrictMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableUserShadowStackStrictMode;
         }
@@ -113,7 +113,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint BlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.BlockNonCetBinaries;
         }
@@ -129,7 +129,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint BlockNonCetBinariesNonEhcont
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.BlockNonCetBinariesNonEhcont;
         }
@@ -145,7 +145,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint AuditBlockNonCetBinaries
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditBlockNonCetBinaries;
         }
@@ -161,7 +161,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint CetDynamicApisOutOfProcOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.CetDynamicApisOutOfProcOnly;
         }
@@ -177,7 +177,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint SetContextIpValidationRelaxedMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SetContextIpValidationRelaxedMode;
         }
@@ -193,7 +193,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -229,7 +229,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint EnableUserShadowStack
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -246,7 +246,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint AuditUserShadowStack
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -263,7 +263,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint SetContextIpValidation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -280,7 +280,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint AuditSetContextIpValidation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -297,7 +297,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint EnableUserShadowStackStrictMode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -314,7 +314,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint BlockNonCetBinaries
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -331,7 +331,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint BlockNonCetBinariesNonEhcont
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x1u;
                 }
@@ -348,7 +348,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint AuditBlockNonCetBinaries
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 7) & 0x1u;
                 }
@@ -365,7 +365,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint CetDynamicApisOutOfProcOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1u;
                 }
@@ -382,7 +382,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint SetContextIpValidationRelaxedMode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 9) & 0x1u;
                 }
@@ -399,7 +399,7 @@ public partial struct PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 10) & 0x3FFFFFu;
                 }

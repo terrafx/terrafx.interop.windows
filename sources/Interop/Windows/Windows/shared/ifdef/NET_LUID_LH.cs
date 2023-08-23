@@ -32,7 +32,7 @@ public partial struct NET_LUID_LH
         public ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFFFFFFUL;
             }
@@ -49,7 +49,7 @@ public partial struct NET_LUID_LH
         public ulong NetLuidIndex
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 24) & 0xFFFFFFUL;
             }
@@ -66,7 +66,7 @@ public partial struct NET_LUID_LH
         public ulong IfType
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 48) & 0xFFFFUL;
             }

@@ -27,9 +27,9 @@ public partial struct CABINETSTATE
     public BOOL fFullPathTitle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)(_bitfield & 0x1);
+            return (BOOL)((_bitfield << 31) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -44,9 +44,9 @@ public partial struct CABINETSTATE
     public BOOL fSaveLocalView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 1) & 0x1);
+            return (BOOL)((_bitfield << 30) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,9 +61,9 @@ public partial struct CABINETSTATE
     public BOOL fNotShell
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 2) & 0x1);
+            return (BOOL)((_bitfield << 29) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -78,9 +78,9 @@ public partial struct CABINETSTATE
     public BOOL fSimpleDefault
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 3) & 0x1);
+            return (BOOL)((_bitfield << 28) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -95,9 +95,9 @@ public partial struct CABINETSTATE
     public BOOL fDontShowDescBar
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 4) & 0x1);
+            return (BOOL)((_bitfield << 27) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -112,9 +112,9 @@ public partial struct CABINETSTATE
     public BOOL fNewWindowMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 5) & 0x1);
+            return (BOOL)((_bitfield << 26) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -129,9 +129,9 @@ public partial struct CABINETSTATE
     public BOOL fShowCompColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 6) & 0x1);
+            return (BOOL)((_bitfield << 25) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -146,9 +146,9 @@ public partial struct CABINETSTATE
     public BOOL fDontPrettyNames
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 7) & 0x1);
+            return (BOOL)((_bitfield << 24) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -163,9 +163,9 @@ public partial struct CABINETSTATE
     public BOOL fAdminsCreateCommonGroups
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield >> 8) & 0x1);
+            return (BOOL)((_bitfield << 23) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -180,7 +180,7 @@ public partial struct CABINETSTATE
     public uint fUnusedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (uint)((_bitfield >> 9) & 0x7F);
         }

@@ -3,10 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -138,24 +135,9 @@ public unsafe partial struct SYSTEM_POWER_CAPABILITIES
     public SYSTEM_POWER_STATE DefaultLowLatencyWake;
 
     /// <include file='_BatteryScale_e__FixedBuffer.xml' path='doc/member[@name="_BatteryScale_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
     public partial struct _BatteryScale_e__FixedBuffer
     {
         public BATTERY_REPORTING_SCALE e0;
-        public BATTERY_REPORTING_SCALE e1;
-        public BATTERY_REPORTING_SCALE e2;
-
-        [UnscopedRef]
-        public ref BATTERY_REPORTING_SCALE this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<BATTERY_REPORTING_SCALE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

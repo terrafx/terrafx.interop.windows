@@ -36,7 +36,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint SanitizeMethod
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFu;
             }
@@ -53,7 +53,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint DisallowUnrestrictedSanitizeExit
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 4) & 0x1u;
             }
@@ -70,7 +70,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 5) & 0x7FFFFFFu;
             }

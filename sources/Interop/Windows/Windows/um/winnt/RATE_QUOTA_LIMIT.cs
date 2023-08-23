@@ -26,7 +26,7 @@ public partial struct RATE_QUOTA_LIMIT
     public uint RatePercent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.RatePercent;
         }
@@ -42,7 +42,7 @@ public partial struct RATE_QUOTA_LIMIT
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Reserved0;
         }
@@ -64,7 +64,7 @@ public partial struct RATE_QUOTA_LIMIT
         public uint RatePercent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x7Fu;
             }
@@ -81,7 +81,7 @@ public partial struct RATE_QUOTA_LIMIT
         public uint Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 7) & 0x1FFFFFFu;
             }

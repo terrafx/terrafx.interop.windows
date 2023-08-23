@@ -200,7 +200,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint DdnsEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.DdnsEnabled;
         }
@@ -216,7 +216,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint RegisterAdapterSuffix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.RegisterAdapterSuffix;
         }
@@ -232,7 +232,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Dhcpv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Dhcpv4Enabled;
         }
@@ -248,7 +248,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint ReceiveOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.ReceiveOnly;
         }
@@ -264,7 +264,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint NoMulticast
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.NoMulticast;
         }
@@ -280,7 +280,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6OtherStatefulConfig
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6OtherStatefulConfig;
         }
@@ -296,7 +296,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint NetbiosOverTcpipEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.NetbiosOverTcpipEnabled;
         }
@@ -312,7 +312,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv4Enabled;
         }
@@ -328,7 +328,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6Enabled;
         }
@@ -344,7 +344,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6ManagedAddressConfigurationSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6ManagedAddressConfigurationSupported;
         }
@@ -407,7 +407,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint DdnsEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -424,7 +424,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint RegisterAdapterSuffix
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -441,7 +441,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Dhcpv4Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -458,7 +458,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint ReceiveOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -475,7 +475,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint NoMulticast
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -492,7 +492,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6OtherStatefulConfig
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -509,7 +509,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint NetbiosOverTcpipEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x1u;
                 }
@@ -526,7 +526,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv4Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 7) & 0x1u;
                 }
@@ -543,7 +543,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1u;
                 }
@@ -560,7 +560,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6ManagedAddressConfigurationSupported
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 9) & 0x1u;
                 }

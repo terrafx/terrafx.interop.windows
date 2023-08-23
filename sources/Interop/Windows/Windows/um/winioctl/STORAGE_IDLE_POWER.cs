@@ -25,7 +25,7 @@ public partial struct STORAGE_IDLE_POWER
     public uint WakeCapableHint
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -42,7 +42,7 @@ public partial struct STORAGE_IDLE_POWER
     public uint D3ColdSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -59,7 +59,7 @@ public partial struct STORAGE_IDLE_POWER
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x3FFFFFFFu;
         }

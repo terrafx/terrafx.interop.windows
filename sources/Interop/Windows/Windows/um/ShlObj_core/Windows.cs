@@ -549,13 +549,13 @@ public static unsafe partial class Windows
     {
         uint cbPidl = 2;
 
-        while (cbPidl <= cbAlloc && pidl->mkid.cb >= sizeof(ushort) && pidl->mkid.cb <= cbAlloc - unchecked(cbPidl))
+        while (unchecked(cbPidl <= cbAlloc && pidl->mkid.cb >= sizeof(ushort)) && unchecked(pidl->mkid.cb <= cbAlloc - cbPidl))
         {
             unchecked(cbPidl) += pidl->mkid.cb;
             pidl = ((ITEMIDLIST*)((void*)(((byte*)((pidl))) + (((pidl)->mkid.cb)))));
         }
 
-        return (cbPidl <= cbAlloc && 0 == pidl->mkid.cb) ? 1 : 0;
+        return (unchecked(cbPidl <= cbAlloc) && 0 == pidl->mkid.cb) ? 1 : 0;
     }
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHParseDisplayName"]/*' />

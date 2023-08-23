@@ -24,7 +24,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort canWrapLineAfter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0x1u);
         }
@@ -41,7 +41,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort isWhitespace
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 1) & 0x1u);
         }
@@ -58,7 +58,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort isNewline
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 2) & 0x1u);
         }
@@ -75,7 +75,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort isSoftHyphen
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 3) & 0x1u);
         }
@@ -92,7 +92,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort isRightToLeft
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 4) & 0x1u);
         }
@@ -109,7 +109,7 @@ public partial struct DWRITE_CLUSTER_METRICS
     public ushort padding
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 5) & 0x7FFu);
         }

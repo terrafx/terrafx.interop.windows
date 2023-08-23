@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableExportAddressFilter;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditExportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditExportAddressFilter;
         }
@@ -63,7 +63,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableExportAddressFilterPlus;
         }
@@ -79,7 +79,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditExportAddressFilterPlus
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditExportAddressFilterPlus;
         }
@@ -95,7 +95,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableImportAddressFilter;
         }
@@ -111,7 +111,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditImportAddressFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditImportAddressFilter;
         }
@@ -127,7 +127,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableRopStackPivot;
         }
@@ -143,7 +143,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditRopStackPivot
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditRopStackPivot;
         }
@@ -159,7 +159,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableRopCallerCheck;
         }
@@ -175,7 +175,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditRopCallerCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditRopCallerCheck;
         }
@@ -191,7 +191,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint EnableRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableRopSimExec;
         }
@@ -207,7 +207,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint AuditRopSimExec
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditRopSimExec;
         }
@@ -223,7 +223,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -259,7 +259,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableExportAddressFilter
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -276,7 +276,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditExportAddressFilter
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -293,7 +293,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableExportAddressFilterPlus
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -310,7 +310,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditExportAddressFilterPlus
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -327,7 +327,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableImportAddressFilter
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -344,7 +344,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditImportAddressFilter
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -361,7 +361,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableRopStackPivot
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x1u;
                 }
@@ -378,7 +378,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditRopStackPivot
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 7) & 0x1u;
                 }
@@ -395,7 +395,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableRopCallerCheck
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1u;
                 }
@@ -412,7 +412,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditRopCallerCheck
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 9) & 0x1u;
                 }
@@ -429,7 +429,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint EnableRopSimExec
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 10) & 0x1u;
                 }
@@ -446,7 +446,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint AuditRopSimExec
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 11) & 0x1u;
                 }
@@ -463,7 +463,7 @@ public partial struct PROCESS_MITIGATION_PAYLOAD_RESTRICTION_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 12) & 0xFFFFFu;
                 }

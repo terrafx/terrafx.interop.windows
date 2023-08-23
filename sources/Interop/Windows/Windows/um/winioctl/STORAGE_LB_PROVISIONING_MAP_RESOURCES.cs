@@ -25,7 +25,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte AvailableMappingResourcesValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield1 & 0x1u);
         }
@@ -42,7 +42,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte UsedMappingResourcesValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield1 >> 1) & 0x1u);
         }
@@ -59,7 +59,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield1 >> 2) & 0x3Fu);
         }
@@ -82,7 +82,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte AvailableMappingResourcesScope
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield2 & 0x3u);
         }
@@ -99,7 +99,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte UsedMappingResourcesScope
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield2 >> 2) & 0x3u);
         }
@@ -116,7 +116,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield2 >> 4) & 0xFu);
         }

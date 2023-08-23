@@ -81,7 +81,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint videoStandard
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFu;
                 }
@@ -98,7 +98,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint vSyncFreqDivider
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0x3Fu;
                 }
@@ -115,7 +115,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x3FFu;
                 }

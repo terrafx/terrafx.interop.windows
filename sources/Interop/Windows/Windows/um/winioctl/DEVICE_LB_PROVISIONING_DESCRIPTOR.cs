@@ -27,7 +27,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte ThinProvisioningEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x1u);
         }
@@ -44,7 +44,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte ThinProvisioningReadZeros
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 1) & 0x1u);
         }
@@ -61,7 +61,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte AnchorSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 2) & 0x7u);
         }
@@ -78,7 +78,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte UnmapGranularityAlignmentValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 5) & 0x1u);
         }
@@ -95,7 +95,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte GetFreeSpaceSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 6) & 0x1u);
         }
@@ -112,7 +112,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte MapSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 7) & 0x1u);
         }

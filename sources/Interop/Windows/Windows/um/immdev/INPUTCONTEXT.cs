@@ -3,8 +3,6 @@
 // Ported from um/immdev.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -85,25 +83,9 @@ public unsafe partial struct INPUTCONTEXT
     }
 
     /// <include file='_cfCandForm_e__FixedBuffer.xml' path='doc/member[@name="_cfCandForm_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
     public partial struct _cfCandForm_e__FixedBuffer
     {
         public CANDIDATEFORM e0;
-        public CANDIDATEFORM e1;
-        public CANDIDATEFORM e2;
-        public CANDIDATEFORM e3;
-
-        [UnscopedRef]
-        public ref CANDIDATEFORM this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<CANDIDATEFORM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

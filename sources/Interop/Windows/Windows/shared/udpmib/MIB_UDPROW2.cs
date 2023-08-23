@@ -47,7 +47,7 @@ public unsafe partial struct MIB_UDPROW2
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SpecificPortBind;
         }
@@ -93,9 +93,9 @@ public unsafe partial struct MIB_UDPROW2
             public int SpecificPortBind
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
-                    return _bitfield & 0x1;
+                    return (_bitfield << 31) >> 31;
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]

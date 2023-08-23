@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
     public uint ProhibitDynamicCode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ProhibitDynamicCode;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
     public uint AllowThreadOptOut
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AllowThreadOptOut;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
     public uint AllowRemoteDowngrade
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AllowRemoteDowngrade;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
     public uint AuditProhibitDynamicCode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditProhibitDynamicCode;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -133,7 +133,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
             public uint ProhibitDynamicCode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -150,7 +150,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
             public uint AllowThreadOptOut
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -167,7 +167,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
             public uint AllowRemoteDowngrade
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -184,7 +184,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
             public uint AuditProhibitDynamicCode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -201,7 +201,7 @@ public partial struct PROCESS_MITIGATION_DYNAMIC_CODE_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0xFFFFFFFu;
                 }

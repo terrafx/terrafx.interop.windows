@@ -32,7 +32,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev1Depends.AsSpan((int)(NumberEntries));
+            return Anonymous.Lev1Depends.AsSpan();
         }
     }
 
@@ -43,7 +43,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return Anonymous.Lev2Depends.AsSpan((int)(NumberEntries));
+            return Anonymous.Lev2Depends.AsSpan();
         }
     }
 

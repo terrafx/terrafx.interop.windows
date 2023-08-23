@@ -67,7 +67,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
         public byte LogicalPoFxForDisk
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.LogicalPoFxForDisk;
             }
@@ -83,7 +83,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
         public byte Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.Reserved;
             }
@@ -105,7 +105,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
             public byte LogicalPoFxForDisk
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield & 0x1u);
                 }
@@ -122,7 +122,7 @@ public unsafe partial struct STORAGE_MINIPORT_DESCRIPTOR
             public byte Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield >> 1) & 0x7Fu);
                 }

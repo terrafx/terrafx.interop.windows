@@ -17,7 +17,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     public ushort isShapedAlone
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0x1u);
         }
@@ -34,7 +34,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     public ushort reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 1) & 0x1u);
         }
@@ -51,7 +51,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     public ushort canBreakShapingAfter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 2) & 0x1u);
         }
@@ -68,7 +68,7 @@ public partial struct DWRITE_SHAPING_TEXT_PROPERTIES
     public ushort reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 3) & 0x1FFFu);
         }

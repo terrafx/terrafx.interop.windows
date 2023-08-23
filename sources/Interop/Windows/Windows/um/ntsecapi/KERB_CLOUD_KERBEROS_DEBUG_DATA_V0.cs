@@ -17,7 +17,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint EnabledByPolicy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -34,7 +34,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint AsRepCallbackPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -51,7 +51,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint AsRepCallbackUsed
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -68,7 +68,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint CloudReferralTgtAvailable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -85,7 +85,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint SpnOracleConfigured
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x1u;
         }
@@ -102,7 +102,7 @@ public partial struct KERB_CLOUD_KERBEROS_DEBUG_DATA_V0
     public uint KdcProxyPresent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 5) & 0x1u;
         }

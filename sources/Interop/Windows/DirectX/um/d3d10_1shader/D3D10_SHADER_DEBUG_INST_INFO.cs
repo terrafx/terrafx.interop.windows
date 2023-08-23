@@ -3,10 +3,7 @@
 // Ported from um/d3d10_1shader.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -45,23 +42,9 @@ public partial struct D3D10_SHADER_DEBUG_INST_INFO
     public uint AccessedVarsInfo;
 
     /// <include file='_pOutputs_e__FixedBuffer.xml' path='doc/member[@name="_pOutputs_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
     public partial struct _pOutputs_e__FixedBuffer
     {
         public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e0;
-        public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e1;
-
-        [UnscopedRef]
-        public ref D3D10_SHADER_DEBUG_OUTPUTREG_INFO this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<D3D10_SHADER_DEBUG_OUTPUTREG_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

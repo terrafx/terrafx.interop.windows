@@ -3,10 +3,7 @@
 // Ported from um/winternl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -49,24 +46,9 @@ public unsafe partial struct SYSTEM_THREAD_INFORMATION
     public uint WaitReason;
 
     /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
     public partial struct _Reserved1_e__FixedBuffer
     {
         public LARGE_INTEGER e0;
-        public LARGE_INTEGER e1;
-        public LARGE_INTEGER e2;
-
-        [UnscopedRef]
-        public ref LARGE_INTEGER this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<LARGE_INTEGER> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

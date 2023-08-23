@@ -98,7 +98,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte Parked
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.Parked;
                 }
@@ -114,7 +114,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte Allocated
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.Allocated;
                 }
@@ -130,7 +130,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte AllocatedToTargetProcess
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.AllocatedToTargetProcess;
                 }
@@ -146,7 +146,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte RealTime
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.RealTime;
                 }
@@ -162,7 +162,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.ReservedFlags;
                 }
@@ -219,7 +219,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte Parked
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)(_bitfield & 0x1u);
                         }
@@ -236,7 +236,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte Allocated
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 1) & 0x1u);
                         }
@@ -253,7 +253,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte AllocatedToTargetProcess
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 2) & 0x1u);
                         }
@@ -270,7 +270,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte RealTime
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 3) & 0x1u);
                         }
@@ -287,7 +287,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte ReservedFlags
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 4) & 0xFu);
                         }

@@ -3,8 +3,6 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -52,29 +50,9 @@ public unsafe partial struct MIDIHDR
 
     /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(8)]
     public partial struct _dwReserved_e__FixedBuffer
     {
         public nuint e0;
-        public nuint e1;
-        public nuint e2;
-        public nuint e3;
-        public nuint e4;
-        public nuint e5;
-        public nuint e6;
-        public nuint e7;
-
-        [UnscopedRef]
-        public ref nuint this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

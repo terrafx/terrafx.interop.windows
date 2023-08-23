@@ -34,7 +34,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationEnabled;
         }
@@ -50,7 +50,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -97,7 +97,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint isSpecializationEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -114,7 +114,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

@@ -31,7 +31,7 @@ public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
         public uint ProtectionEnabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -48,7 +48,7 @@ public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
         public uint OverlayOrFullscreenRequired
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x1u;
             }
@@ -65,7 +65,7 @@ public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 2) & 0x3FFFFFFFu;
             }

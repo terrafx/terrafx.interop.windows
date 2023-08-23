@@ -3,10 +3,7 @@
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
@@ -49,26 +46,9 @@ public unsafe partial struct DIDEVICEIMAGEINFOW
     public uint dwTextAlign;
 
     /// <include file='_rgptCalloutLine_e__FixedBuffer.xml' path='doc/member[@name="_rgptCalloutLine_e__FixedBuffer"]/*' />
+    [InlineArray(5)]
     public partial struct _rgptCalloutLine_e__FixedBuffer
     {
         public POINT e0;
-        public POINT e1;
-        public POINT e2;
-        public POINT e3;
-        public POINT e4;
-
-        [UnscopedRef]
-        public ref POINT this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<POINT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
     }
 }

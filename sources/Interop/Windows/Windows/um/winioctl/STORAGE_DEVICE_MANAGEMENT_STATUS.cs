@@ -41,38 +41,10 @@ public partial struct STORAGE_DEVICE_MANAGEMENT_STATUS
     public _AdditionalReasons_e__FixedBuffer AdditionalReasons;
 
     /// <include file='_OperationalStatus_e__FixedBuffer.xml' path='doc/member[@name="_OperationalStatus_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
     public partial struct _OperationalStatus_e__FixedBuffer
     {
         public STORAGE_DISK_OPERATIONAL_STATUS e0;
-        public STORAGE_DISK_OPERATIONAL_STATUS e1;
-        public STORAGE_DISK_OPERATIONAL_STATUS e2;
-        public STORAGE_DISK_OPERATIONAL_STATUS e3;
-        public STORAGE_DISK_OPERATIONAL_STATUS e4;
-        public STORAGE_DISK_OPERATIONAL_STATUS e5;
-        public STORAGE_DISK_OPERATIONAL_STATUS e6;
-        public STORAGE_DISK_OPERATIONAL_STATUS e7;
-        public STORAGE_DISK_OPERATIONAL_STATUS e8;
-        public STORAGE_DISK_OPERATIONAL_STATUS e9;
-        public STORAGE_DISK_OPERATIONAL_STATUS e10;
-        public STORAGE_DISK_OPERATIONAL_STATUS e11;
-        public STORAGE_DISK_OPERATIONAL_STATUS e12;
-        public STORAGE_DISK_OPERATIONAL_STATUS e13;
-        public STORAGE_DISK_OPERATIONAL_STATUS e14;
-        public STORAGE_DISK_OPERATIONAL_STATUS e15;
-
-        [UnscopedRef]
-        public ref STORAGE_DISK_OPERATIONAL_STATUS this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<STORAGE_DISK_OPERATIONAL_STATUS> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 
     /// <include file='_AdditionalReasons_e__FixedBuffer.xml' path='doc/member[@name="_AdditionalReasons_e__FixedBuffer"]/*' />

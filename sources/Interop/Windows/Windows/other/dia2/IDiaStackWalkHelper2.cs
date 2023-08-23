@@ -142,8 +142,18 @@ public unsafe partial struct IDiaStackWalkHelper2 : IDiaStackWalkHelper2.Interfa
         return ((delegate* unmanaged<IDiaStackWalkHelper2*, ulong, uint, uint, ulong*, uint*, int>)(lpVtbl[14]))((IDiaStackWalkHelper2*)Unsafe.AsPointer(ref this), vaFunc, cbFunc, cFragments, pVaFragment, pLenFragment);
     }
 
+    /// <include file='IDiaStackWalkHelper2.xml' path='doc/member[@name="IDiaStackWalkHelper2.GetPointerAuthenticationMask"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT GetPointerAuthenticationMask([NativeTypeName("ULONG64")] ulong PtrVal, [NativeTypeName("ULONG64 *")] ulong* AuthMask)
+    {
+        return ((delegate* unmanaged<IDiaStackWalkHelper2*, ulong, ulong*, int>)(lpVtbl[15]))((IDiaStackWalkHelper2*)Unsafe.AsPointer(ref this), PtrVal, AuthMask);
+    }
+
     public interface Interface : IDiaStackWalkHelper.Interface
     {
+        [VtblIndex(15)]
+        HRESULT GetPointerAuthenticationMask([NativeTypeName("ULONG64")] ulong PtrVal, [NativeTypeName("ULONG64 *")] ulong* AuthMask);
     }
 
     public partial struct Vtbl<TSelf>
@@ -193,5 +203,8 @@ public unsafe partial struct IDiaStackWalkHelper2 : IDiaStackWalkHelper2.Interfa
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD, ULONGLONG *, DWORD *) __attribute__((stdcall))")]
         public delegate* unmanaged<TSelf*, ulong, uint, uint, ulong*, uint*, int> functionFragmentsForVA;
+
+        [NativeTypeName("HRESULT (ULONG64, ULONG64 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<TSelf*, ulong, ulong*, int> GetPointerAuthenticationMask;
     }
 }

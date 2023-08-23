@@ -25,7 +25,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public uint disableMonitorVirtualResolution
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.disableMonitorVirtualResolution;
         }
@@ -41,7 +41,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -88,7 +88,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
             public uint disableMonitorVirtualResolution
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -105,7 +105,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

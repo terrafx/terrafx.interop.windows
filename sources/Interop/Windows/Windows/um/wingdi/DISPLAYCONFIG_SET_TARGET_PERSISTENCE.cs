@@ -23,7 +23,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public uint bootPersistenceOn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.bootPersistenceOn;
         }
@@ -39,7 +39,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -86,7 +86,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
             public uint bootPersistenceOn
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -103,7 +103,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

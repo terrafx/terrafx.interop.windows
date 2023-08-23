@@ -47,7 +47,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0x3u);
         }
@@ -64,7 +64,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort NameType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 2) & 0x7u);
         }
@@ -81,7 +81,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 5) & 0x7FFu);
         }

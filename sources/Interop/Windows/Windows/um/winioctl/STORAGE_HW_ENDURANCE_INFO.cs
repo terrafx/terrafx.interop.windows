@@ -44,7 +44,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
         public uint Shared
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -61,7 +61,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x7FFFFFFFu;
             }

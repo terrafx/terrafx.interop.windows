@@ -3,10 +3,7 @@
 // Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.606.4
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX;
 
@@ -27,25 +24,9 @@ public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS1
     public _Histograms_e__FixedBuffer Histograms;
 
     /// <include file='_Histograms_e__FixedBuffer.xml' path='doc/member[@name="_Histograms_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
     public partial struct _Histograms_e__FixedBuffer
     {
         public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e0;
-        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e1;
-        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e2;
-        public D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM e3;
-
-        [UnscopedRef]
-        public ref D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

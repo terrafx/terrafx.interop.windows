@@ -21,7 +21,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
     public uint InstanceID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield1 & 0xFFFFFFu;
         }
@@ -38,7 +38,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
     public uint InstanceMask
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield1 >> 24) & 0xFFu;
         }
@@ -57,7 +57,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
     public uint InstanceContributionToHitGroupIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield2 & 0xFFFFFFu;
         }
@@ -74,7 +74,7 @@ public unsafe partial struct D3D12_RAYTRACING_INSTANCE_DESC
     public uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield2 >> 24) & 0xFFu;
         }

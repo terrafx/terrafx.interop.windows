@@ -17,7 +17,7 @@ public partial struct DWRITE_LINE_BREAKPOINT
     public byte breakConditionBefore
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x3u);
         }
@@ -34,7 +34,7 @@ public partial struct DWRITE_LINE_BREAKPOINT
     public byte breakConditionAfter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 2) & 0x3u);
         }
@@ -51,7 +51,7 @@ public partial struct DWRITE_LINE_BREAKPOINT
     public byte isWhitespace
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 4) & 0x1u);
         }
@@ -68,7 +68,7 @@ public partial struct DWRITE_LINE_BREAKPOINT
     public byte isSoftHyphen
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 5) & 0x1u);
         }
@@ -85,7 +85,7 @@ public partial struct DWRITE_LINE_BREAKPOINT
     public byte padding
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 6) & 0x3u);
         }

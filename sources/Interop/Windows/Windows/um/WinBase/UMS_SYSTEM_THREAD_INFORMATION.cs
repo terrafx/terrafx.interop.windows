@@ -24,7 +24,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint IsUmsSchedulerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsUmsSchedulerThread;
         }
@@ -40,7 +40,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint IsUmsWorkerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsUmsWorkerThread;
         }
@@ -87,7 +87,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
             public uint IsUmsSchedulerThread
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -104,7 +104,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
             public uint IsUmsWorkerThread
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }

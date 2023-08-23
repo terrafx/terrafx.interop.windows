@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
     public uint NoChildProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.NoChildProcessCreation;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
     public uint AuditNoChildProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditNoChildProcessCreation;
         }
@@ -63,7 +63,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
     public uint AllowSecureProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AllowSecureProcessCreation;
         }
@@ -79,7 +79,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -115,7 +115,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
             public uint NoChildProcessCreation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -132,7 +132,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
             public uint AuditNoChildProcessCreation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -149,7 +149,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
             public uint AllowSecureProcessCreation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1FFFFFFFu;
                 }

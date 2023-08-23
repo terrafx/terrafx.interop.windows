@@ -49,7 +49,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint Private
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Private;
         }
@@ -65,7 +65,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint MappedDataFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MappedDataFile;
         }
@@ -81,7 +81,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint MappedImage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MappedImage;
         }
@@ -97,7 +97,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint MappedPageFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MappedPageFile;
         }
@@ -113,7 +113,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint MappedPhysical
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.MappedPhysical;
         }
@@ -129,7 +129,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint DirectMapped
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DirectMapped;
         }
@@ -145,7 +145,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reserved;
         }
@@ -181,7 +181,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint Private
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -198,7 +198,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint MappedDataFile
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -215,7 +215,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint MappedImage
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -232,7 +232,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint MappedPageFile
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -249,7 +249,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint MappedPhysical
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -266,7 +266,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint DirectMapped
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -283,7 +283,7 @@ public unsafe partial struct WIN32_MEMORY_REGION_INFORMATION
             public uint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x3FFFFFFu;
                 }

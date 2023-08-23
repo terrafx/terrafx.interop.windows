@@ -7,7 +7,7 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
-public static unsafe partial class DIPROP
+public static partial class DIPROP
 {
     [NativeTypeName("#define DIPROP_BUFFERSIZE MAKEDIPROP(1)")]
     public static ref readonly Guid DIPROP_BUFFERSIZE => ref unchecked(*(Guid*)(1));

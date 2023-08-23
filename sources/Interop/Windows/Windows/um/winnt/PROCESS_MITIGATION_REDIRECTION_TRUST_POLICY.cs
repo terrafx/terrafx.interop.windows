@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
     public uint EnforceRedirectionTrust
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnforceRedirectionTrust;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
     public uint AuditRedirectionTrust
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditRedirectionTrust;
         }
@@ -63,7 +63,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -99,7 +99,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
             public uint EnforceRedirectionTrust
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -116,7 +116,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
             public uint AuditRedirectionTrust
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -133,7 +133,7 @@ public partial struct PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }

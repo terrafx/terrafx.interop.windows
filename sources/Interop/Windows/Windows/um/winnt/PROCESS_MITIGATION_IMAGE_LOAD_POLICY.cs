@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint NoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.NoRemoteImages;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint NoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.NoLowMandatoryLabelImages;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint PreferSystem32Images
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.PreferSystem32Images;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint AuditNoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditNoRemoteImages;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint AuditNoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditNoLowMandatoryLabelImages;
         }
@@ -113,7 +113,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -149,7 +149,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint NoRemoteImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint NoLowMandatoryLabelImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -183,7 +183,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint PreferSystem32Images
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -200,7 +200,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint AuditNoRemoteImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -217,7 +217,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint AuditNoLowMandatoryLabelImages
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -234,7 +234,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x7FFFFFFu;
                 }

@@ -31,7 +31,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
     public uint FilterId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.FilterId;
         }
@@ -47,7 +47,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -83,7 +83,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
             public uint FilterId
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFu;
                 }
@@ -100,7 +100,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0xFFFFFFFu;
                 }

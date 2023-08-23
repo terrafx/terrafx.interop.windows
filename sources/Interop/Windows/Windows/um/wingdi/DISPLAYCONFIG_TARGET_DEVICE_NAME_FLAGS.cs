@@ -20,7 +20,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint friendlyNameFromEdid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.friendlyNameFromEdid;
         }
@@ -36,7 +36,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint friendlyNameForced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.friendlyNameForced;
         }
@@ -52,7 +52,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint edidIdsValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.edidIdsValid;
         }
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -115,7 +115,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint friendlyNameFromEdid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -132,7 +132,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint friendlyNameForced
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -149,7 +149,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint edidIdsValid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1FFFFFFFu;
                 }

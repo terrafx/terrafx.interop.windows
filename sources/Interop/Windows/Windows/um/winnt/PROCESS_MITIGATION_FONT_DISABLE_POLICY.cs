@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
     public uint DisableNonSystemFonts
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisableNonSystemFonts;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
     public uint AuditNonSystemFontLoading
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditNonSystemFontLoading;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -101,7 +101,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
             public uint DisableNonSystemFonts
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -118,7 +118,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
             public uint AuditNonSystemFontLoading
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -135,7 +135,7 @@ public partial struct PROCESS_MITIGATION_FONT_DISABLE_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }

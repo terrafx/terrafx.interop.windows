@@ -61,7 +61,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
         public uint RvaBased
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.RvaBased;
             }
@@ -77,7 +77,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
         public uint ReservedAttributes
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.ReservedAttributes;
             }
@@ -99,7 +99,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             public uint RvaBased
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -116,7 +116,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             public uint ReservedAttributes
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

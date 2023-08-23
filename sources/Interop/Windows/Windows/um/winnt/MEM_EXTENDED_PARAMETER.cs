@@ -26,7 +26,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     public ulong Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Type;
         }
@@ -42,7 +42,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     public ulong Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Reserved;
         }
@@ -119,7 +119,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         public ulong Type
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFFUL;
             }
@@ -136,7 +136,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         public ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 8) & 0xFFFFFFUL;
             }

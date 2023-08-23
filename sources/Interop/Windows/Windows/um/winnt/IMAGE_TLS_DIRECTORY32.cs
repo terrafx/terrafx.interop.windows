@@ -51,7 +51,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reserved0;
         }
@@ -67,7 +67,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
     public uint Alignment
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Alignment;
         }
@@ -83,7 +83,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
     public uint Reserved1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reserved1;
         }
@@ -119,7 +119,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
             public uint Reserved0
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFFu;
                 }
@@ -136,7 +136,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
             public uint Alignment
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 20) & 0xFu;
                 }
@@ -153,7 +153,7 @@ public partial struct IMAGE_TLS_DIRECTORY32
             public uint Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 24) & 0xFFu;
                 }

@@ -19,7 +19,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     public ushort PageRelativeOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0xFFFu);
         }
@@ -36,7 +36,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     public ushort IndirectCall
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 12) & 0x1u);
         }
@@ -53,7 +53,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     public ushort RexWPrefix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 13) & 0x1u);
         }
@@ -70,7 +70,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     public ushort CfgCheck
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 14) & 0x1u);
         }
@@ -87,7 +87,7 @@ public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
     public ushort Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 15) & 0x1u);
         }
