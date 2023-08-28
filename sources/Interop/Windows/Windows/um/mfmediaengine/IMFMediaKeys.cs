@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, uint>)(lpVtbl[1]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, uint>)(lpVtbl[1]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, uint>)(lpVtbl[2]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, uint>)(lpVtbl[2]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.CreateSession"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateSession([NativeTypeName("BSTR")] char* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.get_KeySystem"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, char**, int>)(lpVtbl[4]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, char**, int>)(lpVtbl[4]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.Shutdown"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, int>)(lpVtbl[5]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, int>)(lpVtbl[5]))((IMFMediaKeys*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaKeys.xml' path='doc/member[@name="IMFMediaKeys.GetSuspendNotify"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
     {
-        return ((delegate* unmanaged<IMFMediaKeys*, IMFCdmSuspendNotify**, int>)(lpVtbl[6]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), notify);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeys*, IMFCdmSuspendNotify**, int>)(lpVtbl[6]))((IMFMediaKeys*)Unsafe.AsPointer(ref this), notify);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IMFMediaKeys : IMFMediaKeys.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD, const BYTE *, DWORD, IMFMediaKeySessionNotify *, IMFMediaKeySession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_KeySystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_KeySystem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
     }
 }

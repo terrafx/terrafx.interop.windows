@@ -27,7 +27,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, Guid*, void**, int>)(lpVtbl[0]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedMediaCaptureInitializationSettings*, Guid*, void**, int>)(lpVtbl[0]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[1]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[1]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[2]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedMediaCaptureInitializationSettings*, uint>)(lpVtbl[2]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAdvancedMediaCaptureInitializationSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureInitializationSettings.SetDirectxDeviceManager"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
     [VtblIndex(3)]
     public HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value)
     {
-        return ((delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, IMFDXGIDeviceManager*, int>)(lpVtbl[3]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedMediaCaptureInitializationSettings*, IMFDXGIDeviceManager*, int>)(lpVtbl[3]))((IAdvancedMediaCaptureInitializationSettings*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFDXGIDeviceManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFDXGIDeviceManager*, int> SetDirectxDeviceManager;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFDXGIDeviceManager*, int> SetDirectxDeviceManager;
     }
 }

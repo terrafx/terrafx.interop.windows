@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, uint>)(lpVtbl[1]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, uint>)(lpVtbl[1]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, uint>)(lpVtbl[2]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, uint>)(lpVtbl[2]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, uint*, int>)(lpVtbl[3]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, uint*, int>)(lpVtbl[3]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_disabled"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(7)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, short, int>)(lpVtbl[7]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, short, int>)(lpVtbl[7]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_disabled"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(8)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, short*, int>)(lpVtbl[8]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, short*, int>)(lpVtbl[8]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_type"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(9)]
     public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[9]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[9]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_alt"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(10)]
     public HRESULT put_alt([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[10]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[10]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_alt"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(11)]
     public HRESULT get_alt([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[11]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[11]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_name"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(12)]
     public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[12]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[12]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_name"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(13)]
     public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[13]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[13]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_value"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(14)]
     public HRESULT put_value([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[14]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[14]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_value"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(15)]
     public HRESULT get_value([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[15]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[15]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_min"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(16)]
     public HRESULT put_min([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[16]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[16]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_min"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(17)]
     public HRESULT get_min([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[17]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[17]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_max"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(18)]
     public HRESULT put_max([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[18]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[18]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_max"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(19)]
     public HRESULT get_max([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[19]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[19]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_step"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(20)]
     public HRESULT put_step([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char*, int>)(lpVtbl[20]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char*, int>)(lpVtbl[20]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_step"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(21)]
     public HRESULT get_step([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, char**, int>)(lpVtbl[21]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, char**, int>)(lpVtbl[21]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.put_valueAsNumber"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(22)]
     public HRESULT put_valueAsNumber(double v)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, double, int>)(lpVtbl[22]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, double, int>)(lpVtbl[22]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.get_valueAsNumber"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(23)]
     public HRESULT get_valueAsNumber(double* p)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, double*, int>)(lpVtbl[23]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, double*, int>)(lpVtbl[23]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.stepUp"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(24)]
     public HRESULT stepUp([NativeTypeName("long")] int n = 1)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, int, int>)(lpVtbl[24]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), n);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, int, int>)(lpVtbl[24]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), n);
     }
 
     /// <include file='IHTMLInputRangeElement.xml' path='doc/member[@name="IHTMLInputRangeElement.stepDown"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
     [VtblIndex(25)]
     public HRESULT stepDown([NativeTypeName("long")] int n = 1)
     {
-        return ((delegate* unmanaged<IHTMLInputRangeElement*, int, int>)(lpVtbl[25]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), n);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLInputRangeElement*, int, int>)(lpVtbl[25]))((IHTMLInputRangeElement*)Unsafe.AsPointer(ref this), n);
     }
 
     public interface Interface : IDispatch.Interface
@@ -294,81 +294,81 @@ public unsafe partial struct IHTMLInputRangeElement : IHTMLInputRangeElement.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_disabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_disabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_disabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_disabled;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_alt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_alt;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_alt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_alt;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_value;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_value;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_value;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_value;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_min;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_min;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_min;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_min;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_max;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_max;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_max;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_max;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_step;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_step;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_step;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_step;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_valueAsNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_valueAsNumber;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_valueAsNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_valueAsNumber;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> stepUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> stepUp;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> stepDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> stepDown;
     }
 }

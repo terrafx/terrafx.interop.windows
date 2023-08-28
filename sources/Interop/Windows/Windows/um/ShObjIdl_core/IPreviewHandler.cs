@@ -25,7 +25,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPreviewHandler*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[1]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, uint>)(lpVtbl[1]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[2]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, uint>)(lpVtbl[2]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetWindow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc)
     {
-        return ((delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetRect"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc)
     {
-        return ((delegate* unmanaged<IPreviewHandler*, RECT*, int>)(lpVtbl[4]))((IPreviewHandler*)Unsafe.AsPointer(ref this), prc);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, RECT*, int>)(lpVtbl[4]))((IPreviewHandler*)Unsafe.AsPointer(ref this), prc);
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.DoPreview"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(5)]
     public HRESULT DoPreview()
     {
-        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[5]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, int>)(lpVtbl[5]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.Unload"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Unload()
     {
-        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[6]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, int>)(lpVtbl[6]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetFocus"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetFocus()
     {
-        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[7]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, int>)(lpVtbl[7]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.QueryFocus"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(8)]
     public HRESULT QueryFocus(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.TranslateAcceleratorW"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
     [VtblIndex(9)]
     public HRESULT TranslateAcceleratorW(MSG* pmsg)
     {
-        return ((delegate* unmanaged<IPreviewHandler*, MSG*, int>)(lpVtbl[9]))((IPreviewHandler*)Unsafe.AsPointer(ref this), pmsg);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandler*, MSG*, int>)(lpVtbl[9]))((IPreviewHandler*)Unsafe.AsPointer(ref this), pmsg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, RECT*, int> SetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, RECT*, int> SetWindow;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetRect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DoPreview;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DoPreview;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetFocus;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> QueryFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> QueryFocus;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> TranslateAcceleratorW;
     }
 }

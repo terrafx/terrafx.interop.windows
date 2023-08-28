@@ -25,7 +25,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, uint>)(lpVtbl[1]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, uint>)(lpVtbl[1]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, uint>)(lpVtbl[2]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, uint>)(lpVtbl[2]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.GetClientCertificate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(3)]
     public HRESULT GetClientCertificate([NativeTypeName("LPCWSTR")] char* pszURL, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, char*, byte**, uint*, int>)(lpVtbl[3]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, ppbData, pcbData);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, char*, byte**, uint*, int>)(lpVtbl[3]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, ppbData, pcbData);
     }
 
     /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.BeginGetClientCertificate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(4)]
     public HRESULT BeginGetClientCertificate([NativeTypeName("LPCWSTR")] char* pszURL, IMFAsyncCallback* pCallback, IUnknown* pState)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, char*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pCallback, pState);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, char*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pCallback, pState);
     }
 
     /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.EndGetClientCertificate"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(5)]
     public HRESULT EndGetClientCertificate(IMFAsyncResult* pResult, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, IMFAsyncResult*, byte**, uint*, int>)(lpVtbl[5]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pResult, ppbData, pcbData);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, IMFAsyncResult*, byte**, uint*, int>)(lpVtbl[5]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pResult, ppbData, pcbData);
     }
 
     /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.GetCertificatePolicy"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(6)]
     public HRESULT GetCertificatePolicy([NativeTypeName("LPCWSTR")] char* pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, char*, BOOL*, BOOL*, int>)(lpVtbl[6]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, char*, BOOL*, BOOL*, int>)(lpVtbl[6]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
     }
 
     /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.OnServerCertificate"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
     [VtblIndex(7)]
     public HRESULT OnServerCertificate([NativeTypeName("LPCWSTR")] char* pszURL, byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood)
     {
-        return ((delegate* unmanaged<IMFSSLCertificateManager*, char*, byte*, uint, BOOL*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
+        return ((delegate* unmanaged[MemberFunction]<IMFSSLCertificateManager*, char*, byte*, uint, BOOL*, int>)(lpVtbl[7]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pbData, cbData, pfIsGood);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte**, uint*, int> GetClientCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte**, uint*, int> GetClientCertificate;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IMFAsyncCallback*, IUnknown*, int> BeginGetClientCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IMFAsyncCallback*, IUnknown*, int> BeginGetClientCertificate;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, byte**, uint*, int> EndGetClientCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, byte**, uint*, int> EndGetClientCertificate;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL*, BOOL*, int> GetCertificatePolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, BOOL*, int> GetCertificatePolicy;
 
         [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte*, uint, BOOL*, int> OnServerCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte*, uint, BOOL*, int> OnServerCertificate;
     }
 }

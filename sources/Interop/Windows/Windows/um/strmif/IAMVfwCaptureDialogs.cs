@@ -25,7 +25,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, uint>)(lpVtbl[1]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, uint>)(lpVtbl[1]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, uint>)(lpVtbl[2]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, uint>)(lpVtbl[2]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.HasDialog"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [VtblIndex(3)]
     public HRESULT HasDialog(int iDialog)
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, int>)(lpVtbl[3]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, int, int>)(lpVtbl[3]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog);
     }
 
     /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.ShowDialog"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [VtblIndex(4)]
     public HRESULT ShowDialog(int iDialog, HWND hwnd)
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, HWND, int>)(lpVtbl[4]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, int, HWND, int>)(lpVtbl[4]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
     }
 
     /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.SendDriverMessage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
     [VtblIndex(5)]
     public HRESULT SendDriverMessage(int iDialog, int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2)
     {
-        return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, int, int, int, int>)(lpVtbl[5]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, uMsg, dw1, dw2);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCaptureDialogs*, int, int, int, int, int>)(lpVtbl[5]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, uMsg, dw1, dw2);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> HasDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> HasDialog;
 
         [NativeTypeName("HRESULT (int, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, HWND, int> ShowDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, HWND, int> ShowDialog;
 
         [NativeTypeName("HRESULT (int, int, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int, int> SendDriverMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int, int> SendDriverMessage;
     }
 }

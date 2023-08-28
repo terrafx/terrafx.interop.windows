@@ -25,7 +25,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementTraversal*, Guid*, void**, int>)(lpVtbl[0]))((IElementTraversal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, Guid*, void**, int>)(lpVtbl[0]))((IElementTraversal*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementTraversal*, uint>)(lpVtbl[1]))((IElementTraversal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, uint>)(lpVtbl[1]))((IElementTraversal*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementTraversal*, uint>)(lpVtbl[2]))((IElementTraversal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, uint>)(lpVtbl[2]))((IElementTraversal*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IElementTraversal*, uint*, int>)(lpVtbl[3]))((IElementTraversal*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, uint*, int>)(lpVtbl[3]))((IElementTraversal*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IElementTraversal*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IElementTraversal*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IElementTraversal*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IElementTraversal*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IElementTraversal*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IElementTraversal*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IElementTraversal*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IElementTraversal*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IElementTraversal*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IElementTraversal.xml' path='doc/member[@name="IElementTraversal.get_firstElementChild"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(7)]
     public HRESULT get_firstElementChild(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[7]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[7]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IElementTraversal.xml' path='doc/member[@name="IElementTraversal.get_lastElementChild"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_lastElementChild(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[8]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[8]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IElementTraversal.xml' path='doc/member[@name="IElementTraversal.get_previousElementSibling"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(9)]
     public HRESULT get_previousElementSibling(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[9]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[9]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IElementTraversal.xml' path='doc/member[@name="IElementTraversal.get_nextElementSibling"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_nextElementSibling(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[10]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, IHTMLElement**, int>)(lpVtbl[10]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IElementTraversal.xml' path='doc/member[@name="IElementTraversal.get_childElementCount"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
     [VtblIndex(11)]
     public HRESULT get_childElementCount([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IElementTraversal*, int*, int>)(lpVtbl[11]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IElementTraversal*, int*, int>)(lpVtbl[11]))((IElementTraversal*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -140,39 +140,39 @@ public unsafe partial struct IElementTraversal : IElementTraversal.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_firstElementChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_firstElementChild;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_lastElementChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_lastElementChild;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_previousElementSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_previousElementSibling;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_nextElementSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_nextElementSibling;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_childElementCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_childElementCount;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, Guid*, void**, int>)(lpVtbl[0]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, Guid*, void**, int>)(lpVtbl[0]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, uint>)(lpVtbl[1]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, uint>)(lpVtbl[1]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, uint>)(lpVtbl[2]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, uint>)(lpVtbl[2]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFShutdown.Shutdown" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(3)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, int>)(lpVtbl[3]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, int>)(lpVtbl[3]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFShutdown.GetShutdownStatus" />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(4)]
     public HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus)
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pStatus);
     }
 
     /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.BeginGetReport"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(5)]
     public HRESULT BeginGetReport(IMFAsyncCallback* pCallback, IUnknown* pState)
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pCallback, pState);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pCallback, pState);
     }
 
     /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.EndGetReport"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(6)]
     public HRESULT EndGetReport(IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport)
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncResult*, IMFRelativePanelReport**, int>)(lpVtbl[6]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pResult, ppRelativePanelReport);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, IMFAsyncResult*, IMFRelativePanelReport**, int>)(lpVtbl[6]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pResult, ppRelativePanelReport);
     }
 
     /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.GetReport"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
     [VtblIndex(7)]
     public HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport)
     {
-        return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int>)(lpVtbl[7]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), ppRelativePanelReport);
+        return ((delegate* unmanaged[MemberFunction]<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int>)(lpVtbl[7]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), ppRelativePanelReport);
     }
 
     public interface Interface : IMFShutdown.Interface
@@ -104,27 +104,27 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (MFSHUTDOWN_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetReport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetReport;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFRelativePanelReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFRelativePanelReport**, int> EndGetReport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, IMFRelativePanelReport**, int> EndGetReport;
 
         [NativeTypeName("HRESULT (IMFRelativePanelReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFRelativePanelReport**, int> GetReport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFRelativePanelReport**, int> GetReport;
     }
 }

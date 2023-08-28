@@ -25,7 +25,7 @@ public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolume
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioEndpointVolumeCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEndpointVolumeCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolume
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioEndpointVolumeCallback*, uint>)(lpVtbl[1]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioEndpointVolumeCallback*, uint>)(lpVtbl[1]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolume
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioEndpointVolumeCallback*, uint>)(lpVtbl[2]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioEndpointVolumeCallback*, uint>)(lpVtbl[2]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioEndpointVolumeCallback.xml' path='doc/member[@name="IAudioEndpointVolumeCallback.OnNotify"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolume
     [VtblIndex(3)]
     public HRESULT OnNotify([NativeTypeName("PAUDIO_VOLUME_NOTIFICATION_DATA")] AUDIO_VOLUME_NOTIFICATION_DATA* pNotify)
     {
-        return ((delegate* unmanaged<IAudioEndpointVolumeCallback*, AUDIO_VOLUME_NOTIFICATION_DATA*, int>)(lpVtbl[3]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this), pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEndpointVolumeCallback*, AUDIO_VOLUME_NOTIFICATION_DATA*, int>)(lpVtbl[3]))((IAudioEndpointVolumeCallback*)Unsafe.AsPointer(ref this), pNotify);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAudioEndpointVolumeCallback : IAudioEndpointVolume
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PAUDIO_VOLUME_NOTIFICATION_DATA) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_VOLUME_NOTIFICATION_DATA*, int> OnNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_VOLUME_NOTIFICATION_DATA*, int> OnNotify;
     }
 }

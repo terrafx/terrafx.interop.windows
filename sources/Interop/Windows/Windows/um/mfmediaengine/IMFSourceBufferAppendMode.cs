@@ -25,7 +25,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferAppendMode*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[1]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferAppendMode*, uint>)(lpVtbl[1]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[2]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferAppendMode*, uint>)(lpVtbl[2]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode.GetAppendMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
     [VtblIndex(3)]
     public MF_MSE_APPEND_MODE GetAppendMode()
     {
-        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE>)(lpVtbl[3]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE>)(lpVtbl[3]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode.SetAppendMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
     [VtblIndex(4)]
     public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode)
     {
-        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int>)(lpVtbl[4]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int>)(lpVtbl[4]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), mode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("MF_MSE_APPEND_MODE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MSE_APPEND_MODE> GetAppendMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MSE_APPEND_MODE> GetAppendMode;
 
         [NativeTypeName("HRESULT (MF_MSE_APPEND_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MSE_APPEND_MODE, int> SetAppendMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MSE_APPEND_MODE, int> SetAppendMode;
     }
 }

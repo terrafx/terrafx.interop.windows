@@ -25,7 +25,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[1]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, uint>)(lpVtbl[1]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[2]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, uint>)(lpVtbl[2]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[3]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, Guid*, int>)(lpVtbl[3]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetDataType"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, uint*, int>)(lpVtbl[4]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pdwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, uint*, int>)(lpVtbl[4]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pdwReserved);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetData"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetData(VARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.OnTextUpdated"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(6)]
     public HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Shrink"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(7)]
     public HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Divide"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(8)]
     public HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Clone"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(9)]
     public HRESULT Clone(ITfPropertyStore** pPropStore)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetPropertyRangeCreator"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(10)]
     public HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[10]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pclsid);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, Guid*, int>)(lpVtbl[10]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pclsid);
     }
 
     /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Serialize"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
     [VtblIndex(11)]
     public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)
     {
-        return ((delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
+        return ((delegate* unmanaged[MemberFunction]<ITfPropertyStore*, IStream*, uint*, int>)(lpVtbl[11]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pStream, pcb);
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, Guid*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDataType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDataType;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> GetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> GetData;
 
         [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
 
         [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, BOOL*, int> Shrink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, BOOL*, int> Shrink;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
 
         [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfPropertyStore**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfPropertyStore**, int> Clone;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetPropertyRangeCreator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetPropertyRangeCreator;
 
         [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, uint*, int> Serialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, uint*, int> Serialize;
     }
 }

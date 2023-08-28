@@ -25,7 +25,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, uint>)(lpVtbl[1]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, uint>)(lpVtbl[1]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, uint>)(lpVtbl[2]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, uint>)(lpVtbl[2]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfTextInputProcessor.Activate" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [VtblIndex(3)]
     public HRESULT Activate(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid)
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid);
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, int>)(lpVtbl[3]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid);
     }
 
     /// <inheritdoc cref="ITfTextInputProcessor.Deactivate" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [VtblIndex(4)]
     public HRESULT Deactivate()
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, int>)(lpVtbl[4]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, int>)(lpVtbl[4]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfTextInputProcessorEx.xml' path='doc/member[@name="ITfTextInputProcessorEx.ActivateEx"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
     [VtblIndex(5)]
     public HRESULT ActivateEx(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, uint, int>)(lpVtbl[5]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, uint, int>)(lpVtbl[5]))((ITfTextInputProcessorEx*)Unsafe.AsPointer(ref this), ptim, tid, dwFlags);
     }
 
     public interface Interface : ITfTextInputProcessor.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfThreadMgr*, uint, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfThreadMgr*, uint, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Deactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfThreadMgr*, uint, uint, int> ActivateEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfThreadMgr*, uint, uint, int> ActivateEx;
     }
 }

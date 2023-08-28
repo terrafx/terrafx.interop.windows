@@ -25,7 +25,7 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExecuteCommandHost*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommandHost*, Guid*, void**, int>)(lpVtbl[0]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExecuteCommandHost*, uint>)(lpVtbl[1]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommandHost*, uint>)(lpVtbl[1]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExecuteCommandHost*, uint>)(lpVtbl[2]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommandHost*, uint>)(lpVtbl[2]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExecuteCommandHost.xml' path='doc/member[@name="IExecuteCommandHost.GetUIMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
     [VtblIndex(3)]
     public HRESULT GetUIMode(EC_HOST_UI_MODE* pUIMode)
     {
-        return ((delegate* unmanaged<IExecuteCommandHost*, EC_HOST_UI_MODE*, int>)(lpVtbl[3]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this), pUIMode);
+        return ((delegate* unmanaged[MemberFunction]<IExecuteCommandHost*, EC_HOST_UI_MODE*, int>)(lpVtbl[3]))((IExecuteCommandHost*)Unsafe.AsPointer(ref this), pUIMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EC_HOST_UI_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EC_HOST_UI_MODE*, int> GetUIMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EC_HOST_UI_MODE*, int> GetUIMode;
     }
 }

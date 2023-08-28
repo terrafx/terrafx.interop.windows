@@ -28,7 +28,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBitmapData*, Guid*, void**, int>)(lpVtbl[0]))((IBitmapData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, Guid*, void**, int>)(lpVtbl[0]))((IBitmapData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBitmapData*, uint>)(lpVtbl[1]))((IBitmapData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, uint>)(lpVtbl[1]))((IBitmapData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBitmapData*, uint>)(lpVtbl[2]))((IBitmapData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, uint>)(lpVtbl[2]))((IBitmapData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.CopyBytesTo"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CopyBytesTo([NativeTypeName("unsigned int")] uint sourceOffsetInBytes, [NativeTypeName("unsigned int")] uint maxBytesToCopy, byte* pvBytes, [NativeTypeName("unsigned int *")] uint* numberOfBytesCopied)
     {
-        return ((delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int>)(lpVtbl[3]))((IBitmapData*)Unsafe.AsPointer(ref this), sourceOffsetInBytes, maxBytesToCopy, pvBytes, numberOfBytesCopied);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, uint, uint, byte*, uint*, int>)(lpVtbl[3]))((IBitmapData*)Unsafe.AsPointer(ref this), sourceOffsetInBytes, maxBytesToCopy, pvBytes, numberOfBytesCopied);
     }
 
     /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetStride"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetStride([NativeTypeName("unsigned int *")] uint* pStride)
     {
-        return ((delegate* unmanaged<IBitmapData*, uint*, int>)(lpVtbl[4]))((IBitmapData*)Unsafe.AsPointer(ref this), pStride);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, uint*, int>)(lpVtbl[4]))((IBitmapData*)Unsafe.AsPointer(ref this), pStride);
     }
 
     /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetBitmapDescription"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetBitmapDescription(BitmapDescription* pBitmapDescription)
     {
-        return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[5]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, BitmapDescription*, int>)(lpVtbl[5]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
     }
 
     /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.GetSourceBitmapDescription"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription)
     {
-        return ((delegate* unmanaged<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapData*, BitmapDescription*, int>)(lpVtbl[6]))((IBitmapData*)Unsafe.AsPointer(ref this), pBitmapDescription);
     }
 
     public interface Interface : IUnknown.Interface
@@ -100,24 +100,24 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (unsigned int, unsigned int, byte *, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> CopyBytesTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint*, int> CopyBytesTo;
 
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStride;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStride;
 
         [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BitmapDescription*, int> GetBitmapDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapDescription*, int> GetBitmapDescription;
 
         [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BitmapDescription*, int> GetSourceBitmapDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapDescription*, int> GetSourceBitmapDescription;
     }
 }

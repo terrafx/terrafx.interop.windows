@@ -26,7 +26,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[0]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[0]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, uint>)(lpVtbl[1]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, uint>)(lpVtbl[1]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, uint>)(lpVtbl[2]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, uint>)(lpVtbl[2]))((IDMLBindingTable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDMLObject.GetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetPrivateDataInterface" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), guid, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetName" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, char*, int>)(lpVtbl[6]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, char*, int>)(lpVtbl[6]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IDMLDeviceChild.GetDevice" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, Guid*, void**, int>)(lpVtbl[7]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindInputs"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(8)]
     public void BindInputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings)
     {
-        ((delegate* unmanaged<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[8]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
+        ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[8]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
     }
 
     /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindOutputs"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(9)]
     public void BindOutputs(uint bindingCount, [NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* bindings)
     {
-        ((delegate* unmanaged<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[9]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
+        ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, uint, DML_BINDING_DESC*, void>)(lpVtbl[9]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), bindingCount, bindings);
     }
 
     /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindTemporaryResource"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(10)]
     public void BindTemporaryResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding)
     {
-        ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[10]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
+        ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[10]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
     }
 
     /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.BindPersistentResource"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(11)]
     public void BindPersistentResource([NativeTypeName("const DML_BINDING_DESC *")] DML_BINDING_DESC* binding)
     {
-        ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[11]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
+        ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, DML_BINDING_DESC*, void>)(lpVtbl[11]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), binding);
     }
 
     /// <include file='IDMLBindingTable.xml' path='doc/member[@name="IDMLBindingTable.Reset"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
     [VtblIndex(12)]
     public HRESULT Reset([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc)
     {
-        return ((delegate* unmanaged<IDMLBindingTable*, DML_BINDING_TABLE_DESC*, int>)(lpVtbl[12]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), desc);
+        return ((delegate* unmanaged[MemberFunction]<IDMLBindingTable*, DML_BINDING_TABLE_DESC*, int>)(lpVtbl[12]))((IDMLBindingTable*)Unsafe.AsPointer(ref this), desc);
     }
 
     public interface Interface : IDMLDeviceChild.Interface
@@ -149,42 +149,42 @@ public unsafe partial struct IDMLBindingTable : IDMLBindingTable.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("void (UINT, const DML_BINDING_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DML_BINDING_DESC*, void> BindInputs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DML_BINDING_DESC*, void> BindInputs;
 
         [NativeTypeName("void (UINT, const DML_BINDING_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DML_BINDING_DESC*, void> BindOutputs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DML_BINDING_DESC*, void> BindOutputs;
 
         [NativeTypeName("void (const DML_BINDING_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_BINDING_DESC*, void> BindTemporaryResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_BINDING_DESC*, void> BindTemporaryResource;
 
         [NativeTypeName("void (const DML_BINDING_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_BINDING_DESC*, void> BindPersistentResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_BINDING_DESC*, void> BindPersistentResource;
 
         [NativeTypeName("HRESULT (const DML_BINDING_TABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_BINDING_TABLE_DESC*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_BINDING_TABLE_DESC*, int> Reset;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistMemory*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMemory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMemory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistMemory*, uint>)(lpVtbl[1]))((IPersistMemory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, uint>)(lpVtbl[1]))((IPersistMemory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistMemory*, uint>)(lpVtbl[2]))((IPersistMemory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, uint>)(lpVtbl[2]))((IPersistMemory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistMemory*, Guid*, int>)(lpVtbl[3]))((IPersistMemory*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, Guid*, int>)(lpVtbl[3]))((IPersistMemory*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory.IsDirty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT IsDirty()
     {
-        return ((delegate* unmanaged<IPersistMemory*, int>)(lpVtbl[4]))((IPersistMemory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, int>)(lpVtbl[4]))((IPersistMemory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory.Load"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Load([NativeTypeName("LPVOID")] void* pMem, [NativeTypeName("ULONG")] uint cbSize)
     {
-        return ((delegate* unmanaged<IPersistMemory*, void*, uint, int>)(lpVtbl[5]))((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, cbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, void*, uint, int>)(lpVtbl[5]))((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, cbSize);
     }
 
     /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory.Save"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Save([NativeTypeName("LPVOID")] void* pMem, BOOL fClearDirty, [NativeTypeName("ULONG")] uint cbSize)
     {
-        return ((delegate* unmanaged<IPersistMemory*, void*, BOOL, uint, int>)(lpVtbl[6]))((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, fClearDirty, cbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, void*, BOOL, uint, int>)(lpVtbl[6]))((IPersistMemory*)Unsafe.AsPointer(ref this), pMem, fClearDirty, cbSize);
     }
 
     /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory.GetSizeMax"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetSizeMax([NativeTypeName("ULONG *")] uint* pCbSize)
     {
-        return ((delegate* unmanaged<IPersistMemory*, uint*, int>)(lpVtbl[7]))((IPersistMemory*)Unsafe.AsPointer(ref this), pCbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, uint*, int>)(lpVtbl[7]))((IPersistMemory*)Unsafe.AsPointer(ref this), pCbSize);
     }
 
     /// <include file='IPersistMemory.xml' path='doc/member[@name="IPersistMemory.InitNew"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT InitNew()
     {
-        return ((delegate* unmanaged<IPersistMemory*, int>)(lpVtbl[8]))((IPersistMemory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMemory*, int>)(lpVtbl[8]))((IPersistMemory*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IPersist.Interface
@@ -116,30 +116,30 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDirty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPVOID, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, int> Load;
 
         [NativeTypeName("HRESULT (LPVOID, BOOL, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, BOOL, uint, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, BOOL, uint, int> Save;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSizeMax;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitNew;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitNew;
     }
 }

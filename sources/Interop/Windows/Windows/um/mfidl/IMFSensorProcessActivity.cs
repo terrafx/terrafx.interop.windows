@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[1]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, uint>)(lpVtbl[1]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, uint>)(lpVtbl[2]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, uint>)(lpVtbl[2]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetProcessId"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [VtblIndex(3)]
     public HRESULT GetProcessId([NativeTypeName("ULONG *")] uint* pPID)
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, uint*, int>)(lpVtbl[3]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pPID);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, uint*, int>)(lpVtbl[3]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pPID);
     }
 
     /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetStreamingState"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [VtblIndex(4)]
     public HRESULT GetStreamingState(BOOL* pfStreaming)
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, BOOL*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, BOOL*, int>)(lpVtbl[4]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pfStreaming);
     }
 
     /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetStreamingMode"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [VtblIndex(5)]
     public HRESULT GetStreamingMode(MFSensorDeviceMode* pMode)
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, MFSensorDeviceMode*, int>)(lpVtbl[5]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, MFSensorDeviceMode*, int>)(lpVtbl[5]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pMode);
     }
 
     /// <include file='IMFSensorProcessActivity.xml' path='doc/member[@name="IMFSensorProcessActivity.GetReportTime"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
     [VtblIndex(6)]
     public HRESULT GetReportTime(FILETIME* pft)
     {
-        return ((delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProcessActivity*, FILETIME*, int>)(lpVtbl[6]))((IMFSensorProcessActivity*)Unsafe.AsPointer(ref this), pft);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetProcessId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetProcessId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetStreamingState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetStreamingState;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSensorDeviceMode*, int> GetStreamingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSensorDeviceMode*, int> GetStreamingMode;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, int> GetReportTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, int> GetReportTime;
     }
 }

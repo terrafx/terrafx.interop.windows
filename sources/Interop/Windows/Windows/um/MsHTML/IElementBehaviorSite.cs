@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorSite*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSite*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorSite*, uint>)(lpVtbl[1]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSite*, uint>)(lpVtbl[1]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorSite*, uint>)(lpVtbl[2]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSite*, uint>)(lpVtbl[2]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorSite.xml' path='doc/member[@name="IElementBehaviorSite.GetElement"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
     [VtblIndex(3)]
     public HRESULT GetElement(IHTMLElement** ppElement)
     {
-        return ((delegate* unmanaged<IElementBehaviorSite*, IHTMLElement**, int>)(lpVtbl[3]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), ppElement);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSite*, IHTMLElement**, int>)(lpVtbl[3]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), ppElement);
     }
 
     /// <include file='IElementBehaviorSite.xml' path='doc/member[@name="IElementBehaviorSite.RegisterNotification"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
     [VtblIndex(4)]
     public HRESULT RegisterNotification([NativeTypeName("LONG")] int lEvent)
     {
-        return ((delegate* unmanaged<IElementBehaviorSite*, int, int>)(lpVtbl[4]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), lEvent);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSite*, int, int>)(lpVtbl[4]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), lEvent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> GetElement;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> RegisterNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> RegisterNotification;
     }
 }

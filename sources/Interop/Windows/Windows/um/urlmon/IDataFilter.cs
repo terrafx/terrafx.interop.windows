@@ -25,7 +25,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDataFilter*, Guid*, void**, int>)(lpVtbl[0]))((IDataFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, Guid*, void**, int>)(lpVtbl[0]))((IDataFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDataFilter*, uint>)(lpVtbl[1]))((IDataFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, uint>)(lpVtbl[1]))((IDataFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDataFilter*, uint>)(lpVtbl[2]))((IDataFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, uint>)(lpVtbl[2]))((IDataFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDataFilter.xml' path='doc/member[@name="IDataFilter.DoEncode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT DoEncode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int lInBufferSize, byte* pbInBuffer, [NativeTypeName("LONG")] int lOutBufferSize, byte* pbOutBuffer, [NativeTypeName("LONG")] int lInBytesAvailable, [NativeTypeName("LONG *")] int* plInBytesRead, [NativeTypeName("LONG *")] int* plOutBytesWritten, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[3]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[3]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
     }
 
     /// <include file='IDataFilter.xml' path='doc/member[@name="IDataFilter.DoDecode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT DoDecode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int lInBufferSize, byte* pbInBuffer, [NativeTypeName("LONG")] int lOutBufferSize, byte* pbOutBuffer, [NativeTypeName("LONG")] int lInBytesAvailable, [NativeTypeName("LONG *")] int* plInBytesRead, [NativeTypeName("LONG *")] int* plOutBytesWritten, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[4]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int>)(lpVtbl[4]))((IDataFilter*)Unsafe.AsPointer(ref this), dwFlags, lInBufferSize, pbInBuffer, lOutBufferSize, pbOutBuffer, lInBytesAvailable, plInBytesRead, plOutBytesWritten, dwReserved);
     }
 
     /// <include file='IDataFilter.xml' path='doc/member[@name="IDataFilter.SetEncodingLevel"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetEncodingLevel([NativeTypeName("DWORD")] uint dwEncLevel)
     {
-        return ((delegate* unmanaged<IDataFilter*, uint, int>)(lpVtbl[5]))((IDataFilter*)Unsafe.AsPointer(ref this), dwEncLevel);
+        return ((delegate* unmanaged[MemberFunction]<IDataFilter*, uint, int>)(lpVtbl[5]))((IDataFilter*)Unsafe.AsPointer(ref this), dwEncLevel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoEncode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoEncode;
 
         [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoDecode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoDecode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetEncodingLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetEncodingLevel;
     }
 }

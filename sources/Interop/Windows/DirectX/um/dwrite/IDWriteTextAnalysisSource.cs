@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint>)(lpVtbl[1]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint>)(lpVtbl[1]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint>)(lpVtbl[2]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint>)(lpVtbl[2]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetTextAtPosition"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(3)]
     public HRESULT GetTextAtPosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("const WCHAR **")] char** textString, [NativeTypeName("UINT32 *")] uint* textLength)
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint, char**, uint*, int>)(lpVtbl[3]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textString, textLength);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint, char**, uint*, int>)(lpVtbl[3]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textString, textLength);
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetTextBeforePosition"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(4)]
     public HRESULT GetTextBeforePosition([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("const WCHAR **")] char** textString, [NativeTypeName("UINT32 *")] uint* textLength)
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint, char**, uint*, int>)(lpVtbl[4]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textString, textLength);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint, char**, uint*, int>)(lpVtbl[4]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textString, textLength);
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetParagraphReadingDirection"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(5)]
     public DWRITE_READING_DIRECTION GetParagraphReadingDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, DWRITE_READING_DIRECTION>)(lpVtbl[5]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, DWRITE_READING_DIRECTION>)(lpVtbl[5]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetLocaleName"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(6)]
     public HRESULT GetLocaleName([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, [NativeTypeName("const WCHAR **")] char** localeName)
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint, uint*, char**, int>)(lpVtbl[6]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textLength, localeName);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint, uint*, char**, int>)(lpVtbl[6]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textLength, localeName);
     }
 
     /// <include file='IDWriteTextAnalysisSource.xml' path='doc/member[@name="IDWriteTextAnalysisSource.GetNumberSubstitution"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
     [VtblIndex(7)]
     public HRESULT GetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution)
     {
-        return ((delegate* unmanaged<IDWriteTextAnalysisSource*, uint, uint*, IDWriteNumberSubstitution**, int>)(lpVtbl[7]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textLength, numberSubstitution);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextAnalysisSource*, uint, uint*, IDWriteNumberSubstitution**, int>)(lpVtbl[7]))((IDWriteTextAnalysisSource*)Unsafe.AsPointer(ref this), textPosition, textLength, numberSubstitution);
     }
 
     public interface Interface : IUnknown.Interface
@@ -109,27 +109,27 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> GetTextAtPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, uint*, int> GetTextAtPosition;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> GetTextBeforePosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, uint*, int> GetTextBeforePosition;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, const WCHAR **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> GetLocaleName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, char**, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, IDWriteNumberSubstitution **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
     }
 }

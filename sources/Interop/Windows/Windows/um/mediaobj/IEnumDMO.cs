@@ -25,7 +25,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumDMO*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDMO*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDMO*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumDMO*, uint>)(lpVtbl[1]))((IEnumDMO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, uint>)(lpVtbl[1]))((IEnumDMO*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumDMO*, uint>)(lpVtbl[2]))((IEnumDMO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, uint>)(lpVtbl[2]))((IEnumDMO*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("DWORD")] uint cItemsToFetch, [NativeTypeName("CLSID *")] Guid* pCLSID, [NativeTypeName("LPWSTR *")] char** Names, [NativeTypeName("DWORD *")] uint* pcItemsFetched)
     {
-        return ((delegate* unmanaged<IEnumDMO*, uint, Guid*, char**, uint*, int>)(lpVtbl[3]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToFetch, pCLSID, Names, pcItemsFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, uint, Guid*, char**, uint*, int>)(lpVtbl[3]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToFetch, pCLSID, Names, pcItemsFetched);
     }
 
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("DWORD")] uint cItemsToSkip)
     {
-        return ((delegate* unmanaged<IEnumDMO*, uint, int>)(lpVtbl[4]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToSkip);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, uint, int>)(lpVtbl[4]))((IEnumDMO*)Unsafe.AsPointer(ref this), cItemsToSkip);
     }
 
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumDMO*, int>)(lpVtbl[5]))((IEnumDMO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, int>)(lpVtbl[5]))((IEnumDMO*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumDMO.xml' path='doc/member[@name="IEnumDMO.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Clone(IEnumDMO** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumDMO*, IEnumDMO**, int>)(lpVtbl[6]))((IEnumDMO*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDMO*, IEnumDMO**, int>)(lpVtbl[6]))((IEnumDMO*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumDMO : IEnumDMO.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, CLSID *, LPWSTR *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, char**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumDMO **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumDMO**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumDMO**, int> Clone;
     }
 }

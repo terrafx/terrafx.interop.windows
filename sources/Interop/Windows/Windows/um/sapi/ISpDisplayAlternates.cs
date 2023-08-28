@@ -25,7 +25,7 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpDisplayAlternates*, Guid*, void**, int>)(lpVtbl[0]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpDisplayAlternates*, Guid*, void**, int>)(lpVtbl[0]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpDisplayAlternates*, uint>)(lpVtbl[1]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpDisplayAlternates*, uint>)(lpVtbl[1]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpDisplayAlternates*, uint>)(lpVtbl[2]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpDisplayAlternates*, uint>)(lpVtbl[2]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpDisplayAlternates.xml' path='doc/member[@name="ISpDisplayAlternates.GetDisplayAlternates"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
     [VtblIndex(3)]
     public HRESULT GetDisplayAlternates([NativeTypeName("const SPDISPLAYPHRASE *")] SPDISPLAYPHRASE* pPhrase, [NativeTypeName("ULONG")] uint cRequestCount, SPDISPLAYPHRASE** ppCoMemPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned)
     {
-        return ((delegate* unmanaged<ISpDisplayAlternates*, SPDISPLAYPHRASE*, uint, SPDISPLAYPHRASE**, uint*, int>)(lpVtbl[3]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), pPhrase, cRequestCount, ppCoMemPhrases, pcPhrasesReturned);
+        return ((delegate* unmanaged[MemberFunction]<ISpDisplayAlternates*, SPDISPLAYPHRASE*, uint, SPDISPLAYPHRASE**, uint*, int>)(lpVtbl[3]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), pPhrase, cRequestCount, ppCoMemPhrases, pcPhrasesReturned);
     }
 
     /// <include file='ISpDisplayAlternates.xml' path='doc/member[@name="ISpDisplayAlternates.SetFullStopTrailSpace"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
     [VtblIndex(4)]
     public HRESULT SetFullStopTrailSpace([NativeTypeName("ULONG")] uint ulTrailSpace)
     {
-        return ((delegate* unmanaged<ISpDisplayAlternates*, uint, int>)(lpVtbl[4]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), ulTrailSpace);
+        return ((delegate* unmanaged[MemberFunction]<ISpDisplayAlternates*, uint, int>)(lpVtbl[4]))((ISpDisplayAlternates*)Unsafe.AsPointer(ref this), ulTrailSpace);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const SPDISPLAYPHRASE *, ULONG, SPDISPLAYPHRASE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPDISPLAYPHRASE*, uint, SPDISPLAYPHRASE**, uint*, int> GetDisplayAlternates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPDISPLAYPHRASE*, uint, SPDISPLAYPHRASE**, uint*, int> GetDisplayAlternates;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFullStopTrailSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFullStopTrailSpace;
     }
 }

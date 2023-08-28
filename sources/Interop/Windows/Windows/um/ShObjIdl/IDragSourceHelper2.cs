@@ -25,7 +25,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, Guid*, void**, int>)(lpVtbl[0]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, Guid*, void**, int>)(lpVtbl[0]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, uint>)(lpVtbl[1]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, uint>)(lpVtbl[1]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, uint>)(lpVtbl[2]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, uint>)(lpVtbl[2]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDragSourceHelper.InitializeFromBitmap" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [VtblIndex(3)]
     public HRESULT InitializeFromBitmap([NativeTypeName("LPSHDRAGIMAGE")] SHDRAGIMAGE* pshdi, IDataObject* pDataObject)
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, SHDRAGIMAGE*, IDataObject*, int>)(lpVtbl[3]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), pshdi, pDataObject);
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, SHDRAGIMAGE*, IDataObject*, int>)(lpVtbl[3]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), pshdi, pDataObject);
     }
 
     /// <inheritdoc cref="IDragSourceHelper.InitializeFromWindow" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [VtblIndex(4)]
     public HRESULT InitializeFromWindow(HWND hwnd, POINT* ppt, IDataObject* pDataObject)
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int>)(lpVtbl[4]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), hwnd, ppt, pDataObject);
     }
 
     /// <include file='IDragSourceHelper2.xml' path='doc/member[@name="IDragSourceHelper2.SetFlags"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
     [VtblIndex(5)]
     public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IDragSourceHelper2*, uint, int>)(lpVtbl[5]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDragSourceHelper2*, uint, int>)(lpVtbl[5]))((IDragSourceHelper2*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     public interface Interface : IDragSourceHelper.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
 
         [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFlags;
     }
 }

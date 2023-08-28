@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, uint>)(lpVtbl[1]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, uint>)(lpVtbl[1]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, uint>)(lpVtbl[2]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, uint>)(lpVtbl[2]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetOpacity"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [VtblIndex(3)]
     public HRESULT SetOpacity(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetOpacity"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [VtblIndex(4)]
     public HRESULT SetOpacity(float opacity)
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, float, int>)(lpVtbl[4]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), opacity);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, float, int>)(lpVtbl[4]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), opacity);
     }
 
     /// <include file='IDCompositionEffectGroup.xml' path='doc/member[@name="IDCompositionEffectGroup.SetTransform3D"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
     [VtblIndex(5)]
     public HRESULT SetTransform3D(IDCompositionTransform3D* transform3D)
     {
-        return ((delegate* unmanaged<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)(lpVtbl[5]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), transform3D);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionEffectGroup*, IDCompositionTransform3D*, int>)(lpVtbl[5]))((IDCompositionEffectGroup*)Unsafe.AsPointer(ref this), transform3D);
     }
 
     public interface Interface : IDCompositionEffect.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDCompositionEffectGroup : IDCompositionEffectGroup
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOpacity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetOpacity;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetOpacity1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetOpacity1;
 
         [NativeTypeName("HRESULT (IDCompositionTransform3D *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTransform3D*, int> SetTransform3D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTransform3D*, int> SetTransform3D;
     }
 }

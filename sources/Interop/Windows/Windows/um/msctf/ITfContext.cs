@@ -25,7 +25,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContext*, Guid*, void**, int>)(lpVtbl[0]))((ITfContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, Guid*, void**, int>)(lpVtbl[0]))((ITfContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContext*, uint>)(lpVtbl[1]))((ITfContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint>)(lpVtbl[1]))((ITfContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContext*, uint>)(lpVtbl[2]))((ITfContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint>)(lpVtbl[2]))((ITfContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.RequestEditSession"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT RequestEditSession([NativeTypeName("TfClientId")] uint tid, ITfEditSession* pes, [NativeTypeName("DWORD")] uint dwFlags, HRESULT* phrSession)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, ITfEditSession*, uint, HRESULT*, int>)(lpVtbl[3]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pes, dwFlags, phrSession);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, ITfEditSession*, uint, HRESULT*, int>)(lpVtbl[3]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pes, dwFlags, phrSession);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.InWriteSession"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT InWriteSession([NativeTypeName("TfClientId")] uint tid, BOOL* pfWriteSession)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, BOOL*, int>)(lpVtbl[4]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pfWriteSession);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, BOOL*, int>)(lpVtbl[4]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pfWriteSession);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetSelection"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TF_SELECTION* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, uint, uint, TF_SELECTION*, uint*, int>)(lpVtbl[5]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulIndex, ulCount, pSelection, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, uint, uint, TF_SELECTION*, uint*, int>)(lpVtbl[5]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulIndex, ulCount, pSelection, pcFetched);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.SetSelection"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TF_SELECTION *")] TF_SELECTION* pSelection)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, uint, TF_SELECTION*, int>)(lpVtbl[6]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulCount, pSelection);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, uint, TF_SELECTION*, int>)(lpVtbl[6]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulCount, pSelection);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetStart"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppStart)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, ITfRange**, int>)(lpVtbl[7]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppStart);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, ITfRange**, int>)(lpVtbl[7]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppStart);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetEnd"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppEnd)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, ITfRange**, int>)(lpVtbl[8]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, ITfRange**, int>)(lpVtbl[8]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppEnd);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetActiveView"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetActiveView(ITfContextView** ppView)
     {
-        return ((delegate* unmanaged<ITfContext*, ITfContextView**, int>)(lpVtbl[9]))((ITfContext*)Unsafe.AsPointer(ref this), ppView);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, ITfContextView**, int>)(lpVtbl[9]))((ITfContext*)Unsafe.AsPointer(ref this), ppView);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.EnumViews"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT EnumViews(IEnumTfContextViews** ppEnum)
     {
-        return ((delegate* unmanaged<ITfContext*, IEnumTfContextViews**, int>)(lpVtbl[10]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, IEnumTfContextViews**, int>)(lpVtbl[10]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetStatus"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
     {
-        return ((delegate* unmanaged<ITfContext*, TS_STATUS*, int>)(lpVtbl[11]))((ITfContext*)Unsafe.AsPointer(ref this), pdcs);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, TS_STATUS*, int>)(lpVtbl[11]))((ITfContext*)Unsafe.AsPointer(ref this), pdcs);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetProperty"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfProperty** ppProp)
     {
-        return ((delegate* unmanaged<ITfContext*, Guid*, ITfProperty**, int>)(lpVtbl[12]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, Guid*, ITfProperty**, int>)(lpVtbl[12]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetAppProperty"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetAppProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfReadOnlyProperty** ppProp)
     {
-        return ((delegate* unmanaged<ITfContext*, Guid*, ITfReadOnlyProperty**, int>)(lpVtbl[13]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, Guid*, ITfReadOnlyProperty**, int>)(lpVtbl[13]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.TrackProperties"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT TrackProperties([NativeTypeName("const GUID **")] Guid** prgProp, [NativeTypeName("ULONG")] uint cProp, [NativeTypeName("const GUID **")] Guid** prgAppProp, [NativeTypeName("ULONG")] uint cAppProp, ITfReadOnlyProperty** ppProperty)
     {
-        return ((delegate* unmanaged<ITfContext*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int>)(lpVtbl[14]))((ITfContext*)Unsafe.AsPointer(ref this), prgProp, cProp, prgAppProp, cAppProp, ppProperty);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int>)(lpVtbl[14]))((ITfContext*)Unsafe.AsPointer(ref this), prgProp, cProp, prgAppProp, cAppProp, ppProperty);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.EnumProperties"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT EnumProperties(IEnumTfProperties** ppEnum)
     {
-        return ((delegate* unmanaged<ITfContext*, IEnumTfProperties**, int>)(lpVtbl[15]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, IEnumTfProperties**, int>)(lpVtbl[15]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetDocumentMgr"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppDm)
     {
-        return ((delegate* unmanaged<ITfContext*, ITfDocumentMgr**, int>)(lpVtbl[16]))((ITfContext*)Unsafe.AsPointer(ref this), ppDm);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, ITfDocumentMgr**, int>)(lpVtbl[16]))((ITfContext*)Unsafe.AsPointer(ref this), ppDm);
     }
 
     /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.CreateRangeBackup"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup)
     {
-        return ((delegate* unmanaged<ITfContext*, uint, ITfRange*, ITfRangeBackup**, int>)(lpVtbl[17]))((ITfContext*)Unsafe.AsPointer(ref this), ec, pRange, ppBackup);
+        return ((delegate* unmanaged[MemberFunction]<ITfContext*, uint, ITfRange*, ITfRangeBackup**, int>)(lpVtbl[17]))((ITfContext*)Unsafe.AsPointer(ref this), ec, pRange, ppBackup);
     }
 
     public interface Interface : IUnknown.Interface
@@ -218,57 +218,57 @@ public unsafe partial struct ITfContext : ITfContext.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, ITfEditSession *, DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfEditSession*, uint, HRESULT*, int> RequestEditSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfEditSession*, uint, HRESULT*, int> RequestEditSession;
 
         [NativeTypeName("HRESULT (TfClientId, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, int> InWriteSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, int> InWriteSession;
 
         [NativeTypeName("HRESULT (TfEditCookie, ULONG, ULONG, TF_SELECTION *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, TF_SELECTION*, uint*, int> GetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, TF_SELECTION*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, ULONG, const TF_SELECTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, TF_SELECTION*, int> SetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, TF_SELECTION*, int> SetSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange**, int> GetStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange**, int> GetStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange**, int> GetEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange**, int> GetEnd;
 
         [NativeTypeName("HRESULT (ITfContextView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContextView**, int> GetActiveView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContextView**, int> GetActiveView;
 
         [NativeTypeName("HRESULT (IEnumTfContextViews **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfContextViews**, int> EnumViews;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfContextViews**, int> EnumViews;
 
         [NativeTypeName("HRESULT (TF_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TS_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TS_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const GUID &, ITfProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ITfProperty**, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ITfProperty**, int> GetProperty;
 
         [NativeTypeName("HRESULT (const GUID &, ITfReadOnlyProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ITfReadOnlyProperty**, int> GetAppProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ITfReadOnlyProperty**, int> GetAppProperty;
 
         [NativeTypeName("HRESULT (const GUID **, ULONG, const GUID **, ULONG, ITfReadOnlyProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int> TrackProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int> TrackProperties;
 
         [NativeTypeName("HRESULT (IEnumTfProperties **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfProperties**, int> EnumProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfProperties**, int> EnumProperties;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfRangeBackup **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, ITfRangeBackup**, int> CreateRangeBackup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, ITfRangeBackup**, int> CreateRangeBackup;
     }
 }

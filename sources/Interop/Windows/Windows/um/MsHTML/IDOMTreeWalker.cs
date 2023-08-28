@@ -25,7 +25,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, Guid*, void**, int>)(lpVtbl[0]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, Guid*, void**, int>)(lpVtbl[0]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, uint>)(lpVtbl[1]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, uint>)(lpVtbl[1]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, uint>)(lpVtbl[2]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, uint>)(lpVtbl[2]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, uint*, int>)(lpVtbl[3]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, uint*, int>)(lpVtbl[3]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_root"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_root(IDispatch** p)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[7]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[7]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_whatToShow"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT get_whatToShow([NativeTypeName("ULONG *")] uint* p)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, uint*, int>)(lpVtbl[8]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, uint*, int>)(lpVtbl[8]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_filter"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT get_filter(IDispatch** p)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[9]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[9]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_expandEntityReferences"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_expandEntityReferences([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, short*, int>)(lpVtbl[10]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, short*, int>)(lpVtbl[10]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.putref_currentNode"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT putref_currentNode(IDispatch* v)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch*, int>)(lpVtbl[11]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch*, int>)(lpVtbl[11]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.get_currentNode"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT get_currentNode(IDispatch** p)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[12]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[12]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.parentNode"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT parentNode(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[13]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[13]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.firstChild"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT firstChild(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[14]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[14]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.lastChild"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT lastChild(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[15]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[15]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.previousSibling"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT previousSibling(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[16]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[16]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.nextSibling"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT nextSibling(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[17]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[17]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.previousNode"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(18)]
     public HRESULT previousNode(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[18]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[18]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     /// <include file='IDOMTreeWalker.xml' path='doc/member[@name="IDOMTreeWalker.nextNode"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
     [VtblIndex(19)]
     public HRESULT nextNode(IDispatch** ppRetNode)
     {
-        return ((delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[19]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
+        return ((delegate* unmanaged[MemberFunction]<IDOMTreeWalker*, IDispatch**, int>)(lpVtbl[19]))((IDOMTreeWalker*)Unsafe.AsPointer(ref this), ppRetNode);
     }
 
     public interface Interface : IDispatch.Interface
@@ -228,63 +228,63 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_root;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_root;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_whatToShow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_whatToShow;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_filter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_filter;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_expandEntityReferences;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_expandEntityReferences;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, int> putref_currentNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch*, int> putref_currentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_currentNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_currentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> parentNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> parentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> firstChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> firstChild;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> lastChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> lastChild;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> previousSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> previousSibling;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> nextSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> nextSibling;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> previousNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> previousNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> nextNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> nextNode;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IMFShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IMFShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFShutdown*, uint>)(lpVtbl[1]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFShutdown*, uint>)(lpVtbl[1]))((IMFShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFShutdown*, uint>)(lpVtbl[2]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFShutdown*, uint>)(lpVtbl[2]))((IMFShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFShutdown.xml' path='doc/member[@name="IMFShutdown.Shutdown"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFShutdown*, int>)(lpVtbl[3]))((IMFShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFShutdown*, int>)(lpVtbl[3]))((IMFShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFShutdown.xml' path='doc/member[@name="IMFShutdown.GetShutdownStatus"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus)
     {
-        return ((delegate* unmanaged<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFShutdown*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFShutdown*)Unsafe.AsPointer(ref this), pStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (MFSHUTDOWN_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
     }
 }

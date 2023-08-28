@@ -27,7 +27,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, Guid*, void**, int>)(lpVtbl[0]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, Guid*, void**, int>)(lpVtbl[0]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint>)(lpVtbl[1]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint>)(lpVtbl[1]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint>)(lpVtbl[2]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint>)(lpVtbl[2]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.InitializeTransform"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(3)]
     public HRESULT InitializeTransform(IMFAttributes* pAttributes)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, IMFAttributes*, int>)(lpVtbl[3]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, IMFAttributes*, int>)(lpVtbl[3]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pAttributes);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputAvailableType"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(4)]
     public HRESULT GetInputAvailableType([NativeTypeName("DWORD")] uint dwInputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, dwTypeIndex, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, dwTypeIndex, pMediaType);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputCurrentType"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(5)]
     public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaType** pMediaType)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[5]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pMediaType);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamAttributes"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(6)]
     public HRESULT GetInputStreamAttributes([NativeTypeName("DWORD")] uint dwInputStreamID, IMFAttributes** ppAttributes)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[6]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, ppAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[6]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, ppAttributes);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputAvailableType"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(7)]
     public HRESULT GetOutputAvailableType([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** pMediaType)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[7]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, dwTypeIndex, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[7]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, dwTypeIndex, pMediaType);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputCurrentType"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(8)]
     public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFMediaType** pMediaType)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[8]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFMediaType**, int>)(lpVtbl[8]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pMediaType);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputStreamAttributes"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(9)]
     public HRESULT GetOutputStreamAttributes([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFAttributes** ppAttributes)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, ppAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, ppAttributes);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetStreamCount"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(10)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint*, uint*, int>)(lpVtbl[10]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint*, uint*, int>)(lpVtbl[10]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetStreamIDs"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(11)]
     public HRESULT GetStreamIDs([NativeTypeName("DWORD")] uint dwInputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwInputStreamIds, [NativeTypeName("DWORD")] uint dwOutputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwOutputStreamIds)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint*, uint, uint*, int>)(lpVtbl[11]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputIDArraySize, pdwInputStreamIds, dwOutputIDArraySize, pdwOutputStreamIds);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint*, uint, uint*, int>)(lpVtbl[11]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputIDArraySize, pdwInputStreamIds, dwOutputIDArraySize, pdwOutputStreamIds);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessEvent"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(12)]
     public HRESULT ProcessEvent([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaEvent* pEvent)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaEvent*, int>)(lpVtbl[12]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFMediaEvent*, int>)(lpVtbl[12]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pEvent);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessInput"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(13)]
     public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamID, IMFSample* pSample, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFSample*, uint, int>)(lpVtbl[13]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pSample, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFSample*, uint, int>)(lpVtbl[13]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pSample, dwFlags);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessMessage"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(14)]
     public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, [NativeTypeName("ULONG_PTR")] nuint ulParam)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, MFT_MESSAGE_TYPE, nuint, int>)(lpVtbl[14]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), eMessage, ulParam);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, MFT_MESSAGE_TYPE, nuint, int>)(lpVtbl[14]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), eMessage, ulParam);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.ProcessOutput"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(15)]
     public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSample, [NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[15]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputSample, pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[15]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputSample, pdwStatus);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.SetInputStreamState"]/*' />
@@ -157,7 +157,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(16)]
     public HRESULT SetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[16]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[16]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamState"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(17)]
     public HRESULT GetInputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[17]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[17]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.SetOutputStreamState"]/*' />
@@ -173,7 +173,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(18)]
     public HRESULT SetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType, DeviceStreamState value, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[18]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, IMFMediaType*, DeviceStreamState, uint, int>)(lpVtbl[18]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, pMediaType, value, dwFlags);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetOutputStreamState"]/*' />
@@ -181,7 +181,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(19)]
     public HRESULT GetOutputStreamState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[19]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, DeviceStreamState*, int>)(lpVtbl[19]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.GetInputStreamPreferredState"]/*' />
@@ -189,7 +189,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(20)]
     public HRESULT GetInputStreamPreferredState([NativeTypeName("DWORD")] uint dwStreamID, DeviceStreamState* value, IMFMediaType** ppMediaType)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, DeviceStreamState*, IMFMediaType**, int>)(lpVtbl[20]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value, ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, DeviceStreamState*, IMFMediaType**, int>)(lpVtbl[20]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamID, value, ppMediaType);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.FlushInputStream"]/*' />
@@ -197,7 +197,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(21)]
     public HRESULT FlushInputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[21]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[21]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
     }
 
     /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.FlushOutputStream"]/*' />
@@ -205,7 +205,7 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
     [VtblIndex(22)]
     public HRESULT FlushOutputStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[22]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransform*, uint, uint, int>)(lpVtbl[22]))((IMFDeviceTransform*)Unsafe.AsPointer(ref this), dwStreamIndex, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -275,72 +275,72 @@ public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes*, int> InitializeTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes*, int> InitializeTransform;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetInputAvailableType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IMFMediaType**, int> GetInputAvailableType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetInputCurrentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetInputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetInputStreamAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFAttributes**, int> GetInputStreamAttributes;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetOutputAvailableType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IMFMediaType**, int> GetOutputAvailableType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputCurrentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType**, int> GetOutputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetOutputStreamAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFAttributes**, int> GetOutputStreamAttributes;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetStreamCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint, uint*, int> GetStreamIDs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint, uint*, int> GetStreamIDs;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent*, int> ProcessEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaEvent*, int> ProcessEvent;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSample*, uint, int> ProcessInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSample*, uint, int> ProcessInput;
 
         [NativeTypeName("HRESULT (MFT_MESSAGE_TYPE, ULONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFT_MESSAGE_TYPE, nuint, int> ProcessMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFT_MESSAGE_TYPE, nuint, int> ProcessMessage;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, MFT_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DeviceStreamState, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetInputStreamState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetInputStreamState;
 
         [NativeTypeName("HRESULT (DWORD, DeviceStreamState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DeviceStreamState*, int> GetInputStreamState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DeviceStreamState*, int> GetInputStreamState;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DeviceStreamState, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetOutputStreamState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, DeviceStreamState, uint, int> SetOutputStreamState;
 
         [NativeTypeName("HRESULT (DWORD, DeviceStreamState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DeviceStreamState*, int> GetOutputStreamState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DeviceStreamState*, int> GetOutputStreamState;
 
         [NativeTypeName("HRESULT (DWORD, DeviceStreamState *, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DeviceStreamState*, IMFMediaType**, int> GetInputStreamPreferredState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DeviceStreamState*, IMFMediaType**, int> GetInputStreamPreferredState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> FlushInputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> FlushInputStream;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> FlushOutputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> FlushOutputStream;
     }
 }

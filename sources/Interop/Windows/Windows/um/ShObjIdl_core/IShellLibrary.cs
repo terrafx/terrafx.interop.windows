@@ -25,7 +25,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IShellLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IShellLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellLibrary*, uint>)(lpVtbl[1]))((IShellLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, uint>)(lpVtbl[1]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellLibrary*, uint>)(lpVtbl[2]))((IShellLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, uint>)(lpVtbl[2]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.LoadLibraryFromItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT LoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, uint, int>)(lpVtbl[3]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLibrary, grfMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, IShellItem*, uint, int>)(lpVtbl[3]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLibrary, grfMode);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.LoadLibraryFromKnownFolder"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT LoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, uint, int>)(lpVtbl[4]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidLibrary, grfMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, Guid*, uint, int>)(lpVtbl[4]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidLibrary, grfMode);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.AddFolder"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT AddFolder(IShellItem* psiLocation)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, int>)(lpVtbl[5]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, IShellItem*, int>)(lpVtbl[5]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.RemoveFolder"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT RemoveFolder(IShellItem* psiLocation)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, int>)(lpVtbl[6]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, IShellItem*, int>)(lpVtbl[6]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetFolders"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetFolders(LIBRARYFOLDERFILTER lff, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellLibrary*, LIBRARYFOLDERFILTER, Guid*, void**, int>)(lpVtbl[7]))((IShellLibrary*)Unsafe.AsPointer(ref this), lff, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, LIBRARYFOLDERFILTER, Guid*, void**, int>)(lpVtbl[7]))((IShellLibrary*)Unsafe.AsPointer(ref this), lff, riid, ppv);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.ResolveFolder"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT ResolveFolder(IShellItem* psiFolderToResolve, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, uint, Guid*, void**, int>)(lpVtbl[8]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToResolve, dwTimeout, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, IShellItem*, uint, Guid*, void**, int>)(lpVtbl[8]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToResolve, dwTimeout, riid, ppv);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetDefaultSaveFolder"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT GetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int>)(lpVtbl[9]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int>)(lpVtbl[9]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, riid, ppv);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetDefaultSaveFolder"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT SetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, IShellItem* psi)
     {
-        return ((delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int>)(lpVtbl[10]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, psi);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int>)(lpVtbl[10]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, psi);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetOptions"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT GetOptions(LIBRARYOPTIONFLAGS* plofOptions)
     {
-        return ((delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS*, int>)(lpVtbl[11]))((IShellLibrary*)Unsafe.AsPointer(ref this), plofOptions);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, LIBRARYOPTIONFLAGS*, int>)(lpVtbl[11]))((IShellLibrary*)Unsafe.AsPointer(ref this), plofOptions);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetOptions"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT SetOptions(LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions)
     {
-        return ((delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int>)(lpVtbl[12]))((IShellLibrary*)Unsafe.AsPointer(ref this), lofMask, lofOptions);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int>)(lpVtbl[12]))((IShellLibrary*)Unsafe.AsPointer(ref this), lofMask, lofOptions);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetFolderType"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetFolderType([NativeTypeName("FOLDERTYPEID *")] Guid* pftid)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, int>)(lpVtbl[13]))((IShellLibrary*)Unsafe.AsPointer(ref this), pftid);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, Guid*, int>)(lpVtbl[13]))((IShellLibrary*)Unsafe.AsPointer(ref this), pftid);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetFolderType"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT SetFolderType([NativeTypeName("const FOLDERTYPEID &")] Guid* ftid)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, int>)(lpVtbl[14]))((IShellLibrary*)Unsafe.AsPointer(ref this), ftid);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, Guid*, int>)(lpVtbl[14]))((IShellLibrary*)Unsafe.AsPointer(ref this), ftid);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetIcon"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT GetIcon([NativeTypeName("LPWSTR *")] char** ppszIcon)
     {
-        return ((delegate* unmanaged<IShellLibrary*, char**, int>)(lpVtbl[15]))((IShellLibrary*)Unsafe.AsPointer(ref this), ppszIcon);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, char**, int>)(lpVtbl[15]))((IShellLibrary*)Unsafe.AsPointer(ref this), ppszIcon);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetIcon"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT SetIcon([NativeTypeName("LPCWSTR")] char* pszIcon)
     {
-        return ((delegate* unmanaged<IShellLibrary*, char*, int>)(lpVtbl[16]))((IShellLibrary*)Unsafe.AsPointer(ref this), pszIcon);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, char*, int>)(lpVtbl[16]))((IShellLibrary*)Unsafe.AsPointer(ref this), pszIcon);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Commit"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IShellLibrary*, int>)(lpVtbl[17]))((IShellLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, int>)(lpVtbl[17]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Save"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
     {
-        return ((delegate* unmanaged<IShellLibrary*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[18]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[18]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
     }
 
     /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SaveInKnownFolder"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] char* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
     {
-        return ((delegate* unmanaged<IShellLibrary*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[19]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
+        return ((delegate* unmanaged[MemberFunction]<IShellLibrary*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[19]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -240,63 +240,63 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, int> LoadLibraryFromItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, int> LoadLibraryFromItem;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, int> LoadLibraryFromKnownFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, int> LoadLibraryFromKnownFolder;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> AddFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> AddFolder;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> RemoveFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> RemoveFolder;
 
         [NativeTypeName("HRESULT (LIBRARYFOLDERFILTER, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LIBRARYFOLDERFILTER, Guid*, void**, int> GetFolders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LIBRARYFOLDERFILTER, Guid*, void**, int> GetFolders;
 
         [NativeTypeName("HRESULT (IShellItem *, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, Guid*, void**, int> ResolveFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, Guid*, void**, int> ResolveFolder;
 
         [NativeTypeName("HRESULT (DEFAULTSAVEFOLDERTYPE, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int> GetDefaultSaveFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int> GetDefaultSaveFolder;
 
         [NativeTypeName("HRESULT (DEFAULTSAVEFOLDERTYPE, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int> SetDefaultSaveFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int> SetDefaultSaveFolder;
 
         [NativeTypeName("HRESULT (LIBRARYOPTIONFLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LIBRARYOPTIONFLAGS*, int> GetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LIBRARYOPTIONFLAGS*, int> GetOptions;
 
         [NativeTypeName("HRESULT (LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int> SetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int> SetOptions;
 
         [NativeTypeName("HRESULT (FOLDERTYPEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetFolderType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetFolderType;
 
         [NativeTypeName("HRESULT (const FOLDERTYPEID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetFolderType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetFolderType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetIcon;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetIcon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> Save;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, LPCWSTR, LIBRARYSAVEFLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> SaveInKnownFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, LIBRARYSAVEFLAGS, IShellItem**, int> SaveInKnownFolder;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICatInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, Guid*, void**, int>)(lpVtbl[0]))((ICatInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICatInformation*, uint>)(lpVtbl[1]))((ICatInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, uint>)(lpVtbl[1]))((ICatInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICatInformation*, uint>)(lpVtbl[2]))((ICatInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, uint>)(lpVtbl[2]))((ICatInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumCategories"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(3)]
     public HRESULT EnumCategories([NativeTypeName("LCID")] uint lcid, IEnumCATEGORYINFO** ppenumCategoryInfo)
     {
-        return ((delegate* unmanaged<ICatInformation*, uint, IEnumCATEGORYINFO**, int>)(lpVtbl[3]))((ICatInformation*)Unsafe.AsPointer(ref this), lcid, ppenumCategoryInfo);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, uint, IEnumCATEGORYINFO**, int>)(lpVtbl[3]))((ICatInformation*)Unsafe.AsPointer(ref this), lcid, ppenumCategoryInfo);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.GetCategoryDesc"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetCategoryDesc([NativeTypeName("REFCATID")] Guid* rcatid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("LPWSTR *")] char** pszDesc)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, uint, char**, int>)(lpVtbl[4]))((ICatInformation*)Unsafe.AsPointer(ref this), rcatid, lcid, pszDesc);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, Guid*, uint, char**, int>)(lpVtbl[4]))((ICatInformation*)Unsafe.AsPointer(ref this), rcatid, lcid, pszDesc);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumClassesOfCategories"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(5)]
     public HRESULT EnumClassesOfCategories([NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq, IEnumGUID** ppenumClsid)
     {
-        return ((delegate* unmanaged<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ICatInformation*)Unsafe.AsPointer(ref this), cImplemented, rgcatidImpl, cRequired, rgcatidReq, ppenumClsid);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, uint, Guid*, uint, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ICatInformation*)Unsafe.AsPointer(ref this), cImplemented, rgcatidImpl, cRequired, rgcatidReq, ppenumClsid);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.IsClassOfCategories"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(6)]
     public HRESULT IsClassOfCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cImplemented, [NativeTypeName("const CATID[]")] Guid* rgcatidImpl, [NativeTypeName("ULONG")] uint cRequired, [NativeTypeName("const CATID[]")] Guid* rgcatidReq)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, cImplemented, rgcatidImpl, cRequired, rgcatidReq);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, Guid*, uint, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, cImplemented, rgcatidImpl, cRequired, rgcatidReq);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumImplCategoriesOfClass"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(7)]
     public HRESULT EnumImplCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[7]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[7]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
     }
 
     /// <include file='ICatInformation.xml' path='doc/member[@name="ICatInformation.EnumReqCategoriesOfClass"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
     [VtblIndex(8)]
     public HRESULT EnumReqCategoriesOfClass([NativeTypeName("const IID &")] Guid* rclsid, IEnumGUID** ppenumCatid)
     {
-        return ((delegate* unmanaged<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[8]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatInformation*, Guid*, IEnumGUID**, int>)(lpVtbl[8]))((ICatInformation*)Unsafe.AsPointer(ref this), rclsid, ppenumCatid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ICatInformation : ICatInformation.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LCID, IEnumCATEGORYINFO **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IEnumCATEGORYINFO**, int> EnumCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IEnumCATEGORYINFO**, int> EnumCategories;
 
         [NativeTypeName("HRESULT (REFCATID, LCID, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, char**, int> GetCategoryDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, char**, int> GetCategoryDesc;
 
         [NativeTypeName("HRESULT (ULONG, const CATID *, ULONG, const CATID *, IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, uint, Guid*, IEnumGUID**, int> EnumClassesOfCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, uint, Guid*, IEnumGUID**, int> EnumClassesOfCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, const CATID *, ULONG, const CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, uint, Guid*, int> IsClassOfCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, Guid*, uint, Guid*, int> IsClassOfCategories;
 
         [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumGUID**, int> EnumImplCategoriesOfClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumGUID**, int> EnumImplCategoriesOfClass;
 
         [NativeTypeName("HRESULT (const IID &, IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumGUID**, int> EnumReqCategoriesOfClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumGUID**, int> EnumReqCategoriesOfClass;
     }
 }

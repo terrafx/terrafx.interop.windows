@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, uint>)(lpVtbl[1]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter*, uint>)(lpVtbl[1]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, uint>)(lpVtbl[2]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter*, uint>)(lpVtbl[2]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.AddPayloadPackage"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     [VtblIndex(3)]
     public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, char*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter*, char*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this), fileName, packageStream);
     }
 
     /// <include file='IAppxBundleWriter.xml' path='doc/member[@name="IAppxBundleWriter.Close"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
     [VtblIndex(4)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IAppxBundleWriter*, int>)(lpVtbl[4]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter*, int>)(lpVtbl[4]))((IAppxBundleWriter*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IAppxBundleWriter : IAppxBundleWriter.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IStream*, int> AddPayloadPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, int> AddPayloadPackage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

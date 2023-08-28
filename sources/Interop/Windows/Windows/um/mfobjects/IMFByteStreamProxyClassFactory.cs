@@ -27,7 +27,7 @@ public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxy
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamProxyClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamProxyClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxy
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStreamProxyClassFactory*, uint>)(lpVtbl[1]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamProxyClassFactory*, uint>)(lpVtbl[1]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxy
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStreamProxyClassFactory*, uint>)(lpVtbl[2]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamProxyClassFactory*, uint>)(lpVtbl[2]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStreamProxyClassFactory.xml' path='doc/member[@name="IMFByteStreamProxyClassFactory.CreateByteStreamProxy"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxy
     [VtblIndex(3)]
     public HRESULT CreateByteStreamProxy(IMFByteStream* pByteStream, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamProxyClassFactory*, IMFByteStream*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this), pByteStream, pAttributes, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamProxyClassFactory*, IMFByteStream*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFByteStreamProxyClassFactory*)Unsafe.AsPointer(ref this), pByteStream, pAttributes, riid, ppvObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxy
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFByteStream *, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, IMFAttributes*, Guid*, void**, int> CreateByteStreamProxy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFByteStream*, IMFAttributes*, Guid*, void**, int> CreateByteStreamProxy;
     }
 }

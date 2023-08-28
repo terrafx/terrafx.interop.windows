@@ -27,7 +27,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, uint>)(lpVtbl[1]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, uint>)(lpVtbl[1]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, uint>)(lpVtbl[2]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, uint>)(lpVtbl[2]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetBorderColor"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(3)]
     public HRESULT SetBorderColor(MFARGB* pBorderColor)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pBorderColor);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pBorderColor);
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetSourceRectangle"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(4)]
     public HRESULT SetSourceRectangle(RECT* pSrcRect)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pSrcRect);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pSrcRect);
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetDestinationRectangle"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(5)]
     public HRESULT SetDestinationRectangle(RECT* pDstRect)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pDstRect);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pDstRect);
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetMirror"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(6)]
     public HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), eMirror);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), eMirror);
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetRotation"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(7)]
     public HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), eRotation);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), eRotation);
     }
 
     /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.SetConstrictionSize"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
     [VtblIndex(8)]
     public HRESULT SetConstrictionSize(SIZE* pConstrictionSize)
     {
-        return ((delegate* unmanaged<IMFVideoProcessorControl*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pConstrictionSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoProcessorControl*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl*)Unsafe.AsPointer(ref this), pConstrictionSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, int> SetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, int> SetBorderColor;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetSourceRectangle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetSourceRectangle;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetDestinationRectangle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetDestinationRectangle;
 
         [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_MIRROR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_VIDEO_PROCESSOR_MIRROR, int> SetMirror;
 
         [NativeTypeName("HRESULT (MF_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_VIDEO_PROCESSOR_ROTATION, int> SetRotation;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> SetConstrictionSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> SetConstrictionSize;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICastingEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, uint>)(lpVtbl[1]))((ICastingEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingEventHandler*, uint>)(lpVtbl[1]))((ICastingEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, uint>)(lpVtbl[2]))((ICastingEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingEventHandler*, uint>)(lpVtbl[2]))((ICastingEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICastingEventHandler.xml' path='doc/member[@name="ICastingEventHandler.OnStateChanged"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     [VtblIndex(3)]
     public HRESULT OnStateChanged(CASTING_CONNECTION_STATE newState)
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_STATE, int>)(lpVtbl[3]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), newState);
+        return ((delegate* unmanaged[MemberFunction]<ICastingEventHandler*, CASTING_CONNECTION_STATE, int>)(lpVtbl[3]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), newState);
     }
 
     /// <include file='ICastingEventHandler.xml' path='doc/member[@name="ICastingEventHandler.OnError"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
     [VtblIndex(4)]
     public HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] char* errorMessage)
     {
-        return ((delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, char*, int>)(lpVtbl[4]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), errorStatus, errorMessage);
+        return ((delegate* unmanaged[MemberFunction]<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, char*, int>)(lpVtbl[4]))((ICastingEventHandler*)Unsafe.AsPointer(ref this), errorStatus, errorMessage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CASTING_CONNECTION_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_STATE, int> OnStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CASTING_CONNECTION_STATE, int> OnStateChanged;
 
         [NativeTypeName("HRESULT (CASTING_CONNECTION_ERROR_STATUS, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_ERROR_STATUS, char*, int> OnError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CASTING_CONNECTION_ERROR_STATUS, char*, int> OnError;
     }
 }

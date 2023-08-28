@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1TessellationSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TessellationSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1TessellationSink*, uint>)(lpVtbl[1]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TessellationSink*, uint>)(lpVtbl[1]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1TessellationSink*, uint>)(lpVtbl[2]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TessellationSink*, uint>)(lpVtbl[2]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1TessellationSink.xml' path='doc/member[@name="ID2D1TessellationSink.AddTriangles"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
     [VtblIndex(3)]
     public void AddTriangles([NativeTypeName("const D2D1_TRIANGLE *")] D2D1_TRIANGLE* triangles, [NativeTypeName("UINT32")] uint trianglesCount)
     {
-        ((delegate* unmanaged<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void>)(lpVtbl[3]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void>)(lpVtbl[3]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this), triangles, trianglesCount);
     }
 
     /// <include file='ID2D1TessellationSink.xml' path='doc/member[@name="ID2D1TessellationSink.Close"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
     [VtblIndex(4)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<ID2D1TessellationSink*, int>)(lpVtbl[4]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TessellationSink*, int>)(lpVtbl[4]))((ID2D1TessellationSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (const D2D1_TRIANGLE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_TRIANGLE*, uint, void> AddTriangles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_TRIANGLE*, uint, void> AddTriangles;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

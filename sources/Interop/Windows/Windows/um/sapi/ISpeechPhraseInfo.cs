@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, uint>)(lpVtbl[1]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, uint>)(lpVtbl[1]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, uint>)(lpVtbl[2]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, uint>)(lpVtbl[2]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, uint*, int>)(lpVtbl[3]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, uint*, int>)(lpVtbl[3]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_LanguageId"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(7)]
     public HRESULT get_LanguageId([NativeTypeName("long *")] int* LanguageId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[7]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), LanguageId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int*, int>)(lpVtbl[7]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), LanguageId);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_GrammarId"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_GrammarId(VARIANT* GrammarId)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[8]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), GrammarId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[8]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), GrammarId);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_StartTime"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(9)]
     public HRESULT get_StartTime(VARIANT* StartTime)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartTime);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartTime);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioStreamPosition"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_AudioStreamPosition(VARIANT* AudioStreamPosition)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[10]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioStreamPosition);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[10]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioStreamPosition);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioSizeBytes"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(11)]
     public HRESULT get_AudioSizeBytes([NativeTypeName("long *")] int* pAudioSizeBytes)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[11]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pAudioSizeBytes);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int*, int>)(lpVtbl[11]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pAudioSizeBytes);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_RetainedSizeBytes"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_RetainedSizeBytes([NativeTypeName("long *")] int* RetainedSizeBytes)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[12]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), RetainedSizeBytes);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int*, int>)(lpVtbl[12]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), RetainedSizeBytes);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioSizeTime"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(13)]
     public HRESULT get_AudioSizeTime([NativeTypeName("long *")] int* AudioSizeTime)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[13]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioSizeTime);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int*, int>)(lpVtbl[13]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioSizeTime);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Rule"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(14)]
     public HRESULT get_Rule(ISpeechPhraseRule** Rule)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseRule**, int>)(lpVtbl[14]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Rule);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, ISpeechPhraseRule**, int>)(lpVtbl[14]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Rule);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Properties"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(15)]
     public HRESULT get_Properties(ISpeechPhraseProperties** Properties)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseProperties**, int>)(lpVtbl[15]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Properties);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, ISpeechPhraseProperties**, int>)(lpVtbl[15]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Properties);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Elements"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(16)]
     public HRESULT get_Elements(ISpeechPhraseElements** Elements)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseElements**, int>)(lpVtbl[16]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Elements);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, ISpeechPhraseElements**, int>)(lpVtbl[16]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Elements);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Replacements"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_Replacements(ISpeechPhraseReplacements** Replacements)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseReplacements**, int>)(lpVtbl[17]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Replacements);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, ISpeechPhraseReplacements**, int>)(lpVtbl[17]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Replacements);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EngineId"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(18)]
     public HRESULT get_EngineId([NativeTypeName("BSTR *")] char** EngineIdGuid)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, char**, int>)(lpVtbl[18]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), EngineIdGuid);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, char**, int>)(lpVtbl[18]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), EngineIdGuid);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EnginePrivateData"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(19)]
     public HRESULT get_EnginePrivateData(VARIANT* PrivateData)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[19]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PrivateData);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[19]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PrivateData);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.SaveToMemory"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(20)]
     public HRESULT SaveToMemory(VARIANT* PhraseBlock)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[20]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PhraseBlock);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[20]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PhraseBlock);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetText"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(21)]
     public HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] char** Text)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int, int, short, char**, int>)(lpVtbl[21]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, Text);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int, int, short, char**, int>)(lpVtbl[21]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, Text);
     }
 
     /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetDisplayAttributes"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
     [VtblIndex(22)]
     public HRESULT GetDisplayAttributes([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, SpeechDisplayAttributes* DisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpeechPhraseInfo*, int, int, short, SpeechDisplayAttributes*, int>)(lpVtbl[22]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, DisplayAttributes);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechPhraseInfo*, int, int, short, SpeechDisplayAttributes*, int>)(lpVtbl[22]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, DisplayAttributes);
     }
 
     public interface Interface : IDispatch.Interface
@@ -261,72 +261,72 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LanguageId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LanguageId;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_GrammarId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_GrammarId;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_AudioStreamPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_AudioStreamPosition;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AudioSizeBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AudioSizeBytes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_RetainedSizeBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_RetainedSizeBytes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AudioSizeTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AudioSizeTime;
 
         [NativeTypeName("HRESULT (ISpeechPhraseRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechPhraseRule**, int> get_Rule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechPhraseRule**, int> get_Rule;
 
         [NativeTypeName("HRESULT (ISpeechPhraseProperties **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechPhraseProperties**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechPhraseProperties**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ISpeechPhraseElements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechPhraseElements**, int> get_Elements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechPhraseElements**, int> get_Elements;
 
         [NativeTypeName("HRESULT (ISpeechPhraseReplacements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechPhraseReplacements**, int> get_Replacements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechPhraseReplacements**, int> get_Replacements;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_EngineId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_EngineId;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_EnginePrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_EnginePrivateData;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> SaveToMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> SaveToMemory;
 
         [NativeTypeName("HRESULT (long, long, VARIANT_BOOL, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, short, char**, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, short, char**, int> GetText;
 
         [NativeTypeName("HRESULT (long, long, VARIANT_BOOL, SpeechDisplayAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, short, SpeechDisplayAttributes*, int> GetDisplayAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, short, SpeechDisplayAttributes*, int> GetDisplayAttributes;
     }
 }

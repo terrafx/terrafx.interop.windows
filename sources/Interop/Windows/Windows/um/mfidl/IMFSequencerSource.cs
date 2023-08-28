@@ -25,7 +25,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, uint>)(lpVtbl[1]))((IMFSequencerSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, uint>)(lpVtbl[1]))((IMFSequencerSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, uint>)(lpVtbl[2]))((IMFSequencerSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, uint>)(lpVtbl[2]))((IMFSequencerSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.AppendTopology"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(3)]
     public HRESULT AppendTopology(IMFTopology* pTopology, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("MFSequencerElementId *")] uint* pdwId)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, IMFTopology*, uint, uint*, int>)(lpVtbl[3]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), pTopology, dwFlags, pdwId);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, IMFTopology*, uint, uint*, int>)(lpVtbl[3]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), pTopology, dwFlags, pdwId);
     }
 
     /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.DeleteTopology"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(4)]
     public HRESULT DeleteTopology([NativeTypeName("MFSequencerElementId")] uint dwId)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, uint, int>)(lpVtbl[4]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, uint, int>)(lpVtbl[4]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId);
     }
 
     /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.GetPresentationContext"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(5)]
     public HRESULT GetPresentationContext(IMFPresentationDescriptor* pPD, [NativeTypeName("MFSequencerElementId *")] uint* pId, IMFTopology** ppTopology)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, IMFPresentationDescriptor*, uint*, IMFTopology**, int>)(lpVtbl[5]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), pPD, pId, ppTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, IMFPresentationDescriptor*, uint*, IMFTopology**, int>)(lpVtbl[5]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), pPD, pId, ppTopology);
     }
 
     /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.UpdateTopology"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(6)]
     public HRESULT UpdateTopology([NativeTypeName("MFSequencerElementId")] uint dwId, IMFTopology* pTopology)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, uint, IMFTopology*, int>)(lpVtbl[6]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, pTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, uint, IMFTopology*, int>)(lpVtbl[6]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, pTopology);
     }
 
     /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.UpdateTopologyFlags"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
     [VtblIndex(7)]
     public HRESULT UpdateTopologyFlags([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IMFSequencerSource*, uint, uint, int>)(lpVtbl[7]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFSequencerSource*, uint, uint, int>)(lpVtbl[7]))((IMFSequencerSource*)Unsafe.AsPointer(ref this), dwId, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *, DWORD, MFSequencerElementId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTopology*, uint, uint*, int> AppendTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTopology*, uint, uint*, int> AppendTopology;
 
         [NativeTypeName("HRESULT (MFSequencerElementId) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> DeleteTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> DeleteTopology;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, MFSequencerElementId *, IMFTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, uint*, IMFTopology**, int> GetPresentationContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationDescriptor*, uint*, IMFTopology**, int> GetPresentationContext;
 
         [NativeTypeName("HRESULT (MFSequencerElementId, IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFTopology*, int> UpdateTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFTopology*, int> UpdateTopology;
 
         [NativeTypeName("HRESULT (MFSequencerElementId, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> UpdateTopologyFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> UpdateTopologyFlags;
     }
 }

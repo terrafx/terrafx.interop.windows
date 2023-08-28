@@ -25,7 +25,7 @@ public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTrustedInput*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrustedInput*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTrustedInput*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrustedInput*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTrustedInput*, uint>)(lpVtbl[1]))((IMFTrustedInput*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTrustedInput*, uint>)(lpVtbl[1]))((IMFTrustedInput*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTrustedInput*, uint>)(lpVtbl[2]))((IMFTrustedInput*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTrustedInput*, uint>)(lpVtbl[2]))((IMFTrustedInput*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTrustedInput.xml' path='doc/member[@name="IMFTrustedInput.GetInputTrustAuthority"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetInputTrustAuthority([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunkObject)
     {
-        return ((delegate* unmanaged<IMFTrustedInput*, uint, Guid*, IUnknown**, int>)(lpVtbl[3]))((IMFTrustedInput*)Unsafe.AsPointer(ref this), dwStreamID, riid, ppunkObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTrustedInput*, uint, Guid*, IUnknown**, int>)(lpVtbl[3]))((IMFTrustedInput*)Unsafe.AsPointer(ref this), dwStreamID, riid, ppunkObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFTrustedInput : IMFTrustedInput.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, IUnknown**, int> GetInputTrustAuthority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, IUnknown**, int> GetInputTrustAuthority;
     }
 }

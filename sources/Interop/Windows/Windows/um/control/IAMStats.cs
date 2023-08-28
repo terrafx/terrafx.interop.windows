@@ -25,7 +25,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMStats*, Guid*, void**, int>)(lpVtbl[0]))((IAMStats*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, Guid*, void**, int>)(lpVtbl[0]))((IAMStats*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMStats*, uint>)(lpVtbl[1]))((IAMStats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, uint>)(lpVtbl[1]))((IAMStats*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMStats*, uint>)(lpVtbl[2]))((IAMStats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, uint>)(lpVtbl[2]))((IAMStats*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IAMStats*, uint*, int>)(lpVtbl[3]))((IAMStats*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, uint*, int>)(lpVtbl[3]))((IAMStats*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IAMStats*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IAMStats*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IAMStats*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IAMStats*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IAMStats*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IAMStats*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IAMStats*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IAMStats*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IAMStats*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.Reset"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IAMStats*, int>)(lpVtbl[7]))((IAMStats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, int>)(lpVtbl[7]))((IAMStats*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.get_Count"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* plCount)
     {
-        return ((delegate* unmanaged<IAMStats*, int*, int>)(lpVtbl[8]))((IAMStats*)Unsafe.AsPointer(ref this), plCount);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, int*, int>)(lpVtbl[8]))((IAMStats*)Unsafe.AsPointer(ref this), plCount);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetValueByIndex"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetValueByIndex([NativeTypeName("long")] int lIndex, [NativeTypeName("BSTR *")] char** szName, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
     {
-        return ((delegate* unmanaged<IAMStats*, int, char**, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[9]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, szName, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, int, char**, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[9]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, szName, lCount, dLast, dAverage, dStdDev, dMin, dMax);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetValueByName"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetValueByName([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long *")] int* lIndex, [NativeTypeName("long *")] int* lCount, double* dLast, double* dAverage, double* dStdDev, double* dMin, double* dMax)
     {
-        return ((delegate* unmanaged<IAMStats*, char*, int*, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[10]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lIndex, lCount, dLast, dAverage, dStdDev, dMin, dMax);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, char*, int*, int*, double*, double*, double*, double*, double*, int>)(lpVtbl[10]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lIndex, lCount, dLast, dAverage, dStdDev, dMin, dMax);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.GetIndex"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetIndex([NativeTypeName("BSTR")] char* szName, [NativeTypeName("long")] int lCreate, [NativeTypeName("long *")] int* plIndex)
     {
-        return ((delegate* unmanaged<IAMStats*, char*, int, int*, int>)(lpVtbl[11]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lCreate, plIndex);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, char*, int, int*, int>)(lpVtbl[11]))((IAMStats*)Unsafe.AsPointer(ref this), szName, lCreate, plIndex);
     }
 
     /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.AddValue"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT AddValue([NativeTypeName("long")] int lIndex, double dValue)
     {
-        return ((delegate* unmanaged<IAMStats*, int, double, int>)(lpVtbl[12]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, dValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMStats*, int, double, int>)(lpVtbl[12]))((IAMStats*)Unsafe.AsPointer(ref this), lIndex, dValue);
     }
 
     public interface Interface : IDispatch.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (long, BSTR *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (BSTR, long *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int*, int> GetIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> GetIndex;
 
         [NativeTypeName("HRESULT (long, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, double, int> AddValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, double, int> AddValue;
     }
 }

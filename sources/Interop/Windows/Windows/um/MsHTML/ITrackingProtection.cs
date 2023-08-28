@@ -25,7 +25,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITrackingProtection*, Guid*, void**, int>)(lpVtbl[0]))((ITrackingProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITrackingProtection*, Guid*, void**, int>)(lpVtbl[0]))((ITrackingProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITrackingProtection*, uint>)(lpVtbl[1]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITrackingProtection*, uint>)(lpVtbl[1]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITrackingProtection*, uint>)(lpVtbl[2]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITrackingProtection*, uint>)(lpVtbl[2]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.EvaluateUrl"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     [VtblIndex(3)]
     public HRESULT EvaluateUrl([NativeTypeName("BSTR")] char* bstrUrl, BOOL* pfAllowed)
     {
-        return ((delegate* unmanaged<ITrackingProtection*, char*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
+        return ((delegate* unmanaged[MemberFunction]<ITrackingProtection*, char*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
     }
 
     /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.GetEnabled"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
     [VtblIndex(4)]
     public HRESULT GetEnabled(BOOL* pfEnabled)
     {
-        return ((delegate* unmanaged<ITrackingProtection*, BOOL*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<ITrackingProtection*, BOOL*, int>)(lpVtbl[4]))((ITrackingProtection*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL*, int> EvaluateUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, int> EvaluateUrl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetEnabled;
     }
 }

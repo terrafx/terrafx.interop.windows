@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrSessionCreator*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSessionCreator*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrSessionCreator*, uint>)(lpVtbl[1]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSessionCreator*, uint>)(lpVtbl[1]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrSessionCreator*, uint>)(lpVtbl[2]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSessionCreator*, uint>)(lpVtbl[2]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSessionCreator.xml' path='doc/member[@name="ISyncMgrSessionCreator.CreateSession"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
     [VtblIndex(3)]
     public HRESULT CreateSession([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("LPCWSTR *")] char** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, ISyncMgrSyncCallback** ppCallback)
     {
-        return ((delegate* unmanaged<ISyncMgrSessionCreator*, char*, char**, uint, ISyncMgrSyncCallback**, int>)(lpVtbl[3]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, ppCallback);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSessionCreator*, char*, char**, uint, ISyncMgrSyncCallback**, int>)(lpVtbl[3]))((ISyncMgrSessionCreator*)Unsafe.AsPointer(ref this), pszHandlerID, ppszItemIDs, cItems, ppCallback);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG, ISyncMgrSyncCallback **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, uint, ISyncMgrSyncCallback**, int> CreateSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, uint, ISyncMgrSyncCallback**, int> CreateSession;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRunnableTask*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableTask*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableTask*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[1]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, uint>)(lpVtbl[1]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[2]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, uint>)(lpVtbl[2]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask.Run"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Run()
     {
-        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[3]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, int>)(lpVtbl[3]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask.Kill"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Kill(BOOL bWait)
     {
-        return ((delegate* unmanaged<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
     }
 
     /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask.Suspend"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Suspend()
     {
-        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[5]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, int>)(lpVtbl[5]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask.Resume"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[6]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, int>)(lpVtbl[6]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableTask.xml' path='doc/member[@name="IRunnableTask.IsRunning"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint IsRunning()
     {
-        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[7]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableTask*, uint>)(lpVtbl[7]))((IRunnableTask*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IRunnableTask : IRunnableTask.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Run;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Kill;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Kill;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Suspend;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> IsRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> IsRunning;
     }
 }

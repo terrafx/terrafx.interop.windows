@@ -27,7 +27,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, uint>)(lpVtbl[1]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, uint>)(lpVtbl[1]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, uint>)(lpVtbl[2]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, uint>)(lpVtbl[2]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText.GetText"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [VtblIndex(3)]
     public HRESULT GetText([NativeTypeName("LPWSTR *")] char** text)
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, char**, int>)(lpVtbl[3]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, char**, int>)(lpVtbl[3]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText.GetSubformattingCount"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [return: NativeTypeName("DWORD")]
     public uint GetSubformattingCount()
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, uint>)(lpVtbl[4]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, uint>)(lpVtbl[4]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextFormattedText.xml' path='doc/member[@name="IMFTimedTextFormattedText.GetSubformatting"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
     [VtblIndex(5)]
     public HRESULT GetSubformatting([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD *")] uint* firstChar, [NativeTypeName("DWORD *")] uint* charLength, IMFTimedTextStyle** style)
     {
-        return ((delegate* unmanaged<IMFTimedTextFormattedText*, uint, uint*, uint*, IMFTimedTextStyle**, int>)(lpVtbl[5]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), index, firstChar, charLength, style);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextFormattedText*, uint, uint*, uint*, IMFTimedTextStyle**, int>)(lpVtbl[5]))((IMFTimedTextFormattedText*)Unsafe.AsPointer(ref this), index, firstChar, charLength, style);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,21 +90,21 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetText;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetSubformattingCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetSubformattingCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, IMFTimedTextStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, IMFTimedTextStyle**, int> GetSubformatting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, IMFTimedTextStyle**, int> GetSubformatting;
     }
 }

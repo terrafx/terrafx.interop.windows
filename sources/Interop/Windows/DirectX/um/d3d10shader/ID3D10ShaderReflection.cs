@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint>)(lpVtbl[1]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint>)(lpVtbl[1]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint>)(lpVtbl[2]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint>)(lpVtbl[2]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetDesc"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(3)]
     public HRESULT GetDesc(D3D10_SHADER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, D3D10_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, D3D10_SHADER_DESC*, int>)(lpVtbl[3]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetConstantBufferByIndex"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(4)]
     public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[4]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetConstantBufferByName"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(5)]
     public ID3D10ShaderReflectionConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, sbyte*, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[5]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, sbyte*, ID3D10ShaderReflectionConstantBuffer*>)(lpVtbl[5]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetResourceBindingDesc"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(6)]
     public HRESULT GetResourceBindingDesc(uint ResourceIndex, D3D10_SHADER_INPUT_BIND_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[6]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int>)(lpVtbl[6]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ResourceIndex, pDesc);
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetInputParameterDesc"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(7)]
     public HRESULT GetInputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[7]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[7]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
     }
 
     /// <include file='ID3D10ShaderReflection.xml' path='doc/member[@name="ID3D10ShaderReflection.GetOutputParameterDesc"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
     [VtblIndex(8)]
     public HRESULT GetOutputParameterDesc(uint ParameterIndex, D3D10_SIGNATURE_PARAMETER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflection*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int>)(lpVtbl[8]))((ID3D10ShaderReflection*)Unsafe.AsPointer(ref this), ParameterIndex, pDesc);
     }
 
     public interface Interface : IUnknown.Interface
@@ -120,30 +120,30 @@ public unsafe partial struct ID3D10ShaderReflection : ID3D10ShaderReflection.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D10_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_SHADER_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_SHADER_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
 
         [NativeTypeName("ID3D10ShaderReflectionConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByName;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetInputParameterDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetInputParameterDesc;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetOutputParameterDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetOutputParameterDesc;
     }
 }

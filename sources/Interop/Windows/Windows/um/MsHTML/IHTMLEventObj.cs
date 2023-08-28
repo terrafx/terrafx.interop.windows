@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, uint>)(lpVtbl[1]))((IHTMLEventObj*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, uint>)(lpVtbl[1]))((IHTMLEventObj*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, uint>)(lpVtbl[2]))((IHTMLEventObj*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, uint>)(lpVtbl[2]))((IHTMLEventObj*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, uint*, int>)(lpVtbl[3]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, uint*, int>)(lpVtbl[3]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_srcElement"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT get_srcElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[7]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[7]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_altKey"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, short*, int>)(lpVtbl[8]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, short*, int>)(lpVtbl[8]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_ctrlKey"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, short*, int>)(lpVtbl[9]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, short*, int>)(lpVtbl[9]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_shiftKey"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, short*, int>)(lpVtbl[10]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, short*, int>)(lpVtbl[10]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.put_returnValue"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT put_returnValue(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, VARIANT, int>)(lpVtbl[11]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, VARIANT, int>)(lpVtbl[11]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_returnValue"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT get_returnValue(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, VARIANT*, int>)(lpVtbl[12]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, VARIANT*, int>)(lpVtbl[12]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.put_cancelBubble"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT put_cancelBubble([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, short, int>)(lpVtbl[13]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, short, int>)(lpVtbl[13]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_cancelBubble"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT get_cancelBubble([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, short*, int>)(lpVtbl[14]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, short*, int>)(lpVtbl[14]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_fromElement"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT get_fromElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[15]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[15]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_toElement"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT get_toElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[16]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, IHTMLElement**, int>)(lpVtbl[16]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.put_keyCode"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT put_keyCode([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int, int>)(lpVtbl[17]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int, int>)(lpVtbl[17]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_keyCode"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT get_keyCode([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[18]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[18]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_button"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT get_button([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[19]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[19]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_type"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(20)]
     public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, char**, int>)(lpVtbl[20]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, char**, int>)(lpVtbl[20]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_qualifier"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(21)]
     public HRESULT get_qualifier([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, char**, int>)(lpVtbl[21]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, char**, int>)(lpVtbl[21]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_reason"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(22)]
     public HRESULT get_reason([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[22]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[22]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_x"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(23)]
     public HRESULT get_x([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[23]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[23]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_y"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(24)]
     public HRESULT get_y([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[24]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[24]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_clientX"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(25)]
     public HRESULT get_clientX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[25]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[25]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_clientY"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(26)]
     public HRESULT get_clientY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[26]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[26]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_offsetX"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(27)]
     public HRESULT get_offsetX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[27]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[27]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_offsetY"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(28)]
     public HRESULT get_offsetY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[28]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[28]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_screenX"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(29)]
     public HRESULT get_screenX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[29]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[29]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_screenY"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(30)]
     public HRESULT get_screenY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, int*, int>)(lpVtbl[30]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, int*, int>)(lpVtbl[30]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLEventObj.xml' path='doc/member[@name="IHTMLEventObj.get_srcFilter"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
     [VtblIndex(31)]
     public HRESULT get_srcFilter(IDispatch** p)
     {
-        return ((delegate* unmanaged<IHTMLEventObj*, IDispatch**, int>)(lpVtbl[31]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEventObj*, IDispatch**, int>)(lpVtbl[31]))((IHTMLEventObj*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -360,99 +360,99 @@ public unsafe partial struct IHTMLEventObj : IHTMLEventObj.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_srcElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_srcElement;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_altKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_altKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_ctrlKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_ctrlKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_shiftKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_shiftKey;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_returnValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_returnValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_returnValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_returnValue;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_cancelBubble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_cancelBubble;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_cancelBubble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_cancelBubble;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_fromElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_fromElement;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_toElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_toElement;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_keyCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_keyCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_keyCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_keyCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_button;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_button;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_qualifier;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_qualifier;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_reason;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_reason;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_x;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_y;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_clientX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_clientX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_clientY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_clientY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_offsetX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_offsetX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_offsetY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_offsetY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_screenX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_screenX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_screenY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_screenY;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_srcFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_srcFilter;
     }
 }

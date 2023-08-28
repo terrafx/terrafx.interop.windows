@@ -25,7 +25,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, uint>)(lpVtbl[1]))((IDOMDragEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, uint>)(lpVtbl[1]))((IDOMDragEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, uint>)(lpVtbl[2]))((IDOMDragEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, uint>)(lpVtbl[2]))((IDOMDragEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, uint*, int>)(lpVtbl[3]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, uint*, int>)(lpVtbl[3]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDOMDragEvent.xml' path='doc/member[@name="IDOMDragEvent.get_dataTransfer"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT get_dataTransfer(IHTMLDataTransfer** p)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, IHTMLDataTransfer**, int>)(lpVtbl[7]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, IHTMLDataTransfer**, int>)(lpVtbl[7]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMDragEvent.xml' path='doc/member[@name="IDOMDragEvent.initDragEvent"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT initDragEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg, IHTMLDataTransfer* dataTransferArg)
     {
-        return ((delegate* unmanaged<IDOMDragEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, IHTMLDataTransfer*, int>)(lpVtbl[8]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg, dataTransferArg);
+        return ((delegate* unmanaged[MemberFunction]<IDOMDragEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, IHTMLDataTransfer*, int>)(lpVtbl[8]))((IDOMDragEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg, dataTransferArg);
     }
 
     public interface Interface : IDispatch.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct IDOMDragEvent : IDOMDragEvent.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLDataTransfer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDataTransfer**, int> get_dataTransfer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLDataTransfer**, int> get_dataTransfer;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, USHORT, IEventTarget *, IHTMLDataTransfer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, IHTMLDataTransfer*, int> initDragEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, IHTMLDataTransfer*, int> initDragEvent;
     }
 }

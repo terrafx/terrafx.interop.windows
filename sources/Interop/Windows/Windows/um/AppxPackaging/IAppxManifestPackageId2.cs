@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, uint>)(lpVtbl[1]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, uint>)(lpVtbl[1]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, uint>)(lpVtbl[2]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, uint>)(lpVtbl[2]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetName" />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char**, int>)(lpVtbl[3]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char**, int>)(lpVtbl[3]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetArchitecture" />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(4)]
     public HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE*, int>)(lpVtbl[4]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), architecture);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE*, int>)(lpVtbl[4]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), architecture);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetPublisher" />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(5)]
     public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] char** publisher)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char**, int>)(lpVtbl[5]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), publisher);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char**, int>)(lpVtbl[5]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), publisher);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetVersion" />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(6)]
     public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, ulong*, int>)(lpVtbl[6]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageVersion);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, ulong*, int>)(lpVtbl[6]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageVersion);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetResourceId" />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(7)]
     public HRESULT GetResourceId([NativeTypeName("LPWSTR *")] char** resourceId)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char**, int>)(lpVtbl[7]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), resourceId);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char**, int>)(lpVtbl[7]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), resourceId);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.ComparePublisher" />
@@ -93,7 +93,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(8)]
     public HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] char* other, BOOL* isSame)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), other, isSame);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), other, isSame);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetPackageFullName" />
@@ -101,7 +101,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(9)]
     public HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] char** packageFullName)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char**, int>)(lpVtbl[9]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char**, int>)(lpVtbl[9]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageId.GetPackageFamilyName" />
@@ -109,7 +109,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(10)]
     public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, char**, int>)(lpVtbl[10]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, char**, int>)(lpVtbl[10]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     /// <include file='IAppxManifestPackageId2.xml' path='doc/member[@name="IAppxManifestPackageId2.GetArchitecture2"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
     [VtblIndex(11)]
     public HRESULT GetArchitecture2(APPX_PACKAGE_ARCHITECTURE2* architecture)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE2*, int>)(lpVtbl[11]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), architecture);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE2*, int>)(lpVtbl[11]))((IAppxManifestPackageId2*)Unsafe.AsPointer(ref this), architecture);
     }
 
     public interface Interface : IAppxManifestPackageId.Interface
@@ -130,39 +130,39 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetPublisher;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetVersion;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetResourceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetResourceId;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL*, int> ComparePublisher;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, int> ComparePublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetPackageFullName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetPackageFullName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetPackageFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetPackageFamilyName;
 
         [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_PACKAGE_ARCHITECTURE2*, int> GetArchitecture2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPX_PACKAGE_ARCHITECTURE2*, int> GetArchitecture2;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, Guid*, void**, int>)(lpVtbl[0]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, uint>)(lpVtbl[1]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, uint>)(lpVtbl[1]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, uint>)(lpVtbl[2]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, uint>)(lpVtbl[2]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.QueryCancel"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(3)]
     public HRESULT QueryCancel([NativeTypeName("boolean *")] byte* pbCancel)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, byte*, int>)(lpVtbl[3]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), pbCancel);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, byte*, int>)(lpVtbl[3]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), pbCancel);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyPnPActivity"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(4)]
     public HRESULT NotifyPnPActivity()
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int>)(lpVtbl[4]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int>)(lpVtbl[4]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyAddProgress"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(5)]
     public HRESULT NotifyAddProgress([NativeTypeName("long")] int nCompletedSteps, [NativeTypeName("long")] int nTotalSteps)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[5]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompletedSteps, nTotalSteps);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[5]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompletedSteps, nTotalSteps);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyBlockProgress"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(6)]
     public HRESULT NotifyBlockProgress([NativeTypeName("long")] int nCompleted, [NativeTypeName("long")] int nTotal)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[6]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompleted, nTotal);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[6]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCompleted, nTotal);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyTrackProgress"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(7)]
     public HRESULT NotifyTrackProgress([NativeTypeName("long")] int nCurrentTrack, [NativeTypeName("long")] int nTotalTracks)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[7]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCurrentTrack, nTotalTracks);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int, int, int>)(lpVtbl[7]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nCurrentTrack, nTotalTracks);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyPreparingBurn"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(8)]
     public HRESULT NotifyPreparingBurn([NativeTypeName("long")] int nEstimatedSeconds)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int>)(lpVtbl[8]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int, int>)(lpVtbl[8]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyClosingDisc"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(9)]
     public HRESULT NotifyClosingDisc([NativeTypeName("long")] int nEstimatedSeconds)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, int, int>)(lpVtbl[9]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, int, int>)(lpVtbl[9]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), nEstimatedSeconds);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyBurnComplete"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(10)]
     public HRESULT NotifyBurnComplete(HRESULT status)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[10]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[10]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
     }
 
     /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.NotifyEraseComplete"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
     [VtblIndex(11)]
     public HRESULT NotifyEraseComplete(HRESULT status)
     {
-        return ((delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[11]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IDiscMasterProgressEvents*, HRESULT, int>)(lpVtbl[11]))((IDiscMasterProgressEvents*)Unsafe.AsPointer(ref this), status);
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> QueryCancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> QueryCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NotifyPnPActivity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NotifyPnPActivity;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> NotifyAddProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> NotifyAddProgress;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> NotifyBlockProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> NotifyBlockProgress;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> NotifyTrackProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> NotifyTrackProgress;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> NotifyPreparingBurn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> NotifyPreparingBurn;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> NotifyClosingDisc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> NotifyClosingDisc;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> NotifyBurnComplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> NotifyBurnComplete;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> NotifyEraseComplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> NotifyEraseComplete;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, Guid*, void**, int>)(lpVtbl[0]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, Guid*, void**, int>)(lpVtbl[0]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, uint>)(lpVtbl[1]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, uint>)(lpVtbl[1]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, uint>)(lpVtbl[2]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, uint>)(lpVtbl[2]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.RegisterAsChild"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [VtblIndex(3)]
     public HRESULT RegisterAsChild(HANDLE processHandle)
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
     }
 
     /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.GroupChildWithParent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [VtblIndex(4)]
     public HRESULT GroupChildWithParent(HANDLE childProcessHandle)
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
     }
 
     /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.UngroupChildFromParent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
     [VtblIndex(5)]
     public HRESULT UngroupChildFromParent(HANDLE childProcessHandle)
     {
-        return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
+        return ((delegate* unmanaged[MemberFunction]<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[5]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> RegisterAsChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> RegisterAsChild;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> GroupChildWithParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> GroupChildWithParent;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> UngroupChildFromParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> UngroupChildFromParent;
     }
 }

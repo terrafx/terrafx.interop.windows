@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, uint>)(lpVtbl[1]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, uint>)(lpVtbl[1]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, uint>)(lpVtbl[2]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, uint>)(lpVtbl[2]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetName" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, char*, int>)(lpVtbl[6]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, char*, int>)(lpVtbl[6]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
     /// <inheritdoc cref="ID3D12VideoDecoderHeap.GetDesc" />
@@ -92,8 +92,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(8)]
     public D3D12_VIDEO_DECODER_HEAP_DESC GetDesc()
     {
-        D3D12_VIDEO_DECODER_HEAP_DESC result;
-        return *((delegate* unmanaged<ID3D12VideoDecoderHeap1*, D3D12_VIDEO_DECODER_HEAP_DESC*, D3D12_VIDEO_DECODER_HEAP_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, D3D12_VIDEO_DECODER_HEAP_DESC>)(lpVtbl[8]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12VideoDecoderHeap1.xml' path='doc/member[@name="ID3D12VideoDecoderHeap1.GetProtectedResourceSession"]/*' />
@@ -101,7 +100,7 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
     [VtblIndex(9)]
     public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
     {
-        return ((delegate* unmanaged<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoDecoderHeap1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoderHeap1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
     }
 
     public interface Interface : ID3D12VideoDecoderHeap.Interface
@@ -114,33 +113,33 @@ public unsafe partial struct ID3D12VideoDecoderHeap1 : ID3D12VideoDecoderHeap1.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_VIDEO_DECODER_HEAP_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_VIDEO_DECODER_HEAP_DESC*, D3D12_VIDEO_DECODER_HEAP_DESC*> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_VIDEO_DECODER_HEAP_DESC> GetDesc;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetProtectedResourceSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetProtectedResourceSession;
     }
 }

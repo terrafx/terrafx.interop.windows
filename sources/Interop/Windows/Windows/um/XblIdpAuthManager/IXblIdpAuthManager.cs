@@ -25,7 +25,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, uint>)(lpVtbl[1]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, uint>)(lpVtbl[1]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, uint>)(lpVtbl[2]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, uint>)(lpVtbl[2]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.SetGamerAccount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(3)]
     public HRESULT SetGamerAccount([NativeTypeName("LPCWSTR")] char* msaAccountId, [NativeTypeName("LPCWSTR")] char* xuid)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char*, char*, int>)(lpVtbl[3]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char*, char*, int>)(lpVtbl[3]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetGamerAccount"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(4)]
     public HRESULT GetGamerAccount([NativeTypeName("LPWSTR *")] char** msaAccountId, [NativeTypeName("LPWSTR *")] char** xuid)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char**, char**, int>)(lpVtbl[4]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char**, char**, int>)(lpVtbl[4]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.SetAppViewInitialized"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(5)]
     public HRESULT SetAppViewInitialized([NativeTypeName("LPCWSTR")] char* appSid, [NativeTypeName("LPCWSTR")] char* msaAccountId)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char*, char*, int>)(lpVtbl[5]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), appSid, msaAccountId);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char*, char*, int>)(lpVtbl[5]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), appSid, msaAccountId);
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetEnvironment"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(6)]
     public HRESULT GetEnvironment([NativeTypeName("LPWSTR *")] char** environment)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char**, int>)(lpVtbl[6]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), environment);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char**, int>)(lpVtbl[6]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), environment);
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetSandbox"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(7)]
     public HRESULT GetSandbox([NativeTypeName("LPWSTR *")] char** sandbox)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char**, int>)(lpVtbl[7]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), sandbox);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char**, int>)(lpVtbl[7]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), sandbox);
     }
 
     /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetTokenAndSignatureWithTokenResult"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
     [VtblIndex(8)]
     public HRESULT GetTokenAndSignatureWithTokenResult([NativeTypeName("LPCWSTR")] char* msaAccountId, [NativeTypeName("LPCWSTR")] char* appSid, [NativeTypeName("LPCWSTR")] char* msaTarget, [NativeTypeName("LPCWSTR")] char* msaPolicy, [NativeTypeName("LPCWSTR")] char* httpMethod, [NativeTypeName("LPCWSTR")] char* uri, [NativeTypeName("LPCWSTR")] char* headers, byte* body, [NativeTypeName("DWORD")] uint bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager*, char*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int>)(lpVtbl[8]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager*, char*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int>)(lpVtbl[8]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetGamerAccount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetGamerAccount;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, char**, int> GetGamerAccount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, char**, int> GetGamerAccount;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetAppViewInitialized;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetAppViewInitialized;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetEnvironment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetEnvironment;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetSandbox;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSandbox;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, BYTE *, DWORD, BOOL, IXblIdpAuthTokenResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int> GetTokenAndSignatureWithTokenResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int> GetTokenAndSignatureWithTokenResult;
     }
 }

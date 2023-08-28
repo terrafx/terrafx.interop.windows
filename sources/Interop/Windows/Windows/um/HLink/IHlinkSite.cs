@@ -25,7 +25,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHlinkSite*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint>)(lpVtbl[1]))((IHlinkSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint>)(lpVtbl[1]))((IHlinkSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint>)(lpVtbl[2]))((IHlinkSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint>)(lpVtbl[2]))((IHlinkSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.QueryService"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryService([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunk)
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[3]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, guidService, riid, ppiunk);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[3]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, guidService, riid, ppiunk);
     }
 
     /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.GetMoniker"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhich, IMoniker** ppimk)
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwAssign, dwWhich, ppimk);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwAssign, dwWhich, ppimk);
     }
 
     /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.ReadyToNavigate"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT ReadyToNavigate([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint, uint, int>)(lpVtbl[5]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint, uint, int>)(lpVtbl[5]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwReserved);
     }
 
     /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.OnNavigationComplete"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] char* pwzError)
     {
-        return ((delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, char*, int>)(lpVtbl[6]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwreserved, hrError, pwzError);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkSite*, uint, uint, HRESULT, char*, int>)(lpVtbl[6]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwreserved, hrError, pwzError);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> QueryService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, IUnknown**, int> QueryService;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> ReadyToNavigate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> ReadyToNavigate;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, HRESULT, char*, int> OnNavigationComplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, HRESULT, char*, int> OnNavigationComplete;
     }
 }

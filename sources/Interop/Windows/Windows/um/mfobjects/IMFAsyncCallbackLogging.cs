@@ -27,7 +27,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[1]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, uint>)(lpVtbl[1]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[2]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, uint>)(lpVtbl[2]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFAsyncCallback.GetParameters" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [VtblIndex(3)]
     public HRESULT GetParameters([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwQueue)
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint*, uint*, int>)(lpVtbl[3]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pdwFlags, pdwQueue);
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, uint*, uint*, int>)(lpVtbl[3]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pdwFlags, pdwQueue);
     }
 
     /// <inheritdoc cref="IMFAsyncCallback.Invoke" />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [VtblIndex(4)]
     public HRESULT Invoke(IMFAsyncResult* pAsyncResult)
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pAsyncResult);
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pAsyncResult);
     }
 
     /// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging.GetObjectPointer"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [VtblIndex(5)]
     public void* GetObjectPointer()
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, void*>)(lpVtbl[5]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, void*>)(lpVtbl[5]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging.GetObjectTag"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
     [return: NativeTypeName("DWORD")]
     public uint GetObjectTag()
     {
-        return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[6]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAsyncCallbackLogging*, uint>)(lpVtbl[6]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFAsyncCallback.Interface
@@ -95,24 +95,24 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetParameters;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, int> Invoke;
 
         [NativeTypeName("void *() __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetObjectPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetObjectPointer;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetObjectTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetObjectTag;
     }
 }

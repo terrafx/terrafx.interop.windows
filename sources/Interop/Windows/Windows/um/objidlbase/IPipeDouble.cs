@@ -25,7 +25,7 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPipeDouble*, Guid*, void**, int>)(lpVtbl[0]))((IPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPipeDouble*, Guid*, void**, int>)(lpVtbl[0]))((IPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPipeDouble*, uint>)(lpVtbl[1]))((IPipeDouble*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPipeDouble*, uint>)(lpVtbl[1]))((IPipeDouble*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPipeDouble*, uint>)(lpVtbl[2]))((IPipeDouble*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPipeDouble*, uint>)(lpVtbl[2]))((IPipeDouble*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPipeDouble.xml' path='doc/member[@name="IPipeDouble.Pull"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Pull(double* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned)
     {
-        return ((delegate* unmanaged<IPipeDouble*, double*, uint, uint*, int>)(lpVtbl[3]))((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
+        return ((delegate* unmanaged[MemberFunction]<IPipeDouble*, double*, uint, uint*, int>)(lpVtbl[3]))((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
     }
 
     /// <include file='IPipeDouble.xml' path='doc/member[@name="IPipeDouble.Push"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Push(double* buf, [NativeTypeName("ULONG")] uint cSent)
     {
-        return ((delegate* unmanaged<IPipeDouble*, double*, uint, int>)(lpVtbl[4]))((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
+        return ((delegate* unmanaged[MemberFunction]<IPipeDouble*, double*, uint, int>)(lpVtbl[4]))((IPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPipeDouble : IPipeDouble.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, uint*, int> Pull;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, uint*, int> Pull;
 
         [NativeTypeName("HRESULT (DOUBLE *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> Push;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> Push;
     }
 }

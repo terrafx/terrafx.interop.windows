@@ -25,7 +25,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, uint>)(lpVtbl[1]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, uint>)(lpVtbl[1]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, uint>)(lpVtbl[2]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, uint>)(lpVtbl[2]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWbemObjectSink.Indicate" />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(3)]
     public HRESULT Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lObjectCount, apObjArray);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lObjectCount, apObjArray);
     }
 
     /// <inheritdoc cref="IWbemObjectSink.SetStatus" />
@@ -59,7 +59,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] char* strParam, IWbemClassObject* pObjParam)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, int, HRESULT, char*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, int, HRESULT, char*, IWbemClassObject*, int>)(lpVtbl[4]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), lFlags, hResult, strParam, pObjParam);
     }
 
     /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteMessage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(5)]
     public HRESULT WriteMessage([NativeTypeName("ULONG")] uint uChannel, [NativeTypeName("const BSTR")] char* strMessage)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, uint, char*, int>)(lpVtbl[5]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), uChannel, strMessage);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, uint, char*, int>)(lpVtbl[5]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), uChannel, strMessage);
     }
 
     /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteError"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(6)]
     public HRESULT WriteError(IWbemClassObject* pObjError, [NativeTypeName("unsigned char *")] byte* puReturned)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, IWbemClassObject*, byte*, int>)(lpVtbl[6]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), pObjError, puReturned);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, IWbemClassObject*, byte*, int>)(lpVtbl[6]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), pObjError, puReturned);
     }
 
     /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.PromptUser"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(7)]
     public HRESULT PromptUser([NativeTypeName("const BSTR")] char* strMessage, [NativeTypeName("unsigned char")] byte uPromptType, [NativeTypeName("unsigned char *")] byte* puReturned)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, char*, byte, byte*, int>)(lpVtbl[7]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strMessage, uPromptType, puReturned);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, char*, byte, byte*, int>)(lpVtbl[7]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strMessage, uPromptType, puReturned);
     }
 
     /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteProgress"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(8)]
     public HRESULT WriteProgress([NativeTypeName("const BSTR")] char* strActivity, [NativeTypeName("const BSTR")] char* strCurrentOperation, [NativeTypeName("const BSTR")] char* strStatusDescription, [NativeTypeName("ULONG")] uint uPercentComplete, [NativeTypeName("ULONG")] uint uSecondsRemaining)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, char*, char*, char*, uint, uint, int>)(lpVtbl[8]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strActivity, strCurrentOperation, strStatusDescription, uPercentComplete, uSecondsRemaining);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, char*, char*, char*, uint, uint, int>)(lpVtbl[8]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strActivity, strCurrentOperation, strStatusDescription, uPercentComplete, uSecondsRemaining);
     }
 
     /// <include file='IWbemObjectSinkEx.xml' path='doc/member[@name="IWbemObjectSinkEx.WriteStreamParameter"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
     [VtblIndex(9)]
     public HRESULT WriteStreamParameter([NativeTypeName("const BSTR")] char* strName, VARIANT* vtValue, [NativeTypeName("ULONG")] uint ulType, [NativeTypeName("ULONG")] uint ulFlags)
     {
-        return ((delegate* unmanaged<IWbemObjectSinkEx*, char*, VARIANT*, uint, uint, int>)(lpVtbl[9]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strName, vtValue, ulType, ulFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemObjectSinkEx*, char*, VARIANT*, uint, uint, int>)(lpVtbl[9]))((IWbemObjectSinkEx*)Unsafe.AsPointer(ref this), strName, vtValue, ulType, ulFlags);
     }
 
     public interface Interface : IWbemObjectSink.Interface
@@ -124,33 +124,33 @@ public unsafe partial struct IWbemObjectSinkEx : IWbemObjectSinkEx.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> Indicate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IWbemClassObject**, int> Indicate;
 
         [NativeTypeName("HRESULT (long, HRESULT, BSTR, IWbemClassObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, HRESULT, char*, IWbemClassObject*, int> SetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, HRESULT, char*, IWbemClassObject*, int> SetStatus;
 
         [NativeTypeName("HRESULT (ULONG, const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> WriteMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> WriteMessage;
 
         [NativeTypeName("HRESULT (IWbemClassObject *, unsigned char *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemClassObject*, byte*, int> WriteError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemClassObject*, byte*, int> WriteError;
 
         [NativeTypeName("HRESULT (const BSTR, unsigned char, unsigned char *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte, byte*, int> PromptUser;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte, byte*, int> PromptUser;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, const BSTR, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, uint, uint, int> WriteProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, uint, uint, int> WriteProgress;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT *, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, uint, uint, int> WriteStreamParameter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, uint, uint, int> WriteStreamParameter;
     }
 }

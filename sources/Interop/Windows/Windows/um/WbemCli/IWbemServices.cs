@@ -25,7 +25,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemServices*, Guid*, void**, int>)(lpVtbl[0]))((IWbemServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, Guid*, void**, int>)(lpVtbl[0]))((IWbemServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemServices*, uint>)(lpVtbl[1]))((IWbemServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, uint>)(lpVtbl[1]))((IWbemServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemServices*, uint>)(lpVtbl[2]))((IWbemServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, uint>)(lpVtbl[2]))((IWbemServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.OpenNamespace"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT OpenNamespace([NativeTypeName("const BSTR")] char* strNamespace, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemServices** ppWorkingNamespace, IWbemCallResult** ppResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemServices**, IWbemCallResult**, int>)(lpVtbl[3]))((IWbemServices*)Unsafe.AsPointer(ref this), strNamespace, lFlags, pCtx, ppWorkingNamespace, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemServices**, IWbemCallResult**, int>)(lpVtbl[3]))((IWbemServices*)Unsafe.AsPointer(ref this), strNamespace, lFlags, pCtx, ppWorkingNamespace, ppResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.CancelAsyncCall"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT CancelAsyncCall(IWbemObjectSink* pSink)
     {
-        return ((delegate* unmanaged<IWbemServices*, IWbemObjectSink*, int>)(lpVtbl[4]))((IWbemServices*)Unsafe.AsPointer(ref this), pSink);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, IWbemObjectSink*, int>)(lpVtbl[4]))((IWbemServices*)Unsafe.AsPointer(ref this), pSink);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.QueryObjectSink"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT QueryObjectSink([NativeTypeName("long")] int lFlags, IWbemObjectSink** ppResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, int, IWbemObjectSink**, int>)(lpVtbl[5]))((IWbemServices*)Unsafe.AsPointer(ref this), lFlags, ppResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, int, IWbemObjectSink**, int>)(lpVtbl[5]))((IWbemServices*)Unsafe.AsPointer(ref this), lFlags, ppResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.GetObjectW"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetObjectW([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject** ppObject, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemClassObject**, IWbemCallResult**, int>)(lpVtbl[6]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, ppObject, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemClassObject**, IWbemCallResult**, int>)(lpVtbl[6]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, ppObject, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.GetObjectAsync"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetObjectAsync([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[7]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[7]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.PutClass"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT PutClass(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[8]))((IWbemServices*)Unsafe.AsPointer(ref this), pObject, lFlags, pCtx, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[8]))((IWbemServices*)Unsafe.AsPointer(ref this), pObject, lFlags, pCtx, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.PutClassAsync"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT PutClassAsync(IWbemClassObject* pObject, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[9]))((IWbemServices*)Unsafe.AsPointer(ref this), pObject, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[9]))((IWbemServices*)Unsafe.AsPointer(ref this), pObject, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.DeleteClass"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT DeleteClass([NativeTypeName("const BSTR")] char* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[10]))((IWbemServices*)Unsafe.AsPointer(ref this), strClass, lFlags, pCtx, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[10]))((IWbemServices*)Unsafe.AsPointer(ref this), strClass, lFlags, pCtx, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.DeleteClassAsync"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT DeleteClassAsync([NativeTypeName("const BSTR")] char* strClass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[11]))((IWbemServices*)Unsafe.AsPointer(ref this), strClass, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[11]))((IWbemServices*)Unsafe.AsPointer(ref this), strClass, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.CreateClassEnum"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT CreateClassEnum([NativeTypeName("const BSTR")] char* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[12]))((IWbemServices*)Unsafe.AsPointer(ref this), strSuperclass, lFlags, pCtx, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[12]))((IWbemServices*)Unsafe.AsPointer(ref this), strSuperclass, lFlags, pCtx, ppEnum);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.CreateClassEnumAsync"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT CreateClassEnumAsync([NativeTypeName("const BSTR")] char* strSuperclass, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[13]))((IWbemServices*)Unsafe.AsPointer(ref this), strSuperclass, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[13]))((IWbemServices*)Unsafe.AsPointer(ref this), strSuperclass, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.PutInstance"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT PutInstance(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[14]))((IWbemServices*)Unsafe.AsPointer(ref this), pInst, lFlags, pCtx, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[14]))((IWbemServices*)Unsafe.AsPointer(ref this), pInst, lFlags, pCtx, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.PutInstanceAsync"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT PutInstanceAsync(IWbemClassObject* pInst, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[15]))((IWbemServices*)Unsafe.AsPointer(ref this), pInst, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[15]))((IWbemServices*)Unsafe.AsPointer(ref this), pInst, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.DeleteInstance"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT DeleteInstance([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[16]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemCallResult**, int>)(lpVtbl[16]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.DeleteInstanceAsync"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT DeleteInstanceAsync([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[17]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[17]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.CreateInstanceEnum"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT CreateInstanceEnum([NativeTypeName("const BSTR")] char* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[18]))((IWbemServices*)Unsafe.AsPointer(ref this), strFilter, lFlags, pCtx, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[18]))((IWbemServices*)Unsafe.AsPointer(ref this), strFilter, lFlags, pCtx, ppEnum);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.CreateInstanceEnumAsync"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT CreateInstanceEnumAsync([NativeTypeName("const BSTR")] char* strFilter, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[19]))((IWbemServices*)Unsafe.AsPointer(ref this), strFilter, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[19]))((IWbemServices*)Unsafe.AsPointer(ref this), strFilter, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecQuery"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(20)]
     public HRESULT ExecQuery([NativeTypeName("const BSTR")] char* strQueryLanguage, [NativeTypeName("const BSTR")] char* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[20]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[20]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecQueryAsync"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(21)]
     public HRESULT ExecQueryAsync([NativeTypeName("const BSTR")] char* strQueryLanguage, [NativeTypeName("const BSTR")] char* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[21]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[21]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecNotificationQuery"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(22)]
     public HRESULT ExecNotificationQuery([NativeTypeName("const BSTR")] char* strQueryLanguage, [NativeTypeName("const BSTR")] char* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IEnumWbemClassObject** ppEnum)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[22]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int>)(lpVtbl[22]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, ppEnum);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecNotificationQueryAsync"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(23)]
     public HRESULT ExecNotificationQueryAsync([NativeTypeName("const BSTR")] char* strQueryLanguage, [NativeTypeName("const BSTR")] char* strQuery, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[23]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int>)(lpVtbl[23]))((IWbemServices*)Unsafe.AsPointer(ref this), strQueryLanguage, strQuery, lFlags, pCtx, pResponseHandler);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecMethod"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(24)]
     public HRESULT ExecMethod([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("const BSTR")] char* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemClassObject** ppOutParams, IWbemCallResult** ppCallResult)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemClassObject**, IWbemCallResult**, int>)(lpVtbl[24]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, ppOutParams, ppCallResult);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemClassObject**, IWbemCallResult**, int>)(lpVtbl[24]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, ppOutParams, ppCallResult);
     }
 
     /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.ExecMethodAsync"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
     [VtblIndex(25)]
     public HRESULT ExecMethodAsync([NativeTypeName("const BSTR")] char* strObjectPath, [NativeTypeName("const BSTR")] char* strMethodName, [NativeTypeName("long")] int lFlags, IWbemContext* pCtx, IWbemClassObject* pInParams, IWbemObjectSink* pResponseHandler)
     {
-        return ((delegate* unmanaged<IWbemServices*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int>)(lpVtbl[25]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, pResponseHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWbemServices*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int>)(lpVtbl[25]))((IWbemServices*)Unsafe.AsPointer(ref this), strObjectPath, strMethodName, lFlags, pCtx, pInParams, pResponseHandler);
     }
 
     public interface Interface : IUnknown.Interface
@@ -306,81 +306,81 @@ public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemServices **, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemServices**, IWbemCallResult**, int> OpenNamespace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemServices**, IWbemCallResult**, int> OpenNamespace;
 
         [NativeTypeName("HRESULT (IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemObjectSink*, int> CancelAsyncCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemObjectSink*, int> CancelAsyncCall;
 
         [NativeTypeName("HRESULT (long, IWbemObjectSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IWbemObjectSink**, int> QueryObjectSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IWbemObjectSink**, int> QueryObjectSink;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemClassObject **, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemClassObject**, IWbemCallResult**, int> GetObjectW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemClassObject**, IWbemCallResult**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> GetObjectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> GetObjectAsync;
 
         [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutClass;
 
         [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutClassAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutClassAsync;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemCallResult**, int> DeleteClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemCallResult**, int> DeleteClass;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> DeleteClassAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> DeleteClassAsync;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateClassEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateClassEnum;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> CreateClassEnumAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> CreateClassEnumAsync;
 
         [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemCallResult**, int> PutInstance;
 
         [NativeTypeName("HRESULT (IWbemClassObject *, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutInstanceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemClassObject*, int, IWbemContext*, IWbemObjectSink*, int> PutInstanceAsync;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemCallResult**, int> DeleteInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemCallResult**, int> DeleteInstance;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> DeleteInstanceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> DeleteInstanceAsync;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateInstanceEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> CreateInstanceEnum;
 
         [NativeTypeName("HRESULT (const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> CreateInstanceEnumAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, IWbemContext*, IWbemObjectSink*, int> CreateInstanceEnumAsync;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecQuery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecQuery;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int> ExecQueryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int> ExecQueryAsync;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecNotificationQuery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IEnumWbemClassObject**, int> ExecNotificationQuery;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int> ExecNotificationQueryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IWbemObjectSink*, int> ExecNotificationQueryAsync;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemClassObject *, IWbemClassObject **, IWbemCallResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemClassObject**, IWbemCallResult**, int> ExecMethod;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemClassObject**, IWbemCallResult**, int> ExecMethod;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, long, IWbemContext *, IWbemClassObject *, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int> ExecMethodAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int, IWbemContext*, IWbemClassObject*, IWbemObjectSink*, int> ExecMethodAsync;
     }
 }

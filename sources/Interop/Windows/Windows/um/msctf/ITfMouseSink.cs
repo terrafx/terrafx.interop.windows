@@ -25,7 +25,7 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfMouseSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfMouseSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfMouseSink*, uint>)(lpVtbl[1]))((ITfMouseSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMouseSink*, uint>)(lpVtbl[1]))((ITfMouseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfMouseSink*, uint>)(lpVtbl[2]))((ITfMouseSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfMouseSink*, uint>)(lpVtbl[2]))((ITfMouseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfMouseSink.xml' path='doc/member[@name="ITfMouseSink.OnMouseEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfMouseSink*, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMouseSink*)Unsafe.AsPointer(ref this), uEdge, uQuadrant, dwBtnStatus, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfMouseSink*, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMouseSink*)Unsafe.AsPointer(ref this), uEdge, uQuadrant, dwBtnStatus, pfEaten);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, BOOL*, int> OnMouseEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, BOOL*, int> OnMouseEvent;
     }
 }

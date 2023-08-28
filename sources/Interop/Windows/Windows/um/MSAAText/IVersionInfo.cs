@@ -25,7 +25,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVersionInfo*, Guid*, void**, int>)(lpVtbl[0]))((IVersionInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, Guid*, void**, int>)(lpVtbl[0]))((IVersionInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint>)(lpVtbl[1]))((IVersionInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint>)(lpVtbl[1]))((IVersionInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint>)(lpVtbl[2]))((IVersionInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint>)(lpVtbl[2]))((IVersionInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetSubcomponentCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetSubcomponentCount([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("ULONG *")] uint* ulCount)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, uint*, int>)(lpVtbl[3]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint, uint*, int>)(lpVtbl[3]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, ulCount);
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetImplementationID"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetImplementationID([NativeTypeName("ULONG")] uint ulSub, Guid* implid)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, Guid*, int>)(lpVtbl[4]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, implid);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint, Guid*, int>)(lpVtbl[4]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, implid);
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetBuildVersion"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetBuildVersion([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("DWORD *")] uint* pdwMajor, [NativeTypeName("DWORD *")] uint* pdwMinor)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, uint*, uint*, int>)(lpVtbl[5]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pdwMajor, pdwMinor);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint, uint*, uint*, int>)(lpVtbl[5]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pdwMajor, pdwMinor);
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetComponentDescription"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetComponentDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, char**, int>)(lpVtbl[6]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint, char**, int>)(lpVtbl[6]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
     }
 
     /// <include file='IVersionInfo.xml' path='doc/member[@name="IVersionInfo.GetInstanceDescription"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] char** pImplStr)
     {
-        return ((delegate* unmanaged<IVersionInfo*, uint, char**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
+        return ((delegate* unmanaged[MemberFunction]<IVersionInfo*, uint, char**, int>)(lpVtbl[7]))((IVersionInfo*)Unsafe.AsPointer(ref this), ulSub, pImplStr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetSubcomponentCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetSubcomponentCount;
 
         [NativeTypeName("HRESULT (ULONG, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetImplementationID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetImplementationID;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetBuildVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> GetBuildVersion;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> GetComponentDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetComponentDescription;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> GetInstanceDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetInstanceDescription;
     }
 }

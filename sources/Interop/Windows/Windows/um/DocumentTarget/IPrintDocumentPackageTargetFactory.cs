@@ -27,7 +27,7 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTargetFactory*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, uint>)(lpVtbl[1]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTargetFactory*, uint>)(lpVtbl[1]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, uint>)(lpVtbl[2]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTargetFactory*, uint>)(lpVtbl[2]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDocumentPackageTargetFactory.xml' path='doc/member[@name="IPrintDocumentPackageTargetFactory.CreateDocumentPackageTargetForPrintJob"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
     [VtblIndex(3)]
     public HRESULT CreateDocumentPackageTargetForPrintJob([NativeTypeName("LPCWSTR")] char* printerName, [NativeTypeName("LPCWSTR")] char* jobName, IStream* jobOutputStream, IStream* jobPrintTicketStream, IPrintDocumentPackageTarget** docPackageTarget)
     {
-        return ((delegate* unmanaged<IPrintDocumentPackageTargetFactory*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int>)(lpVtbl[3]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDocumentPackageTargetFactory*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int>)(lpVtbl[3]))((IPrintDocumentPackageTargetFactory*)Unsafe.AsPointer(ref this), printerName, jobName, jobOutputStream, jobPrintTicketStream, docPackageTarget);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IPrintDocumentPackageTargetFactory : IPrintDocument
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IStream *, IStream *, IPrintDocumentPackageTarget **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int> CreateDocumentPackageTargetForPrintJob;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, IStream*, IStream*, IPrintDocumentPackageTarget**, int> CreateDocumentPackageTargetForPrintJob;
     }
 }

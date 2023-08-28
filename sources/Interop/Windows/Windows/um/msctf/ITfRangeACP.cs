@@ -25,7 +25,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfRangeACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfRangeACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint>)(lpVtbl[1]))((ITfRangeACP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint>)(lpVtbl[1]))((ITfRangeACP*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint>)(lpVtbl[2]))((ITfRangeACP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint>)(lpVtbl[2]))((ITfRangeACP*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfRange.GetText" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pcch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, char*, uint, uint*, int>)(lpVtbl[3]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, uint, char*, uint, uint*, int>)(lpVtbl[3]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cchMax, pcch);
     }
 
     /// <inheritdoc cref="ITfRange.SetText" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetText([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("LONG")] int cch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, char*, int, int>)(lpVtbl[4]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, uint, char*, int, int>)(lpVtbl[4]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pchText, cch);
     }
 
     /// <inheritdoc cref="ITfRange.GetFormattedText" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetFormattedText([NativeTypeName("TfEditCookie")] uint ec, IDataObject** ppDataObject)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, IDataObject**, int>)(lpVtbl[5]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, ppDataObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, IDataObject**, int>)(lpVtbl[5]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, ppDataObject);
     }
 
     /// <inheritdoc cref="ITfRange.GetEmbedded" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetEmbedded([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[6]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, rguidService, riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[6]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, rguidService, riid, ppunk);
     }
 
     /// <inheritdoc cref="ITfRange.InsertEmbedded" />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT InsertEmbedded([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, IDataObject*, int>)(lpVtbl[7]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pDataObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, uint, IDataObject*, int>)(lpVtbl[7]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dwFlags, pDataObject);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftStart" />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT ShiftStart([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, [NativeTypeName("const TF_HALTCOND *")] TF_HALTCOND* pHalt)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int>)(lpVtbl[8]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchReq, pcch, pHalt);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int>)(lpVtbl[8]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchReq, pcch, pHalt);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftEnd" />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT ShiftEnd([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, [NativeTypeName("const TF_HALTCOND *")] TF_HALTCOND* pHalt)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int>)(lpVtbl[9]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchReq, pcch, pHalt);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, int, int*, TF_HALTCOND*, int>)(lpVtbl[9]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchReq, pcch, pHalt);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftStartToRange" />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT ShiftStartToRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, TfAnchor aPos)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int>)(lpVtbl[10]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pRange, aPos);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, int>)(lpVtbl[10]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pRange, aPos);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftEndToRange" />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT ShiftEndToRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, TfAnchor aPos)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int>)(lpVtbl[11]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pRange, aPos);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, int>)(lpVtbl[11]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pRange, aPos);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftStartRegion" />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT ShiftStartRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[12]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[12]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
     }
 
     /// <inheritdoc cref="ITfRange.ShiftEndRegion" />
@@ -131,7 +131,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT ShiftEndRegion([NativeTypeName("TfEditCookie")] uint ec, TfShiftDir dir, BOOL* pfNoRegion)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[13]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, TfShiftDir, BOOL*, int>)(lpVtbl[13]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, dir, pfNoRegion);
     }
 
     /// <inheritdoc cref="ITfRange.IsEmpty" />
@@ -139,7 +139,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT IsEmpty([NativeTypeName("TfEditCookie")] uint ec, BOOL* pfEmpty)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, BOOL*, int>)(lpVtbl[14]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pfEmpty);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, BOOL*, int>)(lpVtbl[14]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pfEmpty);
     }
 
     /// <inheritdoc cref="ITfRange.Collapse" />
@@ -147,7 +147,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT Collapse([NativeTypeName("TfEditCookie")] uint ec, TfAnchor aPos)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, TfAnchor, int>)(lpVtbl[15]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, aPos);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, TfAnchor, int>)(lpVtbl[15]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, aPos);
     }
 
     /// <inheritdoc cref="ITfRange.IsEqualStart" />
@@ -155,7 +155,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT IsEqualStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[16]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[16]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
     }
 
     /// <inheritdoc cref="ITfRange.IsEqualEnd" />
@@ -163,7 +163,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT IsEqualEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, BOOL* pfEqual)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[17]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, BOOL*, int>)(lpVtbl[17]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, pfEqual);
     }
 
     /// <inheritdoc cref="ITfRange.CompareStart" />
@@ -171,7 +171,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT CompareStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("LONG *")] int* plResult)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[18]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, plResult);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[18]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, plResult);
     }
 
     /// <inheritdoc cref="ITfRange.CompareEnd" />
@@ -179,7 +179,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT CompareEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pWith, TfAnchor aPos, [NativeTypeName("LONG *")] int* plResult)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[19]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, plResult);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, ITfRange*, TfAnchor, int*, int>)(lpVtbl[19]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, pWith, aPos, plResult);
     }
 
     /// <inheritdoc cref="ITfRange.AdjustForInsert" />
@@ -187,7 +187,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT AdjustForInsert([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint cchInsert, BOOL* pfInsertOk)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, uint, BOOL*, int>)(lpVtbl[20]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchInsert, pfInsertOk);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, uint, BOOL*, int>)(lpVtbl[20]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, cchInsert, pfInsertOk);
     }
 
     /// <inheritdoc cref="ITfRange.GetGravity" />
@@ -195,7 +195,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT GetGravity(TfGravity* pgStart, TfGravity* pgEnd)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, TfGravity*, TfGravity*, int>)(lpVtbl[21]))((ITfRangeACP*)Unsafe.AsPointer(ref this), pgStart, pgEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, TfGravity*, TfGravity*, int>)(lpVtbl[21]))((ITfRangeACP*)Unsafe.AsPointer(ref this), pgStart, pgEnd);
     }
 
     /// <inheritdoc cref="ITfRange.SetGravity" />
@@ -203,7 +203,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT SetGravity([NativeTypeName("TfEditCookie")] uint ec, TfGravity gStart, TfGravity gEnd)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, uint, TfGravity, TfGravity, int>)(lpVtbl[22]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, gStart, gEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, uint, TfGravity, TfGravity, int>)(lpVtbl[22]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ec, gStart, gEnd);
     }
 
     /// <inheritdoc cref="ITfRange.Clone" />
@@ -211,7 +211,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT Clone(ITfRange** ppClone)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, ITfRange**, int>)(lpVtbl[23]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ppClone);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, ITfRange**, int>)(lpVtbl[23]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ppClone);
     }
 
     /// <inheritdoc cref="ITfRange.GetContext" />
@@ -219,7 +219,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT GetContext(ITfContext** ppContext)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, ITfContext**, int>)(lpVtbl[24]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ppContext);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, ITfContext**, int>)(lpVtbl[24]))((ITfRangeACP*)Unsafe.AsPointer(ref this), ppContext);
     }
 
     /// <include file='ITfRangeACP.xml' path='doc/member[@name="ITfRangeACP.GetExtent"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT GetExtent([NativeTypeName("LONG *")] int* pacpAnchor, [NativeTypeName("LONG *")] int* pcch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, int*, int*, int>)(lpVtbl[25]))((ITfRangeACP*)Unsafe.AsPointer(ref this), pacpAnchor, pcch);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, int*, int*, int>)(lpVtbl[25]))((ITfRangeACP*)Unsafe.AsPointer(ref this), pacpAnchor, pcch);
     }
 
     /// <include file='ITfRangeACP.xml' path='doc/member[@name="ITfRangeACP.SetExtent"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT SetExtent([NativeTypeName("LONG")] int acpAnchor, [NativeTypeName("LONG")] int cch)
     {
-        return ((delegate* unmanaged<ITfRangeACP*, int, int, int>)(lpVtbl[26]))((ITfRangeACP*)Unsafe.AsPointer(ref this), acpAnchor, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeACP*, int, int, int>)(lpVtbl[26]))((ITfRangeACP*)Unsafe.AsPointer(ref this), acpAnchor, cch);
     }
 
     public interface Interface : ITfRange.Interface
@@ -251,84 +251,84 @@ public unsafe partial struct ITfRangeACP : ITfRangeACP.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, WCHAR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, char*, uint, uint*, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, char*, uint, uint*, int> GetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, char*, int, int> SetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, char*, int, int> SetText;
 
         [NativeTypeName("HRESULT (TfEditCookie, IDataObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDataObject**, int> GetFormattedText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDataObject**, int> GetFormattedText;
 
         [NativeTypeName("HRESULT (TfEditCookie, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetEmbedded;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDataObject*, int> InsertEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDataObject*, int> InsertEmbedded;
 
         [NativeTypeName("HRESULT (TfEditCookie, LONG, LONG *, const TF_HALTCOND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, int*, TF_HALTCOND*, int> ShiftStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, int*, TF_HALTCOND*, int> ShiftStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, LONG, LONG *, const TF_HALTCOND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, int*, TF_HALTCOND*, int> ShiftEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, int*, TF_HALTCOND*, int> ShiftEnd;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, int> ShiftStartToRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, int> ShiftStartToRange;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, int> ShiftEndToRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, int> ShiftEndToRange;
 
         [NativeTypeName("HRESULT (TfEditCookie, TfShiftDir, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TfShiftDir, BOOL*, int> ShiftStartRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TfShiftDir, BOOL*, int> ShiftStartRegion;
 
         [NativeTypeName("HRESULT (TfEditCookie, TfShiftDir, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TfShiftDir, BOOL*, int> ShiftEndRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TfShiftDir, BOOL*, int> ShiftEndRegion;
 
         [NativeTypeName("HRESULT (TfEditCookie, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, int> IsEmpty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, int> IsEmpty;
 
         [NativeTypeName("HRESULT (TfEditCookie, TfAnchor) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TfAnchor, int> Collapse;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TfAnchor, int> Collapse;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, BOOL*, int> IsEqualEnd;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, int*, int> CompareStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, int*, int> CompareStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, TfAnchor, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, TfAnchor, int*, int> CompareEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, TfAnchor, int*, int> CompareEnd;
 
         [NativeTypeName("HRESULT (TfEditCookie, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL*, int> AdjustForInsert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, BOOL*, int> AdjustForInsert;
 
         [NativeTypeName("HRESULT (TfGravity *, TfGravity *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfGravity*, TfGravity*, int> GetGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfGravity*, TfGravity*, int> GetGravity;
 
         [NativeTypeName("HRESULT (TfEditCookie, TfGravity, TfGravity) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TfGravity, TfGravity, int> SetGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TfGravity, TfGravity, int> SetGravity;
 
         [NativeTypeName("HRESULT (ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange**, int> Clone;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext**, int> GetContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext**, int> GetContext;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetExtent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetExtent;
 
         [NativeTypeName("HRESULT (LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetExtent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetExtent;
     }
 }

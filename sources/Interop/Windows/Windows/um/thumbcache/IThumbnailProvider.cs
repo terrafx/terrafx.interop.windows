@@ -25,7 +25,7 @@ public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailProvider*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailProvider*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailProvider*, uint>)(lpVtbl[1]))((IThumbnailProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailProvider*, uint>)(lpVtbl[1]))((IThumbnailProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailProvider*, uint>)(lpVtbl[2]))((IThumbnailProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailProvider*, uint>)(lpVtbl[2]))((IThumbnailProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailProvider.xml' path='doc/member[@name="IThumbnailProvider.GetThumbnail"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface, 
     [VtblIndex(3)]
     public HRESULT GetThumbnail(uint cx, HBITMAP* phbmp, WTS_ALPHATYPE* pdwAlpha)
     {
-        return ((delegate* unmanaged<IThumbnailProvider*, uint, HBITMAP*, WTS_ALPHATYPE*, int>)(lpVtbl[3]))((IThumbnailProvider*)Unsafe.AsPointer(ref this), cx, phbmp, pdwAlpha);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailProvider*, uint, HBITMAP*, WTS_ALPHATYPE*, int>)(lpVtbl[3]))((IThumbnailProvider*)Unsafe.AsPointer(ref this), cx, phbmp, pdwAlpha);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IThumbnailProvider : IThumbnailProvider.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, HBITMAP *, WTS_ALPHATYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HBITMAP*, WTS_ALPHATYPE*, int> GetThumbnail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HBITMAP*, WTS_ALPHATYPE*, int> GetThumbnail;
     }
 }

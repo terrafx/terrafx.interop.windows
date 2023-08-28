@@ -25,7 +25,7 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleCacheControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleCacheControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleCacheControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleCacheControl*, uint>)(lpVtbl[1]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleCacheControl*, uint>)(lpVtbl[1]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleCacheControl*, uint>)(lpVtbl[2]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleCacheControl*, uint>)(lpVtbl[2]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleCacheControl.xml' path='doc/member[@name="IOleCacheControl.OnRun"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
     [VtblIndex(3)]
     public HRESULT OnRun([NativeTypeName("LPDATAOBJECT")] IDataObject* pDataObject)
     {
-        return ((delegate* unmanaged<IOleCacheControl*, IDataObject*, int>)(lpVtbl[3]))((IOleCacheControl*)Unsafe.AsPointer(ref this), pDataObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleCacheControl*, IDataObject*, int>)(lpVtbl[3]))((IOleCacheControl*)Unsafe.AsPointer(ref this), pDataObject);
     }
 
     /// <include file='IOleCacheControl.xml' path='doc/member[@name="IOleCacheControl.OnStop"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
     [VtblIndex(4)]
     public HRESULT OnStop()
     {
-        return ((delegate* unmanaged<IOleCacheControl*, int>)(lpVtbl[4]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleCacheControl*, int>)(lpVtbl[4]))((IOleCacheControl*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDATAOBJECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDataObject*, int> OnRun;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDataObject*, int> OnRun;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnStop;
     }
 }

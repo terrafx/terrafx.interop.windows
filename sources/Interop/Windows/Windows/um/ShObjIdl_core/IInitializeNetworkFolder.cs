@@ -25,7 +25,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInitializeNetworkFolder*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeNetworkFolder*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInitializeNetworkFolder*, uint>)(lpVtbl[1]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeNetworkFolder*, uint>)(lpVtbl[1]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInitializeNetworkFolder*, uint>)(lpVtbl[2]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeNetworkFolder*, uint>)(lpVtbl[2]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInitializeNetworkFolder.xml' path='doc/member[@name="IInitializeNetworkFolder.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] char* pszResName, [NativeTypeName("LPCWSTR")] char* pszProvider)
     {
-        return ((delegate* unmanaged<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int>)(lpVtbl[3]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), pidl, pidlTarget, uDisplayType, pszResName, pszProvider);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeNetworkFolder*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int>)(lpVtbl[3]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), pidl, pidlTarget, uDisplayType, pszResName, pszProvider);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPCITEMIDLIST, UINT, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, ITEMIDLIST*, uint, char*, char*, int> Initialize;
     }
 }

@@ -24,7 +24,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D12_SHADER_TYPE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, D3D12_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeByIndex"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(1)]
     public ID3D12ShaderReflectionType* GetMemberTypeByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[1]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeByName"]/*' />
@@ -40,7 +40,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(2)]
     public ID3D12ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, sbyte*, ID3D12ShaderReflectionType*>)(lpVtbl[2]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, sbyte*, ID3D12ShaderReflectionType*>)(lpVtbl[2]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetMemberTypeName"]/*' />
@@ -49,7 +49,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [return: NativeTypeName("LPCSTR")]
     public sbyte* GetMemberTypeName(uint Index)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.IsEqual"]/*' />
@@ -57,7 +57,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(4)]
     public HRESULT IsEqual(ID3D12ShaderReflectionType* pType)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[4]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[4]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetSubType"]/*' />
@@ -65,7 +65,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(5)]
     public ID3D12ShaderReflectionType* GetSubType()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[5]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[5]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetBaseClass"]/*' />
@@ -73,7 +73,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(6)]
     public ID3D12ShaderReflectionType* GetBaseClass()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[6]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)(lpVtbl[6]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetNumInterfaces"]/*' />
@@ -81,7 +81,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(7)]
     public uint GetNumInterfaces()
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint>)(lpVtbl[7]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, uint>)(lpVtbl[7]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.GetInterfaceByIndex"]/*' />
@@ -89,7 +89,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(8)]
     public ID3D12ShaderReflectionType* GetInterfaceByIndex(uint uIndex)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[8]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), uIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, uint, ID3D12ShaderReflectionType*>)(lpVtbl[8]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), uIndex);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.IsOfType"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(9)]
     public HRESULT IsOfType(ID3D12ShaderReflectionType* pType)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[9]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[9]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='ID3D12ShaderReflectionType.xml' path='doc/member[@name="ID3D12ShaderReflectionType.ImplementsInterface"]/*' />
@@ -105,7 +105,7 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
     [VtblIndex(10)]
     public HRESULT ImplementsInterface(ID3D12ShaderReflectionType* pBase)
     {
-        return ((delegate* unmanaged<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*, int>)(lpVtbl[10]))((ID3D12ShaderReflectionType*)Unsafe.AsPointer(ref this), pBase);
     }
 
     public interface Interface
@@ -149,36 +149,36 @@ public unsafe partial struct ID3D12ShaderReflectionType : ID3D12ShaderReflection
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D12_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_SHADER_TYPE_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_SHADER_TYPE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D12ShaderReflectionType*> GetMemberTypeByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D12ShaderReflectionType*> GetMemberTypeByIndex;
 
         [NativeTypeName("ID3D12ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D12ShaderReflectionType*> GetMemberTypeByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D12ShaderReflectionType*> GetMemberTypeByName;
 
         [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, sbyte*> GetMemberTypeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, sbyte*> GetMemberTypeName;
 
         [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*, int> IsEqual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*, int> IsEqual;
 
         [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*> GetSubType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*> GetSubType;
 
         [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*> GetBaseClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*> GetBaseClass;
 
         [NativeTypeName("UINT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetNumInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetNumInterfaces;
 
         [NativeTypeName("ID3D12ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D12ShaderReflectionType*> GetInterfaceByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D12ShaderReflectionType*> GetInterfaceByIndex;
 
         [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*, int> IsOfType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*, int> IsOfType;
 
         [NativeTypeName("HRESULT (ID3D12ShaderReflectionType *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*, int> ImplementsInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ShaderReflectionType*, int> ImplementsInterface;
     }
 }

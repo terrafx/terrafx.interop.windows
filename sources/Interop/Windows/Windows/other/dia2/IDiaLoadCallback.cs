@@ -25,7 +25,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, uint>)(lpVtbl[1]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, uint>)(lpVtbl[1]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, uint>)(lpVtbl[2]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, uint>)(lpVtbl[2]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaLoadCallback.xml' path='doc/member[@name="IDiaLoadCallback.NotifyDebugDir"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(3)]
     public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
     }
 
     /// <include file='IDiaLoadCallback.xml' path='doc/member[@name="IDiaLoadCallback.NotifyOpenDBG"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(4)]
     public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] char* dbgPath, HRESULT resultCode)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, char*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, char*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
     }
 
     /// <include file='IDiaLoadCallback.xml' path='doc/member[@name="IDiaLoadCallback.NotifyOpenPDB"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(5)]
     public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] char* pdbPath, HRESULT resultCode)
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, char*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, char*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
     }
 
     /// <include file='IDiaLoadCallback.xml' path='doc/member[@name="IDiaLoadCallback.RestrictRegistryAccess"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(6)]
     public HRESULT RestrictRegistryAccess()
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, int>)(lpVtbl[6]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, int>)(lpVtbl[6]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaLoadCallback.xml' path='doc/member[@name="IDiaLoadCallback.RestrictSymbolServerAccess"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
     [VtblIndex(7)]
     public HRESULT RestrictSymbolServerAccess()
     {
-        return ((delegate* unmanaged<IDiaLoadCallback*, int>)(lpVtbl[7]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLoadCallback*, int>)(lpVtbl[7]))((IDiaLoadCallback*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, uint, byte*, int> NotifyDebugDir;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, uint, byte*, int> NotifyDebugDir;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, HRESULT, int> NotifyOpenDBG;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HRESULT, int> NotifyOpenDBG;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, HRESULT, int> NotifyOpenPDB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HRESULT, int> NotifyOpenPDB;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RestrictRegistryAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RestrictRegistryAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RestrictSymbolServerAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RestrictSymbolServerAccess;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaPosition*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaPosition*, uint>)(lpVtbl[1]))((IMediaPosition*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, uint>)(lpVtbl[1]))((IMediaPosition*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaPosition*, uint>)(lpVtbl[2]))((IMediaPosition*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, uint>)(lpVtbl[2]))((IMediaPosition*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IMediaPosition*, uint*, int>)(lpVtbl[3]))((IMediaPosition*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, uint*, int>)(lpVtbl[3]))((IMediaPosition*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IMediaPosition*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaPosition*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaPosition*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IMediaPosition*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IMediaPosition*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaPosition*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaPosition*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_Duration"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_Duration([NativeTypeName("REFTIME *")] double* plength)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[7]))((IMediaPosition*)Unsafe.AsPointer(ref this), plength);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double*, int>)(lpVtbl[7]))((IMediaPosition*)Unsafe.AsPointer(ref this), plength);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_CurrentPosition"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT put_CurrentPosition([NativeTypeName("REFTIME")] double llTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[8]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double, int>)(lpVtbl[8]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_CurrentPosition"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT get_CurrentPosition([NativeTypeName("REFTIME *")] double* pllTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[9]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double*, int>)(lpVtbl[9]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_StopTime"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_StopTime([NativeTypeName("REFTIME *")] double* pllTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[10]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double*, int>)(lpVtbl[10]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_StopTime"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT put_StopTime([NativeTypeName("REFTIME")] double llTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[11]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double, int>)(lpVtbl[11]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_PrerollTime"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT get_PrerollTime([NativeTypeName("REFTIME *")] double* pllTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[12]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double*, int>)(lpVtbl[12]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_PrerollTime"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT put_PrerollTime([NativeTypeName("REFTIME")] double llTime)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[13]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double, int>)(lpVtbl[13]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_Rate"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT put_Rate(double dRate)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[14]))((IMediaPosition*)Unsafe.AsPointer(ref this), dRate);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double, int>)(lpVtbl[14]))((IMediaPosition*)Unsafe.AsPointer(ref this), dRate);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_Rate"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT get_Rate(double* pdRate)
     {
-        return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[15]))((IMediaPosition*)Unsafe.AsPointer(ref this), pdRate);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, double*, int>)(lpVtbl[15]))((IMediaPosition*)Unsafe.AsPointer(ref this), pdRate);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.CanSeekForward"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT CanSeekForward([NativeTypeName("LONG *")] int* pCanSeekForward)
     {
-        return ((delegate* unmanaged<IMediaPosition*, int*, int>)(lpVtbl[16]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekForward);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, int*, int>)(lpVtbl[16]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekForward);
     }
 
     /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.CanSeekBackward"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward)
     {
-        return ((delegate* unmanaged<IMediaPosition*, int*, int>)(lpVtbl[17]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekBackward);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPosition*, int*, int>)(lpVtbl[17]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekBackward);
     }
 
     public interface Interface : IDispatch.Interface
@@ -206,57 +206,57 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Duration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Duration;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_CurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_CurrentPosition;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_CurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_CurrentPosition;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_StopTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_StopTime;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_StopTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_StopTime;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_PrerollTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_PrerollTime;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_PrerollTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_PrerollTime;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_Rate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_Rate;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Rate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Rate;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> CanSeekForward;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> CanSeekForward;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> CanSeekBackward;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> CanSeekBackward;
     }
 }

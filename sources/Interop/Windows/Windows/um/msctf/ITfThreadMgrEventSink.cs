@@ -25,7 +25,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[1]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, uint>)(lpVtbl[1]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, uint>)(lpVtbl[2]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, uint>)(lpVtbl[2]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfThreadMgrEventSink.xml' path='doc/member[@name="ITfThreadMgrEventSink.OnInitDocumentMgr"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(3)]
     public HRESULT OnInitDocumentMgr(ITfDocumentMgr* pdim)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[3]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[3]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
     }
 
     /// <include file='ITfThreadMgrEventSink.xml' path='doc/member[@name="ITfThreadMgrEventSink.OnUninitDocumentMgr"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(4)]
     public HRESULT OnUninitDocumentMgr(ITfDocumentMgr* pdim)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[4]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, ITfDocumentMgr*, int>)(lpVtbl[4]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdim);
     }
 
     /// <include file='ITfThreadMgrEventSink.xml' path='doc/member[@name="ITfThreadMgrEventSink.OnSetFocus"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(5)]
     public HRESULT OnSetFocus(ITfDocumentMgr* pdimFocus, ITfDocumentMgr* pdimPrevFocus)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int>)(lpVtbl[5]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdimFocus, pdimPrevFocus);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int>)(lpVtbl[5]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pdimFocus, pdimPrevFocus);
     }
 
     /// <include file='ITfThreadMgrEventSink.xml' path='doc/member[@name="ITfThreadMgrEventSink.OnPushContext"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(6)]
     public HRESULT OnPushContext(ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[6]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[6]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
     }
 
     /// <include file='ITfThreadMgrEventSink.xml' path='doc/member[@name="ITfThreadMgrEventSink.OnPopContext"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
     [VtblIndex(7)]
     public HRESULT OnPopContext(ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[7]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfThreadMgrEventSink*, ITfContext*, int>)(lpVtbl[7]))((ITfThreadMgrEventSink*)Unsafe.AsPointer(ref this), pic);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> OnInitDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr*, int> OnInitDocumentMgr;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *, ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, int> OnPushContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, int> OnPushContext;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, int> OnPopContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, int> OnPopContext;
     }
 }

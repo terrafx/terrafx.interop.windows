@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, uint>)(lpVtbl[1]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, uint>)(lpVtbl[1]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, uint>)(lpVtbl[2]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, uint>)(lpVtbl[2]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetViewportSize"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetViewportSize([NativeTypeName("D2D1_SIZE_F")] D2D_SIZE_F viewportSize)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D_SIZE_F, int>)(lpVtbl[4]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), viewportSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D_SIZE_F, int>)(lpVtbl[4]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), viewportSize);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.GetViewportSize"]/*' />
@@ -69,8 +69,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [return: NativeTypeName("D2D1_SIZE_F")]
     public D2D_SIZE_F GetViewportSize()
     {
-        D2D_SIZE_F result;
-        return *((delegate* unmanaged<ID2D1SvgDocument*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), &result);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D_SIZE_F>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetRoot"]/*' />
@@ -78,7 +77,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(6)]
     public HRESULT SetRoot(ID2D1SvgElement* root)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement*, int>)(lpVtbl[6]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, ID2D1SvgElement*, int>)(lpVtbl[6]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.GetRoot"]/*' />
@@ -86,7 +85,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(7)]
     public void GetRoot(ID2D1SvgElement** root)
     {
-        ((delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement**, void>)(lpVtbl[7]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, ID2D1SvgElement**, void>)(lpVtbl[7]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), root);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.FindElementById"]/*' />
@@ -94,7 +93,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(8)]
     public HRESULT FindElementById([NativeTypeName("PCWSTR")] char* id, ID2D1SvgElement** svgElement)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)(lpVtbl[8]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, char*, ID2D1SvgElement**, int>)(lpVtbl[8]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), id, svgElement);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.Serialize"]/*' />
@@ -102,7 +101,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(9)]
     public HRESULT Serialize(IStream* outputXmlStream, ID2D1SvgElement* subtree = null)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), outputXmlStream, subtree);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, IStream*, ID2D1SvgElement*, int>)(lpVtbl[9]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), outputXmlStream, subtree);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.Deserialize"]/*' />
@@ -110,7 +109,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(10)]
     public HRESULT Deserialize(IStream* inputXmlStream, ID2D1SvgElement** subtree)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement**, int>)(lpVtbl[10]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), inputXmlStream, subtree);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, IStream*, ID2D1SvgElement**, int>)(lpVtbl[10]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), inputXmlStream, subtree);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePaint"]/*' />
@@ -118,7 +117,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(11)]
     public HRESULT CreatePaint(D2D1_SVG_PAINT_TYPE paintType, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color, [NativeTypeName("PCWSTR")] char* id, ID2D1SvgPaint** paint)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int>)(lpVtbl[11]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int>)(lpVtbl[11]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), paintType, color, id, paint);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreateStrokeDashArray"]/*' />
@@ -126,7 +125,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(12)]
     public HRESULT CreateStrokeDashArray([NativeTypeName("const D2D1_SVG_LENGTH *")] D2D1_SVG_LENGTH* dashes, [NativeTypeName("UINT32")] uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int>)(lpVtbl[12]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), dashes, dashesCount, strokeDashArray);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int>)(lpVtbl[12]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), dashes, dashesCount, strokeDashArray);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePointCollection"]/*' />
@@ -134,7 +133,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(13)]
     public HRESULT CreatePointCollection([NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* points, [NativeTypeName("UINT32")] uint pointsCount, ID2D1SvgPointCollection** pointCollection)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int>)(lpVtbl[13]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), points, pointsCount, pointCollection);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int>)(lpVtbl[13]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), points, pointsCount, pointCollection);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.CreatePathData"]/*' />
@@ -142,7 +141,7 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [VtblIndex(14)]
     public HRESULT CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData)
     {
-        return ((delegate* unmanaged<ID2D1SvgDocument*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int>)(lpVtbl[14]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), segmentData, segmentDataCount, commands, commandsCount, pathData);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int>)(lpVtbl[14]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), segmentData, segmentDataCount, commands, commandsCount, pathData);
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -186,48 +185,48 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT (D2D1_SIZE_F) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_SIZE_F, int> SetViewportSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_SIZE_F, int> SetViewportSize;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetViewportSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_SIZE_F> GetViewportSize;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> SetRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgElement*, int> SetRoot;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgElement**, void> GetRoot;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ID2D1SvgElement**, int> FindElementById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ID2D1SvgElement**, int> FindElementById;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement*, int> Serialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, ID2D1SvgElement*, int> Serialize;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement**, int> Deserialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, ID2D1SvgElement**, int> Deserialize;
 
         [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F *, PCWSTR, ID2D1SvgPaint **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int> CreatePaint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, char*, ID2D1SvgPaint**, int> CreatePaint;
 
         [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, ID2D1SvgStrokeDashArray **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int> CreateStrokeDashArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int> CreateStrokeDashArray;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2F *, UINT32, ID2D1SvgPointCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int> CreatePointCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int> CreatePointCollection;
 
         [NativeTypeName("HRESULT (const FLOAT *, UINT32, const D2D1_SVG_PATH_COMMAND *, UINT32, ID2D1SvgPathData **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int> CreatePathData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int> CreatePathData;
     }
 }

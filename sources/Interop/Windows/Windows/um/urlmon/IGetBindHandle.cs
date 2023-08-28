@@ -25,7 +25,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGetBindHandle*, Guid*, void**, int>)(lpVtbl[0]))((IGetBindHandle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGetBindHandle*, Guid*, void**, int>)(lpVtbl[0]))((IGetBindHandle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[1]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGetBindHandle*, uint>)(lpVtbl[1]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[2]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGetBindHandle*, uint>)(lpVtbl[2]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGetBindHandle.xml' path='doc/member[@name="IGetBindHandle.GetBindHandle"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, HANDLE* pRetHandle)
     {
-        return ((delegate* unmanaged<IGetBindHandle*, BINDHANDLETYPES, HANDLE*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
+        return ((delegate* unmanaged[MemberFunction]<IGetBindHandle*, BINDHANDLETYPES, HANDLE*, int>)(lpVtbl[3]))((IGetBindHandle*)Unsafe.AsPointer(ref this), enumRequestedHandle, pRetHandle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BINDHANDLETYPES, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BINDHANDLETYPES, HANDLE*, int> GetBindHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BINDHANDLETYPES, HANDLE*, int> GetBindHandle;
     }
 }

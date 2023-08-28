@@ -25,7 +25,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpRecognizer*, uint>)(lpVtbl[1]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, uint>)(lpVtbl[1]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpRecognizer*, uint>)(lpVtbl[2]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, uint>)(lpVtbl[2]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpProperties.SetPropertyNum" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int lValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, char*, int, int>)(lpVtbl[3]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, lValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, char*, int, int>)(lpVtbl[3]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, lValue);
     }
 
     /// <inheritdoc cref="ISpProperties.GetPropertyNum" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG *")] int* plValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, char*, int*, int>)(lpVtbl[4]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, plValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, char*, int*, int>)(lpVtbl[4]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, plValue);
     }
 
     /// <inheritdoc cref="ISpProperties.SetPropertyString" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPCWSTR")] char* pValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, char*, char*, int>)(lpVtbl[5]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, pValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, char*, char*, int>)(lpVtbl[5]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, pValue);
     }
 
     /// <inheritdoc cref="ISpProperties.GetPropertyString" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPWSTR *")] char** ppCoMemValue)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, char*, char**, int>)(lpVtbl[6]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, char*, char**, int>)(lpVtbl[6]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecognizer"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SetRecognizer(ISpObjectToken* pRecognizer)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[7]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pRecognizer);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[7]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pRecognizer);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecognizer"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT GetRecognizer(ISpObjectToken** ppRecognizer)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[8]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppRecognizer);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[8]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppRecognizer);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetInput"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT SetInput(IUnknown* pUnkInput, BOOL fAllowFormatChanges)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, IUnknown*, BOOL, int>)(lpVtbl[9]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pUnkInput, fAllowFormatChanges);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, IUnknown*, BOOL, int>)(lpVtbl[9]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pUnkInput, fAllowFormatChanges);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetInputObjectToken"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT GetInputObjectToken(ISpObjectToken** ppToken)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[10]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[10]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetInputStream"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT GetInputStream(ISpStreamFormat** ppStream)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpStreamFormat**, int>)(lpVtbl[11]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpStreamFormat**, int>)(lpVtbl[11]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppStream);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.CreateRecoContext"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT CreateRecoContext(ISpRecoContext** ppNewCtxt)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpRecoContext**, int>)(lpVtbl[12]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppNewCtxt);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpRecoContext**, int>)(lpVtbl[12]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppNewCtxt);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecoProfile"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetRecoProfile(ISpObjectToken** ppToken)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[13]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpObjectToken**, int>)(lpVtbl[13]))((ISpRecognizer*)Unsafe.AsPointer(ref this), ppToken);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecoProfile"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT SetRecoProfile(ISpObjectToken* pToken)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[14]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpObjectToken*, int>)(lpVtbl[14]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pToken);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.IsSharedInstance"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT IsSharedInstance()
     {
-        return ((delegate* unmanaged<ISpRecognizer*, int>)(lpVtbl[15]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, int>)(lpVtbl[15]))((ISpRecognizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetRecoState"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT GetRecoState(SPRECOSTATE* pState)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, SPRECOSTATE*, int>)(lpVtbl[16]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pState);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, SPRECOSTATE*, int>)(lpVtbl[16]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pState);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.SetRecoState"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT SetRecoState(SPRECOSTATE NewState)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, SPRECOSTATE, int>)(lpVtbl[17]))((ISpRecognizer*)Unsafe.AsPointer(ref this), NewState);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, SPRECOSTATE, int>)(lpVtbl[17]))((ISpRecognizer*)Unsafe.AsPointer(ref this), NewState);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetStatus"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT GetStatus(SPRECOGNIZERSTATUS* pStatus)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, SPRECOGNIZERSTATUS*, int>)(lpVtbl[18]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pStatus);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, SPRECOGNIZERSTATUS*, int>)(lpVtbl[18]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pStatus);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.GetFormat"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT GetFormat(SPSTREAMFORMATTYPE WaveFormatType, Guid* pFormatId, WAVEFORMATEX** ppCoMemWFEX)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int>)(lpVtbl[19]))((ISpRecognizer*)Unsafe.AsPointer(ref this), WaveFormatType, pFormatId, ppCoMemWFEX);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int>)(lpVtbl[19]))((ISpRecognizer*)Unsafe.AsPointer(ref this), WaveFormatType, pFormatId, ppCoMemWFEX);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.IsUISupported"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(20)]
     public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, char*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, char*, void*, uint, BOOL*, int>)(lpVtbl[20]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.DisplayUI"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(21)]
     public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, HWND, char*, char*, void*, uint, int>)(lpVtbl[21]))((ISpRecognizer*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, HWND, char*, char*, void*, uint, int>)(lpVtbl[21]))((ISpRecognizer*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
     }
 
     /// <include file='ISpRecognizer.xml' path='doc/member[@name="ISpRecognizer.EmulateRecognition"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
     [VtblIndex(22)]
     public HRESULT EmulateRecognition(ISpPhrase* pPhrase)
     {
-        return ((delegate* unmanaged<ISpRecognizer*, ISpPhrase*, int>)(lpVtbl[22]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pPhrase);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecognizer*, ISpPhrase*, int>)(lpVtbl[22]))((ISpRecognizer*)Unsafe.AsPointer(ref this), pPhrase);
     }
 
     public interface Interface : ISpProperties.Interface
@@ -261,72 +261,72 @@ public unsafe partial struct ISpRecognizer : ISpRecognizer.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetPropertyNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int*, int> GetPropertyNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, int> GetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, int> GetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> GetPropertyString;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetRecognizer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken*, int> SetRecognizer;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetRecognizer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken**, int> GetRecognizer;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, int> SetInput;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetInputObjectToken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken**, int> GetInputObjectToken;
 
         [NativeTypeName("HRESULT (ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpStreamFormat**, int> GetInputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpStreamFormat**, int> GetInputStream;
 
         [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpRecoContext**, int> CreateRecoContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpRecoContext**, int> CreateRecoContext;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetRecoProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken**, int> GetRecoProfile;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetRecoProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken*, int> SetRecoProfile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsSharedInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsSharedInstance;
 
         [NativeTypeName("HRESULT (SPRECOSTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPRECOSTATE*, int> GetRecoState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPRECOSTATE*, int> GetRecoState;
 
         [NativeTypeName("HRESULT (SPRECOSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPRECOSTATE, int> SetRecoState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPRECOSTATE, int> SetRecoState;
 
         [NativeTypeName("HRESULT (SPRECOGNIZERSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPRECOGNIZERSTATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPRECOGNIZERSTATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (SPSTREAMFORMATTYPE, GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int> GetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTREAMFORMATTYPE, Guid*, WAVEFORMATEX**, int> GetFormat;
 
         [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, void*, uint, BOOL*, int> IsUISupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, void*, uint, BOOL*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, char*, char*, void*, uint, int> DisplayUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, char*, char*, void*, uint, int> DisplayUI;
 
         [NativeTypeName("HRESULT (ISpPhrase *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpPhrase*, int> EmulateRecognition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpPhrase*, int> EmulateRecognition;
     }
 }

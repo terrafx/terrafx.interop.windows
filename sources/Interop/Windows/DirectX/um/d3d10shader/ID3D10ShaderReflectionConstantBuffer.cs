@@ -24,7 +24,7 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_BUFFER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionConstantBuffer*, D3D10_SHADER_BUFFER_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionConstantBuffer*, D3D10_SHADER_BUFFER_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer.GetVariableByIndex"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
     [VtblIndex(1)]
     public ID3D10ShaderReflectionVariable* GetVariableByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionConstantBuffer*, uint, ID3D10ShaderReflectionVariable*>)(lpVtbl[1]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionConstantBuffer*, uint, ID3D10ShaderReflectionVariable*>)(lpVtbl[1]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D10ShaderReflectionConstantBuffer.GetVariableByName"]/*' />
@@ -40,7 +40,7 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
     [VtblIndex(2)]
     public ID3D10ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionConstantBuffer*, sbyte*, ID3D10ShaderReflectionVariable*>)(lpVtbl[2]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionConstantBuffer*, sbyte*, ID3D10ShaderReflectionVariable*>)(lpVtbl[2]))((ID3D10ShaderReflectionConstantBuffer*)Unsafe.AsPointer(ref this), Name);
     }
 
     public interface Interface
@@ -59,12 +59,12 @@ public unsafe partial struct ID3D10ShaderReflectionConstantBuffer : ID3D10Shader
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D10_SHADER_BUFFER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_SHADER_BUFFER_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_SHADER_BUFFER_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10ShaderReflectionVariable*> GetVariableByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10ShaderReflectionVariable*> GetVariableByIndex;
 
         [NativeTypeName("ID3D10ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionVariable*> GetVariableByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10ShaderReflectionVariable*> GetVariableByName;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IStorageProviderCopyHook*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderCopyHook*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IStorageProviderCopyHook*, uint>)(lpVtbl[1]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderCopyHook*, uint>)(lpVtbl[1]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IStorageProviderCopyHook*, uint>)(lpVtbl[2]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderCopyHook*, uint>)(lpVtbl[2]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IStorageProviderCopyHook.xml' path='doc/member[@name="IStorageProviderCopyHook.CopyCallback"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
     [VtblIndex(3)]
     public HRESULT CopyCallback(HWND hwnd, uint operation, uint flags, [NativeTypeName("LPCWSTR")] char* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] char* destFile, [NativeTypeName("DWORD")] uint destAttribs, uint* result)
     {
-        return ((delegate* unmanaged<IStorageProviderCopyHook*, HWND, uint, uint, char*, uint, char*, uint, uint*, int>)(lpVtbl[3]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), hwnd, operation, flags, srcFile, srcAttribs, destFile, destAttribs, result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderCopyHook*, HWND, uint, uint, char*, uint, char*, uint, uint*, int>)(lpVtbl[3]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), hwnd, operation, flags, srcFile, srcAttribs, destFile, destAttribs, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, UINT, UINT, LPCWSTR, DWORD, LPCWSTR, DWORD, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, uint, char*, uint, char*, uint, uint*, int> CopyCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, uint, char*, uint, char*, uint, uint*, int> CopyCallback;
     }
 }

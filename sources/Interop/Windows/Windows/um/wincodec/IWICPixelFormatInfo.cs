@@ -25,7 +25,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint>)(lpVtbl[1]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint>)(lpVtbl[1]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint>)(lpVtbl[2]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint>)(lpVtbl[2]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetComponentType" />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(3)]
     public HRESULT GetComponentType(WICComponentType* pType)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, WICComponentType*, int>)(lpVtbl[3]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, WICComponentType*, int>)(lpVtbl[3]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetCLSID" />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(4)]
     public HRESULT GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[4]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pclsid);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[4]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pclsid);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetSigningStatus" />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(5)]
     public HRESULT GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[5]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[5]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pStatus);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetAuthor" />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(6)]
     public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] char* wzAuthor, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[6]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[6]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetVendorGUID" />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(7)]
     public HRESULT GetVendorGUID(Guid* pguidVendor)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[7]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pguidVendor);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[7]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pguidVendor);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetVersion" />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(8)]
     public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] char* wzVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[8]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[8]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetSpecVersion" />
@@ -99,7 +99,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(9)]
     public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] char* wzSpecVersion, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[9]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[9]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
     /// <inheritdoc cref="IWICComponentInfo.GetFriendlyName" />
@@ -107,7 +107,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(10)]
     public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] char* wzFriendlyName, uint* pcchActual)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[10]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint, char*, uint*, int>)(lpVtbl[10]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
     }
 
     /// <include file='IWICPixelFormatInfo.xml' path='doc/member[@name="IWICPixelFormatInfo.GetFormatGUID"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(11)]
     public HRESULT GetFormatGUID(Guid* pFormat)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[11]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, Guid*, int>)(lpVtbl[11]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IWICPixelFormatInfo.xml' path='doc/member[@name="IWICPixelFormatInfo.GetColorContext"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(12)]
     public HRESULT GetColorContext(IWICColorContext** ppIColorContext)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, IWICColorContext**, int>)(lpVtbl[12]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), ppIColorContext);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, IWICColorContext**, int>)(lpVtbl[12]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), ppIColorContext);
     }
 
     /// <include file='IWICPixelFormatInfo.xml' path='doc/member[@name="IWICPixelFormatInfo.GetBitsPerPixel"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(13)]
     public HRESULT GetBitsPerPixel(uint* puiBitsPerPixel)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[13]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), puiBitsPerPixel);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[13]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), puiBitsPerPixel);
     }
 
     /// <include file='IWICPixelFormatInfo.xml' path='doc/member[@name="IWICPixelFormatInfo.GetChannelCount"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(14)]
     public HRESULT GetChannelCount(uint* puiChannelCount)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[14]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), puiChannelCount);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint*, int>)(lpVtbl[14]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), puiChannelCount);
     }
 
     /// <include file='IWICPixelFormatInfo.xml' path='doc/member[@name="IWICPixelFormatInfo.GetChannelMask"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
     [VtblIndex(15)]
     public HRESULT GetChannelMask(uint uiChannelIndex, uint cbMaskBuffer, byte* pbMaskBuffer, uint* pcbActual)
     {
-        return ((delegate* unmanaged<IWICPixelFormatInfo*, uint, uint, byte*, uint*, int>)(lpVtbl[15]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), uiChannelIndex, cbMaskBuffer, pbMaskBuffer, pcbActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICPixelFormatInfo*, uint, uint, byte*, uint*, int>)(lpVtbl[15]))((IWICPixelFormatInfo*)Unsafe.AsPointer(ref this), uiChannelIndex, cbMaskBuffer, pbMaskBuffer, pcbActual);
     }
 
     public interface Interface : IWICComponentInfo.Interface
@@ -172,51 +172,51 @@ public unsafe partial struct IWICPixelFormatInfo : IWICPixelFormatInfo.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICComponentType*, int> GetComponentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICComponentType*, int> GetComponentType;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetCLSID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetCLSID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetAuthor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetFormatGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetFormatGUID;
 
         [NativeTypeName("HRESULT (IWICColorContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICColorContext**, int> GetColorContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICColorContext**, int> GetColorContext;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetBitsPerPixel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetBitsPerPixel;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> GetChannelMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint*, int> GetChannelMask;
     }
 }

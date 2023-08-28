@@ -26,7 +26,7 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int>)(lpVtbl[0]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2Extension*, Guid*, void**, int>)(lpVtbl[0]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXAudio2Extension*, uint>)(lpVtbl[1]))((IXAudio2Extension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2Extension*, uint>)(lpVtbl[1]))((IXAudio2Extension*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXAudio2Extension*, uint>)(lpVtbl[2]))((IXAudio2Extension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2Extension*, uint>)(lpVtbl[2]))((IXAudio2Extension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2Extension.xml' path='doc/member[@name="IXAudio2Extension.GetProcessingQuantum"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
     [VtblIndex(3)]
     public void GetProcessingQuantum([NativeTypeName("UINT32 *")] uint* quantumNumerator, [NativeTypeName("UINT32 *")] uint* quantumDenominator)
     {
-        ((delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void>)(lpVtbl[3]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), quantumNumerator, quantumDenominator);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2Extension*, uint*, uint*, void>)(lpVtbl[3]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), quantumNumerator, quantumDenominator);
     }
 
     /// <include file='IXAudio2Extension.xml' path='doc/member[@name="IXAudio2Extension.GetProcessor"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
     [VtblIndex(4)]
     public void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor)
     {
-        ((delegate* unmanaged<IXAudio2Extension*, uint*, void>)(lpVtbl[4]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2Extension*, uint*, void>)(lpVtbl[4]))((IXAudio2Extension*)Unsafe.AsPointer(ref this), processor);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (UINT32 *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, void> GetProcessingQuantum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, void> GetProcessingQuantum;
 
         [NativeTypeName("void (XAUDIO2_PROCESSOR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, void> GetProcessor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, void> GetProcessor;
     }
 }

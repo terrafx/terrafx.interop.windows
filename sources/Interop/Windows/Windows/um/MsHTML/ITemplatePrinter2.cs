@@ -25,7 +25,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, Guid*, void**, int>)(lpVtbl[0]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, Guid*, void**, int>)(lpVtbl[0]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, uint>)(lpVtbl[1]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, uint>)(lpVtbl[1]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, uint>)(lpVtbl[2]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, uint>)(lpVtbl[2]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, uint*, int>)(lpVtbl[3]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, uint*, int>)(lpVtbl[3]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.startDoc" />
@@ -83,7 +83,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(7)]
     public HRESULT startDoc([NativeTypeName("BSTR")] char* bstrTitle, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char*, short*, int>)(lpVtbl[7]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), bstrTitle, p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char*, short*, int>)(lpVtbl[7]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), bstrTitle, p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.stopDoc" />
@@ -91,7 +91,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(8)]
     public HRESULT stopDoc()
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int>)(lpVtbl[8]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int>)(lpVtbl[8]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITemplatePrinter.printBlankPage" />
@@ -99,7 +99,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(9)]
     public HRESULT printBlankPage()
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int>)(lpVtbl[9]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int>)(lpVtbl[9]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITemplatePrinter.printPage" />
@@ -107,7 +107,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(10)]
     public HRESULT printPage(IDispatch* pElemDisp)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, IDispatch*, int>)(lpVtbl[10]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pElemDisp);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, IDispatch*, int>)(lpVtbl[10]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pElemDisp);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.ensurePrintDialogDefaults" />
@@ -115,7 +115,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(11)]
     public HRESULT ensurePrintDialogDefaults([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[11]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[11]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.showPrintDialog" />
@@ -123,7 +123,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(12)]
     public HRESULT showPrintDialog([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[12]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[12]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.showPageSetupDialog" />
@@ -131,7 +131,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(13)]
     public HRESULT showPageSetupDialog([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[13]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[13]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.printNonNative" />
@@ -139,7 +139,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(14)]
     public HRESULT printNonNative(IUnknown* pMarkup, [NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, IUnknown*, short*, int>)(lpVtbl[14]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pMarkup, p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, IUnknown*, short*, int>)(lpVtbl[14]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pMarkup, p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.printNonNativeFrames" />
@@ -147,7 +147,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(15)]
     public HRESULT printNonNativeFrames(IUnknown* pMarkup, [NativeTypeName("VARIANT_BOOL")] short fActiveFrame)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, IUnknown*, short, int>)(lpVtbl[15]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pMarkup, fActiveFrame);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, IUnknown*, short, int>)(lpVtbl[15]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), pMarkup, fActiveFrame);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_framesetDocument" />
@@ -155,7 +155,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(16)]
     public HRESULT put_framesetDocument([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[16]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[16]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_framesetDocument" />
@@ -163,7 +163,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_framesetDocument([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[17]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[17]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_frameActive" />
@@ -171,7 +171,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(18)]
     public HRESULT put_frameActive([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[18]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[18]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_frameActive" />
@@ -179,7 +179,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(19)]
     public HRESULT get_frameActive([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[19]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[19]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_frameAsShown" />
@@ -187,7 +187,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(20)]
     public HRESULT put_frameAsShown([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[20]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[20]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_frameAsShown" />
@@ -195,7 +195,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(21)]
     public HRESULT get_frameAsShown([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[21]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[21]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_selection" />
@@ -203,7 +203,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(22)]
     public HRESULT put_selection([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[22]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[22]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_selection" />
@@ -211,7 +211,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(23)]
     public HRESULT get_selection([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[23]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[23]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_selectedPages" />
@@ -219,7 +219,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(24)]
     public HRESULT put_selectedPages([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[24]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[24]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_selectedPages" />
@@ -227,7 +227,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(25)]
     public HRESULT get_selectedPages([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[25]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[25]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_currentPage" />
@@ -235,7 +235,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(26)]
     public HRESULT put_currentPage([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[26]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[26]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_currentPage" />
@@ -243,7 +243,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(27)]
     public HRESULT get_currentPage([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[27]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[27]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_currentPageAvail" />
@@ -251,7 +251,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(28)]
     public HRESULT put_currentPageAvail([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[28]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[28]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_currentPageAvail" />
@@ -259,7 +259,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(29)]
     public HRESULT get_currentPageAvail([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[29]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[29]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_collate" />
@@ -267,7 +267,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(30)]
     public HRESULT put_collate([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[30]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[30]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_collate" />
@@ -275,7 +275,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(31)]
     public HRESULT get_collate([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[31]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[31]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_duplex" />
@@ -283,7 +283,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(32)]
     public HRESULT get_duplex([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[32]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[32]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_copies" />
@@ -291,7 +291,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(33)]
     public HRESULT put_copies(ushort v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[33]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort, int>)(lpVtbl[33]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_copies" />
@@ -299,7 +299,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(34)]
     public HRESULT get_copies(ushort* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[34]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort*, int>)(lpVtbl[34]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_pageFrom" />
@@ -307,7 +307,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(35)]
     public HRESULT put_pageFrom(ushort v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[35]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort, int>)(lpVtbl[35]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_pageFrom" />
@@ -315,7 +315,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(36)]
     public HRESULT get_pageFrom(ushort* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[36]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort*, int>)(lpVtbl[36]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_pageTo" />
@@ -323,7 +323,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(37)]
     public HRESULT put_pageTo(ushort v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort, int>)(lpVtbl[37]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort, int>)(lpVtbl[37]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_pageTo" />
@@ -331,7 +331,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(38)]
     public HRESULT get_pageTo(ushort* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, ushort*, int>)(lpVtbl[38]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, ushort*, int>)(lpVtbl[38]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_tableOfLinks" />
@@ -339,7 +339,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(39)]
     public HRESULT put_tableOfLinks([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[39]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[39]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_tableOfLinks" />
@@ -347,7 +347,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(40)]
     public HRESULT get_tableOfLinks([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[40]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[40]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_allLinkedDocuments" />
@@ -355,7 +355,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(41)]
     public HRESULT put_allLinkedDocuments([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[41]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[41]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_allLinkedDocuments" />
@@ -363,7 +363,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(42)]
     public HRESULT get_allLinkedDocuments([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[42]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[42]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_header" />
@@ -371,7 +371,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(43)]
     public HRESULT put_header([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char*, int>)(lpVtbl[43]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char*, int>)(lpVtbl[43]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_header" />
@@ -379,7 +379,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(44)]
     public HRESULT get_header([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char**, int>)(lpVtbl[44]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char**, int>)(lpVtbl[44]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_footer" />
@@ -387,7 +387,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(45)]
     public HRESULT put_footer([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char*, int>)(lpVtbl[45]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char*, int>)(lpVtbl[45]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_footer" />
@@ -395,7 +395,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(46)]
     public HRESULT get_footer([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char**, int>)(lpVtbl[46]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char**, int>)(lpVtbl[46]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_marginLeft" />
@@ -403,7 +403,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(47)]
     public HRESULT put_marginLeft([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int, int>)(lpVtbl[47]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int, int>)(lpVtbl[47]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_marginLeft" />
@@ -411,7 +411,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(48)]
     public HRESULT get_marginLeft([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[48]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[48]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_marginRight" />
@@ -419,7 +419,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(49)]
     public HRESULT put_marginRight([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int, int>)(lpVtbl[49]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int, int>)(lpVtbl[49]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_marginRight" />
@@ -427,7 +427,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(50)]
     public HRESULT get_marginRight([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[50]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[50]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_marginTop" />
@@ -435,7 +435,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(51)]
     public HRESULT put_marginTop([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int, int>)(lpVtbl[51]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int, int>)(lpVtbl[51]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_marginTop" />
@@ -443,7 +443,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(52)]
     public HRESULT get_marginTop([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[52]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[52]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.put_marginBottom" />
@@ -451,7 +451,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(53)]
     public HRESULT put_marginBottom([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int, int>)(lpVtbl[53]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int, int>)(lpVtbl[53]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_marginBottom" />
@@ -459,7 +459,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(54)]
     public HRESULT get_marginBottom([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[54]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[54]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_pageWidth" />
@@ -467,7 +467,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(55)]
     public HRESULT get_pageWidth([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[55]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[55]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_pageHeight" />
@@ -475,7 +475,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(56)]
     public HRESULT get_pageHeight([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[56]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[56]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_unprintableLeft" />
@@ -483,7 +483,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(57)]
     public HRESULT get_unprintableLeft([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[57]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[57]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_unprintableTop" />
@@ -491,7 +491,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(58)]
     public HRESULT get_unprintableTop([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[58]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[58]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_unprintableRight" />
@@ -499,7 +499,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(59)]
     public HRESULT get_unprintableRight([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[59]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[59]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.get_unprintableBottom" />
@@ -507,7 +507,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(60)]
     public HRESULT get_unprintableBottom([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[60]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[60]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <inheritdoc cref="ITemplatePrinter.updatePageStatus" />
@@ -515,7 +515,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(61)]
     public HRESULT updatePageStatus([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, int*, int>)(lpVtbl[61]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, int*, int>)(lpVtbl[61]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.put_selectionEnabled"]/*' />
@@ -523,7 +523,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(62)]
     public HRESULT put_selectionEnabled([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[62]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[62]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.get_selectionEnabled"]/*' />
@@ -531,7 +531,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(63)]
     public HRESULT get_selectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[63]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[63]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.put_frameActiveEnabled"]/*' />
@@ -539,7 +539,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(64)]
     public HRESULT put_frameActiveEnabled([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[64]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[64]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.get_frameActiveEnabled"]/*' />
@@ -547,7 +547,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(65)]
     public HRESULT get_frameActiveEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[65]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[65]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.put_orientation"]/*' />
@@ -555,7 +555,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(66)]
     public HRESULT put_orientation([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char*, int>)(lpVtbl[66]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char*, int>)(lpVtbl[66]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.get_orientation"]/*' />
@@ -563,7 +563,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(67)]
     public HRESULT get_orientation([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char**, int>)(lpVtbl[67]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char**, int>)(lpVtbl[67]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.put_usePrinterCopyCollate"]/*' />
@@ -571,7 +571,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(68)]
     public HRESULT put_usePrinterCopyCollate([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short, int>)(lpVtbl[68]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short, int>)(lpVtbl[68]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.get_usePrinterCopyCollate"]/*' />
@@ -579,7 +579,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(69)]
     public HRESULT get_usePrinterCopyCollate([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, short*, int>)(lpVtbl[69]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, short*, int>)(lpVtbl[69]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ITemplatePrinter2.xml' path='doc/member[@name="ITemplatePrinter2.deviceSupports"]/*' />
@@ -587,7 +587,7 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
     [VtblIndex(70)]
     public HRESULT deviceSupports([NativeTypeName("BSTR")] char* bstrProperty, VARIANT* pvar)
     {
-        return ((delegate* unmanaged<ITemplatePrinter2*, char*, VARIANT*, int>)(lpVtbl[70]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), bstrProperty, pvar);
+        return ((delegate* unmanaged[MemberFunction]<ITemplatePrinter2*, char*, VARIANT*, int>)(lpVtbl[70]))((ITemplatePrinter2*)Unsafe.AsPointer(ref this), bstrProperty, pvar);
     }
 
     public interface Interface : ITemplatePrinter.Interface
@@ -624,216 +624,216 @@ public unsafe partial struct ITemplatePrinter2 : ITemplatePrinter2.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short*, int> startDoc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> startDoc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> stopDoc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> stopDoc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> printBlankPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> printBlankPage;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, int> printPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch*, int> printPage;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> ensurePrintDialogDefaults;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> ensurePrintDialogDefaults;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> showPrintDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> showPrintDialog;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> showPageSetupDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> showPageSetupDialog;
 
         [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, short*, int> printNonNative;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, short*, int> printNonNative;
 
         [NativeTypeName("HRESULT (IUnknown *, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, short, int> printNonNativeFrames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, short, int> printNonNativeFrames;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_framesetDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_framesetDocument;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_framesetDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_framesetDocument;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_frameActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_frameActive;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_frameActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_frameActive;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_frameAsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_frameAsShown;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_frameAsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_frameAsShown;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_selection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_selection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_selection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_selection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_selectedPages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_selectedPages;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_selectedPages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_selectedPages;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_currentPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_currentPage;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_currentPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_currentPage;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_currentPageAvail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_currentPageAvail;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_currentPageAvail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_currentPageAvail;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_collate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_collate;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_collate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_collate;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_duplex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_duplex;
 
         [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> put_copies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> put_copies;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_copies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_copies;
 
         [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> put_pageFrom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> put_pageFrom;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_pageFrom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_pageFrom;
 
         [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> put_pageTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> put_pageTo;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_pageTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_pageTo;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_tableOfLinks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_tableOfLinks;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_tableOfLinks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_tableOfLinks;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_allLinkedDocuments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_allLinkedDocuments;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_allLinkedDocuments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_allLinkedDocuments;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_header;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_header;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_header;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_header;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_footer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_footer;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_footer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_footer;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_marginLeft;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_marginLeft;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_marginLeft;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_marginLeft;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_marginRight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_marginRight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_marginRight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_marginRight;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_marginTop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_marginTop;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_marginTop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_marginTop;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_marginBottom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_marginBottom;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_marginBottom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_marginBottom;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_pageWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_pageWidth;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_pageHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_pageHeight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_unprintableLeft;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_unprintableLeft;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_unprintableTop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_unprintableTop;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_unprintableRight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_unprintableRight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_unprintableBottom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_unprintableBottom;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> updatePageStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> updatePageStatus;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_selectionEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_selectionEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_selectionEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_selectionEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_frameActiveEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_frameActiveEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_frameActiveEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_frameActiveEnabled;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_orientation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_orientation;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_orientation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_orientation;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_usePrinterCopyCollate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_usePrinterCopyCollate;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_usePrinterCopyCollate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_usePrinterCopyCollate;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> deviceSupports;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> deviceSupports;
     }
 }

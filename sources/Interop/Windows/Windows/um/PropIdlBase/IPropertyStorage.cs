@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint>)(lpVtbl[1]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint>)(lpVtbl[1]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint>)(lpVtbl[2]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint>)(lpVtbl[2]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadMultiple"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(3)]
     public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("PROPVARIANT[]")] PROPVARIANT* rgpropvar)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WriteMultiple"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(4)]
     public HRESULT WriteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec, [NativeTypeName("const PROPVARIANT[]")] PROPVARIANT* rgpropvar, [NativeTypeName("PROPID")] uint propidNameFirst)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int>)(lpVtbl[4]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar, propidNameFirst);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int>)(lpVtbl[4]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgpropvar, propidNameFirst);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeleteMultiple"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(5)]
     public HRESULT DeleteMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC[]")] PROPSPEC* rgpspec)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, int>)(lpVtbl[5]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, PROPSPEC*, int>)(lpVtbl[5]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.ReadPropertyNames"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(6)]
     public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("LPOLESTR[]")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[6]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.WritePropertyNames"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(7)]
     public HRESULT WritePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid, [NativeTypeName("const LPOLESTR[]")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[7]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.DeletePropertyNames"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(8)]
     public HRESULT DeletePropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID[]")] uint* rgpropid)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, uint*, int>)(lpVtbl[8]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, uint*, int>)(lpVtbl[8]))((IPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Commit"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(9)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, uint, int>)(lpVtbl[9]))((IPropertyStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, uint, int>)(lpVtbl[9]))((IPropertyStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Revert"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(10)]
     public HRESULT Revert()
     {
-        return ((delegate* unmanaged<IPropertyStorage*, int>)(lpVtbl[10]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, int>)(lpVtbl[10]))((IPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Enum"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(11)]
     public HRESULT Enum(IEnumSTATPROPSTG** ppenum)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[11]))((IPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[11]))((IPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.SetTimes"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(12)]
     public HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[12]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pctime, patime, pmtime);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[12]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pctime, patime, pmtime);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.SetClass"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(13)]
     public HRESULT SetClass([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, Guid*, int>)(lpVtbl[13]))((IPropertyStorage*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, Guid*, int>)(lpVtbl[13]))((IPropertyStorage*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='IPropertyStorage.xml' path='doc/member[@name="IPropertyStorage.Stat"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
     [VtblIndex(14)]
     public HRESULT Stat(STATPROPSETSTG* pstatpsstg)
     {
-        return ((delegate* unmanaged<IPropertyStorage*, STATPROPSETSTG*, int>)(lpVtbl[14]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pstatpsstg);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyStorage*, STATPROPSETSTG*, int>)(lpVtbl[14]))((IPropertyStorage*)Unsafe.AsPointer(ref this), pstatpsstg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -185,48 +185,48 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, const PROPVARIANT *, PROPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, uint, int> WriteMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPSPEC*, PROPVARIANT*, uint, int> WriteMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, int> DeleteMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPSPEC*, int> DeleteMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, const LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> WritePropertyNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, char**, int> WritePropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> DeletePropertyNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> DeletePropertyNames;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Revert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSTATPROPSTG**, int> Enum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSTATPROPSTG**, int> Enum;
 
         [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetClass;
 
         [NativeTypeName("HRESULT (STATPROPSETSTG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, STATPROPSETSTG*, int> Stat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, STATPROPSETSTG*, int> Stat;
     }
 }

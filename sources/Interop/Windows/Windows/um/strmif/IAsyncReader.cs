@@ -25,7 +25,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAsyncReader*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAsyncReader*, uint>)(lpVtbl[1]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, uint>)(lpVtbl[1]))((IAsyncReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAsyncReader*, uint>)(lpVtbl[2]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, uint>)(lpVtbl[2]))((IAsyncReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.RequestAllocator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT RequestAllocator(IMemAllocator* pPreferred, ALLOCATOR_PROPERTIES* pProps, IMemAllocator** ppActual)
     {
-        return ((delegate* unmanaged<IAsyncReader*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int>)(lpVtbl[3]))((IAsyncReader*)Unsafe.AsPointer(ref this), pPreferred, pProps, ppActual);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int>)(lpVtbl[3]))((IAsyncReader*)Unsafe.AsPointer(ref this), pPreferred, pProps, ppActual);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.Request"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Request(IMediaSample* pSample, [NativeTypeName("DWORD_PTR")] nuint dwUser)
     {
-        return ((delegate* unmanaged<IAsyncReader*, IMediaSample*, nuint, int>)(lpVtbl[4]))((IAsyncReader*)Unsafe.AsPointer(ref this), pSample, dwUser);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, IMediaSample*, nuint, int>)(lpVtbl[4]))((IAsyncReader*)Unsafe.AsPointer(ref this), pSample, dwUser);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.WaitForNext"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT WaitForNext([NativeTypeName("DWORD")] uint dwTimeout, IMediaSample** ppSample, [NativeTypeName("DWORD_PTR *")] nuint* pdwUser)
     {
-        return ((delegate* unmanaged<IAsyncReader*, uint, IMediaSample**, nuint*, int>)(lpVtbl[5]))((IAsyncReader*)Unsafe.AsPointer(ref this), dwTimeout, ppSample, pdwUser);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, uint, IMediaSample**, nuint*, int>)(lpVtbl[5]))((IAsyncReader*)Unsafe.AsPointer(ref this), dwTimeout, ppSample, pdwUser);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.SyncReadAligned"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SyncReadAligned(IMediaSample* pSample)
     {
-        return ((delegate* unmanaged<IAsyncReader*, IMediaSample*, int>)(lpVtbl[6]))((IAsyncReader*)Unsafe.AsPointer(ref this), pSample);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, IMediaSample*, int>)(lpVtbl[6]))((IAsyncReader*)Unsafe.AsPointer(ref this), pSample);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.SyncRead"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SyncRead([NativeTypeName("LONGLONG")] long llPosition, [NativeTypeName("LONG")] int lLength, byte* pBuffer)
     {
-        return ((delegate* unmanaged<IAsyncReader*, long, int, byte*, int>)(lpVtbl[7]))((IAsyncReader*)Unsafe.AsPointer(ref this), llPosition, lLength, pBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, long, int, byte*, int>)(lpVtbl[7]))((IAsyncReader*)Unsafe.AsPointer(ref this), llPosition, lLength, pBuffer);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.Length"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Length([NativeTypeName("LONGLONG *")] long* pTotal, [NativeTypeName("LONGLONG *")] long* pAvailable)
     {
-        return ((delegate* unmanaged<IAsyncReader*, long*, long*, int>)(lpVtbl[8]))((IAsyncReader*)Unsafe.AsPointer(ref this), pTotal, pAvailable);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, long*, long*, int>)(lpVtbl[8]))((IAsyncReader*)Unsafe.AsPointer(ref this), pTotal, pAvailable);
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.BeginFlush"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT BeginFlush()
     {
-        return ((delegate* unmanaged<IAsyncReader*, int>)(lpVtbl[9]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, int>)(lpVtbl[9]))((IAsyncReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAsyncReader.xml' path='doc/member[@name="IAsyncReader.EndFlush"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT EndFlush()
     {
-        return ((delegate* unmanaged<IAsyncReader*, int>)(lpVtbl[10]))((IAsyncReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncReader*, int>)(lpVtbl[10]))((IAsyncReader*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMemAllocator *, ALLOCATOR_PROPERTIES *, IMemAllocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
 
         [NativeTypeName("HRESULT (IMediaSample *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample*, nuint, int> Request;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample*, nuint, int> Request;
 
         [NativeTypeName("HRESULT (DWORD, IMediaSample **, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMediaSample**, nuint*, int> WaitForNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMediaSample**, nuint*, int> WaitForNext;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample*, int> SyncReadAligned;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample*, int> SyncReadAligned;
 
         [NativeTypeName("HRESULT (LONGLONG, LONG, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int, byte*, int> SyncRead;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int, byte*, int> SyncRead;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> Length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> Length;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> BeginFlush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> BeginFlush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndFlush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndFlush;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, Guid*, void**, int>)(lpVtbl[0]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, Guid*, void**, int>)(lpVtbl[0]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, uint>)(lpVtbl[1]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, uint>)(lpVtbl[1]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, uint>)(lpVtbl[2]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, uint>)(lpVtbl[2]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumRegFilters.xml' path='doc/member[@name="IEnumRegFilters.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cFilters, REGFILTER** apRegFilter, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, uint, REGFILTER**, uint*, int>)(lpVtbl[3]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), cFilters, apRegFilter, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, uint, REGFILTER**, uint*, int>)(lpVtbl[3]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), cFilters, apRegFilter, pcFetched);
     }
 
     /// <include file='IEnumRegFilters.xml' path='doc/member[@name="IEnumRegFilters.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cFilters)
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, uint, int>)(lpVtbl[4]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), cFilters);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, uint, int>)(lpVtbl[4]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), cFilters);
     }
 
     /// <include file='IEnumRegFilters.xml' path='doc/member[@name="IEnumRegFilters.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, int>)(lpVtbl[5]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, int>)(lpVtbl[5]))((IEnumRegFilters*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumRegFilters.xml' path='doc/member[@name="IEnumRegFilters.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Clone(IEnumRegFilters** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumRegFilters*, IEnumRegFilters**, int>)(lpVtbl[6]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegFilters*, IEnumRegFilters**, int>)(lpVtbl[6]))((IEnumRegFilters*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumRegFilters : IEnumRegFilters.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, REGFILTER **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, REGFILTER**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, REGFILTER**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumRegFilters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumRegFilters**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumRegFilters**, int> Clone;
     }
 }

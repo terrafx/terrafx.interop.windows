@@ -27,7 +27,7 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentProtectionDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentProtectionDevice*, uint>)(lpVtbl[1]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionDevice*, uint>)(lpVtbl[1]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentProtectionDevice*, uint>)(lpVtbl[2]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionDevice*, uint>)(lpVtbl[2]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentProtectionDevice.xml' path='doc/member[@name="IMFContentProtectionDevice.InvokeFunction"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
     [VtblIndex(3)]
     public HRESULT InvokeFunction([NativeTypeName("DWORD")] uint FunctionId, [NativeTypeName("DWORD")] uint InputBufferByteCount, [NativeTypeName("const BYTE *")] byte* InputBuffer, [NativeTypeName("DWORD *")] uint* OutputBufferByteCount, byte* OutputBuffer)
     {
-        return ((delegate* unmanaged<IMFContentProtectionDevice*, uint, uint, byte*, uint*, byte*, int>)(lpVtbl[3]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), FunctionId, InputBufferByteCount, InputBuffer, OutputBufferByteCount, OutputBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionDevice*, uint, uint, byte*, uint*, byte*, int>)(lpVtbl[3]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), FunctionId, InputBufferByteCount, InputBuffer, OutputBufferByteCount, OutputBuffer);
     }
 
     /// <include file='IMFContentProtectionDevice.xml' path='doc/member[@name="IMFContentProtectionDevice.GetPrivateDataByteCount"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
     [VtblIndex(4)]
     public HRESULT GetPrivateDataByteCount([NativeTypeName("DWORD *")] uint* PrivateInputByteCount, [NativeTypeName("DWORD *")] uint* PrivateOutputByteCount)
     {
-        return ((delegate* unmanaged<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentProtectionDevice*, uint*, uint*, int>)(lpVtbl[4]))((IMFContentProtectionDevice*)Unsafe.AsPointer(ref this), PrivateInputByteCount, PrivateOutputByteCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFContentProtectionDevice : IMFContentProtectionDe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, const BYTE *, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, byte*, int> InvokeFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint*, byte*, int> InvokeFunction;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetPrivateDataByteCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetPrivateDataByteCount;
     }
 }

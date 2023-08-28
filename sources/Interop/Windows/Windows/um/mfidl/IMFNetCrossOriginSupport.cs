@@ -27,7 +27,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, uint>)(lpVtbl[1]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, uint>)(lpVtbl[1]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, uint>)(lpVtbl[2]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, uint>)(lpVtbl[2]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.GetCrossOriginPolicy"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [VtblIndex(3)]
     public HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, MF_CROSS_ORIGIN_POLICY*, int>)(lpVtbl[3]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), pPolicy);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, MF_CROSS_ORIGIN_POLICY*, int>)(lpVtbl[3]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), pPolicy);
     }
 
     /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.GetSourceOrigin"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [VtblIndex(4)]
     public HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] char** wszSourceOrigin)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, char**, int>)(lpVtbl[4]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszSourceOrigin);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, char**, int>)(lpVtbl[4]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszSourceOrigin);
     }
 
     /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.IsSameOrigin"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
     [VtblIndex(5)]
     public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] char* wszURL, BOOL* pfIsSameOrigin)
     {
-        return ((delegate* unmanaged<IMFNetCrossOriginSupport*, char*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCrossOriginSupport*, char*, BOOL*, int>)(lpVtbl[5]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszURL, pfIsSameOrigin);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_CROSS_ORIGIN_POLICY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetSourceOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSourceOrigin;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL*, int> IsSameOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, int> IsSameOrigin;
     }
 }

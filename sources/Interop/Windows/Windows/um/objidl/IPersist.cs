@@ -25,7 +25,7 @@ public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersist*, Guid*, void**, int>)(lpVtbl[0]))((IPersist*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersist*, Guid*, void**, int>)(lpVtbl[0]))((IPersist*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersist*, uint>)(lpVtbl[1]))((IPersist*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersist*, uint>)(lpVtbl[1]))((IPersist*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersist*, uint>)(lpVtbl[2]))((IPersist*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersist*, uint>)(lpVtbl[2]))((IPersist*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersist.xml' path='doc/member[@name="IPersist.GetClassID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersist*, Guid*, int>)(lpVtbl[3]))((IPersist*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersist*, Guid*, int>)(lpVtbl[3]))((IPersist*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IPersist : IPersist.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
     }
 }

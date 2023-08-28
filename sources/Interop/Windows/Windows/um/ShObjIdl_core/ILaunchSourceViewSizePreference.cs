@@ -25,7 +25,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchSourceViewSizePreference*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[1]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchSourceViewSizePreference*, uint>)(lpVtbl[2]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference.GetSourceViewToPosition"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
     [VtblIndex(3)]
     public HRESULT GetSourceViewToPosition(HWND* hwnd)
     {
-        return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, HWND*, int>)(lpVtbl[3]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchSourceViewSizePreference*, HWND*, int>)(lpVtbl[3]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference.GetSourceViewSizePreference"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
     [VtblIndex(4)]
     public HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch)
     {
-        return ((delegate* unmanaged<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[4]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), sourceSizeAfterLaunch);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int>)(lpVtbl[4]))((ILaunchSourceViewSizePreference*)Unsafe.AsPointer(ref this), sourceSizeAfterLaunch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetSourceViewToPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetSourceViewToPosition;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetSourceViewSizePreference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetSourceViewSizePreference;
     }
 }

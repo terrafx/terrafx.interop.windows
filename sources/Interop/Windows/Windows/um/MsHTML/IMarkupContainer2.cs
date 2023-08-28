@@ -25,7 +25,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, Guid*, void**, int>)(lpVtbl[0]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, Guid*, void**, int>)(lpVtbl[0]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, uint>)(lpVtbl[1]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, uint>)(lpVtbl[1]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, uint>)(lpVtbl[2]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, uint>)(lpVtbl[2]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMarkupContainer.OwningDoc" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(3)]
     public HRESULT OwningDoc(IHTMLDocument2** ppDoc)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppDoc);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, IHTMLDocument2**, int>)(lpVtbl[3]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppDoc);
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.CreateChangeLog"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(4)]
     public HRESULT CreateChangeLog(IHTMLChangeSink* pChangeSink, IHTMLChangeLog** ppChangeLog, BOOL fForward, BOOL fBackward)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int>)(lpVtbl[4]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, ppChangeLog, fForward, fBackward);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int>)(lpVtbl[4]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, ppChangeLog, fForward, fBackward);
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.RegisterForDirtyRange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(5)]
     public HRESULT RegisterForDirtyRange(IHTMLChangeSink* pChangeSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, uint*, int>)(lpVtbl[5]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, IHTMLChangeSink*, uint*, int>)(lpVtbl[5]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), pChangeSink, pdwCookie);
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.UnRegisterForDirtyRange"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(6)]
     public HRESULT UnRegisterForDirtyRange([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, uint, int>)(lpVtbl[6]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, uint, int>)(lpVtbl[6]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetAndClearDirtyRange"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetAndClearDirtyRange([NativeTypeName("DWORD")] uint dwCookie, IMarkupPointer* pIPointerBegin, IMarkupPointer* pIPointerEnd)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[7]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie, pIPointerBegin, pIPointerEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, uint, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[7]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), dwCookie, pIPointerBegin, pIPointerEnd);
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetVersionNumber"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [return: NativeTypeName("long")]
     public int GetVersionNumber()
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, int>)(lpVtbl[8]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, int>)(lpVtbl[8]))((IMarkupContainer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMarkupContainer2.xml' path='doc/member[@name="IMarkupContainer2.GetMasterElement"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetMasterElement(IHTMLElement** ppElementMaster)
     {
-        return ((delegate* unmanaged<IMarkupContainer2*, IHTMLElement**, int>)(lpVtbl[9]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppElementMaster);
+        return ((delegate* unmanaged[MemberFunction]<IMarkupContainer2*, IHTMLElement**, int>)(lpVtbl[9]))((IMarkupContainer2*)Unsafe.AsPointer(ref this), ppElementMaster);
     }
 
     public interface Interface : IMarkupContainer.Interface
@@ -129,33 +129,33 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> OwningDoc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLDocument2**, int> OwningDoc;
 
         [NativeTypeName("HRESULT (IHTMLChangeSink *, IHTMLChangeLog **, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int> CreateChangeLog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int> CreateChangeLog;
 
         [NativeTypeName("HRESULT (IHTMLChangeSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLChangeSink*, uint*, int> RegisterForDirtyRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLChangeSink*, uint*, int> RegisterForDirtyRange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnRegisterForDirtyRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnRegisterForDirtyRange;
 
         [NativeTypeName("HRESULT (DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMarkupPointer*, IMarkupPointer*, int> GetAndClearDirtyRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMarkupPointer*, IMarkupPointer*, int> GetAndClearDirtyRange;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetVersionNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetVersionNumber;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetMasterElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> GetMasterElement;
     }
 }

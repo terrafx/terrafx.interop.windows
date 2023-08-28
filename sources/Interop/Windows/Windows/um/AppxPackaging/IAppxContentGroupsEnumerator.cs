@@ -27,7 +27,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, uint>)(lpVtbl[1]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, uint>)(lpVtbl[1]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, uint>)(lpVtbl[2]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, uint>)(lpVtbl[2]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxContentGroupsEnumerator.xml' path='doc/member[@name="IAppxContentGroupsEnumerator.GetCurrent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxContentGroup** stream)
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), stream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), stream);
     }
 
     /// <include file='IAppxContentGroupsEnumerator.xml' path='doc/member[@name="IAppxContentGroupsEnumerator.GetHasCurrent"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     /// <include file='IAppxContentGroupsEnumerator.xml' path='doc/member[@name="IAppxContentGroupsEnumerator.MoveNext"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)
     {
-        return ((delegate* unmanaged<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupsEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxContentGroupsEnumerator*)Unsafe.AsPointer(ref this), hasNext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxContentGroupsEnumerator : IAppxContentGroupsEn
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxContentGroup**, int> GetCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxContentGroup**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
     }
 }

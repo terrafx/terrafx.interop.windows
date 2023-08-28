@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, uint>)(lpVtbl[1]))((IHTMLDialog2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, uint>)(lpVtbl[1]))((IHTMLDialog2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, uint>)(lpVtbl[2]))((IHTMLDialog2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, uint>)(lpVtbl[2]))((IHTMLDialog2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, uint*, int>)(lpVtbl[3]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, uint*, int>)(lpVtbl[3]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLDialog2.xml' path='doc/member[@name="IHTMLDialog2.put_status"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT put_status([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, char*, int>)(lpVtbl[7]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, char*, int>)(lpVtbl[7]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDialog2.xml' path='doc/member[@name="IHTMLDialog2.get_status"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_status([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, char**, int>)(lpVtbl[8]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, char**, int>)(lpVtbl[8]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLDialog2.xml' path='doc/member[@name="IHTMLDialog2.put_resizable"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT put_resizable([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, char*, int>)(lpVtbl[9]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, char*, int>)(lpVtbl[9]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLDialog2.xml' path='doc/member[@name="IHTMLDialog2.get_resizable"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_resizable([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLDialog2*, char**, int>)(lpVtbl[10]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDialog2*, char**, int>)(lpVtbl[10]))((IHTMLDialog2*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -129,36 +129,36 @@ public unsafe partial struct IHTMLDialog2 : IHTMLDialog2.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_status;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_status;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_resizable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_resizable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_resizable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_resizable;
     }
 }

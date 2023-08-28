@@ -25,7 +25,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFilterInfo*, Guid*, void**, int>)(lpVtbl[0]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, Guid*, void**, int>)(lpVtbl[0]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFilterInfo*, uint>)(lpVtbl[1]))((IFilterInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, uint>)(lpVtbl[1]))((IFilterInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFilterInfo*, uint>)(lpVtbl[2]))((IFilterInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, uint>)(lpVtbl[2]))((IFilterInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IFilterInfo*, uint*, int>)(lpVtbl[3]))((IFilterInfo*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, uint*, int>)(lpVtbl[3]))((IFilterInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IFilterInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFilterInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFilterInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFilterInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFilterInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IFilterInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFilterInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFilterInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.FindPin"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT FindPin([NativeTypeName("BSTR")] char* strPinID, IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IFilterInfo*, char*, IDispatch**, int>)(lpVtbl[7]))((IFilterInfo*)Unsafe.AsPointer(ref this), strPinID, ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, char*, IDispatch**, int>)(lpVtbl[7]))((IFilterInfo*)Unsafe.AsPointer(ref this), strPinID, ppUnk);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Name"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_Name([NativeTypeName("BSTR *")] char** strName)
     {
-        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[8]))((IFilterInfo*)Unsafe.AsPointer(ref this), strName);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, char**, int>)(lpVtbl[8]))((IFilterInfo*)Unsafe.AsPointer(ref this), strName);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_VendorInfo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_VendorInfo([NativeTypeName("BSTR *")] char** strVendorInfo)
     {
-        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[9]))((IFilterInfo*)Unsafe.AsPointer(ref this), strVendorInfo);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, char**, int>)(lpVtbl[9]))((IFilterInfo*)Unsafe.AsPointer(ref this), strVendorInfo);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Filter"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_Filter(IUnknown** ppUnk)
     {
-        return ((delegate* unmanaged<IFilterInfo*, IUnknown**, int>)(lpVtbl[10]))((IFilterInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, IUnknown**, int>)(lpVtbl[10]))((IFilterInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Pins"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT get_Pins(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IFilterInfo*, IDispatch**, int>)(lpVtbl[11]))((IFilterInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, IDispatch**, int>)(lpVtbl[11]))((IFilterInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_IsFileSource"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_IsFileSource([NativeTypeName("LONG *")] int* pbIsSource)
     {
-        return ((delegate* unmanaged<IFilterInfo*, int*, int>)(lpVtbl[12]))((IFilterInfo*)Unsafe.AsPointer(ref this), pbIsSource);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, int*, int>)(lpVtbl[12]))((IFilterInfo*)Unsafe.AsPointer(ref this), pbIsSource);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.get_Filename"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT get_Filename([NativeTypeName("BSTR *")] char** pstrFilename)
     {
-        return ((delegate* unmanaged<IFilterInfo*, char**, int>)(lpVtbl[13]))((IFilterInfo*)Unsafe.AsPointer(ref this), pstrFilename);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, char**, int>)(lpVtbl[13]))((IFilterInfo*)Unsafe.AsPointer(ref this), pstrFilename);
     }
 
     /// <include file='IFilterInfo.xml' path='doc/member[@name="IFilterInfo.put_Filename"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT put_Filename([NativeTypeName("BSTR")] char* strFilename)
     {
-        return ((delegate* unmanaged<IFilterInfo*, char*, int>)(lpVtbl[14]))((IFilterInfo*)Unsafe.AsPointer(ref this), strFilename);
+        return ((delegate* unmanaged[MemberFunction]<IFilterInfo*, char*, int>)(lpVtbl[14]))((IFilterInfo*)Unsafe.AsPointer(ref this), strFilename);
     }
 
     public interface Interface : IDispatch.Interface
@@ -173,48 +173,48 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IDispatch**, int> FindPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IDispatch**, int> FindPin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_VendorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VendorInfo;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_Filter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_Filter;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Pins;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Pins;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_IsFileSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_IsFileSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Filename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Filename;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_Filename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_Filename;
     }
 }

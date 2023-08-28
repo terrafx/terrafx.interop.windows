@@ -25,7 +25,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, uint>)(lpVtbl[1]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, uint>)(lpVtbl[1]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, uint>)(lpVtbl[2]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, uint>)(lpVtbl[2]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <inheritdoc cref="IOleInPlaceUIWindow.GetBorder" />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetBorder([NativeTypeName("LPRECT")] RECT* lprectBorder)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[5]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lprectBorder);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[5]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lprectBorder);
     }
 
     /// <inheritdoc cref="IOleInPlaceUIWindow.RequestBorderSpace" />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(6)]
     public HRESULT RequestBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[6]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[6]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
     }
 
     /// <inheritdoc cref="IOleInPlaceUIWindow.SetBorderSpace" />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(7)]
     public HRESULT SetBorderSpace([NativeTypeName("LPCBORDERWIDTHS")] RECT* pborderwidths)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[7]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, RECT*, int>)(lpVtbl[7]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pborderwidths);
     }
 
     /// <inheritdoc cref="IOleInPlaceUIWindow.SetActiveObject" />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(8)]
     public HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] char* pszObjName)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, IOleInPlaceActiveObject*, char*, int>)(lpVtbl[8]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, IOleInPlaceActiveObject*, char*, int>)(lpVtbl[8]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pActiveObject, pszObjName);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.InsertMenus"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(9)]
     public HRESULT InsertMenus(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[9]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[9]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.SetMenu"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(10)]
     public HRESULT SetMenu(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenu, HWND hwndActiveObject)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[10]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, holemenu, hwndActiveObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[10]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared, holemenu, hwndActiveObject);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.RemoveMenus"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(11)]
     public HRESULT RemoveMenus(HMENU hmenuShared)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, HMENU, int>)(lpVtbl[11]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, HMENU, int>)(lpVtbl[11]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), hmenuShared);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.SetStatusText"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(12)]
     public HRESULT SetStatusText([NativeTypeName("LPCOLESTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, char*, int>)(lpVtbl[12]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, char*, int>)(lpVtbl[12]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.EnableModeless"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(13)]
     public HRESULT EnableModeless(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[13]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, BOOL, int>)(lpVtbl[13]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='IOleInPlaceFrame.xml' path='doc/member[@name="IOleInPlaceFrame.TranslateAccelerator"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
     [VtblIndex(14)]
     public HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg, [NativeTypeName("WORD")] ushort wID)
     {
-        return ((delegate* unmanaged<IOleInPlaceFrame*, MSG*, ushort, int>)(lpVtbl[14]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lpmsg, wID);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceFrame*, MSG*, ushort, int>)(lpVtbl[14]))((IOleInPlaceFrame*)Unsafe.AsPointer(ref this), lpmsg, wID);
     }
 
     public interface Interface : IOleInPlaceUIWindow.Interface
@@ -167,48 +167,48 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetBorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetBorder;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> RequestBorderSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> RequestBorderSpace;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetBorderSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetBorderSpace;
 
         [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, char*, int> SetActiveObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceActiveObject*, char*, int> SetActiveObject;
 
         [NativeTypeName("HRESULT (HMENU, LPOLEMENUGROUPWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenus;
 
         [NativeTypeName("HRESULT (HMENU, HOLEMENU, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenu;
 
         [NativeTypeName("HRESULT (HMENU) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, int> RemoveMenus;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetStatusText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetStatusText;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> EnableModeless;
 
         [NativeTypeName("HRESULT (LPMSG, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, ushort, int> TranslateAccelerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, ushort, int> TranslateAccelerator;
     }
 }

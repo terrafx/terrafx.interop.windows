@@ -25,7 +25,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQueryContinue*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQueryContinue*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQueryContinue*, uint>)(lpVtbl[1]))((IQueryContinue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryContinue*, uint>)(lpVtbl[1]))((IQueryContinue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQueryContinue*, uint>)(lpVtbl[2]))((IQueryContinue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryContinue*, uint>)(lpVtbl[2]))((IQueryContinue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQueryContinue.xml' path='doc/member[@name="IQueryContinue.QueryContinue"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT QueryContinue()
     {
-        return ((delegate* unmanaged<IQueryContinue*, int>)(lpVtbl[3]))((IQueryContinue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryContinue*, int>)(lpVtbl[3]))((IQueryContinue*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IQueryContinue : IQueryContinue.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> QueryContinue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> QueryContinue;
     }
 }

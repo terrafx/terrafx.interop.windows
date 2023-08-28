@@ -27,7 +27,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, uint>)(lpVtbl[1]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, uint>)(lpVtbl[1]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, uint>)(lpVtbl[2]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, uint>)(lpVtbl[2]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.SetWorkingDirectory"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(3)]
     public HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] char* workingDirectory)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, char*, int>)(lpVtbl[3]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), workingDirectory);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, char*, int>)(lpVtbl[3]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), workingDirectory);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackage"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(4)]
     public HRESULT CreateDeltaPackage(IStream* updatedPackageStream, IStream* baselinePackageStream, IStream* deltaPackageStream)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, IStream*, int>)(lpVtbl[4]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselinePackageStream, deltaPackageStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, IStream*, IStream*, IStream*, int>)(lpVtbl[4]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselinePackageStream, deltaPackageStream);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackageUsingBaselineBlockMap"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(5)]
     public HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] char* baselinePackageFullName, IStream* deltaPackageStream)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, char*, IStream*, int>)(lpVtbl[5]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselineBlockMapStream, baselinePackageFullName, deltaPackageStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, IStream*, IStream*, char*, IStream*, int>)(lpVtbl[5]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselineBlockMapStream, baselinePackageFullName, deltaPackageStream);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdatePackage"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(6)]
     public HRESULT UpdatePackage(IStream* baselinePackageStream, IStream* deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int>)(lpVtbl[6]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselinePackageStream, deltaPackageStream, updateOption);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int>)(lpVtbl[6]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselinePackageStream, deltaPackageStream, updateOption);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdateEncryptedPackage"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(7)]
     public HRESULT UpdateEncryptedPackage(IStream* baselineEncryptedPackageStream, IStream* deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *")] APPX_ENCRYPTED_PACKAGE_SETTINGS2* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int>)(lpVtbl[7]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselineEncryptedPackageStream, deltaPackageStream, updateOption, settings, keyInfo);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int>)(lpVtbl[7]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselineEncryptedPackageStream, deltaPackageStream, updateOption, settings, keyInfo);
     }
 
     /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdatePackageManifest"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
     [VtblIndex(8)]
     public HRESULT UpdatePackageManifest(IStream* packageStream, IStream* updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options)
     {
-        return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int>)(lpVtbl[8]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), packageStream, updatedManifestStream, isPackageEncrypted, options);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageEditor*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int>)(lpVtbl[8]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), packageStream, updatedManifestStream, isPackageEncrypted, options);
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetWorkingDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetWorkingDirectory;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, IStream*, int> CreateDeltaPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, IStream*, int> CreateDeltaPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, char*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, char*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int> UpdatePackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int> UpdatePackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *, const APPX_KEY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int> UpdateEncryptedPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int> UpdateEncryptedPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int> UpdatePackageManifest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int> UpdatePackageManifest;
     }
 }

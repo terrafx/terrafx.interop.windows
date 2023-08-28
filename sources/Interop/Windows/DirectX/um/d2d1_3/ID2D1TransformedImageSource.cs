@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1TransformedImageSource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1TransformedImageSource*, uint>)(lpVtbl[1]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, uint>)(lpVtbl[1]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1TransformedImageSource*, uint>)(lpVtbl[2]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, uint>)(lpVtbl[2]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <include file='ID2D1TransformedImageSource.xml' path='doc/member[@name="ID2D1TransformedImageSource.GetSource"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [VtblIndex(4)]
     public void GetSource(ID2D1ImageSource** imageSource)
     {
-        ((delegate* unmanaged<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), imageSource);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), imageSource);
     }
 
     /// <include file='ID2D1TransformedImageSource.xml' path='doc/member[@name="ID2D1TransformedImageSource.GetProperties"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     [VtblIndex(5)]
     public void GetProperties(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties)
     {
-        ((delegate* unmanaged<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
     }
 
     public interface Interface : ID2D1Image.Interface
@@ -84,21 +84,21 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1ImageSource **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1ImageSource**, void> GetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1ImageSource**, void> GetSource;
 
         [NativeTypeName("void (D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void> GetProperties;
     }
 }

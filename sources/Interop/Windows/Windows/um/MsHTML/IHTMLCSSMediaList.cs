@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, uint>)(lpVtbl[1]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, uint>)(lpVtbl[1]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, uint>)(lpVtbl[2]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, uint>)(lpVtbl[2]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, uint*, int>)(lpVtbl[3]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, uint*, int>)(lpVtbl[3]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.put_mediaText"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(7)]
     public HRESULT put_mediaText([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, char*, int>)(lpVtbl[7]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, char*, int>)(lpVtbl[7]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.get_mediaText"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_mediaText([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, char**, int>)(lpVtbl[8]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, char**, int>)(lpVtbl[8]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.get_length"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(9)]
     public HRESULT get_length([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, int*, int>)(lpVtbl[9]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, int*, int>)(lpVtbl[9]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.item"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(10)]
     public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("BSTR *")] char** pbstrMedium)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, int, char**, int>)(lpVtbl[10]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), index, pbstrMedium);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, int, char**, int>)(lpVtbl[10]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), index, pbstrMedium);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.appendMedium"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(11)]
     public HRESULT appendMedium([NativeTypeName("BSTR")] char* bstrMedium)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, char*, int>)(lpVtbl[11]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, char*, int>)(lpVtbl[11]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
     }
 
     /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.deleteMedium"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
     [VtblIndex(12)]
     public HRESULT deleteMedium([NativeTypeName("BSTR")] char* bstrMedium)
     {
-        return ((delegate* unmanaged<IHTMLCSSMediaList*, char*, int>)(lpVtbl[12]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSMediaList*, char*, int>)(lpVtbl[12]))((IHTMLCSSMediaList*)Unsafe.AsPointer(ref this), bstrMedium);
     }
 
     public interface Interface : IDispatch.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_mediaText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_mediaText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_mediaText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_mediaText;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, int> item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> item;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> appendMedium;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> appendMedium;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> deleteMedium;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> deleteMedium;
     }
 }

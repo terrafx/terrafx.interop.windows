@@ -26,7 +26,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[0]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[0]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDMLDevice1*, uint>)(lpVtbl[1]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, uint>)(lpVtbl[1]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDMLDevice1*, uint>)(lpVtbl[2]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, uint>)(lpVtbl[2]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDMLObject.GetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* dataSize, void* data)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint dataSize, [NativeTypeName("const void *")] void* data)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, dataSize, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, uint, void*, int>)(lpVtbl[4]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, dataSize, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetPrivateDataInterface" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, IUnknown* data)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, data);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((IDMLDevice1*)Unsafe.AsPointer(ref this), guid, data);
     }
 
     /// <inheritdoc cref="IDMLObject.SetName" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, char*, int>)(lpVtbl[6]))((IDMLDevice1*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, char*, int>)(lpVtbl[6]))((IDMLDevice1*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IDMLDevice.CheckFeatureSupport" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT CheckFeatureSupport(DML_FEATURE feature, uint featureQueryDataSize, [NativeTypeName("const void *")] void* featureQueryData, uint featureSupportDataSize, void* featureSupportData)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, DML_FEATURE, uint, void*, uint, void*, int>)(lpVtbl[7]))((IDMLDevice1*)Unsafe.AsPointer(ref this), feature, featureQueryDataSize, featureQueryData, featureSupportDataSize, featureSupportData);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, DML_FEATURE, uint, void*, uint, void*, int>)(lpVtbl[7]))((IDMLDevice1*)Unsafe.AsPointer(ref this), feature, featureQueryDataSize, featureQueryData, featureSupportDataSize, featureSupportData);
     }
 
     /// <inheritdoc cref="IDMLDevice.CreateOperator" />
@@ -92,7 +92,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT CreateOperator([NativeTypeName("const DML_OPERATOR_DESC *")] DML_OPERATOR_DESC* desc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, DML_OPERATOR_DESC*, Guid*, void**, int>)(lpVtbl[8]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, DML_OPERATOR_DESC*, Guid*, void**, int>)(lpVtbl[8]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, riid, ppv);
     }
 
     /// <inheritdoc cref="IDMLDevice.CompileOperator" />
@@ -100,7 +100,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT CompileOperator(IDMLOperator* op, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, IDMLOperator*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[9]))((IDMLDevice1*)Unsafe.AsPointer(ref this), op, flags, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, IDMLOperator*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[9]))((IDMLDevice1*)Unsafe.AsPointer(ref this), op, flags, riid, ppv);
     }
 
     /// <inheritdoc cref="IDMLDevice.CreateOperatorInitializer" />
@@ -108,7 +108,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT CreateOperatorInitializer(uint operatorCount, [NativeTypeName("IDMLCompiledOperator *const *")] IDMLCompiledOperator** operators, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, uint, IDMLCompiledOperator**, Guid*, void**, int>)(lpVtbl[10]))((IDMLDevice1*)Unsafe.AsPointer(ref this), operatorCount, operators, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, uint, IDMLCompiledOperator**, Guid*, void**, int>)(lpVtbl[10]))((IDMLDevice1*)Unsafe.AsPointer(ref this), operatorCount, operators, riid, ppv);
     }
 
     /// <inheritdoc cref="IDMLDevice.CreateCommandRecorder" />
@@ -116,7 +116,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT CreateCommandRecorder([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[11]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[11]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <inheritdoc cref="IDMLDevice.CreateBindingTable" />
@@ -124,7 +124,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT CreateBindingTable([NativeTypeName("const DML_BINDING_TABLE_DESC *")] DML_BINDING_TABLE_DESC* desc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, DML_BINDING_TABLE_DESC*, Guid*, void**, int>)(lpVtbl[12]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, DML_BINDING_TABLE_DESC*, Guid*, void**, int>)(lpVtbl[12]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, riid, ppv);
     }
 
     /// <inheritdoc cref="IDMLDevice.Evict" />
@@ -132,7 +132,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Evict(uint count, [NativeTypeName("IDMLPageable *const *")] IDMLPageable** ppObjects)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, uint, IDMLPageable**, int>)(lpVtbl[13]))((IDMLDevice1*)Unsafe.AsPointer(ref this), count, ppObjects);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, uint, IDMLPageable**, int>)(lpVtbl[13]))((IDMLDevice1*)Unsafe.AsPointer(ref this), count, ppObjects);
     }
 
     /// <inheritdoc cref="IDMLDevice.MakeResident" />
@@ -140,7 +140,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT MakeResident(uint count, [NativeTypeName("IDMLPageable *const *")] IDMLPageable** ppObjects)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, uint, IDMLPageable**, int>)(lpVtbl[14]))((IDMLDevice1*)Unsafe.AsPointer(ref this), count, ppObjects);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, uint, IDMLPageable**, int>)(lpVtbl[14]))((IDMLDevice1*)Unsafe.AsPointer(ref this), count, ppObjects);
     }
 
     /// <inheritdoc cref="IDMLDevice.GetDeviceRemovedReason" />
@@ -148,7 +148,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetDeviceRemovedReason()
     {
-        return ((delegate* unmanaged<IDMLDevice1*, int>)(lpVtbl[15]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, int>)(lpVtbl[15]))((IDMLDevice1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDMLDevice.GetParentDevice" />
@@ -156,7 +156,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT GetParentDevice([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[16]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, Guid*, void**, int>)(lpVtbl[16]))((IDMLDevice1*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IDMLDevice1.xml' path='doc/member[@name="IDMLDevice1.CompileGraph"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT CompileGraph([NativeTypeName("const DML_GRAPH_DESC *")] DML_GRAPH_DESC* desc, DML_EXECUTION_FLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDMLDevice1*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[17]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, flags, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDMLDevice1*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int>)(lpVtbl[17]))((IDMLDevice1*)Unsafe.AsPointer(ref this), desc, flags, riid, ppv);
     }
 
     public interface Interface : IDMLDevice.Interface
@@ -177,57 +177,57 @@ public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (DML_FEATURE, UINT, const void *, UINT, void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_FEATURE, uint, void*, uint, void*, int> CheckFeatureSupport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_FEATURE, uint, void*, uint, void*, int> CheckFeatureSupport;
 
         [NativeTypeName("HRESULT (const DML_OPERATOR_DESC *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_OPERATOR_DESC*, Guid*, void**, int> CreateOperator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_OPERATOR_DESC*, Guid*, void**, int> CreateOperator;
 
         [NativeTypeName("HRESULT (IDMLOperator *, DML_EXECUTION_FLAGS, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDMLOperator*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileOperator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDMLOperator*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileOperator;
 
         [NativeTypeName("HRESULT (UINT, IDMLCompiledOperator *const *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDMLCompiledOperator**, Guid*, void**, int> CreateOperatorInitializer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDMLCompiledOperator**, Guid*, void**, int> CreateOperatorInitializer;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> CreateCommandRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> CreateCommandRecorder;
 
         [NativeTypeName("HRESULT (const DML_BINDING_TABLE_DESC *, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_BINDING_TABLE_DESC*, Guid*, void**, int> CreateBindingTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_BINDING_TABLE_DESC*, Guid*, void**, int> CreateBindingTable;
 
         [NativeTypeName("HRESULT (UINT, IDMLPageable *const *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDMLPageable**, int> Evict;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDMLPageable**, int> Evict;
 
         [NativeTypeName("HRESULT (UINT, IDMLPageable *const *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDMLPageable**, int> MakeResident;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDMLPageable**, int> MakeResident;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetDeviceRemovedReason;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetDeviceRemovedReason;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParentDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParentDevice;
 
         [NativeTypeName("HRESULT (const DML_GRAPH_DESC *, DML_EXECUTION_FLAGS, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileGraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DML_GRAPH_DESC*, DML_EXECUTION_FLAGS, Guid*, void**, int> CompileGraph;
     }
 }

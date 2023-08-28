@@ -25,7 +25,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, Guid*, void**, int>)(lpVtbl[0]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, Guid*, void**, int>)(lpVtbl[0]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, uint>)(lpVtbl[1]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, uint>)(lpVtbl[1]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, uint>)(lpVtbl[2]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, uint>)(lpVtbl[2]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, uint*, int>)(lpVtbl[3]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, uint*, int>)(lpVtbl[3]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.EjectMedia"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT EjectMedia()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int>)(lpVtbl[7]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int>)(lpVtbl[7]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.CloseTray"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT CloseTray()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int>)(lpVtbl[8]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int>)(lpVtbl[8]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.AcquireExclusiveAccess"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT AcquireExclusiveAccess([NativeTypeName("VARIANT_BOOL")] short force, [NativeTypeName("BSTR")] char* __MIDL__IDiscRecorder20000)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, short, char*, int>)(lpVtbl[9]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), force, __MIDL__IDiscRecorder20000);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, short, char*, int>)(lpVtbl[9]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), force, __MIDL__IDiscRecorder20000);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.ReleaseExclusiveAccess"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT ReleaseExclusiveAccess()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int>)(lpVtbl[10]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int>)(lpVtbl[10]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.DisableMcn"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT DisableMcn()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int>)(lpVtbl[11]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int>)(lpVtbl[11]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.EnableMcn"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT EnableMcn()
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int>)(lpVtbl[12]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int>)(lpVtbl[12]))((IDiscRecorder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.InitializeDiscRecorder"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT InitializeDiscRecorder([NativeTypeName("BSTR")] char* recorderUniqueId)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char*, int>)(lpVtbl[13]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), recorderUniqueId);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char*, int>)(lpVtbl[13]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), recorderUniqueId);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ActiveDiscRecorder"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT get_ActiveDiscRecorder([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[14]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[14]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VendorId"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT get_VendorId([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[15]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[15]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ProductId"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT get_ProductId([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[16]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[16]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ProductRevision"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT get_ProductRevision([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[17]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[17]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VolumeName"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(18)]
     public HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[18]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[18]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_VolumePathNames"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(19)]
     public HRESULT get_VolumePathNames(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[19]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[19]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_DeviceCanLoadMedia"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(20)]
     public HRESULT get_DeviceCanLoadMedia([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, short*, int>)(lpVtbl[20]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, short*, int>)(lpVtbl[20]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_LegacyDeviceNumber"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(21)]
     public HRESULT get_LegacyDeviceNumber([NativeTypeName("LONG *")] int* legacyDeviceNumber)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, int*, int>)(lpVtbl[21]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), legacyDeviceNumber);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, int*, int>)(lpVtbl[21]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), legacyDeviceNumber);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_SupportedFeaturePages"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT get_SupportedFeaturePages(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[22]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[22]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_CurrentFeaturePages"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(23)]
     public HRESULT get_CurrentFeaturePages(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[23]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[23]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_SupportedProfiles"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT get_SupportedProfiles(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[24]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[24]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_CurrentProfiles"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT get_CurrentProfiles(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[25]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[25]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_SupportedModePages"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT get_SupportedModePages(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[26]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, SAFEARRAY**, int>)(lpVtbl[26]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.get_ExclusiveAccessOwner"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
     [VtblIndex(27)]
     public HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2*, char**, int>)(lpVtbl[27]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2*, char**, int>)(lpVtbl[27]))((IDiscRecorder2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IDispatch.Interface
@@ -316,87 +316,87 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EjectMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EjectMedia;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CloseTray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CloseTray;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, char*, int> AcquireExclusiveAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, char*, int> AcquireExclusiveAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReleaseExclusiveAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReleaseExclusiveAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DisableMcn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DisableMcn;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EnableMcn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EnableMcn;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> InitializeDiscRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> InitializeDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ActiveDiscRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ActiveDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_VendorId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VendorId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProductId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProductId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProductRevision;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProductRevision;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_VolumeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VolumeName;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_VolumePathNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_VolumePathNames;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_DeviceCanLoadMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_DeviceCanLoadMedia;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LegacyDeviceNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LegacyDeviceNumber;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedFeaturePages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedFeaturePages;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_CurrentFeaturePages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_CurrentFeaturePages;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedProfiles;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_CurrentProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_CurrentProfiles;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedModePages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedModePages;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ExclusiveAccessOwner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ExclusiveAccessOwner;
     }
 }

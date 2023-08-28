@@ -25,7 +25,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, uint>)(lpVtbl[1]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, uint>)(lpVtbl[1]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, uint>)(lpVtbl[2]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, uint>)(lpVtbl[2]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.GetBuffer"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetBuffer(RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid)
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int>)(lpVtbl[3]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, RPCOLEMESSAGE*, Guid*, int>)(lpVtbl[3]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, riid);
     }
 
     /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.SendReceive"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(4)]
     public HRESULT SendReceive(RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus)
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[4]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[4]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage, pStatus);
     }
 
     /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.FreeBuffer"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(5)]
     public HRESULT FreeBuffer(RPCOLEMESSAGE* pMessage)
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, RPCOLEMESSAGE*, int>)(lpVtbl[5]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, RPCOLEMESSAGE*, int>)(lpVtbl[5]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pMessage);
     }
 
     /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.GetDestCtx"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, uint*, void**, int>)(lpVtbl[6]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, uint*, void**, int>)(lpVtbl[6]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
     }
 
     /// <include file='IRpcChannelBuffer.xml' path='doc/member[@name="IRpcChannelBuffer.IsConnected"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
     [VtblIndex(7)]
     public HRESULT IsConnected()
     {
-        return ((delegate* unmanaged<IRpcChannelBuffer*, int>)(lpVtbl[7]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcChannelBuffer*, int>)(lpVtbl[7]))((IRpcChannelBuffer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IRpcChannelBuffer : IRpcChannelBuffer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint*, int> SendReceive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RPCOLEMESSAGE*, uint*, int> SendReceive;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, int> FreeBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RPCOLEMESSAGE*, int> FreeBuffer;
 
         [NativeTypeName("HRESULT (DWORD *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, void**, int> GetDestCtx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, void**, int> GetDestCtx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsConnected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsConnected;
     }
 }

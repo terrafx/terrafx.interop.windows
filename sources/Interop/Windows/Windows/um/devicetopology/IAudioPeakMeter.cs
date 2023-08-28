@@ -25,7 +25,7 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioPeakMeter*, Guid*, void**, int>)(lpVtbl[0]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioPeakMeter*, Guid*, void**, int>)(lpVtbl[0]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioPeakMeter*, uint>)(lpVtbl[1]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioPeakMeter*, uint>)(lpVtbl[1]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioPeakMeter*, uint>)(lpVtbl[2]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioPeakMeter*, uint>)(lpVtbl[2]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioPeakMeter.xml' path='doc/member[@name="IAudioPeakMeter.GetChannelCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetChannelCount(uint* pcChannels)
     {
-        return ((delegate* unmanaged<IAudioPeakMeter*, uint*, int>)(lpVtbl[3]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), pcChannels);
+        return ((delegate* unmanaged[MemberFunction]<IAudioPeakMeter*, uint*, int>)(lpVtbl[3]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), pcChannels);
     }
 
     /// <include file='IAudioPeakMeter.xml' path='doc/member[@name="IAudioPeakMeter.GetLevel"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetLevel(uint nChannel, float* pfLevel)
     {
-        return ((delegate* unmanaged<IAudioPeakMeter*, uint, float*, int>)(lpVtbl[4]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
+        return ((delegate* unmanaged[MemberFunction]<IAudioPeakMeter*, uint, float*, int>)(lpVtbl[4]))((IAudioPeakMeter*)Unsafe.AsPointer(ref this), nChannel, pfLevel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetLevel;
     }
 }

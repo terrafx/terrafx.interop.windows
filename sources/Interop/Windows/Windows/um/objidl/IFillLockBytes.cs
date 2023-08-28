@@ -25,7 +25,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFillLockBytes*, Guid*, void**, int>)(lpVtbl[0]))((IFillLockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, Guid*, void**, int>)(lpVtbl[0]))((IFillLockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFillLockBytes*, uint>)(lpVtbl[1]))((IFillLockBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, uint>)(lpVtbl[1]))((IFillLockBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFillLockBytes*, uint>)(lpVtbl[2]))((IFillLockBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, uint>)(lpVtbl[2]))((IFillLockBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFillLockBytes.xml' path='doc/member[@name="IFillLockBytes.FillAppend"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT FillAppend([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IFillLockBytes*, void*, uint, uint*, int>)(lpVtbl[3]))((IFillLockBytes*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, void*, uint, uint*, int>)(lpVtbl[3]))((IFillLockBytes*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
     }
 
     /// <include file='IFillLockBytes.xml' path='doc/member[@name="IFillLockBytes.FillAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT FillAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IFillLockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((IFillLockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((IFillLockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
     }
 
     /// <include file='IFillLockBytes.xml' path='doc/member[@name="IFillLockBytes.SetFillSize"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT SetFillSize(ULARGE_INTEGER ulSize)
     {
-        return ((delegate* unmanaged<IFillLockBytes*, ULARGE_INTEGER, int>)(lpVtbl[5]))((IFillLockBytes*)Unsafe.AsPointer(ref this), ulSize);
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, ULARGE_INTEGER, int>)(lpVtbl[5]))((IFillLockBytes*)Unsafe.AsPointer(ref this), ulSize);
     }
 
     /// <include file='IFillLockBytes.xml' path='doc/member[@name="IFillLockBytes.Terminate"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Terminate(BOOL bCanceled)
     {
-        return ((delegate* unmanaged<IFillLockBytes*, BOOL, int>)(lpVtbl[6]))((IFillLockBytes*)Unsafe.AsPointer(ref this), bCanceled);
+        return ((delegate* unmanaged[MemberFunction]<IFillLockBytes*, BOOL, int>)(lpVtbl[6]))((IFillLockBytes*)Unsafe.AsPointer(ref this), bCanceled);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> FillAppend;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint*, int> FillAppend;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> FillAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> FillAt;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetFillSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, int> SetFillSize;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Terminate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Terminate;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint>)(lpVtbl[1]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint>)(lpVtbl[1]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint>)(lpVtbl[2]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint>)(lpVtbl[2]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.symbolByAddr"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(3)]
     public HRESULT symbolByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaSymbol** ppSymbol)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, uint, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), isect, offset, ppSymbol);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint, uint, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), isect, offset, ppSymbol);
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.symbolByRVA"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(4)]
     public HRESULT symbolByRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, IDiaSymbol** ppSymbol)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, int>)(lpVtbl[4]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), relativeVirtualAddress, ppSymbol);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, int>)(lpVtbl[4]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), relativeVirtualAddress, ppSymbol);
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.symbolByVA"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(5)]
     public HRESULT symbolByVA([NativeTypeName("ULONGLONG")] ulong virtualAddress, IDiaSymbol** ppSymbol)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, ulong, IDiaSymbol**, int>)(lpVtbl[5]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), virtualAddress, ppSymbol);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, ulong, IDiaSymbol**, int>)(lpVtbl[5]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), virtualAddress, ppSymbol);
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int>)(lpVtbl[6]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int>)(lpVtbl[6]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.Prev"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(7)]
     public HRESULT Prev([NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int>)(lpVtbl[7]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, uint, IDiaSymbol**, uint*, int>)(lpVtbl[7]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumSymbolsByAddr.xml' path='doc/member[@name="IDiaEnumSymbolsByAddr.Clone"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
     [VtblIndex(8)]
     public HRESULT Clone(IDiaEnumSymbolsByAddr** ppenum)
     {
-        return ((delegate* unmanaged<IDiaEnumSymbolsByAddr*, IDiaEnumSymbolsByAddr**, int>)(lpVtbl[8]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumSymbolsByAddr*, IDiaEnumSymbolsByAddr**, int>)(lpVtbl[8]))((IDiaEnumSymbolsByAddr*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IDiaEnumSymbolsByAddr : IDiaEnumSymbolsByAddr.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDiaSymbol**, int> symbolByAddr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDiaSymbol**, int> symbolByAddr;
 
         [NativeTypeName("HRESULT (DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, int> symbolByRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaSymbol**, int> symbolByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, IDiaSymbol**, int> symbolByVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, IDiaSymbol**, int> symbolByVA;
 
         [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaSymbol**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, uint*, int> Prev;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaSymbol**, uint*, int> Prev;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbolsByAddr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumSymbolsByAddr**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumSymbolsByAddr**, int> Clone;
     }
 }

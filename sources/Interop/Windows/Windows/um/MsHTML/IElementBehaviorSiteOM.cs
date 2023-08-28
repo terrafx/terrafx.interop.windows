@@ -25,7 +25,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, uint>)(lpVtbl[1]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, uint>)(lpVtbl[1]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, uint>)(lpVtbl[2]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, uint>)(lpVtbl[2]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(3)]
     public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, char*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.GetEventCookie"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(4)]
     public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] char* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, char*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.FireEvent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(5)]
     public HRESULT FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), lCookie, pEventObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), lCookie, pEventObject);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.CreateEventObject"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(6)]
     public HRESULT CreateEventObject(IHTMLEventObj** ppEventObject)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, IHTMLEventObj**, int>)(lpVtbl[6]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), ppEventObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, IHTMLEventObj**, int>)(lpVtbl[6]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), ppEventObject);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(7)]
     public HRESULT RegisterName([NativeTypeName("LPOLESTR")] char* pchName)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchName);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchName);
     }
 
     /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterUrn"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
     [VtblIndex(8)]
     public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] char* pchUrn)
     {
-        return ((delegate* unmanaged<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
+        return ((delegate* unmanaged[MemberFunction]<IElementBehaviorSiteOM*, char*, int>)(lpVtbl[8]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchUrn);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int*, int> RegisterEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> RegisterEvent;
 
         [NativeTypeName("HRESULT (LPOLESTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int*, int> GetEventCookie;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, int> GetEventCookie;
 
         [NativeTypeName("HRESULT (LONG, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> FireEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IHTMLEventObj*, int> FireEvent;
 
         [NativeTypeName("HRESULT (IHTMLEventObj **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLEventObj**, int> CreateEventObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLEventObj**, int> CreateEventObject;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> RegisterName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> RegisterName;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> RegisterUrn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> RegisterUrn;
     }
 }

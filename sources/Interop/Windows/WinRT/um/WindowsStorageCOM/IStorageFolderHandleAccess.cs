@@ -28,7 +28,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IStorageFolderHandleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderHandleAccess*, Guid*, void**, int>)(lpVtbl[0]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IStorageFolderHandleAccess*, uint>)(lpVtbl[1]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderHandleAccess*, uint>)(lpVtbl[1]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IStorageFolderHandleAccess*, uint>)(lpVtbl[2]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderHandleAccess*, uint>)(lpVtbl[2]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IStorageFolderHandleAccess.xml' path='doc/member[@name="IStorageFolderHandleAccess.Create"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
     [VtblIndex(3)]
     public HRESULT Create([NativeTypeName("LPCWSTR")] char* fileName, HANDLE_CREATION_OPTIONS creationOptions, HANDLE_ACCESS_OPTIONS accessOptions, HANDLE_SHARING_OPTIONS sharingOptions, HANDLE_OPTIONS options, IOplockBreakingHandler* oplockBreakingHandler, HANDLE* interopHandle)
     {
-        return ((delegate* unmanaged<IStorageFolderHandleAccess*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int>)(lpVtbl[3]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderHandleAccess*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int>)(lpVtbl[3]))((IStorageFolderHandleAccess*)Unsafe.AsPointer(ref this), fileName, creationOptions, accessOptions, sharingOptions, options, oplockBreakingHandler, interopHandle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IStorageFolderHandleAccess : IStorageFolderHandleAc
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler *, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HANDLE_CREATION_OPTIONS, HANDLE_ACCESS_OPTIONS, HANDLE_SHARING_OPTIONS, HANDLE_OPTIONS, IOplockBreakingHandler*, HANDLE*, int> Create;
     }
 }

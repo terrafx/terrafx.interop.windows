@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineEMENotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineEMENotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineEMENotify*, uint>)(lpVtbl[1]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineEMENotify*, uint>)(lpVtbl[1]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineEMENotify*, uint>)(lpVtbl[2]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineEMENotify*, uint>)(lpVtbl[2]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineEMENotify.xml' path='doc/member[@name="IMFMediaEngineEMENotify.Encrypted"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     [VtblIndex(3)]
     public void Encrypted([NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("BSTR")] char* bstrInitDataType)
     {
-        ((delegate* unmanaged<IMFMediaEngineEMENotify*, byte*, uint, char*, void>)(lpVtbl[3]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), pbInitData, cb, bstrInitDataType);
+        ((delegate* unmanaged[MemberFunction]<IMFMediaEngineEMENotify*, byte*, uint, char*, void>)(lpVtbl[3]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this), pbInitData, cb, bstrInitDataType);
     }
 
     /// <include file='IMFMediaEngineEMENotify.xml' path='doc/member[@name="IMFMediaEngineEMENotify.WaitingForKey"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
     [VtblIndex(4)]
     public void WaitingForKey()
     {
-        ((delegate* unmanaged<IMFMediaEngineEMENotify*, void>)(lpVtbl[4]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFMediaEngineEMENotify*, void>)(lpVtbl[4]))((IMFMediaEngineEMENotify*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (const BYTE *, DWORD, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, char*, void> Encrypted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, char*, void> Encrypted;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> WaitingForKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> WaitingForKey;
     }
 }

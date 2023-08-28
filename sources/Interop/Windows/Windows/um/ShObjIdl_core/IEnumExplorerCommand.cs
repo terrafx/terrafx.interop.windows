@@ -25,7 +25,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, Guid*, void**, int>)(lpVtbl[0]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, Guid*, void**, int>)(lpVtbl[0]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, uint>)(lpVtbl[1]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, uint>)(lpVtbl[1]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, uint>)(lpVtbl[2]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, uint>)(lpVtbl[2]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumExplorerCommand.xml' path='doc/member[@name="IEnumExplorerCommand.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IExplorerCommand** pUICommand, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, uint, IExplorerCommand**, uint*, int>)(lpVtbl[3]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), celt, pUICommand, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, uint, IExplorerCommand**, uint*, int>)(lpVtbl[3]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), celt, pUICommand, pceltFetched);
     }
 
     /// <include file='IEnumExplorerCommand.xml' path='doc/member[@name="IEnumExplorerCommand.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, uint, int>)(lpVtbl[4]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, uint, int>)(lpVtbl[4]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumExplorerCommand.xml' path='doc/member[@name="IEnumExplorerCommand.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, int>)(lpVtbl[5]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, int>)(lpVtbl[5]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumExplorerCommand.xml' path='doc/member[@name="IEnumExplorerCommand.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
     [VtblIndex(6)]
     public HRESULT Clone(IEnumExplorerCommand** ppenum)
     {
-        return ((delegate* unmanaged<IEnumExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[6]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExplorerCommand*, IEnumExplorerCommand**, int>)(lpVtbl[6]))((IEnumExplorerCommand*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumExplorerCommand : IEnumExplorerCommand.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IExplorerCommand **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IExplorerCommand**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IExplorerCommand**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumExplorerCommand **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumExplorerCommand**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumExplorerCommand**, int> Clone;
     }
 }

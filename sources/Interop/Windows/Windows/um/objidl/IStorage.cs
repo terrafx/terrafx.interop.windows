@@ -25,7 +25,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IStorage*, Guid*, void**, int>)(lpVtbl[0]))((IStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, Guid*, void**, int>)(lpVtbl[0]))((IStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IStorage*, uint>)(lpVtbl[1]))((IStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint>)(lpVtbl[1]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IStorage*, uint>)(lpVtbl[2]))((IStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint>)(lpVtbl[2]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CreateStream"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateStream([NativeTypeName("const OLECHAR *")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
     {
-        return ((delegate* unmanaged<IStorage*, char*, uint, uint, uint, IStream**, int>)(lpVtbl[3]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstm);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, uint, uint, uint, IStream**, int>)(lpVtbl[3]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstm);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.OpenStream"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OpenStream([NativeTypeName("const OLECHAR *")] char* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
     {
-        return ((delegate* unmanaged<IStorage*, char*, void*, uint, uint, IStream**, int>)(lpVtbl[4]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, reserved1, grfMode, reserved2, ppstm);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, void*, uint, uint, IStream**, int>)(lpVtbl[4]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, reserved1, grfMode, reserved2, ppstm);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CreateStorage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT CreateStorage([NativeTypeName("const OLECHAR *")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg)
     {
-        return ((delegate* unmanaged<IStorage*, char*, uint, uint, uint, IStorage**, int>)(lpVtbl[5]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstg);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, uint, uint, uint, IStorage**, int>)(lpVtbl[5]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstg);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.OpenStorage"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT OpenStorage([NativeTypeName("const OLECHAR *")] char* pwcsName, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg)
     {
-        return ((delegate* unmanaged<IStorage*, char*, IStorage*, uint, char**, uint, IStorage**, int>)(lpVtbl[6]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstg);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, IStorage*, uint, char**, uint, IStorage**, int>)(lpVtbl[6]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstg);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CopyTo"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT CopyTo([NativeTypeName("DWORD")] uint ciidExclude, [NativeTypeName("const IID *")] Guid* rgiidExclude, [NativeTypeName("SNB")] char** snbExclude, IStorage* pstgDest)
     {
-        return ((delegate* unmanaged<IStorage*, uint, Guid*, char**, IStorage*, int>)(lpVtbl[7]))((IStorage*)Unsafe.AsPointer(ref this), ciidExclude, rgiidExclude, snbExclude, pstgDest);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint, Guid*, char**, IStorage*, int>)(lpVtbl[7]))((IStorage*)Unsafe.AsPointer(ref this), ciidExclude, rgiidExclude, snbExclude, pstgDest);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.MoveElementTo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT MoveElementTo([NativeTypeName("const OLECHAR *")] char* pwcsName, IStorage* pstgDest, [NativeTypeName("const OLECHAR *")] char* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags)
     {
-        return ((delegate* unmanaged<IStorage*, char*, IStorage*, char*, uint, int>)(lpVtbl[8]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgDest, pwcsNewName, grfFlags);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, IStorage*, char*, uint, int>)(lpVtbl[8]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgDest, pwcsNewName, grfFlags);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Commit"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
     {
-        return ((delegate* unmanaged<IStorage*, uint, int>)(lpVtbl[9]))((IStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint, int>)(lpVtbl[9]))((IStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Revert"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT Revert()
     {
-        return ((delegate* unmanaged<IStorage*, int>)(lpVtbl[10]))((IStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, int>)(lpVtbl[10]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.EnumElements"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT EnumElements([NativeTypeName("DWORD")] uint reserved1, void* reserved2, [NativeTypeName("DWORD")] uint reserved3, IEnumSTATSTG** ppenum)
     {
-        return ((delegate* unmanaged<IStorage*, uint, void*, uint, IEnumSTATSTG**, int>)(lpVtbl[11]))((IStorage*)Unsafe.AsPointer(ref this), reserved1, reserved2, reserved3, ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint, void*, uint, IEnumSTATSTG**, int>)(lpVtbl[11]))((IStorage*)Unsafe.AsPointer(ref this), reserved1, reserved2, reserved3, ppenum);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.DestroyElement"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT DestroyElement([NativeTypeName("const OLECHAR *")] char* pwcsName)
     {
-        return ((delegate* unmanaged<IStorage*, char*, int>)(lpVtbl[12]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, int>)(lpVtbl[12]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.RenameElement"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT RenameElement([NativeTypeName("const OLECHAR *")] char* pwcsOldName, [NativeTypeName("const OLECHAR *")] char* pwcsNewName)
     {
-        return ((delegate* unmanaged<IStorage*, char*, char*, int>)(lpVtbl[13]))((IStorage*)Unsafe.AsPointer(ref this), pwcsOldName, pwcsNewName);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, char*, int>)(lpVtbl[13]))((IStorage*)Unsafe.AsPointer(ref this), pwcsOldName, pwcsNewName);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetElementTimes"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT SetElementTimes([NativeTypeName("const OLECHAR *")] char* pwcsName, [NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime)
     {
-        return ((delegate* unmanaged<IStorage*, char*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[14]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pctime, patime, pmtime);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, char*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[14]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pctime, patime, pmtime);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetClass"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT SetClass([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IStorage*, Guid*, int>)(lpVtbl[15]))((IStorage*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, Guid*, int>)(lpVtbl[15]))((IStorage*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetStateBits"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT SetStateBits([NativeTypeName("DWORD")] uint grfStateBits, [NativeTypeName("DWORD")] uint grfMask)
     {
-        return ((delegate* unmanaged<IStorage*, uint, uint, int>)(lpVtbl[16]))((IStorage*)Unsafe.AsPointer(ref this), grfStateBits, grfMask);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, uint, uint, int>)(lpVtbl[16]))((IStorage*)Unsafe.AsPointer(ref this), grfStateBits, grfMask);
     }
 
     /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Stat"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
     {
-        return ((delegate* unmanaged<IStorage*, STATSTG*, uint, int>)(lpVtbl[17]))((IStorage*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+        return ((delegate* unmanaged[MemberFunction]<IStorage*, STATSTG*, uint, int>)(lpVtbl[17]))((IStorage*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
     public interface Interface : IUnknown.Interface
@@ -218,57 +218,57 @@ public unsafe partial struct IStorage : IStorage.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const OLECHAR *, DWORD, DWORD, DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint, uint, IStream**, int> CreateStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint, uint, IStream**, int> CreateStream;
 
         [NativeTypeName("HRESULT (const OLECHAR *, void *, DWORD, DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, void*, uint, uint, IStream**, int> OpenStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, void*, uint, uint, IStream**, int> OpenStream;
 
         [NativeTypeName("HRESULT (const OLECHAR *, DWORD, DWORD, DWORD, IStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint, uint, IStorage**, int> CreateStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint, uint, IStorage**, int> CreateStorage;
 
         [NativeTypeName("HRESULT (const OLECHAR *, IStorage *, DWORD, SNB, DWORD, IStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IStorage*, uint, char**, uint, IStorage**, int> OpenStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStorage*, uint, char**, uint, IStorage**, int> OpenStorage;
 
         [NativeTypeName("HRESULT (DWORD, const IID *, SNB, IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, char**, IStorage*, int> CopyTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, char**, IStorage*, int> CopyTo;
 
         [NativeTypeName("HRESULT (const OLECHAR *, IStorage *, const OLECHAR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IStorage*, char*, uint, int> MoveElementTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStorage*, char*, uint, int> MoveElementTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Revert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (DWORD, void *, DWORD, IEnumSTATSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, IEnumSTATSTG**, int> EnumElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, IEnumSTATSTG**, int> EnumElements;
 
         [NativeTypeName("HRESULT (const OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> DestroyElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DestroyElement;
 
         [NativeTypeName("HRESULT (const OLECHAR *, const OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> RenameElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> RenameElement;
 
         [NativeTypeName("HRESULT (const OLECHAR *, const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, FILETIME*, FILETIME*, FILETIME*, int> SetElementTimes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, FILETIME*, FILETIME*, FILETIME*, int> SetElementTimes;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetClass;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetStateBits;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetStateBits;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, STATSTG*, uint, int> Stat;
     }
 }

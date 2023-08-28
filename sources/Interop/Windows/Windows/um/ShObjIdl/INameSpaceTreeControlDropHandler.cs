@@ -25,7 +25,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[1]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[1]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[2]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[2]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragEnter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(3)]
     public HRESULT OnDragEnter(IShellItem* psiOver, IShellItemArray* psiaData, BOOL fOutsideSource, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int>)(lpVtbl[3]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, fOutsideSource, grfKeyState, pdwEffect);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int>)(lpVtbl[3]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, fOutsideSource, grfKeyState, pdwEffect);
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragOver"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(4)]
     public HRESULT OnDragOver(IShellItem* psiOver, IShellItemArray* psiaData, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, uint, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, grfKeyState, pdwEffect);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, uint, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, grfKeyState, pdwEffect);
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragPosition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(5)]
     public HRESULT OnDragPosition(IShellItem* psiOver, IShellItemArray* psiaData, int iNewPosition, int iOldPosition)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[5]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[5]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDrop"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(6)]
     public HRESULT OnDrop(IShellItem* psiOver, IShellItemArray* psiaData, int iPosition, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, uint, uint*, int>)(lpVtbl[6]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iPosition, grfKeyState, pdwEffect);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, uint, uint*, int>)(lpVtbl[6]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iPosition, grfKeyState, pdwEffect);
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDropPosition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(7)]
     public HRESULT OnDropPosition(IShellItem* psiOver, IShellItemArray* psiaData, int iNewPosition, int iOldPosition)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[7]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[7]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
     }
 
     /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragLeave"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
     [VtblIndex(8)]
     public HRESULT OnDragLeave(IShellItem* psiOver)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, int>)(lpVtbl[8]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlDropHandler*, IShellItem*, int>)(lpVtbl[8]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, BOOL, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int> OnDragEnter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int> OnDragEnter;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, uint, uint*, int> OnDragOver;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IShellItemArray*, uint, uint*, int> OnDragOver;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDragPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDragPosition;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, uint, uint*, int> OnDrop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IShellItemArray*, int, uint, uint*, int> OnDrop;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDropPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDropPosition;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> OnDragLeave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> OnDragLeave;
     }
 }

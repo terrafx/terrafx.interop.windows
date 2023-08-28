@@ -25,7 +25,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[1]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[1]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[2]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[2]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Start"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(3)]
     public HRESULT Start()
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.End"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(4)]
     public HRESULT End()
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.OnTranslateMessage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(5)]
     public HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
     }
 
     /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Pause"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(6)]
     public HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
     }
 
     /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Resume"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
     [VtblIndex(7)]
     public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IActiveIMMMessagePumpOwner*, uint, int>)(lpVtbl[7]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> End;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> End;
 
         [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> OnTranslateMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> OnTranslateMessage;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> Pause;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Resume;
     }
 }

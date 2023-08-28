@@ -25,7 +25,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[1]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, uint>)(lpVtbl[1]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[2]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, uint>)(lpVtbl[2]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Enable"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(3)]
     public HRESULT put_Enable(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Enable"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(4)]
     public HRESULT get_Enable(BOOL* pfEnable)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Mono"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(5)]
     public HRESULT put_Mono(BOOL fMono)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Mono"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(6)]
     public HRESULT get_Mono(BOOL* pfMono)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_MixLevel"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(7)]
     public HRESULT put_MixLevel(double Level)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[7]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Level);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double, int>)(lpVtbl[7]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Level);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_MixLevel"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(8)]
     public HRESULT get_MixLevel(double* pLevel)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[8]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pLevel);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[8]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pLevel);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Pan"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(9)]
     public HRESULT put_Pan(double Pan)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[9]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Pan);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double, int>)(lpVtbl[9]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Pan);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Pan"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(10)]
     public HRESULT get_Pan(double* pPan)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[10]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pPan);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[10]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pPan);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Loudness"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(11)]
     public HRESULT put_Loudness(BOOL fLoudness)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Loudness"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(12)]
     public HRESULT get_Loudness(BOOL* pfLoudness)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Treble"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(13)]
     public HRESULT put_Treble(double Treble)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[13]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Treble);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double, int>)(lpVtbl[13]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Treble);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Treble"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(14)]
     public HRESULT get_Treble(double* pTreble)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[14]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pTreble);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[14]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pTreble);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_TrebleRange"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(15)]
     public HRESULT get_TrebleRange(double* pRange)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[15]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[15]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Bass"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(16)]
     public HRESULT put_Bass(double Bass)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[16]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Bass);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double, int>)(lpVtbl[16]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Bass);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Bass"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(17)]
     public HRESULT get_Bass(double* pBass)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[17]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pBass);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[17]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pBass);
     }
 
     /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_BassRange"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
     [VtblIndex(18)]
     public HRESULT get_BassRange(double* pRange)
     {
-        return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[18]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
+        return ((delegate* unmanaged[MemberFunction]<IAMAudioInputMixer*, double*, int>)(lpVtbl[18]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
     }
 
     public interface Interface : IUnknown.Interface
@@ -229,60 +229,60 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> put_Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> put_Enable;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_Enable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> put_Mono;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> put_Mono;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_Mono;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_Mono;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_MixLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_MixLevel;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_MixLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_MixLevel;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_Pan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_Pan;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Pan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Pan;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> put_Loudness;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> put_Loudness;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_Loudness;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_Loudness;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_Treble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_Treble;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Treble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Treble;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_TrebleRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_TrebleRange;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_Bass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_Bass;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Bass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Bass;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_BassRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_BassRange;
     }
 }

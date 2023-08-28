@@ -27,7 +27,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActivateAudioInterfaceCompletionHandler*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActivateAudioInterfaceCompletionHandler*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActivateAudioInterfaceCompletionHandler.xml' path='doc/member[@name="IActivateAudioInterfaceCompletionHandler.ActivateCompleted"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
     [VtblIndex(3)]
     public HRESULT ActivateCompleted(IActivateAudioInterfaceAsyncOperation* activateOperation)
     {
-        return ((delegate* unmanaged<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
+        return ((delegate* unmanaged[MemberFunction]<IActivateAudioInterfaceCompletionHandler*, IActivateAudioInterfaceAsyncOperation*, int>)(lpVtbl[3]))((IActivateAudioInterfaceCompletionHandler*)Unsafe.AsPointer(ref this), activateOperation);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IActivateAudioInterfaceAsyncOperation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IActivateAudioInterfaceAsyncOperation*, int> ActivateCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IActivateAudioInterfaceAsyncOperation*, int> ActivateCompleted;
     }
 }

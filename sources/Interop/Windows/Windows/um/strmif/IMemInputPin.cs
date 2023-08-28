@@ -25,7 +25,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMemInputPin*, Guid*, void**, int>)(lpVtbl[0]))((IMemInputPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, Guid*, void**, int>)(lpVtbl[0]))((IMemInputPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[1]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, uint>)(lpVtbl[1]))((IMemInputPin*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[2]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, uint>)(lpVtbl[2]))((IMemInputPin*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.GetAllocator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetAllocator(IMemAllocator** ppAllocator)
     {
-        return ((delegate* unmanaged<IMemInputPin*, IMemAllocator**, int>)(lpVtbl[3]))((IMemInputPin*)Unsafe.AsPointer(ref this), ppAllocator);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, IMemAllocator**, int>)(lpVtbl[3]))((IMemInputPin*)Unsafe.AsPointer(ref this), ppAllocator);
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.NotifyAllocator"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly)
     {
-        return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.GetAllocatorRequirements"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps)
     {
-        return ((delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[5]))((IMemInputPin*)Unsafe.AsPointer(ref this), pProps);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[5]))((IMemInputPin*)Unsafe.AsPointer(ref this), pProps);
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.Receive"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Receive(IMediaSample* pSample)
     {
-        return ((delegate* unmanaged<IMemInputPin*, IMediaSample*, int>)(lpVtbl[6]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSample);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, IMediaSample*, int>)(lpVtbl[6]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSample);
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.ReceiveMultiple"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed)
     {
-        return ((delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int>)(lpVtbl[7]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSamples, nSamples, nSamplesProcessed);
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, IMediaSample**, int, int*, int>)(lpVtbl[7]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSamples, nSamples, nSamplesProcessed);
     }
 
     /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.ReceiveCanBlock"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT ReceiveCanBlock()
     {
-        return ((delegate* unmanaged<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemInputPin*, int>)(lpVtbl[8]))((IMemInputPin*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMemAllocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMemAllocator**, int> GetAllocator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMemAllocator**, int> GetAllocator;
 
         [NativeTypeName("HRESULT (IMemAllocator *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMemAllocator*, BOOL, int> NotifyAllocator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMemAllocator*, BOOL, int> NotifyAllocator;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample*, int> Receive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample*, int> Receive;
 
         [NativeTypeName("HRESULT (IMediaSample **, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaSample**, int, int*, int> ReceiveMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSample**, int, int*, int> ReceiveMultiple;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReceiveCanBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReceiveCanBlock;
     }
 }

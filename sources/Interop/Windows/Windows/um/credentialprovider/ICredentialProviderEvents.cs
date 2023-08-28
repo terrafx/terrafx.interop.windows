@@ -25,7 +25,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderEvents*, uint>)(lpVtbl[1]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderEvents*, uint>)(lpVtbl[1]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderEvents*, uint>)(lpVtbl[2]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderEvents*, uint>)(lpVtbl[2]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderEvents.xml' path='doc/member[@name="ICredentialProviderEvents.CredentialsChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
     [VtblIndex(3)]
     public HRESULT CredentialsChanged([NativeTypeName("UINT_PTR")] nuint upAdviseContext)
     {
-        return ((delegate* unmanaged<ICredentialProviderEvents*, nuint, int>)(lpVtbl[3]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), upAdviseContext);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderEvents*, nuint, int>)(lpVtbl[3]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), upAdviseContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> CredentialsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> CredentialsChanged;
     }
 }

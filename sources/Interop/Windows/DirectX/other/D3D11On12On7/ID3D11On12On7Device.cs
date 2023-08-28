@@ -18,7 +18,7 @@ public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
     [VtblIndex(0)]
     public HRESULT AcquireResource([NativeTypeName("ID3D11On12On7Resource*")] void* pResource, D3D12_RESOURCE_STATES state)
     {
-        return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[0]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[0]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
     }
 
     /// <include file='ID3D11On12On7Device.xml' path='doc/member[@name="ID3D11On12On7Device.ReleaseResource"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
     [VtblIndex(1)]
     public HRESULT ReleaseResource([NativeTypeName("ID3D11On12On7Resource*")] void* pResource, D3D12_RESOURCE_STATES state)
     {
-        return ((delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[1]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int>)(lpVtbl[1]))((ID3D11On12On7Device*)Unsafe.AsPointer(ref this), pResource, state);
     }
 
     public interface Interface
@@ -42,9 +42,9 @@ public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
 
         [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
     }
 }

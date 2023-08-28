@@ -25,7 +25,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMalloc*, Guid*, void**, int>)(lpVtbl[0]))((IMalloc*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, Guid*, void**, int>)(lpVtbl[0]))((IMalloc*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMalloc*, uint>)(lpVtbl[1]))((IMalloc*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, uint>)(lpVtbl[1]))((IMalloc*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMalloc*, uint>)(lpVtbl[2]))((IMalloc*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, uint>)(lpVtbl[2]))((IMalloc*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Alloc"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(3)]
     public void* Alloc([NativeTypeName("SIZE_T")] nuint cb)
     {
-        return ((delegate* unmanaged<IMalloc*, nuint, void*>)(lpVtbl[3]))((IMalloc*)Unsafe.AsPointer(ref this), cb);
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, nuint, void*>)(lpVtbl[3]))((IMalloc*)Unsafe.AsPointer(ref this), cb);
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Realloc"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(4)]
     public void* Realloc(void* pv, [NativeTypeName("SIZE_T")] nuint cb)
     {
-        return ((delegate* unmanaged<IMalloc*, void*, nuint, void*>)(lpVtbl[4]))((IMalloc*)Unsafe.AsPointer(ref this), pv, cb);
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, void*, nuint, void*>)(lpVtbl[4]))((IMalloc*)Unsafe.AsPointer(ref this), pv, cb);
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Free"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(5)]
     public void Free(void* pv)
     {
-        ((delegate* unmanaged<IMalloc*, void*, void>)(lpVtbl[5]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
+        ((delegate* unmanaged[MemberFunction]<IMalloc*, void*, void>)(lpVtbl[5]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.GetSize"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [return: NativeTypeName("SIZE_T")]
     public nuint GetSize(void* pv)
     {
-        return ((delegate* unmanaged<IMalloc*, void*, nuint>)(lpVtbl[6]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, void*, nuint>)(lpVtbl[6]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.DidAlloc"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(7)]
     public int DidAlloc(void* pv)
     {
-        return ((delegate* unmanaged<IMalloc*, void*, int>)(lpVtbl[7]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
+        return ((delegate* unmanaged[MemberFunction]<IMalloc*, void*, int>)(lpVtbl[7]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
     /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.HeapMinimize"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
     [VtblIndex(8)]
     public void HeapMinimize()
     {
-        ((delegate* unmanaged<IMalloc*, void>)(lpVtbl[8]))((IMalloc*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMalloc*, void>)(lpVtbl[8]))((IMalloc*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void *(SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, void*> Alloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, void*> Alloc;
 
         [NativeTypeName("void *(void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, nuint, void*> Realloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, nuint, void*> Realloc;
 
         [NativeTypeName("void (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, void> Free;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, void> Free;
 
         [NativeTypeName("SIZE_T (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, nuint> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, nuint> GetSize;
 
         [NativeTypeName("int (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> DidAlloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> DidAlloc;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> HeapMinimize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> HeapMinimize;
     }
 }

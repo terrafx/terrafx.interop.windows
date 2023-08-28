@@ -27,7 +27,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, uint>)(lpVtbl[1]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, uint>)(lpVtbl[1]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, uint>)(lpVtbl[2]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, uint>)(lpVtbl[2]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.SetSource"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [VtblIndex(3)]
     public HRESULT SetSource(IUnknown* pStream)
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, IUnknown*, int>)(lpVtbl[3]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pStream);
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, IUnknown*, int>)(lpVtbl[3]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pStream);
     }
 
     /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.GetDevice"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [VtblIndex(4)]
     public HRESULT GetDevice(DEVICE_INFO* pDevice)
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, DEVICE_INFO*, int>)(lpVtbl[4]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pDevice);
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, DEVICE_INFO*, int>)(lpVtbl[4]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pDevice);
     }
 
     /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.Shutdown"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
     [VtblIndex(5)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFImageSharingEngine*, int>)(lpVtbl[5]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFImageSharingEngine*, int>)(lpVtbl[5]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetSource;
 
         [NativeTypeName("HRESULT (DEVICE_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEVICE_INFO*, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEVICE_INFO*, int> GetDevice;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

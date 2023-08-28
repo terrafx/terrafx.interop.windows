@@ -25,7 +25,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, Guid*, void**, int>)(lpVtbl[0]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, Guid*, void**, int>)(lpVtbl[0]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint>)(lpVtbl[1]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint>)(lpVtbl[1]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint>)(lpVtbl[2]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint>)(lpVtbl[2]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IModalWindow.Show" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Show(HWND hwndOwner)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, HWND, int>)(lpVtbl[3]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hwndOwner);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, HWND, int>)(lpVtbl[3]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFileTypes" />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFileTypeIndex" />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetFileTypeIndex(uint iFileType)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint, int>)(lpVtbl[5]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), iFileType);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint, int>)(lpVtbl[5]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), iFileType);
     }
 
     /// <inheritdoc cref="IFileDialog.GetFileTypeIndex" />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetFileTypeIndex(uint* piFileType)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint*, int>)(lpVtbl[6]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), piFileType);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint*, int>)(lpVtbl[6]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), piFileType);
     }
 
     /// <inheritdoc cref="IFileDialog.Advise" />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(7)]
     public HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
     }
 
     /// <inheritdoc cref="IFileDialog.Unadvise" />
@@ -91,7 +91,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(8)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint, int>)(lpVtbl[8]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint, int>)(lpVtbl[8]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <inheritdoc cref="IFileDialog.SetOptions" />
@@ -99,7 +99,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(9)]
     public HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint, int>)(lpVtbl[9]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), fos);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint, int>)(lpVtbl[9]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), fos);
     }
 
     /// <inheritdoc cref="IFileDialog.GetOptions" />
@@ -107,7 +107,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(10)]
     public HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, uint*, int>)(lpVtbl[10]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pfos);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, uint*, int>)(lpVtbl[10]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pfos);
     }
 
     /// <inheritdoc cref="IFileDialog.SetDefaultFolder" />
@@ -115,7 +115,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(11)]
     public HRESULT SetDefaultFolder(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[11]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[11]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFolder" />
@@ -123,7 +123,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(12)]
     public HRESULT SetFolder(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[12]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[12]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <inheritdoc cref="IFileDialog.GetFolder" />
@@ -131,7 +131,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(13)]
     public HRESULT GetFolder(IShellItem** ppsi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[13]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[13]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
     }
 
     /// <inheritdoc cref="IFileDialog.GetCurrentSelection" />
@@ -139,7 +139,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(14)]
     public HRESULT GetCurrentSelection(IShellItem** ppsi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[14]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[14]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFileName" />
@@ -147,7 +147,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(15)]
     public HRESULT SetFileName([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[15]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char*, int>)(lpVtbl[15]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <inheritdoc cref="IFileDialog.GetFileName" />
@@ -155,7 +155,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(16)]
     public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** pszName)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char**, int>)(lpVtbl[16]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char**, int>)(lpVtbl[16]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <inheritdoc cref="IFileDialog.SetTitle" />
@@ -163,7 +163,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(17)]
     public HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[17]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszTitle);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char*, int>)(lpVtbl[17]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
     /// <inheritdoc cref="IFileDialog.SetOkButtonLabel" />
@@ -171,7 +171,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(18)]
     public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] char* pszText)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[18]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszText);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char*, int>)(lpVtbl[18]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszText);
     }
 
     /// <inheritdoc cref="IFileDialog.SetFileNameLabel" />
@@ -179,7 +179,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(19)]
     public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[19]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char*, int>)(lpVtbl[19]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszLabel);
     }
 
     /// <inheritdoc cref="IFileDialog.GetResult" />
@@ -187,7 +187,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(20)]
     public HRESULT GetResult(IShellItem** ppsi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[20]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem**, int>)(lpVtbl[20]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppsi);
     }
 
     /// <inheritdoc cref="IFileDialog.AddPlace" />
@@ -195,7 +195,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(21)]
     public HRESULT AddPlace(IShellItem* psi, FDAP fdap)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, fdap);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, fdap);
     }
 
     /// <inheritdoc cref="IFileDialog.SetDefaultExtension" />
@@ -203,7 +203,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(22)]
     public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] char* pszDefaultExtension)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, char*, int>)(lpVtbl[22]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, char*, int>)(lpVtbl[22]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pszDefaultExtension);
     }
 
     /// <inheritdoc cref="IFileDialog.Close" />
@@ -211,7 +211,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(23)]
     public HRESULT Close(HRESULT hr)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, HRESULT, int>)(lpVtbl[23]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hr);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, HRESULT, int>)(lpVtbl[23]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), hr);
     }
 
     /// <inheritdoc cref="IFileDialog.SetClientGuid" />
@@ -219,7 +219,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(24)]
     public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, Guid*, int>)(lpVtbl[24]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), guid);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, Guid*, int>)(lpVtbl[24]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), guid);
     }
 
     /// <inheritdoc cref="IFileDialog.ClearClientData" />
@@ -227,7 +227,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(25)]
     public HRESULT ClearClientData()
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, int>)(lpVtbl[25]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, int>)(lpVtbl[25]))((IFileSaveDialog*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IFileDialog.SetFilter" />
@@ -235,7 +235,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(26)]
     public HRESULT SetFilter(IShellItemFilter* pFilter)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pFilter);
     }
 
     /// <include file='IFileSaveDialog.xml' path='doc/member[@name="IFileSaveDialog.SetSaveAsItem"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(27)]
     public HRESULT SetSaveAsItem(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[27]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem*, int>)(lpVtbl[27]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='IFileSaveDialog.xml' path='doc/member[@name="IFileSaveDialog.SetProperties"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(28)]
     public HRESULT SetProperties(IPropertyStore* pStore)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IPropertyStore*, int>)(lpVtbl[28]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pStore);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IPropertyStore*, int>)(lpVtbl[28]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pStore);
     }
 
     /// <include file='IFileSaveDialog.xml' path='doc/member[@name="IFileSaveDialog.SetCollectedProperties"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(29)]
     public HRESULT SetCollectedProperties(IPropertyDescriptionList* pList, BOOL fAppendDefault)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IPropertyDescriptionList*, BOOL, int>)(lpVtbl[29]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pList, fAppendDefault);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IPropertyDescriptionList*, BOOL, int>)(lpVtbl[29]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), pList, fAppendDefault);
     }
 
     /// <include file='IFileSaveDialog.xml' path='doc/member[@name="IFileSaveDialog.GetProperties"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(30)]
     public HRESULT GetProperties(IPropertyStore** ppStore)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IPropertyStore**, int>)(lpVtbl[30]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppStore);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IPropertyStore**, int>)(lpVtbl[30]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), ppStore);
     }
 
     /// <include file='IFileSaveDialog.xml' path='doc/member[@name="IFileSaveDialog.ApplyProperties"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
     [VtblIndex(31)]
     public HRESULT ApplyProperties(IShellItem* psi, IPropertyStore* pStore, HWND hwnd, IFileOperationProgressSink* pSink)
     {
-        return ((delegate* unmanaged<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
+        return ((delegate* unmanaged[MemberFunction]<IFileSaveDialog*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int>)(lpVtbl[31]))((IFileSaveDialog*)Unsafe.AsPointer(ref this), psi, pStore, hwnd, pSink);
     }
 
     public interface Interface : IFileDialog.Interface
@@ -300,99 +300,99 @@ public unsafe partial struct IFileSaveDialog : IFileSaveDialog.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> Show;
 
         [NativeTypeName("HRESULT (UINT, const COMDLG_FILTERSPEC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, COMDLG_FILTERSPEC*, int> SetFileTypes;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFileTypeIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFileTypeIndex;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetFileTypeIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetFileTypeIndex;
 
         [NativeTypeName("HRESULT (IFileDialogEvents *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFileDialogEvents*, uint*, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFileDialogEvents*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetOptions;
 
         [NativeTypeName("HRESULT (FILEOPENDIALOGOPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOptions;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> SetDefaultFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> SetDefaultFolder;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> SetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> SetFolder;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem**, int> GetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem**, int> GetFolder;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem**, int> GetCurrentSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem**, int> GetCurrentSelection;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetTitle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetOkButtonLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetOkButtonLabel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetFileNameLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetFileNameLabel;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem**, int> GetResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem**, int> GetResult;
 
         [NativeTypeName("HRESULT (IShellItem *, FDAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, FDAP, int> AddPlace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, FDAP, int> AddPlace;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDefaultExtension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDefaultExtension;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> Close;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetClientGuid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetClientGuid;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearClientData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearClientData;
 
         [NativeTypeName("HRESULT (IShellItemFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemFilter*, int> SetFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItemFilter*, int> SetFilter;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> SetSaveAsItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> SetSaveAsItem;
 
         [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore*, int> SetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore*, int> SetProperties;
 
         [NativeTypeName("HRESULT (IPropertyDescriptionList *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyDescriptionList*, BOOL, int> SetCollectedProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyDescriptionList*, BOOL, int> SetCollectedProperties;
 
         [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore**, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore**, int> GetProperties;
 
         [NativeTypeName("HRESULT (IShellItem *, IPropertyStore *, HWND, IFileOperationProgressSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int> ApplyProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, IPropertyStore*, HWND, IFileOperationProgressSink*, int> ApplyProperties;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, void**, int>)(lpVtbl[0]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, Guid*, void**, int>)(lpVtbl[0]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, uint>)(lpVtbl[1]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, uint>)(lpVtbl[1]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, uint>)(lpVtbl[2]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, uint>)(lpVtbl[2]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection.KeyExchange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [VtblIndex(3)]
     public HRESULT KeyExchange(Guid* pRandom, byte** VarLenCertGH, [NativeTypeName("DWORD *")] uint* pdwLengthCertGH)
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int>)(lpVtbl[3]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pRandom, VarLenCertGH, pdwLengthCertGH);
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int>)(lpVtbl[3]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pRandom, VarLenCertGH, pdwLengthCertGH);
     }
 
     /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection.SessionSequenceStart"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [VtblIndex(4)]
     public HRESULT SessionSequenceStart(AMCOPPSignature* pSig)
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPSignature*, int>)(lpVtbl[4]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pSig);
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, AMCOPPSignature*, int>)(lpVtbl[4]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pSig);
     }
 
     /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection.ProtectionCommand"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [VtblIndex(5)]
     public HRESULT ProtectionCommand([NativeTypeName("const AMCOPPCommand *")] AMCOPPCommand* cmd)
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPCommand*, int>)(lpVtbl[5]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), cmd);
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, AMCOPPCommand*, int>)(lpVtbl[5]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), cmd);
     }
 
     /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection.ProtectionStatus"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
     [VtblIndex(6)]
     public HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput)
     {
-        return ((delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
+        return ((delegate* unmanaged[MemberFunction]<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int>)(lpVtbl[6]))((IAMCertifiedOutputProtection*)Unsafe.AsPointer(ref this), pStatusInput, pStatusOutput);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, int> KeyExchange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, byte**, uint*, int> KeyExchange;
 
         [NativeTypeName("HRESULT (AMCOPPSignature *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMCOPPSignature*, int> SessionSequenceStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMCOPPSignature*, int> SessionSequenceStart;
 
         [NativeTypeName("HRESULT (const AMCOPPCommand *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMCOPPCommand*, int> ProtectionCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMCOPPCommand*, int> ProtectionCommand;
 
         [NativeTypeName("HRESULT (const AMCOPPStatusInput *, AMCOPPStatusOutput *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
     }
 }

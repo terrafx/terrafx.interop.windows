@@ -25,7 +25,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRegTreeItem*, Guid*, void**, int>)(lpVtbl[0]))((IRegTreeItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRegTreeItem*, Guid*, void**, int>)(lpVtbl[0]))((IRegTreeItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRegTreeItem*, uint>)(lpVtbl[1]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRegTreeItem*, uint>)(lpVtbl[1]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRegTreeItem*, uint>)(lpVtbl[2]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRegTreeItem*, uint>)(lpVtbl[2]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem.GetCheckState"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetCheckState(BOOL* pbCheck)
     {
-        return ((delegate* unmanaged<IRegTreeItem*, BOOL*, int>)(lpVtbl[3]))((IRegTreeItem*)Unsafe.AsPointer(ref this), pbCheck);
+        return ((delegate* unmanaged[MemberFunction]<IRegTreeItem*, BOOL*, int>)(lpVtbl[3]))((IRegTreeItem*)Unsafe.AsPointer(ref this), pbCheck);
     }
 
     /// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem.SetCheckState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetCheckState(BOOL bCheck)
     {
-        return ((delegate* unmanaged<IRegTreeItem*, BOOL, int>)(lpVtbl[4]))((IRegTreeItem*)Unsafe.AsPointer(ref this), bCheck);
+        return ((delegate* unmanaged[MemberFunction]<IRegTreeItem*, BOOL, int>)(lpVtbl[4]))((IRegTreeItem*)Unsafe.AsPointer(ref this), bCheck);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetCheckState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetCheckState;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetCheckState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetCheckState;
     }
 }

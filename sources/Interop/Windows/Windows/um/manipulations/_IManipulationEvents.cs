@@ -25,7 +25,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, Guid*, void**, int>)(lpVtbl[0]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, Guid*, void**, int>)(lpVtbl[0]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, uint>)(lpVtbl[1]))((_IManipulationEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, uint>)(lpVtbl[1]))((_IManipulationEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, uint>)(lpVtbl[2]))((_IManipulationEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, uint>)(lpVtbl[2]))((_IManipulationEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='_IManipulationEvents.xml' path='doc/member[@name="_IManipulationEvents.ManipulationStarted"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [VtblIndex(3)]
     public HRESULT ManipulationStarted(float x, float y)
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, float, float, int>)(lpVtbl[3]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y);
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, float, float, int>)(lpVtbl[3]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y);
     }
 
     /// <include file='_IManipulationEvents.xml' path='doc/member[@name="_IManipulationEvents.ManipulationDelta"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [VtblIndex(4)]
     public HRESULT ManipulationDelta(float x, float y, float translationDeltaX, float translationDeltaY, float scaleDelta, float expansionDelta, float rotationDelta, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation)
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, float, float, float, float, float, int>)(lpVtbl[4]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, float, float, float, float, float, float, float, float, float, float, float, float, int>)(lpVtbl[4]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, translationDeltaX, translationDeltaY, scaleDelta, expansionDelta, rotationDelta, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
     }
 
     /// <include file='_IManipulationEvents.xml' path='doc/member[@name="_IManipulationEvents.ManipulationCompleted"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
     [VtblIndex(5)]
     public HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation)
     {
-        return ((delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, int>)(lpVtbl[5]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
+        return ((delegate* unmanaged[MemberFunction]<_IManipulationEvents*, float, float, float, float, float, float, float, int>)(lpVtbl[5]))((_IManipulationEvents*)Unsafe.AsPointer(ref this), x, y, cumulativeTranslationX, cumulativeTranslationY, cumulativeScale, cumulativeExpansion, cumulativeRotation);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, int> ManipulationStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, int> ManipulationStarted;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, float, float, float, float, float, float, int> ManipulationDelta;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, float, float, float, float, float, float, float, int> ManipulationDelta;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, float, int> ManipulationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, float, float, float, float, int> ManipulationCompleted;
     }
 }

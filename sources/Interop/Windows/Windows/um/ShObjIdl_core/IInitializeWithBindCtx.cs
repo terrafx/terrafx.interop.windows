@@ -25,7 +25,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInitializeWithBindCtx*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithBindCtx*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInitializeWithBindCtx*, uint>)(lpVtbl[1]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithBindCtx*, uint>)(lpVtbl[1]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInitializeWithBindCtx*, uint>)(lpVtbl[2]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithBindCtx*, uint>)(lpVtbl[2]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInitializeWithBindCtx.xml' path='doc/member[@name="IInitializeWithBindCtx.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
     [VtblIndex(3)]
     public HRESULT Initialize(IBindCtx* pbc)
     {
-        return ((delegate* unmanaged<IInitializeWithBindCtx*, IBindCtx*, int>)(lpVtbl[3]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), pbc);
+        return ((delegate* unmanaged[MemberFunction]<IInitializeWithBindCtx*, IBindCtx*, int>)(lpVtbl[3]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), pbc);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, int> Initialize;
     }
 }

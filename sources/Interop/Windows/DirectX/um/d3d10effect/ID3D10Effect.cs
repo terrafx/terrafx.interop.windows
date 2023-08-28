@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Effect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, uint>)(lpVtbl[1]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, uint>)(lpVtbl[1]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, uint>)(lpVtbl[2]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, uint>)(lpVtbl[2]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsValid"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(3)]
     public BOOL IsValid()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[3]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, int>)(lpVtbl[3]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsPool"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(4)]
     public BOOL IsPool()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[4]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, int>)(lpVtbl[4]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetDevice"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetDevice(ID3D10Device** ppDevice)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, ID3D10Device**, int>)(lpVtbl[5]))((ID3D10Effect*)Unsafe.AsPointer(ref this), ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, ID3D10Device**, int>)(lpVtbl[5]))((ID3D10Effect*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetDesc"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetDesc(D3D10_EFFECT_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, D3D10_EFFECT_DESC*, int>)(lpVtbl[6]))((ID3D10Effect*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, D3D10_EFFECT_DESC*, int>)(lpVtbl[6]))((ID3D10Effect*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetConstantBufferByIndex"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(7)]
     public ID3D10EffectConstantBuffer* GetConstantBufferByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*>)(lpVtbl[7]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, uint, ID3D10EffectConstantBuffer*>)(lpVtbl[7]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetConstantBufferByName"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(8)]
     public ID3D10EffectConstantBuffer* GetConstantBufferByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectConstantBuffer*>)(lpVtbl[8]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, sbyte*, ID3D10EffectConstantBuffer*>)(lpVtbl[8]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableByIndex"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(9)]
     public ID3D10EffectVariable* GetVariableByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectVariable*>)(lpVtbl[9]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, uint, ID3D10EffectVariable*>)(lpVtbl[9]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableByName"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(10)]
     public ID3D10EffectVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[10]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[10]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetVariableBySemantic"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(11)]
     public ID3D10EffectVariable* GetVariableBySemantic([NativeTypeName("LPCSTR")] sbyte* Semantic)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[11]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Semantic);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[11]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Semantic);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetTechniqueByIndex"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(12)]
     public ID3D10EffectTechnique* GetTechniqueByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, uint, ID3D10EffectTechnique*>)(lpVtbl[12]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, uint, ID3D10EffectTechnique*>)(lpVtbl[12]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.GetTechniqueByName"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(13)]
     public ID3D10EffectTechnique* GetTechniqueByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10Effect*, sbyte*, ID3D10EffectTechnique*>)(lpVtbl[13]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, sbyte*, ID3D10EffectTechnique*>)(lpVtbl[13]))((ID3D10Effect*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.Optimize"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT Optimize()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[14]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, int>)(lpVtbl[14]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Effect.xml' path='doc/member[@name="ID3D10Effect.IsOptimized"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
     [VtblIndex(15)]
     public BOOL IsOptimized()
     {
-        return ((delegate* unmanaged<ID3D10Effect*, int>)(lpVtbl[15]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Effect*, int>)(lpVtbl[15]))((ID3D10Effect*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -197,51 +197,51 @@ public unsafe partial struct ID3D10Effect : ID3D10Effect.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsValid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsValid;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsPool;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsPool;
 
         [NativeTypeName("HRESULT (ID3D10Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D10Device**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D10Device**, int> GetDevice;
 
         [NativeTypeName("HRESULT (D3D10_EFFECT_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_EFFECT_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_EFFECT_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10EffectConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10EffectConstantBuffer*> GetConstantBufferByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10EffectConstantBuffer*> GetConstantBufferByIndex;
 
         [NativeTypeName("ID3D10EffectConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectConstantBuffer*> GetConstantBufferByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10EffectConstantBuffer*> GetConstantBufferByName;
 
         [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10EffectVariable*> GetVariableByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10EffectVariable*> GetVariableByIndex;
 
         [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectVariable*> GetVariableByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10EffectVariable*> GetVariableByName;
 
         [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectVariable*> GetVariableBySemantic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10EffectVariable*> GetVariableBySemantic;
 
         [NativeTypeName("ID3D10EffectTechnique *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10EffectTechnique*> GetTechniqueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10EffectTechnique*> GetTechniqueByIndex;
 
         [NativeTypeName("ID3D10EffectTechnique *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectTechnique*> GetTechniqueByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10EffectTechnique*> GetTechniqueByName;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Optimize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Optimize;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsOptimized;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsOptimized;
     }
 }

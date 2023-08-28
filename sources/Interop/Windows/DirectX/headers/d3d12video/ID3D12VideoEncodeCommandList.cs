@@ -28,7 +28,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint>)(lpVtbl[1]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint>)(lpVtbl[1]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint>)(lpVtbl[2]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint>)(lpVtbl[2]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D12Object.GetPrivateData" />
@@ -54,7 +54,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(3)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetPrivateData" />
@@ -62,7 +62,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(4)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetPrivateDataInterface" />
@@ -70,7 +70,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(5)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     /// <inheritdoc cref="ID3D12Object.SetName" />
@@ -78,7 +78,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(6)]
     public HRESULT SetName([NativeTypeName("LPCWSTR")] char* Name)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, char*, int>)(lpVtbl[6]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, char*, int>)(lpVtbl[6]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <inheritdoc cref="ID3D12DeviceChild.GetDevice" />
@@ -86,7 +86,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), riid, ppvDevice);
     }
 
     /// <inheritdoc cref="ID3D12CommandList.GetType" />
@@ -94,7 +94,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(8)]
     public new D3D12_COMMAND_LIST_TYPE GetType()
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, D3D12_COMMAND_LIST_TYPE>)(lpVtbl[8]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.Close"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(9)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, int>)(lpVtbl[9]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, int>)(lpVtbl[9]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.Reset"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(10)]
     public HRESULT Reset(ID3D12CommandAllocator* pAllocator)
     {
-        return ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12CommandAllocator*, int>)(lpVtbl[10]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pAllocator);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12CommandAllocator*, int>)(lpVtbl[10]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pAllocator);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.ClearState"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(11)]
     public void ClearState()
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, void>)(lpVtbl[11]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, void>)(lpVtbl[11]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.ResourceBarrier"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(12)]
     public void ResourceBarrier(uint NumBarriers, [NativeTypeName("const D3D12_RESOURCE_BARRIER *")] D3D12_RESOURCE_BARRIER* pBarriers)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint, D3D12_RESOURCE_BARRIER*, void>)(lpVtbl[12]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), NumBarriers, pBarriers);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint, D3D12_RESOURCE_BARRIER*, void>)(lpVtbl[12]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), NumBarriers, pBarriers);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.DiscardResource"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(13)]
     public void DiscardResource(ID3D12Resource* pResource, [NativeTypeName("const D3D12_DISCARD_REGION *")] D3D12_DISCARD_REGION* pRegion)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12Resource*, D3D12_DISCARD_REGION*, void>)(lpVtbl[13]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pResource, pRegion);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, D3D12_DISCARD_REGION*, void>)(lpVtbl[13]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pResource, pRegion);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.BeginQuery"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(14)]
     public void BeginQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void>)(lpVtbl[14]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, Index);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void>)(lpVtbl[14]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, Index);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.EndQuery"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(15)]
     public void EndQuery(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint Index)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void>)(lpVtbl[15]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, Index);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void>)(lpVtbl[15]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, Index);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.ResolveQueryData"]/*' />
@@ -158,7 +158,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(16)]
     public void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, D3D12_QUERY_TYPE Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, [NativeTypeName("UINT64")] ulong AlignedDestinationBufferOffset)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void>)(lpVtbl[16]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void>)(lpVtbl[16]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.SetPredication"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(17)]
     public void SetPredication(ID3D12Resource* pBuffer, [NativeTypeName("UINT64")] ulong AlignedBufferOffset, D3D12_PREDICATION_OP Operation)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void>)(lpVtbl[17]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pBuffer, AlignedBufferOffset, Operation);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void>)(lpVtbl[17]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pBuffer, AlignedBufferOffset, Operation);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.SetMarker"]/*' />
@@ -174,7 +174,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(18)]
     public void SetMarker(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)(lpVtbl[18]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Metadata, pData, Size);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)(lpVtbl[18]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Metadata, pData, Size);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.BeginEvent"]/*' />
@@ -182,7 +182,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(19)]
     public void BeginEvent(uint Metadata, [NativeTypeName("const void *")] void* pData, uint Size)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)(lpVtbl[19]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Metadata, pData, Size);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)(lpVtbl[19]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Metadata, pData, Size);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.EndEvent"]/*' />
@@ -190,7 +190,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(20)]
     public void EndEvent()
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, void>)(lpVtbl[20]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, void>)(lpVtbl[20]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.EstimateMotion"]/*' />
@@ -198,7 +198,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(21)]
     public void EstimateMotion(ID3D12VideoMotionEstimator* pMotionEstimator, [NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT *")] D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT* pOutputArguments, [NativeTypeName("const D3D12_VIDEO_MOTION_ESTIMATOR_INPUT *")] D3D12_VIDEO_MOTION_ESTIMATOR_INPUT* pInputArguments)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void>)(lpVtbl[21]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pMotionEstimator, pOutputArguments, pInputArguments);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void>)(lpVtbl[21]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pMotionEstimator, pOutputArguments, pInputArguments);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.ResolveMotionVectorHeap"]/*' />
@@ -206,7 +206,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(22)]
     public void ResolveMotionVectorHeap([NativeTypeName("const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT *")] D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT* pOutputArguments, [NativeTypeName("const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT *")] D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT* pInputArguments)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void>)(lpVtbl[22]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pOutputArguments, pInputArguments);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void>)(lpVtbl[22]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pOutputArguments, pInputArguments);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.WriteBufferImmediate"]/*' />
@@ -214,7 +214,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(23)]
     public void WriteBufferImmediate(uint Count, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *")] D3D12_WRITEBUFFERIMMEDIATE_PARAMETER* pParams, [NativeTypeName("const D3D12_WRITEBUFFERIMMEDIATE_MODE *")] D3D12_WRITEBUFFERIMMEDIATE_MODE* pModes)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void>)(lpVtbl[23]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Count, pParams, pModes);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void>)(lpVtbl[23]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), Count, pParams, pModes);
     }
 
     /// <include file='ID3D12VideoEncodeCommandList.xml' path='doc/member[@name="ID3D12VideoEncodeCommandList.SetProtectedResourceSession"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
     [VtblIndex(24)]
     public void SetProtectedResourceSession(ID3D12ProtectedResourceSession* pProtectedResourceSession)
     {
-        ((delegate* unmanaged<ID3D12VideoEncodeCommandList*, ID3D12ProtectedResourceSession*, void>)(lpVtbl[24]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pProtectedResourceSession);
+        ((delegate* unmanaged[MemberFunction]<ID3D12VideoEncodeCommandList*, ID3D12ProtectedResourceSession*, void>)(lpVtbl[24]))((ID3D12VideoEncodeCommandList*)Unsafe.AsPointer(ref this), pProtectedResourceSession);
     }
 
     public interface Interface : ID3D12CommandList.Interface
@@ -280,78 +280,78 @@ public unsafe partial struct ID3D12VideoEncodeCommandList : ID3D12VideoEncodeCom
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
 
         [NativeTypeName("HRESULT (ID3D12CommandAllocator *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12CommandAllocator*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12CommandAllocator*, int> Reset;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> ClearState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> ClearState;
 
         [NativeTypeName("void (UINT, const D3D12_RESOURCE_BARRIER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
 
         [NativeTypeName("void (ID3D12Resource *, const D3D12_DISCARD_REGION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT, UINT, ID3D12Resource *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, D3D12_PREDICATION_OP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, void> SetMarker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, void> SetMarker;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, void> BeginEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, void> BeginEvent;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> EndEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> EndEvent;
 
         [NativeTypeName("void (ID3D12VideoMotionEstimator *, const D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT *, const D3D12_VIDEO_MOTION_ESTIMATOR_INPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void> EstimateMotion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void> EstimateMotion;
 
         [NativeTypeName("void (const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT *, const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void> ResolveMotionVectorHeap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void> ResolveMotionVectorHeap;
 
         [NativeTypeName("void (UINT, const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *, const D3D12_WRITEBUFFERIMMEDIATE_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
 
         [NativeTypeName("void (ID3D12ProtectedResourceSession *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
     }
 }

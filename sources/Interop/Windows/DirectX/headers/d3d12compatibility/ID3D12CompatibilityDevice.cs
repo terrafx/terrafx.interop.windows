@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, uint>)(lpVtbl[1]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, uint>)(lpVtbl[1]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, uint>)(lpVtbl[2]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, uint>)(lpVtbl[2]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12CompatibilityDevice.xml' path='doc/member[@name="ID3D12CompatibilityDevice.CreateSharedResource"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [VtblIndex(3)]
     public HRESULT CreateSharedResource([NativeTypeName("const D3D12_HEAP_PROPERTIES *")] D3D12_HEAP_PROPERTIES* pHeapProperties, D3D12_HEAP_FLAGS HeapFlags, [NativeTypeName("const D3D12_RESOURCE_DESC *")] D3D12_RESOURCE_DESC* pDesc, D3D12_RESOURCE_STATES InitialResourceState, [NativeTypeName("const D3D12_CLEAR_VALUE *")] D3D12_CLEAR_VALUE* pOptimizedClearValue, [NativeTypeName("const D3D11_RESOURCE_FLAGS *")] D3D11_RESOURCE_FLAGS* pFlags11, D3D12_COMPATIBILITY_SHARED_FLAGS CompatibilityFlags, ID3D12LifetimeTracker* pLifetimeTracker, ID3D12SwapChainAssistant* pOwningSwapchain, [NativeTypeName("const IID &")] Guid* riid, void** ppResource)
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, D3D11_RESOURCE_FLAGS*, D3D12_COMPATIBILITY_SHARED_FLAGS, ID3D12LifetimeTracker*, ID3D12SwapChainAssistant*, Guid*, void**, int>)(lpVtbl[3]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pFlags11, CompatibilityFlags, pLifetimeTracker, pOwningSwapchain, riid, ppResource);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, D3D11_RESOURCE_FLAGS*, D3D12_COMPATIBILITY_SHARED_FLAGS, ID3D12LifetimeTracker*, ID3D12SwapChainAssistant*, Guid*, void**, int>)(lpVtbl[3]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, pFlags11, CompatibilityFlags, pLifetimeTracker, pOwningSwapchain, riid, ppResource);
     }
 
     /// <include file='ID3D12CompatibilityDevice.xml' path='doc/member[@name="ID3D12CompatibilityDevice.CreateSharedHeap"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [VtblIndex(4)]
     public HRESULT CreateSharedHeap([NativeTypeName("const D3D12_HEAP_DESC *")] D3D12_HEAP_DESC* pHeapDesc, D3D12_COMPATIBILITY_SHARED_FLAGS CompatibilityFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppHeap)
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, D3D12_HEAP_DESC*, D3D12_COMPATIBILITY_SHARED_FLAGS, Guid*, void**, int>)(lpVtbl[4]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapDesc, CompatibilityFlags, riid, ppHeap);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, D3D12_HEAP_DESC*, D3D12_COMPATIBILITY_SHARED_FLAGS, Guid*, void**, int>)(lpVtbl[4]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapDesc, CompatibilityFlags, riid, ppHeap);
     }
 
     /// <include file='ID3D12CompatibilityDevice.xml' path='doc/member[@name="ID3D12CompatibilityDevice.ReflectSharedProperties"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
     [VtblIndex(5)]
     public HRESULT ReflectSharedProperties(ID3D12Object* pHeapOrResource, D3D12_REFLECT_SHARED_PROPERTY ReflectType, void* pData, uint DataSize)
     {
-        return ((delegate* unmanaged<ID3D12CompatibilityDevice*, ID3D12Object*, D3D12_REFLECT_SHARED_PROPERTY, void*, uint, int>)(lpVtbl[5]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapOrResource, ReflectType, pData, DataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12CompatibilityDevice*, ID3D12Object*, D3D12_REFLECT_SHARED_PROPERTY, void*, uint, int>)(lpVtbl[5]))((ID3D12CompatibilityDevice*)Unsafe.AsPointer(ref this), pHeapOrResource, ReflectType, pData, DataSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct ID3D12CompatibilityDevice : ID3D12CompatibilityDevi
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const D3D12_HEAP_PROPERTIES *, D3D12_HEAP_FLAGS, const D3D12_RESOURCE_DESC *, D3D12_RESOURCE_STATES, const D3D12_CLEAR_VALUE *, const D3D11_RESOURCE_FLAGS *, D3D12_COMPATIBILITY_SHARED_FLAGS, ID3D12LifetimeTracker *, ID3D12SwapChainAssistant *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, D3D11_RESOURCE_FLAGS*, D3D12_COMPATIBILITY_SHARED_FLAGS, ID3D12LifetimeTracker*, ID3D12SwapChainAssistant*, Guid*, void**, int> CreateSharedResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_STATES, D3D12_CLEAR_VALUE*, D3D11_RESOURCE_FLAGS*, D3D12_COMPATIBILITY_SHARED_FLAGS, ID3D12LifetimeTracker*, ID3D12SwapChainAssistant*, Guid*, void**, int> CreateSharedResource;
 
         [NativeTypeName("HRESULT (const D3D12_HEAP_DESC *, D3D12_COMPATIBILITY_SHARED_FLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_HEAP_DESC*, D3D12_COMPATIBILITY_SHARED_FLAGS, Guid*, void**, int> CreateSharedHeap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_HEAP_DESC*, D3D12_COMPATIBILITY_SHARED_FLAGS, Guid*, void**, int> CreateSharedHeap;
 
         [NativeTypeName("HRESULT (ID3D12Object *, D3D12_REFLECT_SHARED_PROPERTY, void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Object*, D3D12_REFLECT_SHARED_PROPERTY, void*, uint, int> ReflectSharedProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Object*, D3D12_REFLECT_SHARED_PROPERTY, void*, uint, int> ReflectSharedProperties;
     }
 }

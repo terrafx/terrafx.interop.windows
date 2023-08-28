@@ -26,7 +26,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[1]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint>)(lpVtbl[1]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[2]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint>)(lpVtbl[2]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetDimensionCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [return: NativeTypeName("uint32_t")]
     public uint GetDimensionCount()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetShape"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetTensorDataType"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(5)]
     public MLOperatorTensorDataType GetTensorDataType()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsCpuData"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(6)]
     public bool IsCpuData()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, bool>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsDataInterface"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(7)]
     public bool IsDataInterface()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, bool>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetData"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(8)]
     public void* GetData()
     {
-        return ((delegate* unmanaged<IMLOperatorTensor*, void*>)(lpVtbl[8]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, void*>)(lpVtbl[8]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetDataInterface"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [VtblIndex(9)]
     public void GetDataInterface(IUnknown** dataInterface)
     {
-        ((delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
+        ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
     }
 
     public interface Interface : IUnknown.Interface
@@ -133,33 +133,33 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetDimensionCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetDimensionCount;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetShape;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetShape;
 
         [NativeTypeName("MLOperatorTensorDataType () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MLOperatorTensorDataType> GetTensorDataType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MLOperatorTensorDataType> GetTensorDataType;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, bool> IsCpuData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, bool> IsCpuData;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, bool> IsDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, bool> IsDataInterface;
 
         [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetData;
 
         [NativeTypeName("void (IUnknown **) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, void> GetDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, void> GetDataInterface;
     }
 }

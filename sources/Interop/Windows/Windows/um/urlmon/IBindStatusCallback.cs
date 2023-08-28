@@ -25,7 +25,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, Guid*, void**, int>)(lpVtbl[0]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, Guid*, void**, int>)(lpVtbl[0]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint>)(lpVtbl[1]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint>)(lpVtbl[1]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint>)(lpVtbl[2]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint>)(lpVtbl[2]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnStartBinding"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(3)]
     public HRESULT OnStartBinding([NativeTypeName("DWORD")] uint dwReserved, IBinding* pib)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint, IBinding*, int>)(lpVtbl[3]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), dwReserved, pib);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint, IBinding*, int>)(lpVtbl[3]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), dwReserved, pib);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.GetPriority"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(4)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, int*, int>)(lpVtbl[4]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), pnPriority);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, int*, int>)(lpVtbl[4]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), pnPriority);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnLowResource"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(5)]
     public HRESULT OnLowResource([NativeTypeName("DWORD")] uint reserved)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint, int>)(lpVtbl[5]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), reserved);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint, int>)(lpVtbl[5]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), reserved);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnProgress"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(6)]
     public HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szStatusText)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint, uint, uint, char*, int>)(lpVtbl[6]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint, uint, uint, char*, int>)(lpVtbl[6]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnStopBinding"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(7)]
     public HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] char* szError)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, HRESULT, char*, int>)(lpVtbl[7]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), hresult, szError);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, HRESULT, char*, int>)(lpVtbl[7]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), hresult, szError);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.GetBindInfo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(8)]
     public HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint*, BINDINFO*, int>)(lpVtbl[8]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint*, BINDINFO*, int>)(lpVtbl[8]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnDataAvailable"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(9)]
     public HRESULT OnDataAvailable([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("DWORD")] uint dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, uint, uint, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[9]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBSCF, dwSize, pformatetc, pstgmed);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, uint, uint, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[9]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBSCF, dwSize, pformatetc, pstgmed);
     }
 
     /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnObjectAvailable"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
     [VtblIndex(10)]
     public HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
     {
-        return ((delegate* unmanaged<IBindStatusCallback*, Guid*, IUnknown*, int>)(lpVtbl[10]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, punk);
+        return ((delegate* unmanaged[MemberFunction]<IBindStatusCallback*, Guid*, IUnknown*, int>)(lpVtbl[10]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IBinding *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IBinding*, int> OnStartBinding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IBinding*, int> OnStartBinding;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetPriority;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnLowResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnLowResource;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, char*, int> OnProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, char*, int> OnProgress;
 
         [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, char*, int> OnStopBinding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, char*, int> OnStopBinding;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, FORMATETC*, STGMEDIUM*, int> OnDataAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, FORMATETC*, STGMEDIUM*, int> OnDataAvailable;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> OnObjectAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> OnObjectAvailable;
     }
 }

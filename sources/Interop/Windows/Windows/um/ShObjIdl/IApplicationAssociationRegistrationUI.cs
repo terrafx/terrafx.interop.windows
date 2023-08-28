@@ -25,7 +25,7 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistrationUI*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint>)(lpVtbl[1]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistrationUI*, uint>)(lpVtbl[1]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint>)(lpVtbl[2]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistrationUI*, uint>)(lpVtbl[2]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApplicationAssociationRegistrationUI.xml' path='doc/member[@name="IApplicationAssociationRegistrationUI.LaunchAdvancedAssociationUI"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
     [VtblIndex(3)]
     public HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] char* pszAppRegistryName)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistrationUI*, char*, int>)(lpVtbl[3]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), pszAppRegistryName);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistrationUI*, char*, int>)(lpVtbl[3]))((IApplicationAssociationRegistrationUI*)Unsafe.AsPointer(ref this), pszAppRegistryName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> LaunchAdvancedAssociationUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> LaunchAdvancedAssociationUI;
     }
 }

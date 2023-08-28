@@ -27,7 +27,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailStreamCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, uint>)(lpVtbl[1]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailStreamCache*, uint>)(lpVtbl[1]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, uint>)(lpVtbl[2]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailStreamCache*, uint>)(lpVtbl[2]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.GetThumbnailStream"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     [VtblIndex(3)]
     public HRESULT GetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, ThumbnailStreamCacheOptions options, uint requestedThumbnailSize, SIZE* thumbnailSize, IStream** thumbnailStream)
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int>)(lpVtbl[3]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, options, requestedThumbnailSize, thumbnailSize, thumbnailStream);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailStreamCache*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int>)(lpVtbl[3]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, options, requestedThumbnailSize, thumbnailSize, thumbnailStream);
     }
 
     /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.SetThumbnailStream"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
     [VtblIndex(4)]
     public HRESULT SetThumbnailStream([NativeTypeName("LPCWSTR")] char* path, [NativeTypeName("ULONGLONG")] ulong cacheId, SIZE thumbnailSize, IStream* thumbnailStream)
     {
-        return ((delegate* unmanaged<IThumbnailStreamCache*, char*, ulong, SIZE, IStream*, int>)(lpVtbl[4]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, thumbnailSize, thumbnailStream);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailStreamCache*, char*, ulong, SIZE, IStream*, int>)(lpVtbl[4]))((IThumbnailStreamCache*)Unsafe.AsPointer(ref this), path, cacheId, thumbnailSize, thumbnailStream);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG, ThumbnailStreamCacheOptions, UINT, SIZE *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int> GetThumbnailStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ulong, ThumbnailStreamCacheOptions, uint, SIZE*, IStream**, int> GetThumbnailStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONGLONG, SIZE, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ulong, SIZE, IStream*, int> SetThumbnailStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ulong, SIZE, IStream*, int> SetThumbnailStream;
     }
 }

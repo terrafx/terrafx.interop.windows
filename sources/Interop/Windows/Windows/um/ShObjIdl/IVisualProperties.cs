@@ -25,7 +25,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVisualProperties*, Guid*, void**, int>)(lpVtbl[0]))((IVisualProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, Guid*, void**, int>)(lpVtbl[0]))((IVisualProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[1]))((IVisualProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, uint>)(lpVtbl[1]))((IVisualProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[2]))((IVisualProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, uint>)(lpVtbl[2]))((IVisualProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetWatermark"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf)
     {
-        return ((delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetColor"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr)
     {
-        return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetColor"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr)
     {
-        return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetItemHeight"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(6)]
     public HRESULT SetItemHeight(int cyItemInPixels)
     {
-        return ((delegate* unmanaged<IVisualProperties*, int, int>)(lpVtbl[6]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, int, int>)(lpVtbl[6]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetItemHeight"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetItemHeight(int* cyItemInPixels)
     {
-        return ((delegate* unmanaged<IVisualProperties*, int*, int>)(lpVtbl[7]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, int*, int>)(lpVtbl[7]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetFont"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(8)]
     public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw)
     {
-        return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetFont"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetFont(LOGFONTW* plf)
     {
-        return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, int>)(lpVtbl[9]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, LOGFONTW*, int>)(lpVtbl[9]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf);
     }
 
     /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetTheme"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
     [VtblIndex(10)]
     public HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszSubAppName, [NativeTypeName("LPCWSTR")] char* pszSubIdList)
     {
-        return ((delegate* unmanaged<IVisualProperties*, char*, char*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
+        return ((delegate* unmanaged[MemberFunction]<IVisualProperties*, char*, char*, int>)(lpVtbl[10]))((IVisualProperties*)Unsafe.AsPointer(ref this), pszSubAppName, pszSubIdList);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HBITMAP, VPWATERMARKFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
 
         [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VPCOLORFLAGS, COLORREF, int> SetColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VPCOLORFLAGS, COLORREF, int> SetColor;
 
         [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VPCOLORFLAGS, COLORREF*, int> GetColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VPCOLORFLAGS, COLORREF*, int> GetColor;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetItemHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetItemHeight;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetItemHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetItemHeight;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, BOOL, int> SetFont;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, BOOL, int> SetFont;
 
         [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, int> GetFont;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, int> GetFont;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetTheme;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetTheme;
     }
 }

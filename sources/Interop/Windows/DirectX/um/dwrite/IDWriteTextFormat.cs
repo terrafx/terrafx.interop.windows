@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, uint>)(lpVtbl[1]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, uint>)(lpVtbl[1]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, uint>)(lpVtbl[2]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, uint>)(lpVtbl[2]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetTextAlignment"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetTextAlignment(DWRITE_TEXT_ALIGNMENT textAlignment)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_TEXT_ALIGNMENT, int>)(lpVtbl[3]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), textAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_TEXT_ALIGNMENT, int>)(lpVtbl[3]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), textAlignment);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetParagraphAlignment"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT paragraphAlignment)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_PARAGRAPH_ALIGNMENT, int>)(lpVtbl[4]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), paragraphAlignment);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_PARAGRAPH_ALIGNMENT, int>)(lpVtbl[4]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), paragraphAlignment);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetWordWrapping"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(5)]
     public HRESULT SetWordWrapping(DWRITE_WORD_WRAPPING wordWrapping)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_WORD_WRAPPING, int>)(lpVtbl[5]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), wordWrapping);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_WORD_WRAPPING, int>)(lpVtbl[5]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), wordWrapping);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetReadingDirection"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(6)]
     public HRESULT SetReadingDirection(DWRITE_READING_DIRECTION readingDirection)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_READING_DIRECTION, int>)(lpVtbl[6]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), readingDirection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_READING_DIRECTION, int>)(lpVtbl[6]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), readingDirection);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetFlowDirection"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(7)]
     public HRESULT SetFlowDirection(DWRITE_FLOW_DIRECTION flowDirection)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_FLOW_DIRECTION, int>)(lpVtbl[7]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), flowDirection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_FLOW_DIRECTION, int>)(lpVtbl[7]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), flowDirection);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetIncrementalTabStop"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(8)]
     public HRESULT SetIncrementalTabStop(float incrementalTabStop)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, float, int>)(lpVtbl[8]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), incrementalTabStop);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, float, int>)(lpVtbl[8]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), incrementalTabStop);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetTrimming"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(9)]
     public HRESULT SetTrimming([NativeTypeName("const DWRITE_TRIMMING *")] DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject* trimmingSign)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_TRIMMING*, IDWriteInlineObject*, int>)(lpVtbl[9]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_TRIMMING*, IDWriteInlineObject*, int>)(lpVtbl[9]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.SetLineSpacing"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(10)]
     public HRESULT SetLineSpacing(DWRITE_LINE_SPACING_METHOD lineSpacingMethod, float lineSpacing, float baseline)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_LINE_SPACING_METHOD, float, float, int>)(lpVtbl[10]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_LINE_SPACING_METHOD, float, float, int>)(lpVtbl[10]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetTextAlignment"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(11)]
     public DWRITE_TEXT_ALIGNMENT GetTextAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_TEXT_ALIGNMENT>)(lpVtbl[11]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetParagraphAlignment"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(12)]
     public DWRITE_PARAGRAPH_ALIGNMENT GetParagraphAlignment()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_PARAGRAPH_ALIGNMENT>)(lpVtbl[12]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetWordWrapping"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(13)]
     public DWRITE_WORD_WRAPPING GetWordWrapping()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_WORD_WRAPPING>)(lpVtbl[13]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetReadingDirection"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(14)]
     public DWRITE_READING_DIRECTION GetReadingDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_READING_DIRECTION>)(lpVtbl[14]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFlowDirection"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(15)]
     public DWRITE_FLOW_DIRECTION GetFlowDirection()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_FLOW_DIRECTION>)(lpVtbl[15]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetIncrementalTabStop"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(16)]
     public float GetIncrementalTabStop()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, float>)(lpVtbl[16]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, float>)(lpVtbl[16]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetTrimming"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(17)]
     public HRESULT GetTrimming(DWRITE_TRIMMING* trimmingOptions, IDWriteInlineObject** trimmingSign)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_TRIMMING*, IDWriteInlineObject**, int>)(lpVtbl[17]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_TRIMMING*, IDWriteInlineObject**, int>)(lpVtbl[17]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), trimmingOptions, trimmingSign);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetLineSpacing"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(18)]
     public HRESULT GetLineSpacing(DWRITE_LINE_SPACING_METHOD* lineSpacingMethod, float* lineSpacing, float* baseline)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int>)(lpVtbl[18]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), lineSpacingMethod, lineSpacing, baseline);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontCollection"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(19)]
     public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, IDWriteFontCollection**, int>)(lpVtbl[19]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontCollection);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, IDWriteFontCollection**, int>)(lpVtbl[19]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontCollection);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontFamilyNameLength"]/*' />
@@ -189,7 +189,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [return: NativeTypeName("UINT32")]
     public uint GetFontFamilyNameLength()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, uint>)(lpVtbl[20]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, uint>)(lpVtbl[20]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontFamilyName"]/*' />
@@ -197,7 +197,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(21)]
     public HRESULT GetFontFamilyName([NativeTypeName("WCHAR *")] char* fontFamilyName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[21]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[21]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), fontFamilyName, nameSize);
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontWeight"]/*' />
@@ -205,7 +205,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(22)]
     public DWRITE_FONT_WEIGHT GetFontWeight()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_FONT_WEIGHT>)(lpVtbl[22]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontStyle"]/*' />
@@ -213,7 +213,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(23)]
     public DWRITE_FONT_STYLE GetFontStyle()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_FONT_STYLE>)(lpVtbl[23]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontStretch"]/*' />
@@ -221,7 +221,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(24)]
     public DWRITE_FONT_STRETCH GetFontStretch()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, DWRITE_FONT_STRETCH>)(lpVtbl[24]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetFontSize"]/*' />
@@ -229,7 +229,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(25)]
     public float GetFontSize()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, float>)(lpVtbl[25]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, float>)(lpVtbl[25]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetLocaleNameLength"]/*' />
@@ -238,7 +238,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [return: NativeTypeName("UINT32")]
     public uint GetLocaleNameLength()
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, uint>)(lpVtbl[26]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, uint>)(lpVtbl[26]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteTextFormat.xml' path='doc/member[@name="IDWriteTextFormat.GetLocaleName"]/*' />
@@ -246,7 +246,7 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
     [VtblIndex(27)]
     public HRESULT GetLocaleName([NativeTypeName("WCHAR *")] char* localeName, [NativeTypeName("UINT32")] uint nameSize)
     {
-        return ((delegate* unmanaged<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[27]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), localeName, nameSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteTextFormat*, char*, uint, int>)(lpVtbl[27]))((IDWriteTextFormat*)Unsafe.AsPointer(ref this), localeName, nameSize);
     }
 
     public interface Interface : IUnknown.Interface
@@ -333,87 +333,87 @@ public unsafe partial struct IDWriteTextFormat : IDWriteTextFormat.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_PARAGRAPH_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_WORD_WRAPPING) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_READING_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
 
         [NativeTypeName("HRESULT (DWRITE_FLOW_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetIncrementalTabStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (const DWRITE_TRIMMING *, IDWriteInlineObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
 
         [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
 
         [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
 
         [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_WORD_WRAPPING> GetWordWrapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_WORD_WRAPPING> GetWordWrapping;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION> GetReadingDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_READING_DIRECTION> GetReadingDirection;
 
         [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetIncrementalTabStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFontFamilyNameLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFontFamilyNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> GetFontFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
 
         [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STYLE> GetFontStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STYLE> GetFontStyle;
 
         [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_STRETCH> GetFontStretch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_STRETCH> GetFontStretch;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetFontSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetFontSize;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetLocaleNameLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> GetLocaleName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetLocaleName;
     }
 }

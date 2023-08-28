@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, uint>)(lpVtbl[1]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, uint>)(lpVtbl[1]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, uint>)(lpVtbl[2]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, uint>)(lpVtbl[2]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.ShowDropdown"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [VtblIndex(3)]
     public HRESULT ShowDropdown(BOOL fShow)
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, BOOL, int>)(lpVtbl[3]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.SetSelectExFlags"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [VtblIndex(4)]
     public HRESULT SetSelectExFlags([NativeTypeName("DWORD")] uint lFlags)
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, uint, int>)(lpVtbl[4]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, uint, int>)(lpVtbl[4]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), lFlags);
     }
 
     /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.GetSelectExFlags"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [VtblIndex(5)]
     public HRESULT GetSelectExFlags([NativeTypeName("DWORD *")] uint* pFlags)
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, uint*, int>)(lpVtbl[5]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pFlags);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, uint*, int>)(lpVtbl[5]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pFlags);
     }
 
     /// <include file='IHTMLSelectElementEx.xml' path='doc/member[@name="IHTMLSelectElementEx.GetDropdownOpen"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
     [VtblIndex(6)]
     public HRESULT GetDropdownOpen(BOOL* pfOpen)
     {
-        return ((delegate* unmanaged<IHTMLSelectElementEx*, BOOL*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLSelectElementEx*, BOOL*, int>)(lpVtbl[6]))((IHTMLSelectElementEx*)Unsafe.AsPointer(ref this), pfOpen);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ShowDropdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ShowDropdown;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetSelectExFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetSelectExFlags;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSelectExFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSelectExFlags;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetDropdownOpen;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetDropdownOpen;
     }
 }

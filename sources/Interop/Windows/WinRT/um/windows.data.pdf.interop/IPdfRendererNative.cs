@@ -29,7 +29,7 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPdfRendererNative*, Guid*, void**, int>)(lpVtbl[0]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPdfRendererNative*, Guid*, void**, int>)(lpVtbl[0]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -38,7 +38,7 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPdfRendererNative*, uint>)(lpVtbl[1]))((IPdfRendererNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPdfRendererNative*, uint>)(lpVtbl[1]))((IPdfRendererNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -47,7 +47,7 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPdfRendererNative*, uint>)(lpVtbl[2]))((IPdfRendererNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPdfRendererNative*, uint>)(lpVtbl[2]))((IPdfRendererNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPdfRendererNative.xml' path='doc/member[@name="IPdfRendererNative.RenderPageToSurface"]/*' />
@@ -55,7 +55,7 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
     [VtblIndex(3)]
     public HRESULT RenderPageToSurface(IUnknown* pdfPage, IDXGISurface* pSurface, POINT offset, PDF_RENDER_PARAMS* pRenderParams)
     {
-        return ((delegate* unmanaged<IPdfRendererNative*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int>)(lpVtbl[3]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), pdfPage, pSurface, offset, pRenderParams);
+        return ((delegate* unmanaged[MemberFunction]<IPdfRendererNative*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int>)(lpVtbl[3]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), pdfPage, pSurface, offset, pRenderParams);
     }
 
     /// <include file='IPdfRendererNative.xml' path='doc/member[@name="IPdfRendererNative.RenderPageToDeviceContext"]/*' />
@@ -63,7 +63,7 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
     [VtblIndex(4)]
     public HRESULT RenderPageToDeviceContext(IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams)
     {
-        return ((delegate* unmanaged<IPdfRendererNative*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int>)(lpVtbl[4]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), pdfPage, pD2DDeviceContext, pRenderParams);
+        return ((delegate* unmanaged[MemberFunction]<IPdfRendererNative*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int>)(lpVtbl[4]))((IPdfRendererNative*)Unsafe.AsPointer(ref this), pdfPage, pD2DDeviceContext, pRenderParams);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,18 +79,18 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IDXGISurface *, POINT, PDF_RENDER_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int> RenderPageToSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int> RenderPageToSurface;
 
         [NativeTypeName("HRESULT (IUnknown *, ID2D1DeviceContext *, PDF_RENDER_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int> RenderPageToDeviceContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int> RenderPageToDeviceContext;
     }
 }

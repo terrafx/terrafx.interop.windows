@@ -27,7 +27,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, uint>)(lpVtbl[1]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, uint>)(lpVtbl[1]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, uint>)(lpVtbl[2]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, uint>)(lpVtbl[2]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetId"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [return: NativeTypeName("DWORD")]
     public uint GetId()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, uint>)(lpVtbl[3]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, uint>)(lpVtbl[3]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetLabel"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetLabel([NativeTypeName("LPWSTR *")] char** label)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[4]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, char**, int>)(lpVtbl[4]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.SetLabel"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(5)]
     public HRESULT SetLabel([NativeTypeName("LPCWSTR")] char* label)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, char*, int>)(lpVtbl[5]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, char*, int>)(lpVtbl[5]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), label);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetLanguage"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[6]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), language);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, char**, int>)(lpVtbl[6]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), language);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetTrackKind"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(7)]
     public MF_TIMED_TEXT_TRACK_KIND GetTrackKind()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_KIND>)(lpVtbl[7]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_KIND>)(lpVtbl[7]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.IsInBand"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(8)]
     public BOOL IsInBand()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, int>)(lpVtbl[8]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, int>)(lpVtbl[8]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetInBandMetadataTrackDispatchType"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetInBandMetadataTrackDispatchType([NativeTypeName("LPWSTR *")] char** dispatchType)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, char**, int>)(lpVtbl[9]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), dispatchType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, char**, int>)(lpVtbl[9]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), dispatchType);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.IsActive"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(10)]
     public BOOL IsActive()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, int>)(lpVtbl[10]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, int>)(lpVtbl[10]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetErrorCode"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(11)]
     public MF_TIMED_TEXT_ERROR_CODE GetErrorCode()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_ERROR_CODE>)(lpVtbl[11]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, MF_TIMED_TEXT_ERROR_CODE>)(lpVtbl[11]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetExtendedErrorCode"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(12)]
     public HRESULT GetExtendedErrorCode()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, int>)(lpVtbl[12]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, int>)(lpVtbl[12]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetDataFormat"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(13)]
     public HRESULT GetDataFormat(Guid* format)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, Guid*, int>)(lpVtbl[13]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), format);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, Guid*, int>)(lpVtbl[13]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), format);
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetReadyState"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(14)]
     public MF_TIMED_TEXT_TRACK_READY_STATE GetReadyState()
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_READY_STATE>)(lpVtbl[14]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_READY_STATE>)(lpVtbl[14]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextTrack.xml' path='doc/member[@name="IMFTimedTextTrack.GetCueList"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
     [VtblIndex(15)]
     public HRESULT GetCueList(IMFTimedTextCueList** cues)
     {
-        return ((delegate* unmanaged<IMFTimedTextTrack*, IMFTimedTextCueList**, int>)(lpVtbl[15]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), cues);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextTrack*, IMFTimedTextCueList**, int>)(lpVtbl[15]))((IMFTimedTextTrack*)Unsafe.AsPointer(ref this), cues);
     }
 
     public interface Interface : IUnknown.Interface
@@ -200,51 +200,51 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLabel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLanguage;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsInBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsInBand;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetInBandMetadataTrackDispatchType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetInBandMetadataTrackDispatchType;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsActive;
 
         [NativeTypeName("MF_TIMED_TEXT_ERROR_CODE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_ERROR_CODE> GetErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_ERROR_CODE> GetErrorCode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetExtendedErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetExtendedErrorCode;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetDataFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetDataFormat;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_READY_STATE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_READY_STATE> GetReadyState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_TRACK_READY_STATE> GetReadyState;
 
         [NativeTypeName("HRESULT (IMFTimedTextCueList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTimedTextCueList**, int> GetCueList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTimedTextCueList**, int> GetCueList;
     }
 }

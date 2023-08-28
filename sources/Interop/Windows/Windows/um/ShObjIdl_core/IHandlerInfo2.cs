@@ -25,7 +25,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, uint>)(lpVtbl[1]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, uint>)(lpVtbl[1]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, uint>)(lpVtbl[2]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, uint>)(lpVtbl[2]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IHandlerInfo.GetApplicationDisplayName" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetApplicationDisplayName([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[3]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, char**, int>)(lpVtbl[3]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IHandlerInfo.GetApplicationPublisher" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetApplicationPublisher([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[4]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, char**, int>)(lpVtbl[4]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IHandlerInfo.GetApplicationIconReference" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetApplicationIconReference([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[5]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, char**, int>)(lpVtbl[5]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2.GetApplicationId"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IHandlerInfo2*, char**, int>)(lpVtbl[6]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerInfo2*, char**, int>)(lpVtbl[6]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IHandlerInfo.Interface
@@ -88,24 +88,24 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetApplicationDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetApplicationDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetApplicationPublisher;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetApplicationPublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetApplicationIconReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetApplicationIconReference;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetApplicationId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetApplicationId;
     }
 }

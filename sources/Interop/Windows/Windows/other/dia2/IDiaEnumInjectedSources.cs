@@ -25,7 +25,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint>)(lpVtbl[1]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, uint>)(lpVtbl[1]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint>)(lpVtbl[2]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, uint>)(lpVtbl[2]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.get__NewEnum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.get_Count"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, int*, int>)(lpVtbl[4]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, int*, int>)(lpVtbl[4]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.Item"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(5)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaInjectedSource** injectedSource)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, int>)(lpVtbl[5]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), index, injectedSource);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, int>)(lpVtbl[5]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), index, injectedSource);
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaInjectedSource** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, uint*, int>)(lpVtbl[6]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, uint*, int>)(lpVtbl[6]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.Skip"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, uint, int>)(lpVtbl[7]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, uint, int>)(lpVtbl[7]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.Reset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(8)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, int>)(lpVtbl[8]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, int>)(lpVtbl[8]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumInjectedSources.xml' path='doc/member[@name="IDiaEnumInjectedSources.Clone"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumInjectedSources** ppenum)
     {
-        return ((delegate* unmanaged<IDiaEnumInjectedSources*, IDiaEnumInjectedSources**, int>)(lpVtbl[9]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumInjectedSources*, IDiaEnumInjectedSources**, int>)(lpVtbl[9]))((IDiaEnumInjectedSources*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (DWORD, IDiaInjectedSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaInjectedSource**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaInjectedSource**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaInjectedSource **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaInjectedSource**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaInjectedSource**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumInjectedSources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumInjectedSources**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumInjectedSources**, int> Clone;
     }
 }

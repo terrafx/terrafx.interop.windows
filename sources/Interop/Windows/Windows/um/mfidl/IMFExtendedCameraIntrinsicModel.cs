@@ -25,7 +25,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[1]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, uint>)(lpVtbl[2]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.GetModel"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [VtblIndex(3)]
     public HRESULT GetModel(MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[3]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
     }
 
     /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.SetModel"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [VtblIndex(4)]
     public HRESULT SetModel([NativeTypeName("const MFExtendedCameraIntrinsic_IntrinsicModel *")] MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int>)(lpVtbl[4]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pIntrinsicModel);
     }
 
     /// <include file='IMFExtendedCameraIntrinsicModel.xml' path='doc/member[@name="IMFExtendedCameraIntrinsicModel.GetDistortionModelType"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
     [VtblIndex(5)]
     public HRESULT GetDistortionModelType(MFCameraIntrinsic_DistortionModelType* pDistortionModelType)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFCameraIntrinsic_DistortionModelType*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pDistortionModelType);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraIntrinsicModel*, MFCameraIntrinsic_DistortionModelType*, int>)(lpVtbl[5]))((IMFExtendedCameraIntrinsicModel*)Unsafe.AsPointer(ref this), pDistortionModelType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFExtendedCameraIntrinsic_IntrinsicModel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> GetModel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> GetModel;
 
         [NativeTypeName("HRESULT (const MFExtendedCameraIntrinsic_IntrinsicModel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> SetModel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> SetModel;
 
         [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModelType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFCameraIntrinsic_DistortionModelType*, int> GetDistortionModelType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFCameraIntrinsic_DistortionModelType*, int> GetDistortionModelType;
     }
 }

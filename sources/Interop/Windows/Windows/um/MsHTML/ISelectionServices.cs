@@ -25,7 +25,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISelectionServices*, Guid*, void**, int>)(lpVtbl[0]))((ISelectionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, Guid*, void**, int>)(lpVtbl[0]))((ISelectionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISelectionServices*, uint>)(lpVtbl[1]))((ISelectionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, uint>)(lpVtbl[1]))((ISelectionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISelectionServices*, uint>)(lpVtbl[2]))((ISelectionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, uint>)(lpVtbl[2]))((ISelectionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.SetSelectionType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(3)]
     public HRESULT SetSelectionType(SELECTION_TYPE eType, ISelectionServicesListener* pIListener)
     {
-        return ((delegate* unmanaged<ISelectionServices*, SELECTION_TYPE, ISelectionServicesListener*, int>)(lpVtbl[3]))((ISelectionServices*)Unsafe.AsPointer(ref this), eType, pIListener);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, SELECTION_TYPE, ISelectionServicesListener*, int>)(lpVtbl[3]))((ISelectionServices*)Unsafe.AsPointer(ref this), eType, pIListener);
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.GetMarkupContainer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(4)]
     public HRESULT GetMarkupContainer(IMarkupContainer** ppIContainer)
     {
-        return ((delegate* unmanaged<ISelectionServices*, IMarkupContainer**, int>)(lpVtbl[4]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppIContainer);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, IMarkupContainer**, int>)(lpVtbl[4]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppIContainer);
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.AddSegment"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(5)]
     public HRESULT AddSegment(IMarkupPointer* pIStart, IMarkupPointer* pIEnd, ISegment** ppISegmentAdded)
     {
-        return ((delegate* unmanaged<ISelectionServices*, IMarkupPointer*, IMarkupPointer*, ISegment**, int>)(lpVtbl[5]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIStart, pIEnd, ppISegmentAdded);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, IMarkupPointer*, IMarkupPointer*, ISegment**, int>)(lpVtbl[5]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIStart, pIEnd, ppISegmentAdded);
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.AddElementSegment"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(6)]
     public HRESULT AddElementSegment(IHTMLElement* pIElement, IElementSegment** ppISegmentAdded)
     {
-        return ((delegate* unmanaged<ISelectionServices*, IHTMLElement*, IElementSegment**, int>)(lpVtbl[6]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIElement, ppISegmentAdded);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, IHTMLElement*, IElementSegment**, int>)(lpVtbl[6]))((ISelectionServices*)Unsafe.AsPointer(ref this), pIElement, ppISegmentAdded);
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.RemoveSegment"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(7)]
     public HRESULT RemoveSegment(ISegment* pISegment)
     {
-        return ((delegate* unmanaged<ISelectionServices*, ISegment*, int>)(lpVtbl[7]))((ISelectionServices*)Unsafe.AsPointer(ref this), pISegment);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, ISegment*, int>)(lpVtbl[7]))((ISelectionServices*)Unsafe.AsPointer(ref this), pISegment);
     }
 
     /// <include file='ISelectionServices.xml' path='doc/member[@name="ISelectionServices.GetSelectionServicesListener"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
     [VtblIndex(8)]
     public HRESULT GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener)
     {
-        return ((delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int>)(lpVtbl[8]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppISelectionServicesListener);
+        return ((delegate* unmanaged[MemberFunction]<ISelectionServices*, ISelectionServicesListener**, int>)(lpVtbl[8]))((ISelectionServices*)Unsafe.AsPointer(ref this), ppISelectionServicesListener);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SELECTION_TYPE, ISelectionServicesListener *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SELECTION_TYPE, ISelectionServicesListener*, int> SetSelectionType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SELECTION_TYPE, ISelectionServicesListener*, int> SetSelectionType;
 
         [NativeTypeName("HRESULT (IMarkupContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupContainer**, int> GetMarkupContainer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupContainer**, int> GetMarkupContainer;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, ISegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, ISegment**, int> AddSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, IMarkupPointer*, ISegment**, int> AddSegment;
 
         [NativeTypeName("HRESULT (IHTMLElement *, IElementSegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement*, IElementSegment**, int> AddElementSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement*, IElementSegment**, int> AddElementSegment;
 
         [NativeTypeName("HRESULT (ISegment *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISegment*, int> RemoveSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISegment*, int> RemoveSegment;
 
         [NativeTypeName("HRESULT (ISelectionServicesListener **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISelectionServicesListener**, int> GetSelectionServicesListener;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISelectionServicesListener**, int> GetSelectionServicesListener;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleUndoManager*, uint>)(lpVtbl[1]))((IOleUndoManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, uint>)(lpVtbl[1]))((IOleUndoManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleUndoManager*, uint>)(lpVtbl[2]))((IOleUndoManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, uint>)(lpVtbl[2]))((IOleUndoManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.Open"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Open(IOleParentUndoUnit* pPUU)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, int>)(lpVtbl[3]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleParentUndoUnit*, int>)(lpVtbl[3]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.Close"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Close(IOleParentUndoUnit* pPUU, BOOL fCommit)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, BOOL, int>)(lpVtbl[4]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleParentUndoUnit*, BOOL, int>)(lpVtbl[4]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pPUU, fCommit);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.Add"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(5)]
     public HRESULT Add(IOleUndoUnit* pUU)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[5]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[5]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.GetOpenParentState"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetOpenParentState([NativeTypeName("DWORD *")] uint* pdwState)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, uint*, int>)(lpVtbl[6]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pdwState);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, uint*, int>)(lpVtbl[6]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pdwState);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.DiscardFrom"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(7)]
     public HRESULT DiscardFrom(IOleUndoUnit* pUU)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[7]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[7]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.UndoTo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(8)]
     public HRESULT UndoTo(IOleUndoUnit* pUU)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[8]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[8]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.RedoTo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(9)]
     public HRESULT RedoTo(IOleUndoUnit* pUU)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[9]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IOleUndoUnit*, int>)(lpVtbl[9]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pUU);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.EnumUndoable"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(10)]
     public HRESULT EnumUndoable(IEnumOleUndoUnits** ppEnum)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IEnumOleUndoUnits**, int>)(lpVtbl[10]))((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IEnumOleUndoUnits**, int>)(lpVtbl[10]))((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.EnumRedoable"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(11)]
     public HRESULT EnumRedoable(IEnumOleUndoUnits** ppEnum)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, IEnumOleUndoUnits**, int>)(lpVtbl[11]))((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, IEnumOleUndoUnits**, int>)(lpVtbl[11]))((IOleUndoManager*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.GetLastUndoDescription"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(12)]
     public HRESULT GetLastUndoDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, char**, int>)(lpVtbl[12]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, char**, int>)(lpVtbl[12]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.GetLastRedoDescription"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(13)]
     public HRESULT GetLastRedoDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, char**, int>)(lpVtbl[13]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, char**, int>)(lpVtbl[13]))((IOleUndoManager*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.Enable"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
     [VtblIndex(14)]
     public HRESULT Enable(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IOleUndoManager*, BOOL, int>)(lpVtbl[14]))((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoManager*, BOOL, int>)(lpVtbl[14]))((IOleUndoManager*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     public interface Interface : IUnknown.Interface
@@ -185,48 +185,48 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleParentUndoUnit*, int> Open;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, BOOL, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleParentUndoUnit*, BOOL, int> Close;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> Add;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleUndoUnit*, int> Add;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOpenParentState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOpenParentState;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> DiscardFrom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleUndoUnit*, int> DiscardFrom;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> UndoTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleUndoUnit*, int> UndoTo;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> RedoTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleUndoUnit*, int> RedoTo;
 
         [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumOleUndoUnits**, int> EnumUndoable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumOleUndoUnits**, int> EnumUndoable;
 
         [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumOleUndoUnits**, int> EnumRedoable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumOleUndoUnits**, int> EnumRedoable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetLastUndoDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLastUndoDescription;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetLastRedoDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLastRedoDescription;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Enable;
     }
 }

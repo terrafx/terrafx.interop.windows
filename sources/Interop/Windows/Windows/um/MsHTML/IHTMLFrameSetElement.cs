@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, uint>)(lpVtbl[1]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, uint>)(lpVtbl[1]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, uint>)(lpVtbl[2]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, uint>)(lpVtbl[2]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, uint*, int>)(lpVtbl[3]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, uint*, int>)(lpVtbl[3]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_rows"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(7)]
     public HRESULT put_rows([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[7]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char*, int>)(lpVtbl[7]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_rows"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(8)]
     public HRESULT get_rows([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[8]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char**, int>)(lpVtbl[8]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_cols"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(9)]
     public HRESULT put_cols([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[9]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char*, int>)(lpVtbl[9]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_cols"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(10)]
     public HRESULT get_cols([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[10]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char**, int>)(lpVtbl[10]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_border"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(11)]
     public HRESULT put_border(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[11]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[11]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_border"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(12)]
     public HRESULT get_border(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[12]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[12]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_borderColor"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(13)]
     public HRESULT put_borderColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[13]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[13]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_borderColor"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(14)]
     public HRESULT get_borderColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[14]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[14]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_frameBorder"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(15)]
     public HRESULT put_frameBorder([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[15]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char*, int>)(lpVtbl[15]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_frameBorder"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(16)]
     public HRESULT get_frameBorder([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[16]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char**, int>)(lpVtbl[16]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_frameSpacing"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(17)]
     public HRESULT put_frameSpacing(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[17]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[17]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_frameSpacing"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(18)]
     public HRESULT get_frameSpacing(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[18]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[18]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_name"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(19)]
     public HRESULT put_name([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char*, int>)(lpVtbl[19]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char*, int>)(lpVtbl[19]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_name"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(20)]
     public HRESULT get_name([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, char**, int>)(lpVtbl[20]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, char**, int>)(lpVtbl[20]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_onload"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(21)]
     public HRESULT put_onload(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[21]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[21]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_onload"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(22)]
     public HRESULT get_onload(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[22]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[22]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_onunload"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(23)]
     public HRESULT put_onunload(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_onunload"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(24)]
     public HRESULT get_onunload(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.put_onbeforeunload"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(25)]
     public HRESULT put_onbeforeunload(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLFrameSetElement.xml' path='doc/member[@name="IHTMLFrameSetElement.get_onbeforeunload"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
     [VtblIndex(26)]
     public HRESULT get_onbeforeunload(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFrameSetElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLFrameSetElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -305,84 +305,84 @@ public unsafe partial struct IHTMLFrameSetElement : IHTMLFrameSetElement.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_rows;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_rows;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_rows;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_rows;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_cols;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_cols;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_cols;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_cols;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_border;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_border;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_border;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_border;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_borderColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_borderColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_frameBorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_frameBorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_frameBorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_frameBorder;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_frameSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_frameSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_frameSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_frameSpacing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onload;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onunload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onunload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onunload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onunload;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbeforeunload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_onbeforeunload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforeunload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_onbeforeunload;
     }
 }

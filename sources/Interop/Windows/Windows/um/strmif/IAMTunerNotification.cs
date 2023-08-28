@@ -25,7 +25,7 @@ public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMTunerNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMTunerNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[1]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTunerNotification*, uint>)(lpVtbl[1]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[2]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTunerNotification*, uint>)(lpVtbl[2]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMTunerNotification.xml' path='doc/member[@name="IAMTunerNotification.OnEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interfa
     [VtblIndex(3)]
     public HRESULT OnEvent(AMTunerEventType Event)
     {
-        return ((delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int>)(lpVtbl[3]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), Event);
+        return ((delegate* unmanaged[MemberFunction]<IAMTunerNotification*, AMTunerEventType, int>)(lpVtbl[3]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), Event);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AMTunerEventType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AMTunerEventType, int> OnEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AMTunerEventType, int> OnEvent;
     }
 }

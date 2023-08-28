@@ -25,7 +25,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaImageData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaImageData*, uint>)(lpVtbl[1]))((IDiaImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, uint>)(lpVtbl[1]))((IDiaImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaImageData*, uint>)(lpVtbl[2]))((IDiaImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, uint>)(lpVtbl[2]))((IDiaImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_relativeVirtualAddress"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaImageData*, uint*, int>)(lpVtbl[3]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, uint*, int>)(lpVtbl[3]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_virtualAddress"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaImageData*, ulong*, int>)(lpVtbl[4]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, ulong*, int>)(lpVtbl[4]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_imageBase"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT get_imageBase([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaImageData*, ulong*, int>)(lpVtbl[5]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaImageData*, ulong*, int>)(lpVtbl[5]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_imageBase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_imageBase;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, uint>)(lpVtbl[1]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, uint>)(lpVtbl[1]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, uint>)(lpVtbl[2]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, uint>)(lpVtbl[2]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfCandidates.xml' path='doc/member[@name="IEnumTfCandidates.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfCandidates** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, IEnumTfCandidates**, int>)(lpVtbl[3]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, IEnumTfCandidates**, int>)(lpVtbl[3]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfCandidates.xml' path='doc/member[@name="IEnumTfCandidates.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCandidateString** ppCand, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, uint, ITfCandidateString**, uint*, int>)(lpVtbl[4]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ulCount, ppCand, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, uint, ITfCandidateString**, uint*, int>)(lpVtbl[4]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ulCount, ppCand, pcFetched);
     }
 
     /// <include file='IEnumTfCandidates.xml' path='doc/member[@name="IEnumTfCandidates.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, int>)(lpVtbl[5]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, int>)(lpVtbl[5]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfCandidates.xml' path='doc/member[@name="IEnumTfCandidates.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfCandidates*, uint, int>)(lpVtbl[6]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfCandidates*, uint, int>)(lpVtbl[6]))((IEnumTfCandidates*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfCandidates : IEnumTfCandidates.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfCandidates **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfCandidates**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfCandidates**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfCandidateString **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfCandidateString**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfCandidateString**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

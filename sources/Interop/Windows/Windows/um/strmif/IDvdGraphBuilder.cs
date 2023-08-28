@@ -25,7 +25,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[1]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, uint>)(lpVtbl[1]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[2]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, uint>)(lpVtbl[2]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.GetFiltergraph"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetFiltergraph(IGraphBuilder** ppGB)
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, IGraphBuilder**, int>)(lpVtbl[3]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), ppGB);
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, IGraphBuilder**, int>)(lpVtbl[3]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), ppGB);
     }
 
     /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.GetDvdInterface"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetDvdInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvIF)
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[4]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvIF);
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[4]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvIF);
     }
 
     /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.RenderDvdVideoVolume"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
     [VtblIndex(5)]
     public HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] char* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus)
     {
-        return ((delegate* unmanaged<IDvdGraphBuilder*, char*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IDvdGraphBuilder*, char*, uint, AM_DVD_RENDERSTATUS*, int>)(lpVtbl[5]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), lpcwszPathName, dwFlags, pStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IGraphBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IGraphBuilder**, int> GetFiltergraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IGraphBuilder**, int> GetFiltergraph;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDvdInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDvdInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, AM_DVD_RENDERSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[1]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint>)(lpVtbl[1]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint>)(lpVtbl[2]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint>)(lpVtbl[2]))((IDiaLineNumber*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_compiland"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT get_compiland(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_sourceFile"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT get_sourceFile(IDiaSourceFile** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int>)(lpVtbl[4]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, IDiaSourceFile**, int>)(lpVtbl[4]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_lineNumber"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT get_lineNumber([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[5]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[5]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_lineNumberEnd"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT get_lineNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[6]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[6]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_columnNumber"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_columnNumber([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[7]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[7]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_columnNumberEnd"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT get_columnNumberEnd([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[8]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[8]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_addressSection"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[9]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[9]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_addressOffset"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[10]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[10]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_relativeVirtualAddress"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[11]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[11]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_virtualAddress"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, ulong*, int>)(lpVtbl[12]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, ulong*, int>)(lpVtbl[12]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_length"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[13]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[13]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_sourceFileId"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT get_sourceFileId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[14]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[14]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_statement"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT get_statement(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, BOOL*, int>)(lpVtbl[15]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaLineNumber.xml' path='doc/member[@name="IDiaLineNumber.get_compilandId"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaLineNumber*, uint*, int>)(lpVtbl[16]))((IDiaLineNumber*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     public interface Interface : IUnknown.Interface
@@ -207,54 +207,54 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_compiland;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_compiland;
 
         [NativeTypeName("HRESULT (IDiaSourceFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSourceFile**, int> get_sourceFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSourceFile**, int> get_sourceFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lineNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lineNumber;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lineNumberEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lineNumberEnd;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_columnNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_columnNumber;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_columnNumberEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_columnNumberEnd;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_length;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_sourceFileId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_sourceFileId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_statement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_statement;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_compilandId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_compilandId;
     }
 }

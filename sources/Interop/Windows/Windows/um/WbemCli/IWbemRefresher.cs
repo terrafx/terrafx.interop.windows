@@ -25,7 +25,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemRefresher*, Guid*, void**, int>)(lpVtbl[0]))((IWbemRefresher*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemRefresher*, Guid*, void**, int>)(lpVtbl[0]))((IWbemRefresher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemRefresher*, uint>)(lpVtbl[1]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemRefresher*, uint>)(lpVtbl[1]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemRefresher*, uint>)(lpVtbl[2]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemRefresher*, uint>)(lpVtbl[2]))((IWbemRefresher*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemRefresher.xml' path='doc/member[@name="IWbemRefresher.Refresh"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Refresh([NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemRefresher*, int, int>)(lpVtbl[3]))((IWbemRefresher*)Unsafe.AsPointer(ref this), lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemRefresher*, int, int>)(lpVtbl[3]))((IWbemRefresher*)Unsafe.AsPointer(ref this), lFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IWbemRefresher : IWbemRefresher.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> Refresh;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> Refresh;
     }
 }

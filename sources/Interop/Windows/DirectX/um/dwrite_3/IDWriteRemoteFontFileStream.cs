@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[1]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[1]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[2]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, uint>)(lpVtbl[2]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFileStream.ReadFileFragment" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(3)]
     public HRESULT ReadFileFragment([NativeTypeName("const void **")] void** fragmentStart, [NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, void** fragmentContext)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, void**, ulong, ulong, void**, int>)(lpVtbl[3]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentStart, fileOffset, fragmentSize, fragmentContext);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, void**, ulong, ulong, void**, int>)(lpVtbl[3]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentStart, fileOffset, fragmentSize, fragmentContext);
     }
 
     /// <inheritdoc cref="IDWriteFontFileStream.ReleaseFileFragment" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(4)]
     public void ReleaseFileFragment(void* fragmentContext)
     {
-        ((delegate* unmanaged<IDWriteRemoteFontFileStream*, void*, void>)(lpVtbl[4]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentContext);
+        ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, void*, void>)(lpVtbl[4]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fragmentContext);
     }
 
     /// <inheritdoc cref="IDWriteFontFileStream.GetFileSize" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(5)]
     public HRESULT GetFileSize([NativeTypeName("UINT64 *")] ulong* fileSize)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[5]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[5]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileSize);
     }
 
     /// <inheritdoc cref="IDWriteFontFileStream.GetLastWriteTime" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(6)]
     public HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[6]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), lastWriteTime);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[6]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), lastWriteTime);
     }
 
     /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetLocalFileSize"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(7)]
     public HRESULT GetLocalFileSize([NativeTypeName("UINT64 *")] ulong* localFileSize)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[7]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), localFileSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, ulong*, int>)(lpVtbl[7]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), localFileSize);
     }
 
     /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetFileFragmentLocality"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(8)]
     public HRESULT GetFileFragmentLocality([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize, BOOL* isLocal, [NativeTypeName("UINT64 *")] ulong* partialSize)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, ulong, ulong, BOOL*, ulong*, int>)(lpVtbl[8]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileOffset, fragmentSize, isLocal, partialSize);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, ulong, ulong, BOOL*, ulong*, int>)(lpVtbl[8]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), fileOffset, fragmentSize, isLocal, partialSize);
     }
 
     /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.GetLocality"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(9)]
     public DWRITE_LOCALITY GetLocality()
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, DWRITE_LOCALITY>)(lpVtbl[9]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, DWRITE_LOCALITY>)(lpVtbl[9]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.BeginDownload"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
     [VtblIndex(10)]
     public HRESULT BeginDownload([NativeTypeName("const UUID *")] Guid* downloadOperationID, [NativeTypeName("const DWRITE_FILE_FRAGMENT *")] DWRITE_FILE_FRAGMENT* fileFragments, [NativeTypeName("UINT32")] uint fragmentCount, IDWriteAsyncResult** asyncResult)
     {
-        return ((delegate* unmanaged<IDWriteRemoteFontFileStream*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int>)(lpVtbl[10]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), downloadOperationID, fileFragments, fragmentCount, asyncResult);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteRemoteFontFileStream*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int>)(lpVtbl[10]))((IDWriteRemoteFontFileStream*)Unsafe.AsPointer(ref this), downloadOperationID, fileFragments, fragmentCount, asyncResult);
     }
 
     public interface Interface : IDWriteFontFileStream.Interface
@@ -130,36 +130,36 @@ public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFile
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void **, UINT64, UINT64, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void**, ulong, ulong, void**, int> ReadFileFragment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void**, ulong, ulong, void**, int> ReadFileFragment;
 
         [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, void> ReleaseFileFragment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, void> ReleaseFileFragment;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetFileSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetFileSize;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetLastWriteTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetLastWriteTime;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetLocalFileSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetLocalFileSize;
 
         [NativeTypeName("HRESULT (UINT64, UINT64, BOOL *, UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, ulong, BOOL*, ulong*, int> GetFileFragmentLocality;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, ulong, BOOL*, ulong*, int> GetFileFragmentLocality;
 
         [NativeTypeName("DWRITE_LOCALITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_LOCALITY> GetLocality;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_LOCALITY> GetLocality;
 
         [NativeTypeName("HRESULT (const UUID *, const DWRITE_FILE_FRAGMENT *, UINT32, IDWriteAsyncResult **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int> BeginDownload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, DWRITE_FILE_FRAGMENT*, uint, IDWriteAsyncResult**, int> BeginDownload;
     }
 }

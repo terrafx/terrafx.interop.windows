@@ -25,7 +25,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, Guid*, void**, int>)(lpVtbl[0]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, Guid*, void**, int>)(lpVtbl[0]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, uint>)(lpVtbl[1]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, uint>)(lpVtbl[1]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, uint>)(lpVtbl[2]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, uint>)(lpVtbl[2]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.Write"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [VtblIndex(3)]
     public HRESULT Write([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int>)(lpVtbl[3]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText);
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int>)(lpVtbl[3]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrl"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [VtblIndex(4)]
     public HRESULT WriteWithUrl([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int>)(lpVtbl[4]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl);
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int>)(lpVtbl[4]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrlAndLine"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [VtblIndex(5)]
     public HRESULT WriteWithUrlAndLine([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int>)(lpVtbl[5]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line);
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int>)(lpVtbl[5]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line);
     }
 
     /// <include file='IDeveloperConsoleMessageReceiver.xml' path='doc/member[@name="IDeveloperConsoleMessageReceiver.WriteWithUrlLineAndColumn"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
     [VtblIndex(6)]
     public HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] char* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] char* messageText, [NativeTypeName("LPCWSTR")] char* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column)
     {
-        return ((delegate* unmanaged<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int>)(lpVtbl[6]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line, column);
+        return ((delegate* unmanaged[MemberFunction]<IDeveloperConsoleMessageReceiver*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int>)(lpVtbl[6]))((IDeveloperConsoleMessageReceiver*)Unsafe.AsPointer(ref this), source, level, messageId, messageText, fileUrl, line, column);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int> Write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, int> Write;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int> WriteWithUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, int> WriteWithUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int> WriteWithUrlAndLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, int> WriteWithUrlAndLine;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int> WriteWithUrlLineAndColumn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DEV_CONSOLE_MESSAGE_LEVEL, int, char*, char*, uint, uint, int> WriteWithUrlLineAndColumn;
     }
 }

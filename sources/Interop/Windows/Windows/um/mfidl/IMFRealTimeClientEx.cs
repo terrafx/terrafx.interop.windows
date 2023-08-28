@@ -27,7 +27,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint>)(lpVtbl[1]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, uint>)(lpVtbl[1]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint>)(lpVtbl[2]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, uint>)(lpVtbl[2]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.RegisterThreadsEx"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [VtblIndex(3)]
     public HRESULT RegisterThreadsEx([NativeTypeName("DWORD *")] uint* pdwTaskIndex, [NativeTypeName("LPCWSTR")] char* wszClassName, [NativeTypeName("LONG")] int lBasePriority)
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint*, char*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, uint*, char*, int, int>)(lpVtbl[3]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), pdwTaskIndex, wszClassName, lBasePriority);
     }
 
     /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.UnregisterThreads"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [VtblIndex(4)]
     public HRESULT UnregisterThreads()
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, int>)(lpVtbl[4]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, int>)(lpVtbl[4]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.SetWorkQueueEx"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
     [VtblIndex(5)]
     public HRESULT SetWorkQueueEx([NativeTypeName("DWORD")] uint dwMultithreadedWorkQueueId, [NativeTypeName("LONG")] int lWorkItemBasePriority)
     {
-        return ((delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
+        return ((delegate* unmanaged[MemberFunction]<IMFRealTimeClientEx*, uint, int, int>)(lpVtbl[5]))((IMFRealTimeClientEx*)Unsafe.AsPointer(ref this), dwMultithreadedWorkQueueId, lWorkItemBasePriority);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, char*, int, int> RegisterThreadsEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, char*, int, int> RegisterThreadsEx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnregisterThreads;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnregisterThreads;
 
         [NativeTypeName("HRESULT (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, int> SetWorkQueueEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, int> SetWorkQueueEx;
     }
 }

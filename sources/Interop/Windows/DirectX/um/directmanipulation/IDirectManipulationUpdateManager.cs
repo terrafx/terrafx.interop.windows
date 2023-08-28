@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint>)(lpVtbl[1]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, uint>)(lpVtbl[1]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint>)(lpVtbl[2]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, uint>)(lpVtbl[2]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.RegisterWaitHandleCallback"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [VtblIndex(3)]
     public HRESULT RegisterWaitHandleCallback(HANDLE handle, IDirectManipulationUpdateHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int>)(lpVtbl[3]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), handle, eventHandler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int>)(lpVtbl[3]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), handle, eventHandler, cookie);
     }
 
     /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.UnregisterWaitHandleCallback"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [VtblIndex(4)]
     public HRESULT UnregisterWaitHandleCallback([NativeTypeName("DWORD")] uint cookie)
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, uint, int>)(lpVtbl[4]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, uint, int>)(lpVtbl[4]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), cookie);
     }
 
     /// <include file='IDirectManipulationUpdateManager.xml' path='doc/member[@name="IDirectManipulationUpdateManager.Update"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
     [VtblIndex(5)]
     public HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo)
     {
-        return ((delegate* unmanaged<IDirectManipulationUpdateManager*, IDirectManipulationFrameInfoProvider*, int>)(lpVtbl[5]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), frameInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationUpdateManager*, IDirectManipulationFrameInfoProvider*, int>)(lpVtbl[5]))((IDirectManipulationUpdateManager*)Unsafe.AsPointer(ref this), frameInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE, IDirectManipulationUpdateHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int> RegisterWaitHandleCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int> RegisterWaitHandleCallback;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnregisterWaitHandleCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnregisterWaitHandleCallback;
 
         [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationFrameInfoProvider*, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationFrameInfoProvider*, int> Update;
     }
 }

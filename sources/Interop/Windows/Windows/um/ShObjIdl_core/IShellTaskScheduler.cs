@@ -25,7 +25,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, void**, int>)(lpVtbl[0]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, Guid*, void**, int>)(lpVtbl[0]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, uint>)(lpVtbl[1]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, uint>)(lpVtbl[1]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, uint>)(lpVtbl[2]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, uint>)(lpVtbl[2]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellTaskScheduler.xml' path='doc/member[@name="IShellTaskScheduler.AddTask"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [VtblIndex(3)]
     public HRESULT AddTask(IRunnableTask* prt, [NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, [NativeTypeName("DWORD")] uint dwPriority)
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, IRunnableTask*, Guid*, nuint, uint, int>)(lpVtbl[3]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), prt, rtoid, lParam, dwPriority);
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, IRunnableTask*, Guid*, nuint, uint, int>)(lpVtbl[3]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), prt, rtoid, lParam, dwPriority);
     }
 
     /// <include file='IShellTaskScheduler.xml' path='doc/member[@name="IShellTaskScheduler.RemoveTasks"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [VtblIndex(4)]
     public HRESULT RemoveTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid, [NativeTypeName("DWORD_PTR")] nuint lParam, BOOL bWaitIfRunning)
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, nuint, BOOL, int>)(lpVtbl[4]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid, lParam, bWaitIfRunning);
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, Guid*, nuint, BOOL, int>)(lpVtbl[4]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid, lParam, bWaitIfRunning);
     }
 
     /// <include file='IShellTaskScheduler.xml' path='doc/member[@name="IShellTaskScheduler.CountTasks"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [VtblIndex(5)]
     public uint CountTasks([NativeTypeName("const TASKOWNERID &")] Guid* rtoid)
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, Guid*, uint>)(lpVtbl[5]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid);
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, Guid*, uint>)(lpVtbl[5]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), rtoid);
     }
 
     /// <include file='IShellTaskScheduler.xml' path='doc/member[@name="IShellTaskScheduler.Status"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
     [VtblIndex(6)]
     public HRESULT Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout)
     {
-        return ((delegate* unmanaged<IShellTaskScheduler*, uint, uint, int>)(lpVtbl[6]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), dwReleaseStatus, dwThreadTimeout);
+        return ((delegate* unmanaged[MemberFunction]<IShellTaskScheduler*, uint, uint, int>)(lpVtbl[6]))((IShellTaskScheduler*)Unsafe.AsPointer(ref this), dwReleaseStatus, dwThreadTimeout);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IRunnableTask *, const TASKOWNERID &, DWORD_PTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IRunnableTask*, Guid*, nuint, uint, int> AddTask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRunnableTask*, Guid*, nuint, uint, int> AddTask;
 
         [NativeTypeName("HRESULT (const TASKOWNERID &, DWORD_PTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, nuint, BOOL, int> RemoveTasks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, nuint, BOOL, int> RemoveTasks;
 
         [NativeTypeName("UINT (const TASKOWNERID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint> CountTasks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint> CountTasks;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> Status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> Status;
     }
 }

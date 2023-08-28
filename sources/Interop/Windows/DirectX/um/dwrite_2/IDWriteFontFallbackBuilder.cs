@@ -28,7 +28,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[1]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[1]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[2]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, uint>)(lpVtbl[2]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMapping"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [VtblIndex(3)]
     public HRESULT AddMapping([NativeTypeName("const DWRITE_UNICODE_RANGE *")] DWRITE_UNICODE_RANGE* ranges, [NativeTypeName("UINT32")] uint rangesCount, [NativeTypeName("const WCHAR **")] char** targetFamilyNames, [NativeTypeName("UINT32")] uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection = null, [NativeTypeName("const WCHAR *")] char* localeName = null, [NativeTypeName("const WCHAR *")] char* baseFamilyName = null, float scale = 1.0f)
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int>)(lpVtbl[3]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int>)(lpVtbl[3]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), ranges, rangesCount, targetFamilyNames, targetFamilyNamesCount, fontCollection, localeName, baseFamilyName, scale);
     }
 
     /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.AddMappings"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [VtblIndex(4)]
     public HRESULT AddMappings(IDWriteFontFallback* fontFallback)
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback*, int>)(lpVtbl[4]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, IDWriteFontFallback*, int>)(lpVtbl[4]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
     /// <include file='IDWriteFontFallbackBuilder.xml' path='doc/member[@name="IDWriteFontFallbackBuilder.CreateFontFallback"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
     [VtblIndex(5)]
     public HRESULT CreateFontFallback(IDWriteFontFallback** fontFallback)
     {
-        return ((delegate* unmanaged<IDWriteFontFallbackBuilder*, IDWriteFontFallback**, int>)(lpVtbl[5]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontFallbackBuilder*, IDWriteFontFallback**, int>)(lpVtbl[5]))((IDWriteFontFallbackBuilder*)Unsafe.AsPointer(ref this), fontFallback);
     }
 
     public interface Interface : IUnknown.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDWriteFontFallbackBuilder : IDWriteFontFallbackBui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const DWRITE_UNICODE_RANGE *, UINT32, const WCHAR **, UINT32, IDWriteFontCollection *, const WCHAR *, const WCHAR *, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int> AddMapping;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_UNICODE_RANGE*, uint, char**, uint, IDWriteFontCollection*, char*, char*, float, int> AddMapping;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFallback*, int> AddMappings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFallback*, int> AddMappings;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFallback**, int> CreateFontFallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFallback**, int> CreateFontFallback;
     }
 }

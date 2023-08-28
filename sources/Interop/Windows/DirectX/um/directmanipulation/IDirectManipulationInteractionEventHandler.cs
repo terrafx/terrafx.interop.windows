@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationInteractionEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationInteractionEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint>)(lpVtbl[1]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationInteractionEventHandler*, uint>)(lpVtbl[1]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint>)(lpVtbl[2]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationInteractionEventHandler*, uint>)(lpVtbl[2]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationInteractionEventHandler.xml' path='doc/member[@name="IDirectManipulationInteractionEventHandler.OnInteraction"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
     [VtblIndex(3)]
     public HRESULT OnInteraction(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction)
     {
-        return ((delegate* unmanaged<IDirectManipulationInteractionEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int>)(lpVtbl[3]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this), viewport, interaction);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationInteractionEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int>)(lpVtbl[3]))((IDirectManipulationInteractionEventHandler*)Unsafe.AsPointer(ref this), viewport, interaction);
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectManipulationViewport2 *, DIRECTMANIPULATION_INTERACTION_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int> OnInteraction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int> OnInteraction;
     }
 }

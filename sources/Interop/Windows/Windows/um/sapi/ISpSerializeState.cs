@@ -25,7 +25,7 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpSerializeState*, Guid*, void**, int>)(lpVtbl[0]))((ISpSerializeState*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpSerializeState*, Guid*, void**, int>)(lpVtbl[0]))((ISpSerializeState*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpSerializeState*, uint>)(lpVtbl[1]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpSerializeState*, uint>)(lpVtbl[1]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpSerializeState*, uint>)(lpVtbl[2]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpSerializeState*, uint>)(lpVtbl[2]))((ISpSerializeState*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpSerializeState.xml' path='doc/member[@name="ISpSerializeState.GetSerializedState"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetSerializedState(byte** ppbData, [NativeTypeName("ULONG *")] uint* pulSize, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ISpSerializeState*, byte**, uint*, uint, int>)(lpVtbl[3]))((ISpSerializeState*)Unsafe.AsPointer(ref this), ppbData, pulSize, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ISpSerializeState*, byte**, uint*, uint, int>)(lpVtbl[3]))((ISpSerializeState*)Unsafe.AsPointer(ref this), ppbData, pulSize, dwReserved);
     }
 
     /// <include file='ISpSerializeState.xml' path='doc/member[@name="ISpSerializeState.SetSerializedState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetSerializedState(byte* pbData, [NativeTypeName("ULONG")] uint ulSize, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ISpSerializeState*, byte*, uint, uint, int>)(lpVtbl[4]))((ISpSerializeState*)Unsafe.AsPointer(ref this), pbData, ulSize, dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, uint, int> GetSerializedState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, uint, int> GetSerializedState;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, uint, int> SetSerializedState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, uint, int> SetSerializedState;
     }
 }

@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint>)(lpVtbl[1]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, uint>)(lpVtbl[1]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint>)(lpVtbl[2]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, uint>)(lpVtbl[2]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.DeferContact"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [VtblIndex(3)]
     public HRESULT DeferContact([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint timeout)
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, uint, int>)(lpVtbl[3]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId, timeout);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, uint, uint, int>)(lpVtbl[3]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId, timeout);
     }
 
     /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.CancelContact"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [VtblIndex(4)]
     public HRESULT CancelContact([NativeTypeName("UINT32")] uint pointerId)
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[4]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[4]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
     }
 
     /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.CancelDeferral"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
     [VtblIndex(5)]
     public HRESULT CancelDeferral([NativeTypeName("UINT32")] uint pointerId)
     {
-        return ((delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[5]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDeferContactService*, uint, int>)(lpVtbl[5]))((IDirectManipulationDeferContactService*)Unsafe.AsPointer(ref this), pointerId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> DeferContact;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> DeferContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CancelContact;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CancelContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CancelDeferral;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CancelDeferral;
     }
 }

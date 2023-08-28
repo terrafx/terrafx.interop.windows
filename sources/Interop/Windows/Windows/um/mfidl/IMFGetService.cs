@@ -25,7 +25,7 @@ public unsafe partial struct IMFGetService : IMFGetService.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFGetService*, Guid*, void**, int>)(lpVtbl[0]))((IMFGetService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFGetService*, Guid*, void**, int>)(lpVtbl[0]))((IMFGetService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFGetService : IMFGetService.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFGetService*, uint>)(lpVtbl[1]))((IMFGetService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFGetService*, uint>)(lpVtbl[1]))((IMFGetService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFGetService : IMFGetService.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFGetService*, uint>)(lpVtbl[2]))((IMFGetService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFGetService*, uint>)(lpVtbl[2]))((IMFGetService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFGetService.xml' path='doc/member[@name="IMFGetService.GetService"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFGetService : IMFGetService.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetService([NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFGetService*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IMFGetService*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFGetService*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((IMFGetService*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFGetService : IMFGetService.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> GetService;
     }
 }

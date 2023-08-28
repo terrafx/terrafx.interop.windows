@@ -27,7 +27,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, uint>)(lpVtbl[1]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, uint>)(lpVtbl[1]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, uint>)(lpVtbl[2]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, uint>)(lpVtbl[2]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.AddAutomaticGroup"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [VtblIndex(3)]
     public HRESULT AddAutomaticGroup([NativeTypeName("LPCWSTR")] char* groupName)
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[3]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), groupName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[3]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), groupName);
     }
 
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.AddAutomaticFile"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [VtblIndex(4)]
     public HRESULT AddAutomaticFile([NativeTypeName("LPCWSTR")] char* fileName)
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[4]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, char*, int>)(lpVtbl[4]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.Close"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
     [VtblIndex(5)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IAppxContentGroupMapWriter*, int>)(lpVtbl[5]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxContentGroupMapWriter*, int>)(lpVtbl[5]))((IAppxContentGroupMapWriter*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddAutomaticGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddAutomaticGroup;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddAutomaticFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddAutomaticFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

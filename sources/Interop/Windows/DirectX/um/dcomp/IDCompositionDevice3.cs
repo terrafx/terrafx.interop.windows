@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, uint>)(lpVtbl[1]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, uint>)(lpVtbl[1]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, uint>)(lpVtbl[2]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, uint>)(lpVtbl[2]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.Commit" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(3)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, int>)(lpVtbl[3]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, int>)(lpVtbl[3]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.WaitForCommitCompletion" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(4)]
     public HRESULT WaitForCommitCompletion()
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, int>)(lpVtbl[4]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, int>)(lpVtbl[4]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.GetFrameStatistics" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(5)]
     public HRESULT GetFrameStatistics(DCOMPOSITION_FRAME_STATISTICS* statistics)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, DCOMPOSITION_FRAME_STATISTICS*, int>)(lpVtbl[5]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), statistics);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, DCOMPOSITION_FRAME_STATISTICS*, int>)(lpVtbl[5]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), statistics);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateVisual" />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(6)]
     public HRESULT CreateVisual(IDCompositionVisual2** visual)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionVisual2**, int>)(lpVtbl[6]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), visual);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionVisual2**, int>)(lpVtbl[6]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), visual);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateSurfaceFactory" />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(7)]
     public HRESULT CreateSurfaceFactory(IUnknown* renderingDevice, IDCompositionSurfaceFactory** surfaceFactory)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IUnknown*, IDCompositionSurfaceFactory**, int>)(lpVtbl[7]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), renderingDevice, surfaceFactory);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IUnknown*, IDCompositionSurfaceFactory**, int>)(lpVtbl[7]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), renderingDevice, surfaceFactory);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateSurface" />
@@ -94,7 +94,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(8)]
     public HRESULT CreateSurface(uint width, uint height, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionSurface** surface)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int>)(lpVtbl[8]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), width, height, pixelFormat, alphaMode, surface);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int>)(lpVtbl[8]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), width, height, pixelFormat, alphaMode, surface);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateVirtualSurface" />
@@ -102,7 +102,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(9)]
     public HRESULT CreateVirtualSurface(uint initialWidth, uint initialHeight, DXGI_FORMAT pixelFormat, DXGI_ALPHA_MODE alphaMode, IDCompositionVirtualSurface** virtualSurface)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int>)(lpVtbl[9]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), initialWidth, initialHeight, pixelFormat, alphaMode, virtualSurface);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int>)(lpVtbl[9]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), initialWidth, initialHeight, pixelFormat, alphaMode, virtualSurface);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateTranslateTransform" />
@@ -110,7 +110,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(10)]
     public HRESULT CreateTranslateTransform(IDCompositionTranslateTransform** translateTransform)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTranslateTransform**, int>)(lpVtbl[10]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), translateTransform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTranslateTransform**, int>)(lpVtbl[10]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), translateTransform);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateScaleTransform" />
@@ -118,7 +118,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(11)]
     public HRESULT CreateScaleTransform(IDCompositionScaleTransform** scaleTransform)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionScaleTransform**, int>)(lpVtbl[11]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), scaleTransform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionScaleTransform**, int>)(lpVtbl[11]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), scaleTransform);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateRotateTransform" />
@@ -126,7 +126,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(12)]
     public HRESULT CreateRotateTransform(IDCompositionRotateTransform** rotateTransform)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionRotateTransform**, int>)(lpVtbl[12]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), rotateTransform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionRotateTransform**, int>)(lpVtbl[12]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), rotateTransform);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateSkewTransform" />
@@ -134,7 +134,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(13)]
     public HRESULT CreateSkewTransform(IDCompositionSkewTransform** skewTransform)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionSkewTransform**, int>)(lpVtbl[13]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), skewTransform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionSkewTransform**, int>)(lpVtbl[13]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), skewTransform);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateMatrixTransform" />
@@ -142,7 +142,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(14)]
     public HRESULT CreateMatrixTransform(IDCompositionMatrixTransform** matrixTransform)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionMatrixTransform**, int>)(lpVtbl[14]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), matrixTransform);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionMatrixTransform**, int>)(lpVtbl[14]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), matrixTransform);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateTransformGroup" />
@@ -150,7 +150,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(15)]
     public HRESULT CreateTransformGroup(IDCompositionTransform** transforms, uint elements, IDCompositionTransform** transformGroup)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTransform**, uint, IDCompositionTransform**, int>)(lpVtbl[15]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), transforms, elements, transformGroup);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTransform**, uint, IDCompositionTransform**, int>)(lpVtbl[15]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), transforms, elements, transformGroup);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateTranslateTransform3D" />
@@ -158,7 +158,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(16)]
     public HRESULT CreateTranslateTransform3D(IDCompositionTranslateTransform3D** translateTransform3D)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTranslateTransform3D**, int>)(lpVtbl[16]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), translateTransform3D);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTranslateTransform3D**, int>)(lpVtbl[16]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), translateTransform3D);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateScaleTransform3D" />
@@ -166,7 +166,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(17)]
     public HRESULT CreateScaleTransform3D(IDCompositionScaleTransform3D** scaleTransform3D)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionScaleTransform3D**, int>)(lpVtbl[17]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), scaleTransform3D);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionScaleTransform3D**, int>)(lpVtbl[17]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), scaleTransform3D);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateRotateTransform3D" />
@@ -174,7 +174,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(18)]
     public HRESULT CreateRotateTransform3D(IDCompositionRotateTransform3D** rotateTransform3D)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionRotateTransform3D**, int>)(lpVtbl[18]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), rotateTransform3D);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionRotateTransform3D**, int>)(lpVtbl[18]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), rotateTransform3D);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateMatrixTransform3D" />
@@ -182,7 +182,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(19)]
     public HRESULT CreateMatrixTransform3D(IDCompositionMatrixTransform3D** matrixTransform3D)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionMatrixTransform3D**, int>)(lpVtbl[19]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), matrixTransform3D);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionMatrixTransform3D**, int>)(lpVtbl[19]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), matrixTransform3D);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateTransform3DGroup" />
@@ -190,7 +190,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(20)]
     public HRESULT CreateTransform3DGroup(IDCompositionTransform3D** transforms3D, uint elements, IDCompositionTransform3D** transform3DGroup)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int>)(lpVtbl[20]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), transforms3D, elements, transform3DGroup);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int>)(lpVtbl[20]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), transforms3D, elements, transform3DGroup);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateEffectGroup" />
@@ -198,7 +198,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(21)]
     public HRESULT CreateEffectGroup(IDCompositionEffectGroup** effectGroup)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionEffectGroup**, int>)(lpVtbl[21]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), effectGroup);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionEffectGroup**, int>)(lpVtbl[21]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), effectGroup);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateRectangleClip" />
@@ -206,7 +206,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(22)]
     public HRESULT CreateRectangleClip(IDCompositionRectangleClip** clip)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionRectangleClip**, int>)(lpVtbl[22]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), clip);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionRectangleClip**, int>)(lpVtbl[22]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), clip);
     }
 
     /// <inheritdoc cref="IDCompositionDevice2.CreateAnimation" />
@@ -214,7 +214,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(23)]
     public HRESULT CreateAnimation(IDCompositionAnimation** animation)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionAnimation**, int>)(lpVtbl[23]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionAnimation**, int>)(lpVtbl[23]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateGaussianBlurEffect"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(24)]
     public HRESULT CreateGaussianBlurEffect(IDCompositionGaussianBlurEffect** gaussianBlurEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionGaussianBlurEffect**, int>)(lpVtbl[24]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), gaussianBlurEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionGaussianBlurEffect**, int>)(lpVtbl[24]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), gaussianBlurEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateBrightnessEffect"]/*' />
@@ -230,7 +230,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(25)]
     public HRESULT CreateBrightnessEffect(IDCompositionBrightnessEffect** brightnessEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionBrightnessEffect**, int>)(lpVtbl[25]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), brightnessEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionBrightnessEffect**, int>)(lpVtbl[25]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), brightnessEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateColorMatrixEffect"]/*' />
@@ -238,7 +238,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(26)]
     public HRESULT CreateColorMatrixEffect(IDCompositionColorMatrixEffect** colorMatrixEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionColorMatrixEffect**, int>)(lpVtbl[26]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), colorMatrixEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionColorMatrixEffect**, int>)(lpVtbl[26]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), colorMatrixEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateShadowEffect"]/*' />
@@ -246,7 +246,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(27)]
     public HRESULT CreateShadowEffect(IDCompositionShadowEffect** shadowEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionShadowEffect**, int>)(lpVtbl[27]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), shadowEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionShadowEffect**, int>)(lpVtbl[27]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), shadowEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateHueRotationEffect"]/*' />
@@ -254,7 +254,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(28)]
     public HRESULT CreateHueRotationEffect(IDCompositionHueRotationEffect** hueRotationEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionHueRotationEffect**, int>)(lpVtbl[28]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), hueRotationEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionHueRotationEffect**, int>)(lpVtbl[28]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), hueRotationEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateSaturationEffect"]/*' />
@@ -262,7 +262,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(29)]
     public HRESULT CreateSaturationEffect(IDCompositionSaturationEffect** saturationEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionSaturationEffect**, int>)(lpVtbl[29]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), saturationEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionSaturationEffect**, int>)(lpVtbl[29]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), saturationEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateTurbulenceEffect"]/*' />
@@ -270,7 +270,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(30)]
     public HRESULT CreateTurbulenceEffect(IDCompositionTurbulenceEffect** turbulenceEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTurbulenceEffect**, int>)(lpVtbl[30]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), turbulenceEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTurbulenceEffect**, int>)(lpVtbl[30]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), turbulenceEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateLinearTransferEffect"]/*' />
@@ -278,7 +278,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(31)]
     public HRESULT CreateLinearTransferEffect(IDCompositionLinearTransferEffect** linearTransferEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionLinearTransferEffect**, int>)(lpVtbl[31]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), linearTransferEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionLinearTransferEffect**, int>)(lpVtbl[31]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), linearTransferEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateTableTransferEffect"]/*' />
@@ -286,7 +286,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(32)]
     public HRESULT CreateTableTransferEffect(IDCompositionTableTransferEffect** tableTransferEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionTableTransferEffect**, int>)(lpVtbl[32]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), tableTransferEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionTableTransferEffect**, int>)(lpVtbl[32]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), tableTransferEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateCompositeEffect"]/*' />
@@ -294,7 +294,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(33)]
     public HRESULT CreateCompositeEffect(IDCompositionCompositeEffect** compositeEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionCompositeEffect**, int>)(lpVtbl[33]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), compositeEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionCompositeEffect**, int>)(lpVtbl[33]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), compositeEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateBlendEffect"]/*' />
@@ -302,7 +302,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(34)]
     public HRESULT CreateBlendEffect(IDCompositionBlendEffect** blendEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionBlendEffect**, int>)(lpVtbl[34]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), blendEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionBlendEffect**, int>)(lpVtbl[34]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), blendEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateArithmeticCompositeEffect"]/*' />
@@ -310,7 +310,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(35)]
     public HRESULT CreateArithmeticCompositeEffect(IDCompositionArithmeticCompositeEffect** arithmeticCompositeEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionArithmeticCompositeEffect**, int>)(lpVtbl[35]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), arithmeticCompositeEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionArithmeticCompositeEffect**, int>)(lpVtbl[35]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), arithmeticCompositeEffect);
     }
 
     /// <include file='IDCompositionDevice3.xml' path='doc/member[@name="IDCompositionDevice3.CreateAffineTransform2DEffect"]/*' />
@@ -318,7 +318,7 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
     [VtblIndex(36)]
     public HRESULT CreateAffineTransform2DEffect(IDCompositionAffineTransform2DEffect** affineTransform2dEffect)
     {
-        return ((delegate* unmanaged<IDCompositionDevice3*, IDCompositionAffineTransform2DEffect**, int>)(lpVtbl[36]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), affineTransform2dEffect);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDevice3*, IDCompositionAffineTransform2DEffect**, int>)(lpVtbl[36]))((IDCompositionDevice3*)Unsafe.AsPointer(ref this), affineTransform2dEffect);
     }
 
     public interface Interface : IDCompositionDevice2.Interface
@@ -367,114 +367,114 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WaitForCommitCompletion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WaitForCommitCompletion;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_FRAME_STATISTICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCOMPOSITION_FRAME_STATISTICS*, int> GetFrameStatistics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCOMPOSITION_FRAME_STATISTICS*, int> GetFrameStatistics;
 
         [NativeTypeName("HRESULT (IDCompositionVisual2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionVisual2**, int> CreateVisual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionVisual2**, int> CreateVisual;
 
         [NativeTypeName("HRESULT (IUnknown *, IDCompositionSurfaceFactory **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDCompositionSurfaceFactory**, int> CreateSurfaceFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDCompositionSurfaceFactory**, int> CreateSurfaceFactory;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int> CreateSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int> CreateSurface;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int> CreateVirtualSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int> CreateVirtualSurface;
 
         [NativeTypeName("HRESULT (IDCompositionTranslateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTranslateTransform**, int> CreateTranslateTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTranslateTransform**, int> CreateTranslateTransform;
 
         [NativeTypeName("HRESULT (IDCompositionScaleTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionScaleTransform**, int> CreateScaleTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionScaleTransform**, int> CreateScaleTransform;
 
         [NativeTypeName("HRESULT (IDCompositionRotateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionRotateTransform**, int> CreateRotateTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionRotateTransform**, int> CreateRotateTransform;
 
         [NativeTypeName("HRESULT (IDCompositionSkewTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionSkewTransform**, int> CreateSkewTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionSkewTransform**, int> CreateSkewTransform;
 
         [NativeTypeName("HRESULT (IDCompositionMatrixTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionMatrixTransform**, int> CreateMatrixTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionMatrixTransform**, int> CreateMatrixTransform;
 
         [NativeTypeName("HRESULT (IDCompositionTransform **, UINT, IDCompositionTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTransform**, uint, IDCompositionTransform**, int> CreateTransformGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTransform**, uint, IDCompositionTransform**, int> CreateTransformGroup;
 
         [NativeTypeName("HRESULT (IDCompositionTranslateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTranslateTransform3D**, int> CreateTranslateTransform3D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTranslateTransform3D**, int> CreateTranslateTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionScaleTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionScaleTransform3D**, int> CreateScaleTransform3D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionScaleTransform3D**, int> CreateScaleTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionRotateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionRotateTransform3D**, int> CreateRotateTransform3D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionRotateTransform3D**, int> CreateRotateTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionMatrixTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionMatrixTransform3D**, int> CreateMatrixTransform3D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionMatrixTransform3D**, int> CreateMatrixTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionTransform3D **, UINT, IDCompositionTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int> CreateTransform3DGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int> CreateTransform3DGroup;
 
         [NativeTypeName("HRESULT (IDCompositionEffectGroup **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionEffectGroup**, int> CreateEffectGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionEffectGroup**, int> CreateEffectGroup;
 
         [NativeTypeName("HRESULT (IDCompositionRectangleClip **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionRectangleClip**, int> CreateRectangleClip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionRectangleClip**, int> CreateRectangleClip;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation**, int> CreateAnimation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation**, int> CreateAnimation;
 
         [NativeTypeName("HRESULT (IDCompositionGaussianBlurEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionGaussianBlurEffect**, int> CreateGaussianBlurEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionGaussianBlurEffect**, int> CreateGaussianBlurEffect;
 
         [NativeTypeName("HRESULT (IDCompositionBrightnessEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionBrightnessEffect**, int> CreateBrightnessEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionBrightnessEffect**, int> CreateBrightnessEffect;
 
         [NativeTypeName("HRESULT (IDCompositionColorMatrixEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionColorMatrixEffect**, int> CreateColorMatrixEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionColorMatrixEffect**, int> CreateColorMatrixEffect;
 
         [NativeTypeName("HRESULT (IDCompositionShadowEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionShadowEffect**, int> CreateShadowEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionShadowEffect**, int> CreateShadowEffect;
 
         [NativeTypeName("HRESULT (IDCompositionHueRotationEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionHueRotationEffect**, int> CreateHueRotationEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionHueRotationEffect**, int> CreateHueRotationEffect;
 
         [NativeTypeName("HRESULT (IDCompositionSaturationEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionSaturationEffect**, int> CreateSaturationEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionSaturationEffect**, int> CreateSaturationEffect;
 
         [NativeTypeName("HRESULT (IDCompositionTurbulenceEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTurbulenceEffect**, int> CreateTurbulenceEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTurbulenceEffect**, int> CreateTurbulenceEffect;
 
         [NativeTypeName("HRESULT (IDCompositionLinearTransferEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionLinearTransferEffect**, int> CreateLinearTransferEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionLinearTransferEffect**, int> CreateLinearTransferEffect;
 
         [NativeTypeName("HRESULT (IDCompositionTableTransferEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionTableTransferEffect**, int> CreateTableTransferEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionTableTransferEffect**, int> CreateTableTransferEffect;
 
         [NativeTypeName("HRESULT (IDCompositionCompositeEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionCompositeEffect**, int> CreateCompositeEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionCompositeEffect**, int> CreateCompositeEffect;
 
         [NativeTypeName("HRESULT (IDCompositionBlendEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionBlendEffect**, int> CreateBlendEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionBlendEffect**, int> CreateBlendEffect;
 
         [NativeTypeName("HRESULT (IDCompositionArithmeticCompositeEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionArithmeticCompositeEffect**, int> CreateArithmeticCompositeEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionArithmeticCompositeEffect**, int> CreateArithmeticCompositeEffect;
 
         [NativeTypeName("HRESULT (IDCompositionAffineTransform2DEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAffineTransform2DEffect**, int> CreateAffineTransform2DEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAffineTransform2DEffect**, int> CreateAffineTransform2DEffect;
     }
 }

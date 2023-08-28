@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, uint>)(lpVtbl[1]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, uint>)(lpVtbl[1]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, uint>)(lpVtbl[2]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, uint>)(lpVtbl[2]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, uint*, int>)(lpVtbl[3]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, uint*, int>)(lpVtbl[3]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.get_Type"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(7)]
     public HRESULT get_Type(SpeechAudioFormatType* AudioFormat)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, SpeechAudioFormatType*, int>)(lpVtbl[7]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), AudioFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, SpeechAudioFormatType*, int>)(lpVtbl[7]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), AudioFormat);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.put_Type"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(8)]
     public HRESULT put_Type(SpeechAudioFormatType AudioFormat)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, SpeechAudioFormatType, int>)(lpVtbl[8]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), AudioFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, SpeechAudioFormatType, int>)(lpVtbl[8]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), AudioFormat);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.get_Guid"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(9)]
     public HRESULT get_Guid([NativeTypeName("BSTR *")] char** Guid)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, char**, int>)(lpVtbl[9]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), Guid);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, char**, int>)(lpVtbl[9]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), Guid);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.put_Guid"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(10)]
     public HRESULT put_Guid([NativeTypeName("BSTR")] char* Guid)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, char*, int>)(lpVtbl[10]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), Guid);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, char*, int>)(lpVtbl[10]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), Guid);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.GetWaveFormatEx"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(11)]
     public HRESULT GetWaveFormatEx(ISpeechWaveFormatEx** SpeechWaveFormatEx)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx**, int>)(lpVtbl[11]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, ISpeechWaveFormatEx**, int>)(lpVtbl[11]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
     }
 
     /// <include file='ISpeechAudioFormat.xml' path='doc/member[@name="ISpeechAudioFormat.SetWaveFormatEx"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
     [VtblIndex(12)]
     public HRESULT SetWaveFormatEx(ISpeechWaveFormatEx* SpeechWaveFormatEx)
     {
-        return ((delegate* unmanaged<ISpeechAudioFormat*, ISpeechWaveFormatEx*, int>)(lpVtbl[12]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechAudioFormat*, ISpeechWaveFormatEx*, int>)(lpVtbl[12]))((ISpeechAudioFormat*)Unsafe.AsPointer(ref this), SpeechWaveFormatEx);
     }
 
     public interface Interface : IDispatch.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct ISpeechAudioFormat : ISpeechAudioFormat.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (SpeechAudioFormatType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechAudioFormatType*, int> get_Type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechAudioFormatType*, int> get_Type;
 
         [NativeTypeName("HRESULT (SpeechAudioFormatType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechAudioFormatType, int> put_Type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechAudioFormatType, int> put_Type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Guid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Guid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_Guid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_Guid;
 
         [NativeTypeName("HRESULT (ISpeechWaveFormatEx **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechWaveFormatEx**, int> GetWaveFormatEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechWaveFormatEx**, int> GetWaveFormatEx;
 
         [NativeTypeName("HRESULT (ISpeechWaveFormatEx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechWaveFormatEx*, int> SetWaveFormatEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechWaveFormatEx*, int> SetWaveFormatEx;
     }
 }

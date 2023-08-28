@@ -25,7 +25,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, uint>)(lpVtbl[1]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, uint>)(lpVtbl[1]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, uint>)(lpVtbl[2]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, uint>)(lpVtbl[2]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, HWND*, int>)(lpVtbl[3]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, HWND*, int>)(lpVtbl[3]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, BOOL, int>)(lpVtbl[4]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, BOOL, int>)(lpVtbl[4]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.AddToolbar"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(5)]
     public HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, char*, uint, int>)(lpVtbl[5]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, pwszItem, dwAddFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, IUnknown*, char*, uint, int>)(lpVtbl[5]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, pwszItem, dwAddFlags);
     }
 
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.RemoveToolbar"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(6)]
     public HRESULT RemoveToolbar(IUnknown* punkSrc, [NativeTypeName("DWORD")] uint dwRemoveFlags)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, uint, int>)(lpVtbl[6]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, dwRemoveFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, IUnknown*, uint, int>)(lpVtbl[6]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, dwRemoveFlags);
     }
 
     /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.FindToolbar"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
     [VtblIndex(7)]
     public HRESULT FindToolbar([NativeTypeName("PCWSTR")] char* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IDockingWindowFrame*, char*, Guid*, void**, int>)(lpVtbl[7]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), pwszItem, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IDockingWindowFrame*, char*, Guid*, void**, int>)(lpVtbl[7]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), pwszItem, riid, ppv);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -102,27 +102,27 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *, PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, char*, uint, int> AddToolbar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, char*, uint, int> AddToolbar;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> RemoveToolbar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> RemoveToolbar;
 
         [NativeTypeName("HRESULT (PCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> FindToolbar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, void**, int> FindToolbar;
     }
 }

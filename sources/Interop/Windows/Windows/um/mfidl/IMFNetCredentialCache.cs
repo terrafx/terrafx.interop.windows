@@ -25,7 +25,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, uint>)(lpVtbl[1]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, uint>)(lpVtbl[1]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, uint>)(lpVtbl[2]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, uint>)(lpVtbl[2]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache.GetCredential"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [VtblIndex(3)]
     public HRESULT GetCredential([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszRealm, [NativeTypeName("DWORD")] uint dwAuthenticationFlags, IMFNetCredential** ppCred, [NativeTypeName("DWORD *")] uint* pdwRequirementsFlags)
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, char*, char*, uint, IMFNetCredential**, uint*, int>)(lpVtbl[3]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pszUrl, pszRealm, dwAuthenticationFlags, ppCred, pdwRequirementsFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, char*, char*, uint, IMFNetCredential**, uint*, int>)(lpVtbl[3]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pszUrl, pszRealm, dwAuthenticationFlags, ppCred, pdwRequirementsFlags);
     }
 
     /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache.SetGood"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [VtblIndex(4)]
     public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood)
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, BOOL, int>)(lpVtbl[4]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pCred, fGood);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, IMFNetCredential*, BOOL, int>)(lpVtbl[4]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pCred, fGood);
     }
 
     /// <include file='IMFNetCredentialCache.xml' path='doc/member[@name="IMFNetCredentialCache.SetUserOptions"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
     [VtblIndex(5)]
     public HRESULT SetUserOptions(IMFNetCredential* pCred, [NativeTypeName("DWORD")] uint dwOptionsFlags)
     {
-        return ((delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, uint, int>)(lpVtbl[5]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pCred, dwOptionsFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialCache*, IMFNetCredential*, uint, int>)(lpVtbl[5]))((IMFNetCredentialCache*)Unsafe.AsPointer(ref this), pCred, dwOptionsFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, IMFNetCredential **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, uint, IMFNetCredential**, uint*, int> GetCredential;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint, IMFNetCredential**, uint*, int> GetCredential;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFNetCredential*, uint, int> SetUserOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFNetCredential*, uint, int> SetUserOptions;
     }
 }

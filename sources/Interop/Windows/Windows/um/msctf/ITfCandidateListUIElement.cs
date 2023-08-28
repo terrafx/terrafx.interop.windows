@@ -25,7 +25,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint>)(lpVtbl[1]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint>)(lpVtbl[1]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint>)(lpVtbl[2]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint>)(lpVtbl[2]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, char**, int>)(lpVtbl[3]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, char**, int>)(lpVtbl[3]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, Guid*, int>)(lpVtbl[4]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, Guid*, int>)(lpVtbl[4]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <inheritdoc cref="ITfUIElement.Show" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL, int>)(lpVtbl[5]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), bShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, BOOL, int>)(lpVtbl[5]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
     /// <inheritdoc cref="ITfUIElement.IsShown" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetUpdatedFlags"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(7)]
     public HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[7]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[7]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetDocumentMgr"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(8)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, ITfDocumentMgr**, int>)(lpVtbl[8]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), ppdim);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, ITfDocumentMgr**, int>)(lpVtbl[8]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), ppdim);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetCount"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(9)]
     public HRESULT GetCount(uint* puCount)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[9]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puCount);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[9]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puCount);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetSelection"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(10)]
     public HRESULT GetSelection(uint* puIndex)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[10]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puIndex);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[10]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puIndex);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetString"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(11)]
     public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint, char**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint, char**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetPageIndex"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(12)]
     public HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, uint*, int>)(lpVtbl[12]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uSize, puPageCnt);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, uint, uint*, int>)(lpVtbl[12]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uSize, puPageCnt);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.SetPageIndex"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(13)]
     public HRESULT SetPageIndex(uint* pIndex, uint uPageCnt)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, int>)(lpVtbl[13]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uPageCnt);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, uint, int>)(lpVtbl[13]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uPageCnt);
     }
 
     /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetCurrentPage"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
     [VtblIndex(14)]
     public HRESULT GetCurrentPage(uint* puPage)
     {
-        return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[14]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puPage);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[14]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puPage);
     }
 
     public interface Interface : ITfUIElement.Interface
@@ -173,48 +173,48 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetUpdatedFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetUpdatedFlags;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetString;
 
         [NativeTypeName("HRESULT (UINT *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint, uint*, int> GetPageIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint, uint*, int> GetPageIndex;
 
         [NativeTypeName("HRESULT (UINT *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint, int> SetPageIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint, int> SetPageIndex;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCurrentPage;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMFilterMiscFlags*, Guid*, void**, int>)(lpVtbl[0]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMFilterMiscFlags*, Guid*, void**, int>)(lpVtbl[0]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[1]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMFilterMiscFlags*, uint>)(lpVtbl[1]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[2]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMFilterMiscFlags*, uint>)(lpVtbl[2]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMFilterMiscFlags.xml' path='doc/member[@name="IAMFilterMiscFlags.GetMiscFlags"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint GetMiscFlags()
     {
-        return ((delegate* unmanaged<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMFilterMiscFlags*, uint>)(lpVtbl[3]))((IAMFilterMiscFlags*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAMFilterMiscFlags : IAMFilterMiscFlags.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetMiscFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetMiscFlags;
     }
 }

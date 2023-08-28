@@ -25,7 +25,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSyncMergeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSyncMergeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSyncMergeHandler*, uint>)(lpVtbl[1]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSyncMergeHandler*, uint>)(lpVtbl[1]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSyncMergeHandler*, uint>)(lpVtbl[2]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSyncMergeHandler*, uint>)(lpVtbl[2]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler.Merge"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
     [VtblIndex(3)]
     public HRESULT Merge([NativeTypeName("LPCWSTR")] char* localFilePath, [NativeTypeName("LPCWSTR")] char* serverFilePath, MERGE_UPDATE_STATUS* updateStatus)
     {
-        return ((delegate* unmanaged<IFileSyncMergeHandler*, char*, char*, MERGE_UPDATE_STATUS*, int>)(lpVtbl[3]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, serverFilePath, updateStatus);
+        return ((delegate* unmanaged[MemberFunction]<IFileSyncMergeHandler*, char*, char*, MERGE_UPDATE_STATUS*, int>)(lpVtbl[3]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, serverFilePath, updateStatus);
     }
 
     /// <include file='IFileSyncMergeHandler.xml' path='doc/member[@name="IFileSyncMergeHandler.ShowResolveConflictUIAsync"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
     [VtblIndex(4)]
     public HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] char* localFilePath, HMONITOR monitorToDisplayOn)
     {
-        return ((delegate* unmanaged<IFileSyncMergeHandler*, char*, HMONITOR, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
+        return ((delegate* unmanaged[MemberFunction]<IFileSyncMergeHandler*, char*, HMONITOR, int>)(lpVtbl[4]))((IFileSyncMergeHandler*)Unsafe.AsPointer(ref this), localFilePath, monitorToDisplayOn);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, MERGE_UPDATE_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, MERGE_UPDATE_STATUS*, int> Merge;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, MERGE_UPDATE_STATUS*, int> Merge;
 
         [NativeTypeName("HRESULT (LPCWSTR, HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, HMONITOR, int> ShowResolveConflictUIAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HMONITOR, int> ShowResolveConflictUIAsync;
     }
 }

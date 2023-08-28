@@ -25,7 +25,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, Guid*, void**, int>)(lpVtbl[0]))((IDocumentSelector*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, Guid*, void**, int>)(lpVtbl[0]))((IDocumentSelector*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDocumentSelector*, uint>)(lpVtbl[1]))((IDocumentSelector*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, uint>)(lpVtbl[1]))((IDocumentSelector*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDocumentSelector*, uint>)(lpVtbl[2]))((IDocumentSelector*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, uint>)(lpVtbl[2]))((IDocumentSelector*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, uint*, int>)(lpVtbl[3]))((IDocumentSelector*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, uint*, int>)(lpVtbl[3]))((IDocumentSelector*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDocumentSelector*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDocumentSelector*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDocumentSelector*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDocumentSelector*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDocumentSelector*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDocumentSelector*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDocumentSelector.xml' path='doc/member[@name="IDocumentSelector.querySelector"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(7)]
     public HRESULT querySelector([NativeTypeName("BSTR")] char* v, IHTMLElement** pel)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, char*, IHTMLElement**, int>)(lpVtbl[7]))((IDocumentSelector*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, char*, IHTMLElement**, int>)(lpVtbl[7]))((IDocumentSelector*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     /// <include file='IDocumentSelector.xml' path='doc/member[@name="IDocumentSelector.querySelectorAll"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
     [VtblIndex(8)]
     public HRESULT querySelectorAll([NativeTypeName("BSTR")] char* v, IHTMLDOMChildrenCollection** pel)
     {
-        return ((delegate* unmanaged<IDocumentSelector*, char*, IHTMLDOMChildrenCollection**, int>)(lpVtbl[8]))((IDocumentSelector*)Unsafe.AsPointer(ref this), v, pel);
+        return ((delegate* unmanaged[MemberFunction]<IDocumentSelector*, char*, IHTMLDOMChildrenCollection**, int>)(lpVtbl[8]))((IDocumentSelector*)Unsafe.AsPointer(ref this), v, pel);
     }
 
     public interface Interface : IDispatch.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct IDocumentSelector : IDocumentSelector.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IHTMLElement**, int> querySelector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLElement**, int> querySelector;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMChildrenCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IHTMLDOMChildrenCollection**, int> querySelectorAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLDOMChildrenCollection**, int> querySelectorAll;
     }
 }

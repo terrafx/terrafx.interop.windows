@@ -25,7 +25,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IMediaEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IMediaEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaEventSink*, uint>)(lpVtbl[1]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaEventSink*, uint>)(lpVtbl[1]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaEventSink*, uint>)(lpVtbl[2]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaEventSink*, uint>)(lpVtbl[2]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaEventSink.xml' path='doc/member[@name="IMediaEventSink.Notify"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Notify([NativeTypeName("long")] int EventCode, [NativeTypeName("LONG_PTR")] nint EventParam1, [NativeTypeName("LONG_PTR")] nint EventParam2)
     {
-        return ((delegate* unmanaged<IMediaEventSink*, int, nint, nint, int>)(lpVtbl[3]))((IMediaEventSink*)Unsafe.AsPointer(ref this), EventCode, EventParam1, EventParam2);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEventSink*, int, nint, nint, int>)(lpVtbl[3]))((IMediaEventSink*)Unsafe.AsPointer(ref this), EventCode, EventParam1, EventParam2);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, nint, nint, int> Notify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, nint, nint, int> Notify;
     }
 }

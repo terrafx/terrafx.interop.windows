@@ -25,7 +25,7 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory5*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory5*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory5*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxEncryptionFactory5.xml' path='doc/member[@name="IAppxEncryptionFactory5.CreateEncryptedPackageReader2"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     [VtblIndex(3)]
     public HRESULT CreateEncryptedPackageReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, packageReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, packageReader);
     }
 
     /// <include file='IAppxEncryptionFactory5.xml' path='doc/member[@name="IAppxEncryptionFactory5.CreateEncryptedBundleReader2"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
     [VtblIndex(4)]
     public HRESULT CreateEncryptedBundleReader2(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxBundleReader** bundleReader)
     {
-        return ((delegate* unmanaged<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, bundleReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptionFactory5*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int>)(lpVtbl[4]))((IAppxEncryptionFactory5*)Unsafe.AsPointer(ref this), inputStream, keyInfo, expectedDigest, bundleReader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAppxEncryptionFactory5 : IAppxEncryptionFactory5.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, LPCWSTR, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int> CreateEncryptedPackageReader2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxPackageReader**, int> CreateEncryptedPackageReader2;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, LPCWSTR, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int> CreateEncryptedBundleReader2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, APPX_KEY_INFO*, char*, IAppxBundleReader**, int> CreateEncryptedBundleReader2;
     }
 }

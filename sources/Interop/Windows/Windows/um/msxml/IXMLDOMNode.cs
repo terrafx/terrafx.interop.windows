@@ -25,7 +25,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, uint>)(lpVtbl[1]))((IXMLDOMNode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, uint>)(lpVtbl[1]))((IXMLDOMNode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, uint>)(lpVtbl[2]))((IXMLDOMNode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, uint>)(lpVtbl[2]))((IXMLDOMNode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, uint*, int>)(lpVtbl[3]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, uint*, int>)(lpVtbl[3]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nodeName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_nodeName([NativeTypeName("BSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[7]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[7]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nodeValue"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_nodeValue(VARIANT* value)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[8]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[8]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.put_nodeValue"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT put_nodeValue(VARIANT value)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, VARIANT, int>)(lpVtbl[9]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, VARIANT, int>)(lpVtbl[9]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nodeType"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_nodeType(DOMNodeType* type)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, DOMNodeType*, int>)(lpVtbl[10]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), type);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, DOMNodeType*, int>)(lpVtbl[10]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), type);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_parentNode"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT get_parentNode(IXMLDOMNode** parent)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[11]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), parent);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[11]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), parent);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_childNodes"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_childNodes(IXMLDOMNodeList** childList)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNodeList**, int>)(lpVtbl[12]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), childList);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNodeList**, int>)(lpVtbl[12]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), childList);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_firstChild"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT get_firstChild(IXMLDOMNode** firstChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[13]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), firstChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[13]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), firstChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_lastChild"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_lastChild(IXMLDOMNode** lastChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[14]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), lastChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[14]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), lastChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_previousSibling"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT get_previousSibling(IXMLDOMNode** previousSibling)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[15]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), previousSibling);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[15]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), previousSibling);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nextSibling"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_nextSibling(IXMLDOMNode** nextSibling)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[16]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nextSibling);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[16]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nextSibling);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_attributes"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT get_attributes(IXMLDOMNamedNodeMap** attributeMap)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNamedNodeMap**, int>)(lpVtbl[17]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), attributeMap);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNamedNodeMap**, int>)(lpVtbl[17]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), attributeMap);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.insertBefore"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT insertBefore(IXMLDOMNode* newChild, VARIANT refChild, IXMLDOMNode** outNewChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int>)(lpVtbl[18]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, refChild, outNewChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int>)(lpVtbl[18]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, refChild, outNewChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.replaceChild"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT replaceChild(IXMLDOMNode* newChild, IXMLDOMNode* oldChild, IXMLDOMNode** outOldChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[19]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, oldChild, outOldChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[19]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, oldChild, outOldChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.removeChild"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT removeChild(IXMLDOMNode* childNode, IXMLDOMNode** oldChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[20]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), childNode, oldChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[20]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), childNode, oldChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.appendChild"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT appendChild(IXMLDOMNode* newChild, IXMLDOMNode** outNewChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[21]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, outNewChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[21]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), newChild, outNewChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.hasChildNodes"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT hasChildNodes([NativeTypeName("VARIANT_BOOL *")] short* hasChild)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, short*, int>)(lpVtbl[22]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), hasChild);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, short*, int>)(lpVtbl[22]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), hasChild);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_ownerDocument"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT get_ownerDocument(IXMLDOMDocument** XMLDOMDocument)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMDocument**, int>)(lpVtbl[23]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), XMLDOMDocument);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMDocument**, int>)(lpVtbl[23]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), XMLDOMDocument);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.cloneNode"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT cloneNode([NativeTypeName("VARIANT_BOOL")] short deep, IXMLDOMNode** cloneRoot)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, short, IXMLDOMNode**, int>)(lpVtbl[24]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), deep, cloneRoot);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, short, IXMLDOMNode**, int>)(lpVtbl[24]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), deep, cloneRoot);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nodeTypeString"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT get_nodeTypeString([NativeTypeName("BSTR *")] char** nodeType)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[25]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nodeType);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[25]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nodeType);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_text"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_text([NativeTypeName("BSTR *")] char** text)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[26]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[26]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.put_text"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT put_text([NativeTypeName("BSTR")] char* text)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char*, int>)(lpVtbl[27]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), text);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char*, int>)(lpVtbl[27]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), text);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_specified"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT get_specified([NativeTypeName("VARIANT_BOOL *")] short* isSpecified)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, short*, int>)(lpVtbl[28]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), isSpecified);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, short*, int>)(lpVtbl[28]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), isSpecified);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_definition"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT get_definition(IXMLDOMNode** definitionNode)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[29]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), definitionNode);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode**, int>)(lpVtbl[29]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), definitionNode);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_nodeTypedValue"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT get_nodeTypedValue(VARIANT* typedValue)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[30]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), typedValue);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[30]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), typedValue);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.put_nodeTypedValue"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT put_nodeTypedValue(VARIANT typedValue)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, VARIANT, int>)(lpVtbl[31]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), typedValue);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, VARIANT, int>)(lpVtbl[31]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), typedValue);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_dataType"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT get_dataType(VARIANT* dataTypeName)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[32]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dataTypeName);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, VARIANT*, int>)(lpVtbl[32]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dataTypeName);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.put_dataType"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT put_dataType([NativeTypeName("BSTR")] char* dataTypeName)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char*, int>)(lpVtbl[33]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dataTypeName);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char*, int>)(lpVtbl[33]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), dataTypeName);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_xml"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT get_xml([NativeTypeName("BSTR *")] char** xmlString)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[34]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), xmlString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[34]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), xmlString);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.transformNode"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(35)]
     public HRESULT transformNode(IXMLDOMNode* stylesheet, [NativeTypeName("BSTR *")] char** xmlString)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, char**, int>)(lpVtbl[35]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, char**, int>)(lpVtbl[35]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), stylesheet, xmlString);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.selectNodes"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(36)]
     public HRESULT selectNodes([NativeTypeName("BSTR")] char* queryString, IXMLDOMNodeList** resultList)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), queryString, resultList);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char*, IXMLDOMNodeList**, int>)(lpVtbl[36]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), queryString, resultList);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.selectSingleNode"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(37)]
     public HRESULT selectSingleNode([NativeTypeName("BSTR")] char* queryString, IXMLDOMNode** resultNode)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), queryString, resultNode);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char*, IXMLDOMNode**, int>)(lpVtbl[37]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), queryString, resultNode);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_parsed"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(38)]
     public HRESULT get_parsed([NativeTypeName("VARIANT_BOOL *")] short* isParsed)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, short*, int>)(lpVtbl[38]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), isParsed);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, short*, int>)(lpVtbl[38]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), isParsed);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_namespaceURI"]/*' />
@@ -339,7 +339,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(39)]
     public HRESULT get_namespaceURI([NativeTypeName("BSTR *")] char** namespaceURI)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[39]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), namespaceURI);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[39]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), namespaceURI);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_prefix"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(40)]
     public HRESULT get_prefix([NativeTypeName("BSTR *")] char** prefixString)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[40]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), prefixString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[40]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), prefixString);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.get_baseName"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(41)]
     public HRESULT get_baseName([NativeTypeName("BSTR *")] char** nameString)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, char**, int>)(lpVtbl[41]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nameString);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, char**, int>)(lpVtbl[41]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), nameString);
     }
 
     /// <include file='IXMLDOMNode.xml' path='doc/member[@name="IXMLDOMNode.transformNodeToObject"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
     [VtblIndex(42)]
     public HRESULT transformNodeToObject(IXMLDOMNode* stylesheet, VARIANT outputObject)
     {
-        return ((delegate* unmanaged<IXMLDOMNode*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
+        return ((delegate* unmanaged[MemberFunction]<IXMLDOMNode*, IXMLDOMNode*, VARIANT, int>)(lpVtbl[42]))((IXMLDOMNode*)Unsafe.AsPointer(ref this), stylesheet, outputObject);
     }
 
     public interface Interface : IDispatch.Interface
@@ -481,132 +481,132 @@ public unsafe partial struct IXMLDOMNode : IXMLDOMNode.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_nodeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_nodeName;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_nodeValue;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_nodeValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_nodeValue;
 
         [NativeTypeName("HRESULT (DOMNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DOMNodeType*, int> get_nodeType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DOMNodeType*, int> get_nodeType;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_parentNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_parentNode;
 
         [NativeTypeName("HRESULT (IXMLDOMNodeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNodeList**, int> get_childNodes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNodeList**, int> get_childNodes;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_firstChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_firstChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_lastChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_lastChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_previousSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_previousSibling;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_nextSibling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_nextSibling;
 
         [NativeTypeName("HRESULT (IXMLDOMNamedNodeMap **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNamedNodeMap**, int> get_attributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNamedNodeMap**, int> get_attributes;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int> insertBefore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int> insertBefore;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int> replaceChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int> replaceChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> removeChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> removeChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> appendChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> appendChild;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> hasChildNodes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> hasChildNodes;
 
         [NativeTypeName("HRESULT (IXMLDOMDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMDocument**, int> get_ownerDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMDocument**, int> get_ownerDocument;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, IXMLDOMNode**, int> cloneNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, IXMLDOMNode**, int> cloneNode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_nodeTypeString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_nodeTypeString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_text;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_text;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_text;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_text;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_specified;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_specified;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_definition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode**, int> get_definition;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeTypedValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_nodeTypedValue;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_nodeTypedValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_nodeTypedValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dataType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_dataType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_dataType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_dataType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_xml;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_xml;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, char**, int> transformNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, char**, int> transformNode;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNodeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IXMLDOMNodeList**, int> selectNodes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IXMLDOMNodeList**, int> selectNodes;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IXMLDOMNode**, int> selectSingleNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IXMLDOMNode**, int> selectSingleNode;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_parsed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_parsed;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_namespaceURI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_namespaceURI;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_prefix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_prefix;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_baseName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_baseName;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
     }
 }

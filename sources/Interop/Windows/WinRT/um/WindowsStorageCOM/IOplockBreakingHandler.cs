@@ -28,7 +28,7 @@ public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOplockBreakingHandler*, Guid*, void**, int>)(lpVtbl[0]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOplockBreakingHandler*, Guid*, void**, int>)(lpVtbl[0]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOplockBreakingHandler*, uint>)(lpVtbl[1]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOplockBreakingHandler*, uint>)(lpVtbl[1]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOplockBreakingHandler*, uint>)(lpVtbl[2]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOplockBreakingHandler*, uint>)(lpVtbl[2]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOplockBreakingHandler.xml' path='doc/member[@name="IOplockBreakingHandler.OplockBreaking"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Int
     [VtblIndex(3)]
     public HRESULT OplockBreaking()
     {
-        return ((delegate* unmanaged<IOplockBreakingHandler*, int>)(lpVtbl[3]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOplockBreakingHandler*, int>)(lpVtbl[3]))((IOplockBreakingHandler*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -67,15 +67,15 @@ public unsafe partial struct IOplockBreakingHandler : IOplockBreakingHandler.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OplockBreaking;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OplockBreaking;
     }
 }

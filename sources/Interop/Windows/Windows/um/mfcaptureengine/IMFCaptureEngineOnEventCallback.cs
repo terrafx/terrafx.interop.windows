@@ -27,7 +27,7 @@ public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineO
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngineOnEventCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineO
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineO
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngineOnEventCallback.xml' path='doc/member[@name="IMFCaptureEngineOnEventCallback.OnEvent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineO
     [VtblIndex(3)]
     public HRESULT OnEvent(IMFMediaEvent* pEvent)
     {
-        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), pEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), pEvent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineO
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaEvent*, int> OnEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaEvent*, int> OnEvent;
     }
 }

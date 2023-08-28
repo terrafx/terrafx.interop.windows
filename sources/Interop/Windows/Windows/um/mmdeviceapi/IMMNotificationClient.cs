@@ -25,7 +25,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, Guid*, void**, int>)(lpVtbl[0]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, Guid*, void**, int>)(lpVtbl[0]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, uint>)(lpVtbl[1]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, uint>)(lpVtbl[1]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, uint>)(lpVtbl[2]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, uint>)(lpVtbl[2]))((IMMNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceStateChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(3)]
     public HRESULT OnDeviceStateChanged([NativeTypeName("LPCWSTR")] char* pwstrDeviceId, [NativeTypeName("DWORD")] uint dwNewState)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, char*, uint, int>)(lpVtbl[3]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, dwNewState);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, char*, uint, int>)(lpVtbl[3]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, dwNewState);
     }
 
     /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceAdded"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(4)]
     public HRESULT OnDeviceAdded([NativeTypeName("LPCWSTR")] char* pwstrDeviceId)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, char*, int>)(lpVtbl[4]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, char*, int>)(lpVtbl[4]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
     }
 
     /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDeviceRemoved"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(5)]
     public HRESULT OnDeviceRemoved([NativeTypeName("LPCWSTR")] char* pwstrDeviceId)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, char*, int>)(lpVtbl[5]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, char*, int>)(lpVtbl[5]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId);
     }
 
     /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnDefaultDeviceChanged"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(6)]
     public HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, [NativeTypeName("LPCWSTR")] char* pwstrDefaultDeviceId)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, EDataFlow, ERole, char*, int>)(lpVtbl[6]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), flow, role, pwstrDefaultDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, EDataFlow, ERole, char*, int>)(lpVtbl[6]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), flow, role, pwstrDefaultDeviceId);
     }
 
     /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.OnPropertyValueChanged"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
     [VtblIndex(7)]
     public HRESULT OnPropertyValueChanged([NativeTypeName("LPCWSTR")] char* pwstrDeviceId, [NativeTypeName("const PROPERTYKEY")] PROPERTYKEY key)
     {
-        return ((delegate* unmanaged<IMMNotificationClient*, char*, PROPERTYKEY, int>)(lpVtbl[7]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, key);
+        return ((delegate* unmanaged[MemberFunction]<IMMNotificationClient*, char*, PROPERTYKEY, int>)(lpVtbl[7]))((IMMNotificationClient*)Unsafe.AsPointer(ref this), pwstrDeviceId, key);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> OnDeviceStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> OnDeviceStateChanged;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> OnDeviceAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> OnDeviceAdded;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> OnDeviceRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> OnDeviceRemoved;
 
         [NativeTypeName("HRESULT (EDataFlow, ERole, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EDataFlow, ERole, char*, int> OnDefaultDeviceChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EDataFlow, ERole, char*, int> OnDefaultDeviceChanged;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPERTYKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, PROPERTYKEY, int> OnPropertyValueChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PROPERTYKEY, int> OnPropertyValueChanged;
     }
 }

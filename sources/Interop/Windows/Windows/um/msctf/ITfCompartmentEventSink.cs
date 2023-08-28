@@ -25,7 +25,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCompartmentEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCompartmentEventSink*, uint>)(lpVtbl[1]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentEventSink*, uint>)(lpVtbl[1]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCompartmentEventSink*, uint>)(lpVtbl[2]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentEventSink*, uint>)(lpVtbl[2]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCompartmentEventSink.xml' path='doc/member[@name="ITfCompartmentEventSink.OnChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
     [VtblIndex(3)]
     public HRESULT OnChange([NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCompartmentEventSink*, Guid*, int>)(lpVtbl[3]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentEventSink*, Guid*, int>)(lpVtbl[3]))((ITfCompartmentEventSink*)Unsafe.AsPointer(ref this), rguid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfCompartmentEventSink : ITfCompartmentEventSink.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> OnChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> OnChange;
     }
 }

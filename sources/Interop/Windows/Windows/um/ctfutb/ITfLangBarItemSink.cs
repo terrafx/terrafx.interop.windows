@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarItemSink*, uint>)(lpVtbl[1]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemSink*, uint>)(lpVtbl[1]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarItemSink*, uint>)(lpVtbl[2]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemSink*, uint>)(lpVtbl[2]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfLangBarItemSink.xml' path='doc/member[@name="ITfLangBarItemSink.OnUpdate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface, 
     [VtblIndex(3)]
     public HRESULT OnUpdate([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfLangBarItemSink*, uint, int>)(lpVtbl[3]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemSink*, uint, int>)(lpVtbl[3]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnUpdate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnUpdate;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, uint>)(lpVtbl[1]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, uint>)(lpVtbl[1]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, uint>)(lpVtbl[2]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, uint>)(lpVtbl[2]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.InitNew"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [VtblIndex(4)]
     public HRESULT InitNew()
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, int>)(lpVtbl[4]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, int>)(lpVtbl[4]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.Load"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [VtblIndex(5)]
     public HRESULT Load(IMediaPropertyBag* pPropBag, IErrorLog* pErrorLog)
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, IMediaPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
     }
 
     /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.Save"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
     [VtblIndex(6)]
     public HRESULT Save(IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
     {
-        return ((delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+        return ((delegate* unmanaged[MemberFunction]<IPersistMediaPropertyBag*, IMediaPropertyBag*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
     }
 
     public interface Interface : IPersist.Interface
@@ -94,24 +94,24 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitNew;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitNew;
 
         [NativeTypeName("HRESULT (IMediaPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaPropertyBag*, IErrorLog*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaPropertyBag*, IErrorLog*, int> Load;
 
         [NativeTypeName("HRESULT (IMediaPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMediaPropertyBag*, BOOL, BOOL, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaPropertyBag*, BOOL, BOOL, int> Save;
     }
 }

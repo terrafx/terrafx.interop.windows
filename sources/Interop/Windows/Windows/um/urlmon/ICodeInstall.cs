@@ -25,7 +25,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICodeInstall*, Guid*, void**, int>)(lpVtbl[0]))((ICodeInstall*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICodeInstall*, Guid*, void**, int>)(lpVtbl[0]))((ICodeInstall*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICodeInstall*, uint>)(lpVtbl[1]))((ICodeInstall*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICodeInstall*, uint>)(lpVtbl[1]))((ICodeInstall*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICodeInstall*, uint>)(lpVtbl[2]))((ICodeInstall*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICodeInstall*, uint>)(lpVtbl[2]))((ICodeInstall*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWindowForBindingUI.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd)
     {
-        return ((delegate* unmanaged<ICodeInstall*, Guid*, HWND*, int>)(lpVtbl[3]))((ICodeInstall*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
+        return ((delegate* unmanaged[MemberFunction]<ICodeInstall*, Guid*, HWND*, int>)(lpVtbl[3]))((ICodeInstall*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
     }
 
     /// <include file='ICodeInstall.xml' path='doc/member[@name="ICodeInstall.OnCodeInstallProblem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] char* szDestination, [NativeTypeName("LPCWSTR")] char* szSource, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ICodeInstall*, uint, char*, char*, uint, int>)(lpVtbl[4]))((ICodeInstall*)Unsafe.AsPointer(ref this), ulStatusCode, szDestination, szSource, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ICodeInstall*, uint, char*, char*, uint, int>)(lpVtbl[4]))((ICodeInstall*)Unsafe.AsPointer(ref this), ulStatusCode, szDestination, szSource, dwReserved);
     }
 
     public interface Interface : IWindowForBindingUI.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (ULONG, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, char*, uint, int> OnCodeInstallProblem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, char*, uint, int> OnCodeInstallProblem;
     }
 }

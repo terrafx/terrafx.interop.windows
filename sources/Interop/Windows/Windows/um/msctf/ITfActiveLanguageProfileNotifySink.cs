@@ -25,7 +25,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfActiveLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfActiveLanguageProfileNotifySink.xml' path='doc/member[@name="ITfActiveLanguageProfileNotifySink.OnActivated"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
     [VtblIndex(3)]
     public HRESULT OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fActivated)
     {
-        return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, Guid*, BOOL, int>)(lpVtbl[3]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), clsid, guidProfile, fActivated);
+        return ((delegate* unmanaged[MemberFunction]<ITfActiveLanguageProfileNotifySink*, Guid*, Guid*, BOOL, int>)(lpVtbl[3]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), clsid, guidProfile, fActivated);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, BOOL, int> OnActivated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, BOOL, int> OnActivated;
     }
 }

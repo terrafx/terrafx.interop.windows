@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10View*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10View*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10View*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10View*, uint>)(lpVtbl[1]))((ID3D10View*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, uint>)(lpVtbl[1]))((ID3D10View*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10View*, uint>)(lpVtbl[2]))((ID3D10View*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, uint>)(lpVtbl[2]))((ID3D10View*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D10DeviceChild.GetDevice" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(3)]
     public void GetDevice(ID3D10Device** ppDevice)
     {
-        ((delegate* unmanaged<ID3D10View*, ID3D10Device**, void>)(lpVtbl[3]))((ID3D10View*)Unsafe.AsPointer(ref this), ppDevice);
+        ((delegate* unmanaged[MemberFunction]<ID3D10View*, ID3D10Device**, void>)(lpVtbl[3]))((ID3D10View*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     /// <inheritdoc cref="ID3D10DeviceChild.GetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D10View*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D10DeviceChild.SetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D10View*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D10DeviceChild.SetPrivateDataInterface" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D10View*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10View*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D10View*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     /// <include file='ID3D10View.xml' path='doc/member[@name="ID3D10View.GetResource"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
     [VtblIndex(7)]
     public void GetResource(ID3D10Resource** ppResource)
     {
-        ((delegate* unmanaged<ID3D10View*, ID3D10Resource**, void>)(lpVtbl[7]))((ID3D10View*)Unsafe.AsPointer(ref this), ppResource);
+        ((delegate* unmanaged[MemberFunction]<ID3D10View*, ID3D10Resource**, void>)(lpVtbl[7]))((ID3D10View*)Unsafe.AsPointer(ref this), ppResource);
     }
 
     public interface Interface : ID3D10DeviceChild.Interface
@@ -97,27 +97,27 @@ public unsafe partial struct ID3D10View : ID3D10View.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D10Device**, void> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D10Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (ID3D10Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D10Resource**, void> GetResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D10Resource**, void> GetResource;
     }
 }

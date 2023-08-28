@@ -25,7 +25,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint>)(lpVtbl[1]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, uint>)(lpVtbl[1]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint>)(lpVtbl[2]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, uint>)(lpVtbl[2]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfContextComposition.StartComposition" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(3)]
     public HRESULT StartComposition([NativeTypeName("TfEditCookie")] uint ecWrite, ITfRange* pCompositionRange, ITfCompositionSink* pSink, ITfComposition** ppComposition)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[3]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pCompositionRange, pSink, ppComposition);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[3]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pCompositionRange, pSink, ppComposition);
     }
 
     /// <inheritdoc cref="ITfContextComposition.EnumCompositions" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(4)]
     public HRESULT EnumCompositions(IEnumITfCompositionView** ppEnum)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, IEnumITfCompositionView**, int>)(lpVtbl[4]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, IEnumITfCompositionView**, int>)(lpVtbl[4]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <inheritdoc cref="ITfContextComposition.FindComposition" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(5)]
     public HRESULT FindComposition([NativeTypeName("TfEditCookie")] uint ecRead, ITfRange* pTestRange, IEnumITfCompositionView** ppEnum)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfRange*, IEnumITfCompositionView**, int>)(lpVtbl[5]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecRead, pTestRange, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, uint, ITfRange*, IEnumITfCompositionView**, int>)(lpVtbl[5]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecRead, pTestRange, ppEnum);
     }
 
     /// <inheritdoc cref="ITfContextComposition.TakeOwnership" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(6)]
     public HRESULT TakeOwnership([NativeTypeName("TfEditCookie")] uint ecWrite, ITfCompositionView* pComposition, ITfCompositionSink* pSink, ITfComposition** ppComposition)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[6]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pComposition, pSink, ppComposition);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int>)(lpVtbl[6]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), ecWrite, pComposition, pSink, ppComposition);
     }
 
     /// <include file='ITfContextOwnerCompositionServices.xml' path='doc/member[@name="ITfContextOwnerCompositionServices.TerminateComposition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
     [VtblIndex(7)]
     public HRESULT TerminateComposition(ITfCompositionView* pComposition)
     {
-        return ((delegate* unmanaged<ITfContextOwnerCompositionServices*, ITfCompositionView*, int>)(lpVtbl[7]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), pComposition);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerCompositionServices*, ITfCompositionView*, int>)(lpVtbl[7]))((ITfContextOwnerCompositionServices*)Unsafe.AsPointer(ref this), pComposition);
     }
 
     public interface Interface : ITfContextComposition.Interface
@@ -96,27 +96,27 @@ public unsafe partial struct ITfContextOwnerCompositionServices : ITfContextOwne
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int> StartComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, ITfCompositionSink*, ITfComposition**, int> StartComposition;
 
         [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumITfCompositionView**, int> EnumCompositions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumITfCompositionView**, int> EnumCompositions;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, IEnumITfCompositionView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, IEnumITfCompositionView**, int> FindComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, IEnumITfCompositionView**, int> FindComposition;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfCompositionView *, ITfCompositionSink *, ITfComposition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int> TakeOwnership;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfCompositionView*, ITfCompositionSink*, ITfComposition**, int> TakeOwnership;
 
         [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfCompositionView*, int> TerminateComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfCompositionView*, int> TerminateComposition;
     }
 }

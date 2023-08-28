@@ -25,7 +25,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, uint>)(lpVtbl[1]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, uint>)(lpVtbl[1]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, uint>)(lpVtbl[2]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, uint>)(lpVtbl[2]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.get__NewEnum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.get_Count"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, int*, int>)(lpVtbl[4]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, int*, int>)(lpVtbl[4]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.Item"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Item(VARIANT index, IDiaTable** table)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, VARIANT, IDiaTable**, int>)(lpVtbl[5]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), index, table);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, VARIANT, IDiaTable**, int>)(lpVtbl[5]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), index, table);
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaTable** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, uint, IDiaTable**, uint*, int>)(lpVtbl[6]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, uint, IDiaTable**, uint*, int>)(lpVtbl[6]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.Skip"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, uint, int>)(lpVtbl[7]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, uint, int>)(lpVtbl[7]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.Reset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, int>)(lpVtbl[8]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, int>)(lpVtbl[8]))((IDiaEnumTables*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumTables.xml' path='doc/member[@name="IDiaEnumTables.Clone"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumTables** ppenum)
     {
-        return ((delegate* unmanaged<IDiaEnumTables*, IDiaEnumTables**, int>)(lpVtbl[9]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumTables*, IDiaEnumTables**, int>)(lpVtbl[9]))((IDiaEnumTables*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, IDiaTable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, IDiaTable**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, IDiaTable**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaTable **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaTable**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaTable**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumTables **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumTables**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumTables**, int> Clone;
     }
 }

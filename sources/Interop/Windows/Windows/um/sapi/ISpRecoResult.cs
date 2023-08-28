@@ -25,7 +25,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint>)(lpVtbl[1]))((ISpRecoResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint>)(lpVtbl[1]))((ISpRecoResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint>)(lpVtbl[2]))((ISpRecoResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint>)(lpVtbl[2]))((ISpRecoResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpPhrase.GetPhrase" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, SPPHRASE**, int>)(lpVtbl[3]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, SPPHRASE**, int>)(lpVtbl[3]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
     /// <inheritdoc cref="ISpPhrase.GetSerializedPhrase" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
     /// <inheritdoc cref="ISpPhrase.GetText" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] char** ppszCoMemText, byte* pbDisplayAttributes)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint, uint, BOOL, char**, byte*, int>)(lpVtbl[5]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
     /// <inheritdoc cref="ISpPhrase.Discard" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, int>)(lpVtbl[6]))((ISpRecoResult*)Unsafe.AsPointer(ref this), dwValueTypes);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint, int>)(lpVtbl[6]))((ISpRecoResult*)Unsafe.AsPointer(ref this), dwValueTypes);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.GetResultTimes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetResultTimes(SPRECORESULTTIMES* pTimes)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, SPRECORESULTTIMES*, int>)(lpVtbl[7]))((ISpRecoResult*)Unsafe.AsPointer(ref this), pTimes);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, SPRECORESULTTIMES*, int>)(lpVtbl[7]))((ISpRecoResult*)Unsafe.AsPointer(ref this), pTimes);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.GetAlternates"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT GetAlternates([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("ULONG")] uint ulRequestCount, ISpPhraseAlt** ppPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, uint, ISpPhraseAlt**, uint*, int>)(lpVtbl[8]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ulRequestCount, ppPhrases, pcPhrasesReturned);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint, uint, uint, ISpPhraseAlt**, uint*, int>)(lpVtbl[8]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ulRequestCount, ppPhrases, pcPhrasesReturned);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.GetAudio"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, ISpStreamFormat**, int>)(lpVtbl[9]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ppStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint, uint, ISpStreamFormat**, int>)(lpVtbl[9]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ppStream);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.SpeakAudio"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT SpeakAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, uint, uint, uint, uint*, int>)(lpVtbl[10]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, dwFlags, pulStreamNumber);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, uint, uint, uint, uint*, int>)(lpVtbl[10]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ulStartElement, cElements, dwFlags, pulStreamNumber);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.Serialize"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT Serialize(SPSERIALIZEDRESULT** ppCoMemSerializedResult)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, SPSERIALIZEDRESULT**, int>)(lpVtbl[11]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemSerializedResult);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, SPSERIALIZEDRESULT**, int>)(lpVtbl[11]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppCoMemSerializedResult);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.ScaleAudio"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT ScaleAudio([NativeTypeName("const GUID *")] Guid* pAudioFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[12]))((ISpRecoResult*)Unsafe.AsPointer(ref this), pAudioFormatId, pWaveFormatEx);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[12]))((ISpRecoResult*)Unsafe.AsPointer(ref this), pAudioFormatId, pWaveFormatEx);
     }
 
     /// <include file='ISpRecoResult.xml' path='doc/member[@name="ISpRecoResult.GetRecoContext"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetRecoContext(ISpRecoContext** ppRecoContext)
     {
-        return ((delegate* unmanaged<ISpRecoResult*, ISpRecoContext**, int>)(lpVtbl[13]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppRecoContext);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoResult*, ISpRecoContext**, int>)(lpVtbl[13]))((ISpRecoResult*)Unsafe.AsPointer(ref this), ppRecoContext);
     }
 
     public interface Interface : ISpPhrase.Interface
@@ -162,45 +162,45 @@ public unsafe partial struct ISpRecoResult : ISpRecoResult.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPPHRASE**, int> GetPhrase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPPHRASE**, int> GetPhrase;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, BOOL, char**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Discard;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Discard;
 
         [NativeTypeName("HRESULT (SPRECORESULTTIMES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPRECORESULTTIMES*, int> GetResultTimes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPRECORESULTTIMES*, int> GetResultTimes;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ISpPhraseAlt **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ISpStreamFormat**, int> GetAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ISpStreamFormat**, int> GetAudio;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, uint*, int> SpeakAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, uint*, int> SpeakAudio;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDRESULT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSERIALIZEDRESULT**, int> Serialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSERIALIZEDRESULT**, int> Serialize;
 
         [NativeTypeName("HRESULT (const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
 
         [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpRecoContext**, int> GetRecoContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpRecoContext**, int> GetRecoContext;
     }
 }

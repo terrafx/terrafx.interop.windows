@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, uint>)(lpVtbl[1]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechCommandProvider*, uint>)(lpVtbl[1]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, uint>)(lpVtbl[2]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechCommandProvider*, uint>)(lpVtbl[2]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider.EnumSpeechCommands"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     [VtblIndex(3)]
     public HRESULT EnumSpeechCommands([NativeTypeName("LANGID")] ushort langid, IEnumSpeechCommands** ppEnum)
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, ushort, IEnumSpeechCommands**, int>)(lpVtbl[3]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), langid, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechCommandProvider*, ushort, IEnumSpeechCommands**, int>)(lpVtbl[3]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), langid, ppEnum);
     }
 
     /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider.ProcessCommand"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
     [VtblIndex(4)]
     public HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] char* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid)
     {
-        return ((delegate* unmanaged<ISpeechCommandProvider*, char*, uint, ushort, int>)(lpVtbl[4]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), pszCommand, cch, langid);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechCommandProvider*, char*, uint, ushort, int>)(lpVtbl[4]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), pszCommand, cch, langid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LANGID, IEnumSpeechCommands **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, IEnumSpeechCommands**, int> EnumSpeechCommands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, IEnumSpeechCommands**, int> EnumSpeechCommands;
 
         [NativeTypeName("HRESULT (const WCHAR *, ULONG, LANGID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, ushort, int> ProcessCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, ushort, int> ProcessCommand;
     }
 }

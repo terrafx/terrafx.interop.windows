@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, uint>)(lpVtbl[1]))((IMFSensorProfile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, uint>)(lpVtbl[1]))((IMFSensorProfile*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, uint>)(lpVtbl[2]))((IMFSensorProfile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, uint>)(lpVtbl[2]))((IMFSensorProfile*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.GetProfileId"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetProfileId(SENSORPROFILEID* pId)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, SENSORPROFILEID*, int>)(lpVtbl[3]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), pId);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, SENSORPROFILEID*, int>)(lpVtbl[3]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), pId);
     }
 
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.AddProfileFilter"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [VtblIndex(4)]
     public HRESULT AddProfileFilter([NativeTypeName("UINT32")] uint StreamId, [NativeTypeName("LPCWSTR")] char* wzFilterSetString)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, uint, char*, int>)(lpVtbl[4]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, wzFilterSetString);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, uint, char*, int>)(lpVtbl[4]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, wzFilterSetString);
     }
 
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.IsMediaTypeSupported"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [VtblIndex(5)]
     public HRESULT IsMediaTypeSupported([NativeTypeName("UINT32")] uint StreamId, IMFMediaType* pMediaType, BOOL* pfSupported)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, uint, IMFMediaType*, BOOL*, int>)(lpVtbl[5]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, pMediaType, pfSupported);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, uint, IMFMediaType*, BOOL*, int>)(lpVtbl[5]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), StreamId, pMediaType, pfSupported);
     }
 
     /// <include file='IMFSensorProfile.xml' path='doc/member[@name="IMFSensorProfile.AddBlockedControl"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
     [VtblIndex(6)]
     public HRESULT AddBlockedControl([NativeTypeName("LPCWSTR")] char* wzBlockedControl)
     {
-        return ((delegate* unmanaged<IMFSensorProfile*, char*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfile*, char*, int>)(lpVtbl[6]))((IMFSensorProfile*)Unsafe.AsPointer(ref this), wzBlockedControl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IMFSensorProfile : IMFSensorProfile.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SENSORPROFILEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SENSORPROFILEID*, int> GetProfileId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SENSORPROFILEID*, int> GetProfileId;
 
         [NativeTypeName("HRESULT (UINT32, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> AddProfileFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> AddProfileFilter;
 
         [NativeTypeName("HRESULT (UINT32, IMFMediaType *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, BOOL*, int> IsMediaTypeSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, BOOL*, int> IsMediaTypeSupported;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddBlockedControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddBlockedControl;
     }
 }

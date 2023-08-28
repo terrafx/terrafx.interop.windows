@@ -26,7 +26,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGISurface1*, uint>)(lpVtbl[1]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, uint>)(lpVtbl[1]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGISurface1*, uint>)(lpVtbl[2]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, uint>)(lpVtbl[2]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[6]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[6]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <inheritdoc cref="IDXGIDeviceSubObject.GetDevice" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppDevice)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[7]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[7]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppDevice);
     }
 
     /// <inheritdoc cref="IDXGISurface.GetDesc" />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_SURFACE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, DXGI_SURFACE_DESC*, int>)(lpVtbl[8]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, DXGI_SURFACE_DESC*, int>)(lpVtbl[8]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <inheritdoc cref="IDXGISurface.Map" />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT Map(DXGI_MAPPED_RECT* pLockedRect, uint MapFlags)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, DXGI_MAPPED_RECT*, uint, int>)(lpVtbl[9]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pLockedRect, MapFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, DXGI_MAPPED_RECT*, uint, int>)(lpVtbl[9]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pLockedRect, MapFlags);
     }
 
     /// <inheritdoc cref="IDXGISurface.Unmap" />
@@ -108,7 +108,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT Unmap()
     {
-        return ((delegate* unmanaged<IDXGISurface1*, int>)(lpVtbl[10]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, int>)(lpVtbl[10]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGISurface1.xml' path='doc/member[@name="IDXGISurface1.GetDC"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT GetDC(BOOL Discard, HDC* phdc)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, BOOL, HDC*, int>)(lpVtbl[11]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Discard, phdc);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, BOOL, HDC*, int>)(lpVtbl[11]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Discard, phdc);
     }
 
     /// <include file='IDXGISurface1.xml' path='doc/member[@name="IDXGISurface1.ReleaseDC"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT ReleaseDC(RECT* pDirtyRect)
     {
-        return ((delegate* unmanaged<IDXGISurface1*, RECT*, int>)(lpVtbl[12]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pDirtyRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGISurface1*, RECT*, int>)(lpVtbl[12]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pDirtyRect);
     }
 
     public interface Interface : IDXGISurface.Interface
@@ -140,42 +140,42 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (DXGI_SURFACE_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_SURFACE_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_SURFACE_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (DXGI_MAPPED_RECT *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MAPPED_RECT*, uint, int> Map;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MAPPED_RECT*, uint, int> Map;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unmap;
 
         [NativeTypeName("HRESULT (BOOL, HDC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, HDC*, int> GetDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, HDC*, int> GetDC;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> ReleaseDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> ReleaseDC;
     }
 }

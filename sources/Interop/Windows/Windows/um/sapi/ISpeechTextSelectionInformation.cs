@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, uint>)(lpVtbl[1]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, uint>)(lpVtbl[1]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, uint>)(lpVtbl[2]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, uint>)(lpVtbl[2]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, uint*, int>)(lpVtbl[3]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, uint*, int>)(lpVtbl[3]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.put_ActiveOffset"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(7)]
     public HRESULT put_ActiveOffset([NativeTypeName("long")] int ActiveOffset)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[7]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[7]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.get_ActiveOffset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(8)]
     public HRESULT get_ActiveOffset([NativeTypeName("long *")] int* ActiveOffset)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[8]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[8]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveOffset);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.put_ActiveLength"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(9)]
     public HRESULT put_ActiveLength([NativeTypeName("long")] int ActiveLength)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[9]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[9]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.get_ActiveLength"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(10)]
     public HRESULT get_ActiveLength([NativeTypeName("long *")] int* ActiveLength)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[10]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[10]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), ActiveLength);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.put_SelectionOffset"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(11)]
     public HRESULT put_SelectionOffset([NativeTypeName("long")] int SelectionOffset)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[11]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[11]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.get_SelectionOffset"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(12)]
     public HRESULT get_SelectionOffset([NativeTypeName("long *")] int* SelectionOffset)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[12]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[12]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionOffset);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.put_SelectionLength"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(13)]
     public HRESULT put_SelectionLength([NativeTypeName("long")] int SelectionLength)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[13]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int, int>)(lpVtbl[13]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
     }
 
     /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.get_SelectionLength"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
     [VtblIndex(14)]
     public HRESULT get_SelectionLength([NativeTypeName("long *")] int* SelectionLength)
     {
-        return ((delegate* unmanaged<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[14]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechTextSelectionInformation*, int*, int>)(lpVtbl[14]))((ISpeechTextSelectionInformation*)Unsafe.AsPointer(ref this), SelectionLength);
     }
 
     public interface Interface : IDispatch.Interface
@@ -173,48 +173,48 @@ public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelect
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_ActiveOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_ActiveOffset;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ActiveOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ActiveOffset;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_ActiveLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_ActiveLength;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ActiveLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ActiveLength;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_SelectionOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_SelectionOffset;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_SelectionOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_SelectionOffset;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_SelectionLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_SelectionLength;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_SelectionLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_SelectionLength;
     }
 }

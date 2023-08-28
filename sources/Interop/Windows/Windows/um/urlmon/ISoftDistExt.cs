@@ -25,7 +25,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, Guid*, void**, int>)(lpVtbl[0]))((ISoftDistExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, Guid*, void**, int>)(lpVtbl[0]))((ISoftDistExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISoftDistExt*, uint>)(lpVtbl[1]))((ISoftDistExt*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, uint>)(lpVtbl[1]))((ISoftDistExt*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISoftDistExt*, uint>)(lpVtbl[2]))((ISoftDistExt*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, uint>)(lpVtbl[2]))((ISoftDistExt*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.ProcessSoftDist"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT ProcessSoftDist([NativeTypeName("LPCWSTR")] char* szCDFURL, IXMLElement* pSoftDistElement, [NativeTypeName("LPSOFTDISTINFO")] SOFTDISTINFO* lpsdi)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, char*, IXMLElement*, SOFTDISTINFO*, int>)(lpVtbl[3]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCDFURL, pSoftDistElement, lpsdi);
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, char*, IXMLElement*, SOFTDISTINFO*, int>)(lpVtbl[3]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCDFURL, pSoftDistElement, lpsdi);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.GetFirstCodeBase"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetFirstCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, char**, uint*, int>)(lpVtbl[4]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, char**, uint*, int>)(lpVtbl[4]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.GetNextCodeBase"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetNextCodeBase([NativeTypeName("LPWSTR *")] char** szCodeBase, [NativeTypeName("LPDWORD")] uint* dwMaxSize)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, char**, uint*, int>)(lpVtbl[5]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, char**, uint*, int>)(lpVtbl[5]))((ISoftDistExt*)Unsafe.AsPointer(ref this), szCodeBase, dwMaxSize);
     }
 
     /// <include file='ISoftDistExt.xml' path='doc/member[@name="ISoftDistExt.AsyncInstallDistributionUnit"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT AsyncInstallDistributionUnit(IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPCODEBASEHOLD")] CODEBASEHOLD* lpcbh)
     {
-        return ((delegate* unmanaged<ISoftDistExt*, IBindCtx*, void*, uint, CODEBASEHOLD*, int>)(lpVtbl[6]))((ISoftDistExt*)Unsafe.AsPointer(ref this), pbc, pvReserved, flags, lpcbh);
+        return ((delegate* unmanaged[MemberFunction]<ISoftDistExt*, IBindCtx*, void*, uint, CODEBASEHOLD*, int>)(lpVtbl[6]))((ISoftDistExt*)Unsafe.AsPointer(ref this), pbc, pvReserved, flags, lpcbh);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IXMLElement *, LPSOFTDISTINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetFirstCodeBase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetFirstCodeBase;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetNextCodeBase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetNextCodeBase;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPVOID, DWORD, LPCODEBASEHOLD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, void*, uint, CODEBASEHOLD*, int> AsyncInstallDistributionUnit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, void*, uint, CODEBASEHOLD*, int> AsyncInstallDistributionUnit;
     }
 }

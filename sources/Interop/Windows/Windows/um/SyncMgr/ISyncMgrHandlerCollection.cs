@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrHandlerCollection*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, uint>)(lpVtbl[1]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrHandlerCollection*, uint>)(lpVtbl[1]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, uint>)(lpVtbl[2]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrHandlerCollection*, uint>)(lpVtbl[2]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection.GetHandlerEnumerator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     [VtblIndex(3)]
     public HRESULT GetHandlerEnumerator(IEnumString** ppenum)
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, IEnumString**, int>)(lpVtbl[3]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrHandlerCollection*, IEnumString**, int>)(lpVtbl[3]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection.BindToHandler"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
     [VtblIndex(4)]
     public HRESULT BindToHandler([NativeTypeName("LPCWSTR")] char* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<ISyncMgrHandlerCollection*, char*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), pszHandlerID, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrHandlerCollection*, char*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), pszHandlerID, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumString**, int> GetHandlerEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumString**, int> GetHandlerEnumerator;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, void**, int> BindToHandler;
     }
 }

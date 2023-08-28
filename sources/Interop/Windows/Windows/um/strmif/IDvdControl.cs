@@ -25,7 +25,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDvdControl*, Guid*, void**, int>)(lpVtbl[0]))((IDvdControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, Guid*, void**, int>)(lpVtbl[0]))((IDvdControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[1]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint>)(lpVtbl[1]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[2]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint>)(lpVtbl[2]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TitlePlay"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[3]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[3]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterPlay"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[4]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, uint, int>)(lpVtbl[4]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TimePlay"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[5]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, bcdTime);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, uint, int>)(lpVtbl[5]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, bcdTime);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.StopForResume"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT StopForResume()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[6]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[6]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.GoUp"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GoUp()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[7]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[7]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TimeSearch"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[8]))((IDvdControl*)Unsafe.AsPointer(ref this), bcdTime);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[8]))((IDvdControl*)Unsafe.AsPointer(ref this), bcdTime);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterSearch"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[9]))((IDvdControl*)Unsafe.AsPointer(ref this), ulChapter);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[9]))((IDvdControl*)Unsafe.AsPointer(ref this), ulChapter);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PrevPGSearch"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT PrevPGSearch()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[10]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[10]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.TopPGSearch"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT TopPGSearch()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[11]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[11]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.NextPGSearch"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT NextPGSearch()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[12]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[12]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ForwardScan"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT ForwardScan(double dwSpeed)
     {
-        return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[13]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, double, int>)(lpVtbl[13]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.BackwardScan"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT BackwardScan(double dwSpeed)
     {
-        return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[14]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, double, int>)(lpVtbl[14]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MenuCall"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT MenuCall(DVD_MENU_ID MenuID)
     {
-        return ((delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int>)(lpVtbl[15]))((IDvdControl*)Unsafe.AsPointer(ref this), MenuID);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, DVD_MENU_ID, int>)(lpVtbl[15]))((IDvdControl*)Unsafe.AsPointer(ref this), MenuID);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.Resume"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[16]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[16]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.UpperButtonSelect"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT UpperButtonSelect()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[17]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[17]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.LowerButtonSelect"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT LowerButtonSelect()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[18]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[18]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.LeftButtonSelect"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT LeftButtonSelect()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[19]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[19]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.RightButtonSelect"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT RightButtonSelect()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[20]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[20]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ButtonActivate"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT ButtonActivate()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[21]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[21]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ButtonSelectAndActivate"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[22]))((IDvdControl*)Unsafe.AsPointer(ref this), ulButton);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[22]))((IDvdControl*)Unsafe.AsPointer(ref this), ulButton);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.StillOff"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT StillOff()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[23]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[23]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PauseOn"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT PauseOn()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[24]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[24]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.PauseOff"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT PauseOff()
     {
-        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[25]))((IDvdControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, int>)(lpVtbl[25]))((IDvdControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MenuLanguageSelect"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[26]))((IDvdControl*)Unsafe.AsPointer(ref this), Language);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[26]))((IDvdControl*)Unsafe.AsPointer(ref this), Language);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.AudioStreamChange"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[27]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAudio);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[27]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAudio);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.SubpictureStreamChange"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.AngleChange"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[29]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAngle);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[29]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAngle);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ParentalLevelSelect"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[30]))((IDvdControl*)Unsafe.AsPointer(ref this), ulParentalLevel);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[30]))((IDvdControl*)Unsafe.AsPointer(ref this), ulParentalLevel);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ParentalCountrySelect"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry)
     {
-        return ((delegate* unmanaged<IDvdControl*, ushort, int>)(lpVtbl[31]))((IDvdControl*)Unsafe.AsPointer(ref this), wCountry);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, ushort, int>)(lpVtbl[31]))((IDvdControl*)Unsafe.AsPointer(ref this), wCountry);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.KaraokeAudioPresentationModeChange"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[32]))((IDvdControl*)Unsafe.AsPointer(ref this), ulMode);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[32]))((IDvdControl*)Unsafe.AsPointer(ref this), ulMode);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.VideoModePreferrence"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[33]))((IDvdControl*)Unsafe.AsPointer(ref this), ulPreferredDisplayMode);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, int>)(lpVtbl[33]))((IDvdControl*)Unsafe.AsPointer(ref this), ulPreferredDisplayMode);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.SetRoot"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT SetRoot([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IDvdControl*, char*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, char*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MouseActivate"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(35)]
     public HRESULT MouseActivate(POINT point)
     {
-        return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[35]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, POINT, int>)(lpVtbl[35]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.MouseSelect"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(36)]
     public HRESULT MouseSelect(POINT point)
     {
-        return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[36]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, POINT, int>)(lpVtbl[36]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
     }
 
     /// <include file='IDvdControl.xml' path='doc/member[@name="IDvdControl.ChapterPlayAutoStop"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
     [VtblIndex(37)]
     public HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay)
     {
-        return ((delegate* unmanaged<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
+        return ((delegate* unmanaged[MemberFunction]<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
     }
 
     public interface Interface : IUnknown.Interface
@@ -438,117 +438,117 @@ public unsafe partial struct IDvdControl : IDvdControl.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> TitlePlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> TitlePlay;
 
         [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> ChapterPlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> ChapterPlay;
 
         [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> TimePlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> TimePlay;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopForResume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopForResume;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GoUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GoUp;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> TimeSearch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> TimeSearch;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ChapterSearch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ChapterSearch;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PrevPGSearch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PrevPGSearch;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> TopPGSearch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> TopPGSearch;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NextPGSearch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NextPGSearch;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> ForwardScan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> ForwardScan;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> BackwardScan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> BackwardScan;
 
         [NativeTypeName("HRESULT (DVD_MENU_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DVD_MENU_ID, int> MenuCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DVD_MENU_ID, int> MenuCall;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UpperButtonSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UpperButtonSelect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> LowerButtonSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> LowerButtonSelect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> LeftButtonSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> LeftButtonSelect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RightButtonSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RightButtonSelect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ButtonActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ButtonActivate;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ButtonSelectAndActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ButtonSelectAndActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StillOff;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StillOff;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PauseOn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PauseOn;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PauseOff;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PauseOff;
 
         [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> MenuLanguageSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> MenuLanguageSelect;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AudioStreamChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AudioStreamChange;
 
         [NativeTypeName("HRESULT (ULONG, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL, int> SubpictureStreamChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL, int> SubpictureStreamChange;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AngleChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AngleChange;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ParentalLevelSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ParentalLevelSelect;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> ParentalCountrySelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> ParentalCountrySelect;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> KaraokeAudioPresentationModeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> KaraokeAudioPresentationModeChange;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> VideoModePreferrence;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> VideoModePreferrence;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetRoot;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, int> MouseActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, int> MouseActivate;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, int> MouseSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, int> MouseSelect;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> ChapterPlayAutoStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> ChapterPlayAutoStop;
     }
 }

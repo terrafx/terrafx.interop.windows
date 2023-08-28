@@ -25,7 +25,7 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INewMenuClient*, Guid*, void**, int>)(lpVtbl[0]))((INewMenuClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INewMenuClient*, Guid*, void**, int>)(lpVtbl[0]))((INewMenuClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INewMenuClient*, uint>)(lpVtbl[1]))((INewMenuClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewMenuClient*, uint>)(lpVtbl[1]))((INewMenuClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INewMenuClient*, uint>)(lpVtbl[2]))((INewMenuClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewMenuClient*, uint>)(lpVtbl[2]))((INewMenuClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INewMenuClient.xml' path='doc/member[@name="INewMenuClient.IncludeItems"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT IncludeItems([NativeTypeName("NMCII_FLAGS *")] int* pflags)
     {
-        return ((delegate* unmanaged<INewMenuClient*, int*, int>)(lpVtbl[3]))((INewMenuClient*)Unsafe.AsPointer(ref this), pflags);
+        return ((delegate* unmanaged[MemberFunction]<INewMenuClient*, int*, int>)(lpVtbl[3]))((INewMenuClient*)Unsafe.AsPointer(ref this), pflags);
     }
 
     /// <include file='INewMenuClient.xml' path='doc/member[@name="INewMenuClient.SelectAndEditItem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SelectAndEditItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("NMCSAEI_FLAGS")] int flags)
     {
-        return ((delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int>)(lpVtbl[4]))((INewMenuClient*)Unsafe.AsPointer(ref this), pidlItem, flags);
+        return ((delegate* unmanaged[MemberFunction]<INewMenuClient*, ITEMIDLIST*, int, int>)(lpVtbl[4]))((INewMenuClient*)Unsafe.AsPointer(ref this), pidlItem, flags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (NMCII_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> IncludeItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> IncludeItems;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, NMCSAEI_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int, int> SelectAndEditItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int, int> SelectAndEditItem;
     }
 }

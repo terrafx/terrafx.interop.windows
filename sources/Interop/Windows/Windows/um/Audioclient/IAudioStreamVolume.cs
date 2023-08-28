@@ -25,7 +25,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, Guid*, void**, int>)(lpVtbl[0]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, Guid*, void**, int>)(lpVtbl[0]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint>)(lpVtbl[1]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint>)(lpVtbl[1]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint>)(lpVtbl[2]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint>)(lpVtbl[2]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetChannelCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(3)]
     public HRESULT GetChannelCount([NativeTypeName("UINT32 *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint*, int>)(lpVtbl[3]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint*, int>)(lpVtbl[3]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.SetChannelVolume"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(4)]
     public HRESULT SetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, [NativeTypeName("const float")] float fLevel)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint, float, int>)(lpVtbl[4]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint, float, int>)(lpVtbl[4]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, fLevel);
     }
 
     /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetChannelVolume"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(5)]
     public HRESULT GetChannelVolume([NativeTypeName("UINT32")] uint dwIndex, float* pfLevel)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[5]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[5]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwIndex, pfLevel);
     }
 
     /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.SetAllVolumes"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(6)]
     public HRESULT SetAllVolumes([NativeTypeName("UINT32")] uint dwCount, [NativeTypeName("const float *")] float* pfVolumes)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[6]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[6]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
     }
 
     /// <include file='IAudioStreamVolume.xml' path='doc/member[@name="IAudioStreamVolume.GetAllVolumes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
     [VtblIndex(7)]
     public HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes)
     {
-        return ((delegate* unmanaged<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[7]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStreamVolume*, uint, float*, int>)(lpVtbl[7]))((IAudioStreamVolume*)Unsafe.AsPointer(ref this), dwCount, pfVolumes);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IAudioStreamVolume : IAudioStreamVolume.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT32, const float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetChannelVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetChannelVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, const float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> SetAllVolumes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> SetAllVolumes;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetAllVolumes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetAllVolumes;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, uint>)(lpVtbl[1]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, uint>)(lpVtbl[1]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, uint>)(lpVtbl[2]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, uint>)(lpVtbl[2]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1RenderInfo.SetInputDescription" />
@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, uint, D2D1_INPUT_DESCRIPTION, int>)(lpVtbl[3]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), inputIndex, inputDescription);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, uint, D2D1_INPUT_DESCRIPTION, int>)(lpVtbl[3]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), inputIndex, inputDescription);
     }
 
     /// <inheritdoc cref="ID2D1RenderInfo.SetOutputBuffer" />
@@ -61,7 +61,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
     /// <inheritdoc cref="ID2D1RenderInfo.SetCached" />
@@ -69,7 +69,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)
     {
-        ((delegate* unmanaged<ID2D1DrawInfo*, BOOL, void>)(lpVtbl[5]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), isCached);
+        ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, BOOL, void>)(lpVtbl[5]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), isCached);
     }
 
     /// <inheritdoc cref="ID2D1RenderInfo.SetInstructionCountHint" />
@@ -77,7 +77,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(6)]
     public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
     {
-        ((delegate* unmanaged<ID2D1DrawInfo*, uint, void>)(lpVtbl[6]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), instructionCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, uint, void>)(lpVtbl[6]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), instructionCount);
     }
 
     /// <include file='ID2D1DrawInfo.xml' path='doc/member[@name="ID2D1DrawInfo.SetPixelShaderConstantBuffer"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SetPixelShaderConstantBuffer([NativeTypeName("const BYTE *")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, byte*, uint, int>)(lpVtbl[7]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), buffer, bufferCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, byte*, uint, int>)(lpVtbl[7]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), buffer, bufferCount);
     }
 
     /// <include file='ID2D1DrawInfo.xml' path='doc/member[@name="ID2D1DrawInfo.SetResourceTexture"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT SetResourceTexture([NativeTypeName("UINT32")] uint textureIndex, ID2D1ResourceTexture* resourceTexture)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, uint, ID2D1ResourceTexture*, int>)(lpVtbl[8]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), textureIndex, resourceTexture);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, uint, ID2D1ResourceTexture*, int>)(lpVtbl[8]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), textureIndex, resourceTexture);
     }
 
     /// <include file='ID2D1DrawInfo.xml' path='doc/member[@name="ID2D1DrawInfo.SetVertexShaderConstantBuffer"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT SetVertexShaderConstantBuffer([NativeTypeName("const BYTE *")] byte* buffer, [NativeTypeName("UINT32")] uint bufferCount)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, byte*, uint, int>)(lpVtbl[9]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), buffer, bufferCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, byte*, uint, int>)(lpVtbl[9]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), buffer, bufferCount);
     }
 
     /// <include file='ID2D1DrawInfo.xml' path='doc/member[@name="ID2D1DrawInfo.SetPixelShader"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT SetPixelShader([NativeTypeName("const GUID &")] Guid* shaderId, D2D1_PIXEL_OPTIONS pixelOptions = D2D1_PIXEL_OPTIONS_NONE)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, Guid*, D2D1_PIXEL_OPTIONS, int>)(lpVtbl[10]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), shaderId, pixelOptions);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, Guid*, D2D1_PIXEL_OPTIONS, int>)(lpVtbl[10]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), shaderId, pixelOptions);
     }
 
     /// <include file='ID2D1DrawInfo.xml' path='doc/member[@name="ID2D1DrawInfo.SetVertexProcessing"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT SetVertexProcessing(ID2D1VertexBuffer* vertexBuffer, D2D1_VERTEX_OPTIONS vertexOptions, [NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* blendDescription = null, [NativeTypeName("const D2D1_VERTEX_RANGE *")] D2D1_VERTEX_RANGE* vertexRange = null, [NativeTypeName("const GUID *")] Guid* vertexShader = null)
     {
-        return ((delegate* unmanaged<ID2D1DrawInfo*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int>)(lpVtbl[11]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), vertexBuffer, vertexOptions, blendDescription, vertexRange, vertexShader);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1DrawInfo*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int>)(lpVtbl[11]))((ID2D1DrawInfo*)Unsafe.AsPointer(ref this), vertexBuffer, vertexOptions, blendDescription, vertexRange, vertexShader);
     }
 
     public interface Interface : ID2D1RenderInfo.Interface
@@ -142,39 +142,39 @@ public unsafe partial struct ID2D1DrawInfo : ID2D1DrawInfo.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_INPUT_DESCRIPTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
 
         [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
         [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, void> SetCached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, void> SetCached;
 
         [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void> SetInstructionCountHint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void> SetInstructionCountHint;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> SetPixelShaderConstantBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> SetPixelShaderConstantBuffer;
 
         [NativeTypeName("HRESULT (UINT32, ID2D1ResourceTexture *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID2D1ResourceTexture*, int> SetResourceTexture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID2D1ResourceTexture*, int> SetResourceTexture;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> SetVertexShaderConstantBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> SetVertexShaderConstantBuffer;
 
         [NativeTypeName("HRESULT (const GUID &, D2D1_PIXEL_OPTIONS) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, D2D1_PIXEL_OPTIONS, int> SetPixelShader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, D2D1_PIXEL_OPTIONS, int> SetPixelShader;
 
         [NativeTypeName("HRESULT (ID2D1VertexBuffer *, D2D1_VERTEX_OPTIONS, const D2D1_BLEND_DESCRIPTION *, const D2D1_VERTEX_RANGE *, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int> SetVertexProcessing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1VertexBuffer*, D2D1_VERTEX_OPTIONS, D2D1_BLEND_DESCRIPTION*, D2D1_VERTEX_RANGE*, Guid*, int> SetVertexProcessing;
     }
 }

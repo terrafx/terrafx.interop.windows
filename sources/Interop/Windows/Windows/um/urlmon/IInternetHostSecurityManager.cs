@@ -25,7 +25,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, Guid*, void**, int>)(lpVtbl[0]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, Guid*, void**, int>)(lpVtbl[0]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, uint>)(lpVtbl[1]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, uint>)(lpVtbl[1]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, uint>)(lpVtbl[2]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, uint>)(lpVtbl[2]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternetHostSecurityManager.xml' path='doc/member[@name="IInternetHostSecurityManager.GetSecurityId"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [VtblIndex(3)]
     public HRESULT GetSecurityId(byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, byte*, uint*, nuint, int>)(lpVtbl[3]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, byte*, uint*, nuint, int>)(lpVtbl[3]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), pbSecurityId, pcbSecurityId, dwReserved);
     }
 
     /// <include file='IInternetHostSecurityManager.xml' path='doc/member[@name="IInternetHostSecurityManager.ProcessUrlAction"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [VtblIndex(4)]
     public HRESULT ProcessUrlAction([NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, uint, byte*, uint, byte*, uint, uint, uint, int>)(lpVtbl[4]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, uint, byte*, uint, byte*, uint, uint, uint, int>)(lpVtbl[4]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved);
     }
 
     /// <include file='IInternetHostSecurityManager.xml' path='doc/member[@name="IInternetHostSecurityManager.QueryCustomPolicy"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
     [VtblIndex(5)]
     public HRESULT QueryCustomPolicy([NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetHostSecurityManager*, Guid*, byte**, uint*, byte*, uint, uint, int>)(lpVtbl[5]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IInternetHostSecurityManager*, Guid*, byte**, uint*, byte*, uint, uint, int>)(lpVtbl[5]))((IInternetHostSecurityManager*)Unsafe.AsPointer(ref this), guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint*, nuint, int> GetSecurityId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint*, nuint, int> GetSecurityId;
 
         [NativeTypeName("HRESULT (DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
 
         [NativeTypeName("HRESULT (const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
     }
 }

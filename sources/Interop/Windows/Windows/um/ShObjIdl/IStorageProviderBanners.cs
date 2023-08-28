@@ -25,7 +25,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, uint>)(lpVtbl[1]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, uint>)(lpVtbl[1]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, uint>)(lpVtbl[2]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, uint>)(lpVtbl[2]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.SetBanner"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [VtblIndex(3)]
     public HRESULT SetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPCWSTR")] char* contentId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, char*, int>)(lpVtbl[3]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, char*, char*, char*, int>)(lpVtbl[3]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.ClearBanner"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [VtblIndex(4)]
     public HRESULT ClearBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, int>)(lpVtbl[4]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, char*, char*, int>)(lpVtbl[4]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.ClearAllBanners"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [VtblIndex(5)]
     public HRESULT ClearAllBanners([NativeTypeName("LPCWSTR")] char* providerIdentity)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, char*, int>)(lpVtbl[5]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, char*, int>)(lpVtbl[5]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity);
     }
 
     /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.GetBanner"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
     [VtblIndex(6)]
     public HRESULT GetBanner([NativeTypeName("LPCWSTR")] char* providerIdentity, [NativeTypeName("LPCWSTR")] char* subscriptionId, [NativeTypeName("LPWSTR *")] char** contentId)
     {
-        return ((delegate* unmanaged<IStorageProviderBanners*, char*, char*, char**, int>)(lpVtbl[6]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderBanners*, char*, char*, char**, int>)(lpVtbl[6]))((IStorageProviderBanners*)Unsafe.AsPointer(ref this), providerIdentity, subscriptionId, contentId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, int> SetBanner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, int> SetBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> ClearBanner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> ClearBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> ClearAllBanners;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> ClearAllBanners;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char**, int> GetBanner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char**, int> GetBanner;
     }
 }

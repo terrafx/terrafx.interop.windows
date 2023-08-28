@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1BlendTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1BlendTransform*, uint>)(lpVtbl[1]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, uint>)(lpVtbl[1]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1BlendTransform*, uint>)(lpVtbl[2]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, uint>)(lpVtbl[2]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1TransformNode.GetInputCount" />
@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetInputCount()
     {
-        return ((delegate* unmanaged<ID2D1BlendTransform*, uint>)(lpVtbl[3]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, uint>)(lpVtbl[3]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1ConcreteTransform.SetOutputBuffer" />
@@ -61,7 +61,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
     {
-        return ((delegate* unmanaged<ID2D1BlendTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
     /// <inheritdoc cref="ID2D1ConcreteTransform.SetCached" />
@@ -69,7 +69,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)
     {
-        ((delegate* unmanaged<ID2D1BlendTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), isCached);
+        ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, BOOL, void>)(lpVtbl[5]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), isCached);
     }
 
     /// <include file='ID2D1BlendTransform.xml' path='doc/member[@name="ID2D1BlendTransform.SetDescription"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(6)]
     public void SetDescription([NativeTypeName("const D2D1_BLEND_DESCRIPTION *")] D2D1_BLEND_DESCRIPTION* description)
     {
-        ((delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[6]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+        ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[6]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
     }
 
     /// <include file='ID2D1BlendTransform.xml' path='doc/member[@name="ID2D1BlendTransform.GetDescription"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [VtblIndex(7)]
     public void GetDescription(D2D1_BLEND_DESCRIPTION* description)
     {
-        ((delegate* unmanaged<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+        ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
     }
 
     public interface Interface : ID2D1ConcreteTransform.Interface
@@ -101,27 +101,27 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetInputCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
         [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, void> SetCached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, void> SetCached;
 
         [NativeTypeName("void (const D2D1_BLEND_DESCRIPTION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BLEND_DESCRIPTION*, void> SetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BLEND_DESCRIPTION*, void> SetDescription;
 
         [NativeTypeName("void (D2D1_BLEND_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BLEND_DESCRIPTION*, void> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BLEND_DESCRIPTION*, void> GetDescription;
     }
 }

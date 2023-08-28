@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, uint>)(lpVtbl[1]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, uint>)(lpVtbl[1]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, uint>)(lpVtbl[2]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, uint>)(lpVtbl[2]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAngle"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(3)]
     public HRESULT SetAngle(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[3]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAngle"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(4)]
     public HRESULT SetAngle(float angle)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[4]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), angle);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[4]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), angle);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisX"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(5)]
     public HRESULT SetAxisX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisX"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(6)]
     public HRESULT SetAxisX(float axisX)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[6]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[6]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisX);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisY"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(7)]
     public HRESULT SetAxisY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[7]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisY"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(8)]
     public HRESULT SetAxisY(float axisY)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[8]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[8]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisY);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisZ"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(9)]
     public HRESULT SetAxisZ(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetAxisZ"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(10)]
     public HRESULT SetAxisZ(float axisZ)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[10]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisZ);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[10]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), axisZ);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterX"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(11)]
     public HRESULT SetCenterX(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterX"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(12)]
     public HRESULT SetCenterX(float centerX)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[12]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerX);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[12]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerX);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterY"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(13)]
     public HRESULT SetCenterY(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterY"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(14)]
     public HRESULT SetCenterY(float centerY)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[14]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[14]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerY);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterZ"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(15)]
     public HRESULT SetCenterZ(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IDCompositionRotateTransform3D.xml' path='doc/member[@name="IDCompositionRotateTransform3D.SetCenterZ"]/*' />
@@ -158,7 +158,7 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
     [VtblIndex(16)]
     public HRESULT SetCenterZ(float centerZ)
     {
-        return ((delegate* unmanaged<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[16]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerZ);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionRotateTransform3D*, float, int>)(lpVtbl[16]))((IDCompositionRotateTransform3D*)Unsafe.AsPointer(ref this), centerZ);
     }
 
     public interface Interface : IDCompositionTransform3D.Interface
@@ -210,54 +210,54 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAngle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetAngle;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetAngle1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetAngle1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetAxisX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetAxisX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetAxisX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetAxisY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetAxisY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetAxisY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisZ;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetAxisZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetAxisZ1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetAxisZ1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetCenterX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetCenterX1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetCenterX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetCenterY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetCenterY1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetCenterY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterZ;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> SetCenterZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetCenterZ1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetCenterZ1;
     }
 }

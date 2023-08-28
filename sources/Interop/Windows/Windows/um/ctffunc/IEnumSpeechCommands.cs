@@ -25,7 +25,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, uint>)(lpVtbl[1]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, uint>)(lpVtbl[1]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, uint>)(lpVtbl[2]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, uint>)(lpVtbl[2]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [VtblIndex(3)]
     public HRESULT Clone(IEnumSpeechCommands** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, IEnumSpeechCommands**, int>)(lpVtbl[3]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, IEnumSpeechCommands**, int>)(lpVtbl[3]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] char** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, uint, char**, uint*, int>)(lpVtbl[4]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount, pSpCmds, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, uint, char**, uint*, int>)(lpVtbl[4]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount, pSpCmds, pcFetched);
     }
 
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, int>)(lpVtbl[5]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, int>)(lpVtbl[5]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumSpeechCommands*, uint, int>)(lpVtbl[6]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSpeechCommands*, uint, int>)(lpVtbl[6]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumSpeechCommands **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSpeechCommands**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSpeechCommands**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, WCHAR **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

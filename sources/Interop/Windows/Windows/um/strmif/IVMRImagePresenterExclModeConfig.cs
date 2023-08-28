@@ -26,7 +26,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[1]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[1]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[2]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, uint>)(lpVtbl[2]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IVMRImagePresenterConfig.SetRenderingPrefs" />
@@ -52,7 +52,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [VtblIndex(3)]
     public HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint, int>)(lpVtbl[3]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, uint, int>)(lpVtbl[3]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
     /// <inheritdoc cref="IVMRImagePresenterConfig.GetRenderingPrefs" />
@@ -60,7 +60,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [VtblIndex(4)]
     public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* dwRenderFlags)
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint*, int>)(lpVtbl[4]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, uint*, int>)(lpVtbl[4]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
     /// <include file='IVMRImagePresenterExclModeConfig.xml' path='doc/member[@name="IVMRImagePresenterExclModeConfig.SetXlcModeDDObjAndPrimarySurface"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [VtblIndex(5)]
     public HRESULT SetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7")] IDirectDraw7* lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpPrimarySurf)
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7*, IDirectDrawSurface7*, int>)(lpVtbl[5]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, IDirectDraw7*, IDirectDrawSurface7*, int>)(lpVtbl[5]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
     }
 
     /// <include file='IVMRImagePresenterExclModeConfig.xml' path='doc/member[@name="IVMRImagePresenterExclModeConfig.GetXlcModeDDObjAndPrimarySurface"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
     [VtblIndex(6)]
     public HRESULT GetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7 *")] IDirectDraw7** lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lpPrimarySurf)
     {
-        return ((delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7**, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenterExclModeConfig*, IDirectDraw7**, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRImagePresenterExclModeConfig*)Unsafe.AsPointer(ref this), lpDDObj, lpPrimarySurf);
     }
 
     public interface Interface : IVMRImagePresenterConfig.Interface
@@ -92,24 +92,24 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetRenderingPrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetRenderingPrefs;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetRenderingPrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetRenderingPrefs;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw7*, IDirectDrawSurface7*, int> SetXlcModeDDObjAndPrimarySurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw7*, IDirectDrawSurface7*, int> SetXlcModeDDObjAndPrimarySurface;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7 *, LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw7**, IDirectDrawSurface7**, int> GetXlcModeDDObjAndPrimarySurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw7**, IDirectDrawSurface7**, int> GetXlcModeDDObjAndPrimarySurface;
     }
 }

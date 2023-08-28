@@ -27,7 +27,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailSettings*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailSettings*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailSettings*, uint>)(lpVtbl[1]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailSettings*, uint>)(lpVtbl[1]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailSettings*, uint>)(lpVtbl[2]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailSettings*, uint>)(lpVtbl[2]))((IThumbnailSettings*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailSettings.xml' path='doc/member[@name="IThumbnailSettings.SetContext"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface, 
     [VtblIndex(3)]
     public HRESULT SetContext(WTS_CONTEXTFLAGS dwContext)
     {
-        return ((delegate* unmanaged<IThumbnailSettings*, WTS_CONTEXTFLAGS, int>)(lpVtbl[3]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), dwContext);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailSettings*, WTS_CONTEXTFLAGS, int>)(lpVtbl[3]))((IThumbnailSettings*)Unsafe.AsPointer(ref this), dwContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WTS_CONTEXTFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WTS_CONTEXTFLAGS, int> SetContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WTS_CONTEXTFLAGS, int> SetContext;
     }
 }

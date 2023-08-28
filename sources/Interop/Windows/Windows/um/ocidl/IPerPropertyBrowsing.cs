@@ -25,7 +25,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, Guid*, void**, int>)(lpVtbl[0]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, Guid*, void**, int>)(lpVtbl[0]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, uint>)(lpVtbl[1]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, uint>)(lpVtbl[1]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, uint>)(lpVtbl[2]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, uint>)(lpVtbl[2]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetDisplayString"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [VtblIndex(3)]
     public HRESULT GetDisplayString([NativeTypeName("DISPID")] int dispID, [NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, char**, int>)(lpVtbl[3]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pBstr);
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, int, char**, int>)(lpVtbl[3]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pBstr);
     }
 
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.MapPropertyToPage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [VtblIndex(4)]
     public HRESULT MapPropertyToPage([NativeTypeName("DISPID")] int dispID, [NativeTypeName("CLSID *")] Guid* pClsid)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, Guid*, int>)(lpVtbl[4]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pClsid);
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, int, Guid*, int>)(lpVtbl[4]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pClsid);
     }
 
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetPredefinedStrings"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [VtblIndex(5)]
     public HRESULT GetPredefinedStrings([NativeTypeName("DISPID")] int dispID, CALPOLESTR* pCaStringsOut, CADWORD* pCaCookiesOut)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int>)(lpVtbl[5]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pCaStringsOut, pCaCookiesOut);
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int>)(lpVtbl[5]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, pCaStringsOut, pCaCookiesOut);
     }
 
     /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.GetPredefinedValue"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
     [VtblIndex(6)]
     public HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut)
     {
-        return ((delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int>)(lpVtbl[6]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, dwCookie, pVarOut);
+        return ((delegate* unmanaged[MemberFunction]<IPerPropertyBrowsing*, int, uint, VARIANT*, int>)(lpVtbl[6]))((IPerPropertyBrowsing*)Unsafe.AsPointer(ref this), dispID, dwCookie, pVarOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, int> GetDisplayString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> GetDisplayString;
 
         [NativeTypeName("HRESULT (DISPID, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, int> MapPropertyToPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, int> MapPropertyToPage;
 
         [NativeTypeName("HRESULT (DISPID, CALPOLESTR *, CADWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
 
         [NativeTypeName("HRESULT (DISPID, DWORD, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, VARIANT*, int> GetPredefinedValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, VARIANT*, int> GetPredefinedValue;
     }
 }

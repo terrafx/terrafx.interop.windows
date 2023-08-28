@@ -25,7 +25,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, Guid*, void**, int>)(lpVtbl[0]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, uint>)(lpVtbl[1]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, uint>)(lpVtbl[1]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, uint>)(lpVtbl[2]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, uint>)(lpVtbl[2]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDialogCallback.xml' path='doc/member[@name="IPrintDialogCallback.InitDone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [VtblIndex(3)]
     public HRESULT InitDone()
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, int>)(lpVtbl[3]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, int>)(lpVtbl[3]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDialogCallback.xml' path='doc/member[@name="IPrintDialogCallback.SelectionChange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [VtblIndex(4)]
     public HRESULT SelectionChange()
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, int>)(lpVtbl[4]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, int>)(lpVtbl[4]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintDialogCallback.xml' path='doc/member[@name="IPrintDialogCallback.HandleMessage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
     [VtblIndex(5)]
     public HRESULT HandleMessage(HWND hDlg, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pResult)
     {
-        return ((delegate* unmanaged<IPrintDialogCallback*, HWND, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[5]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this), hDlg, uMsg, wParam, lParam, pResult);
+        return ((delegate* unmanaged[MemberFunction]<IPrintDialogCallback*, HWND, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[5]))((IPrintDialogCallback*)Unsafe.AsPointer(ref this), hDlg, uMsg, wParam, lParam, pResult);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IPrintDialogCallback : IPrintDialogCallback.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitDone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitDone;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SelectionChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SelectionChange;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, int> HandleMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, int> HandleMessage;
     }
 }

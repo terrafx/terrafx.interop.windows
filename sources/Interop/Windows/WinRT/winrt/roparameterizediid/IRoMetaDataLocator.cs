@@ -18,7 +18,7 @@ public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
     [VtblIndex(0)]
     public HRESULT Locate([NativeTypeName("PCWSTR")] char* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)
     {
-        return ((delegate* unmanaged<IRoMetaDataLocator*, char*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
+        return ((delegate* unmanaged[MemberFunction]<IRoMetaDataLocator*, char*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
     }
 
     public interface Interface
@@ -31,6 +31,6 @@ public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (PCWSTR, IRoSimpleMetaDataBuilder &) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IRoSimpleMetaDataBuilder*, int> Locate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IRoSimpleMetaDataBuilder*, int> Locate;
     }
 }

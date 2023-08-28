@@ -25,7 +25,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[1]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionList*, uint>)(lpVtbl[1]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[2]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionList*, uint>)(lpVtbl[2]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList.GetLength"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     [VtblIndex(3)]
     public HRESULT GetLength(uint* puIndex)
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
     }
 
     /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList.GetString"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
     [VtblIndex(4)]
     public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] char** pbstr)
     {
-        return ((delegate* unmanaged<ITfReverseConversionList*, uint, char**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
+        return ((delegate* unmanaged[MemberFunction]<ITfReverseConversionList*, uint, char**, int>)(lpVtbl[4]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), uIndex, pbstr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLength;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetString;
     }
 }

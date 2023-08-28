@@ -27,7 +27,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, uint>)(lpVtbl[1]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, uint>)(lpVtbl[1]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, uint>)(lpVtbl[2]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, uint>)(lpVtbl[2]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetContentEnabler"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(3)]
     public HRESULT SetContentEnabler(IMFContentEnabler* contentEnabler, IMFAsyncResult* result)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFContentEnabler*, IMFAsyncResult*, int>)(lpVtbl[3]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentEnabler, result);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, IMFContentEnabler*, IMFAsyncResult*, int>)(lpVtbl[3]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentEnabler, result);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.GetSuspendNotify"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(4)]
     public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFCdmSuspendNotify**, int>)(lpVtbl[4]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), notify);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, IMFCdmSuspendNotify**, int>)(lpVtbl[4]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), notify);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetPMPHostApp"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(5)]
     public HRESULT SetPMPHostApp(IMFPMPHostApp* pmpHostApp)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, IMFPMPHostApp*, int>)(lpVtbl[5]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), pmpHostApp);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, IMFPMPHostApp*, int>)(lpVtbl[5]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), pmpHostApp);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.CreateSession"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(6)]
     public HRESULT CreateSession(MF_MEDIAKEYSESSION_TYPE sessionType, IMFContentDecryptionModuleSessionCallbacks* callbacks, IMFContentDecryptionModuleSession** session)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int>)(lpVtbl[6]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), sessionType, callbacks, session);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int>)(lpVtbl[6]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), sessionType, callbacks, session);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.SetServerCertificate"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(7)]
     public HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* certificate, [NativeTypeName("DWORD")] uint certificateSize)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, int>)(lpVtbl[7]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), certificate, certificateSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, byte*, uint, int>)(lpVtbl[7]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), certificate, certificateSize);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.CreateTrustedInput"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(8)]
     public HRESULT CreateTrustedInput([NativeTypeName("const BYTE *")] byte* contentInitData, [NativeTypeName("DWORD")] uint contentInitDataSize, IMFTrustedInput** trustedInput)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, byte*, uint, IMFTrustedInput**, int>)(lpVtbl[8]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentInitData, contentInitDataSize, trustedInput);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, byte*, uint, IMFTrustedInput**, int>)(lpVtbl[8]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), contentInitData, contentInitDataSize, trustedInput);
     }
 
     /// <include file='IMFContentDecryptionModule.xml' path='doc/member[@name="IMFContentDecryptionModule.GetProtectionSystemIds"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
     [VtblIndex(9)]
     public HRESULT GetProtectionSystemIds(Guid** systemIds, [NativeTypeName("DWORD *")] uint* count)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModule*, Guid**, uint*, int>)(lpVtbl[9]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), systemIds, count);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModule*, Guid**, uint*, int>)(lpVtbl[9]))((IMFContentDecryptionModule*)Unsafe.AsPointer(ref this), systemIds, count);
     }
 
     public interface Interface : IUnknown.Interface
@@ -132,33 +132,33 @@ public unsafe partial struct IMFContentDecryptionModule : IMFContentDecryptionMo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFContentEnabler *, IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFContentEnabler*, IMFAsyncResult*, int> SetContentEnabler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFContentEnabler*, IMFAsyncResult*, int> SetContentEnabler;
 
         [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
 
         [NativeTypeName("HRESULT (IMFPMPHostApp *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPMPHostApp*, int> SetPMPHostApp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPMPHostApp*, int> SetPMPHostApp;
 
         [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks *, IMFContentDecryptionModuleSession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int> CreateSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIAKEYSESSION_TYPE, IMFContentDecryptionModuleSessionCallbacks*, IMFContentDecryptionModuleSession**, int> CreateSession;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> SetServerCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> SetServerCertificate;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD, IMFTrustedInput **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, IMFTrustedInput**, int> CreateTrustedInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, IMFTrustedInput**, int> CreateTrustedInput;
 
         [NativeTypeName("HRESULT (GUID **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid**, uint*, int> GetProtectionSystemIds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid**, uint*, int> GetProtectionSystemIds;
     }
 }

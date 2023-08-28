@@ -25,7 +25,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, Guid*, void**, int>)(lpVtbl[0]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, Guid*, void**, int>)(lpVtbl[0]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, uint>)(lpVtbl[1]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, uint>)(lpVtbl[1]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, uint>)(lpVtbl[2]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, uint>)(lpVtbl[2]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetPeakValue"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [VtblIndex(3)]
     public HRESULT GetPeakValue(float* pfPeak)
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, float*, int>)(lpVtbl[3]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pfPeak);
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, float*, int>)(lpVtbl[3]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pfPeak);
     }
 
     /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetMeteringChannelCount"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [VtblIndex(4)]
     public HRESULT GetMeteringChannelCount(uint* pnChannelCount)
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, uint*, int>)(lpVtbl[4]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pnChannelCount);
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, uint*, int>)(lpVtbl[4]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pnChannelCount);
     }
 
     /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetChannelsPeakValues"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [VtblIndex(5)]
     public HRESULT GetChannelsPeakValues([NativeTypeName("UINT32")] uint u32ChannelCount, float* afPeakValues)
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, uint, float*, int>)(lpVtbl[5]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), u32ChannelCount, afPeakValues);
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, uint, float*, int>)(lpVtbl[5]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), u32ChannelCount, afPeakValues);
     }
 
     /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.QueryHardwareSupport"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
     [VtblIndex(6)]
     public HRESULT QueryHardwareSupport([NativeTypeName("DWORD *")] uint* pdwHardwareSupportMask)
     {
-        return ((delegate* unmanaged<IAudioMeterInformation*, uint*, int>)(lpVtbl[6]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pdwHardwareSupportMask);
+        return ((delegate* unmanaged[MemberFunction]<IAudioMeterInformation*, uint*, int>)(lpVtbl[6]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pdwHardwareSupportMask);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetPeakValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetPeakValue;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMeteringChannelCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMeteringChannelCount;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetChannelsPeakValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetChannelsPeakValues;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> QueryHardwareSupport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> QueryHardwareSupport;
     }
 }

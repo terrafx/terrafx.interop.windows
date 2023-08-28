@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint>)(lpVtbl[1]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint>)(lpVtbl[1]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint>)(lpVtbl[2]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint>)(lpVtbl[2]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1SpriteBatch*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.AddSprites"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(4)]
     public HRESULT AddSprites([NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24)
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int>)(lpVtbl[4]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int>)(lpVtbl[4]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.SetSprites"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null, [NativeTypeName("UINT32")] uint destinationRectanglesStride = 16, [NativeTypeName("UINT32")] uint sourceRectanglesStride = 16, [NativeTypeName("UINT32")] uint colorsStride = 16, [NativeTypeName("UINT32")] uint transformsStride = 24)
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int>)(lpVtbl[5]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int>)(lpVtbl[5]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.GetSprites"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null)
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[6]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[6]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.GetSpriteCount"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [return: NativeTypeName("UINT32")]
     public uint GetSpriteCount()
     {
-        return ((delegate* unmanaged<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.Clear"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     [VtblIndex(8)]
     public void Clear()
     {
-        ((delegate* unmanaged<ID2D1SpriteBatch*, void>)(lpVtbl[8]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, void>)(lpVtbl[8]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT (UINT32, const D2D1_RECT_F *, const D2D1_RECT_U *, const D2D1_COLOR_F *, const D2D1_MATRIX_3X2_F *, UINT32, UINT32, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int> AddSprites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int> AddSprites;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, const D2D1_RECT_F *, const D2D1_RECT_U *, const D2D1_COLOR_F *, const D2D1_MATRIX_3X2_F *, UINT32, UINT32, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int> SetSprites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, uint, uint, uint, uint, int> SetSprites;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, D2D1_RECT_F *, D2D1_RECT_U *, D2D1_COLOR_F *, D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int> GetSprites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int> GetSprites;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetSpriteCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetSpriteCount;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Clear;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Clear;
     }
 }

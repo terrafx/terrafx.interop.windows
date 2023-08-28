@@ -25,7 +25,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[1]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, uint>)(lpVtbl[1]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[2]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, uint>)(lpVtbl[2]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.CreateEntry"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCWSTR")] char* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.TravelTo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT TravelTo(ITravelLogEntry* ptle)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.EnumEntries"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.FindEntries"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszUrl, IEnumTravelLogEntry** ppenum)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint, char*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, uint, char*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.GetCount"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.RemoveEntry"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT RemoveEntry(ITravelLogEntry* ptle)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
     }
 
     /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.GetRelativeEntry"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
     {
-        return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ITravelLogEntry *, BOOL, ITravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
 
         [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITravelLogEntry*, int> TravelTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITravelLogEntry*, int> TravelTo;
 
         [NativeTypeName("HRESULT (TLENUMF, IEnumTravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IEnumTravelLogEntry**, int> EnumEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IEnumTravelLogEntry**, int> EnumEntries;
 
         [NativeTypeName("HRESULT (TLENUMF, LPCWSTR, IEnumTravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, IEnumTravelLogEntry**, int> FindEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, IEnumTravelLogEntry**, int> FindEntries;
 
         [NativeTypeName("HRESULT (TLENUMF, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITravelLogEntry*, int> RemoveEntry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITravelLogEntry*, int> RemoveEntry;
 
         [NativeTypeName("HRESULT (int, ITravelLogEntry **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ITravelLogEntry**, int> GetRelativeEntry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ITravelLogEntry**, int> GetRelativeEntry;
     }
 }

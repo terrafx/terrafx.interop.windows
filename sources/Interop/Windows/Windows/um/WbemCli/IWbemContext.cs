@@ -25,7 +25,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemContext*, Guid*, void**, int>)(lpVtbl[0]))((IWbemContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, Guid*, void**, int>)(lpVtbl[0]))((IWbemContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemContext*, uint>)(lpVtbl[1]))((IWbemContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, uint>)(lpVtbl[1]))((IWbemContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemContext*, uint>)(lpVtbl[2]))((IWbemContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, uint>)(lpVtbl[2]))((IWbemContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Clone(IWbemContext** ppNewCopy)
     {
-        return ((delegate* unmanaged<IWbemContext*, IWbemContext**, int>)(lpVtbl[3]))((IWbemContext*)Unsafe.AsPointer(ref this), ppNewCopy);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, IWbemContext**, int>)(lpVtbl[3]))((IWbemContext*)Unsafe.AsPointer(ref this), ppNewCopy);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.GetNames"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetNames([NativeTypeName("long")] int lFlags, SAFEARRAY** pNames)
     {
-        return ((delegate* unmanaged<IWbemContext*, int, SAFEARRAY**, int>)(lpVtbl[4]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pNames);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, int, SAFEARRAY**, int>)(lpVtbl[4]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pNames);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.BeginEnumeration"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT BeginEnumeration([NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemContext*, int, int>)(lpVtbl[5]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, int, int>)(lpVtbl[5]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] char** pstrName, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, int, char**, VARIANT*, int>)(lpVtbl[6]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pstrName, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, int, char**, VARIANT*, int>)(lpVtbl[6]))((IWbemContext*)Unsafe.AsPointer(ref this), lFlags, pstrName, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.EndEnumeration"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT EndEnumeration()
     {
-        return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[7]))((IWbemContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, int>)(lpVtbl[7]))((IWbemContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.SetValue"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT SetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[8]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[8]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.GetValue"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags, VARIANT* pValue)
     {
-        return ((delegate* unmanaged<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[9]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, char*, int, VARIANT*, int>)(lpVtbl[9]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags, pValue);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.DeleteValue"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] char* wszName, [NativeTypeName("long")] int lFlags)
     {
-        return ((delegate* unmanaged<IWbemContext*, char*, int, int>)(lpVtbl[10]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags);
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, char*, int, int>)(lpVtbl[10]))((IWbemContext*)Unsafe.AsPointer(ref this), wszName, lFlags);
     }
 
     /// <include file='IWbemContext.xml' path='doc/member[@name="IWbemContext.DeleteAll"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT DeleteAll()
     {
-        return ((delegate* unmanaged<IWbemContext*, int>)(lpVtbl[11]))((IWbemContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemContext*, int>)(lpVtbl[11]))((IWbemContext*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IWbemContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWbemContext**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWbemContext**, int> Clone;
 
         [NativeTypeName("HRESULT (long, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, SAFEARRAY**, int> GetNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, SAFEARRAY**, int> GetNames;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, VARIANT*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, VARIANT*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndEnumeration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndEnumeration;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, VARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> DeleteValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> DeleteValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DeleteAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DeleteAll;
     }
 }

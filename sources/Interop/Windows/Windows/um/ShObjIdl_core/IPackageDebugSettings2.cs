@@ -25,7 +25,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, Guid*, void**, int>)(lpVtbl[0]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, Guid*, void**, int>)(lpVtbl[0]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, uint>)(lpVtbl[1]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, uint>)(lpVtbl[1]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, uint>)(lpVtbl[2]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, uint>)(lpVtbl[2]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.EnableDebugging" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(3)]
     public HRESULT EnableDebugging([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("LPCWSTR")] char* debuggerCommandLine, [NativeTypeName("PZZWSTR")] char* environment)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, char*, char*, int>)(lpVtbl[3]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, debuggerCommandLine, environment);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, char*, char*, int>)(lpVtbl[3]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, debuggerCommandLine, environment);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.DisableDebugging" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(4)]
     public HRESULT DisableDebugging([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[4]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[4]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.Suspend" />
@@ -67,7 +67,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(5)]
     public HRESULT Suspend([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[5]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[5]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.Resume" />
@@ -75,7 +75,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(6)]
     public HRESULT Resume([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[6]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[6]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.TerminateAllProcesses" />
@@ -83,7 +83,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(7)]
     public HRESULT TerminateAllProcesses([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[7]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[7]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.SetTargetSessionId" />
@@ -91,7 +91,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(8)]
     public HRESULT SetTargetSessionId([NativeTypeName("ULONG")] uint sessionId)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, uint, int>)(lpVtbl[8]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), sessionId);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, uint, int>)(lpVtbl[8]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), sessionId);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.EnumerateBackgroundTasks" />
@@ -99,7 +99,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(9)]
     public HRESULT EnumerateBackgroundTasks([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("ULONG *")] uint* taskCount, [NativeTypeName("LPCGUID *")] Guid** taskIds, [NativeTypeName("LPCWSTR **")] char*** taskNames)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, uint*, Guid**, char***, int>)(lpVtbl[9]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, taskCount, taskIds, taskNames);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, uint*, Guid**, char***, int>)(lpVtbl[9]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, taskCount, taskIds, taskNames);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.ActivateBackgroundTask" />
@@ -107,7 +107,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(10)]
     public HRESULT ActivateBackgroundTask([NativeTypeName("LPCGUID")] Guid* taskId)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, Guid*, int>)(lpVtbl[10]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), taskId);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, Guid*, int>)(lpVtbl[10]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), taskId);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.StartServicing" />
@@ -115,7 +115,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(11)]
     public HRESULT StartServicing([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[11]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[11]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.StopServicing" />
@@ -123,7 +123,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(12)]
     public HRESULT StopServicing([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[12]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[12]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.StartSessionRedirection" />
@@ -131,7 +131,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(13)]
     public HRESULT StartSessionRedirection([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("ULONG")] uint sessionId)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, uint, int>)(lpVtbl[13]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, sessionId);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, uint, int>)(lpVtbl[13]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, sessionId);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.StopSessionRedirection" />
@@ -139,7 +139,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(14)]
     public HRESULT StopSessionRedirection([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, int>)(lpVtbl[14]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, int>)(lpVtbl[14]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.GetPackageExecutionState" />
@@ -147,7 +147,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(15)]
     public HRESULT GetPackageExecutionState([NativeTypeName("LPCWSTR")] char* packageFullName, PACKAGE_EXECUTION_STATE* packageExecutionState)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, PACKAGE_EXECUTION_STATE*, int>)(lpVtbl[15]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, packageExecutionState);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, PACKAGE_EXECUTION_STATE*, int>)(lpVtbl[15]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, packageExecutionState);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.RegisterForPackageStateChanges" />
@@ -155,7 +155,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(16)]
     public HRESULT RegisterForPackageStateChanges([NativeTypeName("LPCWSTR")] char* packageFullName, IPackageExecutionStateChangeNotification* pPackageExecutionStateChangeNotification, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, IPackageExecutionStateChangeNotification*, uint*, int>)(lpVtbl[16]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, pPackageExecutionStateChangeNotification, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, IPackageExecutionStateChangeNotification*, uint*, int>)(lpVtbl[16]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, pPackageExecutionStateChangeNotification, pdwCookie);
     }
 
     /// <inheritdoc cref="IPackageDebugSettings.UnregisterForPackageStateChanges" />
@@ -163,7 +163,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(17)]
     public HRESULT UnregisterForPackageStateChanges([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, uint, int>)(lpVtbl[17]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, uint, int>)(lpVtbl[17]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <include file='IPackageDebugSettings2.xml' path='doc/member[@name="IPackageDebugSettings2.EnumerateApps"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
     [VtblIndex(18)]
     public HRESULT EnumerateApps([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("ULONG *")] uint* appCount, [NativeTypeName("LPWSTR **")] char*** appUserModelIds, [NativeTypeName("LPWSTR **")] char*** appDisplayNames)
     {
-        return ((delegate* unmanaged<IPackageDebugSettings2*, char*, uint*, char***, char***, int>)(lpVtbl[18]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, appCount, appUserModelIds, appDisplayNames);
+        return ((delegate* unmanaged[MemberFunction]<IPackageDebugSettings2*, char*, uint*, char***, char***, int>)(lpVtbl[18]))((IPackageDebugSettings2*)Unsafe.AsPointer(ref this), packageFullName, appCount, appUserModelIds, appDisplayNames);
     }
 
     public interface Interface : IPackageDebugSettings.Interface
@@ -184,60 +184,60 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, PZZWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, int> EnableDebugging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, int> EnableDebugging;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> DisableDebugging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DisableDebugging;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> Suspend;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Suspend;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Resume;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> TerminateAllProcesses;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> TerminateAllProcesses;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetTargetSessionId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetTargetSessionId;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG *, LPCGUID *, LPCWSTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, Guid**, char***, int> EnumerateBackgroundTasks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, Guid**, char***, int> EnumerateBackgroundTasks;
 
         [NativeTypeName("HRESULT (LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> ActivateBackgroundTask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> ActivateBackgroundTask;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> StartServicing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> StartServicing;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> StopServicing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> StopServicing;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> StartSessionRedirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> StartSessionRedirection;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> StopSessionRedirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> StopSessionRedirection;
 
         [NativeTypeName("HRESULT (LPCWSTR, PACKAGE_EXECUTION_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, PACKAGE_EXECUTION_STATE*, int> GetPackageExecutionState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PACKAGE_EXECUTION_STATE*, int> GetPackageExecutionState;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPackageExecutionStateChangeNotification *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IPackageExecutionStateChangeNotification*, uint*, int> RegisterForPackageStateChanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IPackageExecutionStateChangeNotification*, uint*, int> RegisterForPackageStateChanges;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnregisterForPackageStateChanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnregisterForPackageStateChanges;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG *, LPWSTR **, LPWSTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, char***, char***, int> EnumerateApps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, char***, char***, int> EnumerateApps;
     }
 }

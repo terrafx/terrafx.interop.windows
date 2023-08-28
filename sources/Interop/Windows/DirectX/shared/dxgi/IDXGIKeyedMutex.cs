@@ -26,7 +26,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, uint>)(lpVtbl[1]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, uint>)(lpVtbl[1]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, uint>)(lpVtbl[2]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, uint>)(lpVtbl[2]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <inheritdoc cref="IDXGIDeviceSubObject.GetDevice" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppDevice)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[7]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppDevice);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, Guid*, void**, int>)(lpVtbl[7]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), riid, ppDevice);
     }
 
     /// <include file='IDXGIKeyedMutex.xml' path='doc/member[@name="IDXGIKeyedMutex.AcquireSync"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(8)]
     public HRESULT AcquireSync([NativeTypeName("UINT64")] ulong Key, [NativeTypeName("DWORD")] uint dwMilliseconds)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, uint, int>)(lpVtbl[8]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key, dwMilliseconds);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, ulong, uint, int>)(lpVtbl[8]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key, dwMilliseconds);
     }
 
     /// <include file='IDXGIKeyedMutex.xml' path='doc/member[@name="IDXGIKeyedMutex.ReleaseSync"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
     [VtblIndex(9)]
     public HRESULT ReleaseSync([NativeTypeName("UINT64")] ulong Key)
     {
-        return ((delegate* unmanaged<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIKeyedMutex*, ulong, int>)(lpVtbl[9]))((IDXGIKeyedMutex*)Unsafe.AsPointer(ref this), Key);
     }
 
     public interface Interface : IDXGIDeviceSubObject.Interface
@@ -116,33 +116,33 @@ public unsafe partial struct IDXGIKeyedMutex : IDXGIKeyedMutex.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (UINT64, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, uint, int> AcquireSync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, uint, int> AcquireSync;
 
         [NativeTypeName("HRESULT (UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> ReleaseSync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> ReleaseSync;
     }
 }

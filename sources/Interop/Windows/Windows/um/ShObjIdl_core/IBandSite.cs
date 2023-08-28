@@ -25,7 +25,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBandSite*, Guid*, void**, int>)(lpVtbl[0]))((IBandSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, Guid*, void**, int>)(lpVtbl[0]))((IBandSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBandSite*, uint>)(lpVtbl[1]))((IBandSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint>)(lpVtbl[1]))((IBandSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBandSite*, uint>)(lpVtbl[2]))((IBandSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint>)(lpVtbl[2]))((IBandSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.AddBand"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT AddBand(IUnknown* punk)
     {
-        return ((delegate* unmanaged<IBandSite*, IUnknown*, int>)(lpVtbl[3]))((IBandSite*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, IUnknown*, int>)(lpVtbl[3]))((IBandSite*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.EnumBands"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT EnumBands(uint uBand, [NativeTypeName("DWORD *")] uint* pdwBandID)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, uint*, int>)(lpVtbl[4]))((IBandSite*)Unsafe.AsPointer(ref this), uBand, pdwBandID);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint, uint*, int>)(lpVtbl[4]))((IBandSite*)Unsafe.AsPointer(ref this), uBand, pdwBandID);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.QueryBand"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] char* pszName, int cchName)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, char*, int, int>)(lpVtbl[5]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, ppstb, pdwState, pszName, cchName);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint, IDeskBand**, uint*, char*, int, int>)(lpVtbl[5]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, ppstb, pdwState, pszName, cchName);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.SetBandState"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetBandState([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwState)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, uint, uint, int>)(lpVtbl[6]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, dwMask, dwState);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint, uint, uint, int>)(lpVtbl[6]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, dwMask, dwState);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.RemoveBand"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT RemoveBand([NativeTypeName("DWORD")] uint dwBandID)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, int>)(lpVtbl[7]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint, int>)(lpVtbl[7]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.GetBandObject"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetBandObject([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IBandSite*, uint, Guid*, void**, int>)(lpVtbl[8]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, uint, Guid*, void**, int>)(lpVtbl[8]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, riid, ppv);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.SetBandSiteInfo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT SetBandSiteInfo([NativeTypeName("const BANDSITEINFO *")] BANDSITEINFO* pbsinfo)
     {
-        return ((delegate* unmanaged<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[9]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[9]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
     }
 
     /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.GetBandSiteInfo"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetBandSiteInfo(BANDSITEINFO* pbsinfo)
     {
-        return ((delegate* unmanaged<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[10]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
+        return ((delegate* unmanaged[MemberFunction]<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[10]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct IBandSite : IBandSite.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> AddBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> AddBand;
 
         [NativeTypeName("HRESULT (UINT, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> EnumBands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> EnumBands;
 
         [NativeTypeName("HRESULT (DWORD, IDeskBand **, DWORD *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDeskBand**, uint*, char*, int, int> QueryBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDeskBand**, uint*, char*, int, int> QueryBand;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetBandState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> SetBandState;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveBand;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetBandObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetBandObject;
 
         [NativeTypeName("HRESULT (const BANDSITEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BANDSITEINFO*, int> SetBandSiteInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BANDSITEINFO*, int> SetBandSiteInfo;
 
         [NativeTypeName("HRESULT (BANDSITEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BANDSITEINFO*, int> GetBandSiteInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BANDSITEINFO*, int> GetBandSiteInfo;
     }
 }

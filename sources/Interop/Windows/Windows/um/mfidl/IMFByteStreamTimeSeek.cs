@@ -27,7 +27,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[1]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, uint>)(lpVtbl[1]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, uint>)(lpVtbl[2]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, uint>)(lpVtbl[2]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.IsTimeSeekSupported"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [VtblIndex(3)]
     public HRESULT IsTimeSeekSupported(BOOL* pfTimeSeekIsSupported)
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, BOOL*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, BOOL*, int>)(lpVtbl[3]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pfTimeSeekIsSupported);
     }
 
     /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.TimeSeek"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [VtblIndex(4)]
     public HRESULT TimeSeek([NativeTypeName("QWORD")] ulong qwTimePosition)
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong, int>)(lpVtbl[4]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), qwTimePosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, ulong, int>)(lpVtbl[4]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), qwTimePosition);
     }
 
     /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.GetTimeSeekResult"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
     [VtblIndex(5)]
     public HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration)
     {
-        return ((delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int>)(lpVtbl[5]))((IMFByteStreamTimeSeek*)Unsafe.AsPointer(ref this), pqwStartTime, pqwStopTime, pqwDuration);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsTimeSeekSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsTimeSeekSupported;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> TimeSeek;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> TimeSeek;
 
         [NativeTypeName("HRESULT (QWORD *, QWORD *, QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, uint>)(lpVtbl[1]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, uint>)(lpVtbl[1]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, uint>)(lpVtbl[2]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, uint>)(lpVtbl[2]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnBalloonUserClick"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [VtblIndex(3)]
     public HRESULT OnBalloonUserClick(POINT* pt)
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[3]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, POINT*, int>)(lpVtbl[3]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
     }
 
     /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnLeftClick"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [VtblIndex(4)]
     public HRESULT OnLeftClick(POINT* pt)
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[4]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, POINT*, int>)(lpVtbl[4]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
     }
 
     /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnContextMenu"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
     [VtblIndex(5)]
     public HRESULT OnContextMenu(POINT* pt)
     {
-        return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[5]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
+        return ((delegate* unmanaged[MemberFunction]<IUserNotificationCallback*, POINT*, int>)(lpVtbl[5]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> OnBalloonUserClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> OnBalloonUserClick;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> OnLeftClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> OnLeftClick;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> OnContextMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> OnContextMenu;
     }
 }

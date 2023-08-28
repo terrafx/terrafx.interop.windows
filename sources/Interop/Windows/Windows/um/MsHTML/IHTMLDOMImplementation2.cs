@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, uint>)(lpVtbl[1]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, uint>)(lpVtbl[1]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, uint>)(lpVtbl[2]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, uint>)(lpVtbl[2]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, uint*, int>)(lpVtbl[3]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, uint*, int>)(lpVtbl[3]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLDOMImplementation2.xml' path='doc/member[@name="IHTMLDOMImplementation2.createDocumentType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(7)]
     public HRESULT createDocumentType([NativeTypeName("BSTR")] char* bstrQualifiedName, VARIANT* pvarPublicId, VARIANT* pvarSystemId, IDOMDocumentType** newDocumentType)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, char*, VARIANT*, VARIANT*, IDOMDocumentType**, int>)(lpVtbl[7]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrQualifiedName, pvarPublicId, pvarSystemId, newDocumentType);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, char*, VARIANT*, VARIANT*, IDOMDocumentType**, int>)(lpVtbl[7]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrQualifiedName, pvarPublicId, pvarSystemId, newDocumentType);
     }
 
     /// <include file='IHTMLDOMImplementation2.xml' path='doc/member[@name="IHTMLDOMImplementation2.createDocument"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(8)]
     public HRESULT createDocument(VARIANT* pvarNS, VARIANT* pvarTagName, IDOMDocumentType* pDocumentType, IHTMLDocument7** ppnewDocument)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, VARIANT*, VARIANT*, IDOMDocumentType*, IHTMLDocument7**, int>)(lpVtbl[8]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), pvarNS, pvarTagName, pDocumentType, ppnewDocument);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, VARIANT*, VARIANT*, IDOMDocumentType*, IHTMLDocument7**, int>)(lpVtbl[8]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), pvarNS, pvarTagName, pDocumentType, ppnewDocument);
     }
 
     /// <include file='IHTMLDOMImplementation2.xml' path='doc/member[@name="IHTMLDOMImplementation2.createHTMLDocument"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(9)]
     public HRESULT createHTMLDocument([NativeTypeName("BSTR")] char* bstrTitle, IHTMLDocument7** ppnewDocument)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, char*, IHTMLDocument7**, int>)(lpVtbl[9]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrTitle, ppnewDocument);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, char*, IHTMLDocument7**, int>)(lpVtbl[9]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrTitle, ppnewDocument);
     }
 
     /// <include file='IHTMLDOMImplementation2.xml' path='doc/member[@name="IHTMLDOMImplementation2.hasFeature"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
     [VtblIndex(10)]
     public HRESULT hasFeature([NativeTypeName("BSTR")] char* bstrfeature, VARIANT version, [NativeTypeName("VARIANT_BOOL *")] short* pfHasFeature)
     {
-        return ((delegate* unmanaged<IHTMLDOMImplementation2*, char*, VARIANT, short*, int>)(lpVtbl[10]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrfeature, version, pfHasFeature);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLDOMImplementation2*, char*, VARIANT, short*, int>)(lpVtbl[10]))((IHTMLDOMImplementation2*)Unsafe.AsPointer(ref this), bstrfeature, version, pfHasFeature);
     }
 
     public interface Interface : IDispatch.Interface
@@ -129,36 +129,36 @@ public unsafe partial struct IHTMLDOMImplementation2 : IHTMLDOMImplementation2.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, IDOMDocumentType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, VARIANT*, IDOMDocumentType**, int> createDocumentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, VARIANT*, IDOMDocumentType**, int> createDocumentType;
 
         [NativeTypeName("HRESULT (VARIANT *, VARIANT *, IDOMDocumentType *, IHTMLDocument7 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, VARIANT*, IDOMDocumentType*, IHTMLDocument7**, int> createDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, VARIANT*, IDOMDocumentType*, IHTMLDocument7**, int> createDocument;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDocument7 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IHTMLDocument7**, int> createHTMLDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IHTMLDocument7**, int> createHTMLDocument;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT, short*, int> hasFeature;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT, short*, int> hasFeature;
     }
 }

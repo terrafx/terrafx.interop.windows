@@ -25,7 +25,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, Guid*, void**, int>)(lpVtbl[0]))((IRendezvousSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, Guid*, void**, int>)(lpVtbl[0]))((IRendezvousSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRendezvousSession*, uint>)(lpVtbl[1]))((IRendezvousSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, uint>)(lpVtbl[1]))((IRendezvousSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRendezvousSession*, uint>)(lpVtbl[2]))((IRendezvousSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, uint>)(lpVtbl[2]))((IRendezvousSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.get_State"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(3)]
     public HRESULT get_State(RENDEZVOUS_SESSION_STATE* pSessionState)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, RENDEZVOUS_SESSION_STATE*, int>)(lpVtbl[3]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pSessionState);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, RENDEZVOUS_SESSION_STATE*, int>)(lpVtbl[3]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pSessionState);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.get_RemoteUser"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(4)]
     public HRESULT get_RemoteUser([NativeTypeName("BSTR *")] char** bstrUserName)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, char**, int>)(lpVtbl[4]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrUserName);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, char**, int>)(lpVtbl[4]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrUserName);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.get_Flags"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(5)]
     public HRESULT get_Flags([NativeTypeName("LONG *")] int* pFlags)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, int*, int>)(lpVtbl[5]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pFlags);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, int*, int>)(lpVtbl[5]))((IRendezvousSession*)Unsafe.AsPointer(ref this), pFlags);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.SendContextData"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(6)]
     public HRESULT SendContextData([NativeTypeName("BSTR")] char* bstrData)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, char*, int>)(lpVtbl[6]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrData);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, char*, int>)(lpVtbl[6]))((IRendezvousSession*)Unsafe.AsPointer(ref this), bstrData);
     }
 
     /// <include file='IRendezvousSession.xml' path='doc/member[@name="IRendezvousSession.Terminate"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
     [VtblIndex(7)]
     public HRESULT Terminate(HRESULT hr, [NativeTypeName("BSTR")] char* bstrAppData)
     {
-        return ((delegate* unmanaged<IRendezvousSession*, HRESULT, char*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
+        return ((delegate* unmanaged[MemberFunction]<IRendezvousSession*, HRESULT, char*, int>)(lpVtbl[7]))((IRendezvousSession*)Unsafe.AsPointer(ref this), hr, bstrAppData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IRendezvousSession : IRendezvousSession.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RENDEZVOUS_SESSION_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RENDEZVOUS_SESSION_STATE*, int> get_State;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RENDEZVOUS_SESSION_STATE*, int> get_State;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_RemoteUser;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_RemoteUser;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Flags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Flags;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SendContextData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SendContextData;
 
         [NativeTypeName("HRESULT (HRESULT, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, char*, int> Terminate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, char*, int> Terminate;
     }
 }

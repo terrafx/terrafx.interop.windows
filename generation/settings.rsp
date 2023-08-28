@@ -15,6 +15,7 @@ exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
+generate-callconv-member-function
 generate-cpp-attributes
 generate-disable-runtime-marshalling
 generate-doc-includes

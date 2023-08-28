@@ -25,7 +25,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXMLElement*, Guid*, void**, int>)(lpVtbl[0]))((IXMLElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, Guid*, void**, int>)(lpVtbl[0]))((IXMLElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXMLElement*, uint>)(lpVtbl[1]))((IXMLElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, uint>)(lpVtbl[1]))((IXMLElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXMLElement*, uint>)(lpVtbl[2]))((IXMLElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, uint>)(lpVtbl[2]))((IXMLElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IXMLElement*, uint*, int>)(lpVtbl[3]))((IXMLElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, uint*, int>)(lpVtbl[3]))((IXMLElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IXMLElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IXMLElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IXMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.get_tagName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_tagName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLElement*, char**, int>)(lpVtbl[7]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char**, int>)(lpVtbl[7]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.put_tagName"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT put_tagName([NativeTypeName("BSTR")] char* p)
     {
-        return ((delegate* unmanaged<IXMLElement*, char*, int>)(lpVtbl[8]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char*, int>)(lpVtbl[8]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.get_parent"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_parent(IXMLElement** ppParent)
     {
-        return ((delegate* unmanaged<IXMLElement*, IXMLElement**, int>)(lpVtbl[9]))((IXMLElement*)Unsafe.AsPointer(ref this), ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, IXMLElement**, int>)(lpVtbl[9]))((IXMLElement*)Unsafe.AsPointer(ref this), ppParent);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.setAttribute"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT setAttribute([NativeTypeName("BSTR")] char* strPropertyName, VARIANT PropertyValue)
     {
-        return ((delegate* unmanaged<IXMLElement*, char*, VARIANT, int>)(lpVtbl[10]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName, PropertyValue);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char*, VARIANT, int>)(lpVtbl[10]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName, PropertyValue);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.getAttribute"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT getAttribute([NativeTypeName("BSTR")] char* strPropertyName, VARIANT* PropertyValue)
     {
-        return ((delegate* unmanaged<IXMLElement*, char*, VARIANT*, int>)(lpVtbl[11]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName, PropertyValue);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char*, VARIANT*, int>)(lpVtbl[11]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName, PropertyValue);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.removeAttribute"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT removeAttribute([NativeTypeName("BSTR")] char* strPropertyName)
     {
-        return ((delegate* unmanaged<IXMLElement*, char*, int>)(lpVtbl[12]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char*, int>)(lpVtbl[12]))((IXMLElement*)Unsafe.AsPointer(ref this), strPropertyName);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.get_children"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT get_children(IXMLElementCollection** pp)
     {
-        return ((delegate* unmanaged<IXMLElement*, IXMLElementCollection**, int>)(lpVtbl[13]))((IXMLElement*)Unsafe.AsPointer(ref this), pp);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, IXMLElementCollection**, int>)(lpVtbl[13]))((IXMLElement*)Unsafe.AsPointer(ref this), pp);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.get_type"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_type([NativeTypeName("long *")] int* plType)
     {
-        return ((delegate* unmanaged<IXMLElement*, int*, int>)(lpVtbl[14]))((IXMLElement*)Unsafe.AsPointer(ref this), plType);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, int*, int>)(lpVtbl[14]))((IXMLElement*)Unsafe.AsPointer(ref this), plType);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.get_text"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT get_text([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IXMLElement*, char**, int>)(lpVtbl[15]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char**, int>)(lpVtbl[15]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.put_text"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT put_text([NativeTypeName("BSTR")] char* p)
     {
-        return ((delegate* unmanaged<IXMLElement*, char*, int>)(lpVtbl[16]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, char*, int>)(lpVtbl[16]))((IXMLElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.addChild"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT addChild(IXMLElement* pChildElem, [NativeTypeName("long")] int lIndex, [NativeTypeName("long")] int lReserved)
     {
-        return ((delegate* unmanaged<IXMLElement*, IXMLElement*, int, int, int>)(lpVtbl[17]))((IXMLElement*)Unsafe.AsPointer(ref this), pChildElem, lIndex, lReserved);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, IXMLElement*, int, int, int>)(lpVtbl[17]))((IXMLElement*)Unsafe.AsPointer(ref this), pChildElem, lIndex, lReserved);
     }
 
     /// <include file='IXMLElement.xml' path='doc/member[@name="IXMLElement.removeChild"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT removeChild(IXMLElement* pChildElem)
     {
-        return ((delegate* unmanaged<IXMLElement*, IXMLElement*, int>)(lpVtbl[18]))((IXMLElement*)Unsafe.AsPointer(ref this), pChildElem);
+        return ((delegate* unmanaged[MemberFunction]<IXMLElement*, IXMLElement*, int>)(lpVtbl[18]))((IXMLElement*)Unsafe.AsPointer(ref this), pChildElem);
     }
 
     public interface Interface : IDispatch.Interface
@@ -217,60 +217,60 @@ public unsafe partial struct IXMLElement : IXMLElement.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_tagName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_tagName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_tagName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_tagName;
 
         [NativeTypeName("HRESULT (IXMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLElement**, int> get_parent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLElement**, int> get_parent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT, int> setAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT, int> setAttribute;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> removeAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> removeAttribute;
 
         [NativeTypeName("HRESULT (IXMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLElementCollection**, int> get_children;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLElementCollection**, int> get_children;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_text;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_text;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_text;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_text;
 
         [NativeTypeName("HRESULT (IXMLElement *, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLElement*, int, int, int> addChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLElement*, int, int, int> addChild;
 
         [NativeTypeName("HRESULT (IXMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXMLElement*, int> removeChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXMLElement*, int> removeChild;
     }
 }

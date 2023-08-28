@@ -25,7 +25,7 @@ public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPinFlowControl*, Guid*, void**, int>)(lpVtbl[0]))((IPinFlowControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPinFlowControl*, Guid*, void**, int>)(lpVtbl[0]))((IPinFlowControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPinFlowControl*, uint>)(lpVtbl[1]))((IPinFlowControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinFlowControl*, uint>)(lpVtbl[1]))((IPinFlowControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPinFlowControl*, uint>)(lpVtbl[2]))((IPinFlowControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinFlowControl*, uint>)(lpVtbl[2]))((IPinFlowControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPinFlowControl.xml' path='doc/member[@name="IPinFlowControl.Block"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Block([NativeTypeName("DWORD")] uint dwBlockFlags, HANDLE hEvent)
     {
-        return ((delegate* unmanaged<IPinFlowControl*, uint, HANDLE, int>)(lpVtbl[3]))((IPinFlowControl*)Unsafe.AsPointer(ref this), dwBlockFlags, hEvent);
+        return ((delegate* unmanaged[MemberFunction]<IPinFlowControl*, uint, HANDLE, int>)(lpVtbl[3]))((IPinFlowControl*)Unsafe.AsPointer(ref this), dwBlockFlags, hEvent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HANDLE, int> Block;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HANDLE, int> Block;
     }
 }

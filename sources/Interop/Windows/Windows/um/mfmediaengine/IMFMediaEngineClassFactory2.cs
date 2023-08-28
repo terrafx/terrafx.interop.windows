@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineClassFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, uint>)(lpVtbl[1]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineClassFactory2*, uint>)(lpVtbl[1]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, uint>)(lpVtbl[2]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineClassFactory2*, uint>)(lpVtbl[2]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineClassFactory2.xml' path='doc/member[@name="IMFMediaEngineClassFactory2.CreateMediaKeys2"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
     [VtblIndex(3)]
     public HRESULT CreateMediaKeys2([NativeTypeName("BSTR")] char* keySystem, [NativeTypeName("BSTR")] char* defaultCdmStorePath, [NativeTypeName("BSTR")] char* inprivateCdmStorePath, IMFMediaKeys** ppKeys)
     {
-        return ((delegate* unmanaged<IMFMediaEngineClassFactory2*, char*, char*, char*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineClassFactory2*, char*, char*, char*, IMFMediaKeys**, int>)(lpVtbl[3]))((IMFMediaEngineClassFactory2*)Unsafe.AsPointer(ref this), keySystem, defaultCdmStorePath, inprivateCdmStorePath, ppKeys);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFMediaEngineClassFactory2 : IMFMediaEngineClassFa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, IMFMediaKeys **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, IMFMediaKeys**, int> CreateMediaKeys2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, IMFMediaKeys**, int> CreateMediaKeys2;
     }
 }

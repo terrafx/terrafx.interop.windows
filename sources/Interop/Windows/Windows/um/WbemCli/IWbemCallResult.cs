@@ -25,7 +25,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, Guid*, void**, int>)(lpVtbl[0]))((IWbemCallResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, Guid*, void**, int>)(lpVtbl[0]))((IWbemCallResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWbemCallResult*, uint>)(lpVtbl[1]))((IWbemCallResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, uint>)(lpVtbl[1]))((IWbemCallResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWbemCallResult*, uint>)(lpVtbl[2]))((IWbemCallResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, uint>)(lpVtbl[2]))((IWbemCallResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetResultObject"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetResultObject([NativeTypeName("long")] int lTimeout, IWbemClassObject** ppResultObject)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppResultObject);
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppResultObject);
     }
 
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetResultString"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetResultString([NativeTypeName("long")] int lTimeout, [NativeTypeName("BSTR *")] char** pstrResultString)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, int, char**, int>)(lpVtbl[4]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, pstrResultString);
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, int, char**, int>)(lpVtbl[4]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, pstrResultString);
     }
 
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetResultServices"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetResultServices([NativeTypeName("long")] int lTimeout, IWbemServices** ppServices)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, int, IWbemServices**, int>)(lpVtbl[5]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppServices);
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, int, IWbemServices**, int>)(lpVtbl[5]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, ppServices);
     }
 
     /// <include file='IWbemCallResult.xml' path='doc/member[@name="IWbemCallResult.GetCallStatus"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus)
     {
-        return ((delegate* unmanaged<IWbemCallResult*, int, int*, int>)(lpVtbl[6]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, plStatus);
+        return ((delegate* unmanaged[MemberFunction]<IWbemCallResult*, int, int*, int>)(lpVtbl[6]))((IWbemCallResult*)Unsafe.AsPointer(ref this), lTimeout, plStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> GetResultObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IWbemClassObject**, int> GetResultObject;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, int> GetResultString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> GetResultString;
 
         [NativeTypeName("HRESULT (long, IWbemServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IWbemServices**, int> GetResultServices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IWbemServices**, int> GetResultServices;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetCallStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetCallStatus;
     }
 }

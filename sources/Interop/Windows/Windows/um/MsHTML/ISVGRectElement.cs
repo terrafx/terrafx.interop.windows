@@ -25,7 +25,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGRectElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGRectElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGRectElement*, uint>)(lpVtbl[1]))((ISVGRectElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, uint>)(lpVtbl[1]))((ISVGRectElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGRectElement*, uint>)(lpVtbl[2]))((ISVGRectElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, uint>)(lpVtbl[2]))((ISVGRectElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, uint*, int>)(lpVtbl[3]))((ISVGRectElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, uint*, int>)(lpVtbl[3]))((ISVGRectElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGRectElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGRectElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGRectElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGRectElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGRectElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGRectElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_x"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(7)]
     public HRESULT putref_x(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_x"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(8)]
     public HRESULT get_x(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_y"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(9)]
     public HRESULT putref_y(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_y"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(10)]
     public HRESULT get_y(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_width"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(11)]
     public HRESULT putref_width(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_width"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(12)]
     public HRESULT get_width(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_height"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(13)]
     public HRESULT putref_height(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_height"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(14)]
     public HRESULT get_height(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_rx"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(15)]
     public HRESULT putref_rx(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_rx"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(16)]
     public HRESULT get_rx(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.putref_ry"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(17)]
     public HRESULT putref_ry(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGRectElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRectElement.xml' path='doc/member[@name="ISVGRectElement.get_ry"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
     [VtblIndex(18)]
     public HRESULT get_ry(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRectElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGRectElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -217,60 +217,60 @@ public unsafe partial struct ISVGRectElement : ISVGRectElement.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_height;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_height;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_rx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_rx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_rx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_rx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_ry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_ry;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_ry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_ry;
     }
 }

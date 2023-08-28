@@ -25,7 +25,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, Guid*, void**, int>)(lpVtbl[0]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, Guid*, void**, int>)(lpVtbl[0]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, uint>)(lpVtbl[1]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, uint>)(lpVtbl[1]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, uint>)(lpVtbl[2]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, uint>)(lpVtbl[2]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.SetSafeMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetSafeMode([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, uint, int>)(lpVtbl[3]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, uint, int>)(lpVtbl[3]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.EnsureUpdateHTML"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [VtblIndex(4)]
     public HRESULT EnsureUpdateHTML()
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, int>)(lpVtbl[4]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, int>)(lpVtbl[4]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.SetScheme"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetScheme([NativeTypeName("PCWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, char*, uint, int>)(lpVtbl[5]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, char*, uint, int>)(lpVtbl[5]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, dwFlags);
     }
 
     /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.GetScheme"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetScheme([NativeTypeName("PWSTR")] char* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IActiveDesktopP*, char*, uint*, uint, int>)(lpVtbl[6]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, pdwcchBuffer, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IActiveDesktopP*, char*, uint*, uint, int>)(lpVtbl[6]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, pdwcchBuffer, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetSafeMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetSafeMode;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EnsureUpdateHTML;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EnsureUpdateHTML;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> SetScheme;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> SetScheme;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, uint, int> GetScheme;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, uint, int> GetScheme;
     }
 }

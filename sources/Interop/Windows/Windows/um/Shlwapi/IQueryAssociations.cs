@@ -25,7 +25,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, Guid*, void**, int>)(lpVtbl[0]))((IQueryAssociations*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, Guid*, void**, int>)(lpVtbl[0]))((IQueryAssociations*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint>)(lpVtbl[1]))((IQueryAssociations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint>)(lpVtbl[1]))((IQueryAssociations*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint>)(lpVtbl[2]))((IQueryAssociations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint>)(lpVtbl[2]))((IQueryAssociations*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations.Init"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(3)]
     public HRESULT Init([NativeTypeName("ASSOCF")] uint flags, [NativeTypeName("LPCWSTR")] char* pszAssoc, HKEY hkProgid, HWND hwnd)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint, char*, HKEY, HWND, int>)(lpVtbl[3]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, pszAssoc, hkProgid, hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint, char*, HKEY, HWND, int>)(lpVtbl[3]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, pszAssoc, hkProgid, hwnd);
     }
 
     /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations.GetString"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(4)]
     public HRESULT GetString([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCWSTR")] char* pszExtra, [NativeTypeName("LPWSTR")] char* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCSTR, char*, char*, uint*, int>)(lpVtbl[4]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, str, pszExtra, pszOut, pcchOut);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint, ASSOCSTR, char*, char*, uint*, int>)(lpVtbl[4]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, str, pszExtra, pszOut, pcchOut);
     }
 
     /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations.GetKey"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(5)]
     public HRESULT GetKey([NativeTypeName("ASSOCF")] uint flags, ASSOCKEY key, [NativeTypeName("LPCWSTR")] char* pszExtra, HKEY* phkeyOut)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCKEY, char*, HKEY*, int>)(lpVtbl[5]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, key, pszExtra, phkeyOut);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint, ASSOCKEY, char*, HKEY*, int>)(lpVtbl[5]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, key, pszExtra, phkeyOut);
     }
 
     /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations.GetData"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(6)]
     public HRESULT GetData([NativeTypeName("ASSOCF")] uint flags, ASSOCDATA data, [NativeTypeName("LPCWSTR")] char* pszExtra, void* pvOut, [NativeTypeName("DWORD *")] uint* pcbOut)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCDATA, char*, void*, uint*, int>)(lpVtbl[6]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, data, pszExtra, pvOut, pcbOut);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint, ASSOCDATA, char*, void*, uint*, int>)(lpVtbl[6]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, data, pszExtra, pvOut, pcbOut);
     }
 
     /// <include file='IQueryAssociations.xml' path='doc/member[@name="IQueryAssociations.GetEnum"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
     [VtblIndex(7)]
     public HRESULT GetEnum([NativeTypeName("ASSOCF")] uint flags, ASSOCENUM assocenum, [NativeTypeName("LPCWSTR")] char* pszExtra, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut)
     {
-        return ((delegate* unmanaged<IQueryAssociations*, uint, ASSOCENUM, char*, Guid*, void**, int>)(lpVtbl[7]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, assocenum, pszExtra, riid, ppvOut);
+        return ((delegate* unmanaged[MemberFunction]<IQueryAssociations*, uint, ASSOCENUM, char*, Guid*, void**, int>)(lpVtbl[7]))((IQueryAssociations*)Unsafe.AsPointer(ref this), flags, assocenum, pszExtra, riid, ppvOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ASSOCF, LPCWSTR, HKEY, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, HKEY, HWND, int> Init;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, HKEY, HWND, int> Init;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCSTR, LPCWSTR, LPWSTR, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ASSOCSTR, char*, char*, uint*, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ASSOCSTR, char*, char*, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCKEY, LPCWSTR, HKEY *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ASSOCKEY, char*, HKEY*, int> GetKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ASSOCKEY, char*, HKEY*, int> GetKey;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCDATA, LPCWSTR, void *, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ASSOCDATA, char*, void*, uint*, int> GetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ASSOCDATA, char*, void*, uint*, int> GetData;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCENUM, LPCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ASSOCENUM, char*, Guid*, void**, int> GetEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ASSOCENUM, char*, Guid*, void**, int> GetEnum;
     }
 }

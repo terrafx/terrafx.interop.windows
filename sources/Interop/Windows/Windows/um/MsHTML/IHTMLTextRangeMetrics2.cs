@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, uint>)(lpVtbl[1]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, uint>)(lpVtbl[1]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, uint>)(lpVtbl[2]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, uint>)(lpVtbl[2]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, uint*, int>)(lpVtbl[3]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, uint*, int>)(lpVtbl[3]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLTextRangeMetrics2.xml' path='doc/member[@name="IHTMLTextRangeMetrics2.getClientRects"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(7)]
     public HRESULT getClientRects(IHTMLRectCollection** pRectCol)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, IHTMLRectCollection**, int>)(lpVtbl[7]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pRectCol);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, IHTMLRectCollection**, int>)(lpVtbl[7]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pRectCol);
     }
 
     /// <include file='IHTMLTextRangeMetrics2.xml' path='doc/member[@name="IHTMLTextRangeMetrics2.getBoundingClientRect"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
     [VtblIndex(8)]
     public HRESULT getBoundingClientRect(IHTMLRect** pRect)
     {
-        return ((delegate* unmanaged<IHTMLTextRangeMetrics2*, IHTMLRect**, int>)(lpVtbl[8]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLTextRangeMetrics2*, IHTMLRect**, int>)(lpVtbl[8]))((IHTMLTextRangeMetrics2*)Unsafe.AsPointer(ref this), pRect);
     }
 
     public interface Interface : IDispatch.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct IHTMLTextRangeMetrics2 : IHTMLTextRangeMetrics2.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLRectCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLRectCollection**, int> getClientRects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLRectCollection**, int> getClientRects;
 
         [NativeTypeName("HRESULT (IHTMLRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLRect**, int> getBoundingClientRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLRect**, int> getBoundingClientRect;
     }
 }

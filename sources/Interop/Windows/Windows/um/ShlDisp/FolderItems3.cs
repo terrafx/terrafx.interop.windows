@@ -25,7 +25,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<FolderItems3*, Guid*, void**, int>)(lpVtbl[0]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, Guid*, void**, int>)(lpVtbl[0]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<FolderItems3*, uint>)(lpVtbl[1]))((FolderItems3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, uint>)(lpVtbl[1]))((FolderItems3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<FolderItems3*, uint>)(lpVtbl[2]))((FolderItems3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, uint>)(lpVtbl[2]))((FolderItems3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<FolderItems3*, uint*, int>)(lpVtbl[3]))((FolderItems3*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, uint*, int>)(lpVtbl[3]))((FolderItems3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<FolderItems3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((FolderItems3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((FolderItems3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<FolderItems3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((FolderItems3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<FolderItems3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((FolderItems3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((FolderItems3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="FolderItems.get_Count" />
@@ -83,7 +83,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_Count([NativeTypeName("long *")] int* plCount)
     {
-        return ((delegate* unmanaged<FolderItems3*, int*, int>)(lpVtbl[7]))((FolderItems3*)Unsafe.AsPointer(ref this), plCount);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, int*, int>)(lpVtbl[7]))((FolderItems3*)Unsafe.AsPointer(ref this), plCount);
     }
 
     /// <inheritdoc cref="FolderItems.get_Application" />
@@ -91,7 +91,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_Application(IDispatch** ppid)
     {
-        return ((delegate* unmanaged<FolderItems3*, IDispatch**, int>)(lpVtbl[8]))((FolderItems3*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, IDispatch**, int>)(lpVtbl[8]))((FolderItems3*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="FolderItems.get_Parent" />
@@ -99,7 +99,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_Parent(IDispatch** ppid)
     {
-        return ((delegate* unmanaged<FolderItems3*, IDispatch**, int>)(lpVtbl[9]))((FolderItems3*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, IDispatch**, int>)(lpVtbl[9]))((FolderItems3*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="FolderItems.Item" />
@@ -107,7 +107,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT Item(VARIANT index, FolderItem** ppid)
     {
-        return ((delegate* unmanaged<FolderItems3*, VARIANT, FolderItem**, int>)(lpVtbl[10]))((FolderItems3*)Unsafe.AsPointer(ref this), index, ppid);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, VARIANT, FolderItem**, int>)(lpVtbl[10]))((FolderItems3*)Unsafe.AsPointer(ref this), index, ppid);
     }
 
     /// <inheritdoc cref="FolderItems._NewEnum" />
@@ -115,7 +115,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT _NewEnum(IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<FolderItems3*, IUnknown**, int>)(lpVtbl[11]))((FolderItems3*)Unsafe.AsPointer(ref this), ppunk);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, IUnknown**, int>)(lpVtbl[11]))((FolderItems3*)Unsafe.AsPointer(ref this), ppunk);
     }
 
     /// <inheritdoc cref="FolderItems2.InvokeVerbEx" />
@@ -123,7 +123,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT InvokeVerbEx(VARIANT vVerb, VARIANT vArgs)
     {
-        return ((delegate* unmanaged<FolderItems3*, VARIANT, VARIANT, int>)(lpVtbl[12]))((FolderItems3*)Unsafe.AsPointer(ref this), vVerb, vArgs);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, VARIANT, VARIANT, int>)(lpVtbl[12]))((FolderItems3*)Unsafe.AsPointer(ref this), vVerb, vArgs);
     }
 
     /// <include file='FolderItems3.xml' path='doc/member[@name="FolderItems3.Filter"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Filter([NativeTypeName("long")] int grfFlags, [NativeTypeName("BSTR")] char* bstrFileSpec)
     {
-        return ((delegate* unmanaged<FolderItems3*, int, char*, int>)(lpVtbl[13]))((FolderItems3*)Unsafe.AsPointer(ref this), grfFlags, bstrFileSpec);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, int, char*, int>)(lpVtbl[13]))((FolderItems3*)Unsafe.AsPointer(ref this), grfFlags, bstrFileSpec);
     }
 
     /// <include file='FolderItems3.xml' path='doc/member[@name="FolderItems3.get_Verbs"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_Verbs(FolderItemVerbs** ppfic)
     {
-        return ((delegate* unmanaged<FolderItems3*, FolderItemVerbs**, int>)(lpVtbl[14]))((FolderItems3*)Unsafe.AsPointer(ref this), ppfic);
+        return ((delegate* unmanaged[MemberFunction]<FolderItems3*, FolderItemVerbs**, int>)(lpVtbl[14]))((FolderItems3*)Unsafe.AsPointer(ref this), ppfic);
     }
 
     public interface Interface : FolderItems2.Interface
@@ -155,48 +155,48 @@ public unsafe partial struct FolderItems3 : FolderItems3.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (VARIANT, FolderItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, FolderItem**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, FolderItem**, int> Item;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> _NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> _NewEnum;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, int> InvokeVerbEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, VARIANT, int> InvokeVerbEx;
 
         [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char*, int> Filter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char*, int> Filter;
 
         [NativeTypeName("HRESULT (FolderItemVerbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItemVerbs**, int> get_Verbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FolderItemVerbs**, int> get_Verbs;
     }
 }

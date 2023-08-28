@@ -26,7 +26,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, uint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[2]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, uint>)(lpVtbl[2]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDxcBlob.GetBufferPointer" />
@@ -53,7 +53,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("LPVOID")]
     public void* GetBufferPointer()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, void*>)(lpVtbl[3]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, void*>)(lpVtbl[3]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDxcBlob.GetBufferSize" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("SIZE_T")]
     public nuint GetBufferSize()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[4]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, nuint>)(lpVtbl[4]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDxcBlobEncoding.GetEncoding" />
@@ -70,7 +70,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
     }
 
     /// <include file='IDxcBlobUtf8.xml' path='doc/member[@name="IDxcBlobUtf8.GetStringPointer"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("LPCSTR")]
     public sbyte* GetStringPointer()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, sbyte*>)(lpVtbl[6]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, sbyte*>)(lpVtbl[6]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDxcBlobUtf8.xml' path='doc/member[@name="IDxcBlobUtf8.GetStringLength"]/*' />
@@ -88,7 +88,7 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
     [return: NativeTypeName("SIZE_T")]
     public nuint GetStringLength()
     {
-        return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDxcBlobEncoding.Interface
@@ -106,27 +106,27 @@ public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetBufferPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetBufferPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint> GetBufferSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint> GetBufferSize;
 
         [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, uint*, int> GetEncoding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, uint*, int> GetEncoding;
 
         [NativeTypeName("LPCSTR () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*> GetStringPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*> GetStringPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint> GetStringLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint> GetStringLength;
     }
 }

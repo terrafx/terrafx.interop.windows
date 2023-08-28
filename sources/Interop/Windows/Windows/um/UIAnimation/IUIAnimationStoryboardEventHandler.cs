@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboardEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboardEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboardEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationStoryboardEventHandler.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler.OnStoryboardStatusChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
     [VtblIndex(3)]
     public HRESULT OnStoryboardStatusChanged(IUIAnimationStoryboard* storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int>)(lpVtbl[3]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), storyboard, newStatus, previousStatus);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int>)(lpVtbl[3]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), storyboard, newStatus, previousStatus);
     }
 
     /// <include file='IUIAnimationStoryboardEventHandler.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler.OnStoryboardUpdated"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
     [VtblIndex(4)]
     public HRESULT OnStoryboardUpdated(IUIAnimationStoryboard* storyboard)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, int>)(lpVtbl[4]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), storyboard);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, int>)(lpVtbl[4]))((IUIAnimationStoryboardEventHandler*)Unsafe.AsPointer(ref this), storyboard);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int> OnStoryboardStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int> OnStoryboardStatusChanged;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, int> OnStoryboardUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard*, int> OnStoryboardUpdated;
     }
 }

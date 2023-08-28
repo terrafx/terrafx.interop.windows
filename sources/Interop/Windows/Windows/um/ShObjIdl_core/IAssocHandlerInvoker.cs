@@ -25,7 +25,7 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAssocHandlerInvoker*, Guid*, void**, int>)(lpVtbl[0]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAssocHandlerInvoker*, Guid*, void**, int>)(lpVtbl[0]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAssocHandlerInvoker*, uint>)(lpVtbl[1]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAssocHandlerInvoker*, uint>)(lpVtbl[1]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAssocHandlerInvoker*, uint>)(lpVtbl[2]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAssocHandlerInvoker*, uint>)(lpVtbl[2]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAssocHandlerInvoker.xml' path='doc/member[@name="IAssocHandlerInvoker.SupportsSelection"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
     [VtblIndex(3)]
     public HRESULT SupportsSelection()
     {
-        return ((delegate* unmanaged<IAssocHandlerInvoker*, int>)(lpVtbl[3]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAssocHandlerInvoker*, int>)(lpVtbl[3]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAssocHandlerInvoker.xml' path='doc/member[@name="IAssocHandlerInvoker.Invoke"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
     [VtblIndex(4)]
     public HRESULT Invoke()
     {
-        return ((delegate* unmanaged<IAssocHandlerInvoker*, int>)(lpVtbl[4]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAssocHandlerInvoker*, int>)(lpVtbl[4]))((IAssocHandlerInvoker*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SupportsSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SupportsSelection;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Invoke;
     }
 }

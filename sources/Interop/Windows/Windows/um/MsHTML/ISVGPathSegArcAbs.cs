@@ -25,7 +25,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, uint>)(lpVtbl[1]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, uint>)(lpVtbl[1]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, uint>)(lpVtbl[2]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, uint>)(lpVtbl[2]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, uint*, int>)(lpVtbl[3]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, uint*, int>)(lpVtbl[3]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_x"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(7)]
     public HRESULT put_x(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float, int>)(lpVtbl[7]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float, int>)(lpVtbl[7]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_x"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_x(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[8]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[8]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_y"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(9)]
     public HRESULT put_y(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float, int>)(lpVtbl[9]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float, int>)(lpVtbl[9]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_y"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_y(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[10]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[10]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_r1"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(11)]
     public HRESULT put_r1(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float, int>)(lpVtbl[11]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float, int>)(lpVtbl[11]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_r1"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_r1(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[12]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[12]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_r2"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(13)]
     public HRESULT put_r2(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float, int>)(lpVtbl[13]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float, int>)(lpVtbl[13]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_r2"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(14)]
     public HRESULT get_r2(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[14]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[14]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_angle"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(15)]
     public HRESULT put_angle(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float, int>)(lpVtbl[15]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float, int>)(lpVtbl[15]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_angle"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(16)]
     public HRESULT get_angle(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[16]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, float*, int>)(lpVtbl[16]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_largeArcFlag"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(17)]
     public HRESULT put_largeArcFlag([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, short, int>)(lpVtbl[17]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, short, int>)(lpVtbl[17]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_largeArcFlag"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(18)]
     public HRESULT get_largeArcFlag([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, short*, int>)(lpVtbl[18]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, short*, int>)(lpVtbl[18]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.put_sweepFlag"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(19)]
     public HRESULT put_sweepFlag([NativeTypeName("VARIANT_BOOL")] short v)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, short, int>)(lpVtbl[19]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, short, int>)(lpVtbl[19]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegArcAbs.xml' path='doc/member[@name="ISVGPathSegArcAbs.get_sweepFlag"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
     [VtblIndex(20)]
     public HRESULT get_sweepFlag([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegArcAbs*, short*, int>)(lpVtbl[20]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegArcAbs*, short*, int>)(lpVtbl[20]))((ISVGPathSegArcAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -239,66 +239,66 @@ public unsafe partial struct ISVGPathSegArcAbs : ISVGPathSegArcAbs.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_x;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_x;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_y;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_y;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_r1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_r1;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_r1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_r1;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_r2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_r2;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_r2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_r2;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_angle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_angle;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_angle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_angle;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_largeArcFlag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_largeArcFlag;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_largeArcFlag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_largeArcFlag;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_sweepFlag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_sweepFlag;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_sweepFlag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_sweepFlag;
     }
 }

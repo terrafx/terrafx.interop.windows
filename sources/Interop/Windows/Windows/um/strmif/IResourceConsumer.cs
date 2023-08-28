@@ -25,7 +25,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer.AcquireResource"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
     [VtblIndex(3)]
     public HRESULT AcquireResource([NativeTypeName("LONG")] int idResource)
     {
-        return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
+        return ((delegate* unmanaged[MemberFunction]<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
     }
 
     /// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer.ReleaseResource"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
     [VtblIndex(4)]
     public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)
     {
-        return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
+        return ((delegate* unmanaged[MemberFunction]<IResourceConsumer*, int, int>)(lpVtbl[4]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> AcquireResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> AcquireResource;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> ReleaseResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> ReleaseResource;
     }
 }

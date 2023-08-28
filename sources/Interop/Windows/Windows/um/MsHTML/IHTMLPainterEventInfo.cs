@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, uint>)(lpVtbl[1]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, uint>)(lpVtbl[1]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, uint>)(lpVtbl[2]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, uint>)(lpVtbl[2]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLPainterEventInfo.xml' path='doc/member[@name="IHTMLPainterEventInfo.GetEventInfoFlags"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [VtblIndex(3)]
     public HRESULT GetEventInfoFlags([NativeTypeName("long *")] int* plEventInfoFlags)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, int*, int>)(lpVtbl[3]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), plEventInfoFlags);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, int*, int>)(lpVtbl[3]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), plEventInfoFlags);
     }
 
     /// <include file='IHTMLPainterEventInfo.xml' path='doc/member[@name="IHTMLPainterEventInfo.GetEventTarget"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [VtblIndex(4)]
     public HRESULT GetEventTarget(IHTMLElement** ppElement)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, IHTMLElement**, int>)(lpVtbl[4]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), ppElement);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, IHTMLElement**, int>)(lpVtbl[4]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), ppElement);
     }
 
     /// <include file='IHTMLPainterEventInfo.xml' path='doc/member[@name="IHTMLPainterEventInfo.SetCursor"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [VtblIndex(5)]
     public HRESULT SetCursor([NativeTypeName("LONG")] int lPartID)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, int, int>)(lpVtbl[5]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, int, int>)(lpVtbl[5]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID);
     }
 
     /// <include file='IHTMLPainterEventInfo.xml' path='doc/member[@name="IHTMLPainterEventInfo.StringFromPartID"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
     [VtblIndex(6)]
     public HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] char** pbstrPart)
     {
-        return ((delegate* unmanaged<IHTMLPainterEventInfo*, int, char**, int>)(lpVtbl[6]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID, pbstrPart);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterEventInfo*, int, char**, int>)(lpVtbl[6]))((IHTMLPainterEventInfo*)Unsafe.AsPointer(ref this), lPartID, pbstrPart);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetEventInfoFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetEventInfoFlags;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetEventTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> GetEventTarget;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetCursor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetCursor;
 
         [NativeTypeName("HRESULT (LONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char**, int> StringFromPartID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> StringFromPartID;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint>)(lpVtbl[1]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint>)(lpVtbl[1]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint>)(lpVtbl[2]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint>)(lpVtbl[2]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint*, int>)(lpVtbl[3]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint*, int>)(lpVtbl[3]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_Application" />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(7)]
     public HRESULT get_Application(IDispatch** ppid)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[7]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[7]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_Parent" />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(8)]
     public HRESULT get_Parent(IDispatch** ppid)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[8]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[8]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_Folder" />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(9)]
     public HRESULT get_Folder(Folder** ppid)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, Folder**, int>)(lpVtbl[9]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, Folder**, int>)(lpVtbl[9]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.SelectedItems" />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(10)]
     public HRESULT SelectedItems(FolderItems** ppid)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, FolderItems**, int>)(lpVtbl[10]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, FolderItems**, int>)(lpVtbl[10]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_FocusedItem" />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(11)]
     public HRESULT get_FocusedItem(FolderItem** ppid)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, FolderItem**, int>)(lpVtbl[11]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, FolderItem**, int>)(lpVtbl[11]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppid);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.SelectItem" />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(12)]
     public HRESULT SelectItem(VARIANT* pvfi, int dwFlags)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, VARIANT*, int, int>)(lpVtbl[12]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pvfi, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, VARIANT*, int, int>)(lpVtbl[12]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pvfi, dwFlags);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.PopupItemMenu" />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(13)]
     public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] char** pbs)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, FolderItem*, VARIANT, VARIANT, char**, int>)(lpVtbl[13]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, FolderItem*, VARIANT, VARIANT, char**, int>)(lpVtbl[13]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_Script" />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(14)]
     public HRESULT get_Script(IDispatch** ppDisp)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[14]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppDisp);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, IDispatch**, int>)(lpVtbl[14]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
     /// <inheritdoc cref="IShellFolderViewDual.get_ViewOptions" />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(15)]
     public HRESULT get_ViewOptions([NativeTypeName("long *")] int* plViewOptions)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, int*, int>)(lpVtbl[15]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), plViewOptions);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, int*, int>)(lpVtbl[15]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), plViewOptions);
     }
 
     /// <include file='IShellFolderViewDual2.xml' path='doc/member[@name="IShellFolderViewDual2.get_CurrentViewMode"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(16)]
     public HRESULT get_CurrentViewMode(uint* pViewMode)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint*, int>)(lpVtbl[16]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pViewMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint*, int>)(lpVtbl[16]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), pViewMode);
     }
 
     /// <include file='IShellFolderViewDual2.xml' path='doc/member[@name="IShellFolderViewDual2.put_CurrentViewMode"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(17)]
     public HRESULT put_CurrentViewMode(uint ViewMode)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, uint, int>)(lpVtbl[17]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ViewMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, uint, int>)(lpVtbl[17]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), ViewMode);
     }
 
     /// <include file='IShellFolderViewDual2.xml' path='doc/member[@name="IShellFolderViewDual2.SelectItemRelative"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
     [VtblIndex(18)]
     public HRESULT SelectItemRelative(int iRelative)
     {
-        return ((delegate* unmanaged<IShellFolderViewDual2*, int, int>)(lpVtbl[18]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), iRelative);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderViewDual2*, int, int>)(lpVtbl[18]))((IShellFolderViewDual2*)Unsafe.AsPointer(ref this), iRelative);
     }
 
     public interface Interface : IShellFolderViewDual.Interface
@@ -190,60 +190,60 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (Folder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Folder**, int> get_Folder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Folder**, int> get_Folder;
 
         [NativeTypeName("HRESULT (FolderItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItems**, int> SelectedItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FolderItems**, int> SelectedItems;
 
         [NativeTypeName("HRESULT (FolderItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItem**, int> get_FocusedItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FolderItem**, int> get_FocusedItem;
 
         [NativeTypeName("HRESULT (VARIANT *, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int, int> SelectItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int, int> SelectItem;
 
         [NativeTypeName("HRESULT (FolderItem *, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, char**, int> PopupItemMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FolderItem*, VARIANT, VARIANT, char**, int> PopupItemMenu;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Script;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_Script;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ViewOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ViewOptions;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_CurrentViewMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_CurrentViewMode;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> put_CurrentViewMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> put_CurrentViewMode;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SelectItemRelative;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SelectItemRelative;
     }
 }

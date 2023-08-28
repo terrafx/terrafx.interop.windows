@@ -25,7 +25,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[1]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint>)(lpVtbl[1]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[2]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint>)(lpVtbl[2]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_addressSection"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[3]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[3]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_addressOffset"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[4]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[4]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_relativeVirtualAddress"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[5]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[5]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_virtualAddress"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, ulong*, int>)(lpVtbl[6]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, ulong*, int>)(lpVtbl[6]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_lengthBlock"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[7]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[7]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_lengthLocals"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[8]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[8]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_lengthParams"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[9]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[9]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_maxStack"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[10]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[10]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_lengthProlog"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[11]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[11]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_lengthSavedRegisters"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[12]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[12]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_program"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT get_program([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, char**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, char**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_systemExceptionHandling"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT get_systemExceptionHandling(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[14]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, BOOL*, int>)(lpVtbl[14]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_cplusplusExceptionHandling"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[15]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, BOOL*, int>)(lpVtbl[15]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_functionStart"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT get_functionStart(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[16]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, BOOL*, int>)(lpVtbl[16]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_allocatesBasePointer"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT get_allocatesBasePointer(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[17]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, BOOL*, int>)(lpVtbl[17]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_type"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[18]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, uint*, int>)(lpVtbl[18]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.get_functionParent"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT get_functionParent(IDiaFrameData** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int>)(lpVtbl[19]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, IDiaFrameData**, int>)(lpVtbl[19]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaFrameData.xml' path='doc/member[@name="IDiaFrameData.execute"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
     [VtblIndex(20)]
     public HRESULT execute(IDiaStackWalkFrame* frame)
     {
-        return ((delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
+        return ((delegate* unmanaged[MemberFunction]<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
     }
 
     public interface Interface : IUnknown.Interface
@@ -251,66 +251,66 @@ public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lengthBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lengthBlock;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lengthLocals;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lengthLocals;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lengthParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lengthParams;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_maxStack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_maxStack;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lengthProlog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lengthProlog;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lengthSavedRegisters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lengthSavedRegisters;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_program;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_program;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_systemExceptionHandling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_systemExceptionHandling;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_cplusplusExceptionHandling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_cplusplusExceptionHandling;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_functionStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_functionStart;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_allocatesBasePointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_allocatesBasePointer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_type;
 
         [NativeTypeName("HRESULT (IDiaFrameData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaFrameData**, int> get_functionParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaFrameData**, int> get_functionParent;
 
         [NativeTypeName("HRESULT (IDiaStackWalkFrame *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaStackWalkFrame*, int> execute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaStackWalkFrame*, int> execute;
     }
 }

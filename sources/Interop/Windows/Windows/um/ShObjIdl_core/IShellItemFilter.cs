@@ -25,7 +25,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[1]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemFilter*, uint>)(lpVtbl[1]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[2]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemFilter*, uint>)(lpVtbl[2]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter.IncludeItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
     [VtblIndex(3)]
     public HRESULT IncludeItem(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='IShellItemFilter.xml' path='doc/member[@name="IShellItemFilter.GetEnumFlagsForItem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
     {
-        return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> IncludeItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> IncludeItem;
 
         [NativeTypeName("HRESULT (IShellItem *, SHCONTF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint*, int> GetEnumFlagsForItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint*, int> GetEnumFlagsForItem;
     }
 }

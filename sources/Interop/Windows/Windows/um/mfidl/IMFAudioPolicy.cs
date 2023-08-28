@@ -25,7 +25,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[1]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, uint>)(lpVtbl[1]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[2]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, uint>)(lpVtbl[2]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetGroupingParam"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[3]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), rguidClass);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, Guid*, int>)(lpVtbl[3]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), rguidClass);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetGroupingParam"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetGroupingParam(Guid* pguidClass)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetDisplayName"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, char*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, char*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetDisplayName"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] char** pszName)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, char**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, char**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetIconPath"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] char* pszPath)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, char*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, char*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetIconPath"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] char** pszPath)
     {
-        return ((delegate* unmanaged<IMFAudioPolicy*, char**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
+        return ((delegate* unmanaged[MemberFunction]<IMFAudioPolicy*, char**, int>)(lpVtbl[8]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetGroupingParam;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetGroupingParam;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGroupingParam;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGroupingParam;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetIconPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetIconPath;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetIconPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetIconPath;
     }
 }

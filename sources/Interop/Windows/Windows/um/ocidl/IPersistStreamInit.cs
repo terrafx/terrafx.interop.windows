@@ -25,7 +25,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, uint>)(lpVtbl[1]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, uint>)(lpVtbl[1]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, uint>)(lpVtbl[2]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, uint>)(lpVtbl[2]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, Guid*, int>)(lpVtbl[3]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, Guid*, int>)(lpVtbl[3]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.IsDirty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(4)]
     public HRESULT IsDirty()
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, int>)(lpVtbl[4]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, int>)(lpVtbl[4]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.Load"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(5)]
     public HRESULT Load([NativeTypeName("LPSTREAM")] IStream* pStm)
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, IStream*, int>)(lpVtbl[5]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, IStream*, int>)(lpVtbl[5]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm);
     }
 
     /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.Save"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(6)]
     public HRESULT Save([NativeTypeName("LPSTREAM")] IStream* pStm, BOOL fClearDirty)
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, IStream*, BOOL, int>)(lpVtbl[6]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, IStream*, BOOL, int>)(lpVtbl[6]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
     }
 
     /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.GetSizeMax"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(7)]
     public HRESULT GetSizeMax(ULARGE_INTEGER* pCbSize)
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pCbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pCbSize);
     }
 
     /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.InitNew"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
     [VtblIndex(8)]
     public HRESULT InitNew()
     {
-        return ((delegate* unmanaged<IPersistStreamInit*, int>)(lpVtbl[8]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStreamInit*, int>)(lpVtbl[8]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IPersist.Interface
@@ -116,30 +116,30 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDirty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> Load;
 
         [NativeTypeName("HRESULT (LPSTREAM, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, BOOL, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitNew;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitNew;
     }
 }

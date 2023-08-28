@@ -25,7 +25,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, Guid*, void**, int>)(lpVtbl[0]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, Guid*, void**, int>)(lpVtbl[0]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, uint>)(lpVtbl[1]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, uint>)(lpVtbl[1]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, uint>)(lpVtbl[2]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, uint>)(lpVtbl[2]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonAdminTools"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(3)]
     public HRESULT get_CommonAdminTools([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[3]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[3]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonOemLinks"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(4)]
     public HRESULT get_CommonOemLinks([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[4]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[4]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonPrograms"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(5)]
     public HRESULT get_CommonPrograms([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[5]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[5]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonStartMenu"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(6)]
     public HRESULT get_CommonStartMenu([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[6]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[6]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonStartup"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(7)]
     public HRESULT get_CommonStartup([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[7]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[7]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_CommonTemplates"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(8)]
     public HRESULT get_CommonTemplates([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[8]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[8]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_LocalizedResources"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(9)]
     public HRESULT get_LocalizedResources([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[9]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[9]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFiles"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(10)]
     public HRESULT get_ProgramFiles([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[10]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[10]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesCommon"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(11)]
     public HRESULT get_ProgramFilesCommon([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[11]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[11]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesCommonHost"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(12)]
     public HRESULT get_ProgramFilesCommonHost([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[12]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[12]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesCommonX64"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(13)]
     public HRESULT get_ProgramFilesCommonX64([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[13]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[13]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesCommonX86"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(14)]
     public HRESULT get_ProgramFilesCommonX86([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[14]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[14]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesCommonArm"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(15)]
     public HRESULT get_ProgramFilesCommonArm([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[15]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[15]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesHost"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(16)]
     public HRESULT get_ProgramFilesHost([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[16]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[16]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesX64"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(17)]
     public HRESULT get_ProgramFilesX64([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[17]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[17]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesX86"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(18)]
     public HRESULT get_ProgramFilesX86([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[18]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[18]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_ProgramFilesArm"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(19)]
     public HRESULT get_ProgramFilesArm([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[19]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[19]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISystemDataPathsInterop.xml' path='doc/member[@name="ISystemDataPathsInterop.get_Resource"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
     [VtblIndex(20)]
     public HRESULT get_Resource([NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<ISystemDataPathsInterop*, char**, int>)(lpVtbl[20]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISystemDataPathsInterop*, char**, int>)(lpVtbl[20]))((ISystemDataPathsInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -251,66 +251,66 @@ public unsafe partial struct ISystemDataPathsInterop : ISystemDataPathsInterop.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonAdminTools;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonAdminTools;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonOemLinks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonOemLinks;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonPrograms;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonPrograms;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonStartMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonStartMenu;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonStartup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonStartup;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_CommonTemplates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_CommonTemplates;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_LocalizedResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_LocalizedResources;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFiles;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesCommon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesCommon;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesCommonHost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesCommonHost;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesCommonX64;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesCommonX64;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesCommonX86;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesCommonX86;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesCommonArm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesCommonArm;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesHost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesHost;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesX64;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesX64;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesX86;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesX86;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ProgramFilesArm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ProgramFilesArm;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Resource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Resource;
     }
 }

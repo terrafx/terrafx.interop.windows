@@ -26,7 +26,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, uint>)(lpVtbl[1]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, uint>)(lpVtbl[1]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, uint>)(lpVtbl[2]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, uint>)(lpVtbl[2]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -52,7 +52,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, uint*, int>)(lpVtbl[3]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, uint*, int>)(lpVtbl[3]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -60,7 +60,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -68,7 +68,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -76,7 +76,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_Id"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(7)]
     public HRESULT get_Id(VARIANT* Id)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, VARIANT*, int>)(lpVtbl[7]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Id);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, VARIANT*, int>)(lpVtbl[7]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Id);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_RecoContext"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(8)]
     public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechRecoContext**, int>)(lpVtbl[8]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RecoContext);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, ISpeechRecoContext**, int>)(lpVtbl[8]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RecoContext);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.put_State"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(9)]
     public HRESULT put_State(SpeechGrammarState State)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState, int>)(lpVtbl[9]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, SpeechGrammarState, int>)(lpVtbl[9]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_State"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(10)]
     public HRESULT get_State(SpeechGrammarState* State)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState*, int>)(lpVtbl[10]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, SpeechGrammarState*, int>)(lpVtbl[10]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_Rules"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(11)]
     public HRESULT get_Rules(ISpeechGrammarRules** Rules)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechGrammarRules**, int>)(lpVtbl[11]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Rules);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, ISpeechGrammarRules**, int>)(lpVtbl[11]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Rules);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.Reset"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(12)]
     public HRESULT Reset([NativeTypeName("SpeechLanguageId")] int NewLanguage = 0)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, int, int>)(lpVtbl[12]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), NewLanguage);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, int, int>)(lpVtbl[12]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), NewLanguage);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromFile"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(13)]
     public HRESULT CmdLoadFromFile([NativeTypeName("const BSTR")] char* FileName, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, SpeechLoadOption, int>)(lpVtbl[13]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), FileName, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, SpeechLoadOption, int>)(lpVtbl[13]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), FileName, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromObject"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(14)]
     public HRESULT CmdLoadFromObject([NativeTypeName("const BSTR")] char* ClassId, [NativeTypeName("const BSTR")] char* GrammarName, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, char*, SpeechLoadOption, int>)(lpVtbl[14]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ClassId, GrammarName, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, char*, SpeechLoadOption, int>)(lpVtbl[14]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ClassId, GrammarName, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromResource"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(15)]
     public HRESULT CmdLoadFromResource([NativeTypeName("long")] int hModule, VARIANT ResourceName, VARIANT ResourceType, [NativeTypeName("SpeechLanguageId")] int LanguageId, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, int, VARIANT, VARIANT, int, SpeechLoadOption, int>)(lpVtbl[15]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), hModule, ResourceName, ResourceType, LanguageId, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, int, VARIANT, VARIANT, int, SpeechLoadOption, int>)(lpVtbl[15]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), hModule, ResourceName, ResourceType, LanguageId, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromMemory"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(16)]
     public HRESULT CmdLoadFromMemory(VARIANT GrammarData, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, VARIANT, SpeechLoadOption, int>)(lpVtbl[16]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), GrammarData, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, VARIANT, SpeechLoadOption, int>)(lpVtbl[16]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), GrammarData, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromProprietaryGrammar"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(17)]
     public HRESULT CmdLoadFromProprietaryGrammar([NativeTypeName("const BSTR")] char* ProprietaryGuid, [NativeTypeName("const BSTR")] char* ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, char*, VARIANT, SpeechLoadOption, int>)(lpVtbl[17]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ProprietaryGuid, ProprietaryString, ProprietaryData, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, char*, VARIANT, SpeechLoadOption, int>)(lpVtbl[17]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ProprietaryGuid, ProprietaryString, ProprietaryData, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdSetRuleState"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(18)]
     public HRESULT CmdSetRuleState([NativeTypeName("const BSTR")] char* Name, SpeechRuleState State)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, SpeechRuleState, int>)(lpVtbl[18]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Name, State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, SpeechRuleState, int>)(lpVtbl[18]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Name, State);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdSetRuleIdState"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(19)]
     public HRESULT CmdSetRuleIdState([NativeTypeName("long")] int RuleId, SpeechRuleState State)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, int, SpeechRuleState, int>)(lpVtbl[19]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RuleId, State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, int, SpeechRuleState, int>)(lpVtbl[19]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RuleId, State);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationLoad"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(20)]
     public HRESULT DictationLoad([NativeTypeName("const BSTR")] char* TopicName = null, SpeechLoadOption LoadOption = SLOStatic)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, SpeechLoadOption, int>)(lpVtbl[20]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), TopicName, LoadOption);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, SpeechLoadOption, int>)(lpVtbl[20]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), TopicName, LoadOption);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationUnload"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(21)]
     public HRESULT DictationUnload()
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, int>)(lpVtbl[21]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, int>)(lpVtbl[21]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationSetState"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(22)]
     public HRESULT DictationSetState(SpeechRuleState State)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechRuleState, int>)(lpVtbl[22]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, SpeechRuleState, int>)(lpVtbl[22]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.SetWordSequenceData"]/*' />
@@ -212,7 +212,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(23)]
     public HRESULT SetWordSequenceData([NativeTypeName("const BSTR")] char* Text, [NativeTypeName("long")] int TextLength, ISpeechTextSelectionInformation* Info)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, int, ISpeechTextSelectionInformation*, int>)(lpVtbl[23]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Text, TextLength, Info);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, int, ISpeechTextSelectionInformation*, int>)(lpVtbl[23]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Text, TextLength, Info);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.SetTextSelection"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(24)]
     public HRESULT SetTextSelection(ISpeechTextSelectionInformation* Info)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechTextSelectionInformation*, int>)(lpVtbl[24]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Info);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, ISpeechTextSelectionInformation*, int>)(lpVtbl[24]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Info);
     }
 
     /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.IsPronounceable"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
     [VtblIndex(25)]
     public HRESULT IsPronounceable([NativeTypeName("const BSTR")] char* Word, SpeechWordPronounceable* WordPronounceable)
     {
-        return ((delegate* unmanaged<ISpeechRecoGrammar*, char*, SpeechWordPronounceable*, int>)(lpVtbl[25]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Word, WordPronounceable);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecoGrammar*, char*, SpeechWordPronounceable*, int>)(lpVtbl[25]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Word, WordPronounceable);
     }
 
     public interface Interface : IDispatch.Interface
@@ -295,81 +295,81 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_Id;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_Id;
 
         [NativeTypeName("HRESULT (ISpeechRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechRecoContext**, int> get_RecoContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecoContext**, int> get_RecoContext;
 
         [NativeTypeName("HRESULT (SpeechGrammarState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechGrammarState, int> put_State;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechGrammarState, int> put_State;
 
         [NativeTypeName("HRESULT (SpeechGrammarState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechGrammarState*, int> get_State;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechGrammarState*, int> get_State;
 
         [NativeTypeName("HRESULT (ISpeechGrammarRules **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechGrammarRules**, int> get_Rules;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechGrammarRules**, int> get_Rules;
 
         [NativeTypeName("HRESULT (SpeechLanguageId) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> Reset;
 
         [NativeTypeName("HRESULT (const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, SpeechLoadOption, int> CmdLoadFromFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SpeechLoadOption, int> CmdLoadFromFile;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, SpeechLoadOption, int> CmdLoadFromObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, SpeechLoadOption, int> CmdLoadFromObject;
 
         [NativeTypeName("HRESULT (long, VARIANT, VARIANT, SpeechLanguageId, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, VARIANT, VARIANT, int, SpeechLoadOption, int> CmdLoadFromResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, VARIANT, VARIANT, int, SpeechLoadOption, int> CmdLoadFromResource;
 
         [NativeTypeName("HRESULT (VARIANT, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, SpeechLoadOption, int> CmdLoadFromMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, SpeechLoadOption, int> CmdLoadFromMemory;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, VARIANT, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT, SpeechLoadOption, int> CmdLoadFromProprietaryGrammar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT, SpeechLoadOption, int> CmdLoadFromProprietaryGrammar;
 
         [NativeTypeName("HRESULT (const BSTR, SpeechRuleState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, SpeechRuleState, int> CmdSetRuleState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SpeechRuleState, int> CmdSetRuleState;
 
         [NativeTypeName("HRESULT (long, SpeechRuleState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, SpeechRuleState, int> CmdSetRuleIdState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, SpeechRuleState, int> CmdSetRuleIdState;
 
         [NativeTypeName("HRESULT (const BSTR, SpeechLoadOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, SpeechLoadOption, int> DictationLoad;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SpeechLoadOption, int> DictationLoad;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DictationUnload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DictationUnload;
 
         [NativeTypeName("HRESULT (SpeechRuleState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechRuleState, int> DictationSetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechRuleState, int> DictationSetState;
 
         [NativeTypeName("HRESULT (const BSTR, long, ISpeechTextSelectionInformation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, ISpeechTextSelectionInformation*, int> SetWordSequenceData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, ISpeechTextSelectionInformation*, int> SetWordSequenceData;
 
         [NativeTypeName("HRESULT (ISpeechTextSelectionInformation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechTextSelectionInformation*, int> SetTextSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechTextSelectionInformation*, int> SetTextSelection;
 
         [NativeTypeName("HRESULT (const BSTR, SpeechWordPronounceable *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, SpeechWordPronounceable*, int> IsPronounceable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SpeechWordPronounceable*, int> IsPronounceable;
     }
 }

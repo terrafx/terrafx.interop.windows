@@ -25,7 +25,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellFolderBand*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellFolderBand*, uint>)(lpVtbl[1]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, uint>)(lpVtbl[1]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellFolderBand*, uint>)(lpVtbl[2]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, uint>)(lpVtbl[2]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.InitializeSFB"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [VtblIndex(3)]
     public HRESULT InitializeSFB(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<IShellFolderBand*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IShellFolderBand*)Unsafe.AsPointer(ref this), psf, pidl);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IShellFolderBand*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
     /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.SetBandInfoSFB"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi)
     {
-        return ((delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[4]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[4]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
     }
 
     /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.GetBandInfoSFB"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi)
     {
-        return ((delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[5]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[5]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> InitializeSFB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellFolder*, ITEMIDLIST*, int> InitializeSFB;
 
         [NativeTypeName("HRESULT (PBANDINFOSFB) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BANDINFOSFB*, int> SetBandInfoSFB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BANDINFOSFB*, int> SetBandInfoSFB;
 
         [NativeTypeName("HRESULT (PBANDINFOSFB) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BANDINFOSFB*, int> GetBandInfoSFB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BANDINFOSFB*, int> GetBandInfoSFB;
     }
 }

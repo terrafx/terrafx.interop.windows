@@ -25,7 +25,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, uint>)(lpVtbl[1]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, uint>)(lpVtbl[1]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, uint>)(lpVtbl[2]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, uint>)(lpVtbl[2]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, uint*, int>)(lpVtbl[3]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, uint*, int>)(lpVtbl[3]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_StartLba" />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(7)]
     public HRESULT get_StartLba([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[7]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[7]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_SectorCount" />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(8)]
     public HRESULT get_SectorCount([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[8]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[8]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_LastReadLba" />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(9)]
     public HRESULT get_LastReadLba([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[9]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[9]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_LastWrittenLba" />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(10)]
     public HRESULT get_LastWrittenLba([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[10]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[10]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_TotalSystemBuffer" />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(11)]
     public HRESULT get_TotalSystemBuffer([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[11]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[11]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_UsedSystemBuffer" />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(12)]
     public HRESULT get_UsedSystemBuffer([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[12]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[12]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IWriteEngine2EventArgs.get_FreeSystemBuffer" />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(13)]
     public HRESULT get_FreeSystemBuffer([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[13]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[13]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2DataEventArgs.xml' path='doc/member[@name="IDiscFormat2DataEventArgs.get_ElapsedTime"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(14)]
     public HRESULT get_ElapsedTime([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[14]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[14]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2DataEventArgs.xml' path='doc/member[@name="IDiscFormat2DataEventArgs.get_RemainingTime"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(15)]
     public HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[15]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[15]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2DataEventArgs.xml' path='doc/member[@name="IDiscFormat2DataEventArgs.get_TotalTime"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(16)]
     public HRESULT get_TotalTime([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[16]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, int*, int>)(lpVtbl[16]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2DataEventArgs.xml' path='doc/member[@name="IDiscFormat2DataEventArgs.get_CurrentAction"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
     [VtblIndex(17)]
     public HRESULT get_CurrentAction(IMAPI_FORMAT2_DATA_WRITE_ACTION* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2DataEventArgs*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int>)(lpVtbl[17]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2DataEventArgs*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int>)(lpVtbl[17]))((IDiscFormat2DataEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IWriteEngine2EventArgs.Interface
@@ -185,57 +185,57 @@ public unsafe partial struct IDiscFormat2DataEventArgs : IDiscFormat2DataEventAr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartLba;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_SectorCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_SectorCount;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LastReadLba;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LastReadLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LastWrittenLba;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LastWrittenLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TotalSystemBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TotalSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_UsedSystemBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_UsedSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FreeSystemBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FreeSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ElapsedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ElapsedTime;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_RemainingTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_RemainingTime;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TotalTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TotalTime;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_DATA_WRITE_ACTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int> get_CurrentAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_FORMAT2_DATA_WRITE_ACTION*, int> get_CurrentAction;
     }
 }

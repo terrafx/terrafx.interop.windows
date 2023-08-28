@@ -25,7 +25,7 @@ public unsafe partial struct IShellService : IShellService.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellService*, Guid*, void**, int>)(lpVtbl[0]))((IShellService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellService*, Guid*, void**, int>)(lpVtbl[0]))((IShellService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellService : IShellService.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellService*, uint>)(lpVtbl[1]))((IShellService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellService*, uint>)(lpVtbl[1]))((IShellService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellService : IShellService.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellService*, uint>)(lpVtbl[2]))((IShellService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellService*, uint>)(lpVtbl[2]))((IShellService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellService.xml' path='doc/member[@name="IShellService.SetOwner"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellService : IShellService.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetOwner(IUnknown* punkOwner)
     {
-        return ((delegate* unmanaged<IShellService*, IUnknown*, int>)(lpVtbl[3]))((IShellService*)Unsafe.AsPointer(ref this), punkOwner);
+        return ((delegate* unmanaged[MemberFunction]<IShellService*, IUnknown*, int>)(lpVtbl[3]))((IShellService*)Unsafe.AsPointer(ref this), punkOwner);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IShellService : IShellService.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetOwner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetOwner;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator.GetCurrent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [VtblIndex(3)]
     public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] char** deviceCapability)
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, char**, int>)(lpVtbl[3]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), deviceCapability);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, char**, int>)(lpVtbl[3]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), deviceCapability);
     }
 
     /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator.GetHasCurrent"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     /// <include file='IAppxManifestDeviceCapabilitiesEnumerator.xml' path='doc/member[@name="IAppxManifestDeviceCapabilitiesEnumerator.MoveNext"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)
     {
-        return ((delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestDeviceCapabilitiesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
     }
 }

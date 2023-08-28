@@ -25,7 +25,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IContactProperties*, Guid*, void**, int>)(lpVtbl[0]))((IContactProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, Guid*, void**, int>)(lpVtbl[0]))((IContactProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IContactProperties*, uint>)(lpVtbl[1]))((IContactProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, uint>)(lpVtbl[1]))((IContactProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IContactProperties*, uint>)(lpVtbl[2]))((IContactProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, uint>)(lpVtbl[2]))((IContactProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetString"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(3)]
     public HRESULT GetString([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszValue, [NativeTypeName("DWORD")] uint cchValue, [NativeTypeName("DWORD *")] uint* pdwcchPropertyValueRequired)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, char*, uint, uint*, int>)(lpVtbl[3]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue, cchValue, pdwcchPropertyValueRequired);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, char*, uint, uint*, int>)(lpVtbl[3]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue, cchValue, pdwcchPropertyValueRequired);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetDate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(4)]
     public HRESULT GetDate([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, FILETIME* pftDateTime)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, FILETIME*, int>)(lpVtbl[4]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pftDateTime);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, FILETIME*, int>)(lpVtbl[4]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pftDateTime);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetBinary"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(5)]
     public HRESULT GetBinary([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszContentType, [NativeTypeName("DWORD")] uint cchContentType, [NativeTypeName("DWORD *")] uint* pdwcchContentTypeRequired, IStream** ppStream)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, char*, uint, uint*, IStream**, int>)(lpVtbl[5]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, cchContentType, pdwcchContentTypeRequired, ppStream);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, char*, uint, uint*, IStream**, int>)(lpVtbl[5]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, cchContentType, pdwcchContentTypeRequired, ppStream);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetLabels"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(6)]
     public HRESULT GetLabels([NativeTypeName("LPCWSTR")] char* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszLabels, [NativeTypeName("DWORD")] uint cchLabels, [NativeTypeName("DWORD *")] uint* pdwcchLabelsRequired)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, char*, uint, uint*, int>)(lpVtbl[6]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, pszLabels, cchLabels, pdwcchLabelsRequired);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, char*, uint, uint*, int>)(lpVtbl[6]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, pszLabels, cchLabels, pdwcchLabelsRequired);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetString"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(7)]
     public HRESULT SetString([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pszValue)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, char*, int>)(lpVtbl[7]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, char*, int>)(lpVtbl[7]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetDate"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(8)]
     public HRESULT SetDate([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, FILETIME ftDateTime)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, FILETIME, int>)(lpVtbl[8]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, ftDateTime);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, FILETIME, int>)(lpVtbl[8]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, ftDateTime);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetBinary"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(9)]
     public HRESULT SetBinary([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pszContentType, IStream* pStream)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, char*, IStream*, int>)(lpVtbl[9]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, pStream);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, char*, IStream*, int>)(lpVtbl[9]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, pStream);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetLabels"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(10)]
     public HRESULT SetLabels([NativeTypeName("LPCWSTR")] char* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwLabelCount, [NativeTypeName("LPCWSTR[]")] char** ppszLabels)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, uint, char**, int>)(lpVtbl[10]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, dwLabelCount, ppszLabels);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, uint, char**, int>)(lpVtbl[10]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, dwLabelCount, ppszLabels);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.CreateArrayNode"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(11)]
     public HRESULT CreateArrayNode([NativeTypeName("LPCWSTR")] char* pszArrayName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fAppend, [NativeTypeName("LPWSTR")] char* pszNewArrayElementName, [NativeTypeName("DWORD")] uint cchNewArrayElementName, [NativeTypeName("DWORD *")] uint* pdwcchNewArrayElementNameRequired)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, BOOL, char*, uint, uint*, int>)(lpVtbl[11]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayName, dwFlags, fAppend, pszNewArrayElementName, cchNewArrayElementName, pdwcchNewArrayElementNameRequired);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, BOOL, char*, uint, uint*, int>)(lpVtbl[11]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayName, dwFlags, fAppend, pszNewArrayElementName, cchNewArrayElementName, pdwcchNewArrayElementNameRequired);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteProperty"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(12)]
     public HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] char* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, int>)(lpVtbl[12]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, int>)(lpVtbl[12]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteArrayNode"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(13)]
     public HRESULT DeleteArrayNode([NativeTypeName("LPCWSTR")] char* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, int>)(lpVtbl[13]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, int>)(lpVtbl[13]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteLabels"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(14)]
     public HRESULT DeleteLabels([NativeTypeName("LPCWSTR")] char* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IContactProperties*, char*, uint, int>)(lpVtbl[14]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, char*, uint, int>)(lpVtbl[14]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
     }
 
     /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetPropertyCollection"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
     [VtblIndex(15)]
     public HRESULT GetPropertyCollection(IContactPropertyCollection** ppPropertyCollection, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pszMultiValueName, [NativeTypeName("DWORD")] uint dwLabelCount, [NativeTypeName("LPCWSTR[]")] char** ppszLabels, BOOL fAnyLabelMatches)
     {
-        return ((delegate* unmanaged<IContactProperties*, IContactPropertyCollection**, uint, char*, uint, char**, BOOL, int>)(lpVtbl[15]))((IContactProperties*)Unsafe.AsPointer(ref this), ppPropertyCollection, dwFlags, pszMultiValueName, dwLabelCount, ppszLabels, fAnyLabelMatches);
+        return ((delegate* unmanaged[MemberFunction]<IContactProperties*, IContactPropertyCollection**, uint, char*, uint, char**, BOOL, int>)(lpVtbl[15]))((IContactProperties*)Unsafe.AsPointer(ref this), ppPropertyCollection, dwFlags, pszMultiValueName, dwLabelCount, ppszLabels, fAnyLabelMatches);
     }
 
     public interface Interface : IUnknown.Interface
@@ -196,51 +196,51 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, uint*, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, FILETIME*, int> GetDate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, FILETIME*, int> GetDate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, uint*, IStream**, int> GetBinary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, uint, uint*, IStream**, int> GetBinary;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, uint*, int> GetLabels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, uint, uint*, int> GetLabels;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, int> SetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, int> SetString;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, FILETIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, FILETIME, int> SetDate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, FILETIME, int> SetDate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, IStream*, int> SetBinary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, IStream*, int> SetBinary;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint, char**, int> SetLabels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint, char**, int> SetLabels;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, BOOL, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, BOOL, char*, uint, uint*, int> CreateArrayNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, BOOL, char*, uint, uint*, int> CreateArrayNode;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> DeleteProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> DeleteProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> DeleteArrayNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> DeleteArrayNode;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> DeleteLabels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> DeleteLabels;
 
         [NativeTypeName("HRESULT (IContactPropertyCollection **, DWORD, LPCWSTR, DWORD, LPCWSTR *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IContactPropertyCollection**, uint, char*, uint, char**, BOOL, int> GetPropertyCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContactPropertyCollection**, uint, char*, uint, char**, BOOL, int> GetPropertyCollection;
     }
 }

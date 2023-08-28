@@ -25,7 +25,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSymbol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSymbol*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[1]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint>)(lpVtbl[1]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint>)(lpVtbl[2]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint>)(lpVtbl[2]))((IDiaSymbol*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_symIndexId"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_symIndexId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[3]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[3]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_symTag"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT get_symTag([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[4]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[4]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_name"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT get_name([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[5]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_lexicalParent"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT get_lexicalParent(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[6]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[6]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_classParent"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_classParent(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[7]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[7]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_type"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_type(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[8]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[8]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_dataKind"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_dataKind([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[9]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[9]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_locationType"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_locationType([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[10]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[10]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_addressSection"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[11]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[11]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_addressOffset"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[12]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[12]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_relativeVirtualAddress"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[13]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[13]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualAddress"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[14]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[14]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_registerId"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT get_registerId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[15]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[15]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_offset"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_offset([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[16]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, int*, int>)(lpVtbl[16]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_length"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[17]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[17]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_slot"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT get_slot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[18]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[18]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_volatileType"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT get_volatileType(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[19]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[19]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_constType"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT get_constType(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[20]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[20]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_unalignedType"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT get_unalignedType(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[21]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[21]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_access"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT get_access([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[22]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[22]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_libraryName"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT get_libraryName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[23]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_platform"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT get_platform([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[24]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[24]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_language"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT get_language([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[25]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[25]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_editAndContinueEnabled"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_editAndContinueEnabled(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[26]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[26]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_frontEndMajor"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT get_frontEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[27]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[27]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_frontEndMinor"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT get_frontEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[28]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[28]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_frontEndBuild"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT get_frontEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[29]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[29]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_backEndMajor"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT get_backEndMajor([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[30]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[30]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_backEndMinor"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT get_backEndMinor([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[31]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[31]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_backEndBuild"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT get_backEndBuild([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[32]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[32]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_sourceFileName"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT get_sourceFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[33]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_unused"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT get_unused([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[34]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_thunkOrdinal"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(35)]
     public HRESULT get_thunkOrdinal([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[35]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[35]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_thisAdjust"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(36)]
     public HRESULT get_thisAdjust([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[36]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, int*, int>)(lpVtbl[36]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualBaseOffset"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(37)]
     public HRESULT get_virtualBaseOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[37]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[37]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtual"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(38)]
     public HRESULT get_virtual(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[38]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[38]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_intro"]/*' />
@@ -339,7 +339,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(39)]
     public HRESULT get_intro(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[39]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[39]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_pure"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(40)]
     public HRESULT get_pure(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[40]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[40]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_callingConvention"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(41)]
     public HRESULT get_callingConvention([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[41]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[41]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_value"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(42)]
     public HRESULT get_value(VARIANT* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, VARIANT*, int>)(lpVtbl[42]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, VARIANT*, int>)(lpVtbl[42]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_baseType"]/*' />
@@ -371,7 +371,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(43)]
     public HRESULT get_baseType([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[43]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[43]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_token"]/*' />
@@ -379,7 +379,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(44)]
     public HRESULT get_token([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[44]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[44]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_timeStamp"]/*' />
@@ -387,7 +387,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(45)]
     public HRESULT get_timeStamp([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[45]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[45]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_guid"]/*' />
@@ -395,7 +395,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(46)]
     public HRESULT get_guid(Guid* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, Guid*, int>)(lpVtbl[46]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, Guid*, int>)(lpVtbl[46]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_symbolsFileName"]/*' />
@@ -403,7 +403,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(47)]
     public HRESULT get_symbolsFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[47]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_reference"]/*' />
@@ -411,7 +411,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(48)]
     public HRESULT get_reference(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[48]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[48]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_count"]/*' />
@@ -419,7 +419,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(49)]
     public HRESULT get_count([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[49]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[49]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_bitPosition"]/*' />
@@ -427,7 +427,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(50)]
     public HRESULT get_bitPosition([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[50]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[50]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_arrayIndexType"]/*' />
@@ -435,7 +435,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(51)]
     public HRESULT get_arrayIndexType(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[51]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[51]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_packed"]/*' />
@@ -443,7 +443,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(52)]
     public HRESULT get_packed(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[52]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[52]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_constructor"]/*' />
@@ -451,7 +451,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(53)]
     public HRESULT get_constructor(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[53]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[53]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_overloadedOperator"]/*' />
@@ -459,7 +459,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(54)]
     public HRESULT get_overloadedOperator(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[54]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[54]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_nested"]/*' />
@@ -467,7 +467,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(55)]
     public HRESULT get_nested(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[55]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[55]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasNestedTypes"]/*' />
@@ -475,7 +475,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(56)]
     public HRESULT get_hasNestedTypes(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[56]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[56]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasAssignmentOperator"]/*' />
@@ -483,7 +483,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(57)]
     public HRESULT get_hasAssignmentOperator(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[57]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[57]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasCastOperator"]/*' />
@@ -491,7 +491,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(58)]
     public HRESULT get_hasCastOperator(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[58]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[58]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_scoped"]/*' />
@@ -499,7 +499,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(59)]
     public HRESULT get_scoped(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[59]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[59]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualBaseClass"]/*' />
@@ -507,7 +507,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(60)]
     public HRESULT get_virtualBaseClass(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[60]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[60]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_indirectVirtualBaseClass"]/*' />
@@ -515,7 +515,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(61)]
     public HRESULT get_indirectVirtualBaseClass(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[61]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[61]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualBasePointerOffset"]/*' />
@@ -523,7 +523,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(62)]
     public HRESULT get_virtualBasePointerOffset([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, int*, int>)(lpVtbl[62]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, int*, int>)(lpVtbl[62]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualTableShape"]/*' />
@@ -531,7 +531,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(63)]
     public HRESULT get_virtualTableShape(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[63]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[63]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_lexicalParentId"]/*' />
@@ -539,7 +539,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(64)]
     public HRESULT get_lexicalParentId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[64]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[64]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_classParentId"]/*' />
@@ -547,7 +547,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(65)]
     public HRESULT get_classParentId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[65]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[65]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_typeId"]/*' />
@@ -555,7 +555,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(66)]
     public HRESULT get_typeId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[66]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[66]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_arrayIndexTypeId"]/*' />
@@ -563,7 +563,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(67)]
     public HRESULT get_arrayIndexTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[67]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[67]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualTableShapeId"]/*' />
@@ -571,7 +571,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(68)]
     public HRESULT get_virtualTableShapeId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[68]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[68]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_code"]/*' />
@@ -579,7 +579,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(69)]
     public HRESULT get_code(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[69]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[69]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_function"]/*' />
@@ -587,7 +587,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(70)]
     public HRESULT get_function(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[70]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[70]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_managed"]/*' />
@@ -595,7 +595,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(71)]
     public HRESULT get_managed(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[71]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[71]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_msil"]/*' />
@@ -603,7 +603,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(72)]
     public HRESULT get_msil(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[72]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[72]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualBaseDispIndex"]/*' />
@@ -611,7 +611,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(73)]
     public HRESULT get_virtualBaseDispIndex([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[73]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[73]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_undecoratedName"]/*' />
@@ -619,7 +619,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(74)]
     public HRESULT get_undecoratedName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[74]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_age"]/*' />
@@ -627,7 +627,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(75)]
     public HRESULT get_age([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[75]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[75]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_signature"]/*' />
@@ -635,7 +635,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(76)]
     public HRESULT get_signature([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[76]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[76]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_compilerGenerated"]/*' />
@@ -643,7 +643,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(77)]
     public HRESULT get_compilerGenerated(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[77]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[77]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_addressTaken"]/*' />
@@ -651,7 +651,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(78)]
     public HRESULT get_addressTaken(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[78]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[78]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_rank"]/*' />
@@ -659,7 +659,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(79)]
     public HRESULT get_rank([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[79]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[79]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_lowerBound"]/*' />
@@ -667,7 +667,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(80)]
     public HRESULT get_lowerBound(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[80]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[80]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_upperBound"]/*' />
@@ -675,7 +675,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(81)]
     public HRESULT get_upperBound(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[81]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[81]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_lowerBoundId"]/*' />
@@ -683,7 +683,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(82)]
     public HRESULT get_lowerBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[82]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[82]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_upperBoundId"]/*' />
@@ -691,7 +691,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(83)]
     public HRESULT get_upperBoundId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[83]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[83]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_dataBytes"]/*' />
@@ -699,7 +699,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(84)]
     public HRESULT get_dataBytes([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, byte*, int>)(lpVtbl[84]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, byte*, int>)(lpVtbl[84]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildren"]/*' />
@@ -707,7 +707,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(85)]
     public HRESULT findChildren([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[85]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenEx"]/*' />
@@ -715,7 +715,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(86)]
     public HRESULT findChildrenEx([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int>)(lpVtbl[86]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByAddr"]/*' />
@@ -723,7 +723,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(87)]
     public HRESULT findChildrenExByAddr([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[87]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, isect, offset, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByVA"]/*' />
@@ -731,7 +731,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(88)]
     public HRESULT findChildrenExByVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int>)(lpVtbl[88]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, va, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findChildrenExByRVA"]/*' />
@@ -739,7 +739,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(89)]
     public HRESULT findChildrenExByRVA([NativeTypeName("enum SymTagEnum")] SymTagEnum symtag, [NativeTypeName("LPCOLESTR")] char* name, [NativeTypeName("DWORD")] uint compareFlags, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[89]))((IDiaSymbol*)Unsafe.AsPointer(ref this), symtag, name, compareFlags, rva, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_targetSection"]/*' />
@@ -747,7 +747,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(90)]
     public HRESULT get_targetSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[90]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[90]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_targetOffset"]/*' />
@@ -755,7 +755,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(91)]
     public HRESULT get_targetOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[91]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[91]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_targetRelativeVirtualAddress"]/*' />
@@ -763,7 +763,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(92)]
     public HRESULT get_targetRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[92]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[92]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_targetVirtualAddress"]/*' />
@@ -771,7 +771,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(93)]
     public HRESULT get_targetVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[93]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[93]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_machineType"]/*' />
@@ -779,7 +779,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(94)]
     public HRESULT get_machineType([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[94]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[94]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_oemId"]/*' />
@@ -787,7 +787,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(95)]
     public HRESULT get_oemId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[95]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[95]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_oemSymbolId"]/*' />
@@ -795,7 +795,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(96)]
     public HRESULT get_oemSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[96]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[96]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_types"]/*' />
@@ -803,7 +803,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(97)]
     public HRESULT get_types([NativeTypeName("DWORD")] uint cTypes, [NativeTypeName("DWORD *")] uint* pcTypes, IDiaSymbol** pTypes)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, IDiaSymbol**, int>)(lpVtbl[97]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypes, pcTypes, pTypes);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, IDiaSymbol**, int>)(lpVtbl[97]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypes, pcTypes, pTypes);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_typeIds"]/*' />
@@ -811,7 +811,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(98)]
     public HRESULT get_typeIds([NativeTypeName("DWORD")] uint cTypeIds, [NativeTypeName("DWORD *")] uint* pcTypeIds, [NativeTypeName("DWORD *")] uint* pdwTypeIds)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[98]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypeIds, pcTypeIds, pdwTypeIds);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[98]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cTypeIds, pcTypeIds, pdwTypeIds);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_objectPointerType"]/*' />
@@ -819,7 +819,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(99)]
     public HRESULT get_objectPointerType(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[99]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[99]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_udtKind"]/*' />
@@ -827,7 +827,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(100)]
     public HRESULT get_udtKind([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[100]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[100]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_undecoratedNameEx"]/*' />
@@ -835,7 +835,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(101)]
     public HRESULT get_undecoratedNameEx([NativeTypeName("DWORD")] uint undecorateOptions, [NativeTypeName("BSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, char**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, char**, int>)(lpVtbl[101]))((IDiaSymbol*)Unsafe.AsPointer(ref this), undecorateOptions, name);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_noReturn"]/*' />
@@ -843,7 +843,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(102)]
     public HRESULT get_noReturn(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[102]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[102]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_customCallingConvention"]/*' />
@@ -851,7 +851,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(103)]
     public HRESULT get_customCallingConvention(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[103]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[103]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_noInline"]/*' />
@@ -859,7 +859,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(104)]
     public HRESULT get_noInline(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[104]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[104]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_optimizedCodeDebugInfo"]/*' />
@@ -867,7 +867,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(105)]
     public HRESULT get_optimizedCodeDebugInfo(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[105]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[105]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_notReached"]/*' />
@@ -875,7 +875,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(106)]
     public HRESULT get_notReached(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[106]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[106]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_interruptReturn"]/*' />
@@ -883,7 +883,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(107)]
     public HRESULT get_interruptReturn(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[107]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[107]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_farReturn"]/*' />
@@ -891,7 +891,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(108)]
     public HRESULT get_farReturn(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[108]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[108]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isStatic"]/*' />
@@ -899,7 +899,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(109)]
     public HRESULT get_isStatic(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[109]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[109]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasDebugInfo"]/*' />
@@ -907,7 +907,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(110)]
     public HRESULT get_hasDebugInfo(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[110]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[110]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isLTCG"]/*' />
@@ -915,7 +915,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(111)]
     public HRESULT get_isLTCG(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[111]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[111]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isDataAligned"]/*' />
@@ -923,7 +923,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(112)]
     public HRESULT get_isDataAligned(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[112]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[112]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasSecurityChecks"]/*' />
@@ -931,7 +931,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(113)]
     public HRESULT get_hasSecurityChecks(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[113]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[113]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_compilerName"]/*' />
@@ -939,7 +939,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(114)]
     public HRESULT get_compilerName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[114]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasAlloca"]/*' />
@@ -947,7 +947,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(115)]
     public HRESULT get_hasAlloca(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[115]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[115]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasSetJump"]/*' />
@@ -955,7 +955,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(116)]
     public HRESULT get_hasSetJump(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[116]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[116]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasLongJump"]/*' />
@@ -963,7 +963,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(117)]
     public HRESULT get_hasLongJump(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[117]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[117]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasInlAsm"]/*' />
@@ -971,7 +971,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(118)]
     public HRESULT get_hasInlAsm(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[118]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[118]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasEH"]/*' />
@@ -979,7 +979,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(119)]
     public HRESULT get_hasEH(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[119]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[119]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasSEH"]/*' />
@@ -987,7 +987,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(120)]
     public HRESULT get_hasSEH(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[120]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[120]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasEHa"]/*' />
@@ -995,7 +995,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(121)]
     public HRESULT get_hasEHa(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[121]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[121]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isNaked"]/*' />
@@ -1003,7 +1003,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(122)]
     public HRESULT get_isNaked(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[122]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[122]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isAggregated"]/*' />
@@ -1011,7 +1011,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(123)]
     public HRESULT get_isAggregated(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[123]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[123]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isSplitted"]/*' />
@@ -1019,7 +1019,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(124)]
     public HRESULT get_isSplitted(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[124]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[124]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_container"]/*' />
@@ -1027,7 +1027,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(125)]
     public HRESULT get_container(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[125]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[125]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_inlSpec"]/*' />
@@ -1035,7 +1035,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(126)]
     public HRESULT get_inlSpec(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[126]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[126]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_noStackOrdering"]/*' />
@@ -1043,7 +1043,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(127)]
     public HRESULT get_noStackOrdering(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[127]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[127]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_virtualBaseTableType"]/*' />
@@ -1051,7 +1051,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(128)]
     public HRESULT get_virtualBaseTableType(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[128]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[128]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasManagedCode"]/*' />
@@ -1059,7 +1059,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(129)]
     public HRESULT get_hasManagedCode(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[129]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[129]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isHotpatchable"]/*' />
@@ -1067,7 +1067,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(130)]
     public HRESULT get_isHotpatchable(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[130]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[130]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isCVTCIL"]/*' />
@@ -1075,7 +1075,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(131)]
     public HRESULT get_isCVTCIL(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[131]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[131]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isMSILNetmodule"]/*' />
@@ -1083,7 +1083,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(132)]
     public HRESULT get_isMSILNetmodule(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[132]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[132]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isCTypes"]/*' />
@@ -1091,7 +1091,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(133)]
     public HRESULT get_isCTypes(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[133]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[133]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isStripped"]/*' />
@@ -1099,7 +1099,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(134)]
     public HRESULT get_isStripped(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[134]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[134]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_frontEndQFE"]/*' />
@@ -1107,7 +1107,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(135)]
     public HRESULT get_frontEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[135]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[135]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_backEndQFE"]/*' />
@@ -1115,7 +1115,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(136)]
     public HRESULT get_backEndQFE([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[136]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[136]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_wasInlined"]/*' />
@@ -1123,7 +1123,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(137)]
     public HRESULT get_wasInlined(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[137]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[137]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_strictGSCheck"]/*' />
@@ -1131,7 +1131,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(138)]
     public HRESULT get_strictGSCheck(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[138]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[138]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isCxxReturnUdt"]/*' />
@@ -1139,7 +1139,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(139)]
     public HRESULT get_isCxxReturnUdt(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[139]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[139]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isConstructorVirtualBase"]/*' />
@@ -1147,7 +1147,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(140)]
     public HRESULT get_isConstructorVirtualBase(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[140]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[140]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_RValueReference"]/*' />
@@ -1155,7 +1155,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(141)]
     public HRESULT get_RValueReference(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[141]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[141]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_unmodifiedType"]/*' />
@@ -1163,7 +1163,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(142)]
     public HRESULT get_unmodifiedType(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[142]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[142]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_framePointerPresent"]/*' />
@@ -1171,7 +1171,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(143)]
     public HRESULT get_framePointerPresent(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[143]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[143]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isSafeBuffers"]/*' />
@@ -1179,7 +1179,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(144)]
     public HRESULT get_isSafeBuffers(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[144]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[144]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_intrinsic"]/*' />
@@ -1187,7 +1187,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(145)]
     public HRESULT get_intrinsic(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[145]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[145]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_sealed"]/*' />
@@ -1195,7 +1195,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(146)]
     public HRESULT get_sealed(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[146]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[146]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hfaFloat"]/*' />
@@ -1203,7 +1203,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(147)]
     public HRESULT get_hfaFloat(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[147]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[147]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hfaDouble"]/*' />
@@ -1211,7 +1211,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(148)]
     public HRESULT get_hfaDouble(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[148]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[148]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_liveRangeStartAddressSection"]/*' />
@@ -1219,7 +1219,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(149)]
     public HRESULT get_liveRangeStartAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[149]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[149]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_liveRangeStartAddressOffset"]/*' />
@@ -1227,7 +1227,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(150)]
     public HRESULT get_liveRangeStartAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[150]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[150]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_liveRangeStartRelativeVirtualAddress"]/*' />
@@ -1235,7 +1235,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(151)]
     public HRESULT get_liveRangeStartRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[151]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[151]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_countLiveRanges"]/*' />
@@ -1243,7 +1243,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(152)]
     public HRESULT get_countLiveRanges([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[152]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[152]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_liveRangeLength"]/*' />
@@ -1251,7 +1251,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(153)]
     public HRESULT get_liveRangeLength([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[153]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[153]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_offsetInUdt"]/*' />
@@ -1259,7 +1259,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(154)]
     public HRESULT get_offsetInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[154]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[154]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_paramBasePointerRegisterId"]/*' />
@@ -1267,7 +1267,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(155)]
     public HRESULT get_paramBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[155]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[155]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_localBasePointerRegisterId"]/*' />
@@ -1275,7 +1275,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(156)]
     public HRESULT get_localBasePointerRegisterId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[156]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[156]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isLocationControlFlowDependent"]/*' />
@@ -1283,7 +1283,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(157)]
     public HRESULT get_isLocationControlFlowDependent(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[157]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[157]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_stride"]/*' />
@@ -1291,7 +1291,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(158)]
     public HRESULT get_stride([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[158]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[158]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numberOfRows"]/*' />
@@ -1299,7 +1299,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(159)]
     public HRESULT get_numberOfRows([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[159]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[159]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numberOfColumns"]/*' />
@@ -1307,7 +1307,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(160)]
     public HRESULT get_numberOfColumns([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[160]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[160]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isMatrixRowMajor"]/*' />
@@ -1315,7 +1315,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(161)]
     public HRESULT get_isMatrixRowMajor(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[161]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[161]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numericProperties"]/*' />
@@ -1323,7 +1323,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(162)]
     public HRESULT get_numericProperties([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pProperties)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[162]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pProperties);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[162]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pProperties);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_modifierValues"]/*' />
@@ -1331,7 +1331,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(163)]
     public HRESULT get_modifierValues([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("WORD *")] ushort* pModifiers)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, ushort*, int>)(lpVtbl[163]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pModifiers);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, ushort*, int>)(lpVtbl[163]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pModifiers);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isReturnValue"]/*' />
@@ -1339,7 +1339,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(164)]
     public HRESULT get_isReturnValue(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[164]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[164]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isOptimizedAway"]/*' />
@@ -1347,7 +1347,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(165)]
     public HRESULT get_isOptimizedAway(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[165]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[165]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_builtInKind"]/*' />
@@ -1355,7 +1355,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(166)]
     public HRESULT get_builtInKind([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[166]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[166]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_registerType"]/*' />
@@ -1363,7 +1363,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(167)]
     public HRESULT get_registerType([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[167]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[167]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_baseDataSlot"]/*' />
@@ -1371,7 +1371,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(168)]
     public HRESULT get_baseDataSlot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[168]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[168]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_baseDataOffset"]/*' />
@@ -1379,7 +1379,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(169)]
     public HRESULT get_baseDataOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[169]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[169]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_textureSlot"]/*' />
@@ -1387,7 +1387,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(170)]
     public HRESULT get_textureSlot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[170]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[170]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_samplerSlot"]/*' />
@@ -1395,7 +1395,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(171)]
     public HRESULT get_samplerSlot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[171]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[171]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_uavSlot"]/*' />
@@ -1403,7 +1403,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(172)]
     public HRESULT get_uavSlot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[172]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[172]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_sizeInUdt"]/*' />
@@ -1411,7 +1411,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(173)]
     public HRESULT get_sizeInUdt([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[173]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[173]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_memorySpaceKind"]/*' />
@@ -1419,7 +1419,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(174)]
     public HRESULT get_memorySpaceKind([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[174]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[174]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_unmodifiedTypeId"]/*' />
@@ -1427,7 +1427,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(175)]
     public HRESULT get_unmodifiedTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[175]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[175]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_subTypeId"]/*' />
@@ -1435,7 +1435,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(176)]
     public HRESULT get_subTypeId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[176]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[176]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_subType"]/*' />
@@ -1443,7 +1443,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(177)]
     public HRESULT get_subType(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[177]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[177]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numberOfModifiers"]/*' />
@@ -1451,7 +1451,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(178)]
     public HRESULT get_numberOfModifiers([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[178]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[178]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numberOfRegisterIndices"]/*' />
@@ -1459,7 +1459,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(179)]
     public HRESULT get_numberOfRegisterIndices([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[179]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[179]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isHLSLData"]/*' />
@@ -1467,7 +1467,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(180)]
     public HRESULT get_isHLSLData(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[180]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[180]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isPointerToDataMember"]/*' />
@@ -1475,7 +1475,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(181)]
     public HRESULT get_isPointerToDataMember(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[181]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[181]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isPointerToMemberFunction"]/*' />
@@ -1483,7 +1483,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(182)]
     public HRESULT get_isPointerToMemberFunction(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[182]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[182]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isSingleInheritance"]/*' />
@@ -1491,7 +1491,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(183)]
     public HRESULT get_isSingleInheritance(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[183]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[183]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isMultipleInheritance"]/*' />
@@ -1499,7 +1499,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(184)]
     public HRESULT get_isMultipleInheritance(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[184]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[184]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isVirtualInheritance"]/*' />
@@ -1507,7 +1507,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(185)]
     public HRESULT get_isVirtualInheritance(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[185]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[185]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_restrictedType"]/*' />
@@ -1515,7 +1515,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(186)]
     public HRESULT get_restrictedType(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[186]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[186]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isPointerBasedOnSymbolValue"]/*' />
@@ -1523,7 +1523,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(187)]
     public HRESULT get_isPointerBasedOnSymbolValue(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[187]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[187]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_baseSymbol"]/*' />
@@ -1531,7 +1531,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(188)]
     public HRESULT get_baseSymbol(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[188]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[188]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_baseSymbolId"]/*' />
@@ -1539,7 +1539,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(189)]
     public HRESULT get_baseSymbolId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[189]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[189]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_objectFileName"]/*' />
@@ -1547,7 +1547,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(190)]
     public HRESULT get_objectFileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[190]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isAcceleratorGroupSharedLocal"]/*' />
@@ -1555,7 +1555,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(191)]
     public HRESULT get_isAcceleratorGroupSharedLocal(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[191]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[191]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isAcceleratorPointerTagLiveRange"]/*' />
@@ -1563,7 +1563,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(192)]
     public HRESULT get_isAcceleratorPointerTagLiveRange(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[192]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[192]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isAcceleratorStubFunction"]/*' />
@@ -1571,7 +1571,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(193)]
     public HRESULT get_isAcceleratorStubFunction(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[193]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[193]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_numberOfAcceleratorPointerTags"]/*' />
@@ -1579,7 +1579,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(194)]
     public HRESULT get_numberOfAcceleratorPointerTags([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[194]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[194]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isSdl"]/*' />
@@ -1587,7 +1587,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(195)]
     public HRESULT get_isSdl(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[195]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[195]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isWinRTPointer"]/*' />
@@ -1595,7 +1595,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(196)]
     public HRESULT get_isWinRTPointer(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[196]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[196]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isRefUdt"]/*' />
@@ -1603,7 +1603,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(197)]
     public HRESULT get_isRefUdt(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[197]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[197]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isValueUdt"]/*' />
@@ -1611,7 +1611,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(198)]
     public HRESULT get_isValueUdt(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[198]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[198]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isInterfaceUdt"]/*' />
@@ -1619,7 +1619,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(199)]
     public HRESULT get_isInterfaceUdt(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[199]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[199]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineFramesByAddr"]/*' />
@@ -1627,7 +1627,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(200)]
     public HRESULT findInlineFramesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[200]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[200]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineFramesByRVA"]/*' />
@@ -1635,7 +1635,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(201)]
     public HRESULT findInlineFramesByRVA([NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[201]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[201]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineFramesByVA"]/*' />
@@ -1643,7 +1643,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(202)]
     public HRESULT findInlineFramesByVA([NativeTypeName("ULONGLONG")] ulong va, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong, IDiaEnumSymbols**, int>)(lpVtbl[202]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong, IDiaEnumSymbols**, int>)(lpVtbl[202]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineeLines"]/*' />
@@ -1651,7 +1651,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(203)]
     public HRESULT findInlineeLines(IDiaEnumLineNumbers** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaEnumLineNumbers**, int>)(lpVtbl[203]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaEnumLineNumbers**, int>)(lpVtbl[203]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineeLinesByAddr"]/*' />
@@ -1659,7 +1659,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(204)]
     public HRESULT findInlineeLinesByAddr([NativeTypeName("DWORD")] uint isect, [NativeTypeName("DWORD")] uint offset, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[204]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, length, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[204]))((IDiaSymbol*)Unsafe.AsPointer(ref this), isect, offset, length, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineeLinesByRVA"]/*' />
@@ -1667,7 +1667,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(205)]
     public HRESULT findInlineeLinesByRVA([NativeTypeName("DWORD")] uint rva, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[205]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, length, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[205]))((IDiaSymbol*)Unsafe.AsPointer(ref this), rva, length, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInlineeLinesByVA"]/*' />
@@ -1675,7 +1675,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(206)]
     public HRESULT findInlineeLinesByVA([NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint length, IDiaEnumLineNumbers** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[206]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, length, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int>)(lpVtbl[206]))((IDiaSymbol*)Unsafe.AsPointer(ref this), va, length, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findSymbolsForAcceleratorPointerTag"]/*' />
@@ -1683,7 +1683,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(207)]
     public HRESULT findSymbolsForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[207]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, IDiaEnumSymbols**, int>)(lpVtbl[207]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findSymbolsByRVAForAcceleratorPointerTag"]/*' />
@@ -1691,7 +1691,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(208)]
     public HRESULT findSymbolsByRVAForAcceleratorPointerTag([NativeTypeName("DWORD")] uint tagValue, [NativeTypeName("DWORD")] uint rva, IDiaEnumSymbols** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[208]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, rva, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int>)(lpVtbl[208]))((IDiaSymbol*)Unsafe.AsPointer(ref this), tagValue, rva, ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_acceleratorPointerTags"]/*' />
@@ -1699,7 +1699,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(209)]
     public HRESULT get_acceleratorPointerTags([NativeTypeName("DWORD")] uint cnt, [NativeTypeName("DWORD *")] uint* pcnt, [NativeTypeName("DWORD *")] uint* pPointerTags)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[209]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pPointerTags);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint, uint*, uint*, int>)(lpVtbl[209]))((IDiaSymbol*)Unsafe.AsPointer(ref this), cnt, pcnt, pPointerTags);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.getSrcLineOnTypeDefn"]/*' />
@@ -1707,7 +1707,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(210)]
     public HRESULT getSrcLineOnTypeDefn(IDiaLineNumber** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaLineNumber**, int>)(lpVtbl[210]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaLineNumber**, int>)(lpVtbl[210]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isPGO"]/*' />
@@ -1715,7 +1715,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(211)]
     public HRESULT get_isPGO(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[211]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[211]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasValidPGOCounts"]/*' />
@@ -1723,7 +1723,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(212)]
     public HRESULT get_hasValidPGOCounts(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[212]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[212]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_isOptimizedForSpeed"]/*' />
@@ -1731,7 +1731,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(213)]
     public HRESULT get_isOptimizedForSpeed(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[213]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[213]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_PGOEntryCount"]/*' />
@@ -1739,7 +1739,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(214)]
     public HRESULT get_PGOEntryCount([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[214]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[214]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_PGOEdgeCount"]/*' />
@@ -1747,7 +1747,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(215)]
     public HRESULT get_PGOEdgeCount([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[215]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[215]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_PGODynamicInstructionCount"]/*' />
@@ -1755,7 +1755,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(216)]
     public HRESULT get_PGODynamicInstructionCount([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[216]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[216]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_staticSize"]/*' />
@@ -1763,7 +1763,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(217)]
     public HRESULT get_staticSize([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[217]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[217]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_finalLiveStaticSize"]/*' />
@@ -1771,7 +1771,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(218)]
     public HRESULT get_finalLiveStaticSize([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[218]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[218]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_phaseName"]/*' />
@@ -1779,7 +1779,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(219)]
     public HRESULT get_phaseName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, char**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, char**, int>)(lpVtbl[219]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_hasControlFlowCheck"]/*' />
@@ -1787,7 +1787,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(220)]
     public HRESULT get_hasControlFlowCheck(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[220]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[220]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_constantExport"]/*' />
@@ -1795,7 +1795,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(221)]
     public HRESULT get_constantExport(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[221]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[221]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_dataExport"]/*' />
@@ -1803,7 +1803,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(222)]
     public HRESULT get_dataExport(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[222]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[222]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_privateExport"]/*' />
@@ -1811,7 +1811,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(223)]
     public HRESULT get_privateExport(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[223]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[223]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_noNameExport"]/*' />
@@ -1819,7 +1819,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(224)]
     public HRESULT get_noNameExport(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[224]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[224]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exportHasExplicitlyAssignedOrdinal"]/*' />
@@ -1827,7 +1827,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(225)]
     public HRESULT get_exportHasExplicitlyAssignedOrdinal(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[225]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[225]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exportIsForwarder"]/*' />
@@ -1835,7 +1835,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(226)]
     public HRESULT get_exportIsForwarder(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, BOOL*, int>)(lpVtbl[226]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, BOOL*, int>)(lpVtbl[226]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_ordinal"]/*' />
@@ -1843,7 +1843,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(227)]
     public HRESULT get_ordinal([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[227]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[227]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_frameSize"]/*' />
@@ -1851,7 +1851,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(228)]
     public HRESULT get_frameSize([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[228]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[228]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exceptionHandlerAddressSection"]/*' />
@@ -1859,7 +1859,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(229)]
     public HRESULT get_exceptionHandlerAddressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[229]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[229]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exceptionHandlerAddressOffset"]/*' />
@@ -1867,7 +1867,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(230)]
     public HRESULT get_exceptionHandlerAddressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[230]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[230]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exceptionHandlerRelativeVirtualAddress"]/*' />
@@ -1875,7 +1875,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(231)]
     public HRESULT get_exceptionHandlerRelativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[231]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[231]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_exceptionHandlerVirtualAddress"]/*' />
@@ -1883,7 +1883,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(232)]
     public HRESULT get_exceptionHandlerVirtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, ulong*, int>)(lpVtbl[232]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, ulong*, int>)(lpVtbl[232]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.findInputAssemblyFile"]/*' />
@@ -1891,7 +1891,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(233)]
     public HRESULT findInputAssemblyFile(IDiaInputAssemblyFile** ppResult)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaInputAssemblyFile**, int>)(lpVtbl[233]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaInputAssemblyFile**, int>)(lpVtbl[233]))((IDiaSymbol*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_characteristics"]/*' />
@@ -1899,7 +1899,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(234)]
     public HRESULT get_characteristics([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[234]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[234]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_coffGroup"]/*' />
@@ -1907,7 +1907,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(235)]
     public HRESULT get_coffGroup(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[235]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, IDiaSymbol**, int>)(lpVtbl[235]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_bindID"]/*' />
@@ -1915,7 +1915,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(236)]
     public HRESULT get_bindID([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[236]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[236]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_bindSpace"]/*' />
@@ -1923,7 +1923,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(237)]
     public HRESULT get_bindSpace([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[237]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[237]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSymbol.xml' path='doc/member[@name="IDiaSymbol.get_bindSlot"]/*' />
@@ -1931,7 +1931,7 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
     [VtblIndex(238)]
     public HRESULT get_bindSlot([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSymbol*, uint*, int>)(lpVtbl[238]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSymbol*, uint*, int>)(lpVtbl[238]))((IDiaSymbol*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     public interface Interface : IUnknown.Interface
@@ -2649,720 +2649,720 @@ public unsafe partial struct IDiaSymbol : IDiaSymbol.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_symIndexId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_symIndexId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_symTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_symTag;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_name;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_lexicalParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_lexicalParent;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_classParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_classParent;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_type;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_dataKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_dataKind;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_locationType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_locationType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_registerId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_registerId;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_offset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_offset;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_length;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_slot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_slot;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_volatileType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_volatileType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_constType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_constType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_unalignedType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_unalignedType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_access;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_access;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_libraryName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_libraryName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_platform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_platform;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_language;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_language;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_editAndContinueEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_editAndContinueEnabled;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_frontEndMajor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_frontEndMajor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_frontEndMinor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_frontEndMinor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_frontEndBuild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_frontEndBuild;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_backEndMajor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_backEndMajor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_backEndMinor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_backEndMinor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_backEndBuild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_backEndBuild;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_sourceFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_sourceFileName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_unused;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_unused;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_thunkOrdinal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_thunkOrdinal;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_thisAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_thisAdjust;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_virtualBaseOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_virtualBaseOffset;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_virtual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_virtual;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_intro;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_intro;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_pure;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_pure;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_callingConvention;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_callingConvention;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_value;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_value;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_baseType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_baseType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_token;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_token;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_timeStamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_timeStamp;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> get_guid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> get_guid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_symbolsFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_symbolsFileName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_reference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_reference;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_count;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_bitPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_bitPosition;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_arrayIndexType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_arrayIndexType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_packed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_packed;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_constructor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_constructor;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_overloadedOperator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_overloadedOperator;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_nested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_nested;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasNestedTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasNestedTypes;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasAssignmentOperator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasAssignmentOperator;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasCastOperator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasCastOperator;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_scoped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_scoped;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_virtualBaseClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_virtualBaseClass;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_indirectVirtualBaseClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_indirectVirtualBaseClass;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_virtualBasePointerOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_virtualBasePointerOffset;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_virtualTableShape;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_virtualTableShape;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lexicalParentId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lexicalParentId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_classParentId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_classParentId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_typeId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_typeId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_arrayIndexTypeId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_arrayIndexTypeId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_virtualTableShapeId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_virtualTableShapeId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_code;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_code;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_function;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_function;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_managed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_managed;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_msil;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_msil;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_virtualBaseDispIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_virtualBaseDispIndex;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_undecoratedName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_undecoratedName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_age;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_age;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_signature;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_signature;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_compilerGenerated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_compilerGenerated;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_addressTaken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_addressTaken;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_rank;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_rank;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_lowerBound;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_lowerBound;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_upperBound;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_upperBound;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_lowerBoundId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_lowerBoundId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_upperBoundId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_upperBoundId;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_dataBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, byte*, int> get_dataBytes;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildren;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildren;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SymTagEnum, char*, uint, IDiaEnumSymbols**, int> findChildrenEx;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SymTagEnum, char*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SymTagEnum, char*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
 
         [NativeTypeName("HRESULT (enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SymTagEnum, char*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_targetSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_targetSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_targetOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_targetOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_targetRelativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_targetRelativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_targetVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_targetVirtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_machineType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_machineType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_oemId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_oemId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_oemSymbolId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_oemSymbolId;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, IDiaSymbol**, int> get_types;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, IDiaSymbol**, int> get_types;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> get_typeIds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> get_typeIds;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_objectPointerType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_objectPointerType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_udtKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_udtKind;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> get_undecoratedNameEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> get_undecoratedNameEx;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_noReturn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_noReturn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_customCallingConvention;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_customCallingConvention;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_noInline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_noInline;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_optimizedCodeDebugInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_optimizedCodeDebugInfo;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_notReached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_notReached;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_interruptReturn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_interruptReturn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_farReturn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_farReturn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isStatic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isStatic;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasDebugInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasDebugInfo;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isLTCG;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isLTCG;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isDataAligned;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isDataAligned;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasSecurityChecks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasSecurityChecks;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_compilerName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_compilerName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasAlloca;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasAlloca;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasSetJump;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasSetJump;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasLongJump;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasLongJump;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasInlAsm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasInlAsm;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasEH;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasEH;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasSEH;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasSEH;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasEHa;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasEHa;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isNaked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isNaked;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isAggregated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isAggregated;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isSplitted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isSplitted;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_container;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_container;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_inlSpec;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_inlSpec;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_noStackOrdering;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_noStackOrdering;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_virtualBaseTableType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_virtualBaseTableType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasManagedCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasManagedCode;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isHotpatchable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isHotpatchable;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isCVTCIL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isCVTCIL;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isMSILNetmodule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isMSILNetmodule;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isCTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isCTypes;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isStripped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isStripped;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_frontEndQFE;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_frontEndQFE;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_backEndQFE;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_backEndQFE;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_wasInlined;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_wasInlined;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_strictGSCheck;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_strictGSCheck;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isCxxReturnUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isCxxReturnUdt;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isConstructorVirtualBase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isConstructorVirtualBase;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_RValueReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_RValueReference;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_unmodifiedType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_unmodifiedType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_framePointerPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_framePointerPresent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isSafeBuffers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isSafeBuffers;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_intrinsic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_intrinsic;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_sealed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_sealed;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hfaFloat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hfaFloat;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hfaDouble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hfaDouble;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_liveRangeStartAddressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_liveRangeStartAddressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_liveRangeStartAddressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_liveRangeStartAddressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_liveRangeStartRelativeVirtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_countLiveRanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_countLiveRanges;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_liveRangeLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_liveRangeLength;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_offsetInUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_offsetInUdt;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_paramBasePointerRegisterId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_paramBasePointerRegisterId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_localBasePointerRegisterId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_localBasePointerRegisterId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isLocationControlFlowDependent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isLocationControlFlowDependent;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_stride;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_stride;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_numberOfRows;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_numberOfRows;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_numberOfColumns;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_numberOfColumns;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isMatrixRowMajor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isMatrixRowMajor;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> get_numericProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> get_numericProperties;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, ushort*, int> get_modifierValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, ushort*, int> get_modifierValues;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isReturnValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isReturnValue;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isOptimizedAway;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isOptimizedAway;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_builtInKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_builtInKind;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_registerType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_registerType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_baseDataSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_baseDataSlot;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_baseDataOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_baseDataOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_textureSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_textureSlot;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_samplerSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_samplerSlot;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_uavSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_uavSlot;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_sizeInUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_sizeInUdt;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_memorySpaceKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_memorySpaceKind;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_unmodifiedTypeId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_unmodifiedTypeId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_subTypeId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_subTypeId;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_subType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_subType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_numberOfModifiers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_numberOfModifiers;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_numberOfRegisterIndices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_numberOfRegisterIndices;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isHLSLData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isHLSLData;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isPointerToDataMember;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isPointerToDataMember;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isPointerToMemberFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isPointerToMemberFunction;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isSingleInheritance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isSingleInheritance;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isMultipleInheritance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isMultipleInheritance;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isVirtualInheritance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isVirtualInheritance;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_restrictedType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_restrictedType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isPointerBasedOnSymbolValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isPointerBasedOnSymbolValue;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_baseSymbol;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_baseSymbol;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_baseSymbolId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_baseSymbolId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_objectFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_objectFileName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isAcceleratorGroupSharedLocal;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isAcceleratorPointerTagLiveRange;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isAcceleratorStubFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isAcceleratorStubFunction;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_numberOfAcceleratorPointerTags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_numberOfAcceleratorPointerTags;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isSdl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isSdl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isWinRTPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isWinRTPointer;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isRefUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isRefUdt;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isValueUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isValueUdt;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isInterfaceUdt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isInterfaceUdt;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
 
         [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
 
         [NativeTypeName("HRESULT (IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumLineNumbers**, int> findInlineeLines;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumLineNumbers**, int> findInlineeLines;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
 
         [NativeTypeName("HRESULT (DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> get_acceleratorPointerTags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, uint*, int> get_acceleratorPointerTags;
 
         [NativeTypeName("HRESULT (IDiaLineNumber **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaLineNumber**, int> getSrcLineOnTypeDefn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isPGO;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isPGO;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasValidPGOCounts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasValidPGOCounts;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_isOptimizedForSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_isOptimizedForSpeed;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_PGOEntryCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_PGOEntryCount;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_PGOEdgeCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_PGOEdgeCount;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_PGODynamicInstructionCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_PGODynamicInstructionCount;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_staticSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_staticSize;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_finalLiveStaticSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_finalLiveStaticSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_phaseName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_phaseName;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_hasControlFlowCheck;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_hasControlFlowCheck;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_constantExport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_constantExport;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_dataExport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_dataExport;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_privateExport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_privateExport;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_noNameExport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_noNameExport;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_exportHasExplicitlyAssignedOrdinal;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_exportIsForwarder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_exportIsForwarder;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_ordinal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ordinal;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_frameSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_frameSize;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_exceptionHandlerAddressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_exceptionHandlerAddressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_exceptionHandlerAddressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_exceptionHandlerAddressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_exceptionHandlerRelativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_exceptionHandlerVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_exceptionHandlerVirtualAddress;
 
         [NativeTypeName("HRESULT (IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_characteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_characteristics;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_coffGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_coffGroup;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_bindID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_bindID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_bindSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_bindSpace;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_bindSlot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_bindSlot;
     }
 }

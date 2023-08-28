@@ -25,7 +25,7 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEncodingFilterFactory*, Guid*, void**, int>)(lpVtbl[0]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEncodingFilterFactory*, Guid*, void**, int>)(lpVtbl[0]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEncodingFilterFactory*, uint>)(lpVtbl[1]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEncodingFilterFactory*, uint>)(lpVtbl[1]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEncodingFilterFactory*, uint>)(lpVtbl[2]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEncodingFilterFactory*, uint>)(lpVtbl[2]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEncodingFilterFactory.xml' path='doc/member[@name="IEncodingFilterFactory.FindBestFilter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
     [VtblIndex(3)]
     public HRESULT FindBestFilter([NativeTypeName("LPCWSTR")] char* pwzCodeIn, [NativeTypeName("LPCWSTR")] char* pwzCodeOut, DATAINFO info, IDataFilter** ppDF)
     {
-        return ((delegate* unmanaged<IEncodingFilterFactory*, char*, char*, DATAINFO, IDataFilter**, int>)(lpVtbl[3]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), pwzCodeIn, pwzCodeOut, info, ppDF);
+        return ((delegate* unmanaged[MemberFunction]<IEncodingFilterFactory*, char*, char*, DATAINFO, IDataFilter**, int>)(lpVtbl[3]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), pwzCodeIn, pwzCodeOut, info, ppDF);
     }
 
     /// <include file='IEncodingFilterFactory.xml' path='doc/member[@name="IEncodingFilterFactory.GetDefaultFilter"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
     [VtblIndex(4)]
     public HRESULT GetDefaultFilter([NativeTypeName("LPCWSTR")] char* pwzCodeIn, [NativeTypeName("LPCWSTR")] char* pwzCodeOut, IDataFilter** ppDF)
     {
-        return ((delegate* unmanaged<IEncodingFilterFactory*, char*, char*, IDataFilter**, int>)(lpVtbl[4]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), pwzCodeIn, pwzCodeOut, ppDF);
+        return ((delegate* unmanaged[MemberFunction]<IEncodingFilterFactory*, char*, char*, IDataFilter**, int>)(lpVtbl[4]))((IEncodingFilterFactory*)Unsafe.AsPointer(ref this), pwzCodeIn, pwzCodeOut, ppDF);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DATAINFO, IDataFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, DATAINFO, IDataFilter**, int> FindBestFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, DATAINFO, IDataFilter**, int> FindBestFilter;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IDataFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, IDataFilter**, int> GetDefaultFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, IDataFilter**, int> GetDefaultFilter;
     }
 }

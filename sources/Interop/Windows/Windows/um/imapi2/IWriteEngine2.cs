@@ -25,7 +25,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, Guid*, void**, int>)(lpVtbl[0]))((IWriteEngine2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, Guid*, void**, int>)(lpVtbl[0]))((IWriteEngine2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWriteEngine2*, uint>)(lpVtbl[1]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, uint>)(lpVtbl[1]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWriteEngine2*, uint>)(lpVtbl[2]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, uint>)(lpVtbl[2]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, uint*, int>)(lpVtbl[3]))((IWriteEngine2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, uint*, int>)(lpVtbl[3]))((IWriteEngine2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWriteEngine2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IWriteEngine2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWriteEngine2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IWriteEngine2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWriteEngine2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IWriteEngine2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.WriteSection"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT WriteSection(IStream* data, [NativeTypeName("LONG")] int startingBlockAddress, [NativeTypeName("LONG")] int numberOfBlocks)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, IStream*, int, int, int>)(lpVtbl[7]))((IWriteEngine2*)Unsafe.AsPointer(ref this), data, startingBlockAddress, numberOfBlocks);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, IStream*, int, int, int>)(lpVtbl[7]))((IWriteEngine2*)Unsafe.AsPointer(ref this), data, startingBlockAddress, numberOfBlocks);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.CancelWrite"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT CancelWrite()
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int>)(lpVtbl[8]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int>)(lpVtbl[8]))((IWriteEngine2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.put_Recorder"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT put_Recorder(IDiscRecorder2Ex* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, IDiscRecorder2Ex*, int>)(lpVtbl[9]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, IDiscRecorder2Ex*, int>)(lpVtbl[9]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_Recorder"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT get_Recorder(IDiscRecorder2Ex** value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, IDiscRecorder2Ex**, int>)(lpVtbl[10]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, IDiscRecorder2Ex**, int>)(lpVtbl[10]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.put_UseStreamingWrite12"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT put_UseStreamingWrite12([NativeTypeName("VARIANT_BOOL")] short value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, short, int>)(lpVtbl[11]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, short, int>)(lpVtbl[11]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_UseStreamingWrite12"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT get_UseStreamingWrite12([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, short*, int>)(lpVtbl[12]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, short*, int>)(lpVtbl[12]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.put_StartingSectorsPerSecond"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT put_StartingSectorsPerSecond([NativeTypeName("LONG")] int value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int, int>)(lpVtbl[13]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int, int>)(lpVtbl[13]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_StartingSectorsPerSecond"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT get_StartingSectorsPerSecond([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int*, int>)(lpVtbl[14]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int*, int>)(lpVtbl[14]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.put_EndingSectorsPerSecond"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT put_EndingSectorsPerSecond([NativeTypeName("LONG")] int value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int, int>)(lpVtbl[15]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int, int>)(lpVtbl[15]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_EndingSectorsPerSecond"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT get_EndingSectorsPerSecond([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int*, int>)(lpVtbl[16]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int*, int>)(lpVtbl[16]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.put_BytesPerSector"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT put_BytesPerSector([NativeTypeName("LONG")] int value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int, int>)(lpVtbl[17]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int, int>)(lpVtbl[17]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_BytesPerSector"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT get_BytesPerSector([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, int*, int>)(lpVtbl[18]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, int*, int>)(lpVtbl[18]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWriteEngine2.xml' path='doc/member[@name="IWriteEngine2.get_WriteInProgress"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT get_WriteInProgress([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IWriteEngine2*, short*, int>)(lpVtbl[19]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWriteEngine2*, short*, int>)(lpVtbl[19]))((IWriteEngine2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IDispatch.Interface
@@ -228,63 +228,63 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream *, LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int, int, int> WriteSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int, int, int> WriteSection;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CancelWrite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CancelWrite;
 
         [NativeTypeName("HRESULT (IDiscRecorder2Ex *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2Ex*, int> put_Recorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2Ex*, int> put_Recorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder2Ex **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2Ex**, int> get_Recorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2Ex**, int> get_Recorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_UseStreamingWrite12;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_UseStreamingWrite12;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_UseStreamingWrite12;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_UseStreamingWrite12;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_StartingSectorsPerSecond;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_StartingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartingSectorsPerSecond;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_EndingSectorsPerSecond;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_EndingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_EndingSectorsPerSecond;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_EndingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_BytesPerSector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_BytesPerSector;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_BytesPerSector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_BytesPerSector;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_WriteInProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_WriteInProgress;
     }
 }

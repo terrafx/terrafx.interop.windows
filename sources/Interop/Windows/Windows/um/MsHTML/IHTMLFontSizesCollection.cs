@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, uint>)(lpVtbl[1]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, uint>)(lpVtbl[1]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, uint>)(lpVtbl[2]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, uint>)(lpVtbl[2]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, uint*, int>)(lpVtbl[3]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, uint*, int>)(lpVtbl[3]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.get_length"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(7)]
     public HRESULT get_length([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, int*, int>)(lpVtbl[7]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, int*, int>)(lpVtbl[7]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.get__newEnum"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(8)]
     public HRESULT get__newEnum(IUnknown** p)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, IUnknown**, int>)(lpVtbl[8]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, IUnknown**, int>)(lpVtbl[8]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.get_forFont"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(9)]
     public HRESULT get_forFont([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, char**, int>)(lpVtbl[9]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, char**, int>)(lpVtbl[9]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLFontSizesCollection.xml' path='doc/member[@name="IHTMLFontSizesCollection.item"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
     [VtblIndex(10)]
     public HRESULT item([NativeTypeName("long")] int index, [NativeTypeName("long *")] int* plSize)
     {
-        return ((delegate* unmanaged<IHTMLFontSizesCollection*, int, int*, int>)(lpVtbl[10]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), index, plSize);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLFontSizesCollection*, int, int*, int>)(lpVtbl[10]))((IHTMLFontSizesCollection*)Unsafe.AsPointer(ref this), index, plSize);
     }
 
     public interface Interface : IDispatch.Interface
@@ -129,36 +129,36 @@ public unsafe partial struct IHTMLFontSizesCollection : IHTMLFontSizesCollection
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_forFont;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_forFont;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> item;
     }
 }

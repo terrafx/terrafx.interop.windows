@@ -25,7 +25,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, uint>)(lpVtbl[1]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, uint>)(lpVtbl[1]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, uint>)(lpVtbl[2]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, uint>)(lpVtbl[2]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateIShellImageData"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [VtblIndex(3)]
     public HRESULT CreateIShellImageData(IShellImageData** ppshimg)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int>)(lpVtbl[3]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), ppshimg);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, IShellImageData**, int>)(lpVtbl[3]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), ppshimg);
     }
 
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromFile"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [VtblIndex(4)]
     public HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] char* pszPath, IShellImageData** ppshimg)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, char*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, char*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
     }
 
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromStream"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [VtblIndex(5)]
     public HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int>)(lpVtbl[5]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pStream, ppshimg);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, IStream*, IShellImageData**, int>)(lpVtbl[5]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pStream, ppshimg);
     }
 
     /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.GetDataFormatFromPath"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
     [VtblIndex(6)]
     public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] char* pszPath, Guid* pDataFormat)
     {
-        return ((delegate* unmanaged<IShellImageDataFactory*, char*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageDataFactory*, char*, Guid*, int>)(lpVtbl[6]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, pDataFormat);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellImageData**, int> CreateIShellImageData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellImageData**, int> CreateIShellImageData;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IShellImageData**, int> CreateImageFromFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IShellImageData**, int> CreateImageFromFile;
 
         [NativeTypeName("HRESULT (IStream *, IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IShellImageData**, int> CreateImageFromStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IShellImageData**, int> CreateImageFromStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, Guid*, int> GetDataFormatFromPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, int> GetDataFormatFromPath;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, uint>)(lpVtbl[1]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, uint>)(lpVtbl[1]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, uint>)(lpVtbl[2]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, uint>)(lpVtbl[2]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.QueryCurrentDefault"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(3)]
     public HRESULT QueryCurrentDefault([NativeTypeName("LPCWSTR")] char* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPWSTR *")] char** ppszAssociation)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char**, int>)(lpVtbl[3]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, ppszAssociation);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char**, int>)(lpVtbl[3]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, ppszAssociation);
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.QueryAppIsDefault"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(4)]
     public HRESULT QueryAppIsDefault([NativeTypeName("LPCWSTR")] char* pszQuery, ASSOCIATIONTYPE atQueryType, ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] char* pszAppRegistryName, BOOL* pfDefault)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char*, BOOL*, int>)(lpVtbl[4]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, pfDefault);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char*, BOOL*, int>)(lpVtbl[4]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszQuery, atQueryType, alQueryLevel, pszAppRegistryName, pfDefault);
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.QueryAppIsDefaultAll"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(5)]
     public HRESULT QueryAppIsDefaultAll(ASSOCIATIONLEVEL alQueryLevel, [NativeTypeName("LPCWSTR")] char* pszAppRegistryName, BOOL* pfDefault)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, ASSOCIATIONLEVEL, char*, BOOL*, int>)(lpVtbl[5]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), alQueryLevel, pszAppRegistryName, pfDefault);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, ASSOCIATIONLEVEL, char*, BOOL*, int>)(lpVtbl[5]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), alQueryLevel, pszAppRegistryName, pfDefault);
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.SetAppAsDefault"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(6)]
     public HRESULT SetAppAsDefault([NativeTypeName("LPCWSTR")] char* pszAppRegistryName, [NativeTypeName("LPCWSTR")] char* pszSet, ASSOCIATIONTYPE atSetType)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, char*, char*, ASSOCIATIONTYPE, int>)(lpVtbl[6]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszAppRegistryName, pszSet, atSetType);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, char*, char*, ASSOCIATIONTYPE, int>)(lpVtbl[6]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszAppRegistryName, pszSet, atSetType);
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.SetAppAsDefaultAll"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(7)]
     public HRESULT SetAppAsDefaultAll([NativeTypeName("LPCWSTR")] char* pszAppRegistryName)
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, char*, int>)(lpVtbl[7]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszAppRegistryName);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, char*, int>)(lpVtbl[7]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this), pszAppRegistryName);
     }
 
     /// <include file='IApplicationAssociationRegistration.xml' path='doc/member[@name="IApplicationAssociationRegistration.ClearUserAssociations"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
     [VtblIndex(8)]
     public HRESULT ClearUserAssociations()
     {
-        return ((delegate* unmanaged<IApplicationAssociationRegistration*, int>)(lpVtbl[8]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationAssociationRegistration*, int>)(lpVtbl[8]))((IApplicationAssociationRegistration*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IApplicationAssociationRegistration : IApplicationA
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char**, int> QueryCurrentDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char**, int> QueryCurrentDefault;
 
         [NativeTypeName("HRESULT (LPCWSTR, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char*, BOOL*, int> QueryAppIsDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ASSOCIATIONTYPE, ASSOCIATIONLEVEL, char*, BOOL*, int> QueryAppIsDefault;
 
         [NativeTypeName("HRESULT (ASSOCIATIONLEVEL, LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ASSOCIATIONLEVEL, char*, BOOL*, int> QueryAppIsDefaultAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ASSOCIATIONLEVEL, char*, BOOL*, int> QueryAppIsDefaultAll;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ASSOCIATIONTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ASSOCIATIONTYPE, int> SetAppAsDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ASSOCIATIONTYPE, int> SetAppAsDefault;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetAppAsDefaultAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetAppAsDefaultAll;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearUserAssociations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearUserAssociations;
     }
 }

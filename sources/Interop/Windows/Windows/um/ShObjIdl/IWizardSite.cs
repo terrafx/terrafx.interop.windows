@@ -25,7 +25,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWizardSite*, Guid*, void**, int>)(lpVtbl[0]))((IWizardSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, Guid*, void**, int>)(lpVtbl[0]))((IWizardSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWizardSite*, uint>)(lpVtbl[1]))((IWizardSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, uint>)(lpVtbl[1]))((IWizardSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWizardSite*, uint>)(lpVtbl[2]))((IWizardSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, uint>)(lpVtbl[2]))((IWizardSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetPreviousPage"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetPreviousPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[3]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[3]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
     }
 
     /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetNextPage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetNextPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
     }
 
     /// <include file='IWizardSite.xml' path='doc/member[@name="IWizardSite.GetCancelledPage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetCancelledPage(HPROPSHEETPAGE* phpage)
     {
-        return ((delegate* unmanaged<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
+        return ((delegate* unmanaged[MemberFunction]<IWizardSite*, HPROPSHEETPAGE*, int>)(lpVtbl[5]))((IWizardSite*)Unsafe.AsPointer(ref this), phpage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IWizardSite : IWizardSite.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetPreviousPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetPreviousPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetNextPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetNextPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetCancelledPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HPROPSHEETPAGE*, int> GetCancelledPage;
     }
 }

@@ -28,7 +28,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, Guid*, void**, int>)(lpVtbl[0]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, Guid*, void**, int>)(lpVtbl[0]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[1]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[1]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[2]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, uint>)(lpVtbl[2]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -54,7 +54,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint*, Guid**, int>)(lpVtbl[3]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, uint*, Guid**, int>)(lpVtbl[3]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -62,7 +62,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, HSTRING*, int>)(lpVtbl[4]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, HSTRING*, int>)(lpVtbl[4]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -70,7 +70,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, TrustLevel*, int>)(lpVtbl[5]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, TrustLevel*, int>)(lpVtbl[5]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.TriggerContentPrefetcherTask"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(6)]
     public HRESULT TriggerContentPrefetcherTask([NativeTypeName("LPCWSTR")] char* packageFullName)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, char*, int>)(lpVtbl[6]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, char*, int>)(lpVtbl[6]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
     /// <include file='IContentPrefetcherTaskTrigger.xml' path='doc/member[@name="IContentPrefetcherTaskTrigger.IsRegisteredForContentPrefetch"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
     [VtblIndex(7)]
     public HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] char* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered)
     {
-        return ((delegate* unmanaged<IContentPrefetcherTaskTrigger*, char*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcherTaskTrigger*, char*, byte*, int>)(lpVtbl[7]))((IContentPrefetcherTaskTrigger*)Unsafe.AsPointer(ref this), packageFullName, isRegistered);
     }
 
     public interface Interface : IInspectable.Interface
@@ -102,27 +102,27 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> TriggerContentPrefetcherTask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> TriggerContentPrefetcherTask;
 
         [NativeTypeName("HRESULT (LPCWSTR, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte*, int> IsRegisteredForContentPrefetch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte*, int> IsRegisteredForContentPrefetch;
     }
 }

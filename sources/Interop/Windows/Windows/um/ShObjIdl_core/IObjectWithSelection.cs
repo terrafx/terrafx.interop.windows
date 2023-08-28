@@ -25,7 +25,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectWithSelection*, uint>)(lpVtbl[1]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSelection*, uint>)(lpVtbl[1]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectWithSelection*, uint>)(lpVtbl[2]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSelection*, uint>)(lpVtbl[2]))((IObjectWithSelection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection.SetSelection"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
     [VtblIndex(3)]
     public HRESULT SetSelection(IShellItemArray* psia)
     {
-        return ((delegate* unmanaged<IObjectWithSelection*, IShellItemArray*, int>)(lpVtbl[3]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), psia);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSelection*, IShellItemArray*, int>)(lpVtbl[3]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), psia);
     }
 
     /// <include file='IObjectWithSelection.xml' path='doc/member[@name="IObjectWithSelection.GetSelection"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
     [VtblIndex(4)]
     public HRESULT GetSelection([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithSelection*, Guid*, void**, int>)(lpVtbl[4]))((IObjectWithSelection*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IObjectWithSelection : IObjectWithSelection.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray*, int> SetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItemArray*, int> SetSelection;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetSelection;
     }
 }

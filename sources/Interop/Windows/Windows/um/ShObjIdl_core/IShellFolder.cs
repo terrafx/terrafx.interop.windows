@@ -25,7 +25,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellFolder*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellFolder*, uint>)(lpVtbl[1]))((IShellFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, uint>)(lpVtbl[1]))((IShellFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellFolder*, uint>)(lpVtbl[2]))((IShellFolder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, uint>)(lpVtbl[2]))((IShellFolder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.ParseDisplayName"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.EnumObjects"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT EnumObjects(HWND hwnd, [NativeTypeName("SHCONTF")] uint grfFlags, IEnumIDList** ppenumIDList)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, uint, IEnumIDList**, int>)(lpVtbl[4]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, grfFlags, ppenumIDList);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, HWND, uint, IEnumIDList**, int>)(lpVtbl[4]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, grfFlags, ppenumIDList);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.BindToObject"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT BindToObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[5]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[5]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.BindToStorage"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT BindToStorage([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[6]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[6]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.CompareIDs"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT CompareIDs(LPARAM lParam, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)
     {
-        return ((delegate* unmanaged<IShellFolder*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[7]))((IShellFolder*)Unsafe.AsPointer(ref this), lParam, pidl1, pidl2);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[7]))((IShellFolder*)Unsafe.AsPointer(ref this), lParam, pidl1, pidl2);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.CreateViewObject"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT CreateViewObject(HWND hwndOwner, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, riid, ppv);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetAttributesOf"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetAttributesOf(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("SFGAOF *")] uint* rgfInOut)
     {
-        return ((delegate* unmanaged<IShellFolder*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[9]))((IShellFolder*)Unsafe.AsPointer(ref this), cidl, apidl, rgfInOut);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[9]))((IShellFolder*)Unsafe.AsPointer(ref this), cidl, apidl, rgfInOut);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetUIObjectOf"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetUIObjectOf(HWND hwndOwner, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, uint* rgfReserved, void** ppv)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetDisplayNameOf"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetDisplayNameOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("SHGDNF")] uint uFlags, STRRET* pName)
     {
-        return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, uint, STRRET*, int>)(lpVtbl[11]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, uFlags, pName);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, ITEMIDLIST*, uint, STRRET*, int>)(lpVtbl[11]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, uFlags, pName);
     }
 
     /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.SetNameOf"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)
     {
-        return ((delegate* unmanaged<IShellFolder*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
+        return ((delegate* unmanaged[MemberFunction]<IShellFolder*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int>)(lpVtbl[12]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pidl, pszName, uFlags, ppidlOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IBindCtx *, LPWSTR, ULONG *, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IBindCtx*, char*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (HWND, SHCONTF, IEnumIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
 
         [NativeTypeName("HRESULT (LPARAM, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> CreateViewObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, Guid*, void**, int> CreateViewObject;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
 
         [NativeTypeName("HRESULT (HWND, UINT, LPCITEMIDLIST *, const IID &, UINT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, SHGDNF, STRRET *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
 
         [NativeTypeName("HRESULT (HWND, LPCITEMIDLIST, LPCWSTR, SHGDNF, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int> SetNameOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, ITEMIDLIST*, char*, uint, ITEMIDLIST**, int> SetNameOf;
     }
 }

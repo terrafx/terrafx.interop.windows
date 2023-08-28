@@ -25,7 +25,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<AsyncIAdviseSink*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<AsyncIAdviseSink*, uint>)(lpVtbl[1]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, uint>)(lpVtbl[1]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<AsyncIAdviseSink*, uint>)(lpVtbl[2]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, uint>)(lpVtbl[2]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Begin_OnDataChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(3)]
     public void Begin_OnDataChange(FORMATETC* pFormatetc, STGMEDIUM* pStgmed)
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, FORMATETC*, STGMEDIUM*, void>)(lpVtbl[3]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pFormatetc, pStgmed);
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Finish_OnDataChange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(4)]
     public void Finish_OnDataChange()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[4]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[4]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Begin_OnViewChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(5)]
     public void Begin_OnViewChange([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("LONG")] int lindex)
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, uint, int, void>)(lpVtbl[5]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), dwAspect, lindex);
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, uint, int, void>)(lpVtbl[5]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), dwAspect, lindex);
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Finish_OnViewChange"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(6)]
     public void Finish_OnViewChange()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[6]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[6]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Begin_OnRename"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(7)]
     public void Begin_OnRename(IMoniker* pmk)
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, IMoniker*, void>)(lpVtbl[7]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pmk);
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, IMoniker*, void>)(lpVtbl[7]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this), pmk);
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Finish_OnRename"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(8)]
     public void Finish_OnRename()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[8]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[8]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Begin_OnSave"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(9)]
     public void Begin_OnSave()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[9]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[9]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Finish_OnSave"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(10)]
     public void Finish_OnSave()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[10]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[10]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Begin_OnClose"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(11)]
     public void Begin_OnClose()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[11]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[11]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIAdviseSink.xml' path='doc/member[@name="AsyncIAdviseSink.Finish_OnClose"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
     [VtblIndex(12)]
     public void Finish_OnClose()
     {
-        ((delegate* unmanaged<AsyncIAdviseSink*, void>)(lpVtbl[12]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<AsyncIAdviseSink*, void>)(lpVtbl[12]))((AsyncIAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct AsyncIAdviseSink : AsyncIAdviseSink.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Finish_OnDataChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Finish_OnDataChange;
 
         [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int, void> Begin_OnViewChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int, void> Begin_OnViewChange;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Finish_OnViewChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Finish_OnViewChange;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, void> Begin_OnRename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, void> Begin_OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Finish_OnRename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Finish_OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Begin_OnSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Begin_OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Finish_OnSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Finish_OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Begin_OnClose;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Begin_OnClose;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Finish_OnClose;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Finish_OnClose;
     }
 }

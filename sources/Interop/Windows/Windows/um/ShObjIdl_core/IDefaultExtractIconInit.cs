@@ -25,7 +25,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[1]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, uint>)(lpVtbl[1]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[2]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, uint>)(lpVtbl[2]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetFlags"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(3)]
     public HRESULT SetFlags(uint uFlags)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint, int>)(lpVtbl[3]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), uFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, uint, int>)(lpVtbl[3]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), uFlags);
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetKey"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(4)]
     public HRESULT SetKey(HKEY hkey)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetNormalIcon"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(5)]
     public HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] char* pszFile, int iIcon)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[5]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[5]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetOpenIcon"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(6)]
     public HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] char* pszFile, int iIcon)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[6]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[6]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetShortcutIcon"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(7)]
     public HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] char* pszFile, int iIcon)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[7]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[7]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
     /// <include file='IDefaultExtractIconInit.xml' path='doc/member[@name="IDefaultExtractIconInit.SetDefaultIcon"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
     [VtblIndex(8)]
     public HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] char* pszFile, int iIcon)
     {
-        return ((delegate* unmanaged<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[8]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultExtractIconInit*, char*, int, int>)(lpVtbl[8]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFlags;
 
         [NativeTypeName("HRESULT (HKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKEY, int> SetKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HKEY, int> SetKey;
 
         [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetNormalIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetNormalIcon;
 
         [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetOpenIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetOpenIcon;
 
         [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetShortcutIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetShortcutIcon;
 
         [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetDefaultIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetDefaultIcon;
     }
 }

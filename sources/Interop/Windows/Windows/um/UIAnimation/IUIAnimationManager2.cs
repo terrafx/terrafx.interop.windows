@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, uint>)(lpVtbl[1]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, uint>)(lpVtbl[1]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, uint>)(lpVtbl[2]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, uint>)(lpVtbl[2]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateAnimationVectorVariable"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(3)]
     public HRESULT CreateAnimationVectorVariable([NativeTypeName("const DOUBLE *")] double* initialValue, uint cDimension, IUIAnimationVariable2** variable)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double*, uint, IUIAnimationVariable2**, int>)(lpVtbl[3]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, cDimension, variable);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double*, uint, IUIAnimationVariable2**, int>)(lpVtbl[3]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, cDimension, variable);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateAnimationVariable"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(4)]
     public HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable2** variable)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double, IUIAnimationVariable2**, int>)(lpVtbl[4]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, variable);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double, IUIAnimationVariable2**, int>)(lpVtbl[4]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, variable);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.ScheduleTransition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(5)]
     public HRESULT ScheduleTransition(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int>)(lpVtbl[5]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), variable, transition, timeNow);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int>)(lpVtbl[5]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), variable, transition, timeNow);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateStoryboard"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(6)]
     public HRESULT CreateStoryboard(IUIAnimationStoryboard2** storyboard)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationStoryboard2**, int>)(lpVtbl[6]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), storyboard);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationStoryboard2**, int>)(lpVtbl[6]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), storyboard);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.FinishAllStoryboards"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(7)]
     public HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double, int>)(lpVtbl[7]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), completionDeadline);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double, int>)(lpVtbl[7]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), completionDeadline);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.AbandonAllStoryboards"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(8)]
     public HRESULT AbandonAllStoryboards()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[8]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, int>)(lpVtbl[8]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Update"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(9)]
     public HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[9]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), timeNow, updateResult);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[9]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), timeNow, updateResult);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetVariableFromTag"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(10)]
     public HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable2** variable)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationVariable2**, int>)(lpVtbl[10]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, variable);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationVariable2**, int>)(lpVtbl[10]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, variable);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetStoryboardFromTag"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(11)]
     public HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard2** storyboard)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationStoryboard2**, int>)(lpVtbl[11]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, storyboard);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationStoryboard2**, int>)(lpVtbl[11]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, storyboard);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.EstimateNextEventTime"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(12)]
     public HRESULT EstimateNextEventTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* seconds)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double*, int>)(lpVtbl[12]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), seconds);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double*, int>)(lpVtbl[12]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), seconds);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetStatus"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(13)]
     public HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MANAGER_STATUS*, int>)(lpVtbl[13]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, UI_ANIMATION_MANAGER_STATUS*, int>)(lpVtbl[13]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), status);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetAnimationMode"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(14)]
     public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MODE, int>)(lpVtbl[14]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, UI_ANIMATION_MODE, int>)(lpVtbl[14]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Pause"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(15)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[15]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, int>)(lpVtbl[15]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Resume"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(16)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[16]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, int>)(lpVtbl[16]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetManagerEventHandler"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(17)]
     public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, BOOL, int>)(lpVtbl[17]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, BOOL, int>)(lpVtbl[17]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetCancelPriorityComparison"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(18)]
     public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison2* comparison)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[18]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[18]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetTrimPriorityComparison"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(19)]
     public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison2* comparison)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[19]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[19]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetCompressPriorityComparison"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(20)]
     public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison2* comparison)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[20]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[20]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetConcludePriorityComparison"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(21)]
     public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison2* comparison)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[21]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[21]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetDefaultLongestAcceptableDelay"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(22)]
     public HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, double, int>)(lpVtbl[22]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), delay);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, double, int>)(lpVtbl[22]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), delay);
     }
 
     /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Shutdown"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
     [VtblIndex(23)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[23]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationManager2*, int>)(lpVtbl[23]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -284,75 +284,75 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT, IUIAnimationVariable2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, IUIAnimationVariable2**, int> CreateAnimationVectorVariable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, IUIAnimationVariable2**, int> CreateAnimationVectorVariable;
 
         [NativeTypeName("HRESULT (DOUBLE, IUIAnimationVariable2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, IUIAnimationVariable2**, int> CreateAnimationVariable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, IUIAnimationVariable2**, int> CreateAnimationVariable;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable2 *, IUIAnimationTransition2 *, UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int> ScheduleTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int> ScheduleTransition;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard2**, int> CreateStoryboard;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard2**, int> CreateStoryboard;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> FinishAllStoryboards;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> FinishAllStoryboards;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> AbandonAllStoryboards;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> AbandonAllStoryboards;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_UPDATE_RESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, UI_ANIMATION_UPDATE_RESULT*, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, UI_ANIMATION_UPDATE_RESULT*, int> Update;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationVariable2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, IUIAnimationVariable2**, int> GetVariableFromTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, IUIAnimationVariable2**, int> GetVariableFromTag;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, IUIAnimationStoryboard2**, int> GetStoryboardFromTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, IUIAnimationStoryboard2**, int> GetStoryboardFromTag;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> EstimateNextEventTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> EstimateNextEventTime;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_MANAGER_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_MANAGER_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_MANAGER_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_MODE, int> SetAnimationMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_MODE, int> SetAnimationMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (IUIAnimationManagerEventHandler2 *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationManagerEventHandler2*, BOOL, int> SetManagerEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationManagerEventHandler2*, BOOL, int> SetManagerEventHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationPriorityComparison2*, int> SetCancelPriorityComparison;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationPriorityComparison2*, int> SetCancelPriorityComparison;
 
         [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationPriorityComparison2*, int> SetTrimPriorityComparison;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationPriorityComparison2*, int> SetTrimPriorityComparison;
 
         [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationPriorityComparison2*, int> SetCompressPriorityComparison;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationPriorityComparison2*, int> SetCompressPriorityComparison;
 
         [NativeTypeName("HRESULT (IUIAnimationPriorityComparison2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationPriorityComparison2*, int> SetConcludePriorityComparison;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationPriorityComparison2*, int> SetConcludePriorityComparison;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetDefaultLongestAcceptableDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetDefaultLongestAcceptableDelay;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

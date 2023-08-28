@@ -25,7 +25,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleControlSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleControlSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleControlSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[1]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, uint>)(lpVtbl[1]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleControlSite*, uint>)(lpVtbl[2]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, uint>)(lpVtbl[2]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.OnControlInfoChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(3)]
     public HRESULT OnControlInfoChanged()
     {
-        return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[3]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, int>)(lpVtbl[3]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.LockInPlaceActive"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(4)]
     public HRESULT LockInPlaceActive(BOOL fLock)
     {
-        return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, BOOL, int>)(lpVtbl[4]))((IOleControlSite*)Unsafe.AsPointer(ref this), fLock);
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.GetExtendedControl"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetExtendedControl(IDispatch** ppDisp)
     {
-        return ((delegate* unmanaged<IOleControlSite*, IDispatch**, int>)(lpVtbl[5]))((IOleControlSite*)Unsafe.AsPointer(ref this), ppDisp);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, IDispatch**, int>)(lpVtbl[5]))((IOleControlSite*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.TransformCoords"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(6)]
     public HRESULT TransformCoords(POINTL* pPtlHimetric, POINTF* pPtfContainer, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int>)(lpVtbl[6]))((IOleControlSite*)Unsafe.AsPointer(ref this), pPtlHimetric, pPtfContainer, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, POINTL*, POINTF*, uint, int>)(lpVtbl[6]))((IOleControlSite*)Unsafe.AsPointer(ref this), pPtlHimetric, pPtfContainer, dwFlags);
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.TranslateAccelerator"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(7)]
     public HRESULT TranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
     {
-        return ((delegate* unmanaged<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, MSG*, uint, int>)(lpVtbl[7]))((IOleControlSite*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.OnFocus"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(8)]
     public HRESULT OnFocus(BOOL fGotFocus)
     {
-        return ((delegate* unmanaged<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, BOOL, int>)(lpVtbl[8]))((IOleControlSite*)Unsafe.AsPointer(ref this), fGotFocus);
     }
 
     /// <include file='IOleControlSite.xml' path='doc/member[@name="IOleControlSite.ShowPropertyFrame"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
     [VtblIndex(9)]
     public HRESULT ShowPropertyFrame()
     {
-        return ((delegate* unmanaged<IOleControlSite*, int>)(lpVtbl[9]))((IOleControlSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleControlSite*, int>)(lpVtbl[9]))((IOleControlSite*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnControlInfoChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnControlInfoChanged;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> LockInPlaceActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> LockInPlaceActive;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> GetExtendedControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> GetExtendedControl;
 
         [NativeTypeName("HRESULT (POINTL *, POINTF *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINTL*, POINTF*, uint, int> TransformCoords;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINTL*, POINTF*, uint, int> TransformCoords;
 
         [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, uint, int> TranslateAccelerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, uint, int> TranslateAccelerator;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnFocus;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShowPropertyFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShowPropertyFrame;
     }
 }

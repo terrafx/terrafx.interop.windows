@@ -25,7 +25,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPinConnection*, Guid*, void**, int>)(lpVtbl[0]))((IPinConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, Guid*, void**, int>)(lpVtbl[0]))((IPinConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPinConnection*, uint>)(lpVtbl[1]))((IPinConnection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, uint>)(lpVtbl[1]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPinConnection*, uint>)(lpVtbl[2]))((IPinConnection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, uint>)(lpVtbl[2]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.DynamicQueryAccept"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT DynamicQueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IPinConnection*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IPinConnection*)Unsafe.AsPointer(ref this), pmt);
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IPinConnection*)Unsafe.AsPointer(ref this), pmt);
     }
 
     /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.NotifyEndOfStream"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT NotifyEndOfStream(HANDLE hNotifyEvent)
     {
-        return ((delegate* unmanaged<IPinConnection*, HANDLE, int>)(lpVtbl[4]))((IPinConnection*)Unsafe.AsPointer(ref this), hNotifyEvent);
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, HANDLE, int>)(lpVtbl[4]))((IPinConnection*)Unsafe.AsPointer(ref this), hNotifyEvent);
     }
 
     /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.IsEndPin"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT IsEndPin()
     {
-        return ((delegate* unmanaged<IPinConnection*, int>)(lpVtbl[5]))((IPinConnection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, int>)(lpVtbl[5]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.DynamicDisconnect"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT DynamicDisconnect()
     {
-        return ((delegate* unmanaged<IPinConnection*, int>)(lpVtbl[6]))((IPinConnection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinConnection*, int>)(lpVtbl[6]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> DynamicQueryAccept;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_MEDIA_TYPE*, int> DynamicQueryAccept;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, int> NotifyEndOfStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, int> NotifyEndOfStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEndPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEndPin;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DynamicDisconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DynamicDisconnect;
     }
 }

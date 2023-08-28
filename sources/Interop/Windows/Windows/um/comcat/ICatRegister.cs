@@ -25,7 +25,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICatRegister*, Guid*, void**, int>)(lpVtbl[0]))((ICatRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, Guid*, void**, int>)(lpVtbl[0]))((ICatRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICatRegister*, uint>)(lpVtbl[1]))((ICatRegister*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, uint>)(lpVtbl[1]))((ICatRegister*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICatRegister*, uint>)(lpVtbl[2]))((ICatRegister*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, uint>)(lpVtbl[2]))((ICatRegister*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterCategories"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT RegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATEGORYINFO[]")] CATEGORYINFO* rgCategoryInfo)
     {
-        return ((delegate* unmanaged<ICatRegister*, uint, CATEGORYINFO*, int>)(lpVtbl[3]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgCategoryInfo);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, uint, CATEGORYINFO*, int>)(lpVtbl[3]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgCategoryInfo);
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterCategories"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT UnRegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID[]")] Guid* rgcatid)
     {
-        return ((delegate* unmanaged<ICatRegister*, uint, Guid*, int>)(lpVtbl[4]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgcatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, uint, Guid*, int>)(lpVtbl[4]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgcatid);
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterClassImplCategories"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT RegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID[]")] Guid* rgcatid)
     {
-        return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[5]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[5]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterClassImplCategories"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT UnRegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID[]")] Guid* rgcatid)
     {
-        return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterClassReqCategories"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT RegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID[]")] Guid* rgcatid)
     {
-        return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[7]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[7]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
     /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterClassReqCategories"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT UnRegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID[]")] Guid* rgcatid)
     {
-        return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[8]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
+        return ((delegate* unmanaged[MemberFunction]<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[8]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CATEGORYINFO*, int> RegisterCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CATEGORYINFO*, int> RegisterCategories;
 
         [NativeTypeName("HRESULT (ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> UnRegisterCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> UnRegisterCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> RegisterClassImplCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, Guid*, int> RegisterClassImplCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassImplCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassImplCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> RegisterClassReqCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, Guid*, int> RegisterClassReqCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassReqCategories;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassReqCategories;
     }
 }

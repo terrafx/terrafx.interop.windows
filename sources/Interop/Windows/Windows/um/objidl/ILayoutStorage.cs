@@ -25,7 +25,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILayoutStorage*, Guid*, void**, int>)(lpVtbl[0]))((ILayoutStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, Guid*, void**, int>)(lpVtbl[0]))((ILayoutStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILayoutStorage*, uint>)(lpVtbl[1]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, uint>)(lpVtbl[1]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILayoutStorage*, uint>)(lpVtbl[2]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, uint>)(lpVtbl[2]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.LayoutScript"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT LayoutScript(StorageLayout* pStorageLayout, [NativeTypeName("DWORD")] uint nEntries, [NativeTypeName("DWORD")] uint glfInterleavedFlag)
     {
-        return ((delegate* unmanaged<ILayoutStorage*, StorageLayout*, uint, uint, int>)(lpVtbl[3]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pStorageLayout, nEntries, glfInterleavedFlag);
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, StorageLayout*, uint, uint, int>)(lpVtbl[3]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pStorageLayout, nEntries, glfInterleavedFlag);
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.BeginMonitor"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT BeginMonitor()
     {
-        return ((delegate* unmanaged<ILayoutStorage*, int>)(lpVtbl[4]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, int>)(lpVtbl[4]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.EndMonitor"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT EndMonitor()
     {
-        return ((delegate* unmanaged<ILayoutStorage*, int>)(lpVtbl[5]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, int>)(lpVtbl[5]))((ILayoutStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfile"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT ReLayoutDocfile([NativeTypeName("OLECHAR *")] char* pwcsNewDfName)
     {
-        return ((delegate* unmanaged<ILayoutStorage*, char*, int>)(lpVtbl[6]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pwcsNewDfName);
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, char*, int>)(lpVtbl[6]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pwcsNewDfName);
     }
 
     /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.ReLayoutDocfileOnILockBytes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes)
     {
-        return ((delegate* unmanaged<ILayoutStorage*, ILockBytes*, int>)(lpVtbl[7]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pILockBytes);
+        return ((delegate* unmanaged[MemberFunction]<ILayoutStorage*, ILockBytes*, int>)(lpVtbl[7]))((ILayoutStorage*)Unsafe.AsPointer(ref this), pILockBytes);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (StorageLayout *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, StorageLayout*, uint, uint, int> LayoutScript;
+        public delegate* unmanaged[MemberFunction]<TSelf*, StorageLayout*, uint, uint, int> LayoutScript;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> BeginMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> BeginMonitor;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndMonitor;
 
         [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> ReLayoutDocfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> ReLayoutDocfile;
 
         [NativeTypeName("HRESULT (ILockBytes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;
     }
 }

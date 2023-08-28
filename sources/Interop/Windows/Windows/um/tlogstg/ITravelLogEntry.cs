@@ -25,7 +25,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, uint>)(lpVtbl[1]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogEntry*, uint>)(lpVtbl[1]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, uint>)(lpVtbl[2]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogEntry*, uint>)(lpVtbl[2]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetTitle"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTitle([NativeTypeName("LPWSTR *")] char** ppszTitle)
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, char**, int>)(lpVtbl[3]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszTitle);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogEntry*, char**, int>)(lpVtbl[3]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszTitle);
     }
 
     /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetURL"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetURL([NativeTypeName("LPWSTR *")] char** ppszURL)
     {
-        return ((delegate* unmanaged<ITravelLogEntry*, char**, int>)(lpVtbl[4]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszURL);
+        return ((delegate* unmanaged[MemberFunction]<ITravelLogEntry*, char**, int>)(lpVtbl[4]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetTitle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTitle;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetURL;
     }
 }

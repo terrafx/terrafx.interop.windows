@@ -25,7 +25,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, Guid*, void**, int>)(lpVtbl[0]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, Guid*, void**, int>)(lpVtbl[0]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, uint>)(lpVtbl[1]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, uint>)(lpVtbl[1]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, uint>)(lpVtbl[2]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, uint>)(lpVtbl[2]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.ResetGrammar"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(3)]
     public HRESULT ResetGrammar([NativeTypeName("WORD")] ushort NewLanguage)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, ushort, int>)(lpVtbl[3]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), NewLanguage);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, ushort, int>)(lpVtbl[3]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), NewLanguage);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.GetRule"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetRule([NativeTypeName("LPCWSTR")] char* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int>)(lpVtbl[4]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int>)(lpVtbl[4]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.ClearRule"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(5)]
     public HRESULT ClearRule(SPSTATEHANDLE hState)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, int>)(lpVtbl[5]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, SPSTATEHANDLE, int>)(lpVtbl[5]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.CreateNewState"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(6)]
     public HRESULT CreateNewState(SPSTATEHANDLE hState, SPSTATEHANDLE* phState)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE*, int>)(lpVtbl[6]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState, phState);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE*, int>)(lpVtbl[6]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState, phState);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddWordTransition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(7)]
     public HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, [NativeTypeName("LPCWSTR")] char* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddRuleTransition"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(8)]
     public HRESULT AddRuleTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, SPSTATEHANDLE hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int>)(lpVtbl[8]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, hRule, Weight, pPropInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int>)(lpVtbl[8]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, hRule, Weight, pPropInfo);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddResource"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(9)]
     public HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] char* pszResourceName, [NativeTypeName("LPCWSTR")] char* pszResourceValue)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, char*, char*, int>)(lpVtbl[9]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, SPSTATEHANDLE, char*, char*, int>)(lpVtbl[9]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
     }
 
     /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.Commit"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
     [VtblIndex(10)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder*, uint, int>)(lpVtbl[10]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder*, uint, int>)(lpVtbl[10]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> ResetGrammar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> ResetGrammar;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, BOOL, SPSTATEHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int> GetRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint, BOOL, SPSTATEHANDLE*, int> GetRule;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, int> ClearRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, int> ClearRule;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE*, int> CreateNewState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE*, int> CreateNewState;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, LPCWSTR, SPGRAMMARWORDTYPE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int> AddWordTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, char*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int> AddWordTransition;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, const SPPROPERTYINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int> AddRuleTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int> AddRuleTransition;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, char*, char*, int> AddResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, char*, char*, int> AddResource;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Commit;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXmlWriter*, Guid*, void**, int>)(lpVtbl[0]))((IXmlWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, Guid*, void**, int>)(lpVtbl[0]))((IXmlWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXmlWriter*, uint>)(lpVtbl[1]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, uint>)(lpVtbl[1]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXmlWriter*, uint>)(lpVtbl[2]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, uint>)(lpVtbl[2]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.SetOutput"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetOutput(IUnknown* pOutput)
     {
-        return ((delegate* unmanaged<IXmlWriter*, IUnknown*, int>)(lpVtbl[3]))((IXmlWriter*)Unsafe.AsPointer(ref this), pOutput);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, IUnknown*, int>)(lpVtbl[3]))((IXmlWriter*)Unsafe.AsPointer(ref this), pOutput);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.GetProperty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
     {
-        return ((delegate* unmanaged<IXmlWriter*, uint, nint*, int>)(lpVtbl[4]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, ppValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, uint, nint*, int>)(lpVtbl[4]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, ppValue);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.SetProperty"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
     {
-        return ((delegate* unmanaged<IXmlWriter*, uint, nint, int>)(lpVtbl[5]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, uint, nint, int>)(lpVtbl[5]))((IXmlWriter*)Unsafe.AsPointer(ref this), nProperty, pValue);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteAttributes"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT WriteAttributes(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
     {
-        return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[6]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[6]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteAttributeString"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT WriteAttributeString([NativeTypeName("LPCWSTR")] char* pwszPrefix, [NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri, [NativeTypeName("LPCWSTR")] char* pwszValue)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[7]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[7]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteCData"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT WriteCData([NativeTypeName("LPCWSTR")] char* pwszText)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[8]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[8]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteCharEntity"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT WriteCharEntity([NativeTypeName("WCHAR")] char wch)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char, int>)(lpVtbl[9]))((IXmlWriter*)Unsafe.AsPointer(ref this), wch);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char, int>)(lpVtbl[9]))((IXmlWriter*)Unsafe.AsPointer(ref this), wch);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteChars"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT WriteChars([NativeTypeName("const WCHAR *")] char* pwch, uint cwch)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, uint, int>)(lpVtbl[10]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, uint, int>)(lpVtbl[10]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteComment"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT WriteComment([NativeTypeName("LPCWSTR")] char* pwszComment)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[11]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszComment);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[11]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszComment);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteDocType"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT WriteDocType([NativeTypeName("LPCWSTR")] char* pwszName, [NativeTypeName("LPCWSTR")] char* pwszPublicId, [NativeTypeName("LPCWSTR")] char* pwszSystemId, [NativeTypeName("LPCWSTR")] char* pwszSubset)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[12]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszPublicId, pwszSystemId, pwszSubset);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[12]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszPublicId, pwszSystemId, pwszSubset);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteElementString"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT WriteElementString([NativeTypeName("LPCWSTR")] char* pwszPrefix, [NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri, [NativeTypeName("LPCWSTR")] char* pwszValue)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[13]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, char*, char*, int>)(lpVtbl[13]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri, pwszValue);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEndDocument"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT WriteEndDocument()
     {
-        return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[14]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, int>)(lpVtbl[14]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEndElement"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT WriteEndElement()
     {
-        return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[15]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, int>)(lpVtbl[15]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteEntityRef"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT WriteEntityRef([NativeTypeName("LPCWSTR")] char* pwszName)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[16]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[16]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteFullEndElement"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT WriteFullEndElement()
     {
-        return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[17]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, int>)(lpVtbl[17]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteName"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT WriteName([NativeTypeName("LPCWSTR")] char* pwszName)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[18]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[18]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNmToken"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT WriteNmToken([NativeTypeName("LPCWSTR")] char* pwszNmToken)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[19]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszNmToken);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[19]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszNmToken);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNode"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT WriteNode(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
     {
-        return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[20]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[20]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteNodeShallow"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT WriteNodeShallow(IXmlReader* pReader, BOOL fWriteDefaultAttributes)
     {
-        return ((delegate* unmanaged<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[21]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, IXmlReader*, BOOL, int>)(lpVtbl[21]))((IXmlWriter*)Unsafe.AsPointer(ref this), pReader, fWriteDefaultAttributes);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteProcessingInstruction"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT WriteProcessingInstruction([NativeTypeName("LPCWSTR")] char* pwszName, [NativeTypeName("LPCWSTR")] char* pwszText)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, int>)(lpVtbl[22]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszText);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, int>)(lpVtbl[22]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszName, pwszText);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteQualifiedName"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT WriteQualifiedName([NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, int>)(lpVtbl[23]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, int>)(lpVtbl[23]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteRaw"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT WriteRaw([NativeTypeName("LPCWSTR")] char* pwszData)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[24]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszData);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[24]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszData);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteRawChars"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT WriteRawChars([NativeTypeName("const WCHAR *")] char* pwch, uint cwch)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, uint, int>)(lpVtbl[25]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, uint, int>)(lpVtbl[25]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwch, cwch);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteStartDocument"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT WriteStartDocument(XmlStandalone standalone)
     {
-        return ((delegate* unmanaged<IXmlWriter*, XmlStandalone, int>)(lpVtbl[26]))((IXmlWriter*)Unsafe.AsPointer(ref this), standalone);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, XmlStandalone, int>)(lpVtbl[26]))((IXmlWriter*)Unsafe.AsPointer(ref this), standalone);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteStartElement"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT WriteStartElement([NativeTypeName("LPCWSTR")] char* pwszPrefix, [NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, char*, char*, int>)(lpVtbl[27]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, char*, char*, int>)(lpVtbl[27]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszPrefix, pwszLocalName, pwszNamespaceUri);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteString"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT WriteString([NativeTypeName("LPCWSTR")] char* pwszText)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[28]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[28]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszText);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteSurrogateCharEntity"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT WriteSurrogateCharEntity([NativeTypeName("WCHAR")] char wchLow, [NativeTypeName("WCHAR")] char wchHigh)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char, char, int>)(lpVtbl[29]))((IXmlWriter*)Unsafe.AsPointer(ref this), wchLow, wchHigh);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char, char, int>)(lpVtbl[29]))((IXmlWriter*)Unsafe.AsPointer(ref this), wchLow, wchHigh);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.WriteWhitespace"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT WriteWhitespace([NativeTypeName("LPCWSTR")] char* pwszWhitespace)
     {
-        return ((delegate* unmanaged<IXmlWriter*, char*, int>)(lpVtbl[30]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszWhitespace);
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, char*, int>)(lpVtbl[30]))((IXmlWriter*)Unsafe.AsPointer(ref this), pwszWhitespace);
     }
 
     /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.Flush"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT Flush()
     {
-        return ((delegate* unmanaged<IXmlWriter*, int>)(lpVtbl[31]))((IXmlWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlWriter*, int>)(lpVtbl[31]))((IXmlWriter*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -372,99 +372,99 @@ public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetOutput;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nint*, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nint*, int> GetProperty;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nint, int> SetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nint, int> SetProperty;
 
         [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXmlReader*, BOOL, int> WriteAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlReader*, BOOL, int> WriteAttributes;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, int> WriteAttributeString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, int> WriteAttributeString;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteCData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteCData;
 
         [NativeTypeName("HRESULT (WCHAR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char, int> WriteCharEntity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char, int> WriteCharEntity;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> WriteChars;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> WriteChars;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteComment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteComment;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, int> WriteDocType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, int> WriteDocType;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, int> WriteElementString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, int> WriteElementString;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WriteEndDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WriteEndDocument;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WriteEndElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WriteEndElement;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteEntityRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteEntityRef;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WriteFullEndElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WriteFullEndElement;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteNmToken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteNmToken;
 
         [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXmlReader*, BOOL, int> WriteNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlReader*, BOOL, int> WriteNode;
 
         [NativeTypeName("HRESULT (IXmlReader *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXmlReader*, BOOL, int> WriteNodeShallow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlReader*, BOOL, int> WriteNodeShallow;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> WriteProcessingInstruction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> WriteProcessingInstruction;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> WriteQualifiedName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> WriteQualifiedName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteRaw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteRaw;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> WriteRawChars;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> WriteRawChars;
 
         [NativeTypeName("HRESULT (XmlStandalone) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XmlStandalone, int> WriteStartDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XmlStandalone, int> WriteStartDocument;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, int> WriteStartElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, int> WriteStartElement;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteString;
 
         [NativeTypeName("HRESULT (WCHAR, WCHAR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char, char, int> WriteSurrogateCharEntity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char, char, int> WriteSurrogateCharEntity;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> WriteWhitespace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> WriteWhitespace;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Flush;
     }
 }

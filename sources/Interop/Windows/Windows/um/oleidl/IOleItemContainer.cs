@@ -25,7 +25,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((IOleItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((IOleItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleItemContainer*, uint>)(lpVtbl[1]))((IOleItemContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, uint>)(lpVtbl[1]))((IOleItemContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleItemContainer*, uint>)(lpVtbl[2]))((IOleItemContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, uint>)(lpVtbl[2]))((IOleItemContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IParseDisplayName.ParseDisplayName" />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(3)]
     public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
     }
 
     /// <inheritdoc cref="IOleContainer.EnumObjects" />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(4)]
     public HRESULT EnumObjects([NativeTypeName("DWORD")] uint grfFlags, IEnumUnknown** ppenum)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, uint, IEnumUnknown**, int>)(lpVtbl[4]))((IOleItemContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, uint, IEnumUnknown**, int>)(lpVtbl[4]))((IOleItemContainer*)Unsafe.AsPointer(ref this), grfFlags, ppenum);
     }
 
     /// <inheritdoc cref="IOleContainer.LockContainer" />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(5)]
     public HRESULT LockContainer(BOOL fLock)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, BOOL, int>)(lpVtbl[5]))((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, BOOL, int>)(lpVtbl[5]))((IOleItemContainer*)Unsafe.AsPointer(ref this), fLock);
     }
 
     /// <include file='IOleItemContainer.xml' path='doc/member[@name="IOleItemContainer.GetObject"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetObject([NativeTypeName("LPOLESTR")] char* pszItem, [NativeTypeName("DWORD")] uint dwSpeedNeeded, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, char*, uint, IBindCtx*, Guid*, void**, int>)(lpVtbl[6]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, dwSpeedNeeded, pbc, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, char*, uint, IBindCtx*, Guid*, void**, int>)(lpVtbl[6]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, dwSpeedNeeded, pbc, riid, ppvObject);
     }
 
     /// <include file='IOleItemContainer.xml' path='doc/member[@name="IOleItemContainer.GetObjectStorage"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetObjectStorage([NativeTypeName("LPOLESTR")] char* pszItem, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppvStorage)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, char*, IBindCtx*, Guid*, void**, int>)(lpVtbl[7]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, pbc, riid, ppvStorage);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, char*, IBindCtx*, Guid*, void**, int>)(lpVtbl[7]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem, pbc, riid, ppvStorage);
     }
 
     /// <include file='IOleItemContainer.xml' path='doc/member[@name="IOleItemContainer.IsRunning"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
     [VtblIndex(8)]
     public HRESULT IsRunning([NativeTypeName("LPOLESTR")] char* pszItem)
     {
-        return ((delegate* unmanaged<IOleItemContainer*, char*, int>)(lpVtbl[8]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem);
+        return ((delegate* unmanaged[MemberFunction]<IOleItemContainer*, char*, int>)(lpVtbl[8]))((IOleItemContainer*)Unsafe.AsPointer(ref this), pszItem);
     }
 
     public interface Interface : IOleContainer.Interface
@@ -110,30 +110,30 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IEnumUnknown**, int> EnumObjects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IEnumUnknown**, int> EnumObjects;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> LockContainer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> LockContainer;
 
         [NativeTypeName("HRESULT (LPOLESTR, DWORD, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, IBindCtx*, Guid*, void**, int> GetObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, IBindCtx*, Guid*, void**, int> GetObject;
 
         [NativeTypeName("HRESULT (LPOLESTR, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IBindCtx*, Guid*, void**, int> GetObjectStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IBindCtx*, Guid*, void**, int> GetObjectStorage;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> IsRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> IsRunning;
     }
 }

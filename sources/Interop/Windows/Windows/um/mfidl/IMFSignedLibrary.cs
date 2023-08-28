@@ -27,7 +27,7 @@ public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSignedLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSignedLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSignedLibrary*, uint>)(lpVtbl[1]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSignedLibrary*, uint>)(lpVtbl[1]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSignedLibrary*, uint>)(lpVtbl[2]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSignedLibrary*, uint>)(lpVtbl[2]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSignedLibrary.xml' path='doc/member[@name="IMFSignedLibrary.GetProcedureAddress"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetProcedureAddress([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("PVOID *")] void** address)
     {
-        return ((delegate* unmanaged<IMFSignedLibrary*, sbyte*, void**, int>)(lpVtbl[3]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this), name, address);
+        return ((delegate* unmanaged[MemberFunction]<IMFSignedLibrary*, sbyte*, void**, int>)(lpVtbl[3]))((IMFSignedLibrary*)Unsafe.AsPointer(ref this), name, address);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFSignedLibrary : IMFSignedLibrary.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCSTR, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, void**, int> GetProcedureAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, void**, int> GetProcedureAddress;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, Guid*, void**, int>)(lpVtbl[0]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[1]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, uint>)(lpVtbl[1]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, uint>)(lpVtbl[2]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, uint>)(lpVtbl[2]))((IConfigInterleaving*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.put_Mode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [VtblIndex(3)]
     public HRESULT put_Mode(InterleavingMode mode)
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, InterleavingMode, int>)(lpVtbl[3]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.get_Mode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [VtblIndex(4)]
     public HRESULT get_Mode(InterleavingMode* pMode)
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, InterleavingMode*, int>)(lpVtbl[4]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), pMode);
     }
 
     /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.put_Interleaving"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [VtblIndex(5)]
     public HRESULT put_Interleaving([NativeTypeName("const REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("const REFERENCE_TIME *")] long* prtPreroll)
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, long*, long*, int>)(lpVtbl[5]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
     }
 
     /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.get_Interleaving"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
     [VtblIndex(6)]
     public HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll)
     {
-        return ((delegate* unmanaged<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
+        return ((delegate* unmanaged[MemberFunction]<IConfigInterleaving*, long*, long*, int>)(lpVtbl[6]))((IConfigInterleaving*)Unsafe.AsPointer(ref this), prtInterleave, prtPreroll);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (InterleavingMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InterleavingMode, int> put_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InterleavingMode, int> put_Mode;
 
         [NativeTypeName("HRESULT (InterleavingMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InterleavingMode*, int> get_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InterleavingMode*, int> get_Mode;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, const REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> put_Interleaving;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> put_Interleaving;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> get_Interleaving;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> get_Interleaving;
     }
 }

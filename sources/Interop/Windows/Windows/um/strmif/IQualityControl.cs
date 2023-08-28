@@ -25,7 +25,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQualityControl*, uint>)(lpVtbl[1]))((IQualityControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQualityControl*, uint>)(lpVtbl[1]))((IQualityControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQualityControl*, uint>)(lpVtbl[2]))((IQualityControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQualityControl*, uint>)(lpVtbl[2]))((IQualityControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl.Notify"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Notify(IBaseFilter* pSelf, Quality q)
     {
-        return ((delegate* unmanaged<IQualityControl*, IBaseFilter*, Quality, int>)(lpVtbl[3]))((IQualityControl*)Unsafe.AsPointer(ref this), pSelf, q);
+        return ((delegate* unmanaged[MemberFunction]<IQualityControl*, IBaseFilter*, Quality, int>)(lpVtbl[3]))((IQualityControl*)Unsafe.AsPointer(ref this), pSelf, q);
     }
 
     /// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl.SetSink"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetSink(IQualityControl* piqc)
     {
-        return ((delegate* unmanaged<IQualityControl*, IQualityControl*, int>)(lpVtbl[4]))((IQualityControl*)Unsafe.AsPointer(ref this), piqc);
+        return ((delegate* unmanaged[MemberFunction]<IQualityControl*, IQualityControl*, int>)(lpVtbl[4]))((IQualityControl*)Unsafe.AsPointer(ref this), piqc);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, Quality) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, Quality, int> Notify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, Quality, int> Notify;
 
         [NativeTypeName("HRESULT (IQualityControl *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IQualityControl*, int> SetSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IQualityControl*, int> SetSink;
     }
 }

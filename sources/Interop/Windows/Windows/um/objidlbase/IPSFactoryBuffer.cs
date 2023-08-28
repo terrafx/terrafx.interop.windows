@@ -25,7 +25,7 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPSFactoryBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPSFactoryBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPSFactoryBuffer*, uint>)(lpVtbl[1]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPSFactoryBuffer*, uint>)(lpVtbl[1]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPSFactoryBuffer*, uint>)(lpVtbl[2]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPSFactoryBuffer*, uint>)(lpVtbl[2]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPSFactoryBuffer.xml' path='doc/member[@name="IPSFactoryBuffer.CreateProxy"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
     [VtblIndex(3)]
     public HRESULT CreateProxy(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, IRpcProxyBuffer** ppProxy, void** ppv)
     {
-        return ((delegate* unmanaged<IPSFactoryBuffer*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int>)(lpVtbl[3]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppProxy, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IPSFactoryBuffer*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int>)(lpVtbl[3]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppProxy, ppv);
     }
 
     /// <include file='IPSFactoryBuffer.xml' path='doc/member[@name="IPSFactoryBuffer.CreateStub"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
     [VtblIndex(4)]
     public HRESULT CreateStub([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub)
     {
-        return ((delegate* unmanaged<IPSFactoryBuffer*, Guid*, IUnknown*, IRpcStubBuffer**, int>)(lpVtbl[4]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), riid, pUnkServer, ppStub);
+        return ((delegate* unmanaged[MemberFunction]<IPSFactoryBuffer*, Guid*, IUnknown*, IRpcStubBuffer**, int>)(lpVtbl[4]))((IPSFactoryBuffer*)Unsafe.AsPointer(ref this), riid, pUnkServer, ppStub);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, IRpcProxyBuffer **, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int> CreateProxy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int> CreateProxy;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, IRpcStubBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IRpcStubBuffer**, int> CreateStub;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, IRpcStubBuffer**, int> CreateStub;
     }
 }

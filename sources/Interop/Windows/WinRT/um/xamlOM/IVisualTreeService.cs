@@ -28,7 +28,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVisualTreeService*, uint>)(lpVtbl[1]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, uint>)(lpVtbl[1]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVisualTreeService*, uint>)(lpVtbl[2]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, uint>)(lpVtbl[2]))((IVisualTreeService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.AdviseVisualTreeChange"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(3)]
     public HRESULT AdviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[3]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[3]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.UnadviseVisualTreeChange"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(4)]
     public HRESULT UnadviseVisualTreeChange(IVisualTreeServiceCallback* pCallback)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[4]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, IVisualTreeServiceCallback*, int>)(lpVtbl[4]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetEnums"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(5)]
     public HRESULT GetEnums([NativeTypeName("unsigned int *")] uint* pCount, EnumType** ppEnums)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, uint*, EnumType**, int>)(lpVtbl[5]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCount, ppEnums);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, uint*, EnumType**, int>)(lpVtbl[5]))((IVisualTreeService*)Unsafe.AsPointer(ref this), pCount, ppEnums);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.CreateInstance"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(6)]
     public HRESULT CreateInstance([NativeTypeName("BSTR")] char* typeName, [NativeTypeName("BSTR")] char* value, InstanceHandle* pInstanceHandle)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, char*, char*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, char*, char*, InstanceHandle*, int>)(lpVtbl[6]))((IVisualTreeService*)Unsafe.AsPointer(ref this), typeName, value, pInstanceHandle);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetPropertyValuesChain"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(7)]
     public HRESULT GetPropertyValuesChain(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pSourceCount, PropertyChainSource** ppPropertySources, [NativeTypeName("unsigned int *")] uint* pPropertyCount, PropertyChainValue** ppPropertyValues)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int>)(lpVtbl[7]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pSourceCount, ppPropertySources, pPropertyCount, ppPropertyValues);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.SetProperty"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(8)]
     public HRESULT SetProperty(InstanceHandle instanceHandle, InstanceHandle value, [NativeTypeName("unsigned int")] uint propertyIndex)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[8]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[8]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, value, propertyIndex);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.ClearProperty"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(9)]
     public HRESULT ClearProperty(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint propertyIndex)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[9]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[9]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, propertyIndex);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetCollectionCount"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(10)]
     public HRESULT GetCollectionCount(InstanceHandle instanceHandle, [NativeTypeName("unsigned int *")] uint* pCollectionSize)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, int>)(lpVtbl[10]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, uint*, int>)(lpVtbl[10]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, pCollectionSize);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.GetCollectionElements"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(11)]
     public HRESULT GetCollectionElements(InstanceHandle instanceHandle, [NativeTypeName("unsigned int")] uint startIndex, [NativeTypeName("unsigned int *")] uint* pElementCount, CollectionElementValue** ppElementValues)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, uint, uint*, CollectionElementValue**, int>)(lpVtbl[11]))((IVisualTreeService*)Unsafe.AsPointer(ref this), instanceHandle, startIndex, pElementCount, ppElementValues);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.AddChild"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(12)]
     public HRESULT AddChild(InstanceHandle parent, InstanceHandle child, [NativeTypeName("unsigned int")] uint index)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[12]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, child, index);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int>)(lpVtbl[12]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, child, index);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.RemoveChild"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(13)]
     public HRESULT RemoveChild(InstanceHandle parent, [NativeTypeName("unsigned int")] uint index)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[13]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, index);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, uint, int>)(lpVtbl[13]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent, index);
     }
 
     /// <include file='IVisualTreeService.xml' path='doc/member[@name="IVisualTreeService.ClearChildren"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
     [VtblIndex(14)]
     public HRESULT ClearChildren(InstanceHandle parent)
     {
-        return ((delegate* unmanaged<IVisualTreeService*, InstanceHandle, int>)(lpVtbl[14]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeService*, InstanceHandle, int>)(lpVtbl[14]))((IVisualTreeService*)Unsafe.AsPointer(ref this), parent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -188,48 +188,48 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IVisualTreeServiceCallback*, int> AdviseVisualTreeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVisualTreeServiceCallback*, int> AdviseVisualTreeChange;
 
         [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IVisualTreeServiceCallback*, int> UnadviseVisualTreeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVisualTreeServiceCallback*, int> UnadviseVisualTreeChange;
 
         [NativeTypeName("HRESULT (unsigned int *, EnumType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, EnumType**, int> GetEnums;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, EnumType**, int> GetEnums;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, InstanceHandle*, int> CreateInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, InstanceHandle*, int> CreateInstance;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
 
         [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, InstanceHandle, uint, int> SetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, InstanceHandle, uint, int> SetProperty;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, uint, int> ClearProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, uint, int> ClearProperty;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, uint*, int> GetCollectionCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, uint*, int> GetCollectionCount;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int, unsigned int *, CollectionElementValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, uint, uint*, CollectionElementValue**, int> GetCollectionElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, uint, uint*, CollectionElementValue**, int> GetCollectionElements;
 
         [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, InstanceHandle, uint, int> AddChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, InstanceHandle, uint, int> AddChild;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, uint, int> RemoveChild;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, uint, int> RemoveChild;
 
         [NativeTypeName("HRESULT (InstanceHandle) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, int> ClearChildren;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, int> ClearChildren;
     }
 }

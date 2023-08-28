@@ -25,7 +25,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, void**, int>)(lpVtbl[0]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, Guid*, void**, int>)(lpVtbl[0]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint>)(lpVtbl[1]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, uint>)(lpVtbl[1]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint>)(lpVtbl[2]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, uint>)(lpVtbl[2]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint*, int>)(lpVtbl[3]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, uint*, int>)(lpVtbl[3]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionUp"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(7)]
     public HRESULT MoveSelectionUp()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[7]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[7]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionDown"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(8)]
     public HRESULT MoveSelectionDown()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[8]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[8]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.ResetSort"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(9)]
     public HRESULT ResetSort()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[9]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[9]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.NewFolder"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(10)]
     public HRESULT NewFolder()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[10]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[10]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Synchronize"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(11)]
     public HRESULT Synchronize()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[11]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[11]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Import"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(12)]
     public HRESULT Import()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[12]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[12]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Export"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(13)]
     public HRESULT Export()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[13]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[13]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.InvokeContextMenuCommand"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(14)]
     public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] char* strCommand)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[14]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), strCommand);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[14]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), strCommand);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionTo"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(15)]
     public HRESULT MoveSelectionTo()
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[15]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, int>)(lpVtbl[15]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.get_SubscriptionsEnabled"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(16)]
     public HRESULT get_SubscriptionsEnabled([NativeTypeName("VARIANT_BOOL *")] short* pBool)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[16]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[16]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.CreateSubscriptionForSelection"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(17)]
     public HRESULT CreateSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[17]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[17]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.DeleteSubscriptionForSelection"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(18)]
     public HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[18]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[18]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
     /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.SetRoot"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
     [VtblIndex(19)]
     public HRESULT SetRoot([NativeTypeName("BSTR")] char* bstrFullPath)
     {
-        return ((delegate* unmanaged<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
+        return ((delegate* unmanaged[MemberFunction]<IShellFavoritesNameSpace*, char*, int>)(lpVtbl[19]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), bstrFullPath);
     }
 
     public interface Interface : IDispatch.Interface
@@ -228,63 +228,63 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveSelectionUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveSelectionUp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveSelectionDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveSelectionDown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetSort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetSort;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NewFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NewFolder;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Synchronize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Synchronize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Import;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Import;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Export;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Export;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> InvokeContextMenuCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> InvokeContextMenuCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveSelectionTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveSelectionTo;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_SubscriptionsEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_SubscriptionsEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> CreateSubscriptionForSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> CreateSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> DeleteSubscriptionForSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> DeleteSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetRoot;
     }
 }

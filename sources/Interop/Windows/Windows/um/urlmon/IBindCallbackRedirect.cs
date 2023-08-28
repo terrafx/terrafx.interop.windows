@@ -25,7 +25,7 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBindCallbackRedirect*, Guid*, void**, int>)(lpVtbl[0]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBindCallbackRedirect*, Guid*, void**, int>)(lpVtbl[0]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBindCallbackRedirect*, uint>)(lpVtbl[1]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindCallbackRedirect*, uint>)(lpVtbl[1]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBindCallbackRedirect*, uint>)(lpVtbl[2]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindCallbackRedirect*, uint>)(lpVtbl[2]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBindCallbackRedirect.xml' path='doc/member[@name="IBindCallbackRedirect.Redirect"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
     [VtblIndex(3)]
     public HRESULT Redirect([NativeTypeName("LPCWSTR")] char* lpcUrl, [NativeTypeName("VARIANT_BOOL *")] short* vbCancel)
     {
-        return ((delegate* unmanaged<IBindCallbackRedirect*, char*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
+        return ((delegate* unmanaged[MemberFunction]<IBindCallbackRedirect*, char*, short*, int>)(lpVtbl[3]))((IBindCallbackRedirect*)Unsafe.AsPointer(ref this), lpcUrl, vbCancel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IBindCallbackRedirect : IBindCallbackRedirect.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short*, int> Redirect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> Redirect;
     }
 }

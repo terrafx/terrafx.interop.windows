@@ -25,7 +25,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHWEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IHWEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IHWEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHWEventHandler*, uint>)(lpVtbl[1]))((IHWEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, uint>)(lpVtbl[1]))((IHWEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHWEventHandler*, uint>)(lpVtbl[2]))((IHWEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, uint>)(lpVtbl[2]))((IHWEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHWEventHandler.xml' path='doc/member[@name="IHWEventHandler.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszParams)
     {
-        return ((delegate* unmanaged<IHWEventHandler*, char*, int>)(lpVtbl[3]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszParams);
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, char*, int>)(lpVtbl[3]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszParams);
     }
 
     /// <include file='IHWEventHandler.xml' path='doc/member[@name="IHWEventHandler.HandleEvent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [VtblIndex(4)]
     public HRESULT HandleEvent([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType)
     {
-        return ((delegate* unmanaged<IHWEventHandler*, char*, char*, char*, int>)(lpVtbl[4]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType);
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, char*, char*, char*, int>)(lpVtbl[4]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType);
     }
 
     /// <include file='IHWEventHandler.xml' path='doc/member[@name="IHWEventHandler.HandleEventWithContent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
     [VtblIndex(5)]
     public HRESULT HandleEventWithContent([NativeTypeName("LPCWSTR")] char* pszDeviceID, [NativeTypeName("LPCWSTR")] char* pszAltDeviceID, [NativeTypeName("LPCWSTR")] char* pszEventType, [NativeTypeName("LPCWSTR")] char* pszContentTypeHandler, IDataObject* pdataobject)
     {
-        return ((delegate* unmanaged<IHWEventHandler*, char*, char*, char*, char*, IDataObject*, int>)(lpVtbl[5]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, pdataobject);
+        return ((delegate* unmanaged[MemberFunction]<IHWEventHandler*, char*, char*, char*, char*, IDataObject*, int>)(lpVtbl[5]))((IHWEventHandler*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, pdataobject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IHWEventHandler : IHWEventHandler.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, int> HandleEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, int> HandleEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, IDataObject*, int> HandleEventWithContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, IDataObject*, int> HandleEventWithContent;
     }
 }

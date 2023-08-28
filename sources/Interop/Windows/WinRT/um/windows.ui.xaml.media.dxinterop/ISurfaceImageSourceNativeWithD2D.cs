@@ -28,7 +28,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, Guid*, void**, int>)(lpVtbl[0]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[1]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[1]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[2]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, uint>)(lpVtbl[2]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.SetDevice"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(3)]
     public HRESULT SetDevice(IUnknown* device)
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, IUnknown*, int>)(lpVtbl[3]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), device);
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, IUnknown*, int>)(lpVtbl[3]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), device);
     }
 
     /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.BeginDraw"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(4)]
     public HRESULT BeginDraw([NativeTypeName("const RECT &")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* offset)
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[4]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, offset);
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[4]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, offset);
     }
 
     /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.EndDraw"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(5)]
     public HRESULT EndDraw()
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[5]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[5]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.SuspendDraw"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(6)]
     public HRESULT SuspendDraw()
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[6]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[6]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISurfaceImageSourceNativeWithD2D.xml' path='doc/member[@name="ISurfaceImageSourceNativeWithD2D.ResumeDraw"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
     [VtblIndex(7)]
     public HRESULT ResumeDraw()
     {
-        return ((delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[7]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfaceImageSourceNativeWithD2D*, int>)(lpVtbl[7]))((ISurfaceImageSourceNativeWithD2D*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -111,27 +111,27 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetDevice;
 
         [NativeTypeName("HRESULT (const RECT &, const IID &, void **, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SuspendDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SuspendDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResumeDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResumeDraw;
     }
 }

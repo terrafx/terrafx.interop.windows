@@ -25,7 +25,7 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUriContainer*, Guid*, void**, int>)(lpVtbl[0]))((IUriContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUriContainer*, Guid*, void**, int>)(lpVtbl[0]))((IUriContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUriContainer*, uint>)(lpVtbl[1]))((IUriContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriContainer*, uint>)(lpVtbl[1]))((IUriContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUriContainer*, uint>)(lpVtbl[2]))((IUriContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriContainer*, uint>)(lpVtbl[2]))((IUriContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUriContainer.xml' path='doc/member[@name="IUriContainer.GetIUri"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetIUri(IUri** ppIUri)
     {
-        return ((delegate* unmanaged<IUriContainer*, IUri**, int>)(lpVtbl[3]))((IUriContainer*)Unsafe.AsPointer(ref this), ppIUri);
+        return ((delegate* unmanaged[MemberFunction]<IUriContainer*, IUri**, int>)(lpVtbl[3]))((IUriContainer*)Unsafe.AsPointer(ref this), ppIUri);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUri**, int> GetIUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUri**, int> GetIUri;
     }
 }

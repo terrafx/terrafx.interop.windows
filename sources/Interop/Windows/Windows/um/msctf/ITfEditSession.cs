@@ -25,7 +25,7 @@ public unsafe partial struct ITfEditSession : ITfEditSession.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfEditSession*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditSession*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfEditSession : ITfEditSession.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfEditSession*, uint>)(lpVtbl[1]))((ITfEditSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditSession*, uint>)(lpVtbl[1]))((ITfEditSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfEditSession : ITfEditSession.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfEditSession*, uint>)(lpVtbl[2]))((ITfEditSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfEditSession*, uint>)(lpVtbl[2]))((ITfEditSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfEditSession.xml' path='doc/member[@name="ITfEditSession.DoEditSession"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfEditSession : ITfEditSession.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT DoEditSession([NativeTypeName("TfEditCookie")] uint ec)
     {
-        return ((delegate* unmanaged<ITfEditSession*, uint, int>)(lpVtbl[3]))((ITfEditSession*)Unsafe.AsPointer(ref this), ec);
+        return ((delegate* unmanaged[MemberFunction]<ITfEditSession*, uint, int>)(lpVtbl[3]))((ITfEditSession*)Unsafe.AsPointer(ref this), ec);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfEditSession : ITfEditSession.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> DoEditSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> DoEditSession;
     }
 }

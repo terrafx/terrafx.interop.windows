@@ -26,7 +26,7 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVisualInteractionSourceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVisualInteractionSourceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVisualInteractionSourceInterop*, uint>)(lpVtbl[1]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualInteractionSourceInterop*, uint>)(lpVtbl[1]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVisualInteractionSourceInterop*, uint>)(lpVtbl[2]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualInteractionSourceInterop*, uint>)(lpVtbl[2]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVisualInteractionSourceInterop.xml' path='doc/member[@name="IVisualInteractionSourceInterop.TryRedirectForManipulation"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
     [VtblIndex(3)]
     public HRESULT TryRedirectForManipulation([NativeTypeName("const POINTER_INFO &")] POINTER_INFO* pointerInfo)
     {
-        return ((delegate* unmanaged<IVisualInteractionSourceInterop*, POINTER_INFO*, int>)(lpVtbl[3]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this), pointerInfo);
+        return ((delegate* unmanaged[MemberFunction]<IVisualInteractionSourceInterop*, POINTER_INFO*, int>)(lpVtbl[3]))((IVisualInteractionSourceInterop*)Unsafe.AsPointer(ref this), pointerInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const POINTER_INFO &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINTER_INFO*, int> TryRedirectForManipulation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINTER_INFO*, int> TryRedirectForManipulation;
     }
 }

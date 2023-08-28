@@ -25,7 +25,7 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, Guid*, void**, int>)(lpVtbl[0]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpEnginePronunciation*, Guid*, void**, int>)(lpVtbl[0]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, uint>)(lpVtbl[1]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpEnginePronunciation*, uint>)(lpVtbl[1]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, uint>)(lpVtbl[2]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpEnginePronunciation*, uint>)(lpVtbl[2]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation.Normalize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     [VtblIndex(3)]
     public HRESULT Normalize([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPNORMALIZATIONLIST* pNormalizationList)
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int>)(lpVtbl[3]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pNormalizationList);
+        return ((delegate* unmanaged[MemberFunction]<ISpEnginePronunciation*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int>)(lpVtbl[3]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pNormalizationList);
     }
 
     /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation.GetPronunciations"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
     [VtblIndex(4)]
     public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] char* pszWord, [NativeTypeName("LPCWSTR")] char* pszLeftContext, [NativeTypeName("LPCWSTR")] char* pszRightContext, [NativeTypeName("WORD")] ushort LangID, SPWORDPRONUNCIATIONLIST* pEnginePronunciationList)
     {
-        return ((delegate* unmanaged<ISpEnginePronunciation*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[4]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pEnginePronunciationList);
+        return ((delegate* unmanaged[MemberFunction]<ISpEnginePronunciation*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[4]))((ISpEnginePronunciation*)Unsafe.AsPointer(ref this), pszWord, pszLeftContext, pszRightContext, LangID, pEnginePronunciationList);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, WORD, SPNORMALIZATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int> Normalize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, ushort, SPNORMALIZATIONLIST*, int> Normalize;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, WORD, SPWORDPRONUNCIATIONLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, ushort, SPWORDPRONUNCIATIONLIST*, int> GetPronunciations;
     }
 }

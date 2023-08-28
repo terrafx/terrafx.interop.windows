@@ -25,7 +25,7 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPipeByte*, Guid*, void**, int>)(lpVtbl[0]))((IPipeByte*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPipeByte*, Guid*, void**, int>)(lpVtbl[0]))((IPipeByte*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPipeByte*, uint>)(lpVtbl[1]))((IPipeByte*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPipeByte*, uint>)(lpVtbl[1]))((IPipeByte*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPipeByte*, uint>)(lpVtbl[2]))((IPipeByte*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPipeByte*, uint>)(lpVtbl[2]))((IPipeByte*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPipeByte.xml' path='doc/member[@name="IPipeByte.Pull"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Pull(byte* buf, [NativeTypeName("ULONG")] uint cRequest, [NativeTypeName("ULONG *")] uint* pcReturned)
     {
-        return ((delegate* unmanaged<IPipeByte*, byte*, uint, uint*, int>)(lpVtbl[3]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
+        return ((delegate* unmanaged[MemberFunction]<IPipeByte*, byte*, uint, uint*, int>)(lpVtbl[3]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cRequest, pcReturned);
     }
 
     /// <include file='IPipeByte.xml' path='doc/member[@name="IPipeByte.Push"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Push(byte* buf, [NativeTypeName("ULONG")] uint cSent)
     {
-        return ((delegate* unmanaged<IPipeByte*, byte*, uint, int>)(lpVtbl[4]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
+        return ((delegate* unmanaged[MemberFunction]<IPipeByte*, byte*, uint, int>)(lpVtbl[4]))((IPipeByte*)Unsafe.AsPointer(ref this), buf, cSent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPipeByte : IPipeByte.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, uint*, int> Pull;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, uint*, int> Pull;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> Push;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> Push;
     }
 }

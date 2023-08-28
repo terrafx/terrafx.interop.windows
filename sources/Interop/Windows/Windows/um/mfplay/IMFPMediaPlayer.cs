@@ -25,7 +25,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, uint>)(lpVtbl[1]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, uint>)(lpVtbl[1]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, uint>)(lpVtbl[2]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, uint>)(lpVtbl[2]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Play"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Play()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[3]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[3]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Pause"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[4]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[4]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Stop"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(5)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[5]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[5]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.FrameStep"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(6)]
     public HRESULT FrameStep()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[6]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[6]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetPosition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvPositionValue)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[7]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[7]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetPosition"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvPositionValue)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetDuration"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(9)]
     public HRESULT GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvDurationValue)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvDurationValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvDurationValue);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetRate"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(10)]
     public HRESULT SetRate(float flRate)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[10]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float, int>)(lpVtbl[10]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flRate);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetRate"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(11)]
     public HRESULT GetRate(float* pflRate)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[11]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float*, int>)(lpVtbl[11]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflRate);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetSupportedRates"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(12)]
     public HRESULT GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, BOOL, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetState"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(13)]
     public HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, MFP_MEDIAPLAYER_STATE*, int>)(lpVtbl[13]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), peState);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, MFP_MEDIAPLAYER_STATE*, int>)(lpVtbl[13]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), peState);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromURL"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(14)]
     public HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] char* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, char*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, char*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromObject"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(15)]
     public HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetMediaItem"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(16)]
     public HRESULT SetMediaItem(IMFPMediaItem* pIMFPMediaItem)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem*, int>)(lpVtbl[16]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIMFPMediaItem);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, IMFPMediaItem*, int>)(lpVtbl[16]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIMFPMediaItem);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.ClearMediaItem"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(17)]
     public HRESULT ClearMediaItem()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[17]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[17]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetMediaItem"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(18)]
     public HRESULT GetMediaItem(IMFPMediaItem** ppIMFPMediaItem)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem**, int>)(lpVtbl[18]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), ppIMFPMediaItem);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, IMFPMediaItem**, int>)(lpVtbl[18]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), ppIMFPMediaItem);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVolume"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(19)]
     public HRESULT GetVolume(float* pflVolume)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[19]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflVolume);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float*, int>)(lpVtbl[19]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflVolume);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetVolume"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(20)]
     public HRESULT SetVolume(float flVolume)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[20]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flVolume);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float, int>)(lpVtbl[20]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flVolume);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetBalance"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(21)]
     public HRESULT GetBalance(float* pflBalance)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[21]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflBalance);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float*, int>)(lpVtbl[21]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflBalance);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetBalance"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(22)]
     public HRESULT SetBalance(float flBalance)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[22]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flBalance);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, float, int>)(lpVtbl[22]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flBalance);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetMute"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(23)]
     public HRESULT GetMute(BOOL* pfMute)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL*, int>)(lpVtbl[23]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pfMute);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, BOOL*, int>)(lpVtbl[23]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pfMute);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetMute"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(24)]
     public HRESULT SetMute(BOOL fMute)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, int>)(lpVtbl[24]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fMute);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, BOOL, int>)(lpVtbl[24]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fMute);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetNativeVideoSize"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(25)]
     public HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[25]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszVideo, pszARVideo);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[25]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszVideo, pszARVideo);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetIdealVideoSize"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(26)]
     public HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[26]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszMin, pszMax);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[26]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszMin, pszMax);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetVideoSourceRect"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(27)]
     public HRESULT SetVideoSourceRect([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pnrcSource)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[27]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[27]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVideoSourceRect"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(28)]
     public HRESULT GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[28]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[28]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetAspectRatioMode"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(29)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwAspectRatioMode)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, uint, int>)(lpVtbl[29]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), dwAspectRatioMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, uint, int>)(lpVtbl[29]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), dwAspectRatioMode);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetAspectRatioMode"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(30)]
     public HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* pdwAspectRatioMode)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, uint*, int>)(lpVtbl[30]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pdwAspectRatioMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, uint*, int>)(lpVtbl[30]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pdwAspectRatioMode);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVideoWindow"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(31)]
     public HRESULT GetVideoWindow(HWND* phwndVideo)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, HWND*, int>)(lpVtbl[31]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), phwndVideo);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, HWND*, int>)(lpVtbl[31]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), phwndVideo);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.UpdateVideo"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(32)]
     public HRESULT UpdateVideo()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[32]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[32]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetBorderColor"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(33)]
     public HRESULT SetBorderColor(COLORREF Clr)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF, int>)(lpVtbl[33]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), Clr);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, COLORREF, int>)(lpVtbl[33]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), Clr);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetBorderColor"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(34)]
     public HRESULT GetBorderColor(COLORREF* pClr)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF*, int>)(lpVtbl[34]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pClr);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, COLORREF*, int>)(lpVtbl[34]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pClr);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.InsertEffect"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(35)]
     public HRESULT InsertEffect(IUnknown* pEffect, BOOL fOptional)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, IUnknown*, BOOL, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.RemoveEffect"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(36)]
     public HRESULT RemoveEffect(IUnknown* pEffect)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int>)(lpVtbl[36]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, IUnknown*, int>)(lpVtbl[36]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect);
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.RemoveAllEffects"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(37)]
     public HRESULT RemoveAllEffects()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[37]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[37]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Shutdown"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
     [VtblIndex(38)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[38]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayer*, int>)(lpVtbl[38]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -449,120 +449,120 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Play;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Play;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> FrameStep;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> FrameStep;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> SetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> SetPosition;
 
         [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> GetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> GetPosition;
 
         [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> GetDuration;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetRate;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetRate;
 
         [NativeTypeName("HRESULT (BOOL, float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, float*, float*, int> GetSupportedRates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, float*, float*, int> GetSupportedRates;
 
         [NativeTypeName("HRESULT (MFP_MEDIAPLAYER_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFP_MEDIAPLAYER_STATE*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFP_MEDIAPLAYER_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromURL;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL, DWORD_PTR, IMFPMediaItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int> CreateMediaItemFromObject;
 
         [NativeTypeName("HRESULT (IMFPMediaItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPMediaItem*, int> SetMediaItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPMediaItem*, int> SetMediaItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearMediaItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearMediaItem;
 
         [NativeTypeName("HRESULT (IMFPMediaItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPMediaItem**, int> GetMediaItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPMediaItem**, int> GetMediaItem;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetVolume;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetVolume;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetBalance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetBalance;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetBalance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetBalance;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetMute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetMute;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetMute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetMute;
 
         [NativeTypeName("HRESULT (SIZE *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, SIZE*, int> GetNativeVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, SIZE*, int> GetNativeVideoSize;
 
         [NativeTypeName("HRESULT (SIZE *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, SIZE*, int> GetIdealVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, SIZE*, int> GetIdealVideoSize;
 
         [NativeTypeName("HRESULT (const MFVideoNormalizedRect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFVideoNormalizedRect*, int> SetVideoSourceRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFVideoNormalizedRect*, int> SetVideoSourceRect;
 
         [NativeTypeName("HRESULT (MFVideoNormalizedRect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFVideoNormalizedRect*, int> GetVideoSourceRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFVideoNormalizedRect*, int> GetVideoSourceRect;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetAspectRatioMode;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAspectRatioMode;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetVideoWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetVideoWindow;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UpdateVideo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UpdateVideo;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF, int> SetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF, int> SetBorderColor;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF*, int> GetBorderColor;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> InsertEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, int> InsertEffect;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> RemoveEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> RemoveEffect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllEffects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllEffects;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

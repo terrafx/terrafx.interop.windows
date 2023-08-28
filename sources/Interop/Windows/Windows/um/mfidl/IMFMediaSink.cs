@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint>)(lpVtbl[1]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint>)(lpVtbl[1]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint>)(lpVtbl[2]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint>)(lpVtbl[2]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetCharacteristics"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint*, int>)(lpVtbl[3]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint*, int>)(lpVtbl[3]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.AddStreamSink"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT AddStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFMediaType* pMediaType, IMFStreamSink** ppStreamSink)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int>)(lpVtbl[4]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, pMediaType, ppStreamSink);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int>)(lpVtbl[4]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, pMediaType, ppStreamSink);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.RemoveStreamSink"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT RemoveStreamSink([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint, int>)(lpVtbl[5]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint, int>)(lpVtbl[5]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkCount"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetStreamSinkCount([NativeTypeName("DWORD *")] uint* pcStreamSinkCount)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint*, int>)(lpVtbl[6]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pcStreamSinkCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint*, int>)(lpVtbl[6]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pcStreamSinkCount);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkByIndex"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetStreamSinkByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFStreamSink** ppStreamSink)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[7]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwIndex, ppStreamSink);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[7]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwIndex, ppStreamSink);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetStreamSinkById"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetStreamSinkById([NativeTypeName("DWORD")] uint dwStreamSinkIdentifier, IMFStreamSink** ppStreamSink)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[8]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, ppStreamSink);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, uint, IMFStreamSink**, int>)(lpVtbl[8]))((IMFMediaSink*)Unsafe.AsPointer(ref this), dwStreamSinkIdentifier, ppStreamSink);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.SetPresentationClock"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, IMFPresentationClock*, int>)(lpVtbl[9]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pPresentationClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, IMFPresentationClock*, int>)(lpVtbl[9]))((IMFMediaSink*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.GetPresentationClock"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock)
     {
-        return ((delegate* unmanaged<IMFMediaSink*, IMFPresentationClock**, int>)(lpVtbl[10]))((IMFMediaSink*)Unsafe.AsPointer(ref this), ppPresentationClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, IMFPresentationClock**, int>)(lpVtbl[10]))((IMFMediaSink*)Unsafe.AsPointer(ref this), ppPresentationClock);
     }
 
     /// <include file='IMFMediaSink.xml' path='doc/member[@name="IMFMediaSink.Shutdown"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaSink*, int>)(lpVtbl[11]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSink*, int>)(lpVtbl[11]))((IMFMediaSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -152,39 +152,39 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCharacteristics;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFStreamSink**, int> AddStreamSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, IMFStreamSink**, int> AddStreamSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveStreamSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveStreamSink;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStreamSinkCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStreamSinkCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkByIndex;
 
         [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkById;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
 
         [NativeTypeName("HRESULT (IMFPresentationClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

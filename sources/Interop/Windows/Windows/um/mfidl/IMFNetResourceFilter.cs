@@ -27,7 +27,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetResourceFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[1]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetResourceFilter*, uint>)(lpVtbl[1]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, uint>)(lpVtbl[2]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetResourceFilter*, uint>)(lpVtbl[2]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnRedirect"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     [VtblIndex(3)]
     public HRESULT OnRedirect([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("VARIANT_BOOL *")] short* pvbCancel)
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, char*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetResourceFilter*, char*, short*, int>)(lpVtbl[3]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl, pvbCancel);
     }
 
     /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.OnSendingRequest"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
     [VtblIndex(4)]
     public HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] char* pszUrl)
     {
-        return ((delegate* unmanaged<IMFNetResourceFilter*, char*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetResourceFilter*, char*, int>)(lpVtbl[4]))((IMFNetResourceFilter*)Unsafe.AsPointer(ref this), pszUrl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short*, int> OnRedirect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> OnRedirect;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> OnSendingRequest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> OnSendingRequest;
     }
 }

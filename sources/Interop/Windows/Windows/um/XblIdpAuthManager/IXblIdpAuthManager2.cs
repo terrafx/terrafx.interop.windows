@@ -25,7 +25,7 @@ public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager2*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager2*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager2*, uint>)(lpVtbl[1]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager2*, uint>)(lpVtbl[1]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager2*, uint>)(lpVtbl[2]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager2*, uint>)(lpVtbl[2]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXblIdpAuthManager2.xml' path='doc/member[@name="IXblIdpAuthManager2.GetUserlessTokenAndSignatureWithTokenResult"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface
     [VtblIndex(3)]
     public HRESULT GetUserlessTokenAndSignatureWithTokenResult([NativeTypeName("LPCWSTR")] char* appSid, [NativeTypeName("LPCWSTR")] char* msaTarget, [NativeTypeName("LPCWSTR")] char* msaPolicy, [NativeTypeName("LPCWSTR")] char* httpMethod, [NativeTypeName("LPCWSTR")] char* uri, [NativeTypeName("LPCWSTR")] char* headers, byte* body, [NativeTypeName("DWORD")] uint bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result)
     {
-        return ((delegate* unmanaged<IXblIdpAuthManager2*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int>)(lpVtbl[3]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this), appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
+        return ((delegate* unmanaged[MemberFunction]<IXblIdpAuthManager2*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int>)(lpVtbl[3]))((IXblIdpAuthManager2*)Unsafe.AsPointer(ref this), appSid, msaTarget, msaPolicy, httpMethod, uri, headers, body, bodySize, forceRefresh, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, BYTE *, DWORD, BOOL, IXblIdpAuthTokenResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int> GetUserlessTokenAndSignatureWithTokenResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, char*, char*, char*, byte*, uint, BOOL, IXblIdpAuthTokenResult**, int> GetUserlessTokenAndSignatureWithTokenResult;
     }
 }

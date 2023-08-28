@@ -25,7 +25,7 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IParseDisplayName*, Guid*, void**, int>)(lpVtbl[0]))((IParseDisplayName*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IParseDisplayName*, Guid*, void**, int>)(lpVtbl[0]))((IParseDisplayName*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IParseDisplayName*, uint>)(lpVtbl[1]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParseDisplayName*, uint>)(lpVtbl[1]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IParseDisplayName*, uint>)(lpVtbl[2]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParseDisplayName*, uint>)(lpVtbl[2]))((IParseDisplayName*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IParseDisplayName.xml' path='doc/member[@name="IParseDisplayName.ParseDisplayName"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
     [VtblIndex(3)]
     public HRESULT ParseDisplayName(IBindCtx* pbc, [NativeTypeName("LPOLESTR")] char* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, IMoniker** ppmkOut)
     {
-        return ((delegate* unmanaged<IParseDisplayName*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
+        return ((delegate* unmanaged[MemberFunction]<IParseDisplayName*, IBindCtx*, char*, uint*, IMoniker**, int>)(lpVtbl[3]))((IParseDisplayName*)Unsafe.AsPointer(ref this), pbc, pszDisplayName, pchEaten, ppmkOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IParseDisplayName : IParseDisplayName.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, char*, uint*, IMoniker**, int> ParseDisplayName;
     }
 }

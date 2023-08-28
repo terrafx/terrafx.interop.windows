@@ -25,7 +25,7 @@ public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISupportErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISupportErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISupportErrorInfo*, uint>)(lpVtbl[1]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISupportErrorInfo*, uint>)(lpVtbl[1]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISupportErrorInfo*, uint>)(lpVtbl[2]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISupportErrorInfo*, uint>)(lpVtbl[2]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISupportErrorInfo.xml' path='doc/member[@name="ISupportErrorInfo.InterfaceSupportsErrorInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface, IN
     [VtblIndex(3)]
     public HRESULT InterfaceSupportsErrorInfo([NativeTypeName("const IID &")] Guid* riid)
     {
-        return ((delegate* unmanaged<ISupportErrorInfo*, Guid*, int>)(lpVtbl[3]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid);
+        return ((delegate* unmanaged[MemberFunction]<ISupportErrorInfo*, Guid*, int>)(lpVtbl[3]))((ISupportErrorInfo*)Unsafe.AsPointer(ref this), riid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ISupportErrorInfo : ISupportErrorInfo.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> InterfaceSupportsErrorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> InterfaceSupportsErrorInfo;
     }
 }

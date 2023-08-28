@@ -28,7 +28,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, uint>)(lpVtbl[1]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, uint>)(lpVtbl[1]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, uint>)(lpVtbl[2]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, uint>)(lpVtbl[2]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.SetMessageCountLimit"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetMessageCountLimit([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageCountLimit)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, int>)(lpVtbl[3]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, MessageCountLimit);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong, int>)(lpVtbl[3]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, MessageCountLimit);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.ClearStoredMessages"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(4)]
     public void ClearStoredMessages([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)(lpVtbl[4]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, void>)(lpVtbl[4]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetMessage"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetMessage([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("UINT64")] ulong MessageIndex, DXGI_INFO_QUEUE_MESSAGE* pMessage, [NativeTypeName("SIZE_T *")] nuint* pMessageByteLength)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong, DXGI_INFO_QUEUE_MESSAGE*, nuint*, int>)(lpVtbl[5]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, MessageIndex, pMessage, pMessageByteLength);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong, DXGI_INFO_QUEUE_MESSAGE*, nuint*, int>)(lpVtbl[5]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, MessageIndex, pMessage, pMessageByteLength);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetNumStoredMessagesAllowedByRetrievalFilters"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetNumStoredMessagesAllowedByRetrievalFilters([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[6]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[6]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetNumStoredMessages"]/*' />
@@ -88,7 +88,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetNumStoredMessages([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[7]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[7]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetNumMessagesDiscardedByMessageCountLimit"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetNumMessagesDiscardedByMessageCountLimit([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[8]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[8]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetMessageCountLimit"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetMessageCountLimit([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[9]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[9]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetNumMessagesAllowedByStorageFilter"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetNumMessagesAllowedByStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[10]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[10]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetNumMessagesDeniedByStorageFilter"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [return: NativeTypeName("UINT64")]
     public ulong GetNumMessagesDeniedByStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[11]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, ulong>)(lpVtbl[11]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.AddStorageFilterEntries"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT AddStorageFilterEntries([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[12]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[12]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetStorageFilter"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT GetStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[13]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[13]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.ClearStorageFilter"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(14)]
     public void ClearStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)(lpVtbl[14]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, void>)(lpVtbl[14]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushEmptyStorageFilter"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT PushEmptyStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[15]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[15]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushDenyAllStorageFilter"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT PushDenyAllStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[16]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[16]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushCopyOfStorageFilter"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT PushCopyOfStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[17]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[17]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushStorageFilter"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(18)]
     public HRESULT PushStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[18]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[18]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PopStorageFilter"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(19)]
     public void PopStorageFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)(lpVtbl[19]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, void>)(lpVtbl[19]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetStorageFilterStackSize"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(20)]
     public uint GetStorageFilterStackSize([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, uint>)(lpVtbl[20]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, uint>)(lpVtbl[20]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.AddRetrievalFilterEntries"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(21)]
     public HRESULT AddRetrievalFilterEntries([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[21]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[21]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetRetrievalFilter"]/*' />
@@ -212,7 +212,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT GetRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter, [NativeTypeName("SIZE_T *")] nuint* pFilterByteLength)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[22]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int>)(lpVtbl[22]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter, pFilterByteLength);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.ClearRetrievalFilter"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(23)]
     public void ClearRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)(lpVtbl[23]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, void>)(lpVtbl[23]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushEmptyRetrievalFilter"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT PushEmptyRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[24]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[24]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushDenyAllRetrievalFilter"]/*' />
@@ -236,7 +236,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT PushDenyAllRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[25]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[25]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushCopyOfRetrievalFilter"]/*' />
@@ -244,7 +244,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT PushCopyOfRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[26]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[26]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PushRetrievalFilter"]/*' />
@@ -252,7 +252,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(27)]
     public HRESULT PushRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_FILTER* pFilter)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[27]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_FILTER*, int>)(lpVtbl[27]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, pFilter);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.PopRetrievalFilter"]/*' />
@@ -260,7 +260,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(28)]
     public void PopRetrievalFilter([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, void>)(lpVtbl[28]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, void>)(lpVtbl[28]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetRetrievalFilterStackSize"]/*' />
@@ -268,7 +268,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(29)]
     public uint GetRetrievalFilterStackSize([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, uint>)(lpVtbl[29]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, uint>)(lpVtbl[29]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.AddMessage"]/*' />
@@ -276,7 +276,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(30)]
     public HRESULT AddMessage([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID, [NativeTypeName("LPCSTR")] sbyte* pDescription)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int, sbyte*, int>)(lpVtbl[30]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category, Severity, ID, pDescription);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int, sbyte*, int>)(lpVtbl[30]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category, Severity, ID, pDescription);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.AddApplicationMessage"]/*' />
@@ -284,7 +284,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(31)]
     public HRESULT AddApplicationMessage(DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, [NativeTypeName("LPCSTR")] sbyte* pDescription)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, sbyte*, int>)(lpVtbl[31]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Severity, pDescription);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, sbyte*, int>)(lpVtbl[31]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Severity, pDescription);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.SetBreakOnCategory"]/*' />
@@ -292,7 +292,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(32)]
     public HRESULT SetBreakOnCategory([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category, BOOL bEnable)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL, int>)(lpVtbl[32]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category, bEnable);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL, int>)(lpVtbl[32]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category, bEnable);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.SetBreakOnSeverity"]/*' />
@@ -300,7 +300,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(33)]
     public HRESULT SetBreakOnSeverity([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity, BOOL bEnable)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL, int>)(lpVtbl[33]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Severity, bEnable);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL, int>)(lpVtbl[33]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Severity, bEnable);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.SetBreakOnID"]/*' />
@@ -308,7 +308,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(34)]
     public HRESULT SetBreakOnID([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID, BOOL bEnable)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int, BOOL, int>)(lpVtbl[34]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, ID, bEnable);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int, BOOL, int>)(lpVtbl[34]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, ID, bEnable);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetBreakOnCategory"]/*' />
@@ -316,7 +316,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(35)]
     public BOOL GetBreakOnCategory([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, int>)(lpVtbl[35]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, int>)(lpVtbl[35]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Category);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetBreakOnSeverity"]/*' />
@@ -324,7 +324,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(36)]
     public BOOL GetBreakOnSeverity([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int>)(lpVtbl[36]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Severity);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int>)(lpVtbl[36]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, Severity);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetBreakOnID"]/*' />
@@ -332,7 +332,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(37)]
     public BOOL GetBreakOnID([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")] int ID)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int, int>)(lpVtbl[37]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, ID);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int, int>)(lpVtbl[37]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, ID);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.SetMuteDebugOutput"]/*' />
@@ -340,7 +340,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(38)]
     public void SetMuteDebugOutput([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer, BOOL bMute)
     {
-        ((delegate* unmanaged<IDXGIInfoQueue*, Guid, BOOL, void>)(lpVtbl[38]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, bMute);
+        ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, BOOL, void>)(lpVtbl[38]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer, bMute);
     }
 
     /// <include file='IDXGIInfoQueue.xml' path='doc/member[@name="IDXGIInfoQueue.GetMuteDebugOutput"]/*' />
@@ -348,7 +348,7 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
     [VtblIndex(39)]
     public BOOL GetMuteDebugOutput([NativeTypeName("DXGI_DEBUG_ID")] Guid Producer)
     {
-        return ((delegate* unmanaged<IDXGIInfoQueue*, Guid, int>)(lpVtbl[39]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIInfoQueue*, Guid, int>)(lpVtbl[39]))((IDXGIInfoQueue*)Unsafe.AsPointer(ref this), Producer);
     }
 
     public interface Interface : IUnknown.Interface
@@ -475,123 +475,123 @@ public unsafe partial struct IDXGIInfoQueue : IDXGIInfoQueue.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong, int> SetMessageCountLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong, int> SetMessageCountLimit;
 
         [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, void> ClearStoredMessages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, void> ClearStoredMessages;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, UINT64, DXGI_INFO_QUEUE_MESSAGE *, SIZE_T *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong, DXGI_INFO_QUEUE_MESSAGE*, nuint*, int> GetMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong, DXGI_INFO_QUEUE_MESSAGE*, nuint*, int> GetMessage;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetNumStoredMessagesAllowedByRetrievalFilters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetNumStoredMessagesAllowedByRetrievalFilters;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetNumStoredMessages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetNumStoredMessages;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetNumMessagesDiscardedByMessageCountLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetNumMessagesDiscardedByMessageCountLimit;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetMessageCountLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetMessageCountLimit;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetNumMessagesAllowedByStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetNumMessagesAllowedByStorageFilter;
 
         [NativeTypeName("UINT64 (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, ulong> GetNumMessagesDeniedByStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, ulong> GetNumMessagesDeniedByStorageFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddStorageFilterEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddStorageFilterEntries;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetStorageFilter;
 
         [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, void> ClearStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, void> ClearStorageFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushEmptyStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushEmptyStorageFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushDenyAllStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushDenyAllStorageFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushCopyOfStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushCopyOfStorageFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushStorageFilter;
 
         [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, void> PopStorageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, void> PopStorageFilter;
 
         [NativeTypeName("UINT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint> GetStorageFilterStackSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint> GetStorageFilterStackSize;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddRetrievalFilterEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> AddRetrievalFilterEntries;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *, SIZE_T *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, nuint*, int> GetRetrievalFilter;
 
         [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, void> ClearRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, void> ClearRetrievalFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushEmptyRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushEmptyRetrievalFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushDenyAllRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushDenyAllRetrievalFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> PushCopyOfRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> PushCopyOfRetrievalFilter;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_FILTER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_FILTER*, int> PushRetrievalFilter;
 
         [NativeTypeName("void (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, void> PopRetrievalFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, void> PopRetrievalFilter;
 
         [NativeTypeName("UINT (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint> GetRetrievalFilterStackSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint> GetRetrievalFilterStackSize;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, DXGI_INFO_QUEUE_MESSAGE_ID, LPCSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int, sbyte*, int> AddMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int, sbyte*, int> AddMessage;
 
         [NativeTypeName("HRESULT (DXGI_INFO_QUEUE_MESSAGE_SEVERITY, LPCSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, sbyte*, int> AddApplicationMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, sbyte*, int> AddApplicationMessage;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL, int> SetBreakOnCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, BOOL, int> SetBreakOnCategory;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL, int> SetBreakOnSeverity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, BOOL, int> SetBreakOnSeverity;
 
         [NativeTypeName("HRESULT (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_ID, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int, BOOL, int> SetBreakOnID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int, BOOL, int> SetBreakOnID;
 
         [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_CATEGORY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, int> GetBreakOnCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_CATEGORY, int> GetBreakOnCategory;
 
         [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_SEVERITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int> GetBreakOnSeverity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, DXGI_INFO_QUEUE_MESSAGE_SEVERITY, int> GetBreakOnSeverity;
 
         [NativeTypeName("BOOL (DXGI_DEBUG_ID, DXGI_INFO_QUEUE_MESSAGE_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int, int> GetBreakOnID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int, int> GetBreakOnID;
 
         [NativeTypeName("void (DXGI_DEBUG_ID, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, BOOL, void> SetMuteDebugOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, BOOL, void> SetMuteDebugOutput;
 
         [NativeTypeName("BOOL (DXGI_DEBUG_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> GetMuteDebugOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> GetMuteDebugOutput;
     }
 }

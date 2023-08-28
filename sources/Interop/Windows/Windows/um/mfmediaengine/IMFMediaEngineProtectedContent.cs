@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[1]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[1]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[2]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[2]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.ShareResources"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(3)]
     public HRESULT ShareResources(IUnknown* pUnkDeviceContext)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, int>)(lpVtbl[3]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pUnkDeviceContext);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, IUnknown*, int>)(lpVtbl[3]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pUnkDeviceContext);
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.GetRequiredProtections"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(4)]
     public HRESULT GetRequiredProtections([NativeTypeName("DWORD *")] uint* pFrameProtectionFlags)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint*, int>)(lpVtbl[4]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pFrameProtectionFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, uint*, int>)(lpVtbl[4]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pFrameProtectionFlags);
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetOPMWindow"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(5)]
     public HRESULT SetOPMWindow(HWND hwnd)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, HWND, int>)(lpVtbl[5]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, HWND, int>)(lpVtbl[5]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.TransferVideoFrame"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(6)]
     public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr, [NativeTypeName("DWORD *")] uint* pFrameProtectionFlags)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int>)(lpVtbl[6]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr, pFrameProtectionFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int>)(lpVtbl[6]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr, pFrameProtectionFlags);
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetContentProtectionManager"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(7)]
     public HRESULT SetContentProtectionManager(IMFContentProtectionManager* pCPM)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IMFContentProtectionManager*, int>)(lpVtbl[7]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pCPM);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, IMFContentProtectionManager*, int>)(lpVtbl[7]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pCPM);
     }
 
     /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetApplicationCertificate"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
     [VtblIndex(8)]
     public HRESULT SetApplicationCertificate([NativeTypeName("const BYTE *")] byte* pbBlob, [NativeTypeName("DWORD")] uint cbBlob)
     {
-        return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, byte*, uint, int>)(lpVtbl[8]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pbBlob, cbBlob);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineProtectedContent*, byte*, uint, int>)(lpVtbl[8]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pbBlob, cbBlob);
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> ShareResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> ShareResources;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetRequiredProtections;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetRequiredProtections;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> SetOPMWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> SetOPMWindow;
 
         [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int> TransferVideoFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int> TransferVideoFrame;
 
         [NativeTypeName("HRESULT (IMFContentProtectionManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFContentProtectionManager*, int> SetContentProtectionManager;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFContentProtectionManager*, int> SetContentProtectionManager;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> SetApplicationCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> SetApplicationCertificate;
     }
 }

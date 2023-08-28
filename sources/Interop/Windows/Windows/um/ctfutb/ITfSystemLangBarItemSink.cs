@@ -25,7 +25,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItemSink*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItemSink*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSystemLangBarItemSink.xml' path='doc/member[@name="ITfSystemLangBarItemSink.InitMenu"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
     [VtblIndex(3)]
     public HRESULT InitMenu(ITfMenu* pMenu)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItemSink*, ITfMenu*, int>)(lpVtbl[3]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), pMenu);
     }
 
     /// <include file='ITfSystemLangBarItemSink.xml' path='doc/member[@name="ITfSystemLangBarItemSink.OnMenuSelect"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
     [VtblIndex(4)]
     public HRESULT OnMenuSelect(uint wID)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItemSink*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItemSink*)Unsafe.AsPointer(ref this), wID);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfSystemLangBarItemSink : ITfSystemLangBarItemSink
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfMenu*, int> InitMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfMenu*, int> InitMenu;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnMenuSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnMenuSelect;
     }
 }

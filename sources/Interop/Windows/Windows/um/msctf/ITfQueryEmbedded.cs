@@ -25,7 +25,7 @@ public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfQueryEmbedded*, Guid*, void**, int>)(lpVtbl[0]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfQueryEmbedded*, Guid*, void**, int>)(lpVtbl[0]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfQueryEmbedded*, uint>)(lpVtbl[1]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfQueryEmbedded*, uint>)(lpVtbl[1]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfQueryEmbedded*, uint>)(lpVtbl[2]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfQueryEmbedded*, uint>)(lpVtbl[2]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfQueryEmbedded.xml' path='doc/member[@name="ITfQueryEmbedded.QueryInsertEmbedded"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INat
     [VtblIndex(3)]
     public HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
     {
-        return ((delegate* unmanaged<ITfQueryEmbedded*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[3]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
+        return ((delegate* unmanaged[MemberFunction]<ITfQueryEmbedded*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[3]))((ITfQueryEmbedded*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfQueryEmbedded : ITfQueryEmbedded.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *, const FORMATETC *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
     }
 }

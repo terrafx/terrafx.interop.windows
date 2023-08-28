@@ -25,7 +25,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGTransform*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGTransform*, uint>)(lpVtbl[1]))((ISVGTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, uint>)(lpVtbl[1]))((ISVGTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGTransform*, uint>)(lpVtbl[2]))((ISVGTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, uint>)(lpVtbl[2]))((ISVGTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGTransform*, uint*, int>)(lpVtbl[3]))((ISVGTransform*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, uint*, int>)(lpVtbl[3]))((ISVGTransform*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGTransform*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTransform*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTransform*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGTransform*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTransform*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTransform*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGTransform*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTransform*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTransform*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.put_type"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT put_type(short v)
     {
-        return ((delegate* unmanaged<ISVGTransform*, short, int>)(lpVtbl[7]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, short, int>)(lpVtbl[7]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.get_type"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT get_type(short* p)
     {
-        return ((delegate* unmanaged<ISVGTransform*, short*, int>)(lpVtbl[8]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, short*, int>)(lpVtbl[8]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.putref_matrix"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT putref_matrix(ISVGMatrix* v)
     {
-        return ((delegate* unmanaged<ISVGTransform*, ISVGMatrix*, int>)(lpVtbl[9]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, ISVGMatrix*, int>)(lpVtbl[9]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.get_matrix"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT get_matrix(ISVGMatrix** p)
     {
-        return ((delegate* unmanaged<ISVGTransform*, ISVGMatrix**, int>)(lpVtbl[10]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, ISVGMatrix**, int>)(lpVtbl[10]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.put_angle"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT put_angle(float v)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, int>)(lpVtbl[11]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, int>)(lpVtbl[11]))((ISVGTransform*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.get_angle"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT get_angle(float* p)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float*, int>)(lpVtbl[12]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float*, int>)(lpVtbl[12]))((ISVGTransform*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setMatrix"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT setMatrix(ISVGMatrix* matrix)
     {
-        return ((delegate* unmanaged<ISVGTransform*, ISVGMatrix*, int>)(lpVtbl[13]))((ISVGTransform*)Unsafe.AsPointer(ref this), matrix);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, ISVGMatrix*, int>)(lpVtbl[13]))((ISVGTransform*)Unsafe.AsPointer(ref this), matrix);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setTranslate"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT setTranslate(float tx, float ty)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, float, int>)(lpVtbl[14]))((ISVGTransform*)Unsafe.AsPointer(ref this), tx, ty);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, float, int>)(lpVtbl[14]))((ISVGTransform*)Unsafe.AsPointer(ref this), tx, ty);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setScale"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT setScale(float sx, float sy)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, float, int>)(lpVtbl[15]))((ISVGTransform*)Unsafe.AsPointer(ref this), sx, sy);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, float, int>)(lpVtbl[15]))((ISVGTransform*)Unsafe.AsPointer(ref this), sx, sy);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setRotate"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT setRotate(float angle, float cx, float cy)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, float, float, int>)(lpVtbl[16]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle, cx, cy);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, float, float, int>)(lpVtbl[16]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle, cx, cy);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setSkewX"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT setSkewX(float angle)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, int>)(lpVtbl[17]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, int>)(lpVtbl[17]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle);
     }
 
     /// <include file='ISVGTransform.xml' path='doc/member[@name="ISVGTransform.setSkewY"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT setSkewY(float angle)
     {
-        return ((delegate* unmanaged<ISVGTransform*, float, int>)(lpVtbl[18]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTransform*, float, int>)(lpVtbl[18]))((ISVGTransform*)Unsafe.AsPointer(ref this), angle);
     }
 
     public interface Interface : IDispatch.Interface
@@ -217,60 +217,60 @@ public unsafe partial struct ISVGTransform : ISVGTransform.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_type;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_type;
 
         [NativeTypeName("HRESULT (ISVGMatrix *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGMatrix*, int> putref_matrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGMatrix*, int> putref_matrix;
 
         [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGMatrix**, int> get_matrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGMatrix**, int> get_matrix;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_angle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_angle;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_angle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_angle;
 
         [NativeTypeName("HRESULT (ISVGMatrix *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGMatrix*, int> setMatrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGMatrix*, int> setMatrix;
 
         [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, int> setTranslate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, int> setTranslate;
 
         [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, int> setScale;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, int> setScale;
 
         [NativeTypeName("HRESULT (float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, int> setRotate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, int> setRotate;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> setSkewX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> setSkewX;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> setSkewY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> setSkewY;
     }
 }

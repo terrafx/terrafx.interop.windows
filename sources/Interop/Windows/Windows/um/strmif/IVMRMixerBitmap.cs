@@ -25,7 +25,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, uint>)(lpVtbl[1]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, uint>)(lpVtbl[1]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, uint>)(lpVtbl[2]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, uint>)(lpVtbl[2]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRMixerBitmap.xml' path='doc/member[@name="IVMRMixerBitmap.SetAlphaBitmap"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetAlphaBitmap([NativeTypeName("const VMRALPHABITMAP *")] VMRALPHABITMAP* pBmpParms)
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[3]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[3]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
     }
 
     /// <include file='IVMRMixerBitmap.xml' path='doc/member[@name="IVMRMixerBitmap.UpdateAlphaBitmapParameters"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [VtblIndex(4)]
     public HRESULT UpdateAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms)
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[4]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[4]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
     }
 
     /// <include file='IVMRMixerBitmap.xml' path='doc/member[@name="IVMRMixerBitmap.GetAlphaBitmapParameters"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms)
     {
-        return ((delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[5]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerBitmap*, VMRALPHABITMAP*, int>)(lpVtbl[5]))((IVMRMixerBitmap*)Unsafe.AsPointer(ref this), pBmpParms);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const VMRALPHABITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> SetAlphaBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRALPHABITMAP*, int> SetAlphaBitmap;
 
         [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> UpdateAlphaBitmapParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRALPHABITMAP*, int> UpdateAlphaBitmapParameters;
 
         [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> GetAlphaBitmapParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRALPHABITMAP*, int> GetAlphaBitmapParameters;
     }
 }

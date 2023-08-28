@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnBalloon*, uint>)(lpVtbl[1]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnBalloon*, uint>)(lpVtbl[1]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnBalloon*, uint>)(lpVtbl[2]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnBalloon*, uint>)(lpVtbl[2]))((ITfFnBalloon*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfFnBalloon.xml' path='doc/member[@name="ITfFnBalloon.UpdateBalloon"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfFnBalloon*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[3]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), style, pch, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnBalloon*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[3]))((ITfFnBalloon*)Unsafe.AsPointer(ref this), style, pch, cch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfFnBalloon : ITfFnBalloon.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfLBBalloonStyle, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
     }
 }

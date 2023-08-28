@@ -25,7 +25,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint>)(lpVtbl[1]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint>)(lpVtbl[1]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint>)(lpVtbl[2]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint>)(lpVtbl[2]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetMetadataFormat" />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(3)]
     public HRESULT GetMetadataFormat(Guid* pguidMetadataFormat)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, Guid*, int>)(lpVtbl[3]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pguidMetadataFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, Guid*, int>)(lpVtbl[3]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pguidMetadataFormat);
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetMetadataHandlerInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(4)]
     public HRESULT GetMetadataHandlerInfo(IWICMetadataHandlerInfo** ppIHandler)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, IWICMetadataHandlerInfo**, int>)(lpVtbl[4]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), ppIHandler);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, IWICMetadataHandlerInfo**, int>)(lpVtbl[4]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), ppIHandler);
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetCount" />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(5)]
     public HRESULT GetCount(uint* pcCount)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint*, int>)(lpVtbl[5]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pcCount);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint*, int>)(lpVtbl[5]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pcCount);
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetValueByIndex" />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(6)]
     public HRESULT GetValueByIndex(uint nIndex, PROPVARIANT* pvarSchema, PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[6]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[6]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetValue" />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(7)]
     public HRESULT GetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
     }
 
     /// <inheritdoc cref="IWICMetadataReader.GetEnumerator" />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(8)]
     public HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, IWICEnumMetadataItem**, int>)(lpVtbl[8]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, IWICEnumMetadataItem**, int>)(lpVtbl[8]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), ppIEnumMetadata);
     }
 
     /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter.SetValue"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[9]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[9]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId, pvarValue);
     }
 
     /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter.SetValueByIndex"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(10)]
     public HRESULT SetValueByIndex(uint nIndex, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[10]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[10]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex, pvarSchema, pvarId, pvarValue);
     }
 
     /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter.RemoveValue"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(11)]
     public HRESULT RemoveValue([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarSchema, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarId)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[11]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[11]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), pvarSchema, pvarId);
     }
 
     /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter.RemoveValueByIndex"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
     [VtblIndex(12)]
     public HRESULT RemoveValueByIndex(uint nIndex)
     {
-        return ((delegate* unmanaged<IWICMetadataWriter*, uint, int>)(lpVtbl[12]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex);
+        return ((delegate* unmanaged[MemberFunction]<IWICMetadataWriter*, uint, int>)(lpVtbl[12]))((IWICMetadataWriter*)Unsafe.AsPointer(ref this), nIndex);
     }
 
     public interface Interface : IWICMetadataReader.Interface
@@ -145,42 +145,42 @@ public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetMetadataFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetMetadataFormat;
 
         [NativeTypeName("HRESULT (IWICMetadataHandlerInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, PROPVARIANT *, PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (IWICEnumMetadataItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICEnumMetadataItem**, int> GetEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICEnumMetadataItem**, int> GetEnumerator;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (UINT, const PROPVARIANT *, const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> SetValueByIndex;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, int> RemoveValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, PROPVARIANT*, int> RemoveValue;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveValueByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveValueByIndex;
     }
 }

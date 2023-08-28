@@ -25,7 +25,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGTests*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, Guid*, void**, int>)(lpVtbl[0]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGTests*, uint>)(lpVtbl[1]))((ISVGTests*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, uint>)(lpVtbl[1]))((ISVGTests*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGTests*, uint>)(lpVtbl[2]))((ISVGTests*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, uint>)(lpVtbl[2]))((ISVGTests*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGTests*, uint*, int>)(lpVtbl[3]))((ISVGTests*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, uint*, int>)(lpVtbl[3]))((ISVGTests*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGTests*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTests*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGTests*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGTests*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGTests*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGTests*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTests*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGTests*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGTests.xml' path='doc/member[@name="ISVGTests.get_requiredFeatures"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_requiredFeatures(ISVGStringList** p)
     {
-        return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[7]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, ISVGStringList**, int>)(lpVtbl[7]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTests.xml' path='doc/member[@name="ISVGTests.get_requiredExtensions"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_requiredExtensions(ISVGStringList** p)
     {
-        return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[8]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, ISVGStringList**, int>)(lpVtbl[8]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTests.xml' path='doc/member[@name="ISVGTests.get_systemLanguage"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_systemLanguage(ISVGStringList** p)
     {
-        return ((delegate* unmanaged<ISVGTests*, ISVGStringList**, int>)(lpVtbl[9]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, ISVGStringList**, int>)(lpVtbl[9]))((ISVGTests*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGTests.xml' path='doc/member[@name="ISVGTests.hasExtension"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT hasExtension([NativeTypeName("BSTR")] char* extension, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
     {
-        return ((delegate* unmanaged<ISVGTests*, char*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
+        return ((delegate* unmanaged[MemberFunction]<ISVGTests*, char*, short*, int>)(lpVtbl[10]))((ISVGTests*)Unsafe.AsPointer(ref this), extension, pResult);
     }
 
     public interface Interface : IDispatch.Interface
@@ -129,36 +129,36 @@ public unsafe partial struct ISVGTests : ISVGTests.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGStringList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGStringList**, int> get_requiredFeatures;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGStringList**, int> get_requiredFeatures;
 
         [NativeTypeName("HRESULT (ISVGStringList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGStringList**, int> get_requiredExtensions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGStringList**, int> get_requiredExtensions;
 
         [NativeTypeName("HRESULT (ISVGStringList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGStringList**, int> get_systemLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGStringList**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short*, int> hasExtension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> hasExtension;
     }
 }

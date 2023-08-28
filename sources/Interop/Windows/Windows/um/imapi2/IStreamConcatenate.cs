@@ -25,7 +25,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int>)(lpVtbl[0]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, Guid*, void**, int>)(lpVtbl[0]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[1]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, uint>)(lpVtbl[1]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[2]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, uint>)(lpVtbl[2]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISequentialStream.Read" />
@@ -51,7 +51,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(3)]
     public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
     }
 
     /// <inheritdoc cref="ISequentialStream.Write" />
@@ -59,7 +59,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[4]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[4]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
     }
 
     /// <inheritdoc cref="IStream.Seek" />
@@ -67,7 +67,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(5)]
     public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
     }
 
     /// <inheritdoc cref="IStream.SetSize" />
@@ -75,7 +75,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(6)]
     public HRESULT SetSize(ULARGE_INTEGER libNewSize)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int>)(lpVtbl[6]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libNewSize);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, ULARGE_INTEGER, int>)(lpVtbl[6]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libNewSize);
     }
 
     /// <inheritdoc cref="IStream.CopyTo" />
@@ -83,7 +83,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(7)]
     public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
     }
 
     /// <inheritdoc cref="IStream.Commit" />
@@ -91,7 +91,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(8)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, uint, int>)(lpVtbl[8]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), grfCommitFlags);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, uint, int>)(lpVtbl[8]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
     /// <inheritdoc cref="IStream.Revert" />
@@ -99,7 +99,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(9)]
     public HRESULT Revert()
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, int>)(lpVtbl[9]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, int>)(lpVtbl[9]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IStream.LockRegion" />
@@ -107,7 +107,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(10)]
     public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
     /// <inheritdoc cref="IStream.UnlockRegion" />
@@ -115,7 +115,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(11)]
     public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
     /// <inheritdoc cref="IStream.Stat" />
@@ -123,7 +123,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(12)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
     /// <inheritdoc cref="IStream.Clone" />
@@ -131,7 +131,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(13)]
     public HRESULT Clone(IStream** ppstm)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, int>)(lpVtbl[13]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), ppstm);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream**, int>)(lpVtbl[13]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), ppstm);
     }
 
     /// <include file='IStreamConcatenate.xml' path='doc/member[@name="IStreamConcatenate.Initialize"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(14)]
     public HRESULT Initialize(IStream* stream1, IStream* stream2)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int>)(lpVtbl[14]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream1, stream2);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream*, IStream*, int>)(lpVtbl[14]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream1, stream2);
     }
 
     /// <include file='IStreamConcatenate.xml' path='doc/member[@name="IStreamConcatenate.Initialize2"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(15)]
     public HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[15]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[15]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
     }
 
     /// <include file='IStreamConcatenate.xml' path='doc/member[@name="IStreamConcatenate.Append"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(16)]
     public HRESULT Append(IStream* stream)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, int>)(lpVtbl[16]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream*, int>)(lpVtbl[16]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream);
     }
 
     /// <include file='IStreamConcatenate.xml' path='doc/member[@name="IStreamConcatenate.Append2"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
     [VtblIndex(17)]
     public HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
     {
-        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
+        return ((delegate* unmanaged[MemberFunction]<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
     }
 
     public interface Interface : IStream.Interface
@@ -185,57 +185,57 @@ public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Revert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, STATSTG*, uint, int> Stat;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> Clone;
 
         [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, IStream*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, IStream*, int> Initialize;
 
         [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, uint, int> Initialize2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, uint, int> Initialize2;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> Append;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> Append;
 
         [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, uint, int> Append2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, uint, int> Append2;
     }
 }

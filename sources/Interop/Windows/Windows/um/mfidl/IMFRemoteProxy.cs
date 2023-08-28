@@ -25,7 +25,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRemoteProxy*, uint>)(lpVtbl[1]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteProxy*, uint>)(lpVtbl[1]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRemoteProxy*, uint>)(lpVtbl[2]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteProxy*, uint>)(lpVtbl[2]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy.GetRemoteObject"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetRemoteObject([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[3]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[3]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy.GetRemoteHost"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[4]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[4]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetRemoteObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetRemoteObject;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetRemoteHost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetRemoteHost;
     }
 }

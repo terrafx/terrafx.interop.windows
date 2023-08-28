@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, uint>)(lpVtbl[1]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, uint>)(lpVtbl[1]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, uint>)(lpVtbl[2]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, uint>)(lpVtbl[2]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, uint*, int>)(lpVtbl[3]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, uint*, int>)(lpVtbl[3]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="ISpeechBaseStream.get_Format" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(7)]
     public HRESULT get_Format(ISpeechAudioFormat** AudioFormat)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat**, int>)(lpVtbl[7]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), AudioFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, ISpeechAudioFormat**, int>)(lpVtbl[7]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), AudioFormat);
     }
 
     /// <inheritdoc cref="ISpeechBaseStream.putref_Format" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(8)]
     public HRESULT putref_Format(ISpeechAudioFormat* AudioFormat)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat*, int>)(lpVtbl[8]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), AudioFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, ISpeechAudioFormat*, int>)(lpVtbl[8]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), AudioFormat);
     }
 
     /// <inheritdoc cref="ISpeechBaseStream.Read" />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(9)]
     public HRESULT Read(VARIANT* Buffer, [NativeTypeName("long")] int NumberOfBytes, [NativeTypeName("long *")] int* BytesRead)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, VARIANT*, int, int*, int>)(lpVtbl[9]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Buffer, NumberOfBytes, BytesRead);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, VARIANT*, int, int*, int>)(lpVtbl[9]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Buffer, NumberOfBytes, BytesRead);
     }
 
     /// <inheritdoc cref="ISpeechBaseStream.Write" />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(10)]
     public HRESULT Write(VARIANT Buffer, [NativeTypeName("long *")] int* BytesWritten)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, VARIANT, int*, int>)(lpVtbl[10]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Buffer, BytesWritten);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, VARIANT, int*, int>)(lpVtbl[10]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Buffer, BytesWritten);
     }
 
     /// <inheritdoc cref="ISpeechBaseStream.Seek" />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(11)]
     public HRESULT Seek(VARIANT Position, SpeechStreamSeekPositionType Origin, VARIANT* NewPosition)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int>)(lpVtbl[11]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Position, Origin, NewPosition);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int>)(lpVtbl[11]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Position, Origin, NewPosition);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_Status" />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_Status(ISpeechAudioStatus** Status)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioStatus**, int>)(lpVtbl[12]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Status);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, ISpeechAudioStatus**, int>)(lpVtbl[12]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Status);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_BufferInfo" />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(13)]
     public HRESULT get_BufferInfo(ISpeechAudioBufferInfo** BufferInfo)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioBufferInfo**, int>)(lpVtbl[13]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, ISpeechAudioBufferInfo**, int>)(lpVtbl[13]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferInfo);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_DefaultFormat" />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(14)]
     public HRESULT get_DefaultFormat(ISpeechAudioFormat** StreamFormat)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, ISpeechAudioFormat**, int>)(lpVtbl[14]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), StreamFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, ISpeechAudioFormat**, int>)(lpVtbl[14]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), StreamFormat);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_Volume" />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(15)]
     public HRESULT get_Volume([NativeTypeName("long *")] int* Volume)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[15]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Volume);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[15]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Volume);
     }
 
     /// <inheritdoc cref="ISpeechAudio.put_Volume" />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(16)]
     public HRESULT put_Volume([NativeTypeName("long")] int Volume)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int, int>)(lpVtbl[16]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Volume);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int, int>)(lpVtbl[16]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Volume);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_BufferNotifySize" />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_BufferNotifySize([NativeTypeName("long *")] int* BufferNotifySize)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[17]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferNotifySize);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[17]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferNotifySize);
     }
 
     /// <inheritdoc cref="ISpeechAudio.put_BufferNotifySize" />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(18)]
     public HRESULT put_BufferNotifySize([NativeTypeName("long")] int BufferNotifySize)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int, int>)(lpVtbl[18]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferNotifySize);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int, int>)(lpVtbl[18]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), BufferNotifySize);
     }
 
     /// <inheritdoc cref="ISpeechAudio.get_EventHandle" />
@@ -179,7 +179,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(19)]
     public HRESULT get_EventHandle([NativeTypeName("long *")] int* EventHandle)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[19]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), EventHandle);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[19]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), EventHandle);
     }
 
     /// <inheritdoc cref="ISpeechAudio.SetState" />
@@ -187,7 +187,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(20)]
     public HRESULT SetState(SpeechAudioState State)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, SpeechAudioState, int>)(lpVtbl[20]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, SpeechAudioState, int>)(lpVtbl[20]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechMMSysAudio.xml' path='doc/member[@name="ISpeechMMSysAudio.get_DeviceId"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(21)]
     public HRESULT get_DeviceId([NativeTypeName("long *")] int* DeviceId)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[21]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), DeviceId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[21]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), DeviceId);
     }
 
     /// <include file='ISpeechMMSysAudio.xml' path='doc/member[@name="ISpeechMMSysAudio.put_DeviceId"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(22)]
     public HRESULT put_DeviceId([NativeTypeName("long")] int DeviceId)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int, int>)(lpVtbl[22]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), DeviceId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int, int>)(lpVtbl[22]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), DeviceId);
     }
 
     /// <include file='ISpeechMMSysAudio.xml' path='doc/member[@name="ISpeechMMSysAudio.get_LineId"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(23)]
     public HRESULT get_LineId([NativeTypeName("long *")] int* LineId)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[23]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), LineId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[23]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), LineId);
     }
 
     /// <include file='ISpeechMMSysAudio.xml' path='doc/member[@name="ISpeechMMSysAudio.put_LineId"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(24)]
     public HRESULT put_LineId([NativeTypeName("long")] int LineId)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int, int>)(lpVtbl[24]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), LineId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int, int>)(lpVtbl[24]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), LineId);
     }
 
     /// <include file='ISpeechMMSysAudio.xml' path='doc/member[@name="ISpeechMMSysAudio.get_MMHandle"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
     [VtblIndex(25)]
     public HRESULT get_MMHandle([NativeTypeName("long *")] int* Handle)
     {
-        return ((delegate* unmanaged<ISpeechMMSysAudio*, int*, int>)(lpVtbl[25]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Handle);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechMMSysAudio*, int*, int>)(lpVtbl[25]))((ISpeechMMSysAudio*)Unsafe.AsPointer(ref this), Handle);
     }
 
     public interface Interface : ISpeechAudio.Interface
@@ -252,81 +252,81 @@ public unsafe partial struct ISpeechMMSysAudio : ISpeechMMSysAudio.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioFormat**, int> get_Format;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioFormat**, int> get_Format;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioFormat*, int> putref_Format;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioFormat*, int> putref_Format;
 
         [NativeTypeName("HRESULT (VARIANT *, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int, int*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int, int*, int> Read;
 
         [NativeTypeName("HRESULT (VARIANT, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int*, int> Write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int*, int> Write;
 
         [NativeTypeName("HRESULT (VARIANT, SpeechStreamSeekPositionType, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int> Seek;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, SpeechStreamSeekPositionType, VARIANT*, int> Seek;
 
         [NativeTypeName("HRESULT (ISpeechAudioStatus **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioStatus**, int> get_Status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioStatus**, int> get_Status;
 
         [NativeTypeName("HRESULT (ISpeechAudioBufferInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioBufferInfo**, int> get_BufferInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioBufferInfo**, int> get_BufferInfo;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechAudioFormat**, int> get_DefaultFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechAudioFormat**, int> get_DefaultFormat;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Volume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Volume;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Volume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Volume;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_BufferNotifySize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_BufferNotifySize;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_BufferNotifySize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_BufferNotifySize;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_EventHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_EventHandle;
 
         [NativeTypeName("HRESULT (SpeechAudioState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechAudioState, int> SetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechAudioState, int> SetState;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_DeviceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_DeviceId;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_DeviceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_DeviceId;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LineId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LineId;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_LineId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_LineId;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_MMHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_MMHandle;
     }
 }

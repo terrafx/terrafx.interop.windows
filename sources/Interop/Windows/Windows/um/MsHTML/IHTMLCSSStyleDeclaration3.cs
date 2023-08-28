@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint>)(lpVtbl[1]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, uint>)(lpVtbl[1]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint>)(lpVtbl[2]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, uint>)(lpVtbl[2]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint*, int>)(lpVtbl[3]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, uint*, int>)(lpVtbl[3]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flex"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(7)]
     public HRESULT put_flex([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[7]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[7]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flex"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(8)]
     public HRESULT get_flex([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[8]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[8]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexDirection"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(9)]
     public HRESULT put_flexDirection([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexDirection"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(10)]
     public HRESULT get_flexDirection([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexWrap"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(11)]
     public HRESULT put_flexWrap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexWrap"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(12)]
     public HRESULT get_flexWrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexFlow"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(13)]
     public HRESULT put_flexFlow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexFlow"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(14)]
     public HRESULT get_flexFlow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexGrow"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(15)]
     public HRESULT put_flexGrow(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexGrow"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(16)]
     public HRESULT get_flexGrow(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexShrink"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(17)]
     public HRESULT put_flexShrink(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexShrink"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(18)]
     public HRESULT get_flexShrink(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_flexBasis"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(19)]
     public HRESULT put_flexBasis(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_flexBasis"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(20)]
     public HRESULT get_flexBasis(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, VARIANT*, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_justifyContent"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(21)]
     public HRESULT put_justifyContent([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_justifyContent"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(22)]
     public HRESULT get_justifyContent([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[22]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[22]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_alignItems"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(23)]
     public HRESULT put_alignItems([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[23]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[23]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_alignItems"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(24)]
     public HRESULT get_alignItems([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_alignSelf"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(25)]
     public HRESULT put_alignSelf([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_alignSelf"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(26)]
     public HRESULT get_alignSelf([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[26]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[26]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_alignContent"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(27)]
     public HRESULT put_alignContent([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[27]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[27]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_alignContent"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(28)]
     public HRESULT get_alignContent([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImage"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(29)]
     public HRESULT put_borderImage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImage"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(30)]
     public HRESULT get_borderImage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[30]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[30]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImageSource"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(31)]
     public HRESULT put_borderImageSource([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[31]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[31]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImageSource"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(32)]
     public HRESULT get_borderImageSource([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImageSlice"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(33)]
     public HRESULT put_borderImageSlice([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImageSlice"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(34)]
     public HRESULT get_borderImageSlice([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImageWidth"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(35)]
     public HRESULT put_borderImageWidth([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImageWidth"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(36)]
     public HRESULT get_borderImageWidth([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImageOutset"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(37)]
     public HRESULT put_borderImageOutset([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImageOutset"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(38)]
     public HRESULT get_borderImageOutset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_borderImageRepeat"]/*' />
@@ -339,7 +339,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(39)]
     public HRESULT put_borderImageRepeat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_borderImageRepeat"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(40)]
     public HRESULT get_borderImageRepeat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[40]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[40]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_msImeAlign"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(41)]
     public HRESULT put_msImeAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[41]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[41]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_msImeAlign"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(42)]
     public HRESULT get_msImeAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[42]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[42]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_msTextCombineHorizontal"]/*' />
@@ -371,7 +371,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(43)]
     public HRESULT put_msTextCombineHorizontal([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[43]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[43]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_msTextCombineHorizontal"]/*' />
@@ -379,7 +379,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(44)]
     public HRESULT get_msTextCombineHorizontal([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[44]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[44]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.put_touchAction"]/*' />
@@ -387,7 +387,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(45)]
     public HRESULT put_touchAction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[45]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char*, int>)(lpVtbl[45]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration3.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration3.get_touchAction"]/*' />
@@ -395,7 +395,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
     [VtblIndex(46)]
     public HRESULT get_touchAction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[46]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration3*, char**, int>)(lpVtbl[46]))((IHTMLCSSStyleDeclaration3*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -525,144 +525,144 @@ public unsafe partial struct IHTMLCSSStyleDeclaration3 : IHTMLCSSStyleDeclaratio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_flex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_flex;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_flex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_flex;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_flexDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_flexDirection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_flexDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_flexDirection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_flexWrap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_flexWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_flexWrap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_flexWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_flexFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_flexFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_flexFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_flexFlow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_flexGrow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_flexGrow;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_flexGrow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_flexGrow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_flexShrink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_flexShrink;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_flexShrink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_flexShrink;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_flexBasis;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_flexBasis;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_flexBasis;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_flexBasis;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_justifyContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_justifyContent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_justifyContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_justifyContent;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_alignItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_alignItems;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_alignItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_alignItems;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_alignSelf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_alignSelf;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_alignSelf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_alignSelf;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_alignContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_alignContent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_alignContent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_alignContent;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImageSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImageSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImageSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImageSource;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImageSlice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImageSlice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImageWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImageWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImageOutset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImageOutset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_borderImageRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_borderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_borderImageRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_borderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_msImeAlign;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_msImeAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_msImeAlign;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_msImeAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_msTextCombineHorizontal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_msTextCombineHorizontal;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_msTextCombineHorizontal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_msTextCombineHorizontal;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_touchAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_touchAction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_touchAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_touchAction;
     }
 }

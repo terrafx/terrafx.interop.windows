@@ -25,7 +25,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IImageRecompress*, Guid*, void**, int>)(lpVtbl[0]))((IImageRecompress*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IImageRecompress*, Guid*, void**, int>)(lpVtbl[0]))((IImageRecompress*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IImageRecompress*, uint>)(lpVtbl[1]))((IImageRecompress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageRecompress*, uint>)(lpVtbl[1]))((IImageRecompress*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IImageRecompress*, uint>)(lpVtbl[2]))((IImageRecompress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageRecompress*, uint>)(lpVtbl[2]))((IImageRecompress*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IImageRecompress.xml' path='doc/member[@name="IImageRecompress.RecompressImage"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INat
     [VtblIndex(3)]
     public HRESULT RecompressImage(IShellItem* psi, int cx, int cy, int iQuality, IStorage* pstg, IStream** ppstrmOut)
     {
-        return ((delegate* unmanaged<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int>)(lpVtbl[3]))((IImageRecompress*)Unsafe.AsPointer(ref this), psi, cx, cy, iQuality, pstg, ppstrmOut);
+        return ((delegate* unmanaged[MemberFunction]<IImageRecompress*, IShellItem*, int, int, int, IStorage*, IStream**, int>)(lpVtbl[3]))((IImageRecompress*)Unsafe.AsPointer(ref this), psi, cx, cy, iQuality, pstg, ppstrmOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, int, int, int, IStorage *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int, int, int, IStorage*, IStream**, int> RecompressImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int, int, int, IStorage*, IStream**, int> RecompressImage;
     }
 }

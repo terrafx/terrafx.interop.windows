@@ -25,7 +25,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOpenSearchSource*, Guid*, void**, int>)(lpVtbl[0]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOpenSearchSource*, Guid*, void**, int>)(lpVtbl[0]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOpenSearchSource*, uint>)(lpVtbl[1]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOpenSearchSource*, uint>)(lpVtbl[1]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOpenSearchSource*, uint>)(lpVtbl[2]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOpenSearchSource*, uint>)(lpVtbl[2]))((IOpenSearchSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource.GetResults"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] char* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IOpenSearchSource*, HWND, char*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IOpenSearchSource*, HWND, char*, uint, uint, Guid*, void**, int>)(lpVtbl[3]))((IOpenSearchSource*)Unsafe.AsPointer(ref this), hwnd, pszQuery, dwStartIndex, dwCount, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, DWORD, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, char*, uint, uint, Guid*, void**, int> GetResults;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, char*, uint, uint, Guid*, void**, int> GetResults;
     }
 }

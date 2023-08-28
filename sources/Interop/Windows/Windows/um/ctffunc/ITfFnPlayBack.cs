@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[1]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, uint>)(lpVtbl[1]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, uint>)(lpVtbl[2]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, uint>)(lpVtbl[2]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, char**, int>)(lpVtbl[3]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, char**, int>)(lpVtbl[3]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnPlayBack.xml' path='doc/member[@name="ITfFnPlayBack.QueryRange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfPlayable)
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfPlayable);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfPlayable);
     }
 
     /// <include file='ITfFnPlayBack.xml' path='doc/member[@name="ITfFnPlayBack.Play"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Play(ITfRange* pRange)
     {
-        return ((delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnPlayBack*, ITfRange*, int>)(lpVtbl[5]))((ITfFnPlayBack*)Unsafe.AsPointer(ref this), pRange);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
         [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, int> Play;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, int> Play;
     }
 }

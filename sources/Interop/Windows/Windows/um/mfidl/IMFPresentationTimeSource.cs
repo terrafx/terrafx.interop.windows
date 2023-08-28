@@ -25,7 +25,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint>)(lpVtbl[1]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint>)(lpVtbl[1]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint>)(lpVtbl[2]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint>)(lpVtbl[2]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFClock.GetClockCharacteristics" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(3)]
     public HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[3]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[3]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
     /// <inheritdoc cref="IMFClock.GetCorrelatedTime" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(4)]
     public HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint, long*, long*, int>)(lpVtbl[4]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint, long*, long*, int>)(lpVtbl[4]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
     }
 
     /// <inheritdoc cref="IMFClock.GetContinuityKey" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(5)]
     public HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[5]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwContinuityKey);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint*, int>)(lpVtbl[5]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pdwContinuityKey);
     }
 
     /// <inheritdoc cref="IMFClock.GetState" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
     }
 
     /// <inheritdoc cref="IMFClock.GetProperties" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(7)]
     public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pClockProperties);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), pClockProperties);
     }
 
     /// <include file='IMFPresentationTimeSource.xml' path='doc/member[@name="IMFPresentationTimeSource.GetUnderlyingClock"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
     [VtblIndex(8)]
     public HRESULT GetUnderlyingClock(IMFClock** ppClock)
     {
-        return ((delegate* unmanaged<IMFPresentationTimeSource*, IMFClock**, int>)(lpVtbl[8]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), ppClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFPresentationTimeSource*, IMFClock**, int>)(lpVtbl[8]))((IMFPresentationTimeSource*)Unsafe.AsPointer(ref this), ppClock);
     }
 
     public interface Interface : IMFClock.Interface
@@ -104,30 +104,30 @@ public unsafe partial struct IMFPresentationTimeSource : IMFPresentationTimeSour
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetClockCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetClockCharacteristics;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG *, MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, long*, long*, int> GetCorrelatedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, long*, long*, int> GetCorrelatedTime;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetContinuityKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetContinuityKey;
 
         [NativeTypeName("HRESULT (DWORD, MFCLOCK_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, MFCLOCK_STATE*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, MFCLOCK_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (MFCLOCK_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFCLOCK_PROPERTIES*, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFCLOCK_PROPERTIES*, int> GetProperties;
 
         [NativeTypeName("HRESULT (IMFClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFClock**, int> GetUnderlyingClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFClock**, int> GetUnderlyingClock;
     }
 }

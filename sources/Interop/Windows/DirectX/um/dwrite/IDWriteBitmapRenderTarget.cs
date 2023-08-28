@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, uint>)(lpVtbl[1]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, uint>)(lpVtbl[1]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, uint>)(lpVtbl[2]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, uint>)(lpVtbl[2]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.DrawGlyphRun"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(3)]
     public HRESULT DrawGlyphRun(float baselineOriginX, float baselineOriginY, DWRITE_MEASURING_MODE measuringMode, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, IDWriteRenderingParams* renderingParams, COLORREF textColor, RECT* blackBoxRect = null)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int>)(lpVtbl[3]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, blackBoxRect);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int>)(lpVtbl[3]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), baselineOriginX, baselineOriginY, measuringMode, glyphRun, renderingParams, textColor, blackBoxRect);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.GetMemoryDC"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(4)]
     public HDC GetMemoryDC()
     {
-        return ((HDC)(((delegate* unmanaged<IDWriteBitmapRenderTarget*, void*>)(lpVtbl[4]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this))));
+        return ((HDC)(((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, void*>)(lpVtbl[4]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this))));
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.GetPixelsPerDip"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(5)]
     public float GetPixelsPerDip()
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, float>)(lpVtbl[5]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.SetPixelsPerDip"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(6)]
     public HRESULT SetPixelsPerDip(float pixelsPerDip)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, float, int>)(lpVtbl[6]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), pixelsPerDip);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, float, int>)(lpVtbl[6]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), pixelsPerDip);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.GetCurrentTransform"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(7)]
     public HRESULT GetCurrentTransform(DWRITE_MATRIX* transform)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[7]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.SetCurrentTransform"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(8)]
     public HRESULT SetCurrentTransform([NativeTypeName("const DWRITE_MATRIX *")] DWRITE_MATRIX* transform)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[8]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, DWRITE_MATRIX*, int>)(lpVtbl[8]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), transform);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.GetSize"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(9)]
     public HRESULT GetSize(SIZE* size)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, SIZE*, int>)(lpVtbl[9]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IDWriteBitmapRenderTarget.xml' path='doc/member[@name="IDWriteBitmapRenderTarget.Resize"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
     [VtblIndex(10)]
     public HRESULT Resize([NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height)
     {
-        return ((delegate* unmanaged<IDWriteBitmapRenderTarget*, uint, uint, int>)(lpVtbl[10]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), width, height);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteBitmapRenderTarget*, uint, uint, int>)(lpVtbl[10]))((IDWriteBitmapRenderTarget*)Unsafe.AsPointer(ref this), width, height);
     }
 
     public interface Interface : IUnknown.Interface
@@ -142,36 +142,36 @@ public unsafe partial struct IDWriteBitmapRenderTarget : IDWriteBitmapRenderTarg
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, DWRITE_MEASURING_MODE, const DWRITE_GLYPH_RUN *, IDWriteRenderingParams *, COLORREF, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int> DrawGlyphRun;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int> DrawGlyphRun;
 
         [NativeTypeName("HDC () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetMemoryDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetMemoryDC;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetPixelsPerDip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetPixelsPerDip;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetPixelsPerDip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetPixelsPerDip;
 
         [NativeTypeName("HRESULT (DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_MATRIX*, int> GetCurrentTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_MATRIX*, int> GetCurrentTransform;
 
         [NativeTypeName("HRESULT (const DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_MATRIX*, int> SetCurrentTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_MATRIX*, int> SetCurrentTransform;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> Resize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> Resize;
     }
 }

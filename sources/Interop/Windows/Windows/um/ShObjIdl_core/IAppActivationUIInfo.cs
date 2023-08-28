@@ -25,7 +25,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[1]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, uint>)(lpVtbl[1]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[2]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, uint>)(lpVtbl[2]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetMonitor"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(3)]
     public HRESULT GetMonitor(HMONITOR* value)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetInvokePoint"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(4)]
     public HRESULT GetInvokePoint(POINT* value)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, POINT*, int>)(lpVtbl[4]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, POINT*, int>)(lpVtbl[4]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetShowCommand"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(5)]
     public HRESULT GetShowCommand(int* value)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, int*, int>)(lpVtbl[5]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, int*, int>)(lpVtbl[5]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetShowUI"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(6)]
     public HRESULT GetShowUI(BOOL* value)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int>)(lpVtbl[6]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, BOOL*, int>)(lpVtbl[6]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetKeyState"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
     [VtblIndex(7)]
     public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)
     {
-        return ((delegate* unmanaged<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppActivationUIInfo*, uint*, int>)(lpVtbl[7]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMONITOR*, int> GetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMONITOR*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> GetInvokePoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> GetInvokePoint;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetShowCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetShowCommand;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetShowUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetShowUI;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetKeyState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetKeyState;
     }
 }

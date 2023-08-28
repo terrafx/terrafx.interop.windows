@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableIntegerChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableIntegerChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableIntegerChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationVariableIntegerChangeHandler.xml' path='doc/member[@name="IUIAnimationVariableIntegerChangeHandler.OnIntegerValueChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
     [VtblIndex(3)]
     public HRESULT OnIntegerValueChanged(IUIAnimationStoryboard* storyboard, IUIAnimationVariable* variable, [NativeTypeName("INT32")] int newValue, [NativeTypeName("INT32")] int previousValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int>)(lpVtbl[3]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableIntegerChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int>)(lpVtbl[3]))((IUIAnimationVariableIntegerChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationVariable *, INT32, INT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int> OnIntegerValueChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int> OnIntegerValueChanged;
     }
 }

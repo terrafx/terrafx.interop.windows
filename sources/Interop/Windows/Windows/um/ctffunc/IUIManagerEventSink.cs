@@ -27,7 +27,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, uint>)(lpVtbl[1]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, uint>)(lpVtbl[1]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, uint>)(lpVtbl[2]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, uint>)(lpVtbl[2]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowOpening"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(3)]
     public HRESULT OnWindowOpening(RECT* prcBounds)
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[3]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, RECT*, int>)(lpVtbl[3]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowOpened"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(4)]
     public HRESULT OnWindowOpened(RECT* prcBounds)
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[4]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, RECT*, int>)(lpVtbl[4]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcBounds);
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowUpdating"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(5)]
     public HRESULT OnWindowUpdating(RECT* prcUpdatedBounds)
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[5]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, RECT*, int>)(lpVtbl[5]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowUpdated"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(6)]
     public HRESULT OnWindowUpdated(RECT* prcUpdatedBounds)
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, RECT*, int>)(lpVtbl[6]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, RECT*, int>)(lpVtbl[6]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this), prcUpdatedBounds);
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowClosing"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(7)]
     public HRESULT OnWindowClosing()
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[7]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, int>)(lpVtbl[7]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIManagerEventSink.xml' path='doc/member[@name="IUIManagerEventSink.OnWindowClosed"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
     [VtblIndex(8)]
     public HRESULT OnWindowClosed()
     {
-        return ((delegate* unmanaged<IUIManagerEventSink*, int>)(lpVtbl[8]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIManagerEventSink*, int>)(lpVtbl[8]))((IUIManagerEventSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -121,30 +121,30 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowOpening;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnWindowOpening;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowOpened;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnWindowOpened;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnWindowUpdating;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnWindowUpdated;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnWindowClosing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnWindowClosing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnWindowClosed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnWindowClosed;
     }
 }

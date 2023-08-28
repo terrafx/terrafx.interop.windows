@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, uint>)(lpVtbl[1]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, uint>)(lpVtbl[1]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, uint>)(lpVtbl[2]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, uint>)(lpVtbl[2]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, uint*, int>)(lpVtbl[3]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, uint*, int>)(lpVtbl[3]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textLineThroughStyle"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(7)]
     public HRESULT put_textLineThroughStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char*, int>)(lpVtbl[7]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char*, int>)(lpVtbl[7]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textLineThroughStyle"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(8)]
     public HRESULT get_textLineThroughStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char**, int>)(lpVtbl[8]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char**, int>)(lpVtbl[8]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textUnderlineStyle"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(9)]
     public HRESULT put_textUnderlineStyle([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char*, int>)(lpVtbl[9]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char*, int>)(lpVtbl[9]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textUnderlineStyle"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(10)]
     public HRESULT get_textUnderlineStyle([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char**, int>)(lpVtbl[10]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char**, int>)(lpVtbl[10]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textEffect"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(11)]
     public HRESULT put_textEffect([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char*, int>)(lpVtbl[11]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char*, int>)(lpVtbl[11]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textEffect"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(12)]
     public HRESULT get_textEffect([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char**, int>)(lpVtbl[12]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char**, int>)(lpVtbl[12]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textColor"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(13)]
     public HRESULT put_textColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[13]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[13]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textColor"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(14)]
     public HRESULT get_textColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[14]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[14]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textBackgroundColor"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(15)]
     public HRESULT put_textBackgroundColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[15]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[15]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textBackgroundColor"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(16)]
     public HRESULT get_textBackgroundColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[16]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[16]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textDecorationColor"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(17)]
     public HRESULT put_textDecorationColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[17]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT, int>)(lpVtbl[17]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textDecorationColor"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(18)]
     public HRESULT get_textDecorationColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[18]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, VARIANT*, int>)(lpVtbl[18]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_renderingPriority"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(19)]
     public HRESULT put_renderingPriority([NativeTypeName("long")] int v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, int, int>)(lpVtbl[19]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, int, int>)(lpVtbl[19]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_renderingPriority"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(20)]
     public HRESULT get_renderingPriority([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, int*, int>)(lpVtbl[20]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, int*, int>)(lpVtbl[20]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_defaultTextSelection"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(21)]
     public HRESULT put_defaultTextSelection([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char*, int>)(lpVtbl[21]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char*, int>)(lpVtbl[21]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_defaultTextSelection"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(22)]
     public HRESULT get_defaultTextSelection([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char**, int>)(lpVtbl[22]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char**, int>)(lpVtbl[22]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.put_textDecoration"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(23)]
     public HRESULT put_textDecoration([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char*, int>)(lpVtbl[23]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char*, int>)(lpVtbl[23]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLRenderStyle.xml' path='doc/member[@name="IHTMLRenderStyle.get_textDecoration"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
     [VtblIndex(24)]
     public HRESULT get_textDecoration([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLRenderStyle*, char**, int>)(lpVtbl[24]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLRenderStyle*, char**, int>)(lpVtbl[24]))((IHTMLRenderStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -283,78 +283,78 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textLineThroughStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textLineThroughStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textLineThroughStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textLineThroughStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textUnderlineStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textUnderlineStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textUnderlineStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textUnderlineStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textEffect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textEffect;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_textColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_textColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_textColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_textBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_textBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_textBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_textDecorationColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_textDecorationColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textDecorationColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_textDecorationColor;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_renderingPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_renderingPriority;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_renderingPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_renderingPriority;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_defaultTextSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_defaultTextSelection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_defaultTextSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_defaultTextSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textDecoration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textDecoration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textDecoration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textDecoration;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleCommandTarget*, Guid*, void**, int>)(lpVtbl[0]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleCommandTarget*, Guid*, void**, int>)(lpVtbl[0]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleCommandTarget*, uint>)(lpVtbl[1]))((IOleCommandTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleCommandTarget*, uint>)(lpVtbl[1]))((IOleCommandTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleCommandTarget*, uint>)(lpVtbl[2]))((IOleCommandTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleCommandTarget*, uint>)(lpVtbl[2]))((IOleCommandTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleCommandTarget.xml' path='doc/member[@name="IOleCommandTarget.QueryStatus"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
     [VtblIndex(3)]
     public HRESULT QueryStatus([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("ULONG")] uint cCmds, [NativeTypeName("OLECMD[]")] OLECMD* prgCmds, OLECMDTEXT* pCmdText)
     {
-        return ((delegate* unmanaged<IOleCommandTarget*, Guid*, uint, OLECMD*, OLECMDTEXT*, int>)(lpVtbl[3]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, cCmds, prgCmds, pCmdText);
+        return ((delegate* unmanaged[MemberFunction]<IOleCommandTarget*, Guid*, uint, OLECMD*, OLECMDTEXT*, int>)(lpVtbl[3]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, cCmds, prgCmds, pCmdText);
     }
 
     /// <include file='IOleCommandTarget.xml' path='doc/member[@name="IOleCommandTarget.Exec"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
     [VtblIndex(4)]
     public HRESULT Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut)
     {
-        return ((delegate* unmanaged<IOleCommandTarget*, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[4]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
+        return ((delegate* unmanaged[MemberFunction]<IOleCommandTarget*, Guid*, uint, uint, VARIANT*, VARIANT*, int>)(lpVtbl[4]))((IOleCommandTarget*)Unsafe.AsPointer(ref this), pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *, ULONG, OLECMD *, OLECMDTEXT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, OLECMD*, OLECMDTEXT*, int> QueryStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, OLECMD*, OLECMDTEXT*, int> QueryStatus;
 
         [NativeTypeName("HRESULT (const GUID *, DWORD, DWORD, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, uint, VARIANT*, VARIANT*, int> Exec;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, uint, VARIANT*, VARIANT*, int> Exec;
     }
 }

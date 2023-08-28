@@ -26,7 +26,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, uint>)(lpVtbl[1]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, uint>)(lpVtbl[1]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, uint>)(lpVtbl[2]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, uint>)(lpVtbl[2]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetDimension"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(3)]
     public HRESULT GetDimension(uint* dimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, uint*, int>)(lpVtbl[3]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), dimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, uint*, int>)(lpVtbl[3]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), dimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetValue"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(4)]
     public HRESULT GetValue(double* value)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, int>)(lpVtbl[4]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetVectorValue"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(5)]
     public HRESULT GetVectorValue(double* value, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[5]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetCurve"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(6)]
     public HRESULT GetCurve(IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetVectorCurve"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(7)]
     public HRESULT GetVectorCurve(IDCompositionAnimation** animation, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation**, uint, int>)(lpVtbl[7]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IDCompositionAnimation**, uint, int>)(lpVtbl[7]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), animation, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetFinalValue"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(8)]
     public HRESULT GetFinalValue(double* finalValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[8]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, int>)(lpVtbl[8]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetFinalVectorValue"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(9)]
     public HRESULT GetFinalVectorValue(double* finalValue, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[9]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[9]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetPreviousValue"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(10)]
     public HRESULT GetPreviousValue(double* previousValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, int>)(lpVtbl[10]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, int>)(lpVtbl[10]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetPreviousVectorValue"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(11)]
     public HRESULT GetPreviousVectorValue(double* previousValue, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[11]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[11]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetIntegerValue"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(12)]
     public HRESULT GetIntegerValue([NativeTypeName("INT32 *")] int* value)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, int>)(lpVtbl[12]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, int>)(lpVtbl[12]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetIntegerVectorValue"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(13)]
     public HRESULT GetIntegerVectorValue([NativeTypeName("INT32 *")] int* value, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[13]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[13]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), value, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetFinalIntegerValue"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(14)]
     public HRESULT GetFinalIntegerValue([NativeTypeName("INT32 *")] int* finalValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, int>)(lpVtbl[14]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, int>)(lpVtbl[14]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetFinalIntegerVectorValue"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(15)]
     public HRESULT GetFinalIntegerVectorValue([NativeTypeName("INT32 *")] int* finalValue, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[15]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[15]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), finalValue, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetPreviousIntegerValue"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(16)]
     public HRESULT GetPreviousIntegerValue([NativeTypeName("INT32 *")] int* previousValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, int>)(lpVtbl[16]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, int>)(lpVtbl[16]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetPreviousIntegerVectorValue"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(17)]
     public HRESULT GetPreviousIntegerVectorValue([NativeTypeName("INT32 *")] int* previousValue, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[17]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, int*, uint, int>)(lpVtbl[17]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), previousValue, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetCurrentStoryboard"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(18)]
     public HRESULT GetCurrentStoryboard(IUIAnimationStoryboard2** storyboard)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationStoryboard2**, int>)(lpVtbl[18]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), storyboard);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUIAnimationStoryboard2**, int>)(lpVtbl[18]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), storyboard);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetLowerBound"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(19)]
     public HRESULT SetLowerBound(double bound)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double, int>)(lpVtbl[19]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double, int>)(lpVtbl[19]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetLowerBoundVector"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(20)]
     public HRESULT SetLowerBoundVector([NativeTypeName("const DOUBLE *")] double* bound, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[20]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[20]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetUpperBound"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(21)]
     public HRESULT SetUpperBound(double bound)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double, int>)(lpVtbl[21]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double, int>)(lpVtbl[21]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetUpperBoundVector"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(22)]
     public HRESULT SetUpperBoundVector([NativeTypeName("const DOUBLE *")] double* bound, uint cDimension)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[22]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, double*, uint, int>)(lpVtbl[22]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), bound, cDimension);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetRoundingMode"]/*' />
@@ -212,7 +212,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(23)]
     public HRESULT SetRoundingMode(UI_ANIMATION_ROUNDING_MODE mode)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, UI_ANIMATION_ROUNDING_MODE, int>)(lpVtbl[23]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, UI_ANIMATION_ROUNDING_MODE, int>)(lpVtbl[23]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetTag"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(24)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUnknown*, uint, int>)(lpVtbl[24]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUnknown*, uint, int>)(lpVtbl[24]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.GetTag"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(25)]
     public HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUnknown**, uint*, int>)(lpVtbl[25]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUnknown**, uint*, int>)(lpVtbl[25]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetVariableChangeHandler"]/*' />
@@ -236,7 +236,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(26)]
     public HRESULT SetVariableChangeHandler(IUIAnimationVariableChangeHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, BOOL, int>)(lpVtbl[26]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, BOOL, int>)(lpVtbl[26]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetVariableIntegerChangeHandler"]/*' />
@@ -244,7 +244,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(27)]
     public HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int>)(lpVtbl[27]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int>)(lpVtbl[27]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
     }
 
     /// <include file='IUIAnimationVariable2.xml' path='doc/member[@name="IUIAnimationVariable2.SetVariableCurveChangeHandler"]/*' />
@@ -252,7 +252,7 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
     [VtblIndex(28)]
     public HRESULT SetVariableCurveChangeHandler(IUIAnimationVariableCurveChangeHandler2* handler)
     {
-        return ((delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableCurveChangeHandler2*, int>)(lpVtbl[28]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariable2*, IUIAnimationVariableCurveChangeHandler2*, int>)(lpVtbl[28]))((IUIAnimationVariable2*)Unsafe.AsPointer(ref this), handler);
     }
 
     public interface Interface : IUnknown.Interface
@@ -340,90 +340,90 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDimension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDimension;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> GetVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> GetVectorValue;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> GetCurve;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation*, int> GetCurve;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation **, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDCompositionAnimation**, uint, int> GetVectorCurve;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDCompositionAnimation**, uint, int> GetVectorCurve;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetFinalValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetFinalValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> GetFinalVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> GetFinalVectorValue;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetPreviousValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetPreviousValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> GetPreviousVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> GetPreviousVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetIntegerValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, uint, int> GetIntegerVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, uint, int> GetIntegerVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetFinalIntegerValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetFinalIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, uint, int> GetFinalIntegerVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, uint, int> GetFinalIntegerVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetPreviousIntegerValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetPreviousIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, uint, int> GetPreviousIntegerVectorValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, uint, int> GetPreviousIntegerVectorValue;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard2**, int> GetCurrentStoryboard;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard2**, int> GetCurrentStoryboard;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetLowerBound;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetLowerBound;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> SetLowerBoundVector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> SetLowerBoundVector;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetUpperBound;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetUpperBound;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, uint, int> SetUpperBoundVector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, uint, int> SetUpperBoundVector;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_ROUNDING_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, uint*, int> GetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableChangeHandler2 *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariableChangeHandler2*, BOOL, int> SetVariableChangeHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariableChangeHandler2*, BOOL, int> SetVariableChangeHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableIntegerChangeHandler2 *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int> SetVariableIntegerChangeHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int> SetVariableIntegerChangeHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableCurveChangeHandler2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariableCurveChangeHandler2*, int> SetVariableCurveChangeHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariableCurveChangeHandler2*, int> SetVariableCurveChangeHandler;
     }
 }

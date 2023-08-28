@@ -25,7 +25,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFactory3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxFactory3*, uint>)(lpVtbl[1]))((IAppxFactory3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, uint>)(lpVtbl[1]))((IAppxFactory3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxFactory3*, uint>)(lpVtbl[2]))((IAppxFactory3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, uint>)(lpVtbl[2]))((IAppxFactory3*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreatePackageReader2"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT CreatePackageReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxPackageReader** packageReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, packageReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, IStream*, char*, IAppxPackageReader**, int>)(lpVtbl[3]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, packageReader);
     }
 
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreateManifestReader2"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT CreateManifestReader2(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxManifestReader** manifestReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxManifestReader**, int>)(lpVtbl[4]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, manifestReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, IStream*, char*, IAppxManifestReader**, int>)(lpVtbl[4]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, manifestReader);
     }
 
     /// <include file='IAppxFactory3.xml' path='doc/member[@name="IAppxFactory3.CreateAppInstallerReader"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT CreateAppInstallerReader(IStream* inputStream, [NativeTypeName("LPCWSTR")] char* expectedDigest, IAppxAppInstallerReader** appInstallerReader)
     {
-        return ((delegate* unmanaged<IAppxFactory3*, IStream*, char*, IAppxAppInstallerReader**, int>)(lpVtbl[5]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, appInstallerReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxFactory3*, IStream*, char*, IAppxAppInstallerReader**, int>)(lpVtbl[5]))((IAppxFactory3*)Unsafe.AsPointer(ref this), inputStream, expectedDigest, appInstallerReader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAppxFactory3 : IAppxFactory3.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxPackageReader**, int> CreatePackageReader2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, char*, IAppxPackageReader**, int> CreatePackageReader2;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxManifestReader**, int> CreateManifestReader2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, char*, IAppxManifestReader**, int> CreateManifestReader2;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxAppInstallerReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, char*, IAppxAppInstallerReader**, int> CreateAppInstallerReader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, char*, IAppxAppInstallerReader**, int> CreateAppInstallerReader;
     }
 }

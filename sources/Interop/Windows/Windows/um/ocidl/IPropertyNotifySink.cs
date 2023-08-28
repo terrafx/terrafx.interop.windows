@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyNotifySink*, uint>)(lpVtbl[1]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyNotifySink*, uint>)(lpVtbl[1]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyNotifySink*, uint>)(lpVtbl[2]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyNotifySink*, uint>)(lpVtbl[2]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink.OnChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
     [VtblIndex(3)]
     public HRESULT OnChanged([NativeTypeName("DISPID")] int dispID)
     {
-        return ((delegate* unmanaged<IPropertyNotifySink*, int, int>)(lpVtbl[3]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyNotifySink*, int, int>)(lpVtbl[3]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
     }
 
     /// <include file='IPropertyNotifySink.xml' path='doc/member[@name="IPropertyNotifySink.OnRequestEdit"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
     [VtblIndex(4)]
     public HRESULT OnRequestEdit([NativeTypeName("DISPID")] int dispID)
     {
-        return ((delegate* unmanaged<IPropertyNotifySink*, int, int>)(lpVtbl[4]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyNotifySink*, int, int>)(lpVtbl[4]))((IPropertyNotifySink*)Unsafe.AsPointer(ref this), dispID);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPropertyNotifySink : IPropertyNotifySink.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> OnChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> OnChanged;
 
         [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> OnRequestEdit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> OnRequestEdit;
     }
 }

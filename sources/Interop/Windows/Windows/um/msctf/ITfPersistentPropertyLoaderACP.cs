@@ -25,7 +25,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfPersistentPropertyLoaderACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[1]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[1]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[2]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPersistentPropertyLoaderACP*, uint>)(lpVtbl[2]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfPersistentPropertyLoaderACP.xml' path='doc/member[@name="ITfPersistentPropertyLoaderACP.LoadProperty"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
     [VtblIndex(3)]
     public HRESULT LoadProperty([NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream** ppStream)
     {
-        return ((delegate* unmanaged<ITfPersistentPropertyLoaderACP*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int>)(lpVtbl[3]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), pHdr, ppStream);
+        return ((delegate* unmanaged[MemberFunction]<ITfPersistentPropertyLoaderACP*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int>)(lpVtbl[3]))((ITfPersistentPropertyLoaderACP*)Unsafe.AsPointer(ref this), pHdr, ppStream);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPrope
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int> LoadProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream**, int> LoadProperty;
     }
 }

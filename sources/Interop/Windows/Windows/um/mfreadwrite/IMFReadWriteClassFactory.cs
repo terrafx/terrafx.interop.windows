@@ -25,7 +25,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFReadWriteClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, uint>)(lpVtbl[1]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFReadWriteClassFactory*, uint>)(lpVtbl[1]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, uint>)(lpVtbl[2]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFReadWriteClassFactory*, uint>)(lpVtbl[2]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromURL"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     [VtblIndex(3)]
     public HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] char* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, char*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, pwszURL, pAttributes, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFReadWriteClassFactory*, Guid*, char*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, pwszURL, pAttributes, riid, ppvObject);
     }
 
     /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromObject"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
     [VtblIndex(4)]
     public HRESULT CreateInstanceFromObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[4]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, punkObject, pAttributes, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFReadWriteClassFactory*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[4]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, punkObject, pAttributes, riid, ppvObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromObject;
     }
 }

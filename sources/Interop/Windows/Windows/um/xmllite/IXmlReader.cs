@@ -25,7 +25,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXmlReader*, Guid*, void**, int>)(lpVtbl[0]))((IXmlReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, Guid*, void**, int>)(lpVtbl[0]))((IXmlReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXmlReader*, uint>)(lpVtbl[1]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint>)(lpVtbl[1]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXmlReader*, uint>)(lpVtbl[2]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint>)(lpVtbl[2]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.SetInput"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetInput(IUnknown* pInput)
     {
-        return ((delegate* unmanaged<IXmlReader*, IUnknown*, int>)(lpVtbl[3]))((IXmlReader*)Unsafe.AsPointer(ref this), pInput);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, IUnknown*, int>)(lpVtbl[3]))((IXmlReader*)Unsafe.AsPointer(ref this), pInput);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetProperty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetProperty(uint nProperty, [NativeTypeName("LONG_PTR *")] nint* ppValue)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint, nint*, int>)(lpVtbl[4]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, ppValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint, nint*, int>)(lpVtbl[4]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, ppValue);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.SetProperty"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetProperty(uint nProperty, [NativeTypeName("LONG_PTR")] nint pValue)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint, nint, int>)(lpVtbl[5]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint, nint, int>)(lpVtbl[5]))((IXmlReader*)Unsafe.AsPointer(ref this), nProperty, pValue);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.Read"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Read(XmlNodeType* pNodeType)
     {
-        return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[6]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, XmlNodeType*, int>)(lpVtbl[6]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetNodeType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetNodeType(XmlNodeType* pNodeType)
     {
-        return ((delegate* unmanaged<IXmlReader*, XmlNodeType*, int>)(lpVtbl[7]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, XmlNodeType*, int>)(lpVtbl[7]))((IXmlReader*)Unsafe.AsPointer(ref this), pNodeType);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToFirstAttribute"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT MoveToFirstAttribute()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[8]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[8]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToNextAttribute"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT MoveToNextAttribute()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[9]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[9]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToAttributeByName"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT MoveToAttributeByName([NativeTypeName("LPCWSTR")] char* pwszLocalName, [NativeTypeName("LPCWSTR")] char* pwszNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, char*, char*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char*, char*, int>)(lpVtbl[10]))((IXmlReader*)Unsafe.AsPointer(ref this), pwszLocalName, pwszNamespaceUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.MoveToElement"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT MoveToElement()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[11]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[11]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetQualifiedName"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetQualifiedName([NativeTypeName("LPCWSTR *")] char** ppwszQualifiedName, uint* pcwchQualifiedName)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[12]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszQualifiedName, pcwchQualifiedName);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetNamespaceUri"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetNamespaceUri([NativeTypeName("LPCWSTR *")] char** ppwszNamespaceUri, uint* pcwchNamespaceUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[13]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszNamespaceUri, pcwchNamespaceUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLocalName"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetLocalName([NativeTypeName("LPCWSTR *")] char** ppwszLocalName, uint* pcwchLocalName)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[14]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszLocalName, pcwchLocalName);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetPrefix"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetPrefix([NativeTypeName("LPCWSTR *")] char** ppwszPrefix, uint* pcwchPrefix)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[15]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszPrefix, pcwchPrefix);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetValue"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT GetValue([NativeTypeName("LPCWSTR *")] char** ppwszValue, uint* pcwchValue)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[16]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszValue, pcwchValue);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.ReadValueChunk"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT ReadValueChunk([NativeTypeName("WCHAR *")] char* pwchBuffer, uint cwchChunkSize, uint* pcwchRead)
     {
-        return ((delegate* unmanaged<IXmlReader*, char*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char*, uint, uint*, int>)(lpVtbl[17]))((IXmlReader*)Unsafe.AsPointer(ref this), pwchBuffer, cwchChunkSize, pcwchRead);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetBaseUri"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT GetBaseUri([NativeTypeName("LPCWSTR *")] char** ppwszBaseUri, uint* pcwchBaseUri)
     {
-        return ((delegate* unmanaged<IXmlReader*, char**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, char**, uint*, int>)(lpVtbl[18]))((IXmlReader*)Unsafe.AsPointer(ref this), ppwszBaseUri, pcwchBaseUri);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsDefault"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(19)]
     public BOOL IsDefault()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[19]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[19]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsEmptyElement"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(20)]
     public BOOL IsEmptyElement()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[20]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[20]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLineNumber"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT GetLineNumber(uint* pnLineNumber)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[21]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLineNumber);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint*, int>)(lpVtbl[21]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLineNumber);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetLinePosition"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT GetLinePosition(uint* pnLinePosition)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[22]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLinePosition);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint*, int>)(lpVtbl[22]))((IXmlReader*)Unsafe.AsPointer(ref this), pnLinePosition);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetAttributeCount"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT GetAttributeCount(uint* pnAttributeCount)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[23]))((IXmlReader*)Unsafe.AsPointer(ref this), pnAttributeCount);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint*, int>)(lpVtbl[23]))((IXmlReader*)Unsafe.AsPointer(ref this), pnAttributeCount);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.GetDepth"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT GetDepth(uint* pnDepth)
     {
-        return ((delegate* unmanaged<IXmlReader*, uint*, int>)(lpVtbl[24]))((IXmlReader*)Unsafe.AsPointer(ref this), pnDepth);
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, uint*, int>)(lpVtbl[24]))((IXmlReader*)Unsafe.AsPointer(ref this), pnDepth);
     }
 
     /// <include file='IXmlReader.xml' path='doc/member[@name="IXmlReader.IsEOF"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
     [VtblIndex(25)]
     public BOOL IsEOF()
     {
-        return ((delegate* unmanaged<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXmlReader*, int>)(lpVtbl[25]))((IXmlReader*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -306,81 +306,81 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetInput;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nint*, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nint*, int> GetProperty;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nint, int> SetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nint, int> SetProperty;
 
         [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XmlNodeType*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XmlNodeType*, int> Read;
 
         [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XmlNodeType*, int> GetNodeType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XmlNodeType*, int> GetNodeType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveToFirstAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveToFirstAttribute;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveToNextAttribute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveToNextAttribute;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> MoveToAttributeByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> MoveToAttributeByName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MoveToElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MoveToElement;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetQualifiedName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetQualifiedName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetNamespaceUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetNamespaceUri;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetLocalName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetLocalName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetPrefix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetPrefix;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetValue;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint*, int> ReadValueChunk;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, int> ReadValueChunk;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, int> GetBaseUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, int> GetBaseUri;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDefault;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEmptyElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEmptyElement;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLineNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLineNumber;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLinePosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLinePosition;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAttributeCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAttributeCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDepth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDepth;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEOF;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEOF;
     }
 }

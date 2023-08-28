@@ -25,7 +25,7 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioFormatEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFormatEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioFormatEnumerator*, uint>)(lpVtbl[1]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioFormatEnumerator*, uint>)(lpVtbl[1]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioFormatEnumerator*, uint>)(lpVtbl[2]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioFormatEnumerator*, uint>)(lpVtbl[2]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioFormatEnumerator.xml' path='doc/member[@name="IAudioFormatEnumerator.GetCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("UINT32 *")] uint* count)
     {
-        return ((delegate* unmanaged<IAudioFormatEnumerator*, uint*, int>)(lpVtbl[3]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), count);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFormatEnumerator*, uint*, int>)(lpVtbl[3]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), count);
     }
 
     /// <include file='IAudioFormatEnumerator.xml' path='doc/member[@name="IAudioFormatEnumerator.GetFormat"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
     [VtblIndex(4)]
     public HRESULT GetFormat([NativeTypeName("UINT32")] uint index, WAVEFORMATEX** format)
     {
-        return ((delegate* unmanaged<IAudioFormatEnumerator*, uint, WAVEFORMATEX**, int>)(lpVtbl[4]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), index, format);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFormatEnumerator*, uint, WAVEFORMATEX**, int>)(lpVtbl[4]))((IAudioFormatEnumerator*)Unsafe.AsPointer(ref this), index, format);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT32, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, WAVEFORMATEX**, int> GetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, WAVEFORMATEX**, int> GetFormat;
     }
 }

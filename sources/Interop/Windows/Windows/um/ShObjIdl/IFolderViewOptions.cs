@@ -25,7 +25,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFolderViewOptions*, Guid*, void**, int>)(lpVtbl[0]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFolderViewOptions*, Guid*, void**, int>)(lpVtbl[0]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFolderViewOptions*, uint>)(lpVtbl[1]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderViewOptions*, uint>)(lpVtbl[1]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFolderViewOptions*, uint>)(lpVtbl[2]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderViewOptions*, uint>)(lpVtbl[2]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFolderViewOptions.xml' path='doc/member[@name="IFolderViewOptions.SetFolderViewOptions"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
     [VtblIndex(3)]
     public HRESULT SetFolderViewOptions(FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags)
     {
-        return ((delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int>)(lpVtbl[3]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), fvoMask, fvoFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFolderViewOptions*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int>)(lpVtbl[3]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), fvoMask, fvoFlags);
     }
 
     /// <include file='IFolderViewOptions.xml' path='doc/member[@name="IFolderViewOptions.GetFolderViewOptions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
     [VtblIndex(4)]
     public HRESULT GetFolderViewOptions(FOLDERVIEWOPTIONS* pfvoFlags)
     {
-        return ((delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS*, int>)(lpVtbl[4]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), pfvoFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFolderViewOptions*, FOLDERVIEWOPTIONS*, int>)(lpVtbl[4]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), pfvoFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int> SetFolderViewOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int> SetFolderViewOptions;
 
         [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FOLDERVIEWOPTIONS*, int> GetFolderViewOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FOLDERVIEWOPTIONS*, int> GetFolderViewOptions;
     }
 }

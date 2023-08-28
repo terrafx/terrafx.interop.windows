@@ -25,7 +25,7 @@ public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySi
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfPreservedKeyNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySi
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, uint>)(lpVtbl[1]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPreservedKeyNotifySink*, uint>)(lpVtbl[1]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySi
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, uint>)(lpVtbl[2]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfPreservedKeyNotifySink*, uint>)(lpVtbl[2]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfPreservedKeyNotifySink.xml' path='doc/member[@name="ITfPreservedKeyNotifySink.OnUpdated"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySi
     [VtblIndex(3)]
     public HRESULT OnUpdated([NativeTypeName("const TF_PRESERVEDKEY *")] TF_PRESERVEDKEY* pprekey)
     {
-        return ((delegate* unmanaged<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int>)(lpVtbl[3]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), pprekey);
+        return ((delegate* unmanaged[MemberFunction]<ITfPreservedKeyNotifySink*, TF_PRESERVEDKEY*, int>)(lpVtbl[3]))((ITfPreservedKeyNotifySink*)Unsafe.AsPointer(ref this), pprekey);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySi
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const TF_PRESERVEDKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_PRESERVEDKEY*, int> OnUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_PRESERVEDKEY*, int> OnUpdated;
     }
 }

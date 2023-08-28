@@ -25,7 +25,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint>)(lpVtbl[1]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, uint>)(lpVtbl[1]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint>)(lpVtbl[2]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, uint>)(lpVtbl[2]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfUIElement.GetDescription" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[3]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[3]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <inheritdoc cref="ITfUIElement.GetGUID" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, int>)(lpVtbl[4]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, Guid*, int>)(lpVtbl[4]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <inheritdoc cref="ITfUIElement.Show" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL, int>)(lpVtbl[5]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), bShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, BOOL, int>)(lpVtbl[5]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
     /// <inheritdoc cref="ITfUIElement.IsShown" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetUpdatedFlags"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(7)]
     public HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[7]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[7]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetContext"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(8)]
     public HRESULT GetContext(ITfContext** ppic)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, ITfContext**, int>)(lpVtbl[8]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), ppic);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, ITfContext**, int>)(lpVtbl[8]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), ppic);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetString"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(9)]
     public HRESULT GetString([NativeTypeName("BSTR *")] char** pstr)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[9]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pstr);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, char**, int>)(lpVtbl[9]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pstr);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetMaxReadingStringLength"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(10)]
     public HRESULT GetMaxReadingStringLength(uint* pcchMax)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[10]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pcchMax);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[10]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pcchMax);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetErrorIndex"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(11)]
     public HRESULT GetErrorIndex(uint* pErrorIndex)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[11]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pErrorIndex);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[11]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pErrorIndex);
     }
 
     /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.IsVerticalOrderPreferred"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
     [VtblIndex(12)]
     public HRESULT IsVerticalOrderPreferred(BOOL* pfVertical)
     {
-        return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
+        return ((delegate* unmanaged[MemberFunction]<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[12]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pfVertical);
     }
 
     public interface Interface : ITfUIElement.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetUpdatedFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetUpdatedFlags;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext**, int> GetContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext**, int> GetContext;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetString;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaxReadingStringLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaxReadingStringLength;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetErrorIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetErrorIndex;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsVerticalOrderPreferred;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsVerticalOrderPreferred;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCleanupContextSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCleanupContextSink*, uint>)(lpVtbl[1]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextSink*, uint>)(lpVtbl[1]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCleanupContextSink*, uint>)(lpVtbl[2]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextSink*, uint>)(lpVtbl[2]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCleanupContextSink.xml' path='doc/member[@name="ITfCleanupContextSink.OnCleanupContext"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
     [VtblIndex(3)]
     public HRESULT OnCleanupContext([NativeTypeName("TfEditCookie")] uint ecWrite, ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfCleanupContextSink*, uint, ITfContext*, int>)(lpVtbl[3]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), ecWrite, pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextSink*, uint, ITfContext*, int>)(lpVtbl[3]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), ecWrite, pic);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfContext*, int> OnCleanupContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfContext*, int> OnCleanupContext;
     }
 }

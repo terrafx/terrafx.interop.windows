@@ -25,7 +25,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IClassFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IClassFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IClassFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IClassFactory2*, uint>)(lpVtbl[1]))((IClassFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, uint>)(lpVtbl[1]))((IClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IClassFactory2*, uint>)(lpVtbl[2]))((IClassFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, uint>)(lpVtbl[2]))((IClassFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IClassFactory.CreateInstance" />
@@ -51,7 +51,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT CreateInstance(IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IClassFactory2*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, riid, ppvObject);
     }
 
     /// <inheritdoc cref="IClassFactory.LockServer" />
@@ -59,7 +59,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT LockServer(BOOL fLock)
     {
-        return ((delegate* unmanaged<IClassFactory2*, BOOL, int>)(lpVtbl[4]))((IClassFactory2*)Unsafe.AsPointer(ref this), fLock);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, BOOL, int>)(lpVtbl[4]))((IClassFactory2*)Unsafe.AsPointer(ref this), fLock);
     }
 
     /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.GetLicInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetLicInfo(LICINFO* pLicInfo)
     {
-        return ((delegate* unmanaged<IClassFactory2*, LICINFO*, int>)(lpVtbl[5]))((IClassFactory2*)Unsafe.AsPointer(ref this), pLicInfo);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, LICINFO*, int>)(lpVtbl[5]))((IClassFactory2*)Unsafe.AsPointer(ref this), pLicInfo);
     }
 
     /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.RequestLicKey"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT RequestLicKey([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("BSTR *")] char** pBstrKey)
     {
-        return ((delegate* unmanaged<IClassFactory2*, uint, char**, int>)(lpVtbl[6]))((IClassFactory2*)Unsafe.AsPointer(ref this), dwReserved, pBstrKey);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, uint, char**, int>)(lpVtbl[6]))((IClassFactory2*)Unsafe.AsPointer(ref this), dwReserved, pBstrKey);
     }
 
     /// <include file='IClassFactory2.xml' path='doc/member[@name="IClassFactory2.CreateInstanceLic"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT CreateInstanceLic(IUnknown* pUnkOuter, IUnknown* pUnkReserved, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("BSTR")] char* bstrKey, [NativeTypeName("PVOID *")] void** ppvObj)
     {
-        return ((delegate* unmanaged<IClassFactory2*, IUnknown*, IUnknown*, Guid*, char*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
+        return ((delegate* unmanaged[MemberFunction]<IClassFactory2*, IUnknown*, IUnknown*, Guid*, char*, void**, int>)(lpVtbl[7]))((IClassFactory2*)Unsafe.AsPointer(ref this), pUnkOuter, pUnkReserved, riid, bstrKey, ppvObj);
     }
 
     public interface Interface : IClassFactory.Interface
@@ -102,27 +102,27 @@ public unsafe partial struct IClassFactory2 : IClassFactory2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, void**, int> CreateInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, Guid*, void**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> LockServer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> LockServer;
 
         [NativeTypeName("HRESULT (LICINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LICINFO*, int> GetLicInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LICINFO*, int> GetLicInfo;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> RequestLicKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> RequestLicKey;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *, const IID &, BSTR, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, Guid*, char*, void**, int> CreateInstanceLic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IUnknown*, Guid*, char*, void**, int> CreateInstanceLic;
     }
 }

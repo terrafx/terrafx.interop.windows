@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint>)(lpVtbl[1]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, uint>)(lpVtbl[1]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint>)(lpVtbl[2]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, uint>)(lpVtbl[2]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint*, int>)(lpVtbl[3]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, uint*, int>)(lpVtbl[3]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAppearance"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(7)]
     public HRESULT put_webkitAppearance([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[7]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[7]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAppearance"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(8)]
     public HRESULT get_webkitAppearance([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[8]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[8]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitUserSelect"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(9)]
     public HRESULT put_webkitUserSelect([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[9]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitUserSelect"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(10)]
     public HRESULT get_webkitUserSelect([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[10]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxAlign"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(11)]
     public HRESULT put_webkitBoxAlign([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[11]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxAlign"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(12)]
     public HRESULT get_webkitBoxAlign([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[12]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxOrdinalGroup"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(13)]
     public HRESULT put_webkitBoxOrdinalGroup(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[13]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxOrdinalGroup"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(14)]
     public HRESULT get_webkitBoxOrdinalGroup(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[14]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxPack"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(15)]
     public HRESULT put_webkitBoxPack([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[15]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxPack"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(16)]
     public HRESULT get_webkitBoxPack([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[16]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxFlex"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(17)]
     public HRESULT put_webkitBoxFlex(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[17]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxFlex"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(18)]
     public HRESULT get_webkitBoxFlex(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[18]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxOrient"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(19)]
     public HRESULT put_webkitBoxOrient([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[19]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxOrient"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(20)]
     public HRESULT get_webkitBoxOrient([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[20]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxDirection"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(21)]
     public HRESULT put_webkitBoxDirection([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[21]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxDirection"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(22)]
     public HRESULT get_webkitBoxDirection([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[22]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[22]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransform"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(23)]
     public HRESULT put_webkitTransform([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[23]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[23]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransform"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(24)]
     public HRESULT get_webkitTransform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[24]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundSize"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(25)]
     public HRESULT put_webkitBackgroundSize([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[25]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundSize"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(26)]
     public HRESULT get_webkitBackgroundSize([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[26]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[26]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackfaceVisibility"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(27)]
     public HRESULT put_webkitBackfaceVisibility([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[27]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[27]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackfaceVisibility"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(28)]
     public HRESULT get_webkitBackfaceVisibility([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[28]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimation"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(29)]
     public HRESULT put_webkitAnimation([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[29]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimation"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(30)]
     public HRESULT get_webkitAnimation([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[30]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[30]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransition"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(31)]
     public HRESULT put_webkitTransition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[31]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[31]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransition"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(32)]
     public HRESULT get_webkitTransition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[32]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationName"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(33)]
     public HRESULT put_webkitAnimationName([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[33]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationName"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(34)]
     public HRESULT get_webkitAnimationName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[34]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationDuration"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(35)]
     public HRESULT put_webkitAnimationDuration([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[35]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationDuration"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(36)]
     public HRESULT get_webkitAnimationDuration([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[36]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationTimingFunction"]/*' />
@@ -323,7 +323,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(37)]
     public HRESULT put_webkitAnimationTimingFunction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[37]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationTimingFunction"]/*' />
@@ -331,7 +331,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(38)]
     public HRESULT get_webkitAnimationTimingFunction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[38]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationDelay"]/*' />
@@ -339,7 +339,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(39)]
     public HRESULT put_webkitAnimationDelay([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[39]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationDelay"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(40)]
     public HRESULT get_webkitAnimationDelay([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[40]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[40]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationIterationCount"]/*' />
@@ -355,7 +355,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(41)]
     public HRESULT put_webkitAnimationIterationCount([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[41]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[41]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationIterationCount"]/*' />
@@ -363,7 +363,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(42)]
     public HRESULT get_webkitAnimationIterationCount([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[42]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[42]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationDirection"]/*' />
@@ -371,7 +371,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(43)]
     public HRESULT put_webkitAnimationDirection([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[43]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[43]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationDirection"]/*' />
@@ -379,7 +379,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(44)]
     public HRESULT get_webkitAnimationDirection([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[44]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[44]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationPlayState"]/*' />
@@ -387,7 +387,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(45)]
     public HRESULT put_webkitAnimationPlayState([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[45]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[45]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationPlayState"]/*' />
@@ -395,7 +395,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(46)]
     public HRESULT get_webkitAnimationPlayState([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[46]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[46]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransitionProperty"]/*' />
@@ -403,7 +403,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(47)]
     public HRESULT put_webkitTransitionProperty([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[47]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[47]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransitionProperty"]/*' />
@@ -411,7 +411,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(48)]
     public HRESULT get_webkitTransitionProperty([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[48]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[48]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransitionDuration"]/*' />
@@ -419,7 +419,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(49)]
     public HRESULT put_webkitTransitionDuration([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[49]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[49]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransitionDuration"]/*' />
@@ -427,7 +427,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(50)]
     public HRESULT get_webkitTransitionDuration([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[50]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[50]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransitionTimingFunction"]/*' />
@@ -435,7 +435,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(51)]
     public HRESULT put_webkitTransitionTimingFunction([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[51]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[51]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransitionTimingFunction"]/*' />
@@ -443,7 +443,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(52)]
     public HRESULT get_webkitTransitionTimingFunction([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[52]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[52]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransitionDelay"]/*' />
@@ -451,7 +451,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(53)]
     public HRESULT put_webkitTransitionDelay([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[53]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[53]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransitionDelay"]/*' />
@@ -459,7 +459,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(54)]
     public HRESULT get_webkitTransitionDelay([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[54]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[54]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundAttachment"]/*' />
@@ -467,7 +467,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(55)]
     public HRESULT put_webkitBackgroundAttachment([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[55]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[55]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundAttachment"]/*' />
@@ -475,7 +475,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(56)]
     public HRESULT get_webkitBackgroundAttachment([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[56]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[56]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundColor"]/*' />
@@ -483,7 +483,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(57)]
     public HRESULT put_webkitBackgroundColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[57]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[57]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundColor"]/*' />
@@ -491,7 +491,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(58)]
     public HRESULT get_webkitBackgroundColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[58]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[58]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundClip"]/*' />
@@ -499,7 +499,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(59)]
     public HRESULT put_webkitBackgroundClip([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[59]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[59]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundClip"]/*' />
@@ -507,7 +507,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(60)]
     public HRESULT get_webkitBackgroundClip([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[60]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[60]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundImage"]/*' />
@@ -515,7 +515,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(61)]
     public HRESULT put_webkitBackgroundImage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[61]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[61]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundImage"]/*' />
@@ -523,7 +523,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(62)]
     public HRESULT get_webkitBackgroundImage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[62]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[62]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundRepeat"]/*' />
@@ -531,7 +531,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(63)]
     public HRESULT put_webkitBackgroundRepeat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[63]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[63]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundRepeat"]/*' />
@@ -539,7 +539,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(64)]
     public HRESULT get_webkitBackgroundRepeat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[64]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[64]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundOrigin"]/*' />
@@ -547,7 +547,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(65)]
     public HRESULT put_webkitBackgroundOrigin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[65]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[65]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundOrigin"]/*' />
@@ -555,7 +555,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(66)]
     public HRESULT get_webkitBackgroundOrigin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[66]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[66]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundPosition"]/*' />
@@ -563,7 +563,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(67)]
     public HRESULT put_webkitBackgroundPosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[67]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[67]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundPosition"]/*' />
@@ -571,7 +571,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(68)]
     public HRESULT get_webkitBackgroundPosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[68]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[68]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundPositionX"]/*' />
@@ -579,7 +579,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(69)]
     public HRESULT put_webkitBackgroundPositionX(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[69]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[69]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundPositionX"]/*' />
@@ -587,7 +587,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(70)]
     public HRESULT get_webkitBackgroundPositionX(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[70]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[70]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackgroundPositionY"]/*' />
@@ -595,7 +595,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(71)]
     public HRESULT put_webkitBackgroundPositionY(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[71]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[71]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackgroundPositionY"]/*' />
@@ -603,7 +603,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(72)]
     public HRESULT get_webkitBackgroundPositionY(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[72]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[72]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBackground"]/*' />
@@ -611,7 +611,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(73)]
     public HRESULT put_webkitBackground([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[73]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[73]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBackground"]/*' />
@@ -619,7 +619,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(74)]
     public HRESULT get_webkitBackground([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[74]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[74]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTransformOrigin"]/*' />
@@ -627,7 +627,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(75)]
     public HRESULT put_webkitTransformOrigin([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[75]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[75]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTransformOrigin"]/*' />
@@ -635,7 +635,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(76)]
     public HRESULT get_webkitTransformOrigin([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[76]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[76]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_msTextSizeAdjust"]/*' />
@@ -643,7 +643,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(77)]
     public HRESULT put_msTextSizeAdjust(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[77]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[77]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_msTextSizeAdjust"]/*' />
@@ -651,7 +651,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(78)]
     public HRESULT get_msTextSizeAdjust(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[78]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[78]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitTextSizeAdjust"]/*' />
@@ -659,7 +659,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(79)]
     public HRESULT put_webkitTextSizeAdjust(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[79]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT, int>)(lpVtbl[79]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitTextSizeAdjust"]/*' />
@@ -667,7 +667,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(80)]
     public HRESULT get_webkitTextSizeAdjust(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[80]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, VARIANT*, int>)(lpVtbl[80]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImage"]/*' />
@@ -675,7 +675,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(81)]
     public HRESULT put_webkitBorderImage([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[81]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[81]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImage"]/*' />
@@ -683,7 +683,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(82)]
     public HRESULT get_webkitBorderImage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[82]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[82]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImageSource"]/*' />
@@ -691,7 +691,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(83)]
     public HRESULT put_webkitBorderImageSource([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[83]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[83]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImageSource"]/*' />
@@ -699,7 +699,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(84)]
     public HRESULT get_webkitBorderImageSource([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[84]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[84]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImageSlice"]/*' />
@@ -707,7 +707,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(85)]
     public HRESULT put_webkitBorderImageSlice([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[85]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[85]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImageSlice"]/*' />
@@ -715,7 +715,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(86)]
     public HRESULT get_webkitBorderImageSlice([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[86]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[86]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImageWidth"]/*' />
@@ -723,7 +723,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(87)]
     public HRESULT put_webkitBorderImageWidth([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[87]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[87]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImageWidth"]/*' />
@@ -731,7 +731,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(88)]
     public HRESULT get_webkitBorderImageWidth([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[88]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[88]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImageOutset"]/*' />
@@ -739,7 +739,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(89)]
     public HRESULT put_webkitBorderImageOutset([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[89]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[89]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImageOutset"]/*' />
@@ -747,7 +747,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(90)]
     public HRESULT get_webkitBorderImageOutset([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[90]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[90]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBorderImageRepeat"]/*' />
@@ -755,7 +755,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(91)]
     public HRESULT put_webkitBorderImageRepeat([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[91]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[91]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBorderImageRepeat"]/*' />
@@ -763,7 +763,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(92)]
     public HRESULT get_webkitBorderImageRepeat([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[92]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[92]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitBoxSizing"]/*' />
@@ -771,7 +771,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(93)]
     public HRESULT put_webkitBoxSizing([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[93]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[93]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitBoxSizing"]/*' />
@@ -779,7 +779,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(94)]
     public HRESULT get_webkitBoxSizing([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[94]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[94]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.put_webkitAnimationFillMode"]/*' />
@@ -787,7 +787,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(95)]
     public HRESULT put_webkitAnimationFillMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[95]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char*, int>)(lpVtbl[95]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLCSSStyleDeclaration4.xml' path='doc/member[@name="IHTMLCSSStyleDeclaration4.get_webkitAnimationFillMode"]/*' />
@@ -795,7 +795,7 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
     [VtblIndex(96)]
     public HRESULT get_webkitAnimationFillMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[96]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLCSSStyleDeclaration4*, char**, int>)(lpVtbl[96]))((IHTMLCSSStyleDeclaration4*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -1075,294 +1075,294 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAppearance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAppearance;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAppearance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAppearance;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitUserSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitUserSelect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitUserSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitUserSelect;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBoxAlign;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBoxAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBoxAlign;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBoxAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBoxOrdinalGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitBoxOrdinalGroup;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBoxOrdinalGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitBoxOrdinalGroup;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBoxPack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBoxPack;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBoxPack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBoxPack;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBoxFlex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitBoxFlex;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBoxFlex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitBoxFlex;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBoxOrient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBoxOrient;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBoxOrient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBoxOrient;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBoxDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBoxDirection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBoxDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBoxDirection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackfaceVisibility;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackfaceVisibility;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackfaceVisibility;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackfaceVisibility;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimation;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimation;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationDuration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationDuration;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationTimingFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationTimingFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationDelay;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationIterationCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationIterationCount;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationIterationCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationIterationCount;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationDirection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationDirection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationPlayState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationPlayState;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationPlayState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationPlayState;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransitionProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransitionProperty;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransitionProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransitionProperty;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransitionDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransitionDuration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransitionDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransitionDuration;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransitionTimingFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransitionTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransitionTimingFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransitionTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransitionDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransitionDelay;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransitionDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransitionDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundAttachment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundAttachment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundAttachment;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitBackgroundColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundClip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundClip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundClip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundClip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackgroundPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackgroundPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackgroundPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackgroundPosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundPositionX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitBackgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundPositionX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitBackgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundPositionY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitBackgroundPositionY;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundPositionY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitBackgroundPositionY;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBackground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBackground;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBackground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBackground;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitTransformOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitTransformOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitTransformOrigin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitTransformOrigin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_msTextSizeAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_msTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_msTextSizeAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_msTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitTextSizeAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_webkitTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitTextSizeAdjust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_webkitTextSizeAdjust;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImageSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImageSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImageSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImageSource;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImageSlice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImageSlice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImageWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImageWidth;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImageOutset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImageOutset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBorderImageRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBorderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBorderImageRepeat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBorderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitBoxSizing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitBoxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitBoxSizing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitBoxSizing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_webkitAnimationFillMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_webkitAnimationFillMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_webkitAnimationFillMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_webkitAnimationFillMode;
     }
 }

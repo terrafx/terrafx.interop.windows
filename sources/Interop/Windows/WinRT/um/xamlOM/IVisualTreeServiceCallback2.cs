@@ -28,7 +28,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeServiceCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, uint>)(lpVtbl[1]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeServiceCallback2*, uint>)(lpVtbl[1]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, uint>)(lpVtbl[2]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeServiceCallback2*, uint>)(lpVtbl[2]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IVisualTreeServiceCallback.OnVisualTreeChange" />
@@ -54,7 +54,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     [VtblIndex(3)]
     public HRESULT OnVisualTreeChange(ParentChildRelation relation, VisualElement element, VisualMutationType mutationType)
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, ParentChildRelation, VisualElement, VisualMutationType, int>)(lpVtbl[3]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), relation, element, mutationType);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeServiceCallback2*, ParentChildRelation, VisualElement, VisualMutationType, int>)(lpVtbl[3]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), relation, element, mutationType);
     }
 
     /// <include file='IVisualTreeServiceCallback2.xml' path='doc/member[@name="IVisualTreeServiceCallback2.OnElementStateChanged"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
     [VtblIndex(4)]
     public HRESULT OnElementStateChanged(InstanceHandle element, VisualElementState elementState, [NativeTypeName("LPCWSTR")] char* context)
     {
-        return ((delegate* unmanaged<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, char*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
+        return ((delegate* unmanaged[MemberFunction]<IVisualTreeServiceCallback2*, InstanceHandle, VisualElementState, char*, int>)(lpVtbl[4]))((IVisualTreeServiceCallback2*)Unsafe.AsPointer(ref this), element, elementState, context);
     }
 
     public interface Interface : IVisualTreeServiceCallback.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IVisualTreeServiceCallback2 : IVisualTreeServiceCal
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ParentChildRelation, VisualElement, VisualMutationType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ParentChildRelation, VisualElement, VisualMutationType, int> OnVisualTreeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ParentChildRelation, VisualElement, VisualMutationType, int> OnVisualTreeChange;
 
         [NativeTypeName("HRESULT (InstanceHandle, VisualElementState, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InstanceHandle, VisualElementState, char*, int> OnElementStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InstanceHandle, VisualElementState, char*, int> OnElementStateChanged;
     }
 }

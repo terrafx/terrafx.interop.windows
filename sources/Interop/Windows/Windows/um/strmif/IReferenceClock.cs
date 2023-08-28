@@ -25,7 +25,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IReferenceClock*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IReferenceClock*, uint>)(lpVtbl[1]))((IReferenceClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, uint>)(lpVtbl[1]))((IReferenceClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IReferenceClock*, uint>)(lpVtbl[2]))((IReferenceClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, uint>)(lpVtbl[2]))((IReferenceClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IReferenceClock.xml' path='doc/member[@name="IReferenceClock.GetTime"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTime)
     {
-        return ((delegate* unmanaged<IReferenceClock*, long*, int>)(lpVtbl[3]))((IReferenceClock*)Unsafe.AsPointer(ref this), pTime);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, long*, int>)(lpVtbl[3]))((IReferenceClock*)Unsafe.AsPointer(ref this), pTime);
     }
 
     /// <include file='IReferenceClock.xml' path='doc/member[@name="IReferenceClock.AdviseTime"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [VtblIndex(4)]
     public HRESULT AdviseTime([NativeTypeName("REFERENCE_TIME")] long baseTime, [NativeTypeName("REFERENCE_TIME")] long streamTime, HEVENT hEvent, [NativeTypeName("DWORD_PTR *")] nuint* pdwAdviseCookie)
     {
-        return ((delegate* unmanaged<IReferenceClock*, long, long, HEVENT, nuint*, int>)(lpVtbl[4]))((IReferenceClock*)Unsafe.AsPointer(ref this), baseTime, streamTime, hEvent, pdwAdviseCookie);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, long, long, HEVENT, nuint*, int>)(lpVtbl[4]))((IReferenceClock*)Unsafe.AsPointer(ref this), baseTime, streamTime, hEvent, pdwAdviseCookie);
     }
 
     /// <include file='IReferenceClock.xml' path='doc/member[@name="IReferenceClock.AdvisePeriodic"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [VtblIndex(5)]
     public HRESULT AdvisePeriodic([NativeTypeName("REFERENCE_TIME")] long startTime, [NativeTypeName("REFERENCE_TIME")] long periodTime, HSEMAPHORE hSemaphore, [NativeTypeName("DWORD_PTR *")] nuint* pdwAdviseCookie)
     {
-        return ((delegate* unmanaged<IReferenceClock*, long, long, HSEMAPHORE, nuint*, int>)(lpVtbl[5]))((IReferenceClock*)Unsafe.AsPointer(ref this), startTime, periodTime, hSemaphore, pdwAdviseCookie);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, long, long, HSEMAPHORE, nuint*, int>)(lpVtbl[5]))((IReferenceClock*)Unsafe.AsPointer(ref this), startTime, periodTime, hSemaphore, pdwAdviseCookie);
     }
 
     /// <include file='IReferenceClock.xml' path='doc/member[@name="IReferenceClock.Unadvise"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD_PTR")] nuint dwAdviseCookie)
     {
-        return ((delegate* unmanaged<IReferenceClock*, nuint, int>)(lpVtbl[6]))((IReferenceClock*)Unsafe.AsPointer(ref this), dwAdviseCookie);
+        return ((delegate* unmanaged[MemberFunction]<IReferenceClock*, nuint, int>)(lpVtbl[6]))((IReferenceClock*)Unsafe.AsPointer(ref this), dwAdviseCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HEVENT, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, long, HEVENT, nuint*, int> AdviseTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, long, HEVENT, nuint*, int> AdviseTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HSEMAPHORE, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, long, HSEMAPHORE, nuint*, int> AdvisePeriodic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, long, HSEMAPHORE, nuint*, int> AdvisePeriodic;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> Unadvise;
     }
 }

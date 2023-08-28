@@ -27,7 +27,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderSetUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderSetUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderSetUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderSetUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderSetUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderSetUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderSetUserArray.xml' path='doc/member[@name="ICredentialProviderSetUserArray.SetUserArray"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
     [VtblIndex(3)]
     public HRESULT SetUserArray(ICredentialProviderUserArray* users)
     {
-        return ((delegate* unmanaged<ICredentialProviderSetUserArray*, ICredentialProviderUserArray*, int>)(lpVtbl[3]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), users);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderSetUserArray*, ICredentialProviderUserArray*, int>)(lpVtbl[3]))((ICredentialProviderSetUserArray*)Unsafe.AsPointer(ref this), users);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct ICredentialProviderSetUserArray : ICredentialProvid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICredentialProviderUserArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderUserArray*, int> SetUserArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderUserArray*, int> SetUserArray;
     }
 }

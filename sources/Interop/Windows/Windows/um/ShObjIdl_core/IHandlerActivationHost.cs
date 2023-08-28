@@ -25,7 +25,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerActivationHost*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, uint>)(lpVtbl[1]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHandlerActivationHost*, uint>)(lpVtbl[1]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, uint>)(lpVtbl[2]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHandlerActivationHost*, uint>)(lpVtbl[2]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.BeforeCoCreateInstance"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     [VtblIndex(3)]
     public HRESULT BeforeCoCreateInstance([NativeTypeName("const IID &")] Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo)
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, Guid*, IShellItemArray*, IHandlerInfo*, int>)(lpVtbl[3]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), clsidHandler, itemsBeingActivated, handlerInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerActivationHost*, Guid*, IShellItemArray*, IHandlerInfo*, int>)(lpVtbl[3]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), clsidHandler, itemsBeingActivated, handlerInfo);
     }
 
     /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.BeforeCreateProcess"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
     [VtblIndex(4)]
     public HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] char* applicationPath, [NativeTypeName("LPCWSTR")] char* commandLine, IHandlerInfo* handlerInfo)
     {
-        return ((delegate* unmanaged<IHandlerActivationHost*, char*, char*, IHandlerInfo*, int>)(lpVtbl[4]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), applicationPath, commandLine, handlerInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHandlerActivationHost*, char*, char*, IHandlerInfo*, int>)(lpVtbl[4]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), applicationPath, commandLine, handlerInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IShellItemArray *, IHandlerInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IHandlerInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, IHandlerInfo*, int> BeforeCreateProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, IHandlerInfo*, int> BeforeCreateProcess;
     }
 }

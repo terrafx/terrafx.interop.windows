@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[1]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[1]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[2]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[2]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontFileLoader.CreateStreamFromKey" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [VtblIndex(3)]
     public HRESULT CreateStreamFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream)
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)(lpVtbl[3]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, void*, uint, IDWriteFontFileStream**, int>)(lpVtbl[3]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), fontFileReferenceKey, fontFileReferenceKeySize, fontFileStream);
     }
 
     /// <include file='IDWriteInMemoryFontFileLoader.xml' path='doc/member[@name="IDWriteInMemoryFontFileLoader.CreateInMemoryFontFileReference"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [VtblIndex(4)]
     public HRESULT CreateInMemoryFontFileReference(IDWriteFactory* factory, [NativeTypeName("const void *")] void* fontData, [NativeTypeName("UINT32")] uint fontDataSize, IUnknown* ownerObject, IDWriteFontFile** fontFile)
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int>)(lpVtbl[4]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), factory, fontData, fontDataSize, ownerObject, fontFile);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int>)(lpVtbl[4]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this), factory, fontData, fontDataSize, ownerObject, fontFile);
     }
 
     /// <include file='IDWriteInMemoryFontFileLoader.xml' path='doc/member[@name="IDWriteInMemoryFontFileLoader.GetFileCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
     [return: NativeTypeName("UINT32")]
     public uint GetFileCount()
     {
-        return ((delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[5]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteInMemoryFontFileLoader*, uint>)(lpVtbl[5]))((IDWriteInMemoryFontFileLoader*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDWriteFontFileLoader.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
 
         [NativeTypeName("HRESULT (IDWriteFactory *, const void *, UINT32, IUnknown *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int> CreateInMemoryFontFileReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int> CreateInMemoryFontFileReference;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFileCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFileCount;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint>)(lpVtbl[1]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint>)(lpVtbl[1]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint>)(lpVtbl[2]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint>)(lpVtbl[2]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.AddStream"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT AddStream(IMFMediaType* pTargetMediaType, [NativeTypeName("DWORD *")] uint* pdwStreamIndex)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, IMFMediaType*, uint*, int>)(lpVtbl[3]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), pTargetMediaType, pdwStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, IMFMediaType*, uint*, int>)(lpVtbl[3]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), pTargetMediaType, pdwStreamIndex);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.SetInputMediaType"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT SetInputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pInputMediaType, IMFAttributes* pEncodingParameters)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pInputMediaType, pEncodingParameters);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pInputMediaType, pEncodingParameters);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.BeginWriting"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT BeginWriting()
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, int>)(lpVtbl[5]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, int>)(lpVtbl[5]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.WriteSample"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT WriteSample([NativeTypeName("DWORD")] uint dwStreamIndex, IMFSample* pSample)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, IMFSample*, int>)(lpVtbl[6]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, IMFSample*, int>)(lpVtbl[6]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pSample);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.SendStreamTick"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SendStreamTick([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LONGLONG")] long llTimestamp)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, long, int>)(lpVtbl[7]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, llTimestamp);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, long, int>)(lpVtbl[7]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, llTimestamp);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.PlaceMarker"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT PlaceMarker([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("LPVOID")] void* pvContext)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, void*, int>)(lpVtbl[8]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, void*, int>)(lpVtbl[8]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pvContext);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.NotifyEndOfSegment"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT NotifyEndOfSegment([NativeTypeName("DWORD")] uint dwStreamIndex)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, int>)(lpVtbl[9]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, int>)(lpVtbl[9]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.Flush"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT Flush([NativeTypeName("DWORD")] uint dwStreamIndex)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, int>)(lpVtbl[10]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, int>)(lpVtbl[10]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.Finalize"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT Finalize()
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, int>)(lpVtbl[11]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, int>)(lpVtbl[11]))((IMFSinkWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.GetServiceForStream"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT GetServiceForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, Guid*, Guid*, void**, int>)(lpVtbl[12]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, Guid*, Guid*, void**, int>)(lpVtbl[12]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, guidService, riid, ppvObject);
     }
 
     /// <include file='IMFSinkWriter.xml' path='doc/member[@name="IMFSinkWriter.GetStatistics"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetStatistics([NativeTypeName("DWORD")] uint dwStreamIndex, MF_SINK_WRITER_STATISTICS* pStats)
     {
-        return ((delegate* unmanaged<IMFSinkWriter*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
+        return ((delegate* unmanaged[MemberFunction]<IMFSinkWriter*, uint, MF_SINK_WRITER_STATISTICS*, int>)(lpVtbl[13]))((IMFSinkWriter*)Unsafe.AsPointer(ref this), dwStreamIndex, pStats);
     }
 
     public interface Interface : IUnknown.Interface
@@ -174,45 +174,45 @@ public unsafe partial struct IMFSinkWriter : IMFSinkWriter.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaType*, uint*, int> AddStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaType*, uint*, int> AddStream;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> BeginWriting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> BeginWriting;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSample*, int> WriteSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSample*, int> WriteSample;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, long, int> SendStreamTick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, long, int> SendStreamTick;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, int> PlaceMarker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, int> PlaceMarker;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> NotifyEndOfSegment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> NotifyEndOfSegment;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Flush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Finalize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Finalize;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
 
         [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
     }
 }

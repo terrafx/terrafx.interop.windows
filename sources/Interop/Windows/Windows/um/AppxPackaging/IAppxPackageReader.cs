@@ -27,7 +27,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, uint>)(lpVtbl[1]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, uint>)(lpVtbl[1]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, uint>)(lpVtbl[2]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, uint>)(lpVtbl[2]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetBlockMap"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(3)]
     public HRESULT GetBlockMap(IAppxBlockMapReader** blockMapReader)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, IAppxBlockMapReader**, int>)(lpVtbl[3]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), blockMapReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, IAppxBlockMapReader**, int>)(lpVtbl[3]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), blockMapReader);
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetFootprintFile"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(4)]
     public HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, IAppxFile** file)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int>)(lpVtbl[4]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), type, file);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int>)(lpVtbl[4]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), type, file);
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFile"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(5)]
     public HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] char* fileName, IAppxFile** file)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, char*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, char*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFiles"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(6)]
     public HRESULT GetPayloadFiles(IAppxFilesEnumerator** filesEnumerator)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, IAppxFilesEnumerator**, int>)(lpVtbl[6]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), filesEnumerator);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, IAppxFilesEnumerator**, int>)(lpVtbl[6]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), filesEnumerator);
     }
 
     /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetManifest"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
     [VtblIndex(7)]
     public HRESULT GetManifest(IAppxManifestReader** manifestReader)
     {
-        return ((delegate* unmanaged<IAppxPackageReader*, IAppxManifestReader**, int>)(lpVtbl[7]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), manifestReader);
+        return ((delegate* unmanaged[MemberFunction]<IAppxPackageReader*, IAppxManifestReader**, int>)(lpVtbl[7]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), manifestReader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxBlockMapReader**, int> GetBlockMap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxBlockMapReader**, int> GetBlockMap;
 
         [NativeTypeName("HRESULT (APPX_FOOTPRINT_FILE_TYPE, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IAppxFile**, int> GetPayloadFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IAppxFile**, int> GetPayloadFile;
 
         [NativeTypeName("HRESULT (IAppxFilesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxFilesEnumerator**, int> GetPayloadFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxFilesEnumerator**, int> GetPayloadFiles;
 
         [NativeTypeName("HRESULT (IAppxManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestReader**, int> GetManifest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestReader**, int> GetManifest;
     }
 }

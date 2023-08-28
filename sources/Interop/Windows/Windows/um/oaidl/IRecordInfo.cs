@@ -25,7 +25,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRecordInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRecordInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRecordInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[1]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint>)(lpVtbl[1]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint>)(lpVtbl[2]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint>)(lpVtbl[2]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordInit"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT RecordInit([NativeTypeName("PVOID")] void* pvNew)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[3]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvNew);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, int>)(lpVtbl[3]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvNew);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordClear"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT RecordClear([NativeTypeName("PVOID")] void* pvExisting)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[4]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, int>)(lpVtbl[4]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCopy"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT RecordCopy([NativeTypeName("PVOID")] void* pvExisting, [NativeTypeName("PVOID")] void* pvNew)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, void*, int>)(lpVtbl[5]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting, pvNew);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, void*, int>)(lpVtbl[5]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvExisting, pvNew);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetGuid"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetGuid(Guid* pguid)
     {
-        return ((delegate* unmanaged<IRecordInfo*, Guid*, int>)(lpVtbl[6]))((IRecordInfo*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, Guid*, int>)(lpVtbl[6]))((IRecordInfo*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<IRecordInfo*, char**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, char**, int>)(lpVtbl[7]))((IRecordInfo*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetSize"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pcbSize)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint*, int>)(lpVtbl[8]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcbSize);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint*, int>)(lpVtbl[8]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcbSize);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetTypeInfo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetTypeInfo(ITypeInfo** ppTypeInfo)
     {
-        return ((delegate* unmanaged<IRecordInfo*, ITypeInfo**, int>)(lpVtbl[9]))((IRecordInfo*)Unsafe.AsPointer(ref this), ppTypeInfo);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, ITypeInfo**, int>)(lpVtbl[9]))((IRecordInfo*)Unsafe.AsPointer(ref this), ppTypeInfo);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetField"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetField([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, char*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, char*, VARIANT*, int>)(lpVtbl[10]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNoCopy"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetFieldNoCopy([NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField, [NativeTypeName("PVOID *")] void** ppvDataCArray)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, char*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, char*, VARIANT*, void**, int>)(lpVtbl[11]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvData, szFieldName, pvarField, ppvDataCArray);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutField"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT PutField([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[12]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.PutFieldNoCopy"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT PutFieldNoCopy([NativeTypeName("ULONG")] uint wFlags, [NativeTypeName("PVOID")] void* pvData, [NativeTypeName("LPCOLESTR")] char* szFieldName, VARIANT* pvarField)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint, void*, char*, VARIANT*, int>)(lpVtbl[13]))((IRecordInfo*)Unsafe.AsPointer(ref this), wFlags, pvData, szFieldName, pvarField);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.GetFieldNames"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetFieldNames([NativeTypeName("ULONG *")] uint* pcNames, [NativeTypeName("BSTR *")] char** rgBstrNames)
     {
-        return ((delegate* unmanaged<IRecordInfo*, uint*, char**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, uint*, char**, int>)(lpVtbl[14]))((IRecordInfo*)Unsafe.AsPointer(ref this), pcNames, rgBstrNames);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.IsMatchingType"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(15)]
     public BOOL IsMatchingType(IRecordInfo* pRecordInfo)
     {
-        return ((delegate* unmanaged<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, IRecordInfo*, int>)(lpVtbl[15]))((IRecordInfo*)Unsafe.AsPointer(ref this), pRecordInfo);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCreate"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [return: NativeTypeName("PVOID")]
     public void* RecordCreate()
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*>)(lpVtbl[16]))((IRecordInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*>)(lpVtbl[16]))((IRecordInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordCreateCopy"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT RecordCreateCopy([NativeTypeName("PVOID")] void* pvSource, [NativeTypeName("PVOID *")] void** ppvDest)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, void**, int>)(lpVtbl[17]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvSource, ppvDest);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, void**, int>)(lpVtbl[17]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvSource, ppvDest);
     }
 
     /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.RecordDestroy"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT RecordDestroy([NativeTypeName("PVOID")] void* pvRecord)
     {
-        return ((delegate* unmanaged<IRecordInfo*, void*, int>)(lpVtbl[18]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvRecord);
+        return ((delegate* unmanaged[MemberFunction]<IRecordInfo*, void*, int>)(lpVtbl[18]))((IRecordInfo*)Unsafe.AsPointer(ref this), pvRecord);
     }
 
     public interface Interface : IUnknown.Interface
@@ -231,60 +231,60 @@ public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> RecordInit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> RecordInit;
 
         [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> RecordClear;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> RecordClear;
 
         [NativeTypeName("HRESULT (PVOID, PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, void*, int> RecordCopy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, void*, int> RecordCopy;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGuid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, char*, VARIANT*, int> GetField;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, char*, VARIANT*, int> GetField;
 
         [NativeTypeName("HRESULT (PVOID, LPCOLESTR, VARIANT *, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, char*, VARIANT*, void**, int> GetFieldNoCopy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, char*, VARIANT*, void**, int> GetFieldNoCopy;
 
         [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, char*, VARIANT*, int> PutField;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, char*, VARIANT*, int> PutField;
 
         [NativeTypeName("HRESULT (ULONG, PVOID, LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, char*, VARIANT*, int> PutFieldNoCopy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, char*, VARIANT*, int> PutFieldNoCopy;
 
         [NativeTypeName("HRESULT (ULONG *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, char**, int> GetFieldNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, char**, int> GetFieldNames;
 
         [NativeTypeName("BOOL (IRecordInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IRecordInfo*, int> IsMatchingType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRecordInfo*, int> IsMatchingType;
 
         [NativeTypeName("PVOID () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> RecordCreate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> RecordCreate;
 
         [NativeTypeName("HRESULT (PVOID, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, void**, int> RecordCreateCopy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, void**, int> RecordCreateCopy;
 
         [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> RecordDestroy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> RecordDestroy;
     }
 }

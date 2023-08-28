@@ -25,7 +25,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, Guid*, void**, int>)(lpVtbl[0]))((IAutoComplete2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, Guid*, void**, int>)(lpVtbl[0]))((IAutoComplete2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAutoComplete2*, uint>)(lpVtbl[1]))((IAutoComplete2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, uint>)(lpVtbl[1]))((IAutoComplete2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAutoComplete2*, uint>)(lpVtbl[2]))((IAutoComplete2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, uint>)(lpVtbl[2]))((IAutoComplete2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAutoComplete.Init" />
@@ -51,7 +51,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Init(HWND hwndEdit, IUnknown* punkACL, [NativeTypeName("LPCWSTR")] char* pwszRegKeyPath, [NativeTypeName("LPCWSTR")] char* pwszQuickComplete)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, HWND, IUnknown*, char*, char*, int>)(lpVtbl[3]))((IAutoComplete2*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, HWND, IUnknown*, char*, char*, int>)(lpVtbl[3]))((IAutoComplete2*)Unsafe.AsPointer(ref this), hwndEdit, punkACL, pwszRegKeyPath, pwszQuickComplete);
     }
 
     /// <inheritdoc cref="IAutoComplete.Enable" />
@@ -59,7 +59,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Enable(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, BOOL, int>)(lpVtbl[4]))((IAutoComplete2*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, BOOL, int>)(lpVtbl[4]))((IAutoComplete2*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='IAutoComplete2.xml' path='doc/member[@name="IAutoComplete2.SetOptions"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT SetOptions([NativeTypeName("DWORD")] uint dwFlag)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, uint, int>)(lpVtbl[5]))((IAutoComplete2*)Unsafe.AsPointer(ref this), dwFlag);
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, uint, int>)(lpVtbl[5]))((IAutoComplete2*)Unsafe.AsPointer(ref this), dwFlag);
     }
 
     /// <include file='IAutoComplete2.xml' path='doc/member[@name="IAutoComplete2.GetOptions"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag)
     {
-        return ((delegate* unmanaged<IAutoComplete2*, uint*, int>)(lpVtbl[6]))((IAutoComplete2*)Unsafe.AsPointer(ref this), pdwFlag);
+        return ((delegate* unmanaged[MemberFunction]<IAutoComplete2*, uint*, int>)(lpVtbl[6]))((IAutoComplete2*)Unsafe.AsPointer(ref this), pdwFlag);
     }
 
     public interface Interface : IAutoComplete.Interface
@@ -91,24 +91,24 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IUnknown*, char*, char*, int> Init;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IUnknown*, char*, char*, int> Init;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOptions;
     }
 }

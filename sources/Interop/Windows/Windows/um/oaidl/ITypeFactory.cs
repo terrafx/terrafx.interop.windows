@@ -25,7 +25,7 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITypeFactory*, Guid*, void**, int>)(lpVtbl[0]))((ITypeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITypeFactory*, Guid*, void**, int>)(lpVtbl[0]))((ITypeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITypeFactory*, uint>)(lpVtbl[1]))((ITypeFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeFactory*, uint>)(lpVtbl[1]))((ITypeFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITypeFactory*, uint>)(lpVtbl[2]))((ITypeFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITypeFactory*, uint>)(lpVtbl[2]))((ITypeFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITypeFactory.xml' path='doc/member[@name="ITypeFactory.CreateFromTypeInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateFromTypeInfo(ITypeInfo* pTypeInfo, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppv)
     {
-        return ((delegate* unmanaged<ITypeFactory*, ITypeInfo*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ITypeFactory*)Unsafe.AsPointer(ref this), pTypeInfo, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ITypeFactory*, ITypeInfo*, Guid*, IUnknown**, int>)(lpVtbl[3]))((ITypeFactory*)Unsafe.AsPointer(ref this), pTypeInfo, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITypeInfo *, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITypeInfo*, Guid*, IUnknown**, int> CreateFromTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypeInfo*, Guid*, IUnknown**, int> CreateFromTypeInfo;
     }
 }

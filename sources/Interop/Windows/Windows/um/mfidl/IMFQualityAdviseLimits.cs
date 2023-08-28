@@ -25,7 +25,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFQualityAdviseLimits*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdviseLimits*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFQualityAdviseLimits*, uint>)(lpVtbl[1]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdviseLimits*, uint>)(lpVtbl[1]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFQualityAdviseLimits*, uint>)(lpVtbl[2]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdviseLimits*, uint>)(lpVtbl[2]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFQualityAdviseLimits.xml' path='doc/member[@name="IMFQualityAdviseLimits.GetMaximumDropMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
     [VtblIndex(3)]
     public HRESULT GetMaximumDropMode(MF_QUALITY_DROP_MODE* peDropMode)
     {
-        return ((delegate* unmanaged<IMFQualityAdviseLimits*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[3]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), peDropMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdviseLimits*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[3]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), peDropMode);
     }
 
     /// <include file='IMFQualityAdviseLimits.xml' path='doc/member[@name="IMFQualityAdviseLimits.GetMinimumQualityLevel"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
     [VtblIndex(4)]
     public HRESULT GetMinimumQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)
     {
-        return ((delegate* unmanaged<IMFQualityAdviseLimits*, MF_QUALITY_LEVEL*, int>)(lpVtbl[4]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), peQualityLevel);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdviseLimits*, MF_QUALITY_LEVEL*, int>)(lpVtbl[4]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), peQualityLevel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE*, int> GetMaximumDropMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_DROP_MODE*, int> GetMaximumDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL*, int> GetMinimumQualityLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_LEVEL*, int> GetMinimumQualityLevel;
     }
 }

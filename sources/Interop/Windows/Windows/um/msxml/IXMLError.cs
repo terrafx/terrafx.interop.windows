@@ -25,7 +25,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IXMLError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLError*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IXMLError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLError*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IXMLError*, uint>)(lpVtbl[1]))((IXMLError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLError*, uint>)(lpVtbl[1]))((IXMLError*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IXMLError*, uint>)(lpVtbl[2]))((IXMLError*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IXMLError*, uint>)(lpVtbl[2]))((IXMLError*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXMLError.xml' path='doc/member[@name="IXMLError.GetErrorInfo"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetErrorInfo(XML_ERROR* pErrorReturn)
     {
-        return ((delegate* unmanaged<IXMLError*, XML_ERROR*, int>)(lpVtbl[3]))((IXMLError*)Unsafe.AsPointer(ref this), pErrorReturn);
+        return ((delegate* unmanaged[MemberFunction]<IXMLError*, XML_ERROR*, int>)(lpVtbl[3]))((IXMLError*)Unsafe.AsPointer(ref this), pErrorReturn);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IXMLError : IXMLError.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (XML_ERROR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XML_ERROR*, int> GetErrorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XML_ERROR*, int> GetErrorInfo;
     }
 }

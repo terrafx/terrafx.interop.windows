@@ -25,7 +25,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailCache*, uint>)(lpVtbl[1]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCache*, uint>)(lpVtbl[1]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailCache*, uint>)(lpVtbl[2]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCache*, uint>)(lpVtbl[2]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailCache.xml' path='doc/member[@name="IThumbnailCache.GetThumbnail"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetThumbnail(IShellItem* pShellItem, uint cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID)
     {
-        return ((delegate* unmanaged<IThumbnailCache*, IShellItem*, uint, WTS_FLAGS, ISharedBitmap**, WTS_CACHEFLAGS*, WTS_THUMBNAILID*, int>)(lpVtbl[3]))((IThumbnailCache*)Unsafe.AsPointer(ref this), pShellItem, cxyRequestedThumbSize, flags, ppvThumb, pOutFlags, pThumbnailID);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCache*, IShellItem*, uint, WTS_FLAGS, ISharedBitmap**, WTS_CACHEFLAGS*, WTS_THUMBNAILID*, int>)(lpVtbl[3]))((IThumbnailCache*)Unsafe.AsPointer(ref this), pShellItem, cxyRequestedThumbSize, flags, ppvThumb, pOutFlags, pThumbnailID);
     }
 
     /// <include file='IThumbnailCache.xml' path='doc/member[@name="IThumbnailCache.GetThumbnailByID"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetThumbnailByID(WTS_THUMBNAILID thumbnailID, uint cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags)
     {
-        return ((delegate* unmanaged<IThumbnailCache*, WTS_THUMBNAILID, uint, ISharedBitmap**, WTS_CACHEFLAGS*, int>)(lpVtbl[4]))((IThumbnailCache*)Unsafe.AsPointer(ref this), thumbnailID, cxyRequestedThumbSize, ppvThumb, pOutFlags);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailCache*, WTS_THUMBNAILID, uint, ISharedBitmap**, WTS_CACHEFLAGS*, int>)(lpVtbl[4]))((IThumbnailCache*)Unsafe.AsPointer(ref this), thumbnailID, cxyRequestedThumbSize, ppvThumb, pOutFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, UINT, WTS_FLAGS, ISharedBitmap **, WTS_CACHEFLAGS *, WTS_THUMBNAILID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, WTS_FLAGS, ISharedBitmap**, WTS_CACHEFLAGS*, WTS_THUMBNAILID*, int> GetThumbnail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, WTS_FLAGS, ISharedBitmap**, WTS_CACHEFLAGS*, WTS_THUMBNAILID*, int> GetThumbnail;
 
         [NativeTypeName("HRESULT (WTS_THUMBNAILID, UINT, ISharedBitmap **, WTS_CACHEFLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WTS_THUMBNAILID, uint, ISharedBitmap**, WTS_CACHEFLAGS*, int> GetThumbnailByID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WTS_THUMBNAILID, uint, ISharedBitmap**, WTS_CACHEFLAGS*, int> GetThumbnailByID;
     }
 }

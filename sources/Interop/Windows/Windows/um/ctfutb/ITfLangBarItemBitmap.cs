@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint>)(lpVtbl[1]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, uint>)(lpVtbl[1]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint>)(lpVtbl[2]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, uint>)(lpVtbl[2]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetInfo" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(3)]
     public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetStatus" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.Show" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(5)]
     public HRESULT Show(BOOL fShow)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(6)]
     public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.OnClick"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(7)]
     public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), click, pt, prcArea);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), click, pt, prcArea);
     }
 
     /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.GetPreferredSize"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(8)]
     public HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pszDefault, psz);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), pszDefault, psz);
     }
 
     /// <include file='ITfLangBarItemBitmap.xml' path='doc/member[@name="ITfLangBarItemBitmap.DrawBitmap"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
     [VtblIndex(9)]
     public HRESULT DrawBitmap([NativeTypeName("LONG")] int bmWidth, [NativeTypeName("LONG")] int bmHeight, [NativeTypeName("DWORD")] uint dwFlags, HBITMAP* phbmp, HBITMAP* phbmpMask)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBitmap*, int, int, uint, HBITMAP*, HBITMAP*, int>)(lpVtbl[9]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), bmWidth, bmHeight, dwFlags, phbmp, phbmpMask);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBitmap*, int, int, uint, HBITMAP*, HBITMAP*, int>)(lpVtbl[9]))((ITfLangBarItemBitmap*)Unsafe.AsPointer(ref this), bmWidth, bmHeight, dwFlags, phbmp, phbmpMask);
     }
 
     public interface Interface : ITfLangBarItem.Interface
@@ -118,33 +118,33 @@ public unsafe partial struct ITfLangBarItemBitmap : ITfLangBarItemBitmap.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetTooltipString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
 
         [NativeTypeName("HRESULT (const SIZE *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, SIZE*, int> GetPreferredSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, SIZE*, int> GetPreferredSize;
 
         [NativeTypeName("HRESULT (LONG, LONG, DWORD, HBITMAP *, HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, uint, HBITMAP*, HBITMAP*, int> DrawBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, uint, HBITMAP*, HBITMAP*, int> DrawBitmap;
     }
 }

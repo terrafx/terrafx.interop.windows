@@ -27,7 +27,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, uint>)(lpVtbl[1]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, uint>)(lpVtbl[1]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, uint>)(lpVtbl[2]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, uint>)(lpVtbl[2]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetName"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, char**, int>)(lpVtbl[3]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, char**, int>)(lpVtbl[3]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetPosition"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(4)]
     public HRESULT GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[4]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pX, pY, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[4]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pX, pY, unitType);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetExtent"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(5)]
     public HRESULT GetExtent(double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[5]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pWidth, pHeight, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[5]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pWidth, pHeight, unitType);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetBackgroundColor"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(6)]
     public HRESULT GetBackgroundColor(MFARGB* bgColor)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, MFARGB*, int>)(lpVtbl[6]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), bgColor);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, MFARGB*, int>)(lpVtbl[6]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), bgColor);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetWritingMode"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(7)]
     public HRESULT GetWritingMode(MF_TIMED_TEXT_WRITING_MODE* writingMode)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_WRITING_MODE*, int>)(lpVtbl[7]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), writingMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, MF_TIMED_TEXT_WRITING_MODE*, int>)(lpVtbl[7]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), writingMode);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetDisplayAlignment"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(8)]
     public HRESULT GetDisplayAlignment(MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int>)(lpVtbl[8]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), displayAlign);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int>)(lpVtbl[8]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), displayAlign);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetLineHeight"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(9)]
     public HRESULT GetLineHeight(double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[9]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pLineHeight, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[9]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pLineHeight, unitType);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetClipOverflow"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(10)]
     public HRESULT GetClipOverflow(BOOL* clipOverflow)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[10]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), clipOverflow);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[10]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), clipOverflow);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetPadding"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(11)]
     public HRESULT GetPadding(double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[11]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), before, start, after, end, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[11]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), before, start, after, end, unitType);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetWrap"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(12)]
     public HRESULT GetWrap(BOOL* wrap)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), wrap);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), wrap);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetZIndex"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(13)]
     public HRESULT GetZIndex([NativeTypeName("INT32 *")] int* zIndex)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, int*, int>)(lpVtbl[13]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), zIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, int*, int>)(lpVtbl[13]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), zIndex);
     }
 
     /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetScrollMode"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
     [VtblIndex(14)]
     public HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode)
     {
-        return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_SCROLL_MODE*, int>)(lpVtbl[14]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), scrollMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextRegion*, MF_TIMED_TEXT_SCROLL_MODE*, int>)(lpVtbl[14]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), scrollMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -187,48 +187,48 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPosition;
 
         [NativeTypeName("HRESULT (double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetExtent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetExtent;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, int> GetBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, int> GetBackgroundColor;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_WRITING_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_WRITING_MODE*, int> GetWritingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_WRITING_MODE*, int> GetWritingMode;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_DISPLAY_ALIGNMENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int> GetDisplayAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int> GetDisplayAlignment;
 
         [NativeTypeName("HRESULT (double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetLineHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetLineHeight;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetClipOverflow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetClipOverflow;
 
         [NativeTypeName("HRESULT (double *, double *, double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPadding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPadding;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetWrap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetWrap;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetZIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetZIndex;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_SCROLL_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_SCROLL_MODE*, int> GetScrollMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_SCROLL_MODE*, int> GetScrollMode;
     }
 }

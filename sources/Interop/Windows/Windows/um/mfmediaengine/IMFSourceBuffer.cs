@@ -27,7 +27,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[1]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, uint>)(lpVtbl[1]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, uint>)(lpVtbl[2]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, uint>)(lpVtbl[2]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.GetUpdating"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(3)]
     public BOOL GetUpdating()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[3]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, int>)(lpVtbl[3]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.GetBuffered"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int>)(lpVtbl[4]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), ppBuffered);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, IMFMediaTimeRange**, int>)(lpVtbl[4]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), ppBuffered);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.GetTimeStampOffset"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(5)]
     public double GetTimeStampOffset()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[5]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double>)(lpVtbl[5]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.SetTimeStampOffset"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(6)]
     public HRESULT SetTimeStampOffset(double offset)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[6]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), offset);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double, int>)(lpVtbl[6]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), offset);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.GetAppendWindowStart"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(7)]
     public double GetAppendWindowStart()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[7]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double>)(lpVtbl[7]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.SetAppendWindowStart"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(8)]
     public HRESULT SetAppendWindowStart(double time)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[8]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double, int>)(lpVtbl[8]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.GetAppendWindowEnd"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(9)]
     public double GetAppendWindowEnd()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double>)(lpVtbl[9]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double>)(lpVtbl[9]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.SetAppendWindowEnd"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(10)]
     public HRESULT SetAppendWindowEnd(double time)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double, int>)(lpVtbl[10]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double, int>)(lpVtbl[10]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), time);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.Append"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(11)]
     public HRESULT Append([NativeTypeName("const BYTE *")] byte* pData, [NativeTypeName("DWORD")] uint len)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int>)(lpVtbl[11]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pData, len);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, byte*, uint, int>)(lpVtbl[11]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pData, len);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.AppendByteStream"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(12)]
     public HRESULT AppendByteStream(IMFByteStream* pStream, [NativeTypeName("DWORDLONG *")] ulong* pMaxLen)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int>)(lpVtbl[12]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pStream, pMaxLen);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, IMFByteStream*, ulong*, int>)(lpVtbl[12]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), pStream, pMaxLen);
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.Abort"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(13)]
     public HRESULT Abort()
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, int>)(lpVtbl[13]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, int>)(lpVtbl[13]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSourceBuffer.xml' path='doc/member[@name="IMFSourceBuffer.Remove"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
     [VtblIndex(14)]
     public HRESULT Remove(double start, double end)
     {
-        return ((delegate* unmanaged<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
+        return ((delegate* unmanaged[MemberFunction]<IMFSourceBuffer*, double, double, int>)(lpVtbl[14]))((IMFSourceBuffer*)Unsafe.AsPointer(ref this), start, end);
     }
 
     public interface Interface : IUnknown.Interface
@@ -187,48 +187,48 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetUpdating;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetTimeStampOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetTimeStampOffset;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetTimeStampOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetTimeStampOffset;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetAppendWindowStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetAppendWindowStart;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetAppendWindowStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetAppendWindowStart;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetAppendWindowEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetAppendWindowEnd;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetAppendWindowEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetAppendWindowEnd;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> Append;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> Append;
 
         [NativeTypeName("HRESULT (IMFByteStream *, DWORDLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFByteStream*, ulong*, int> AppendByteStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFByteStream*, ulong*, int> AppendByteStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abort;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> Remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> Remove;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectCollection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectCollection*, uint>)(lpVtbl[1]))((IObjectCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, uint>)(lpVtbl[1]))((IObjectCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectCollection*, uint>)(lpVtbl[2]))((IObjectCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, uint>)(lpVtbl[2]))((IObjectCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IObjectArray.GetCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pcObjects)
     {
-        return ((delegate* unmanaged<IObjectCollection*, uint*, int>)(lpVtbl[3]))((IObjectCollection*)Unsafe.AsPointer(ref this), pcObjects);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, uint*, int>)(lpVtbl[3]))((IObjectCollection*)Unsafe.AsPointer(ref this), pcObjects);
     }
 
     /// <inheritdoc cref="IObjectArray.GetAt" />
@@ -59,7 +59,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IObjectCollection*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
     }
 
     /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.AddObject"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(5)]
     public HRESULT AddObject(IUnknown* punk)
     {
-        return ((delegate* unmanaged<IObjectCollection*, IUnknown*, int>)(lpVtbl[5]))((IObjectCollection*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, IUnknown*, int>)(lpVtbl[5]))((IObjectCollection*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.AddFromArray"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(6)]
     public HRESULT AddFromArray(IObjectArray* poaSource)
     {
-        return ((delegate* unmanaged<IObjectCollection*, IObjectArray*, int>)(lpVtbl[6]))((IObjectCollection*)Unsafe.AsPointer(ref this), poaSource);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, IObjectArray*, int>)(lpVtbl[6]))((IObjectCollection*)Unsafe.AsPointer(ref this), poaSource);
     }
 
     /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.RemoveObjectAt"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(7)]
     public HRESULT RemoveObjectAt(uint uiIndex)
     {
-        return ((delegate* unmanaged<IObjectCollection*, uint, int>)(lpVtbl[7]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex);
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, uint, int>)(lpVtbl[7]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex);
     }
 
     /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.Clear"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
     [VtblIndex(8)]
     public HRESULT Clear()
     {
-        return ((delegate* unmanaged<IObjectCollection*, int>)(lpVtbl[8]))((IObjectCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectCollection*, int>)(lpVtbl[8]))((IObjectCollection*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IObjectArray.Interface
@@ -113,30 +113,30 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> AddObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> AddObject;
 
         [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IObjectArray*, int> AddFromArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObjectArray*, int> AddFromArray;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveObjectAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveObjectAt;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Clear;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Clear;
     }
 }

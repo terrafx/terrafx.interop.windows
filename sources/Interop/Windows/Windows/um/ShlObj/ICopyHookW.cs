@@ -25,7 +25,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICopyHookW*, Guid*, void**, int>)(lpVtbl[0]))((ICopyHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICopyHookW*, Guid*, void**, int>)(lpVtbl[0]))((ICopyHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICopyHookW*, uint>)(lpVtbl[1]))((ICopyHookW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICopyHookW*, uint>)(lpVtbl[1]))((ICopyHookW*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICopyHookW*, uint>)(lpVtbl[2]))((ICopyHookW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICopyHookW*, uint>)(lpVtbl[2]))((ICopyHookW*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICopyHookW.xml' path='doc/member[@name="ICopyHookW.CopyCallback"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
     [VtblIndex(3)]
     public uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] char* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] char* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)
     {
-        return ((delegate* unmanaged<ICopyHookW*, HWND, uint, uint, char*, uint, char*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
+        return ((delegate* unmanaged[MemberFunction]<ICopyHookW*, HWND, uint, uint, char*, uint, char*, uint, uint>)(lpVtbl[3]))((ICopyHookW*)Unsafe.AsPointer(ref this), hwnd, wFunc, wFlags, pszSrcFile, dwSrcAttribs, pszDestFile, dwDestAttribs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("UINT (HWND, UINT, UINT, PCWSTR, DWORD, PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, uint, char*, uint, char*, uint, uint> CopyCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, uint, char*, uint, char*, uint, uint> CopyCallback;
     }
 }

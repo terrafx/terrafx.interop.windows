@@ -25,7 +25,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, uint>)(lpVtbl[1]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, uint>)(lpVtbl[1]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, uint>)(lpVtbl[2]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, uint>)(lpVtbl[2]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterCategory"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[3]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[3]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterCategory"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[4]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[4]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.EnumCategoriesInItem"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, ppEnum);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.EnumItemsInCategory"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[6]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rcatid, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[6]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rcatid, ppEnum);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.FindClosestCategory"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid**, uint, int>)(lpVtbl[7]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pcatid, ppcatidList, ulCount);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, Guid**, uint, int>)(lpVtbl[7]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pcatid, ppcatidList, ulCount);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDescription"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] char* pchDesc, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, char*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, char*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterGUIDDescription"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[9]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[9]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUIDDescription"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, char**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, char**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDWORD"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, uint, int>)(lpVtbl[11]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, dw);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, uint, int>)(lpVtbl[11]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, dw);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterGUIDDWORD"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[12]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[12]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUIDDWORD"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[13]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pdw);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[13]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pdw);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUID"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[14]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pguidatom);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[14]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pguidatom);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUID"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, int>)(lpVtbl[15]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, uint, Guid*, int>)(lpVtbl[15]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, pguid);
     }
 
     /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.IsEqualTfGuidAtom"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)
     {
-        return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, rguid, pfEqual);
+        return ((delegate* unmanaged[MemberFunction]<ITfCategoryMgr*, uint, Guid*, BOOL*, int>)(lpVtbl[16]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, rguid, pfEqual);
     }
 
     public interface Interface : IUnknown.Interface
@@ -207,54 +207,54 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid*, int> RegisterCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, Guid*, int> RegisterCategory;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid*, int> UnregisterCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, Guid*, int> UnregisterCategory;
 
         [NativeTypeName("HRESULT (const GUID &, IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumGUID**, int> EnumCategoriesInItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumGUID**, int> EnumCategoriesInItem;
 
         [NativeTypeName("HRESULT (const GUID &, IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumGUID**, int> EnumItemsInCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumGUID**, int> EnumItemsInCategory;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *, const GUID **, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid**, uint, int> FindClosestCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, Guid**, uint, int> FindClosestCategory;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, char*, uint, int> RegisterGUIDDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, char*, uint, int> RegisterGUIDDescription;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> UnregisterGUIDDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> UnregisterGUIDDescription;
 
         [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, int> GetGUIDDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, int> GetGUIDDescription;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, int> RegisterGUIDDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint, int> RegisterGUIDDWORD;
 
         [NativeTypeName("HRESULT (const IID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> UnregisterGUIDDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> UnregisterGUIDDWORD;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetGUIDDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, int> GetGUIDDWORD;
 
         [NativeTypeName("HRESULT (const GUID &, TfGuidAtom *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, int> RegisterGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, int> RegisterGUID;
 
         [NativeTypeName("HRESULT (TfGuidAtom, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (TfGuidAtom, const GUID &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, BOOL*, int> IsEqualTfGuidAtom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, BOOL*, int> IsEqualTfGuidAtom;
     }
 }

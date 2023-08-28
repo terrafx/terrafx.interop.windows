@@ -26,7 +26,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, uint>)(lpVtbl[1]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, uint>)(lpVtbl[1]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, uint>)(lpVtbl[2]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, uint>)(lpVtbl[2]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, HSTRING*, int>)(lpVtbl[4]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, HSTRING*, int>)(lpVtbl[4]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, TrustLevel*, int>)(lpVtbl[5]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, TrustLevel*, int>)(lpVtbl[5]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IVideoFrameNativeFactory.xml' path='doc/member[@name="IVideoFrameNativeFactory.CreateFromMFSample"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
     [VtblIndex(6)]
     public HRESULT CreateFromMFSample(IMFSample* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
     {
-        return ((delegate* unmanaged<IVideoFrameNativeFactory*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int>)(lpVtbl[6]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameNativeFactory*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int>)(lpVtbl[6]))((IVideoFrameNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, device, riid, ppv);
     }
 
     public interface Interface : IInspectable.Interface
@@ -89,24 +89,24 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (IMFSample *, const GUID &, UINT32, UINT32, BOOL, const MFVideoArea *, IMFDXGIDeviceManager *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int> CreateFromMFSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int> CreateFromMFSample;
     }
 }

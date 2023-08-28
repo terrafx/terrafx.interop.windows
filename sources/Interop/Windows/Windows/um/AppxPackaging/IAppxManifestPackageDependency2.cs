@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, uint>)(lpVtbl[1]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, uint>)(lpVtbl[1]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, uint>)(lpVtbl[2]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, uint>)(lpVtbl[2]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetName" />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[3]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[3]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetPublisher" />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [VtblIndex(4)]
     public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] char** publisher)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[4]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), publisher);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, char**, int>)(lpVtbl[4]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), publisher);
     }
 
     /// <inheritdoc cref="IAppxManifestPackageDependency.GetMinVersion" />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [VtblIndex(5)]
     public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ulong*, int>)(lpVtbl[5]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), minVersion);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, ulong*, int>)(lpVtbl[5]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), minVersion);
     }
 
     /// <include file='IAppxManifestPackageDependency2.xml' path='doc/member[@name="IAppxManifestPackageDependency2.GetMaxMajorVersionTested"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
     [VtblIndex(6)]
     public HRESULT GetMaxMajorVersionTested([NativeTypeName("UINT16 *")] ushort* maxMajorVersionTested)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependency2*, ushort*, int>)(lpVtbl[6]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), maxMajorVersionTested);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependency2*, ushort*, int>)(lpVtbl[6]))((IAppxManifestPackageDependency2*)Unsafe.AsPointer(ref this), maxMajorVersionTested);
     }
 
     public interface Interface : IAppxManifestPackageDependency.Interface
@@ -90,24 +90,24 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetPublisher;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetMinVersion;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetMaxMajorVersionTested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetMaxMajorVersionTested;
     }
 }

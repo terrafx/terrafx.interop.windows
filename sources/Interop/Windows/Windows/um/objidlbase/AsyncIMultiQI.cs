@@ -25,7 +25,7 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<AsyncIMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIMultiQI*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<AsyncIMultiQI*, uint>)(lpVtbl[1]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIMultiQI*, uint>)(lpVtbl[1]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<AsyncIMultiQI*, uint>)(lpVtbl[2]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIMultiQI*, uint>)(lpVtbl[2]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIMultiQI.xml' path='doc/member[@name="AsyncIMultiQI.Begin_QueryMultipleInterfaces"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Begin_QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, MULTI_QI* pMQIs)
     {
-        return ((delegate* unmanaged<AsyncIMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIMultiQI*, uint, MULTI_QI*, int>)(lpVtbl[3]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), cMQIs, pMQIs);
     }
 
     /// <include file='AsyncIMultiQI.xml' path='doc/member[@name="AsyncIMultiQI.Finish_QueryMultipleInterfaces"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs)
     {
-        return ((delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIMultiQI*, MULTI_QI*, int>)(lpVtbl[4]))((AsyncIMultiQI*)Unsafe.AsPointer(ref this), pMQIs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
 
         [NativeTypeName("HRESULT (MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
     }
 }

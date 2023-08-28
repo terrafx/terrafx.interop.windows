@@ -25,7 +25,7 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOSPackageDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOSPackageDependency*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestOSPackageDependency.xml' path='doc/member[@name="IAppxManifestOSPackageDependency.GetName"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, char**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOSPackageDependency*, char**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxManifestOSPackageDependency.xml' path='doc/member[@name="IAppxManifestOSPackageDependency.GetVersion"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
     [VtblIndex(4)]
     public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* version)
     {
-        return ((delegate* unmanaged<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOSPackageDependency*, ulong*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependency*)Unsafe.AsPointer(ref this), version);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAppxManifestOSPackageDependency : IAppxManifestOSP
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetVersion;
     }
 }

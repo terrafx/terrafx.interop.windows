@@ -25,7 +25,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpShortcut*, Guid*, void**, int>)(lpVtbl[0]))((ISpShortcut*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, Guid*, void**, int>)(lpVtbl[0]))((ISpShortcut*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint>)(lpVtbl[1]))((ISpShortcut*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint>)(lpVtbl[1]))((ISpShortcut*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint>)(lpVtbl[2]))((ISpShortcut*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint>)(lpVtbl[2]))((ISpShortcut*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.AddShortcut"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT AddShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType)
     {
-        return ((delegate* unmanaged<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[3]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[3]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.RemoveShortcut"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] char* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] char* pszSpoken, SPSHORTCUTTYPE shType)
     {
-        return ((delegate* unmanaged<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[4]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, char*, ushort, char*, SPSHORTCUTTYPE, int>)(lpVtbl[4]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetShortcuts"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetShortcuts([NativeTypeName("WORD")] ushort LangID, SPSHORTCUTPAIRLIST* pShortcutpairList)
     {
-        return ((delegate* unmanaged<ISpShortcut*, ushort, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[5]))((ISpShortcut*)Unsafe.AsPointer(ref this), LangID, pShortcutpairList);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, ushort, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[5]))((ISpShortcut*)Unsafe.AsPointer(ref this), LangID, pShortcutpairList);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetGeneration"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration)
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint*, int>)(lpVtbl[6]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint*, int>)(lpVtbl[6]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetWordsFromGenerationChange"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetWordsFromGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPWORDLIST* pWordList)
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pWordList);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pWordList);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetWords"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetWords([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPWORDLIST* pWordList)
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint*, uint*, SPWORDLIST*, int>)(lpVtbl[8]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pWordList);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint*, uint*, SPWORDLIST*, int>)(lpVtbl[8]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pWordList);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetShortcutsForGeneration"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetShortcutsForGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPSHORTCUTPAIRLIST* pShortcutpairList)
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[9]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pShortcutpairList);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[9]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pShortcutpairList);
     }
 
     /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetGenerationChange"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList)
     {
-        return ((delegate* unmanaged<ISpShortcut*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[10]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pShortcutpairList);
+        return ((delegate* unmanaged[MemberFunction]<ISpShortcut*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[10]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pShortcutpairList);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> AddShortcut;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> AddShortcut;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, LPCWSTR, SPSHORTCUTTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> RemoveShortcut;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, char*, SPSHORTCUTTYPE, int> RemoveShortcut;
 
         [NativeTypeName("HRESULT (WORD, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, SPSHORTCUTPAIRLIST*, int> GetShortcuts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, SPSHORTCUTPAIRLIST*, int> GetShortcuts;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetGeneration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetGeneration;
 
         [NativeTypeName("HRESULT (DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, SPWORDLIST*, int> GetWordsFromGenerationChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, SPWORDLIST*, int> GetWordsFromGenerationChange;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, SPWORDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, SPWORDLIST*, int> GetWords;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, SPWORDLIST*, int> GetWords;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, SPSHORTCUTPAIRLIST*, int> GetShortcutsForGeneration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, SPSHORTCUTPAIRLIST*, int> GetShortcutsForGeneration;
 
         [NativeTypeName("HRESULT (DWORD *, SPSHORTCUTPAIRLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, SPSHORTCUTPAIRLIST*, int> GetGenerationChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, SPSHORTCUTPAIRLIST*, int> GetGenerationChange;
     }
 }

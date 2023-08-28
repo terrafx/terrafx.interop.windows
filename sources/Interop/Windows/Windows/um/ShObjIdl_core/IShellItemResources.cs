@@ -25,7 +25,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellItemResources*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemResources*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemResources*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellItemResources*, uint>)(lpVtbl[1]))((IShellItemResources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, uint>)(lpVtbl[1]))((IShellItemResources*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellItemResources*, uint>)(lpVtbl[2]))((IShellItemResources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, uint>)(lpVtbl[2]))((IShellItemResources*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetAttributes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(3)]
     public HRESULT GetAttributes([NativeTypeName("DWORD *")] uint* pdwAttributes)
     {
-        return ((delegate* unmanaged<IShellItemResources*, uint*, int>)(lpVtbl[3]))((IShellItemResources*)Unsafe.AsPointer(ref this), pdwAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, uint*, int>)(lpVtbl[3]))((IShellItemResources*)Unsafe.AsPointer(ref this), pdwAttributes);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(4)]
     public HRESULT GetSize([NativeTypeName("ULONGLONG *")] ulong* pullSize)
     {
-        return ((delegate* unmanaged<IShellItemResources*, ulong*, int>)(lpVtbl[4]))((IShellItemResources*)Unsafe.AsPointer(ref this), pullSize);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, ulong*, int>)(lpVtbl[4]))((IShellItemResources*)Unsafe.AsPointer(ref this), pullSize);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetTimes"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(5)]
     public HRESULT GetTimes(FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess)
     {
-        return ((delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[5]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[5]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.SetTimes"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(6)]
     public HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pftCreation, [NativeTypeName("const FILETIME *")] FILETIME* pftWrite, [NativeTypeName("const FILETIME *")] FILETIME* pftAccess)
     {
-        return ((delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[6]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[6]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetResourceDescription"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(7)]
     public HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] char** ppszDescription)
     {
-        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, char**, int>)(lpVtbl[7]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, ppszDescription);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, SHELL_ITEM_RESOURCE*, char**, int>)(lpVtbl[7]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, ppszDescription);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.EnumResources"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(8)]
     public HRESULT EnumResources(IEnumResources** ppenumr)
     {
-        return ((delegate* unmanaged<IShellItemResources*, IEnumResources**, int>)(lpVtbl[8]))((IShellItemResources*)Unsafe.AsPointer(ref this), ppenumr);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, IEnumResources**, int>)(lpVtbl[8]))((IShellItemResources*)Unsafe.AsPointer(ref this), ppenumr);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.SupportsResource"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(9)]
     public HRESULT SupportsResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir)
     {
-        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, int>)(lpVtbl[9]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, SHELL_ITEM_RESOURCE*, int>)(lpVtbl[9]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.OpenResource"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(10)]
     public HRESULT OpenResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[10]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[10]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.CreateResource"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(11)]
     public HRESULT CreateResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[11]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[11]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
     }
 
     /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.MarkForDelete"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
     [VtblIndex(12)]
     public HRESULT MarkForDelete()
     {
-        return ((delegate* unmanaged<IShellItemResources*, int>)(lpVtbl[12]))((IShellItemResources*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellItemResources*, int>)(lpVtbl[12]))((IShellItemResources*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetSize;
 
         [NativeTypeName("HRESULT (FILETIME *, FILETIME *, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
 
         [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, char**, int> GetResourceDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELL_ITEM_RESOURCE*, char**, int> GetResourceDescription;
 
         [NativeTypeName("HRESULT (IEnumResources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumResources**, int> EnumResources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumResources**, int> EnumResources;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MarkForDelete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MarkForDelete;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICoreWindowComponentInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowComponentInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint>)(lpVtbl[1]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowComponentInterop*, uint>)(lpVtbl[1]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint>)(lpVtbl[2]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowComponentInterop*, uint>)(lpVtbl[2]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICoreWindowComponentInterop.xml' path='doc/member[@name="ICoreWindowComponentInterop.ConfigureComponentInput"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
     [VtblIndex(3)]
     public HRESULT ConfigureComponentInput([NativeTypeName("UINT32")] uint hostViewInstanceId, HWND hwndHost, IUnknown* inputSourceVisual)
     {
-        return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint, HWND, IUnknown*, int>)(lpVtbl[3]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), hostViewInstanceId, hwndHost, inputSourceVisual);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowComponentInterop*, uint, HWND, IUnknown*, int>)(lpVtbl[3]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), hostViewInstanceId, hwndHost, inputSourceVisual);
     }
 
     /// <include file='ICoreWindowComponentInterop.xml' path='doc/member[@name="ICoreWindowComponentInterop.GetViewInstanceId"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
     [VtblIndex(4)]
     public HRESULT GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId)
     {
-        return ((delegate* unmanaged<ICoreWindowComponentInterop*, uint*, int>)(lpVtbl[4]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), componentViewInstanceId);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowComponentInterop*, uint*, int>)(lpVtbl[4]))((ICoreWindowComponentInterop*)Unsafe.AsPointer(ref this), componentViewInstanceId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, HWND, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HWND, IUnknown*, int> ConfigureComponentInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HWND, IUnknown*, int> ConfigureComponentInput;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetViewInstanceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetViewInstanceId;
     }
 }

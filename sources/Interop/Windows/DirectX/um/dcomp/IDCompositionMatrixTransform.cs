@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, uint>)(lpVtbl[1]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, uint>)(lpVtbl[1]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, uint>)(lpVtbl[2]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, uint>)(lpVtbl[2]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrix"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [VtblIndex(3)]
     public HRESULT SetMatrix([NativeTypeName("const D2D_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F* matrix)
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[3]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), matrix);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[3]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), matrix);
     }
 
     /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrixElement"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [VtblIndex(4)]
     public HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, int, int, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, int, int, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, animation);
     }
 
     /// <include file='IDCompositionMatrixTransform.xml' path='doc/member[@name="IDCompositionMatrixTransform.SetMatrixElement"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
     [VtblIndex(5)]
     public HRESULT SetMatrixElement(int row, int column, float value)
     {
-        return ((delegate* unmanaged<IDCompositionMatrixTransform*, int, int, float, int>)(lpVtbl[5]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionMatrixTransform*, int, int, float, int>)(lpVtbl[5]))((IDCompositionMatrixTransform*)Unsafe.AsPointer(ref this), row, column, value);
     }
 
     public interface Interface : IDCompositionTransform.Interface
@@ -89,21 +89,21 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const D2D_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, int> SetMatrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_3X2_F*, int> SetMatrix;
 
         [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
 
         [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, float, int> SetMatrixElement1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, float, int> SetMatrixElement1;
     }
 }

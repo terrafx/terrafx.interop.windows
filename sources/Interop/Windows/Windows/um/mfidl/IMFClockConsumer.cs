@@ -27,7 +27,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFClockConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFClockConsumer*, uint>)(lpVtbl[1]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClockConsumer*, uint>)(lpVtbl[1]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFClockConsumer*, uint>)(lpVtbl[2]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClockConsumer*, uint>)(lpVtbl[2]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer.SetPresentationClock"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
     [VtblIndex(3)]
     public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock)
     {
-        return ((delegate* unmanaged<IMFClockConsumer*, IMFPresentationClock*, int>)(lpVtbl[3]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), pPresentationClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockConsumer*, IMFPresentationClock*, int>)(lpVtbl[3]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
     /// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer.GetPresentationClock"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock)
     {
-        return ((delegate* unmanaged<IMFClockConsumer*, IMFPresentationClock**, int>)(lpVtbl[4]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), ppPresentationClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockConsumer*, IMFPresentationClock**, int>)(lpVtbl[4]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), ppPresentationClock);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
 
         [NativeTypeName("HRESULT (IMFPresentationClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
     }
 }

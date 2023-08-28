@@ -27,7 +27,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, uint>)(lpVtbl[1]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, uint>)(lpVtbl[1]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, uint>)(lpVtbl[2]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, uint>)(lpVtbl[2]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetName"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, char**, int>)(lpVtbl[3]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, char**, int>)(lpVtbl[3]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.IsExternal"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(4)]
     public BOOL IsExternal()
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, int>)(lpVtbl[4]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, int>)(lpVtbl[4]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontFamily"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetFontFamily([NativeTypeName("LPWSTR *")] char** fontFamily)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, char**, int>)(lpVtbl[5]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontFamily);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, char**, int>)(lpVtbl[5]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontFamily);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontSize"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetFontSize(double* fontSize, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[6]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontSize, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[6]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontSize, unitType);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetColor"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetColor(MFARGB* color)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[7]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[7]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetBackgroundColor"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(8)]
     public HRESULT GetBackgroundColor(MFARGB* bgColor)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[8]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bgColor);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, MFARGB*, int>)(lpVtbl[8]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bgColor);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetShowBackgroundAlways"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetShowBackgroundAlways(BOOL* showBackgroundAlways)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[9]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), showBackgroundAlways);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[9]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), showBackgroundAlways);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetFontStyle"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(10)]
     public HRESULT GetFontStyle(MF_TIMED_TEXT_FONT_STYLE* fontStyle)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_FONT_STYLE*, int>)(lpVtbl[10]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontStyle);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, MF_TIMED_TEXT_FONT_STYLE*, int>)(lpVtbl[10]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), fontStyle);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetBold"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(11)]
     public HRESULT GetBold(BOOL* bold)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[11]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bold);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[11]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), bold);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetRightToLeft"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(12)]
     public HRESULT GetRightToLeft(BOOL* rightToLeft)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), rightToLeft);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), rightToLeft);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextAlignment"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(13)]
     public HRESULT GetTextAlignment(MF_TIMED_TEXT_ALIGNMENT* textAlign)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_ALIGNMENT*, int>)(lpVtbl[13]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textAlign);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, MF_TIMED_TEXT_ALIGNMENT*, int>)(lpVtbl[13]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textAlign);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextDecoration"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(14)]
     public HRESULT GetTextDecoration([NativeTypeName("DWORD *")] uint* textDecoration)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, uint*, int>)(lpVtbl[14]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textDecoration);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, uint*, int>)(lpVtbl[14]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), textDecoration);
     }
 
     /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.GetTextOutline"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
     [VtblIndex(15)]
     public HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[15]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color, thickness, blurRadius, unitType);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[15]))((IMFTimedTextStyle*)Unsafe.AsPointer(ref this), color, thickness, blurRadius, unitType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -198,51 +198,51 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsExternal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsExternal;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetFontFamily;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetFontSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetFontSize;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, int> GetColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, int> GetColor;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, int> GetBackgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, int> GetBackgroundColor;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetShowBackgroundAlways;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetShowBackgroundAlways;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_FONT_STYLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_FONT_STYLE*, int> GetFontStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_FONT_STYLE*, int> GetFontStyle;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetBold;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetBold;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetRightToLeft;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetRightToLeft;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_ALIGNMENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_ALIGNMENT*, int> GetTextAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TIMED_TEXT_ALIGNMENT*, int> GetTextAlignment;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTextDecoration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTextDecoration;
 
         [NativeTypeName("HRESULT (MFARGB *, double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetTextOutline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetTextOutline;
     }
 }

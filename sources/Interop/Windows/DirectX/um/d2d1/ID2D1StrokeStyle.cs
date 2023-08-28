@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, uint>)(lpVtbl[1]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, uint>)(lpVtbl[1]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, uint>)(lpVtbl[2]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, uint>)(lpVtbl[2]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1StrokeStyle*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetStartCap"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(4)]
     public D2D1_CAP_STYLE GetStartCap()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetEndCap"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(5)]
     public D2D1_CAP_STYLE GetEndCap()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashCap"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(6)]
     public D2D1_CAP_STYLE GetDashCap()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetMiterLimit"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(7)]
     public float GetMiterLimit()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetLineJoin"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(8)]
     public D2D1_LINE_JOIN GetLineJoin()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashOffset"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(9)]
     public float GetDashOffset()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashStyle"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(10)]
     public D2D1_DASH_STYLE GetDashStyle()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashesCount"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [return: NativeTypeName("UINT32")]
     public uint GetDashesCount()
     {
-        return ((delegate* unmanaged<ID2D1StrokeStyle*, uint>)(lpVtbl[11]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, uint>)(lpVtbl[11]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashes"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     [VtblIndex(12)]
     public void GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
     {
-        ((delegate* unmanaged<ID2D1StrokeStyle*, float*, uint, void>)(lpVtbl[12]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), dashes, dashesCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float*, uint, void>)(lpVtbl[12]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), dashes, dashesCount);
     }
 
     public interface Interface : ID2D1Resource.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetStartCap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_CAP_STYLE> GetStartCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetEndCap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_CAP_STYLE> GetEndCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_CAP_STYLE> GetDashCap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_CAP_STYLE> GetDashCap;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetMiterLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetMiterLimit;
 
         [NativeTypeName("D2D1_LINE_JOIN () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_LINE_JOIN> GetLineJoin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_LINE_JOIN> GetLineJoin;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float> GetDashOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float> GetDashOffset;
 
         [NativeTypeName("D2D1_DASH_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_DASH_STYLE> GetDashStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_DASH_STYLE> GetDashStyle;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetDashesCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetDashesCount;
 
         [NativeTypeName("void (FLOAT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, void> GetDashes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, void> GetDashes;
     }
 }

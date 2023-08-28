@@ -28,7 +28,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint>)(lpVtbl[1]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, uint>)(lpVtbl[1]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint>)(lpVtbl[2]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, uint>)(lpVtbl[2]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.PresentBuffer"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(3)]
     public HRESULT PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, uint, int>)(lpVtbl[3]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), BufferToPresent, SyncInterval, Flags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, uint, uint, uint, int>)(lpVtbl[3]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), BufferToPresent, SyncInterval, Flags);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetSourceRect"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(4)]
     public HRESULT SetSourceRect([NativeTypeName("const RECT *")] RECT* pRect)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[4]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[4]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetTargetRect"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(5)]
     public HRESULT SetTargetRect([NativeTypeName("const RECT *")] RECT* pRect)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[5]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[5]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetDestSize"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(6)]
     public HRESULT SetDestSize(uint Width, uint Height)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, int>)(lpVtbl[6]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), Width, Height);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, uint, uint, int>)(lpVtbl[6]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), Width, Height);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetSourceRect"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(7)]
     public HRESULT GetSourceRect(RECT* pRect)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[7]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[7]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetTargetRect"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(8)]
     public HRESULT GetTargetRect(RECT* pRect)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[8]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[8]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetDestSize"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(9)]
     public HRESULT GetDestSize(uint* pWidth, uint* pHeight)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)(lpVtbl[9]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pWidth, pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, uint*, uint*, int>)(lpVtbl[9]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetColorSpace"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(10)]
     public HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace)
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int>)(lpVtbl[10]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), ColorSpace);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int>)(lpVtbl[10]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), ColorSpace);
     }
 
     /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetColorSpace"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
     [VtblIndex(11)]
     public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace()
     {
-        return ((delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS>)(lpVtbl[11]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS>)(lpVtbl[11]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -155,39 +155,39 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> PresentBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> PresentBuffer;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetSourceRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetSourceRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetTargetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetTargetRect;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetDestSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetDestSize;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetSourceRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetSourceRect;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetTargetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetTargetRect;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetDestSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetDestSize;
 
         [NativeTypeName("HRESULT (DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int> SetColorSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int> SetColorSpace;
 
         [NativeTypeName("DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS> GetColorSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS> GetColorSpace;
     }
 }

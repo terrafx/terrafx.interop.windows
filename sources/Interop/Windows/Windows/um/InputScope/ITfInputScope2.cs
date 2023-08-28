@@ -25,7 +25,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputScope2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputScope2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfInputScope2*, uint>)(lpVtbl[1]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, uint>)(lpVtbl[1]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfInputScope2*, uint>)(lpVtbl[2]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, uint>)(lpVtbl[2]))((ITfInputScope2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfInputScope.GetInputScopes" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetInputScopes(InputScope** pprgInputScopes, uint* pcCount)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, InputScope**, uint*, int>)(lpVtbl[3]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pprgInputScopes, pcCount);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, InputScope**, uint*, int>)(lpVtbl[3]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pprgInputScopes, pcCount);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetPhrase" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetPhrase([NativeTypeName("BSTR **")] char*** ppbstrPhrases, uint* pcCount)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, char***, uint*, int>)(lpVtbl[4]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, char***, uint*, int>)(lpVtbl[4]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetRegularExpression" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] char** pbstrRegExp)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[5]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrRegExp);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, char**, int>)(lpVtbl[5]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrRegExp);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetSRGS" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetSRGS([NativeTypeName("BSTR *")] char** pbstrSRGS)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[6]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrSRGS);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, char**, int>)(lpVtbl[6]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrSRGS);
     }
 
     /// <inheritdoc cref="ITfInputScope.GetXML" />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetXML([NativeTypeName("BSTR *")] char** pbstrXML)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, char**, int>)(lpVtbl[7]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrXML);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, char**, int>)(lpVtbl[7]))((ITfInputScope2*)Unsafe.AsPointer(ref this), pbstrXML);
     }
 
     /// <include file='ITfInputScope2.xml' path='doc/member[@name="ITfInputScope2.EnumWordList"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT EnumWordList(IEnumString** ppEnumString)
     {
-        return ((delegate* unmanaged<ITfInputScope2*, IEnumString**, int>)(lpVtbl[8]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppEnumString);
+        return ((delegate* unmanaged[MemberFunction]<ITfInputScope2*, IEnumString**, int>)(lpVtbl[8]))((ITfInputScope2*)Unsafe.AsPointer(ref this), ppEnumString);
     }
 
     public interface Interface : ITfInputScope.Interface
@@ -104,30 +104,30 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (InputScope **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, InputScope**, uint*, int> GetInputScopes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, InputScope**, uint*, int> GetInputScopes;
 
         [NativeTypeName("HRESULT (BSTR **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char***, uint*, int> GetPhrase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char***, uint*, int> GetPhrase;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetRegularExpression;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetRegularExpression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetSRGS;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSRGS;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetXML;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetXML;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumString**, int> EnumWordList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumString**, int> EnumWordList;
     }
 }

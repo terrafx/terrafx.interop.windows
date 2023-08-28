@@ -28,7 +28,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, uint>)(lpVtbl[1]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, uint>)(lpVtbl[1]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, uint>)(lpVtbl[2]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, uint>)(lpVtbl[2]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
@@ -54,7 +54,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
     {
-        ((delegate* unmanaged<ID3D11VideoDecoder*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), ppDevice);
+        ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
@@ -62,7 +62,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
@@ -70,7 +70,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
@@ -78,7 +78,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     /// <include file='ID3D11VideoDecoder.xml' path='doc/member[@name="ID3D11VideoDecoder.GetCreationParameters"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(7)]
     public HRESULT GetCreationParameters(D3D11_VIDEO_DECODER_DESC* pVideoDesc, D3D11_VIDEO_DECODER_CONFIG* pConfig)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_DESC*, D3D11_VIDEO_DECODER_CONFIG*, int>)(lpVtbl[7]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pVideoDesc, pConfig);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_DESC*, D3D11_VIDEO_DECODER_CONFIG*, int>)(lpVtbl[7]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pVideoDesc, pConfig);
     }
 
     /// <include file='ID3D11VideoDecoder.xml' path='doc/member[@name="ID3D11VideoDecoder.GetDriverHandle"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
     [VtblIndex(8)]
     public HRESULT GetDriverHandle(HANDLE* pDriverHandle)
     {
-        return ((delegate* unmanaged<ID3D11VideoDecoder*, HANDLE*, int>)(lpVtbl[8]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VideoDecoder*, HANDLE*, int>)(lpVtbl[8]))((ID3D11VideoDecoder*)Unsafe.AsPointer(ref this), pDriverHandle);
     }
 
     public interface Interface : ID3D11DeviceChild.Interface
@@ -110,30 +110,30 @@ public unsafe partial struct ID3D11VideoDecoder : ID3D11VideoDecoder.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (D3D11_VIDEO_DECODER_DESC *, D3D11_VIDEO_DECODER_CONFIG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D11_VIDEO_DECODER_DESC*, D3D11_VIDEO_DECODER_CONFIG*, int> GetCreationParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D11_VIDEO_DECODER_DESC*, D3D11_VIDEO_DECODER_CONFIG*, int> GetCreationParameters;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE*, int> GetDriverHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE*, int> GetDriverHandle;
     }
 }

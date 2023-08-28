@@ -25,7 +25,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IVideoEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IVideoEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVideoEncoder*, uint>)(lpVtbl[1]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, uint>)(lpVtbl[1]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVideoEncoder*, uint>)(lpVtbl[2]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, uint>)(lpVtbl[2]))((IVideoEncoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IEncoderAPI.IsSupported" />
@@ -51,7 +51,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT IsSupported([NativeTypeName("const GUID *")] Guid* Api)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, int>)(lpVtbl[3]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, int>)(lpVtbl[3]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
     }
 
     /// <inheritdoc cref="IEncoderAPI.IsAvailable" />
@@ -59,7 +59,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT IsAvailable([NativeTypeName("const GUID *")] Guid* Api)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, int>)(lpVtbl[4]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, int>)(lpVtbl[4]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api);
     }
 
     /// <inheritdoc cref="IEncoderAPI.GetParameterRange" />
@@ -67,7 +67,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetParameterRange([NativeTypeName("const GUID *")] Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, ValueMin, ValueMax, SteppingDelta);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, ValueMin, ValueMax, SteppingDelta);
     }
 
     /// <inheritdoc cref="IEncoderAPI.GetParameterValues" />
@@ -75,7 +75,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetParameterValues([NativeTypeName("const GUID *")] Guid* Api, VARIANT** Values, [NativeTypeName("ULONG *")] uint* ValuesCount)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT**, uint*, int>)(lpVtbl[6]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Values, ValuesCount);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, VARIANT**, uint*, int>)(lpVtbl[6]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Values, ValuesCount);
     }
 
     /// <inheritdoc cref="IEncoderAPI.GetDefaultValue" />
@@ -83,7 +83,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetDefaultValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[7]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[7]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
     /// <inheritdoc cref="IEncoderAPI.GetValue" />
@@ -91,7 +91,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT GetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[8]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[8]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
     /// <inheritdoc cref="IEncoderAPI.SetValue" />
@@ -99,7 +99,7 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
     {
-        return ((delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
+        return ((delegate* unmanaged[MemberFunction]<IVideoEncoder*, Guid*, VARIANT*, int>)(lpVtbl[9]))((IVideoEncoder*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
     public interface Interface : IEncoderAPI.Interface
@@ -110,33 +110,33 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsSupported;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsAvailable;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VARIANT**, uint*, int> GetParameterValues;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetDefaultValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VARIANT*, int> GetDefaultValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VARIANT*, int> SetValue;
     }
 }

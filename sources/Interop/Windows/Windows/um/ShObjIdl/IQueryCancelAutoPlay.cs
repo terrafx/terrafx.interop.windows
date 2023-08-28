@@ -25,7 +25,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQueryCancelAutoPlay*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQueryCancelAutoPlay*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQueryCancelAutoPlay*, uint>)(lpVtbl[1]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryCancelAutoPlay*, uint>)(lpVtbl[1]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQueryCancelAutoPlay*, uint>)(lpVtbl[2]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryCancelAutoPlay*, uint>)(lpVtbl[2]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQueryCancelAutoPlay.xml' path='doc/member[@name="IQueryCancelAutoPlay.AllowAutoPlay"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
     [VtblIndex(3)]
     public HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] char* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] char* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber)
     {
-        return ((delegate* unmanaged<IQueryCancelAutoPlay*, char*, uint, char*, uint, int>)(lpVtbl[3]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), pszPath, dwContentType, pszLabel, dwSerialNumber);
+        return ((delegate* unmanaged[MemberFunction]<IQueryCancelAutoPlay*, char*, uint, char*, uint, int>)(lpVtbl[3]))((IQueryCancelAutoPlay*)Unsafe.AsPointer(ref this), pszPath, dwContentType, pszLabel, dwSerialNumber);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, int> AllowAutoPlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, uint, int> AllowAutoPlay;
     }
 }

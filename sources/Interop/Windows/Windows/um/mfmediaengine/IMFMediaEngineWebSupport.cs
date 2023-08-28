@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[1]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, uint>)(lpVtbl[1]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[2]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, uint>)(lpVtbl[2]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.ShouldDelayTheLoadEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [VtblIndex(3)]
     public BOOL ShouldDelayTheLoadEvent()
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.ConnectWebAudio"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [VtblIndex(4)]
     public HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider)
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int>)(lpVtbl[4]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), dwSampleRate, ppSourceProvider);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int>)(lpVtbl[4]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), dwSampleRate, ppSourceProvider);
     }
 
     /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.DisconnectWebAudio"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
     [VtblIndex(5)]
     public HRESULT DisconnectWebAudio()
     {
-        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[5]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineWebSupport*, int>)(lpVtbl[5]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShouldDelayTheLoadEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShouldDelayTheLoadEvent;
 
         [NativeTypeName("HRESULT (DWORD, IAudioSourceProvider **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DisconnectWebAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DisconnectWebAudio;
     }
 }

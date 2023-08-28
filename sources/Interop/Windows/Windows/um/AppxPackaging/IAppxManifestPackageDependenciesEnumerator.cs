@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.GetCurrent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxManifestPackageDependency** dependency)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, IAppxManifestPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), dependency);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, IAppxManifestPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), dependency);
     }
 
     /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.GetHasCurrent"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.MoveNext"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)
     {
-        return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageDependency **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageDependency**, int> GetCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageDependency**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
     }
 }

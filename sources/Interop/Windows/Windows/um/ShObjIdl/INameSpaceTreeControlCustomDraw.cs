@@ -25,7 +25,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[1]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[1]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[2]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, uint>)(lpVtbl[2]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.PrePaint"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [VtblIndex(3)]
     public HRESULT PrePaint(HDC hdc, RECT* prc, LRESULT* plres)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, LRESULT*, int>)(lpVtbl[3]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, plres);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, HDC, RECT*, LRESULT*, int>)(lpVtbl[3]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, plres);
     }
 
     /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.PostPaint"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [VtblIndex(4)]
     public HRESULT PostPaint(HDC hdc, RECT* prc)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int>)(lpVtbl[4]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int>)(lpVtbl[4]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc);
     }
 
     /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.ItemPrePaint"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [VtblIndex(5)]
     public HRESULT ItemPrePaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem, COLORREF* pclrText, COLORREF* pclrTextBk, LRESULT* plres)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int>)(lpVtbl[5]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem, pclrText, pclrTextBk, plres);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int>)(lpVtbl[5]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem, pclrText, pclrTextBk, plres);
     }
 
     /// <include file='INameSpaceTreeControlCustomDraw.xml' path='doc/member[@name="INameSpaceTreeControlCustomDraw.ItemPostPaint"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
     [VtblIndex(6)]
     public HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int>)(lpVtbl[6]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int>)(lpVtbl[6]))((INameSpaceTreeControlCustomDraw*)Unsafe.AsPointer(ref this), hdc, prc, pnstccdItem);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC, RECT *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, LRESULT*, int> PrePaint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, LRESULT*, int> PrePaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, int> PostPaint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, int> PostPaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *, COLORREF *, COLORREF *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int> ItemPrePaint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int> ItemPrePaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, int> ItemPostPaint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, int> ItemPostPaint;
     }
 }

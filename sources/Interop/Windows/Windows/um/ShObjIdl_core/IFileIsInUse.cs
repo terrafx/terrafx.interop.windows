@@ -25,7 +25,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, Guid*, void**, int>)(lpVtbl[0]))((IFileIsInUse*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, Guid*, void**, int>)(lpVtbl[0]))((IFileIsInUse*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileIsInUse*, uint>)(lpVtbl[1]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, uint>)(lpVtbl[1]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileIsInUse*, uint>)(lpVtbl[2]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, uint>)(lpVtbl[2]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetAppName"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetAppName([NativeTypeName("LPWSTR *")] char** ppszName)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, char**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, char**, int>)(lpVtbl[3]))((IFileIsInUse*)Unsafe.AsPointer(ref this), ppszName);
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetUsage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetUsage(FILE_USAGE_TYPE* pfut)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, FILE_USAGE_TYPE*, int>)(lpVtbl[4]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pfut);
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, FILE_USAGE_TYPE*, int>)(lpVtbl[4]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pfut);
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetCapabilities"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapFlags)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, uint*, int>)(lpVtbl[5]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pdwCapFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, uint*, int>)(lpVtbl[5]))((IFileIsInUse*)Unsafe.AsPointer(ref this), pdwCapFlags);
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.GetSwitchToHWND"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetSwitchToHWND(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IFileIsInUse*, HWND*, int>)(lpVtbl[6]))((IFileIsInUse*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, HWND*, int>)(lpVtbl[6]))((IFileIsInUse*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.CloseFile"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT CloseFile()
     {
-        return ((delegate* unmanaged<IFileIsInUse*, int>)(lpVtbl[7]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileIsInUse*, int>)(lpVtbl[7]))((IFileIsInUse*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetAppName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetAppName;
 
         [NativeTypeName("HRESULT (FILE_USAGE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILE_USAGE_TYPE*, int> GetUsage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILE_USAGE_TYPE*, int> GetUsage;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetSwitchToHWND;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetSwitchToHWND;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CloseFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CloseFile;
     }
 }

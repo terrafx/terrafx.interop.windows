@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[1]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, uint>)(lpVtbl[1]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[2]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, uint>)(lpVtbl[2]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetLength"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [return: NativeTypeName("DWORD")]
     public uint GetLength()
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[3]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, uint>)(lpVtbl[3]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetStart"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart)
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[4]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pStart);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[4]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pStart);
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetEnd"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd)
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[5]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[5]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pEnd);
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.ContainsTime"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(6)]
     public BOOL ContainsTime(double time)
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, double, int>)(lpVtbl[6]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), time);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, double, int>)(lpVtbl[6]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), time);
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.AddRange"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(7)]
     public HRESULT AddRange(double startTime, double endTime)
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, double, double, int>)(lpVtbl[7]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), startTime, endTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, double, double, int>)(lpVtbl[7]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), startTime, endTime);
     }
 
     /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.Clear"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
     [VtblIndex(8)]
     public HRESULT Clear()
     {
-        return ((delegate* unmanaged<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -123,30 +123,30 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, double*, int> GetStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, double*, int> GetStart;
 
         [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, double*, int> GetEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, double*, int> GetEnd;
 
         [NativeTypeName("BOOL (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> ContainsTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> ContainsTime;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> AddRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> AddRange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Clear;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Clear;
     }
 }

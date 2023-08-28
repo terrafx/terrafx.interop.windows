@@ -25,7 +25,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IIPDVDec*, Guid*, void**, int>)(lpVtbl[0]))((IIPDVDec*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IIPDVDec*, Guid*, void**, int>)(lpVtbl[0]))((IIPDVDec*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IIPDVDec*, uint>)(lpVtbl[1]))((IIPDVDec*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IIPDVDec*, uint>)(lpVtbl[1]))((IIPDVDec*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IIPDVDec*, uint>)(lpVtbl[2]))((IIPDVDec*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IIPDVDec*, uint>)(lpVtbl[2]))((IIPDVDec*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec.get_IPDisplay"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_IPDisplay(int* displayPix)
     {
-        return ((delegate* unmanaged<IIPDVDec*, int*, int>)(lpVtbl[3]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
+        return ((delegate* unmanaged[MemberFunction]<IIPDVDec*, int*, int>)(lpVtbl[3]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
     }
 
     /// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec.put_IPDisplay"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT put_IPDisplay(int displayPix)
     {
-        return ((delegate* unmanaged<IIPDVDec*, int, int>)(lpVtbl[4]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
+        return ((delegate* unmanaged[MemberFunction]<IIPDVDec*, int, int>)(lpVtbl[4]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_IPDisplay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_IPDisplay;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_IPDisplay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_IPDisplay;
     }
 }

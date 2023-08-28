@@ -25,7 +25,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint>)(lpVtbl[1]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint>)(lpVtbl[1]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint>)(lpVtbl[2]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint>)(lpVtbl[2]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.EnableOpenDropDown"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(3)]
     public HRESULT EnableOpenDropDown([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[3]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[3]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddMenu"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(4)]
     public HRESULT AddMenu([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[4]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[4]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddPushButton"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(5)]
     public HRESULT AddPushButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[5]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[5]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddComboBox"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(6)]
     public HRESULT AddComboBox([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[6]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[6]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddRadioButtonList"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(7)]
     public HRESULT AddRadioButtonList([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[7]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[7]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddCheckButton"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(8)]
     public HRESULT AddCheckButton([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszLabel, BOOL bChecked)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, BOOL, int>)(lpVtbl[8]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel, bChecked);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, BOOL, int>)(lpVtbl[8]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel, bChecked);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddEditBox"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(9)]
     public HRESULT AddEditBox([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszText)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[9]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[9]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddSeparator"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(10)]
     public HRESULT AddSeparator([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[10]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[10]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddText"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(11)]
     public HRESULT AddText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszText)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[11]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[11]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetControlLabel"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(12)]
     public HRESULT SetControlLabel([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[12]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[12]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.GetControlState"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(13)]
     public HRESULT GetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF* pdwState)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF*, int>)(lpVtbl[13]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pdwState);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, CDCONTROLSTATEF*, int>)(lpVtbl[13]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pdwState);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetControlState"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(14)]
     public HRESULT SetControlState([NativeTypeName("DWORD")] uint dwIDCtl, CDCONTROLSTATEF dwState)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF, int>)(lpVtbl[14]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwState);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, CDCONTROLSTATEF, int>)(lpVtbl[14]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwState);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.GetEditBoxText"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(15)]
     public HRESULT GetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("WCHAR **")] char** ppszText)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char**, int>)(lpVtbl[15]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, ppszText);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char**, int>)(lpVtbl[15]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, ppszText);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetEditBoxText"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(16)]
     public HRESULT SetEditBoxText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszText)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[16]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[16]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszText);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.GetCheckButtonState"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(17)]
     public HRESULT GetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL* pbChecked)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, BOOL*, int>)(lpVtbl[17]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pbChecked);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, BOOL*, int>)(lpVtbl[17]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pbChecked);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetCheckButtonState"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(18)]
     public HRESULT SetCheckButtonState([NativeTypeName("DWORD")] uint dwIDCtl, BOOL bChecked)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[18]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, bChecked);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, BOOL, int>)(lpVtbl[18]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, bChecked);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.AddControlItem"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(19)]
     public HRESULT AddControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, char*, int>)(lpVtbl[19]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, char*, int>)(lpVtbl[19]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.RemoveControlItem"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(20)]
     public HRESULT RemoveControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, int>)(lpVtbl[20]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, int>)(lpVtbl[20]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.RemoveAllControlItems"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(21)]
     public HRESULT RemoveAllControlItems([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[21]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[21]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.GetControlItemState"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(22)]
     public HRESULT GetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF* pdwState)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF*, int>)(lpVtbl[22]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pdwState);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF*, int>)(lpVtbl[22]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pdwState);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetControlItemState"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(23)]
     public HRESULT SetControlItemState([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, CDCONTROLSTATEF dwState)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF, int>)(lpVtbl[23]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, dwState);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF, int>)(lpVtbl[23]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, dwState);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.GetSelectedControlItem"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(24)]
     public HRESULT GetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD *")] uint* pdwIDItem)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint*, int>)(lpVtbl[24]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pdwIDItem);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint*, int>)(lpVtbl[24]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pdwIDItem);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetSelectedControlItem"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(25)]
     public HRESULT SetSelectedControlItem([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, int>)(lpVtbl[25]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, int>)(lpVtbl[25]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.StartVisualGroup"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(26)]
     public HRESULT StartVisualGroup([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[26]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, char*, int>)(lpVtbl[26]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, pszLabel);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.EndVisualGroup"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(27)]
     public HRESULT EndVisualGroup()
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, int>)(lpVtbl[27]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, int>)(lpVtbl[27]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.MakeProminent"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(28)]
     public HRESULT MakeProminent([NativeTypeName("DWORD")] uint dwIDCtl)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, int>)(lpVtbl[28]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, int>)(lpVtbl[28]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl);
     }
 
     /// <include file='IFileDialogCustomize.xml' path='doc/member[@name="IFileDialogCustomize.SetControlItemText"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
     [VtblIndex(29)]
     public HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<IFileDialogCustomize*, uint, uint, char*, int>)(lpVtbl[29]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<IFileDialogCustomize*, uint, uint, char*, int>)(lpVtbl[29]))((IFileDialogCustomize*)Unsafe.AsPointer(ref this), dwIDCtl, dwIDItem, pszLabel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -350,93 +350,93 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> EnableOpenDropDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> EnableOpenDropDown;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> AddMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> AddMenu;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> AddPushButton;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> AddPushButton;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AddComboBox;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AddComboBox;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AddRadioButtonList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AddRadioButtonList;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, BOOL, int> AddCheckButton;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, BOOL, int> AddCheckButton;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> AddEditBox;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> AddEditBox;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AddSeparator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AddSeparator;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> AddText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> AddText;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> SetControlLabel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> SetControlLabel;
 
         [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CDCONTROLSTATEF*, int> GetControlState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CDCONTROLSTATEF*, int> GetControlState;
 
         [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CDCONTROLSTATEF, int> SetControlState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CDCONTROLSTATEF, int> SetControlState;
 
         [NativeTypeName("HRESULT (DWORD, WCHAR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> GetEditBoxText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> GetEditBoxText;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> SetEditBoxText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> SetEditBoxText;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, int> GetCheckButtonState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, int> GetCheckButtonState;
 
         [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL, int> SetCheckButtonState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL, int> SetCheckButtonState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, char*, int> AddControlItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, char*, int> AddControlItem;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> RemoveControlItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> RemoveControlItem;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveAllControlItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveAllControlItems;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, CDCONTROLSTATEF*, int> GetControlItemState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, CDCONTROLSTATEF*, int> GetControlItemState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, CDCONTROLSTATEF, int> SetControlItemState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, CDCONTROLSTATEF, int> SetControlItemState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetSelectedControlItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetSelectedControlItem;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetSelectedControlItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetSelectedControlItem;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char*, int> StartVisualGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, int> StartVisualGroup;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndVisualGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndVisualGroup;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> MakeProminent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> MakeProminent;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, char*, int> SetControlItemText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, char*, int> SetControlItemText;
     }
 }

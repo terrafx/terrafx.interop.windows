@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, uint>)(lpVtbl[1]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, uint>)(lpVtbl[1]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, uint>)(lpVtbl[2]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, uint>)(lpVtbl[2]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetBlocks"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetBlocks(IAppxBlockMapBlocksEnumerator** blocks)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, IAppxBlockMapBlocksEnumerator**, int>)(lpVtbl[3]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), blocks);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, IAppxBlockMapBlocksEnumerator**, int>)(lpVtbl[3]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), blocks);
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetLocalFileHeaderSize"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetLocalFileHeaderSize([NativeTypeName("UINT32 *")] uint* lfhSize)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), lfhSize);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, uint*, int>)(lpVtbl[4]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), lfhSize);
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetName"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, char**, int>)(lpVtbl[5]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, char**, int>)(lpVtbl[5]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.GetUncompressedSize"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetUncompressedSize([NativeTypeName("UINT64 *")] ulong* size)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, ulong*, int>)(lpVtbl[6]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), size);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, ulong*, int>)(lpVtbl[6]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), size);
     }
 
     /// <include file='IAppxBlockMapFile.xml' path='doc/member[@name="IAppxBlockMapFile.ValidateFileHash"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
     [VtblIndex(7)]
     public HRESULT ValidateFileHash(IStream* fileStream, BOOL* isValid)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFile*, IStream*, BOOL*, int>)(lpVtbl[7]))((IAppxBlockMapFile*)Unsafe.AsPointer(ref this), fileStream, isValid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBlockMapBlocksEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxBlockMapBlocksEnumerator**, int> GetBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxBlockMapBlocksEnumerator**, int> GetBlocks;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLocalFileHeaderSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLocalFileHeaderSize;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetUncompressedSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetUncompressedSize;
 
         [NativeTypeName("HRESULT (IStream *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, BOOL*, int> ValidateFileHash;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, BOOL*, int> ValidateFileHash;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtTransport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtTransport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[1]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, uint>)(lpVtbl[1]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[2]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, uint>)(lpVtbl[2]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetCapability"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_MediaState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(4)]
     public HRESULT put_MediaState([NativeTypeName("long")] int State)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[4]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int>)(lpVtbl[4]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_MediaState"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(5)]
     public HRESULT get_MediaState([NativeTypeName("long *")] int* pState)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[5]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int>)(lpVtbl[5]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_LocalControl"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(6)]
     public HRESULT put_LocalControl([NativeTypeName("long")] int State)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[6]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int>)(lpVtbl[6]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_LocalControl"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(7)]
     public HRESULT get_LocalControl([NativeTypeName("long *")] int* pState)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[7]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int>)(lpVtbl[7]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetStatus"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[8]))((IAMExtTransport*)Unsafe.AsPointer(ref this), StatusItem, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, int>)(lpVtbl[8]))((IAMExtTransport*)Unsafe.AsPointer(ref this), StatusItem, pValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetTransportBasicParameters"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(9)]
     public HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] char** ppszData)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, char**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, char**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetTransportBasicParameters"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(10)]
     public HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] char* pszData)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, char*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, char*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetTransportVideoParameters"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(11)]
     public HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[11]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, int>)(lpVtbl[11]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetTransportVideoParameters"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(12)]
     public HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[12]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, int>)(lpVtbl[12]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetTransportAudioParameters"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(13)]
     public HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[13]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, int>)(lpVtbl[13]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetTransportAudioParameters"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(14)]
     public HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[14]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, int>)(lpVtbl[14]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_Mode"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(15)]
     public HRESULT put_Mode([NativeTypeName("long")] int Mode)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[15]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Mode);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int>)(lpVtbl[15]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Mode);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_Mode"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(16)]
     public HRESULT get_Mode([NativeTypeName("long *")] int* pMode)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[16]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pMode);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int>)(lpVtbl[16]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pMode);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_Rate"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(17)]
     public HRESULT put_Rate(double dblRate)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, double, int>)(lpVtbl[17]))((IAMExtTransport*)Unsafe.AsPointer(ref this), dblRate);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, double, int>)(lpVtbl[17]))((IAMExtTransport*)Unsafe.AsPointer(ref this), dblRate);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_Rate"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(18)]
     public HRESULT get_Rate(double* pdblRate)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, double*, int>)(lpVtbl[18]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pdblRate);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, double*, int>)(lpVtbl[18]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pdblRate);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetChase"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(19)]
     public HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int*, HEVENT*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetChase"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(20)]
     public HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, HEVENT, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetBump"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(21)]
     public HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int*, int>)(lpVtbl[21]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pSpeed, pDuration);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int*, int>)(lpVtbl[21]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pSpeed, pDuration);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetBump"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(22)]
     public HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[22]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Speed, Duration);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, int>)(lpVtbl[22]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Speed, Duration);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_AntiClogControl"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(23)]
     public HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[23]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int>)(lpVtbl[23]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_AntiClogControl"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(24)]
     public HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[24]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int>)(lpVtbl[24]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetEditPropertySet"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(25)]
     public HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[25]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, pState);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int*, int>)(lpVtbl[25]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, pState);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetEditPropertySet"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(26)]
     public HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int, int>)(lpVtbl[26]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEditID, State);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int, int>)(lpVtbl[26]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEditID, State);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.GetEditProperty"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(27)]
     public HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, int*, int>)(lpVtbl[27]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, int*, int>)(lpVtbl[27]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, pValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.SetEditProperty"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(28)]
     public HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int, int, int>)(lpVtbl[28]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int, int, int>)(lpVtbl[28]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, Value);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.get_EditStart"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(29)]
     public HRESULT get_EditStart([NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[29]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int*, int>)(lpVtbl[29]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pValue);
     }
 
     /// <include file='IAMExtTransport.xml' path='doc/member[@name="IAMExtTransport.put_EditStart"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
     [VtblIndex(30)]
     public HRESULT put_EditStart([NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -361,96 +361,96 @@ public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, double*, int> GetCapability;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, double*, int> GetCapability;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_MediaState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_MediaState;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_MediaState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_MediaState;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_LocalControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_LocalControl;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LocalControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LocalControl;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetStatus;
 
         [NativeTypeName("HRESULT (long, long *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, char**, int> GetTransportBasicParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, char**, int> GetTransportBasicParameters;
 
         [NativeTypeName("HRESULT (long, long, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, char*, int> SetTransportBasicParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, char*, int> SetTransportBasicParameters;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetTransportVideoParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetTransportVideoParameters;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetTransportVideoParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetTransportVideoParameters;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetTransportAudioParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetTransportAudioParameters;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetTransportAudioParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetTransportAudioParameters;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_Mode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Mode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Mode;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> put_Rate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_Rate;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Rate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Rate;
 
         [NativeTypeName("HRESULT (long *, long *, HEVENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, HEVENT*, int> GetChase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, HEVENT*, int> GetChase;
 
         [NativeTypeName("HRESULT (long, long, HEVENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, HEVENT, int> SetChase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, HEVENT, int> SetChase;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetBump;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetBump;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetBump;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetBump;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_AntiClogControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_AntiClogControl;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_AntiClogControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_AntiClogControl;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetEditPropertySet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetEditPropertySet;
 
         [NativeTypeName("HRESULT (long *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int, int> SetEditPropertySet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int, int> SetEditPropertySet;
 
         [NativeTypeName("HRESULT (long, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int*, int> GetEditProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int*, int> GetEditProperty;
 
         [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int> SetEditProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int> SetEditProperty;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_EditStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_EditStart;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_EditStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_EditStart;
     }
 }

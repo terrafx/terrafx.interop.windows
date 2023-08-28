@@ -25,7 +25,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint>)(lpVtbl[1]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, uint>)(lpVtbl[1]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint>)(lpVtbl[2]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, uint>)(lpVtbl[2]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.SetOutputFile"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [VtblIndex(3)]
     public HRESULT SetOutputFile([NativeTypeName("LPCWSTR")] char* pwszFileName)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, char*, int>)(lpVtbl[3]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pwszFileName);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, char*, int>)(lpVtbl[3]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pwszFileName);
     }
 
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.SetOutputByteStream"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [VtblIndex(4)]
     public HRESULT SetOutputByteStream(IMFActivate* pByteStreamActivate)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFActivate*, int>)(lpVtbl[4]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pByteStreamActivate);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, IMFActivate*, int>)(lpVtbl[4]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pByteStreamActivate);
     }
 
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.SetProfile"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [VtblIndex(5)]
     public HRESULT SetProfile(IMFTranscodeProfile* pProfile)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFTranscodeProfile*, int>)(lpVtbl[5]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pProfile);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, IMFTranscodeProfile*, int>)(lpVtbl[5]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pProfile);
     }
 
     /// <include file='IMFTranscodeSinkInfoProvider.xml' path='doc/member[@name="IMFTranscodeSinkInfoProvider.GetSinkInfo"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
     [VtblIndex(6)]
     public HRESULT GetSinkInfo(MF_TRANSCODE_SINK_INFO* pSinkInfo)
     {
-        return ((delegate* unmanaged<IMFTranscodeSinkInfoProvider*, MF_TRANSCODE_SINK_INFO*, int>)(lpVtbl[6]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pSinkInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeSinkInfoProvider*, MF_TRANSCODE_SINK_INFO*, int>)(lpVtbl[6]))((IMFTranscodeSinkInfoProvider*)Unsafe.AsPointer(ref this), pSinkInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetOutputFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetOutputFile;
 
         [NativeTypeName("HRESULT (IMFActivate *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFActivate*, int> SetOutputByteStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFActivate*, int> SetOutputByteStream;
 
         [NativeTypeName("HRESULT (IMFTranscodeProfile *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTranscodeProfile*, int> SetProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTranscodeProfile*, int> SetProfile;
 
         [NativeTypeName("HRESULT (MF_TRANSCODE_SINK_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_TRANSCODE_SINK_INFO*, int> GetSinkInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_TRANSCODE_SINK_INFO*, int> GetSinkInfo;
     }
 }

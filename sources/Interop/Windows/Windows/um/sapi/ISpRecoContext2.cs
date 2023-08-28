@@ -25,7 +25,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, uint>)(lpVtbl[1]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, uint>)(lpVtbl[1]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, uint>)(lpVtbl[2]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, uint>)(lpVtbl[2]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.SetGrammarOptions"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetGrammarOptions([NativeTypeName("DWORD")] uint eGrammarOptions)
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, uint, int>)(lpVtbl[3]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), eGrammarOptions);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, uint, int>)(lpVtbl[3]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), eGrammarOptions);
     }
 
     /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.GetGrammarOptions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetGrammarOptions([NativeTypeName("DWORD *")] uint* peGrammarOptions)
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, uint*, int>)(lpVtbl[4]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), peGrammarOptions);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, uint*, int>)(lpVtbl[4]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), peGrammarOptions);
     }
 
     /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.SetAdaptationData2"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] char* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] char* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance)
     {
-        return ((delegate* unmanaged<ISpRecoContext2*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int>)(lpVtbl[5]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
+        return ((delegate* unmanaged[MemberFunction]<ISpRecoContext2*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int>)(lpVtbl[5]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), pAdaptationData, cch, pTopicName, eAdaptationSettings, eRelevance);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetGrammarOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetGrammarOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetGrammarOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetGrammarOptions;
 
         [NativeTypeName("HRESULT (LPCWSTR, const ULONG, LPCWSTR, DWORD, SPADAPTATIONRELEVANCE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int> SetAdaptationData2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char*, uint, SPADAPTATIONRELEVANCE, int> SetAdaptationData2;
     }
 }

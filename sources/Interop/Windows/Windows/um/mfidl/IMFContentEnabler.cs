@@ -25,7 +25,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, uint>)(lpVtbl[1]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, uint>)(lpVtbl[1]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, uint>)(lpVtbl[2]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, uint>)(lpVtbl[2]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.GetEnableType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetEnableType(Guid* pType)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, Guid*, int>)(lpVtbl[3]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, Guid*, int>)(lpVtbl[3]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.GetEnableURL"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetEnableURL([NativeTypeName("LPWSTR *")] char** ppwszURL, [NativeTypeName("DWORD *")] uint* pcchURL, MF_URL_TRUST_STATUS* pTrustStatus)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, char**, uint*, MF_URL_TRUST_STATUS*, int>)(lpVtbl[4]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppwszURL, pcchURL, pTrustStatus);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, char**, uint*, MF_URL_TRUST_STATUS*, int>)(lpVtbl[4]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppwszURL, pcchURL, pTrustStatus);
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.GetEnableData"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetEnableData(byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, byte**, uint*, int>)(lpVtbl[5]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppbData, pcbData);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, byte**, uint*, int>)(lpVtbl[5]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), ppbData, pcbData);
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.IsAutomaticSupported"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(6)]
     public HRESULT IsAutomaticSupported(BOOL* pfAutomatic)
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, BOOL*, int>)(lpVtbl[6]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pfAutomatic);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, BOOL*, int>)(lpVtbl[6]))((IMFContentEnabler*)Unsafe.AsPointer(ref this), pfAutomatic);
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.AutomaticEnable"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(7)]
     public HRESULT AutomaticEnable()
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, int>)(lpVtbl[7]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, int>)(lpVtbl[7]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.MonitorEnable"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(8)]
     public HRESULT MonitorEnable()
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, int>)(lpVtbl[8]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, int>)(lpVtbl[8]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentEnabler.xml' path='doc/member[@name="IMFContentEnabler.Cancel"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
     [VtblIndex(9)]
     public HRESULT Cancel()
     {
-        return ((delegate* unmanaged<IMFContentEnabler*, int>)(lpVtbl[9]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentEnabler*, int>)(lpVtbl[9]))((IMFContentEnabler*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetEnableType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetEnableType;
 
         [NativeTypeName("HRESULT (LPWSTR *, DWORD *, MF_URL_TRUST_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetEnableData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetEnableData;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsAutomaticSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsAutomaticSupported;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> AutomaticEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> AutomaticEnable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> MonitorEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> MonitorEnable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Cancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Cancel;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, uint>)(lpVtbl[1]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, uint>)(lpVtbl[1]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, uint>)(lpVtbl[2]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, uint>)(lpVtbl[2]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, uint*, int>)(lpVtbl[3]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, uint*, int>)(lpVtbl[3]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_type"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(7)]
     public HRESULT get_type([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, char**, int>)(lpVtbl[7]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, char**, int>)(lpVtbl[7]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_href"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(8)]
     public HRESULT get_href(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, VARIANT*, int>)(lpVtbl[8]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, VARIANT*, int>)(lpVtbl[8]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_title"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(9)]
     public HRESULT get_title([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, char**, int>)(lpVtbl[9]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, char**, int>)(lpVtbl[9]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_ownerNode"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(10)]
     public HRESULT get_ownerNode(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, IHTMLElement**, int>)(lpVtbl[10]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, IHTMLElement**, int>)(lpVtbl[10]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_ownerRule"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(11)]
     public HRESULT get_ownerRule(IHTMLCSSRule** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, IHTMLCSSRule**, int>)(lpVtbl[11]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, IHTMLCSSRule**, int>)(lpVtbl[11]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_cssRules"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(12)]
     public HRESULT get_cssRules(IHTMLStyleSheetRulesCollection** p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, IHTMLStyleSheetRulesCollection**, int>)(lpVtbl[12]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, IHTMLStyleSheetRulesCollection**, int>)(lpVtbl[12]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.get_media"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(13)]
     public HRESULT get_media(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, VARIANT*, int>)(lpVtbl[13]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, VARIANT*, int>)(lpVtbl[13]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.insertRule"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(14)]
     public HRESULT insertRule([NativeTypeName("BSTR")] char* bstrRule, [NativeTypeName("long")] int lIndex, [NativeTypeName("long *")] int* plNewIndex)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, char*, int, int*, int>)(lpVtbl[14]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), bstrRule, lIndex, plNewIndex);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, char*, int, int*, int>)(lpVtbl[14]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), bstrRule, lIndex, plNewIndex);
     }
 
     /// <include file='IHTMLStyleSheet4.xml' path='doc/member[@name="IHTMLStyleSheet4.deleteRule"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
     [VtblIndex(15)]
     public HRESULT deleteRule([NativeTypeName("long")] int lIndex = -1)
     {
-        return ((delegate* unmanaged<IHTMLStyleSheet4*, int, int>)(lpVtbl[15]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), lIndex);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyleSheet4*, int, int>)(lpVtbl[15]))((IHTMLStyleSheet4*)Unsafe.AsPointer(ref this), lIndex);
     }
 
     public interface Interface : IDispatch.Interface
@@ -184,51 +184,51 @@ public unsafe partial struct IHTMLStyleSheet4 : IHTMLStyleSheet4.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_type;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_href;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_href;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_title;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_title;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_ownerNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_ownerNode;
 
         [NativeTypeName("HRESULT (IHTMLCSSRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLCSSRule**, int> get_ownerRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLCSSRule**, int> get_ownerRule;
 
         [NativeTypeName("HRESULT (IHTMLStyleSheetRulesCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLStyleSheetRulesCollection**, int> get_cssRules;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLStyleSheetRulesCollection**, int> get_cssRules;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_media;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_media;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int*, int> insertRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> insertRule;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> deleteRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> deleteRule;
     }
 }

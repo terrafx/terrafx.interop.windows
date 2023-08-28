@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, uint>)(lpVtbl[1]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, uint>)(lpVtbl[1]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, uint>)(lpVtbl[2]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, uint>)(lpVtbl[2]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderIdentifier"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [VtblIndex(3)]
     public void* GetShaderIdentifier([NativeTypeName("LPCWSTR")] char* pExportName)
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, char*, void*>)(lpVtbl[3]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, char*, void*>)(lpVtbl[3]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetShaderStackSize"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [return: NativeTypeName("UINT64")]
     public ulong GetShaderStackSize([NativeTypeName("LPCWSTR")] char* pExportName)
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, char*, ulong>)(lpVtbl[4]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, char*, ulong>)(lpVtbl[4]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), pExportName);
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.GetPipelineStackSize"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [return: NativeTypeName("UINT64")]
     public ulong GetPipelineStackSize()
     {
-        return ((delegate* unmanaged<ID3D12StateObjectProperties*, ulong>)(lpVtbl[5]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, ulong>)(lpVtbl[5]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12StateObjectProperties.xml' path='doc/member[@name="ID3D12StateObjectProperties.SetPipelineStackSize"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
     [VtblIndex(6)]
     public void SetPipelineStackSize([NativeTypeName("UINT64")] ulong PipelineStackSizeInBytes)
     {
-        ((delegate* unmanaged<ID3D12StateObjectProperties*, ulong, void>)(lpVtbl[6]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), PipelineStackSizeInBytes);
+        ((delegate* unmanaged[MemberFunction]<ID3D12StateObjectProperties*, ulong, void>)(lpVtbl[6]))((ID3D12StateObjectProperties*)Unsafe.AsPointer(ref this), PipelineStackSizeInBytes);
     }
 
     public interface Interface : IUnknown.Interface
@@ -102,24 +102,24 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void *(LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, void*> GetShaderIdentifier;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, void*> GetShaderIdentifier;
 
         [NativeTypeName("UINT64 (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ulong> GetShaderStackSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ulong> GetShaderStackSize;
 
         [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong> GetPipelineStackSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong> GetPipelineStackSize;
 
         [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, void> SetPipelineStackSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, void> SetPipelineStackSize;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, uint>)(lpVtbl[1]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, uint>)(lpVtbl[1]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, uint>)(lpVtbl[2]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, uint>)(lpVtbl[2]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, uint*, int>)(lpVtbl[3]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, uint*, int>)(lpVtbl[3]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IFileSystemImageResult.get_ImageStream" />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(7)]
     public HRESULT get_ImageStream(IStream** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, IStream**, int>)(lpVtbl[7]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, IStream**, int>)(lpVtbl[7]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImageResult.get_ProgressItems" />
@@ -91,7 +91,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(8)]
     public HRESULT get_ProgressItems(IProgressItems** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, IProgressItems**, int>)(lpVtbl[8]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, IProgressItems**, int>)(lpVtbl[8]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImageResult.get_TotalBlocks" />
@@ -99,7 +99,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(9)]
     public HRESULT get_TotalBlocks([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, int*, int>)(lpVtbl[9]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, int*, int>)(lpVtbl[9]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImageResult.get_BlockSize" />
@@ -107,7 +107,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(10)]
     public HRESULT get_BlockSize([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, int*, int>)(lpVtbl[10]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, int*, int>)(lpVtbl[10]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImageResult.get_DiscId" />
@@ -115,7 +115,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(11)]
     public HRESULT get_DiscId([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, char**, int>)(lpVtbl[11]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, char**, int>)(lpVtbl[11]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImageResult2.xml' path='doc/member[@name="IFileSystemImageResult2.get_ModifiedBlocks"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
     [VtblIndex(12)]
     public HRESULT get_ModifiedBlocks(IBlockRangeList** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImageResult2*, IBlockRangeList**, int>)(lpVtbl[12]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImageResult2*, IBlockRangeList**, int>)(lpVtbl[12]))((IFileSystemImageResult2*)Unsafe.AsPointer(ref this), pVal);
     }
 
     public interface Interface : IFileSystemImageResult.Interface
@@ -136,42 +136,42 @@ public unsafe partial struct IFileSystemImageResult2 : IFileSystemImageResult2.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> get_ImageStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> get_ImageStream;
 
         [NativeTypeName("HRESULT (IProgressItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IProgressItems**, int> get_ProgressItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IProgressItems**, int> get_ProgressItems;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TotalBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TotalBlocks;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_BlockSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_BlockSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_DiscId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_DiscId;
 
         [NativeTypeName("HRESULT (IBlockRangeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBlockRangeList**, int> get_ModifiedBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBlockRangeList**, int> get_ModifiedBlocks;
     }
 }

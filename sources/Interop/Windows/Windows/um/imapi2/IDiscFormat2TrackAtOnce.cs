@@ -25,7 +25,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[1]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[1]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[2]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[2]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint*, int>)(lpVtbl[3]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, uint*, int>)(lpVtbl[3]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IDiscFormat2.IsRecorderSupported" />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(7)]
     public HRESULT IsRecorderSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[7]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[7]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
     /// <inheritdoc cref="IDiscFormat2.IsCurrentMediaSupported" />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(8)]
     public HRESULT IsCurrentMediaSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[8]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[8]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
     /// <inheritdoc cref="IDiscFormat2.get_MediaPhysicallyBlank" />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(9)]
     public HRESULT get_MediaPhysicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[9]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[9]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IDiscFormat2.get_MediaHeuristicallyBlank" />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(10)]
     public HRESULT get_MediaHeuristicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[10]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[10]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IDiscFormat2.get_SupportedMediaTypes" />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(11)]
     public HRESULT get_SupportedMediaTypes(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.PrepareMedia"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(12)]
     public HRESULT PrepareMedia()
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[12]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[12]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.AddAudioTrack"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(13)]
     public HRESULT AddAudioTrack(IStream* data)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IStream*, int>)(lpVtbl[13]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), data);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IStream*, int>)(lpVtbl[13]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), data);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.CancelAddTrack"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(14)]
     public HRESULT CancelAddTrack()
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[14]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[14]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.ReleaseMedia"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(15)]
     public HRESULT ReleaseMedia()
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[15]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[15]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.SetWriteSpeed"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(16)]
     public HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, short, int>)(lpVtbl[16]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), RequestedSectorsPerSecond, RotationTypeIsPureCAV);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int, short, int>)(lpVtbl[16]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), RequestedSectorsPerSecond, RotationTypeIsPureCAV);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_Recorder"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(17)]
     public HRESULT put_Recorder(IDiscRecorder2* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, int>)(lpVtbl[17]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, int>)(lpVtbl[17]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_Recorder"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(18)]
     public HRESULT get_Recorder(IDiscRecorder2** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2**, int>)(lpVtbl[18]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IDiscRecorder2**, int>)(lpVtbl[18]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_BufferUnderrunFreeDisabled"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(19)]
     public HRESULT put_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL")] short value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[19]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[19]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_BufferUnderrunFreeDisabled"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(20)]
     public HRESULT get_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[20]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[20]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_NumberOfExistingTracks"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(21)]
     public HRESULT get_NumberOfExistingTracks([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[21]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[21]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_TotalSectorsOnMedia"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(22)]
     public HRESULT get_TotalSectorsOnMedia([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[22]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[22]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_FreeSectorsOnMedia"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(23)]
     public HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[23]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[23]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_UsedSectorsOnMedia"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(24)]
     public HRESULT get_UsedSectorsOnMedia([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[24]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[24]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_DoNotFinalizeMedia"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(25)]
     public HRESULT put_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL")] short value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[25]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[25]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_DoNotFinalizeMedia"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(26)]
     public HRESULT get_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[26]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[26]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_ExpectedTableOfContents"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(27)]
     public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[27]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[27]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentPhysicalMediaType"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(28)]
     public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IMAPI_MEDIA_PHYSICAL_TYPE*, int>)(lpVtbl[28]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, IMAPI_MEDIA_PHYSICAL_TYPE*, int>)(lpVtbl[28]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_ClientName"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(29)]
     public HRESULT put_ClientName([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, char*, int>)(lpVtbl[29]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, char*, int>)(lpVtbl[29]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_ClientName"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(30)]
     public HRESULT get_ClientName([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, char**, int>)(lpVtbl[30]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, char**, int>)(lpVtbl[30]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_RequestedWriteSpeed"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(31)]
     public HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[31]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[31]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_RequestedRotationTypeIsPureCAV"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(32)]
     public HRESULT get_RequestedRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[32]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[32]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentWriteSpeed"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(33)]
     public HRESULT get_CurrentWriteSpeed([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[33]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[33]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentRotationTypeIsPureCAV"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(34)]
     public HRESULT get_CurrentRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[34]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[34]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_SupportedWriteSpeeds"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(35)]
     public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[35]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeeds);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[35]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeeds);
     }
 
     /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_SupportedWriteSpeedDescriptors"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
     [VtblIndex(36)]
     public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors)
     {
-        return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[36]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
+        return ((delegate* unmanaged[MemberFunction]<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[36]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeedDescriptors);
     }
 
     public interface Interface : IDiscFormat2.Interface
@@ -400,114 +400,114 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, short*, int> IsRecorderSupported;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_MediaPhysicallyBlank;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_MediaPhysicallyBlank;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_MediaHeuristicallyBlank;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_MediaHeuristicallyBlank;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedMediaTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedMediaTypes;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PrepareMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PrepareMedia;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> AddAudioTrack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> AddAudioTrack;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CancelAddTrack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CancelAddTrack;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReleaseMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReleaseMedia;
 
         [NativeTypeName("HRESULT (LONG, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, short, int> SetWriteSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, short, int> SetWriteSpeed;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, int> put_Recorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, int> put_Recorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2**, int> get_Recorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2**, int> get_Recorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_BufferUnderrunFreeDisabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_BufferUnderrunFreeDisabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_BufferUnderrunFreeDisabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_BufferUnderrunFreeDisabled;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_NumberOfExistingTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_NumberOfExistingTracks;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_TotalSectorsOnMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_TotalSectorsOnMedia;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FreeSectorsOnMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FreeSectorsOnMedia;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_UsedSectorsOnMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_UsedSectorsOnMedia;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_DoNotFinalizeMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_DoNotFinalizeMedia;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_DoNotFinalizeMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_DoNotFinalizeMedia;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_ExpectedTableOfContents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_ExpectedTableOfContents;
 
         [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_ClientName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_ClientName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ClientName;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_RequestedWriteSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_RequestedWriteSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_RequestedRotationTypeIsPureCAV;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_RequestedRotationTypeIsPureCAV;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_CurrentWriteSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_CurrentWriteSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_CurrentRotationTypeIsPureCAV;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_CurrentRotationTypeIsPureCAV;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
     }
 }

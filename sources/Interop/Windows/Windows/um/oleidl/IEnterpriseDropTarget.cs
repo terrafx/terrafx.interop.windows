@@ -27,7 +27,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnterpriseDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, uint>)(lpVtbl[1]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnterpriseDropTarget*, uint>)(lpVtbl[1]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, uint>)(lpVtbl[2]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnterpriseDropTarget*, uint>)(lpVtbl[2]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.SetDropSourceEnterpriseId"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     [VtblIndex(3)]
     public HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] char* identity)
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, char*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
+        return ((delegate* unmanaged[MemberFunction]<IEnterpriseDropTarget*, char*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
     }
 
     /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.IsEvaluatingEdpPolicy"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
     [VtblIndex(4)]
     public HRESULT IsEvaluatingEdpPolicy(BOOL* value)
     {
-        return ((delegate* unmanaged<IEnterpriseDropTarget*, BOOL*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IEnterpriseDropTarget*, BOOL*, int>)(lpVtbl[4]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDropSourceEnterpriseId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDropSourceEnterpriseId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsEvaluatingEdpPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsEvaluatingEdpPolicy;
     }
 }

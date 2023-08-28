@@ -25,7 +25,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRemoteComputer*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteComputer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteComputer*, Guid*, void**, int>)(lpVtbl[0]))((IRemoteComputer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRemoteComputer*, uint>)(lpVtbl[1]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRemoteComputer*, uint>)(lpVtbl[1]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRemoteComputer*, uint>)(lpVtbl[2]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRemoteComputer*, uint>)(lpVtbl[2]))((IRemoteComputer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRemoteComputer.xml' path='doc/member[@name="IRemoteComputer.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCWSTR")] char* pszMachine, BOOL bEnumerating)
     {
-        return ((delegate* unmanaged<IRemoteComputer*, char*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteComputer*, char*, BOOL, int>)(lpVtbl[3]))((IRemoteComputer*)Unsafe.AsPointer(ref this), pszMachine, bEnumerating);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IRemoteComputer : IRemoteComputer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL, int> Initialize;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExpDispSupport*, Guid*, void**, int>)(lpVtbl[0]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, Guid*, void**, int>)(lpVtbl[0]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[1]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, uint>)(lpVtbl[1]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[2]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, uint>)(lpVtbl[2]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.FindConnectionPoint"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [VtblIndex(3)]
     public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp)
     {
-        return ((delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int>)(lpVtbl[3]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppccp);
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, Guid*, IConnectionPoint**, int>)(lpVtbl[3]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppccp);
     }
 
     /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.OnTranslateAccelerator"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [VtblIndex(4)]
     public HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
     {
-        return ((delegate* unmanaged<IExpDispSupport*, MSG*, uint, int>)(lpVtbl[4]))((IExpDispSupport*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, MSG*, uint, int>)(lpVtbl[4]))((IExpDispSupport*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
     }
 
     /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.OnInvoke"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
     [VtblIndex(5)]
     public HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[5]))((IExpDispSupport*)Unsafe.AsPointer(ref this), dispidMember, iid, lcid, wFlags, pdispparams, pVarResult, pexcepinfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[5]))((IExpDispSupport*)Unsafe.AsPointer(ref this), dispidMember, iid, lcid, wFlags, pdispparams, pVarResult, pexcepinfo, puArgErr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
 
         [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, uint, int> OnTranslateAccelerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, uint, int> OnTranslateAccelerator;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
     }
 }

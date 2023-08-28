@@ -25,7 +25,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, Guid*, void**, int>)(lpVtbl[0]))((IMFClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFClock*, uint>)(lpVtbl[1]))((IMFClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint>)(lpVtbl[1]))((IMFClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFClock*, uint>)(lpVtbl[2]))((IMFClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint>)(lpVtbl[2]))((IMFClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFClock.xml' path='doc/member[@name="IMFClock.GetClockCharacteristics"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetClockCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
     {
-        return ((delegate* unmanaged<IMFClock*, uint*, int>)(lpVtbl[3]))((IMFClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint*, int>)(lpVtbl[3]))((IMFClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
     /// <include file='IMFClock.xml' path='doc/member[@name="IMFClock.GetCorrelatedTime"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetCorrelatedTime([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LONGLONG *")] long* pllClockTime, [NativeTypeName("MFTIME *")] long* phnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint, long*, long*, int>)(lpVtbl[4]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, pllClockTime, phnsSystemTime);
     }
 
     /// <include file='IMFClock.xml' path='doc/member[@name="IMFClock.GetContinuityKey"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetContinuityKey([NativeTypeName("DWORD *")] uint* pdwContinuityKey)
     {
-        return ((delegate* unmanaged<IMFClock*, uint*, int>)(lpVtbl[5]))((IMFClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint*, int>)(lpVtbl[5]))((IMFClock*)Unsafe.AsPointer(ref this), pdwContinuityKey);
     }
 
     /// <include file='IMFClock.xml' path='doc/member[@name="IMFClock.GetState"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwReserved, MFCLOCK_STATE* peClockState)
     {
-        return ((delegate* unmanaged<IMFClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, uint, MFCLOCK_STATE*, int>)(lpVtbl[6]))((IMFClock*)Unsafe.AsPointer(ref this), dwReserved, peClockState);
     }
 
     /// <include file='IMFClock.xml' path='doc/member[@name="IMFClock.GetProperties"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetProperties(MFCLOCK_PROPERTIES* pClockProperties)
     {
-        return ((delegate* unmanaged<IMFClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFClock*)Unsafe.AsPointer(ref this), pClockProperties);
+        return ((delegate* unmanaged[MemberFunction]<IMFClock*, MFCLOCK_PROPERTIES*, int>)(lpVtbl[7]))((IMFClock*)Unsafe.AsPointer(ref this), pClockProperties);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFClock : IMFClock.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetClockCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetClockCharacteristics;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG *, MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, long*, long*, int> GetCorrelatedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, long*, long*, int> GetCorrelatedTime;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetContinuityKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetContinuityKey;
 
         [NativeTypeName("HRESULT (DWORD, MFCLOCK_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, MFCLOCK_STATE*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, MFCLOCK_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (MFCLOCK_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFCLOCK_PROPERTIES*, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFCLOCK_PROPERTIES*, int> GetProperties;
     }
 }

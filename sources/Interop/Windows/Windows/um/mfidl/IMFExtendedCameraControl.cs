@@ -25,7 +25,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[1]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, uint>)(lpVtbl[1]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, uint>)(lpVtbl[2]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, uint>)(lpVtbl[2]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.GetCapabilities"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [return: NativeTypeName("ULONGLONG")]
     public ulong GetCapabilities()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[3]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, ulong>)(lpVtbl[3]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.SetFlags"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [VtblIndex(4)]
     public HRESULT SetFlags([NativeTypeName("ULONGLONG")] ulong ulFlags)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, ulong, int>)(lpVtbl[4]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ulFlags);
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.GetFlags"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [return: NativeTypeName("ULONGLONG")]
     public ulong GetFlags()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, ulong>)(lpVtbl[5]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, ulong>)(lpVtbl[5]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.LockPayload"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [VtblIndex(6)]
     public HRESULT LockPayload(byte** ppPayload, [NativeTypeName("ULONG *")] uint* pulPayload)
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, byte**, uint*, int>)(lpVtbl[6]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this), ppPayload, pulPayload);
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.UnlockPayload"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [VtblIndex(7)]
     public HRESULT UnlockPayload()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, int>)(lpVtbl[7]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFExtendedCameraControl.xml' path='doc/member[@name="IMFExtendedCameraControl.CommitSettings"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
     [VtblIndex(8)]
     public HRESULT CommitSettings()
     {
-        return ((delegate* unmanaged<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFExtendedCameraControl*, int>)(lpVtbl[8]))((IMFExtendedCameraControl*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -123,30 +123,30 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong> GetCapabilities;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> SetFlags;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong> GetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong> GetFlags;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> LockPayload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> LockPayload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnlockPayload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnlockPayload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CommitSettings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CommitSettings;
     }
 }

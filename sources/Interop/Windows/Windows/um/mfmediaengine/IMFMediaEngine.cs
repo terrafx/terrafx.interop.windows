@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[1]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, uint>)(lpVtbl[1]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[2]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, uint>)(lpVtbl[2]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetError"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetError(IMFMediaError** ppError)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int>)(lpVtbl[3]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppError);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IMFMediaError**, int>)(lpVtbl[3]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppError);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetErrorCode"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[4]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), error);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[4]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), error);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetSourceElements"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int>)(lpVtbl[5]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pSrcElements);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IMFMediaEngineSrcElements*, int>)(lpVtbl[5]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pSrcElements);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetSource"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT SetSource([NativeTypeName("BSTR")] char* pUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, char*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, char*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetCurrentSource"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] char** ppUrl)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, char**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, char**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetNetworkState"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(8)]
     public ushort GetNetworkState()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[8]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, ushort>)(lpVtbl[8]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPreload"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(9)]
     public MF_MEDIA_ENGINE_PRELOAD GetPreload()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetPreload"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int>)(lpVtbl[10]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Preload);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int>)(lpVtbl[10]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Preload);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetBuffered"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[11]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppBuffered);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[11]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppBuffered);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Load"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT Load()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[12]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[12]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.CanPlayType"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT CanPlayType([NativeTypeName("BSTR")] char* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetReadyState"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(14)]
     public ushort GetReadyState()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[14]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, ushort>)(lpVtbl[14]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsSeeking"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(15)]
     public BOOL IsSeeking()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[15]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[15]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetCurrentTime"]/*' />
@@ -157,7 +157,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(16)]
     public double GetCurrentTime()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetCurrentTime"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(17)]
     public HRESULT SetCurrentTime(double seekTime)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[17]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), seekTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double, int>)(lpVtbl[17]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), seekTime);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetStartTime"]/*' />
@@ -173,7 +173,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(18)]
     public double GetStartTime()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetDuration"]/*' />
@@ -181,7 +181,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(19)]
     public double GetDuration()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsPaused"]/*' />
@@ -189,7 +189,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(20)]
     public BOOL IsPaused()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[20]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[20]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetDefaultPlaybackRate"]/*' />
@@ -197,7 +197,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(21)]
     public double GetDefaultPlaybackRate()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetDefaultPlaybackRate"]/*' />
@@ -205,7 +205,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT SetDefaultPlaybackRate(double Rate)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[22]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double, int>)(lpVtbl[22]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPlaybackRate"]/*' />
@@ -213,7 +213,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(23)]
     public double GetPlaybackRate()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetPlaybackRate"]/*' />
@@ -221,7 +221,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT SetPlaybackRate(double Rate)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[24]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double, int>)(lpVtbl[24]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPlayed"]/*' />
@@ -229,7 +229,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[25]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppPlayed);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[25]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppPlayed);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetSeekable"]/*' />
@@ -237,7 +237,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[26]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppSeekable);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[26]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppSeekable);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsEnded"]/*' />
@@ -245,7 +245,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(27)]
     public BOOL IsEnded()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[27]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[27]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetAutoPlay"]/*' />
@@ -253,7 +253,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(28)]
     public BOOL GetAutoPlay()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[28]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[28]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetAutoPlay"]/*' />
@@ -261,7 +261,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(29)]
     public HRESULT SetAutoPlay(BOOL AutoPlay)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), AutoPlay);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), AutoPlay);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetLoop"]/*' />
@@ -269,7 +269,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(30)]
     public BOOL GetLoop()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[30]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[30]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetLoop"]/*' />
@@ -277,7 +277,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(31)]
     public HRESULT SetLoop(BOOL Loop)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Loop);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Loop);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Play"]/*' />
@@ -285,7 +285,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(32)]
     public HRESULT Play()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[32]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[32]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Pause"]/*' />
@@ -293,7 +293,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(33)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[33]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[33]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetMuted"]/*' />
@@ -301,7 +301,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(34)]
     public BOOL GetMuted()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[34]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[34]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetMuted"]/*' />
@@ -309,7 +309,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(35)]
     public HRESULT SetMuted(BOOL Muted)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Muted);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Muted);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetVolume"]/*' />
@@ -317,7 +317,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(36)]
     public double GetVolume()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetVolume"]/*' />
@@ -325,7 +325,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(37)]
     public HRESULT SetVolume(double Volume)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[37]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Volume);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, double, int>)(lpVtbl[37]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Volume);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.HasVideo"]/*' />
@@ -333,7 +333,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(38)]
     public BOOL HasVideo()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[38]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[38]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.HasAudio"]/*' />
@@ -341,7 +341,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(39)]
     public BOOL HasAudio()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[39]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[39]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetNativeVideoSize"]/*' />
@@ -349,7 +349,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(40)]
     public HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[40]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[40]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetVideoAspectRatio"]/*' />
@@ -357,7 +357,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(41)]
     public HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[41]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[41]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Shutdown"]/*' />
@@ -365,7 +365,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(42)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[42]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, int>)(lpVtbl[42]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.TransferVideoFrame"]/*' />
@@ -373,7 +373,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(43)]
     public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int>)(lpVtbl[43]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int>)(lpVtbl[43]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr);
     }
 
     /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.OnVideoStreamTick"]/*' />
@@ -381,7 +381,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
     [VtblIndex(44)]
     public HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)
     {
-        return ((delegate* unmanaged<IMFMediaEngine*, long*, int>)(lpVtbl[44]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pPts);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngine*, long*, int>)(lpVtbl[44]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pPts);
     }
 
     public interface Interface : IUnknown.Interface
@@ -517,138 +517,138 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaError**, int> GetError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaError**, int> GetError;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
 
         [NativeTypeName("HRESULT (IMFMediaEngineSrcElements *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetCurrentSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetCurrentSource;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort> GetNetworkState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort> GetNetworkState;
 
         [NativeTypeName("MF_MEDIA_ENGINE_PRELOAD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_PRELOAD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort> GetReadyState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort> GetReadyState;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsSeeking;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsSeeking;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetCurrentTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetCurrentTime;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetCurrentTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetCurrentTime;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetStartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetStartTime;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetDuration;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsPaused;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsPaused;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetDefaultPlaybackRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetDefaultPlaybackRate;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetDefaultPlaybackRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetDefaultPlaybackRate;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetPlaybackRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetPlaybackRate;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetPlaybackRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetPlaybackRate;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetPlayed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaTimeRange**, int> GetPlayed;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetSeekable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaTimeRange**, int> GetSeekable;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEnded;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetAutoPlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetAutoPlay;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetAutoPlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetAutoPlay;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetLoop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetLoop;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetLoop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetLoop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Play;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Play;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetMuted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetMuted;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetMuted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetMuted;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetVolume;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetVolume;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HasVideo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HasVideo;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HasAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HasAudio;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetNativeVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetNativeVideoSize;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetVideoAspectRatio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetVideoAspectRatio;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> OnVideoStreamTick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> OnVideoStreamTick;
     }
 }

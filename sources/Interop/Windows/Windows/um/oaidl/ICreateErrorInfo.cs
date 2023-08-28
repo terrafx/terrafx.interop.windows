@@ -25,7 +25,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, uint>)(lpVtbl[1]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, uint>)(lpVtbl[1]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, uint>)(lpVtbl[2]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, uint>)(lpVtbl[2]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetGUID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(3)]
     public HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, Guid*, int>)(lpVtbl[3]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), rguid);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, Guid*, int>)(lpVtbl[3]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), rguid);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetSource"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetSource([NativeTypeName("LPOLESTR")] char* szSource)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[4]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szSource);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, char*, int>)(lpVtbl[4]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szSource);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetDescription"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetDescription([NativeTypeName("LPOLESTR")] char* szDescription)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[5]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szDescription);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, char*, int>)(lpVtbl[5]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szDescription);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpFile"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(6)]
     public HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] char* szHelpFile)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, char*, int>)(lpVtbl[6]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szHelpFile);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, char*, int>)(lpVtbl[6]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szHelpFile);
     }
 
     /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpContext"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
     [VtblIndex(7)]
     public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
     {
-        return ((delegate* unmanaged<ICreateErrorInfo*, uint, int>)(lpVtbl[7]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
+        return ((delegate* unmanaged[MemberFunction]<ICreateErrorInfo*, uint, int>)(lpVtbl[7]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), dwHelpContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetSource;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDescription;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetHelpFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetHelpFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetHelpContext;
     }
 }

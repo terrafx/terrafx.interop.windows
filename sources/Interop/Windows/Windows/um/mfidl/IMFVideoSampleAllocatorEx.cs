@@ -27,7 +27,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFVideoSampleAllocator.SetDirectXManager" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(3)]
     public HRESULT SetDirectXManager(IUnknown* pManager)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), pManager);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), pManager);
     }
 
     /// <inheritdoc cref="IMFVideoSampleAllocator.UninitializeSampleAllocator" />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(4)]
     public HRESULT UninitializeSampleAllocator()
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, int>)(lpVtbl[4]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFVideoSampleAllocator.InitializeSampleAllocator" />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(5)]
     public HRESULT InitializeSampleAllocator([NativeTypeName("DWORD")] uint cRequestedFrames, IMFMediaType* pMediaType)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint, IMFMediaType*, int>)(lpVtbl[5]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), cRequestedFrames, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, uint, IMFMediaType*, int>)(lpVtbl[5]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), cRequestedFrames, pMediaType);
     }
 
     /// <inheritdoc cref="IMFVideoSampleAllocator.AllocateSample" />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(6)]
     public HRESULT AllocateSample(IMFSample** ppSample)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, IMFSample**, int>)(lpVtbl[6]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), ppSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, IMFSample**, int>)(lpVtbl[6]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), ppSample);
     }
 
     /// <include file='IMFVideoSampleAllocatorEx.xml' path='doc/member[@name="IMFVideoSampleAllocatorEx.InitializeSampleAllocatorEx"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
     [VtblIndex(7)]
     public HRESULT InitializeSampleAllocatorEx([NativeTypeName("DWORD")] uint cInitialSamples, [NativeTypeName("DWORD")] uint cMaximumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType)
     {
-        return ((delegate* unmanaged<IMFVideoSampleAllocatorEx*, uint, uint, IMFAttributes*, IMFMediaType*, int>)(lpVtbl[7]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), cInitialSamples, cMaximumSamples, pAttributes, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoSampleAllocatorEx*, uint, uint, IMFAttributes*, IMFMediaType*, int>)(lpVtbl[7]))((IMFVideoSampleAllocatorEx*)Unsafe.AsPointer(ref this), cInitialSamples, cMaximumSamples, pAttributes, pMediaType);
     }
 
     public interface Interface : IMFVideoSampleAllocator.Interface
@@ -98,27 +98,27 @@ public unsafe partial struct IMFVideoSampleAllocatorEx : IMFVideoSampleAllocator
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDirectXManager;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetDirectXManager;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UninitializeSampleAllocator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UninitializeSampleAllocator;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> InitializeSampleAllocator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaType*, int> InitializeSampleAllocator;
 
         [NativeTypeName("HRESULT (IMFSample **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSample**, int> AllocateSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSample**, int> AllocateSample;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFAttributes *, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IMFAttributes*, IMFMediaType*, int> InitializeSampleAllocatorEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IMFAttributes*, IMFMediaType*, int> InitializeSampleAllocatorEx;
     }
 }

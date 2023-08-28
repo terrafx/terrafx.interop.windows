@@ -25,7 +25,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeskBar*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeskBar*, uint>)(lpVtbl[1]))((IDeskBar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, uint>)(lpVtbl[1]))((IDeskBar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeskBar*, uint>)(lpVtbl[2]))((IDeskBar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, uint>)(lpVtbl[2]))((IDeskBar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IDeskBar*, HWND*, int>)(lpVtbl[3]))((IDeskBar*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, HWND*, int>)(lpVtbl[3]))((IDeskBar*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IDeskBar*, BOOL, int>)(lpVtbl[4]))((IDeskBar*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, BOOL, int>)(lpVtbl[4]))((IDeskBar*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.SetClient"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetClient(IUnknown* punkClient)
     {
-        return ((delegate* unmanaged<IDeskBar*, IUnknown*, int>)(lpVtbl[5]))((IDeskBar*)Unsafe.AsPointer(ref this), punkClient);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, IUnknown*, int>)(lpVtbl[5]))((IDeskBar*)Unsafe.AsPointer(ref this), punkClient);
     }
 
     /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.GetClient"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetClient(IUnknown** ppunkClient)
     {
-        return ((delegate* unmanaged<IDeskBar*, IUnknown**, int>)(lpVtbl[6]))((IDeskBar*)Unsafe.AsPointer(ref this), ppunkClient);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, IUnknown**, int>)(lpVtbl[6]))((IDeskBar*)Unsafe.AsPointer(ref this), ppunkClient);
     }
 
     /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.OnPosRectChangeDB"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT OnPosRectChangeDB(RECT* prc)
     {
-        return ((delegate* unmanaged<IDeskBar*, RECT*, int>)(lpVtbl[7]))((IDeskBar*)Unsafe.AsPointer(ref this), prc);
+        return ((delegate* unmanaged[MemberFunction]<IDeskBar*, RECT*, int>)(lpVtbl[7]))((IDeskBar*)Unsafe.AsPointer(ref this), prc);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -102,27 +102,27 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetClient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetClient;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetClient;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetClient;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnPosRectChangeDB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnPosRectChangeDB;
     }
 }

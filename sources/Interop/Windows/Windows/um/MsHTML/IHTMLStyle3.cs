@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, uint>)(lpVtbl[1]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, uint>)(lpVtbl[1]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, uint>)(lpVtbl[2]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, uint>)(lpVtbl[2]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, uint*, int>)(lpVtbl[3]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, uint*, int>)(lpVtbl[3]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_layoutFlow"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT put_layoutFlow([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[7]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char*, int>)(lpVtbl[7]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_layoutFlow"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[8]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char**, int>)(lpVtbl[8]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_zoom"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT put_zoom(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[9]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[9]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_zoom"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_zoom(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[10]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[10]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_wordWrap"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT put_wordWrap([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[11]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char*, int>)(lpVtbl[11]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_wordWrap"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_wordWrap([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[12]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char**, int>)(lpVtbl[12]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textUnderlinePosition"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[13]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char*, int>)(lpVtbl[13]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textUnderlinePosition"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[14]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char**, int>)(lpVtbl[14]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarBaseColor"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT put_scrollbarBaseColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[15]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[15]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarBaseColor"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_scrollbarBaseColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[16]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[16]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarFaceColor"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT put_scrollbarFaceColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[17]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[17]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarFaceColor"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT get_scrollbarFaceColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[18]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[18]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbar3dLightColor"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT put_scrollbar3dLightColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[19]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[19]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbar3dLightColor"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT get_scrollbar3dLightColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[20]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[20]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarShadowColor"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT put_scrollbarShadowColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[21]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[21]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarShadowColor"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT get_scrollbarShadowColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[22]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[22]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarHighlightColor"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT put_scrollbarHighlightColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[23]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[23]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarHighlightColor"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT get_scrollbarHighlightColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[24]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[24]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarDarkShadowColor"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT put_scrollbarDarkShadowColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[25]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[25]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarDarkShadowColor"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_scrollbarDarkShadowColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[26]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[26]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarArrowColor"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT put_scrollbarArrowColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[27]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[27]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarArrowColor"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT get_scrollbarArrowColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[28]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[28]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarTrackColor"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT put_scrollbarTrackColor(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[29]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[29]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarTrackColor"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT get_scrollbarTrackColor(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[30]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[30]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_writingMode"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT put_writingMode([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[31]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char*, int>)(lpVtbl[31]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_writingMode"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT get_writingMode([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[32]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char**, int>)(lpVtbl[32]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textAlignLast"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT put_textAlignLast([NativeTypeName("BSTR")] char* v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char*, int>)(lpVtbl[33]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char*, int>)(lpVtbl[33]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textAlignLast"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, char**, int>)(lpVtbl[34]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, char**, int>)(lpVtbl[34]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textKashidaSpace"]/*' />
@@ -307,7 +307,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(35)]
     public HRESULT put_textKashidaSpace(VARIANT v)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[35]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT, int>)(lpVtbl[35]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textKashidaSpace"]/*' />
@@ -315,7 +315,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
     [VtblIndex(36)]
     public HRESULT get_textKashidaSpace(VARIANT* p)
     {
-        return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[36]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[36]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -415,114 +415,114 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_layoutFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_layoutFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_zoom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_zoom;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_wordWrap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_wordWrap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textUnderlinePosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textUnderlinePosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarBaseColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarBaseColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarBaseColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarBaseColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarFaceColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarFaceColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarFaceColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarFaceColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbar3dLightColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbar3dLightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbar3dLightColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbar3dLightColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarShadowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarShadowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarHighlightColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarHighlightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarHighlightColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarHighlightColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarDarkShadowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarDarkShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarDarkShadowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarDarkShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarArrowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarArrowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarArrowColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarArrowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarTrackColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_writingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_writingMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_writingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_textAlignLast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_textAlignLast;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_textAlignLast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashidaSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, int> put_textKashidaSpace;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashidaSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> get_textKashidaSpace;
     }
 }

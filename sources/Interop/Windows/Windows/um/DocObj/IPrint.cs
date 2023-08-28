@@ -25,7 +25,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrint*, Guid*, void**, int>)(lpVtbl[0]))((IPrint*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, Guid*, void**, int>)(lpVtbl[0]))((IPrint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrint*, uint>)(lpVtbl[1]))((IPrint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, uint>)(lpVtbl[1]))((IPrint*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrint*, uint>)(lpVtbl[2]))((IPrint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, uint>)(lpVtbl[2]))((IPrint*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrint.xml' path='doc/member[@name="IPrint.SetInitialPageNum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetInitialPageNum([NativeTypeName("LONG")] int nFirstPage)
     {
-        return ((delegate* unmanaged<IPrint*, int, int>)(lpVtbl[3]))((IPrint*)Unsafe.AsPointer(ref this), nFirstPage);
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, int, int>)(lpVtbl[3]))((IPrint*)Unsafe.AsPointer(ref this), nFirstPage);
     }
 
     /// <include file='IPrint.xml' path='doc/member[@name="IPrint.GetPageInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetPageInfo([NativeTypeName("LONG *")] int* pnFirstPage, [NativeTypeName("LONG *")] int* pcPages)
     {
-        return ((delegate* unmanaged<IPrint*, int*, int*, int>)(lpVtbl[4]))((IPrint*)Unsafe.AsPointer(ref this), pnFirstPage, pcPages);
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, int*, int*, int>)(lpVtbl[4]))((IPrint*)Unsafe.AsPointer(ref this), pnFirstPage, pcPages);
     }
 
     /// <include file='IPrint.xml' path='doc/member[@name="IPrint.Print"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Print([NativeTypeName("DWORD")] uint grfFlags, DVTARGETDEVICE** pptd, PAGESET** ppPageSet, STGMEDIUM* pstgmOptions, IContinueCallback* pcallback, [NativeTypeName("LONG")] int nFirstPage, [NativeTypeName("LONG *")] int* pcPagesPrinted, [NativeTypeName("LONG *")] int* pnLastPage)
     {
-        return ((delegate* unmanaged<IPrint*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int>)(lpVtbl[5]))((IPrint*)Unsafe.AsPointer(ref this), grfFlags, pptd, ppPageSet, pstgmOptions, pcallback, nFirstPage, pcPagesPrinted, pnLastPage);
+        return ((delegate* unmanaged[MemberFunction]<IPrint*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int>)(lpVtbl[5]))((IPrint*)Unsafe.AsPointer(ref this), grfFlags, pptd, ppPageSet, pstgmOptions, pcallback, nFirstPage, pcPagesPrinted, pnLastPage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IPrint : IPrint.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetInitialPageNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetInitialPageNum;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetPageInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetPageInfo;
 
         [NativeTypeName("HRESULT (DWORD, DVTARGETDEVICE **, PAGESET **, STGMEDIUM *, IContinueCallback *, LONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int> Print;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int> Print;
     }
 }

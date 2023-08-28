@@ -25,7 +25,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICatalogFileInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICatalogFileInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICatalogFileInfo*, uint>)(lpVtbl[1]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatalogFileInfo*, uint>)(lpVtbl[1]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICatalogFileInfo*, uint>)(lpVtbl[2]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICatalogFileInfo*, uint>)(lpVtbl[2]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo.GetCatalogFile"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetCatalogFile([NativeTypeName("LPSTR *")] sbyte** ppszCatalogFile)
     {
-        return ((delegate* unmanaged<ICatalogFileInfo*, sbyte**, int>)(lpVtbl[3]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppszCatalogFile);
+        return ((delegate* unmanaged[MemberFunction]<ICatalogFileInfo*, sbyte**, int>)(lpVtbl[3]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppszCatalogFile);
     }
 
     /// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo.GetJavaTrust"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetJavaTrust(void** ppJavaTrust)
     {
-        return ((delegate* unmanaged<ICatalogFileInfo*, void**, int>)(lpVtbl[4]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppJavaTrust);
+        return ((delegate* unmanaged[MemberFunction]<ICatalogFileInfo*, void**, int>)(lpVtbl[4]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppJavaTrust);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte**, int> GetCatalogFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte**, int> GetCatalogFile;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void**, int> GetJavaTrust;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void**, int> GetJavaTrust;
     }
 }

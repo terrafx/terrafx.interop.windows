@@ -25,7 +25,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, Guid*, void**, int>)(lpVtbl[0]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, Guid*, void**, int>)(lpVtbl[0]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, uint>)(lpVtbl[1]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, uint>)(lpVtbl[1]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, uint>)(lpVtbl[2]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, uint>)(lpVtbl[2]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [VtblIndex(3)]
     public HRESULT Initialize()
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, int>)(lpVtbl[3]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, int>)(lpVtbl[3]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer.ShowUI"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [VtblIndex(4)]
     public HRESULT ShowUI(BOOL fShow)
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, BOOL, int>)(lpVtbl[4]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, BOOL, int>)(lpVtbl[4]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer.UpdateBalloon"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
     [VtblIndex(5)]
     public HRESULT UpdateBalloon(TfLBBalloonStyle style, [NativeTypeName("const WCHAR *")] char* pch, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfSpeechUIServer*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[5]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), style, pch, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfSpeechUIServer*, TfLBBalloonStyle, char*, uint, int>)(lpVtbl[5]))((ITfSpeechUIServer*)Unsafe.AsPointer(ref this), style, pch, cch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Initialize;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ShowUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ShowUI;
 
         [NativeTypeName("HRESULT (TfLBBalloonStyle, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfLBBalloonStyle, char*, uint, int> UpdateBalloon;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMPluginControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMPluginControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMPluginControl*, uint>)(lpVtbl[1]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, uint>)(lpVtbl[1]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMPluginControl*, uint>)(lpVtbl[2]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, uint>)(lpVtbl[2]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetPreferredClsid"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[3]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[3]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetPreferredClsidByIndex"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint index, Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, uint, Guid*, Guid*, int>)(lpVtbl[4]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, subType, clsid);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, uint, Guid*, Guid*, int>)(lpVtbl[4]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, subType, clsid);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.SetPreferredClsid"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("const CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[5]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[5]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.IsDisabled"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(6)]
     public HRESULT IsDisabled([NativeTypeName("const IID &")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, Guid*, int>)(lpVtbl[6]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, Guid*, int>)(lpVtbl[6]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetDisabledByIndex"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetDisabledByIndex([NativeTypeName("DWORD")] uint index, [NativeTypeName("CLSID *")] Guid* clsid)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, uint, Guid*, int>)(lpVtbl[7]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, clsid);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, uint, Guid*, int>)(lpVtbl[7]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, clsid);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.SetDisabled"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(8)]
     public HRESULT SetDisabled([NativeTypeName("const IID &")] Guid* clsid, BOOL disabled)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, Guid*, BOOL, int>)(lpVtbl[8]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid, disabled);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, Guid*, BOOL, int>)(lpVtbl[8]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid, disabled);
     }
 
     /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.IsLegacyDisabled"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
     [VtblIndex(9)]
     public HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] char* dllName)
     {
-        return ((delegate* unmanaged<IAMPluginControl*, char*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
+        return ((delegate* unmanaged[MemberFunction]<IAMPluginControl*, char*, int>)(lpVtbl[9]))((IAMPluginControl*)Unsafe.AsPointer(ref this), dllName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetPreferredClsid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> GetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, GUID *, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, int> GetPreferredClsidByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, Guid*, int> GetPreferredClsidByIndex;
 
         [NativeTypeName("HRESULT (const GUID &, const CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetPreferredClsid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> SetPreferredClsid;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsDisabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsDisabled;
 
         [NativeTypeName("HRESULT (DWORD, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetDisabledByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetDisabledByIndex;
 
         [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, BOOL, int> SetDisabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, BOOL, int> SetDisabled;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> IsLegacyDisabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> IsLegacyDisabled;
     }
 }

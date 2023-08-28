@@ -25,7 +25,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, uint>)(lpVtbl[1]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, uint>)(lpVtbl[1]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, uint>)(lpVtbl[2]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, uint>)(lpVtbl[2]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.Reset"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [VtblIndex(3)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, int>)(lpVtbl[3]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, int>)(lpVtbl[3]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.GetSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [VtblIndex(4)]
     public HRESULT GetSize([NativeTypeName("ULONG *")] uint* pSize)
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, uint*, int>)(lpVtbl[4]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pSize);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, uint*, int>)(lpVtbl[4]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pSize);
     }
 
     /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.GetPrivacyImpacted"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [VtblIndex(5)]
     public HRESULT GetPrivacyImpacted(BOOL* pState)
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, BOOL*, int>)(lpVtbl[5]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pState);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, BOOL*, int>)(lpVtbl[5]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pState);
     }
 
     /// <include file='IEnumPrivacyRecords.xml' path='doc/member[@name="IEnumPrivacyRecords.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("BSTR *")] char** pbstrUrl, [NativeTypeName("BSTR *")] char** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags)
     {
-        return ((delegate* unmanaged<IEnumPrivacyRecords*, char**, char**, int*, uint*, int>)(lpVtbl[6]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pbstrUrl, pbstrPolicyRef, pdwReserved, pdwPrivacyFlags);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPrivacyRecords*, char**, char**, int*, uint*, int>)(lpVtbl[6]))((IEnumPrivacyRecords*)Unsafe.AsPointer(ref this), pbstrUrl, pbstrPolicyRef, pdwReserved, pdwPrivacyFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetPrivacyImpacted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetPrivacyImpacted;
 
         [NativeTypeName("HRESULT (BSTR *, BSTR *, LONG *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, char**, int*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, char**, int*, uint*, int> Next;
     }
 }

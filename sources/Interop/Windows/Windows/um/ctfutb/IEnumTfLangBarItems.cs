@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, uint>)(lpVtbl[1]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, uint>)(lpVtbl[1]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, uint>)(lpVtbl[2]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, uint>)(lpVtbl[2]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfLangBarItems** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, uint, ITfLangBarItem**, uint*, int>)(lpVtbl[4]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount, ppItem, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, uint, ITfLangBarItem**, uint*, int>)(lpVtbl[4]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount, ppItem, pcFetched);
     }
 
     /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, int>)(lpVtbl[5]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, int>)(lpVtbl[5]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfLangBarItems.xml' path='doc/member[@name="IEnumTfLangBarItems.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfLangBarItems*, uint, int>)(lpVtbl[6]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfLangBarItems*, uint, int>)(lpVtbl[6]))((IEnumTfLangBarItems*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfLangBarItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfLangBarItems**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfLangBarItems**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfLangBarItem **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfLangBarItem**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfLangBarItem**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

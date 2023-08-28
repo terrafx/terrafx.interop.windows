@@ -65,7 +65,7 @@ public unsafe partial struct Effect : Effect.Interface
     [VtblIndex(0)]
     public void Dispose()
     {
-        ((delegate* unmanaged<Effect*, void>)(lpVtbl[0]))((Effect*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<Effect*, void>)(lpVtbl[0]))((Effect*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface
@@ -78,6 +78,6 @@ public unsafe partial struct Effect : Effect.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void () noexcept")]
-        public delegate* unmanaged<TSelf*, void> Dispose;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Dispose;
     }
 }

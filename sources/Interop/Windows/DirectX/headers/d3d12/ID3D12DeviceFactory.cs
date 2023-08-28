@@ -26,7 +26,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, uint>)(lpVtbl[1]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, uint>)(lpVtbl[1]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, uint>)(lpVtbl[2]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, uint>)(lpVtbl[2]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.InitializeFromGlobalState"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(3)]
     public HRESULT InitializeFromGlobalState()
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, int>)(lpVtbl[3]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, int>)(lpVtbl[3]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.ApplyToGlobalState"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(4)]
     public HRESULT ApplyToGlobalState()
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, int>)(lpVtbl[4]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, int>)(lpVtbl[4]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.SetFlags"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(5)]
     public HRESULT SetFlags(D3D12_DEVICE_FACTORY_FLAGS flags)
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, D3D12_DEVICE_FACTORY_FLAGS, int>)(lpVtbl[5]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), flags);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, D3D12_DEVICE_FACTORY_FLAGS, int>)(lpVtbl[5]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), flags);
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.GetFlags"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(6)]
     public D3D12_DEVICE_FACTORY_FLAGS GetFlags()
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, D3D12_DEVICE_FACTORY_FLAGS>)(lpVtbl[6]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, D3D12_DEVICE_FACTORY_FLAGS>)(lpVtbl[6]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.GetConfigurationInterface"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(7)]
     public HRESULT GetConfigurationInterface([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* iid, void** ppv)
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, Guid*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), clsid, iid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, Guid*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), clsid, iid, ppv);
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.EnableExperimentalFeatures"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(8)]
     public HRESULT EnableExperimentalFeatures(uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, uint, Guid*, void*, uint*, int>)(lpVtbl[8]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), NumFeatures, pIIDs, pConfigurationStructs, pConfigurationStructSizes);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, uint, Guid*, void*, uint*, int>)(lpVtbl[8]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), NumFeatures, pIIDs, pConfigurationStructs, pConfigurationStructSizes);
     }
 
     /// <include file='ID3D12DeviceFactory.xml' path='doc/member[@name="ID3D12DeviceFactory.CreateDevice"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
     [VtblIndex(9)]
     public HRESULT CreateDevice(IUnknown* adapter, D3D_FEATURE_LEVEL FeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
     {
-        return ((delegate* unmanaged<ID3D12DeviceFactory*, IUnknown*, D3D_FEATURE_LEVEL, Guid*, void**, int>)(lpVtbl[9]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), adapter, FeatureLevel, riid, ppvDevice);
+        return ((delegate* unmanaged[MemberFunction]<ID3D12DeviceFactory*, IUnknown*, D3D_FEATURE_LEVEL, Guid*, void**, int>)(lpVtbl[9]))((ID3D12DeviceFactory*)Unsafe.AsPointer(ref this), adapter, FeatureLevel, riid, ppvDevice);
     }
 
     public interface Interface : IUnknown.Interface
@@ -131,33 +131,33 @@ public unsafe partial struct ID3D12DeviceFactory : ID3D12DeviceFactory.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> InitializeFromGlobalState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> InitializeFromGlobalState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ApplyToGlobalState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ApplyToGlobalState;
 
         [NativeTypeName("HRESULT (D3D12_DEVICE_FACTORY_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DEVICE_FACTORY_FLAGS, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DEVICE_FACTORY_FLAGS, int> SetFlags;
 
         [NativeTypeName("D3D12_DEVICE_FACTORY_FLAGS () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D12_DEVICE_FACTORY_FLAGS> GetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_DEVICE_FACTORY_FLAGS> GetFlags;
 
         [NativeTypeName("HRESULT (const IID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetConfigurationInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> GetConfigurationInterface;
 
         [NativeTypeName("HRESULT (UINT, const IID *, void *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void*, uint*, int> EnableExperimentalFeatures;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void*, uint*, int> EnableExperimentalFeatures;
 
         [NativeTypeName("HRESULT (IUnknown *, D3D_FEATURE_LEVEL, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, D3D_FEATURE_LEVEL, Guid*, void**, int> CreateDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, D3D_FEATURE_LEVEL, Guid*, void**, int> CreateDevice;
     }
 }

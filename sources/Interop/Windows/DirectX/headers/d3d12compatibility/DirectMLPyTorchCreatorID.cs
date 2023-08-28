@@ -26,7 +26,7 @@ public unsafe partial struct DirectMLPyTorchCreatorID : DirectMLPyTorchCreatorID
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<DirectMLPyTorchCreatorID*, Guid*, void**, int>)(lpVtbl[0]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<DirectMLPyTorchCreatorID*, Guid*, void**, int>)(lpVtbl[0]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct DirectMLPyTorchCreatorID : DirectMLPyTorchCreatorID
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<DirectMLPyTorchCreatorID*, uint>)(lpVtbl[1]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<DirectMLPyTorchCreatorID*, uint>)(lpVtbl[1]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct DirectMLPyTorchCreatorID : DirectMLPyTorchCreatorID
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<DirectMLPyTorchCreatorID*, uint>)(lpVtbl[2]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<DirectMLPyTorchCreatorID*, uint>)(lpVtbl[2]))((DirectMLPyTorchCreatorID*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -55,12 +55,12 @@ public unsafe partial struct DirectMLPyTorchCreatorID : DirectMLPyTorchCreatorID
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
     }
 }

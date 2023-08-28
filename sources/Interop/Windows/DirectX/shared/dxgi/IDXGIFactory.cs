@@ -26,7 +26,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIFactory*, uint>)(lpVtbl[1]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, uint>)(lpVtbl[1]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIFactory*, uint>)(lpVtbl[2]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, uint>)(lpVtbl[2]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.EnumAdapters"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT EnumAdapters(uint Adapter, IDXGIAdapter** ppAdapter)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, uint, IDXGIAdapter**, int>)(lpVtbl[7]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Adapter, ppAdapter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, uint, IDXGIAdapter**, int>)(lpVtbl[7]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Adapter, ppAdapter);
     }
 
     /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.MakeWindowAssociation"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT MakeWindowAssociation(HWND WindowHandle, uint Flags)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
     }
 
     /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.GetWindowAssociation"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetWindowAssociation(HWND* pWindowHandle)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pWindowHandle);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pWindowHandle);
     }
 
     /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.CreateSwapChain"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT CreateSwapChain(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int>)(lpVtbl[10]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pDevice, pDesc, ppSwapChain);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int>)(lpVtbl[10]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pDevice, pDesc, ppSwapChain);
     }
 
     /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.CreateSoftwareAdapter"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT CreateSoftwareAdapter(HMODULE Module, IDXGIAdapter** ppAdapter)
     {
-        return ((delegate* unmanaged<IDXGIFactory*, HMODULE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Module, ppAdapter);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIFactory*, HMODULE, IDXGIAdapter**, int>)(lpVtbl[11]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Module, ppAdapter);
     }
 
     public interface Interface : IDXGIObject.Interface
@@ -141,39 +141,39 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (UINT, IDXGIAdapter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDXGIAdapter**, int> EnumAdapters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDXGIAdapter**, int> EnumAdapters;
 
         [NativeTypeName("HRESULT (HWND, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, int> MakeWindowAssociation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, int> MakeWindowAssociation;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindowAssociation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindowAssociation;
 
         [NativeTypeName("HRESULT (IUnknown *, DXGI_SWAP_CHAIN_DESC *, IDXGISwapChain **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
 
         [NativeTypeName("HRESULT (HMODULE, IDXGIAdapter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
     }
 }

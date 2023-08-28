@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceTopologyProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[1]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[1]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[2]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[2]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceTopologyProvider.xml' path='doc/member[@name="IMFMediaSourceTopologyProvider.GetMediaSourceTopology"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
     [VtblIndex(3)]
     public HRESULT GetMediaSourceTopology(IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology)
     {
-        return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, IMFPresentationDescriptor*, IMFTopology**, int>)(lpVtbl[3]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, ppTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceTopologyProvider*, IMFPresentationDescriptor*, IMFTopology**, int>)(lpVtbl[3]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), pPresentationDescriptor, ppTopology);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, IMFTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, IMFTopology**, int> GetMediaSourceTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationDescriptor*, IMFTopology**, int> GetMediaSourceTopology;
     }
 }

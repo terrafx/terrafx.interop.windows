@@ -25,7 +25,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IURLSearchHook2*, Guid*, void**, int>)(lpVtbl[0]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[1]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IURLSearchHook2*, uint>)(lpVtbl[1]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IURLSearchHook2*, uint>)(lpVtbl[2]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IURLSearchHook2*, uint>)(lpVtbl[2]))((IURLSearchHook2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IURLSearchHook.Translate" />
@@ -51,7 +51,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Translate([NativeTypeName("PWSTR")] char* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize)
     {
-        return ((delegate* unmanaged<IURLSearchHook2*, char*, uint, int>)(lpVtbl[3]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
+        return ((delegate* unmanaged[MemberFunction]<IURLSearchHook2*, char*, uint, int>)(lpVtbl[3]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize);
     }
 
     /// <include file='IURLSearchHook2.xml' path='doc/member[@name="IURLSearchHook2.TranslateWithSearchContext"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
     [VtblIndex(4)]
     public HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] char* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext)
     {
-        return ((delegate* unmanaged<IURLSearchHook2*, char*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
+        return ((delegate* unmanaged[MemberFunction]<IURLSearchHook2*, char*, uint, ISearchContext*, int>)(lpVtbl[4]))((IURLSearchHook2*)Unsafe.AsPointer(ref this), pwszSearchURL, cchBufferSize, pSearchContext);
     }
 
     public interface Interface : IURLSearchHook.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> Translate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> Translate;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, ISearchContext*, int> TranslateWithSearchContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, ISearchContext*, int> TranslateWithSearchContext;
     }
 }

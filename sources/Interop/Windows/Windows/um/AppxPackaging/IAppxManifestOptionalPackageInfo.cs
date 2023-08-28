@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOptionalPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[1]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[1]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[2]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[2]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo.GetIsOptionalPackage"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     [VtblIndex(3)]
     public HRESULT GetIsOptionalPackage(BOOL* isOptionalPackage)
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), isOptionalPackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOptionalPackageInfo*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), isOptionalPackage);
     }
 
     /// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo.GetMainPackageName"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
     [VtblIndex(4)]
     public HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] char** mainPackageName)
     {
-        return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, char**, int>)(lpVtbl[4]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), mainPackageName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestOptionalPackageInfo*, char**, int>)(lpVtbl[4]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), mainPackageName);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsOptionalPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetIsOptionalPackage;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetMainPackageName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetMainPackageName;
     }
 }

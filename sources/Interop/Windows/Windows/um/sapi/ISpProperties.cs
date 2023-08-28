@@ -25,7 +25,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpProperties*, Guid*, void**, int>)(lpVtbl[0]))((ISpProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, Guid*, void**, int>)(lpVtbl[0]))((ISpProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpProperties*, uint>)(lpVtbl[1]))((ISpProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, uint>)(lpVtbl[1]))((ISpProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpProperties*, uint>)(lpVtbl[2]))((ISpProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, uint>)(lpVtbl[2]))((ISpProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.SetPropertyNum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG")] int lValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, char*, int, int>)(lpVtbl[3]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, lValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, char*, int, int>)(lpVtbl[3]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, lValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.GetPropertyNum"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetPropertyNum([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LONG *")] int* plValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, char*, int*, int>)(lpVtbl[4]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, plValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, char*, int*, int>)(lpVtbl[4]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, plValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.SetPropertyString"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPCWSTR")] char* pValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, char*, char*, int>)(lpVtbl[5]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, pValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, char*, char*, int>)(lpVtbl[5]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, pValue);
     }
 
     /// <include file='ISpProperties.xml' path='doc/member[@name="ISpProperties.GetPropertyString"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] char* pName, [NativeTypeName("LPWSTR *")] char** ppCoMemValue)
     {
-        return ((delegate* unmanaged<ISpProperties*, char*, char**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpProperties*, char*, char**, int>)(lpVtbl[6]))((ISpProperties*)Unsafe.AsPointer(ref this), pName, ppCoMemValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetPropertyNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int*, int> GetPropertyNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, int> GetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, int> GetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> GetPropertyString;
     }
 }

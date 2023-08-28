@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimerUpdateHandler.xml' path='doc/member[@name="IUIAnimationTimerUpdateHandler.OnUpdate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [VtblIndex(3)]
     public HRESULT OnUpdate([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* result)
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[3]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), timeNow, result);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[3]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), timeNow, result);
     }
 
     /// <include file='IUIAnimationTimerUpdateHandler.xml' path='doc/member[@name="IUIAnimationTimerUpdateHandler.SetTimerClientEventHandler"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [VtblIndex(4)]
     public HRESULT SetTimerClientEventHandler(IUIAnimationTimerClientEventHandler* handler)
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, IUIAnimationTimerClientEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), handler);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, IUIAnimationTimerClientEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this), handler);
     }
 
     /// <include file='IUIAnimationTimerUpdateHandler.xml' path='doc/member[@name="IUIAnimationTimerUpdateHandler.ClearTimerClientEventHandler"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
     [VtblIndex(5)]
     public HRESULT ClearTimerClientEventHandler()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerUpdateHandler*, int>)(lpVtbl[5]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerUpdateHandler*, int>)(lpVtbl[5]))((IUIAnimationTimerUpdateHandler*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IUIAnimationTimerUpdateHandler : IUIAnimationTimerU
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_UPDATE_RESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, UI_ANIMATION_UPDATE_RESULT*, int> OnUpdate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, UI_ANIMATION_UPDATE_RESULT*, int> OnUpdate;
 
         [NativeTypeName("HRESULT (IUIAnimationTimerClientEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationTimerClientEventHandler*, int> SetTimerClientEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationTimerClientEventHandler*, int> SetTimerClientEventHandler;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearTimerClientEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearTimerClientEventHandler;
     }
 }

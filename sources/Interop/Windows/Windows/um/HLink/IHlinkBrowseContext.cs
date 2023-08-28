@@ -25,7 +25,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[1]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint>)(lpVtbl[1]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint>)(lpVtbl[2]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint>)(lpVtbl[2]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.Register"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(3)]
     public HRESULT Register([NativeTypeName("DWORD")] uint reserved, IUnknown* piunk, IMoniker* pimk, [NativeTypeName("DWORD *")] uint* pdwRegister)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved, piunk, pimk, pdwRegister);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved, piunk, pimk, pdwRegister);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.GetObjectW"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(4)]
     public HRESULT GetObjectW(IMoniker* pimk, BOOL fBindIfRootRegistered, IUnknown** ppiunk)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, IMoniker*, BOOL, IUnknown**, int>)(lpVtbl[4]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimk, fBindIfRootRegistered, ppiunk);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.Revoke"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(5)]
     public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[5]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwRegister);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, int>)(lpVtbl[5]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwRegister);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.SetBrowseWindowInfo"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(6)]
     public HRESULT SetBrowseWindowInfo(HLBWINFO* phlbwi)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[6]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[6]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.GetBrowseWindowInfo"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(7)]
     public HRESULT GetBrowseWindowInfo(HLBWINFO* phlbwi)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[7]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, HLBWINFO*, int>)(lpVtbl[7]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), phlbwi);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.SetInitialHlink"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(8)]
     public HRESULT SetInitialHlink(IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, IMoniker*, char*, char*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, IMoniker*, char*, char*, int>)(lpVtbl[8]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), pimkTarget, pwzLocation, pwzFriendlyName);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.OnNavigateHlink"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(9)]
     public HRESULT OnNavigateHlink([NativeTypeName("DWORD")] uint grfHLNF, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName, [NativeTypeName("ULONG *")] uint* puHLID)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, uint*, int>)(lpVtbl[9]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLNF, pimkTarget, pwzLocation, pwzFriendlyName, puHLID);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.UpdateHlink"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(10)]
     public HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] char* pwzLocation, [NativeTypeName("LPCWSTR")] char* pwzFriendlyName)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, IMoniker*, char*, char*, int>)(lpVtbl[10]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, pimkTarget, pwzLocation, pwzFriendlyName);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.EnumNavigationStack"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(11)]
     public HRESULT EnumNavigationStack([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint grfHLFNAMEF, IEnumHLITEM** ppienumhlitem)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int>)(lpVtbl[11]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwReserved, grfHLFNAMEF, ppienumhlitem);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, uint, IEnumHLITEM**, int>)(lpVtbl[11]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), dwReserved, grfHLFNAMEF, ppienumhlitem);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.QueryHlink"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(12)]
     public HRESULT QueryHlink([NativeTypeName("DWORD")] uint grfHLQF, [NativeTypeName("ULONG")] uint uHLID)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, uint, int>)(lpVtbl[12]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLQF, uHLID);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, uint, int>)(lpVtbl[12]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), grfHLQF, uHLID);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.GetHlink"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(13)]
     public HRESULT GetHlink([NativeTypeName("ULONG")] uint uHLID, IHlink** ppihl)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, IHlink**, int>)(lpVtbl[13]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, ppihl);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, IHlink**, int>)(lpVtbl[13]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID, ppihl);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.SetCurrentHlink"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(14)]
     public HRESULT SetCurrentHlink([NativeTypeName("ULONG")] uint uHLID)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[14]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, int>)(lpVtbl[14]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), uHLID);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.Clone"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(15)]
     public HRESULT Clone(IUnknown* piunkOuter, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunkObj)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[15]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), piunkOuter, riid, ppiunkObj);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, IUnknown*, Guid*, IUnknown**, int>)(lpVtbl[15]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), piunkOuter, riid, ppiunkObj);
     }
 
     /// <include file='IHlinkBrowseContext.xml' path='doc/member[@name="IHlinkBrowseContext.Close"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
     [VtblIndex(16)]
     public HRESULT Close([NativeTypeName("DWORD")] uint reserved)
     {
-        return ((delegate* unmanaged<IHlinkBrowseContext*, uint, int>)(lpVtbl[16]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved);
+        return ((delegate* unmanaged[MemberFunction]<IHlinkBrowseContext*, uint, int>)(lpVtbl[16]))((IHlinkBrowseContext*)Unsafe.AsPointer(ref this), reserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -207,54 +207,54 @@ public unsafe partial struct IHlinkBrowseContext : IHlinkBrowseContext.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, IMoniker*, uint*, int> Register;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, IMoniker*, uint*, int> Register;
 
         [NativeTypeName("HRESULT (IMoniker *, BOOL, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, BOOL, IUnknown**, int> GetObjectW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, BOOL, IUnknown**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Revoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Revoke;
 
         [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HLBWINFO*, int> SetBrowseWindowInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HLBWINFO*, int> SetBrowseWindowInfo;
 
         [NativeTypeName("HRESULT (HLBWINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HLBWINFO*, int> GetBrowseWindowInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HLBWINFO*, int> GetBrowseWindowInfo;
 
         [NativeTypeName("HRESULT (IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, char*, char*, int> SetInitialHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, char*, char*, int> SetInitialHlink;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, uint*, int> OnNavigateHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMoniker*, char*, char*, uint*, int> OnNavigateHlink;
 
         [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMoniker*, char*, char*, int> UpdateHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMoniker*, char*, char*, int> UpdateHlink;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IEnumHLITEM **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IEnumHLITEM**, int> EnumNavigationStack;
 
         [NativeTypeName("HRESULT (DWORD, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> QueryHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> QueryHlink;
 
         [NativeTypeName("HRESULT (ULONG, IHlink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IHlink**, int> GetHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IHlink**, int> GetHlink;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCurrentHlink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCurrentHlink;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, IUnknown**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, Guid*, IUnknown**, int> Clone;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Close;
     }
 }

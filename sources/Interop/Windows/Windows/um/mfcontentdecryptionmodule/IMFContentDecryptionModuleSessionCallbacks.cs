@@ -27,7 +27,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleSessionCallbacks*, Guid*, void**, int>)(lpVtbl[0]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, uint>)(lpVtbl[1]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleSessionCallbacks*, uint>)(lpVtbl[1]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, uint>)(lpVtbl[2]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleSessionCallbacks*, uint>)(lpVtbl[2]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFContentDecryptionModuleSessionCallbacks.xml' path='doc/member[@name="IMFContentDecryptionModuleSessionCallbacks.KeyMessage"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     [VtblIndex(3)]
     public HRESULT KeyMessage(MF_MEDIAKEYSESSION_MESSAGETYPE messageType, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint messageSize, [NativeTypeName("LPCWSTR")] char* destinationURL)
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), messageType, message, messageSize, destinationURL);
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleSessionCallbacks*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int>)(lpVtbl[3]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this), messageType, message, messageSize, destinationURL);
     }
 
     /// <include file='IMFContentDecryptionModuleSessionCallbacks.xml' path='doc/member[@name="IMFContentDecryptionModuleSessionCallbacks.KeyStatusChanged"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
     [VtblIndex(4)]
     public HRESULT KeyStatusChanged()
     {
-        return ((delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, int>)(lpVtbl[4]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFContentDecryptionModuleSessionCallbacks*, int>)(lpVtbl[4]))((IMFContentDecryptionModuleSessionCallbacks*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_MESSAGETYPE, const BYTE *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int> KeyMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, char*, int> KeyMessage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> KeyStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> KeyStatusChanged;
     }
 }

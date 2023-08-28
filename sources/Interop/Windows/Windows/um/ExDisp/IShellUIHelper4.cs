@@ -25,7 +25,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, Guid*, void**, int>)(lpVtbl[0]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, Guid*, void**, int>)(lpVtbl[0]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, uint>)(lpVtbl[1]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, uint>)(lpVtbl[1]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, uint>)(lpVtbl[2]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, uint>)(lpVtbl[2]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, uint*, int>)(lpVtbl[3]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, uint*, int>)(lpVtbl[3]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IShellUIHelper.ResetFirstBootMode" />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(7)]
     public HRESULT ResetFirstBootMode()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[7]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[7]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper.ResetSafeMode" />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(8)]
     public HRESULT ResetSafeMode()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[8]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[8]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper.RefreshOfflineDesktop" />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(9)]
     public HRESULT RefreshOfflineDesktop()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[9]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[9]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper.AddFavorite" />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(10)]
     public HRESULT AddFavorite([NativeTypeName("BSTR")] char* URL, VARIANT* Title)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, VARIANT*, int>)(lpVtbl[10]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Title);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, VARIANT*, int>)(lpVtbl[10]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Title);
     }
 
     /// <inheritdoc cref="IShellUIHelper.AddChannel" />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(11)]
     public HRESULT AddChannel([NativeTypeName("BSTR")] char* URL)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, int>)(lpVtbl[11]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, int>)(lpVtbl[11]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
     }
 
     /// <inheritdoc cref="IShellUIHelper.AddDesktopComponent" />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(12)]
     public HRESULT AddDesktopComponent([NativeTypeName("BSTR")] char* URL, [NativeTypeName("BSTR")] char* Type, VARIANT* Left, VARIANT* Top, VARIANT* Width, VARIANT* Height)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Type, Left, Top, Width, Height);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[12]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Type, Left, Top, Width, Height);
     }
 
     /// <inheritdoc cref="IShellUIHelper.IsSubscribed" />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(13)]
     public HRESULT IsSubscribed([NativeTypeName("BSTR")] char* URL, [NativeTypeName("VARIANT_BOOL *")] short* pBool)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, short*, int>)(lpVtbl[13]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, pBool);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, short*, int>)(lpVtbl[13]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, pBool);
     }
 
     /// <inheritdoc cref="IShellUIHelper.NavigateAndFind" />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(14)]
     public HRESULT NavigateAndFind([NativeTypeName("BSTR")] char* URL, [NativeTypeName("BSTR")] char* strQuery, VARIANT* varTargetFrame)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[14]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, strQuery, varTargetFrame);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[14]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, strQuery, varTargetFrame);
     }
 
     /// <inheritdoc cref="IShellUIHelper.ImportExportFavorites" />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(15)]
     public HRESULT ImportExportFavorites([NativeTypeName("VARIANT_BOOL")] short fImport, [NativeTypeName("BSTR")] char* strImpExpPath)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, char*, int>)(lpVtbl[15]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fImport, strImpExpPath);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, char*, int>)(lpVtbl[15]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fImport, strImpExpPath);
     }
 
     /// <inheritdoc cref="IShellUIHelper.AutoCompleteSaveForm" />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(16)]
     public HRESULT AutoCompleteSaveForm(VARIANT* Form)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, VARIANT*, int>)(lpVtbl[16]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), Form);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, VARIANT*, int>)(lpVtbl[16]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), Form);
     }
 
     /// <inheritdoc cref="IShellUIHelper.AutoScan" />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(17)]
     public HRESULT AutoScan([NativeTypeName("BSTR")] char* strSearch, [NativeTypeName("BSTR")] char* strFailureUrl, VARIANT* pvarTargetFrame)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[17]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), strSearch, strFailureUrl, pvarTargetFrame);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[17]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), strSearch, strFailureUrl, pvarTargetFrame);
     }
 
     /// <inheritdoc cref="IShellUIHelper.AutoCompleteAttach" />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(18)]
     public HRESULT AutoCompleteAttach(VARIANT* Reserved)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, VARIANT*, int>)(lpVtbl[18]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), Reserved);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, VARIANT*, int>)(lpVtbl[18]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), Reserved);
     }
 
     /// <inheritdoc cref="IShellUIHelper.ShowBrowserUI" />
@@ -179,7 +179,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(19)]
     public HRESULT ShowBrowserUI([NativeTypeName("BSTR")] char* bstrName, VARIANT* pvarIn, VARIANT* pvarOut)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, VARIANT*, VARIANT*, int>)(lpVtbl[19]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrName, pvarIn, pvarOut);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, VARIANT*, VARIANT*, int>)(lpVtbl[19]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrName, pvarIn, pvarOut);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.AddSearchProvider" />
@@ -187,7 +187,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(20)]
     public HRESULT AddSearchProvider([NativeTypeName("BSTR")] char* URL)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, int>)(lpVtbl[20]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, int>)(lpVtbl[20]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.RunOnceShown" />
@@ -195,7 +195,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(21)]
     public HRESULT RunOnceShown()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[21]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[21]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper2.SkipRunOnce" />
@@ -203,7 +203,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(22)]
     public HRESULT SkipRunOnce()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[22]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[22]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper2.CustomizeSettings" />
@@ -211,7 +211,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(23)]
     public HRESULT CustomizeSettings([NativeTypeName("VARIANT_BOOL")] short fSQM, [NativeTypeName("VARIANT_BOOL")] short fPhishing, [NativeTypeName("BSTR")] char* bstrLocale)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, short, char*, int>)(lpVtbl[23]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fSQM, fPhishing, bstrLocale);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, short, char*, int>)(lpVtbl[23]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fSQM, fPhishing, bstrLocale);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.SqmEnabled" />
@@ -219,7 +219,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(24)]
     public HRESULT SqmEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[24]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[24]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.PhishingEnabled" />
@@ -227,7 +227,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(25)]
     public HRESULT PhishingEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[25]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[25]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.BrandImageUri" />
@@ -235,7 +235,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(26)]
     public HRESULT BrandImageUri([NativeTypeName("BSTR *")] char** pbstrUri)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char**, int>)(lpVtbl[26]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrUri);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char**, int>)(lpVtbl[26]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrUri);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.SkipTabsWelcome" />
@@ -243,7 +243,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(27)]
     public HRESULT SkipTabsWelcome()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[27]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[27]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper2.DiagnoseConnection" />
@@ -251,7 +251,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(28)]
     public HRESULT DiagnoseConnection()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[28]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[28]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper2.CustomizeClearType" />
@@ -259,7 +259,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(29)]
     public HRESULT CustomizeClearType([NativeTypeName("VARIANT_BOOL")] short fSet)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, int>)(lpVtbl[29]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fSet);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, int>)(lpVtbl[29]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fSet);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.IsSearchProviderInstalled" />
@@ -267,7 +267,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(30)]
     public HRESULT IsSearchProviderInstalled([NativeTypeName("BSTR")] char* URL, [NativeTypeName("DWORD *")] uint* pdwResult)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, uint*, int>)(lpVtbl[30]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, pdwResult);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, uint*, int>)(lpVtbl[30]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, pdwResult);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.IsSearchMigrated" />
@@ -275,7 +275,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(31)]
     public HRESULT IsSearchMigrated([NativeTypeName("VARIANT_BOOL *")] short* pfMigrated)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[31]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfMigrated);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[31]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfMigrated);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.DefaultSearchProvider" />
@@ -283,7 +283,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(32)]
     public HRESULT DefaultSearchProvider([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char**, int>)(lpVtbl[32]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char**, int>)(lpVtbl[32]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.RunOnceRequiredSettingsComplete" />
@@ -291,7 +291,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(33)]
     public HRESULT RunOnceRequiredSettingsComplete([NativeTypeName("VARIANT_BOOL")] short fComplete)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, int>)(lpVtbl[33]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fComplete);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, int>)(lpVtbl[33]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fComplete);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.RunOnceHasShown" />
@@ -299,7 +299,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(34)]
     public HRESULT RunOnceHasShown([NativeTypeName("VARIANT_BOOL *")] short* pfShown)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[34]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfShown);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[34]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfShown);
     }
 
     /// <inheritdoc cref="IShellUIHelper2.SearchGuideUrl" />
@@ -307,7 +307,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(35)]
     public HRESULT SearchGuideUrl([NativeTypeName("BSTR *")] char** pbstrUrl)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char**, int>)(lpVtbl[35]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrUrl);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char**, int>)(lpVtbl[35]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pbstrUrl);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.AddService" />
@@ -315,7 +315,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(36)]
     public HRESULT AddService([NativeTypeName("BSTR")] char* URL)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, int>)(lpVtbl[36]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, int>)(lpVtbl[36]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.IsServiceInstalled" />
@@ -323,7 +323,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(37)]
     public HRESULT IsServiceInstalled([NativeTypeName("BSTR")] char* URL, [NativeTypeName("BSTR")] char* Verb, [NativeTypeName("DWORD *")] uint* pdwResult)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, uint*, int>)(lpVtbl[37]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Verb, pdwResult);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, uint*, int>)(lpVtbl[37]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Verb, pdwResult);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.InPrivateFilteringEnabled" />
@@ -331,7 +331,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(38)]
     public HRESULT InPrivateFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[38]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[38]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.AddToFavoritesBar" />
@@ -339,7 +339,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(39)]
     public HRESULT AddToFavoritesBar([NativeTypeName("BSTR")] char* URL, [NativeTypeName("BSTR")] char* Title, VARIANT* Type)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[39]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Title, Type);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[39]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, Title, Type);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.BuildNewTabPage" />
@@ -347,7 +347,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(40)]
     public HRESULT BuildNewTabPage()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[40]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[40]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper3.SetRecentlyClosedVisible" />
@@ -355,7 +355,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(41)]
     public HRESULT SetRecentlyClosedVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, int>)(lpVtbl[41]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fVisible);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, int>)(lpVtbl[41]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fVisible);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.SetActivitiesVisible" />
@@ -363,7 +363,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(42)]
     public HRESULT SetActivitiesVisible([NativeTypeName("VARIANT_BOOL")] short fVisible)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, int>)(lpVtbl[42]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fVisible);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, int>)(lpVtbl[42]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fVisible);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.ContentDiscoveryReset" />
@@ -371,7 +371,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(43)]
     public HRESULT ContentDiscoveryReset()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[43]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[43]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper3.IsSuggestedSitesEnabled" />
@@ -379,7 +379,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(44)]
     public HRESULT IsSuggestedSitesEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[44]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[44]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.EnableSuggestedSites" />
@@ -387,7 +387,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(45)]
     public HRESULT EnableSuggestedSites([NativeTypeName("VARIANT_BOOL")] short fEnable)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, int>)(lpVtbl[45]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, int>)(lpVtbl[45]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.NavigateToSuggestedSites" />
@@ -395,7 +395,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(46)]
     public HRESULT NavigateToSuggestedSites([NativeTypeName("BSTR")] char* bstrRelativeUrl)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, int>)(lpVtbl[46]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrRelativeUrl);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, int>)(lpVtbl[46]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrRelativeUrl);
     }
 
     /// <inheritdoc cref="IShellUIHelper3.ShowTabsHelp" />
@@ -403,7 +403,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(47)]
     public HRESULT ShowTabsHelp()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[47]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[47]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IShellUIHelper3.ShowInPrivateHelp" />
@@ -411,7 +411,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(48)]
     public HRESULT ShowInPrivateHelp()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[48]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[48]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msIsSiteMode"]/*' />
@@ -419,7 +419,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(49)]
     public HRESULT msIsSiteMode([NativeTypeName("VARIANT_BOOL *")] short* pfSiteMode)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[49]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfSiteMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[49]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfSiteMode);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeShowThumbBar"]/*' />
@@ -427,7 +427,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(50)]
     public HRESULT msSiteModeShowThumbBar()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[50]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[50]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeAddThumbBarButton"]/*' />
@@ -435,7 +435,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(51)]
     public HRESULT msSiteModeAddThumbBarButton([NativeTypeName("BSTR")] char* bstrIconURL, [NativeTypeName("BSTR")] char* bstrTooltip, VARIANT* pvarButtonID)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[51]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrIconURL, bstrTooltip, pvarButtonID);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, VARIANT*, int>)(lpVtbl[51]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrIconURL, bstrTooltip, pvarButtonID);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeUpdateThumbBarButton"]/*' />
@@ -443,7 +443,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(52)]
     public HRESULT msSiteModeUpdateThumbBarButton(VARIANT ButtonID, [NativeTypeName("VARIANT_BOOL")] short fEnabled, [NativeTypeName("VARIANT_BOOL")] short fVisible)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, VARIANT, short, short, int>)(lpVtbl[52]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), ButtonID, fEnabled, fVisible);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, VARIANT, short, short, int>)(lpVtbl[52]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), ButtonID, fEnabled, fVisible);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeSetIconOverlay"]/*' />
@@ -451,7 +451,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(53)]
     public HRESULT msSiteModeSetIconOverlay([NativeTypeName("BSTR")] char* IconUrl, VARIANT* pvarDescription)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, VARIANT*, int>)(lpVtbl[53]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), IconUrl, pvarDescription);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, VARIANT*, int>)(lpVtbl[53]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), IconUrl, pvarDescription);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeClearIconOverlay"]/*' />
@@ -459,7 +459,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(54)]
     public HRESULT msSiteModeClearIconOverlay()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[54]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[54]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msAddSiteMode"]/*' />
@@ -467,7 +467,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(55)]
     public HRESULT msAddSiteMode()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[55]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[55]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeCreateJumpList"]/*' />
@@ -475,7 +475,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(56)]
     public HRESULT msSiteModeCreateJumpList([NativeTypeName("BSTR")] char* bstrHeader)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, int>)(lpVtbl[56]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrHeader);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, int>)(lpVtbl[56]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrHeader);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeAddJumpListItem"]/*' />
@@ -483,7 +483,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(57)]
     public HRESULT msSiteModeAddJumpListItem([NativeTypeName("BSTR")] char* bstrName, [NativeTypeName("BSTR")] char* bstrActionUri, [NativeTypeName("BSTR")] char* bstrIconUri, VARIANT* pvarWindowType)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, char*, VARIANT*, int>)(lpVtbl[57]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrName, bstrActionUri, bstrIconUri, pvarWindowType);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, char*, VARIANT*, int>)(lpVtbl[57]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), bstrName, bstrActionUri, bstrIconUri, pvarWindowType);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeClearJumpList"]/*' />
@@ -491,7 +491,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(58)]
     public HRESULT msSiteModeClearJumpList()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[58]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[58]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeShowJumpList"]/*' />
@@ -499,7 +499,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(59)]
     public HRESULT msSiteModeShowJumpList()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[59]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[59]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeAddButtonStyle"]/*' />
@@ -507,7 +507,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(60)]
     public HRESULT msSiteModeAddButtonStyle(VARIANT uiButtonID, [NativeTypeName("BSTR")] char* bstrIconUrl, [NativeTypeName("BSTR")] char* bstrTooltip, VARIANT* pvarStyleID)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, VARIANT, char*, char*, VARIANT*, int>)(lpVtbl[60]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), uiButtonID, bstrIconUrl, bstrTooltip, pvarStyleID);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, VARIANT, char*, char*, VARIANT*, int>)(lpVtbl[60]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), uiButtonID, bstrIconUrl, bstrTooltip, pvarStyleID);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeShowButtonStyle"]/*' />
@@ -515,7 +515,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(61)]
     public HRESULT msSiteModeShowButtonStyle(VARIANT uiButtonID, VARIANT uiStyleID)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, VARIANT, VARIANT, int>)(lpVtbl[61]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), uiButtonID, uiStyleID);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, VARIANT, VARIANT, int>)(lpVtbl[61]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), uiButtonID, uiStyleID);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msSiteModeActivate"]/*' />
@@ -523,7 +523,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(62)]
     public HRESULT msSiteModeActivate()
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, int>)(lpVtbl[62]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, int>)(lpVtbl[62]))((IShellUIHelper4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msIsSiteModeFirstRun"]/*' />
@@ -531,7 +531,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(63)]
     public HRESULT msIsSiteModeFirstRun([NativeTypeName("VARIANT_BOOL")] short fPreserveState, VARIANT* puiFirstRun)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short, VARIANT*, int>)(lpVtbl[63]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fPreserveState, puiFirstRun);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short, VARIANT*, int>)(lpVtbl[63]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), fPreserveState, puiFirstRun);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msAddTrackingProtectionList"]/*' />
@@ -539,7 +539,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(64)]
     public HRESULT msAddTrackingProtectionList([NativeTypeName("BSTR")] char* URL, [NativeTypeName("BSTR")] char* bstrFilterName)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, char*, char*, int>)(lpVtbl[64]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, bstrFilterName);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, char*, char*, int>)(lpVtbl[64]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), URL, bstrFilterName);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msTrackingProtectionEnabled"]/*' />
@@ -547,7 +547,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(65)]
     public HRESULT msTrackingProtectionEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[65]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[65]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     /// <include file='IShellUIHelper4.xml' path='doc/member[@name="IShellUIHelper4.msActiveXFilteringEnabled"]/*' />
@@ -555,7 +555,7 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
     [VtblIndex(66)]
     public HRESULT msActiveXFilteringEnabled([NativeTypeName("VARIANT_BOOL *")] short* pfEnabled)
     {
-        return ((delegate* unmanaged<IShellUIHelper4*, short*, int>)(lpVtbl[66]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IShellUIHelper4*, short*, int>)(lpVtbl[66]))((IShellUIHelper4*)Unsafe.AsPointer(ref this), pfEnabled);
     }
 
     public interface Interface : IShellUIHelper3.Interface
@@ -619,204 +619,204 @@ public unsafe partial struct IShellUIHelper4 : IShellUIHelper4.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetFirstBootMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetFirstBootMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetSafeMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetSafeMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RefreshOfflineDesktop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RefreshOfflineDesktop;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> AddFavorite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> AddFavorite;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddChannel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddChannel;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> AddDesktopComponent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short*, int> IsSubscribed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> IsSubscribed;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> NavigateAndFind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT*, int> NavigateAndFind;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, char*, int> ImportExportFavorites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, char*, int> ImportExportFavorites;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> AutoCompleteSaveForm;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> AutoCompleteSaveForm;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> AutoScan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT*, int> AutoScan;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> AutoCompleteAttach;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> AutoCompleteAttach;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, VARIANT*, int> ShowBrowserUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, VARIANT*, int> ShowBrowserUI;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddSearchProvider;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddSearchProvider;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RunOnceShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RunOnceShown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SkipRunOnce;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SkipRunOnce;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, short, char*, int> CustomizeSettings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, short, char*, int> CustomizeSettings;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> SqmEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> SqmEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> PhishingEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> PhishingEnabled;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> BrandImageUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> BrandImageUri;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SkipTabsWelcome;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SkipTabsWelcome;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DiagnoseConnection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DiagnoseConnection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> CustomizeClearType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> CustomizeClearType;
 
         [NativeTypeName("HRESULT (BSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, int> IsSearchProviderInstalled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, int> IsSearchProviderInstalled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> IsSearchMigrated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> IsSearchMigrated;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> DefaultSearchProvider;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> DefaultSearchProvider;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> RunOnceRequiredSettingsComplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> RunOnceRequiredSettingsComplete;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> RunOnceHasShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> RunOnceHasShown;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> SearchGuideUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> SearchGuideUrl;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> AddService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> AddService;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, uint*, int> IsServiceInstalled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, uint*, int> IsServiceInstalled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> InPrivateFilteringEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> InPrivateFilteringEnabled;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> AddToFavoritesBar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT*, int> AddToFavoritesBar;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> BuildNewTabPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> BuildNewTabPage;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> SetRecentlyClosedVisible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> SetRecentlyClosedVisible;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> SetActivitiesVisible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> SetActivitiesVisible;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ContentDiscoveryReset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ContentDiscoveryReset;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> IsSuggestedSitesEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> IsSuggestedSitesEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> EnableSuggestedSites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> EnableSuggestedSites;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> NavigateToSuggestedSites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> NavigateToSuggestedSites;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShowTabsHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShowTabsHelp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShowInPrivateHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShowInPrivateHelp;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> msIsSiteMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> msIsSiteMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msSiteModeShowThumbBar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msSiteModeShowThumbBar;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, VARIANT*, int> msSiteModeAddThumbBarButton;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, VARIANT*, int> msSiteModeAddThumbBarButton;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT_BOOL, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, short, short, int> msSiteModeUpdateThumbBarButton;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, short, short, int> msSiteModeUpdateThumbBarButton;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> msSiteModeSetIconOverlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> msSiteModeSetIconOverlay;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msSiteModeClearIconOverlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msSiteModeClearIconOverlay;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msAddSiteMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msAddSiteMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> msSiteModeCreateJumpList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> msSiteModeCreateJumpList;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, char*, VARIANT*, int> msSiteModeAddJumpListItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, char*, VARIANT*, int> msSiteModeAddJumpListItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msSiteModeClearJumpList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msSiteModeClearJumpList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msSiteModeShowJumpList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msSiteModeShowJumpList;
 
         [NativeTypeName("HRESULT (VARIANT, BSTR, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, char*, char*, VARIANT*, int> msSiteModeAddButtonStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, char*, char*, VARIANT*, int> msSiteModeAddButtonStyle;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, int> msSiteModeShowButtonStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, VARIANT, int> msSiteModeShowButtonStyle;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> msSiteModeActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> msSiteModeActivate;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, VARIANT*, int> msIsSiteModeFirstRun;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, VARIANT*, int> msIsSiteModeFirstRun;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> msAddTrackingProtectionList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> msAddTrackingProtectionList;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> msTrackingProtectionEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> msTrackingProtectionEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> msActiveXFilteringEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> msActiveXFilteringEnabled;
     }
 }

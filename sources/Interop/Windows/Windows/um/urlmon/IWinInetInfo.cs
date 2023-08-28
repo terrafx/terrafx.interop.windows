@@ -25,7 +25,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWinInetInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWinInetInfo*, uint>)(lpVtbl[1]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWinInetInfo*, uint>)(lpVtbl[2]))((IWinInetInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWinInetInfo.xml' path='doc/member[@name="IWinInetInfo.QueryOption"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf)
     {
-        return ((delegate* unmanaged<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
+        return ((delegate* unmanaged[MemberFunction]<IWinInetInfo*, uint, void*, uint*, int>)(lpVtbl[3]))((IWinInetInfo*)Unsafe.AsPointer(ref this), dwOption, pBuffer, pcbBuf);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IWinInetInfo : IWinInetInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint*, int> QueryOption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint*, int> QueryOption;
     }
 }

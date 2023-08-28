@@ -25,7 +25,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaControl*, Guid*, void**, int>)(lpVtbl[0]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, Guid*, void**, int>)(lpVtbl[0]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaControl*, uint>)(lpVtbl[1]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, uint>)(lpVtbl[1]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaControl*, uint>)(lpVtbl[2]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, uint>)(lpVtbl[2]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IMediaControl*, uint*, int>)(lpVtbl[3]))((IMediaControl*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, uint*, int>)(lpVtbl[3]))((IMediaControl*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IMediaControl*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaControl*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaControl*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IMediaControl*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaControl*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IMediaControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaControl*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaControl*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.Run"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT Run()
     {
-        return ((delegate* unmanaged<IMediaControl*, int>)(lpVtbl[7]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int>)(lpVtbl[7]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.Pause"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IMediaControl*, int>)(lpVtbl[8]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int>)(lpVtbl[8]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.Stop"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMediaControl*, int>)(lpVtbl[9]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int>)(lpVtbl[9]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.GetState"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT GetState([NativeTypeName("LONG")] int msTimeout, [NativeTypeName("OAFilterState *")] int* pfs)
     {
-        return ((delegate* unmanaged<IMediaControl*, int, int*, int>)(lpVtbl[10]))((IMediaControl*)Unsafe.AsPointer(ref this), msTimeout, pfs);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int, int*, int>)(lpVtbl[10]))((IMediaControl*)Unsafe.AsPointer(ref this), msTimeout, pfs);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.RenderFile"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT RenderFile([NativeTypeName("BSTR")] char* strFilename)
     {
-        return ((delegate* unmanaged<IMediaControl*, char*, int>)(lpVtbl[11]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, char*, int>)(lpVtbl[11]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.AddSourceFilter"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT AddSourceFilter([NativeTypeName("BSTR")] char* strFilename, IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IMediaControl*, char*, IDispatch**, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename, ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, char*, IDispatch**, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), strFilename, ppUnk);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.get_FilterCollection"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT get_FilterCollection(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IMediaControl*, IDispatch**, int>)(lpVtbl[13]))((IMediaControl*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IDispatch**, int>)(lpVtbl[13]))((IMediaControl*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.get_RegFilterCollection"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT get_RegFilterCollection(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IMediaControl*, IDispatch**, int>)(lpVtbl[14]))((IMediaControl*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IDispatch**, int>)(lpVtbl[14]))((IMediaControl*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.StopWhenReady"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT StopWhenReady()
     {
-        return ((delegate* unmanaged<IMediaControl*, int>)(lpVtbl[15]))((IMediaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, int>)(lpVtbl[15]))((IMediaControl*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDispatch.Interface
@@ -184,51 +184,51 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Run;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (LONG, OAFilterState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetState;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> RenderFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> RenderFile;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IDispatch**, int> AddSourceFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IDispatch**, int> AddSourceFilter;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_FilterCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_FilterCollection;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_RegFilterCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_RegFilterCollection;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopWhenReady;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopWhenReady;
     }
 }

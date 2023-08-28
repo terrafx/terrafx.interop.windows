@@ -25,7 +25,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, Guid*, void**, int>)(lpVtbl[0]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, Guid*, void**, int>)(lpVtbl[0]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, uint>)(lpVtbl[1]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, uint>)(lpVtbl[1]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, uint>)(lpVtbl[2]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, uint>)(lpVtbl[2]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INetworkFolderInternal.xml' path='doc/member[@name="INetworkFolderInternal.GetResourceDisplayType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [VtblIndex(3)]
     public HRESULT GetResourceDisplayType(uint* displayType)
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, uint*, int>)(lpVtbl[3]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), displayType);
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, uint*, int>)(lpVtbl[3]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), displayType);
     }
 
     /// <include file='INetworkFolderInternal.xml' path='doc/member[@name="INetworkFolderInternal.GetIDList"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [VtblIndex(4)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** idList)
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, ITEMIDLIST**, int>)(lpVtbl[4]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), idList);
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, ITEMIDLIST**, int>)(lpVtbl[4]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), idList);
     }
 
     /// <include file='INetworkFolderInternal.xml' path='doc/member[@name="INetworkFolderInternal.GetProvider"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
     [VtblIndex(5)]
     public HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] char* provider)
     {
-        return ((delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, char*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
+        return ((delegate* unmanaged[MemberFunction]<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, char*, int>)(lpVtbl[5]))((INetworkFolderInternal*)Unsafe.AsPointer(ref this), itemIdCount, itemIds, providerMaxLength, provider);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetResourceDisplayType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetResourceDisplayType;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, int> GetIDList;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, UINT, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint, char*, int> GetProvider;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITEMIDLIST**, uint, char*, int> GetProvider;
     }
 }

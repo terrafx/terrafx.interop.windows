@@ -26,7 +26,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, uint>)(lpVtbl[1]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, uint>)(lpVtbl[1]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, uint>)(lpVtbl[2]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, uint>)(lpVtbl[2]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetDevice" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [VtblIndex(3)]
     public void GetDevice(ID3D11Device** ppDevice)
     {
-        ((delegate* unmanaged<ID3D11VertexShader*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), ppDevice);
+        ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, ID3D11Device**, void>)(lpVtbl[3]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), ppDevice);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.GetPrivateData" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [VtblIndex(4)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, Guid*, uint*, void*, int>)(lpVtbl[4]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [VtblIndex(5)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, Guid*, uint, void*, int>)(lpVtbl[5]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
     }
 
     /// <inheritdoc cref="ID3D11DeviceChild.SetPrivateDataInterface" />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
     [VtblIndex(6)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
     {
-        return ((delegate* unmanaged<ID3D11VertexShader*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, pData);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11VertexShader*, Guid*, IUnknown*, int>)(lpVtbl[6]))((ID3D11VertexShader*)Unsafe.AsPointer(ref this), guid, pData);
     }
 
     public interface Interface : ID3D11DeviceChild.Interface
@@ -87,24 +87,24 @@ public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCdmSuspendNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCdmSuspendNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCdmSuspendNotify*, uint>)(lpVtbl[1]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCdmSuspendNotify*, uint>)(lpVtbl[1]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCdmSuspendNotify*, uint>)(lpVtbl[2]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCdmSuspendNotify*, uint>)(lpVtbl[2]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify.Begin"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
     [VtblIndex(3)]
     public HRESULT Begin()
     {
-        return ((delegate* unmanaged<IMFCdmSuspendNotify*, int>)(lpVtbl[3]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCdmSuspendNotify*, int>)(lpVtbl[3]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify.End"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
     [VtblIndex(4)]
     public HRESULT End()
     {
-        return ((delegate* unmanaged<IMFCdmSuspendNotify*, int>)(lpVtbl[4]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCdmSuspendNotify*, int>)(lpVtbl[4]))((IMFCdmSuspendNotify*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Begin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Begin;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> End;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> End;
     }
 }

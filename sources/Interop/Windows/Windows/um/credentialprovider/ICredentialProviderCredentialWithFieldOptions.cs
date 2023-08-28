@@ -27,7 +27,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialWithFieldOptions*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderCredentialWithFieldOptions.xml' path='doc/member[@name="ICredentialProviderCredentialWithFieldOptions.GetFieldOptions"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
     [VtblIndex(3)]
     public HRESULT GetFieldOptions([NativeTypeName("DWORD")] uint fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS* options)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int>)(lpVtbl[3]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this), fieldID, options);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialWithFieldOptions*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int>)(lpVtbl[3]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this), fieldID, options);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int> GetFieldOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int> GetFieldOptions;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, uint>)(lpVtbl[1]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, uint>)(lpVtbl[1]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, uint>)(lpVtbl[2]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, uint>)(lpVtbl[2]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.SetBufferingParams"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [VtblIndex(3)]
     public HRESULT SetBufferingParams(MFBYTESTREAM_BUFFERING_PARAMS* pParams)
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, MFBYTESTREAM_BUFFERING_PARAMS*, int>)(lpVtbl[3]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), pParams);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, MFBYTESTREAM_BUFFERING_PARAMS*, int>)(lpVtbl[3]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), pParams);
     }
 
     /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.EnableBuffering"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [VtblIndex(4)]
     public HRESULT EnableBuffering(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, BOOL, int>)(lpVtbl[4]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, BOOL, int>)(lpVtbl[4]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.StopBuffering"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
     [VtblIndex(5)]
     public HRESULT StopBuffering()
     {
-        return ((delegate* unmanaged<IMFByteStreamBuffering*, int>)(lpVtbl[5]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamBuffering*, int>)(lpVtbl[5]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFBYTESTREAM_BUFFERING_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFBYTESTREAM_BUFFERING_PARAMS*, int> SetBufferingParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFBYTESTREAM_BUFFERING_PARAMS*, int> SetBufferingParams;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> EnableBuffering;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> EnableBuffering;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopBuffering;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopBuffering;
     }
 }

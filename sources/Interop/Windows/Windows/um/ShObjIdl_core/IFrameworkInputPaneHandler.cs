@@ -25,7 +25,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFrameworkInputPaneHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPaneHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFrameworkInputPaneHandler*, uint>)(lpVtbl[1]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPaneHandler*, uint>)(lpVtbl[1]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFrameworkInputPaneHandler*, uint>)(lpVtbl[2]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPaneHandler*, uint>)(lpVtbl[2]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler.Showing"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
     [VtblIndex(3)]
     public HRESULT Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView)
     {
-        return ((delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, BOOL, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPaneHandler*, RECT*, BOOL, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
     }
 
     /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler.Hiding"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
     [VtblIndex(4)]
     public HRESULT Hiding(BOOL fEnsureFocusedElementInView)
     {
-        return ((delegate* unmanaged<IFrameworkInputPaneHandler*, BOOL, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
+        return ((delegate* unmanaged[MemberFunction]<IFrameworkInputPaneHandler*, BOOL, int>)(lpVtbl[4]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), fEnsureFocusedElementInView);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, BOOL, int> Showing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, BOOL, int> Showing;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Hiding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Hiding;
     }
 }

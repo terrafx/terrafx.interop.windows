@@ -26,7 +26,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsCaptureItemInterop*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[1]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[1]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[2]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsCaptureItemInterop*, uint>)(lpVtbl[2]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop.CreateForWindow"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
     [VtblIndex(3)]
     public HRESULT CreateForWindow(HWND window, [NativeTypeName("const IID &")] Guid* riid, void** result)
     {
-        return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, HWND, Guid*, void**, int>)(lpVtbl[3]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), window, riid, result);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsCaptureItemInterop*, HWND, Guid*, void**, int>)(lpVtbl[3]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), window, riid, result);
     }
 
     /// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop.CreateForMonitor"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
     [VtblIndex(4)]
     public HRESULT CreateForMonitor(HMONITOR monitor, [NativeTypeName("const IID &")] Guid* riid, void** result)
     {
-        return ((delegate* unmanaged<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int>)(lpVtbl[4]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), monitor, riid, result);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int>)(lpVtbl[4]))((IGraphicsCaptureItemInterop*)Unsafe.AsPointer(ref this), monitor, riid, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> CreateForWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, Guid*, void**, int> CreateForWindow;
 
         [NativeTypeName("HRESULT (HMONITOR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMONITOR, Guid*, void**, int> CreateForMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMONITOR, Guid*, void**, int> CreateForMonitor;
     }
 }

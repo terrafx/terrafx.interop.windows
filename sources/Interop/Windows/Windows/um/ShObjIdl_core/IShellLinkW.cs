@@ -25,7 +25,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellLinkW*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkW*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellLinkW*, uint>)(lpVtbl[1]))((IShellLinkW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, uint>)(lpVtbl[1]))((IShellLinkW*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellLinkW*, uint>)(lpVtbl[2]))((IShellLinkW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, uint>)(lpVtbl[2]))((IShellLinkW*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetPath"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetPath([NativeTypeName("LPWSTR")] char* pszFile, int cch, WIN32_FIND_DATAW* pfd, [NativeTypeName("DWORD")] uint fFlags)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, WIN32_FIND_DATAW*, uint, int>)(lpVtbl[3]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile, cch, pfd, fFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, WIN32_FIND_DATAW*, uint, int>)(lpVtbl[3]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile, cch, pfd, fFlags);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetIDList"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
     {
-        return ((delegate* unmanaged<IShellLinkW*, ITEMIDLIST**, int>)(lpVtbl[4]))((IShellLinkW*)Unsafe.AsPointer(ref this), ppidl);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, ITEMIDLIST**, int>)(lpVtbl[4]))((IShellLinkW*)Unsafe.AsPointer(ref this), ppidl);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetIDList"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<IShellLinkW*, ITEMIDLIST*, int>)(lpVtbl[5]))((IShellLinkW*)Unsafe.AsPointer(ref this), pidl);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, ITEMIDLIST*, int>)(lpVtbl[5]))((IShellLinkW*)Unsafe.AsPointer(ref this), pidl);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetDescription"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetDescription([NativeTypeName("LPWSTR")] char* pszName, int cch)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, int>)(lpVtbl[6]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszName, cch);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, int>)(lpVtbl[6]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszName, cch);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetDescription"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetDescription([NativeTypeName("LPCWSTR")] char* pszName)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int>)(lpVtbl[7]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszName);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int>)(lpVtbl[7]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszName);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetWorkingDirectory"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetWorkingDirectory([NativeTypeName("LPWSTR")] char* pszDir, int cch)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, int>)(lpVtbl[8]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszDir, cch);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, int>)(lpVtbl[8]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszDir, cch);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetWorkingDirectory"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] char* pszDir)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int>)(lpVtbl[9]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszDir);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int>)(lpVtbl[9]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszDir);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetArguments"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetArguments([NativeTypeName("LPWSTR")] char* pszArgs, int cch)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, int>)(lpVtbl[10]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszArgs, cch);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, int>)(lpVtbl[10]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszArgs, cch);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetArguments"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT SetArguments([NativeTypeName("LPCWSTR")] char* pszArgs)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int>)(lpVtbl[11]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszArgs);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int>)(lpVtbl[11]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszArgs);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetHotkey"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey)
     {
-        return ((delegate* unmanaged<IShellLinkW*, ushort*, int>)(lpVtbl[12]))((IShellLinkW*)Unsafe.AsPointer(ref this), pwHotkey);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, ushort*, int>)(lpVtbl[12]))((IShellLinkW*)Unsafe.AsPointer(ref this), pwHotkey);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetHotkey"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT SetHotkey([NativeTypeName("WORD")] ushort wHotkey)
     {
-        return ((delegate* unmanaged<IShellLinkW*, ushort, int>)(lpVtbl[13]))((IShellLinkW*)Unsafe.AsPointer(ref this), wHotkey);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, ushort, int>)(lpVtbl[13]))((IShellLinkW*)Unsafe.AsPointer(ref this), wHotkey);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetShowCmd"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetShowCmd(int* piShowCmd)
     {
-        return ((delegate* unmanaged<IShellLinkW*, int*, int>)(lpVtbl[14]))((IShellLinkW*)Unsafe.AsPointer(ref this), piShowCmd);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, int*, int>)(lpVtbl[14]))((IShellLinkW*)Unsafe.AsPointer(ref this), piShowCmd);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetShowCmd"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT SetShowCmd(int iShowCmd)
     {
-        return ((delegate* unmanaged<IShellLinkW*, int, int>)(lpVtbl[15]))((IShellLinkW*)Unsafe.AsPointer(ref this), iShowCmd);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, int, int>)(lpVtbl[15]))((IShellLinkW*)Unsafe.AsPointer(ref this), iShowCmd);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.GetIconLocation"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT GetIconLocation([NativeTypeName("LPWSTR")] char* pszIconPath, int cch, int* piIcon)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, int*, int>)(lpVtbl[16]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszIconPath, cch, piIcon);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, int*, int>)(lpVtbl[16]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszIconPath, cch, piIcon);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetIconLocation"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT SetIconLocation([NativeTypeName("LPCWSTR")] char* pszIconPath, int iIcon)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int, int>)(lpVtbl[17]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszIconPath, iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int, int>)(lpVtbl[17]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszIconPath, iIcon);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetRelativePath"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT SetRelativePath([NativeTypeName("LPCWSTR")] char* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, uint, int>)(lpVtbl[18]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszPathRel, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, uint, int>)(lpVtbl[18]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszPathRel, dwReserved);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.Resolve"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
     {
-        return ((delegate* unmanaged<IShellLinkW*, HWND, uint, int>)(lpVtbl[19]))((IShellLinkW*)Unsafe.AsPointer(ref this), hwnd, fFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, HWND, uint, int>)(lpVtbl[19]))((IShellLinkW*)Unsafe.AsPointer(ref this), hwnd, fFlags);
     }
 
     /// <include file='IShellLinkW.xml' path='doc/member[@name="IShellLinkW.SetPath"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT SetPath([NativeTypeName("LPCWSTR")] char* pszFile)
     {
-        return ((delegate* unmanaged<IShellLinkW*, char*, int>)(lpVtbl[20]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkW*, char*, int>)(lpVtbl[20]))((IShellLinkW*)Unsafe.AsPointer(ref this), pszFile);
     }
 
     public interface Interface : IUnknown.Interface
@@ -251,66 +251,66 @@ public unsafe partial struct IShellLinkW : IShellLinkW.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, int, WIN32_FIND_DATAW *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, WIN32_FIND_DATAW*, uint, int> GetPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, WIN32_FIND_DATAW*, uint, int> GetPath;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, int> GetIDList;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> SetIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> SetIDList;
 
         [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetDescription;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDescription;
 
         [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> GetWorkingDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetWorkingDirectory;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetWorkingDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetWorkingDirectory;
 
         [NativeTypeName("HRESULT (LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> GetArguments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetArguments;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetArguments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetArguments;
 
         [NativeTypeName("HRESULT (WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetHotkey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetHotkey;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> SetHotkey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> SetHotkey;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetShowCmd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetShowCmd;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetShowCmd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetShowCmd;
 
         [NativeTypeName("HRESULT (LPWSTR, int, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int*, int> GetIconLocation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, int> SetIconLocation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetIconLocation;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> SetRelativePath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> SetRelativePath;
 
         [NativeTypeName("HRESULT (HWND, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, int> Resolve;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, int> Resolve;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetPath;
     }
 }

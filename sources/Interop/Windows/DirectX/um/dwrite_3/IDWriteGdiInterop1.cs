@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, uint>)(lpVtbl[1]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, uint>)(lpVtbl[1]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, uint>)(lpVtbl[2]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, uint>)(lpVtbl[2]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteGdiInterop.CreateFontFromLOGFONT" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(3)]
     public HRESULT CreateFontFromLOGFONT([NativeTypeName("const LOGFONTW *")] LOGFONTW* logFont, IDWriteFont** font)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFont**, int>)(lpVtbl[3]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, font);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFont**, int>)(lpVtbl[3]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, font);
     }
 
     /// <inheritdoc cref="IDWriteGdiInterop.ConvertFontToLOGFONT" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(4)]
     public HRESULT ConvertFontToLOGFONT(IDWriteFont* font, LOGFONTW* logFont, BOOL* isSystemFont)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFont*, LOGFONTW*, BOOL*, int>)(lpVtbl[4]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, logFont, isSystemFont);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, IDWriteFont*, LOGFONTW*, BOOL*, int>)(lpVtbl[4]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, logFont, isSystemFont);
     }
 
     /// <inheritdoc cref="IDWriteGdiInterop.ConvertFontFaceToLOGFONT" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(5)]
     public HRESULT ConvertFontFaceToLOGFONT(IDWriteFontFace* font, LOGFONTW* logFont)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFontFace*, LOGFONTW*, int>)(lpVtbl[5]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, logFont);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, IDWriteFontFace*, LOGFONTW*, int>)(lpVtbl[5]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, logFont);
     }
 
     /// <inheritdoc cref="IDWriteGdiInterop.CreateFontFaceFromHdc" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(6)]
     public HRESULT CreateFontFaceFromHdc(HDC hdc, IDWriteFontFace** fontFace)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, HDC, IDWriteFontFace**, int>)(lpVtbl[6]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), hdc, fontFace);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, HDC, IDWriteFontFace**, int>)(lpVtbl[6]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), hdc, fontFace);
     }
 
     /// <inheritdoc cref="IDWriteGdiInterop.CreateBitmapRenderTarget" />
@@ -84,7 +84,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(7)]
     public HRESULT CreateBitmapRenderTarget(HDC hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int>)(lpVtbl[7]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), hdc, width, height, renderTarget);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int>)(lpVtbl[7]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), hdc, width, height, renderTarget);
     }
 
     /// <include file='IDWriteGdiInterop1.xml' path='doc/member[@name="IDWriteGdiInterop1.CreateFontFromLOGFONT"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(8)]
     public HRESULT CreateFontFromLOGFONT([NativeTypeName("const LOGFONTW *")] LOGFONTW* logFont, IDWriteFontCollection* fontCollection, IDWriteFont** font)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int>)(lpVtbl[8]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, fontCollection, font);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int>)(lpVtbl[8]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, fontCollection, font);
     }
 
     /// <include file='IDWriteGdiInterop1.xml' path='doc/member[@name="IDWriteGdiInterop1.GetFontSignature"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(9)]
     public HRESULT GetFontSignature(IDWriteFontFace* fontFace, FONTSIGNATURE* fontSignature)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFontFace*, FONTSIGNATURE*, int>)(lpVtbl[9]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), fontFace, fontSignature);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, IDWriteFontFace*, FONTSIGNATURE*, int>)(lpVtbl[9]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), fontFace, fontSignature);
     }
 
     /// <include file='IDWriteGdiInterop1.xml' path='doc/member[@name="IDWriteGdiInterop1.GetFontSignature"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(10)]
     public HRESULT GetFontSignature(IDWriteFont* font, FONTSIGNATURE* fontSignature)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFont*, FONTSIGNATURE*, int>)(lpVtbl[10]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, fontSignature);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, IDWriteFont*, FONTSIGNATURE*, int>)(lpVtbl[10]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), font, fontSignature);
     }
 
     /// <include file='IDWriteGdiInterop1.xml' path='doc/member[@name="IDWriteGdiInterop1.GetMatchingFontsByLOGFONT"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
     [VtblIndex(11)]
     public HRESULT GetMatchingFontsByLOGFONT([NativeTypeName("const LOGFONT *")] LOGFONTW* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet)
     {
-        return ((delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, fontSet, filteredSet);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int>)(lpVtbl[11]))((IDWriteGdiInterop1*)Unsafe.AsPointer(ref this), logFont, fontSet, filteredSet);
     }
 
     public interface Interface : IDWriteGdiInterop.Interface
@@ -138,39 +138,39 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFont *, LOGFONTW *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, LOGFONTW *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
 
         [NativeTypeName("HRESULT (HDC, IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
 
         [NativeTypeName("HRESULT (HDC, UINT32, UINT32, IDWriteBitmapRenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, IDWriteFontCollection *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int> CreateFontFromLOGFONT1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int> CreateFontFromLOGFONT1;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, FONTSIGNATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFace*, FONTSIGNATURE*, int> GetFontSignature;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFace*, FONTSIGNATURE*, int> GetFontSignature;
 
         [NativeTypeName("HRESULT (IDWriteFont *, FONTSIGNATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFont*, FONTSIGNATURE*, int> GetFontSignature1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFont*, FONTSIGNATURE*, int> GetFontSignature1;
 
         [NativeTypeName("HRESULT (const LOGFONT *, IDWriteFontSet *, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int> GetMatchingFontsByLOGFONT;
+        public delegate* unmanaged[MemberFunction]<TSelf*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int> GetMatchingFontsByLOGFONT;
     }
 }

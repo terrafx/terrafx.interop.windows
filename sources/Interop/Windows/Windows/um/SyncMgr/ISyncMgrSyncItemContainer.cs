@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [VtblIndex(3)]
     public HRESULT GetSyncItem([NativeTypeName("LPCWSTR")] char* pszItemID, ISyncMgrSyncItem** ppItem)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, char*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, char*, ISyncMgrSyncItem**, int>)(lpVtbl[3]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pszItemID, ppItem);
     }
 
     /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItemEnumerator"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [VtblIndex(4)]
     public HRESULT GetSyncItemEnumerator(IEnumSyncMgrSyncItems** ppenum)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[4]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[4]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='ISyncMgrSyncItemContainer.xml' path='doc/member[@name="ISyncMgrSyncItemContainer.GetSyncItemCount"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
     [VtblIndex(5)]
     public HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems)
     {
-        return ((delegate* unmanaged<ISyncMgrSyncItemContainer*, uint*, int>)(lpVtbl[5]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pcItems);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrSyncItemContainer*, uint*, int>)(lpVtbl[5]))((ISyncMgrSyncItemContainer*)Unsafe.AsPointer(ref this), pcItems);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ISyncMgrSyncItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ISyncMgrSyncItem**, int> GetSyncItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ISyncMgrSyncItem**, int> GetSyncItem;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSyncItemCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSyncItemCount;
     }
 }

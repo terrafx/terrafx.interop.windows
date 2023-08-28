@@ -26,7 +26,7 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDisplayDeviceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayDeviceInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDisplayDeviceInterop*, uint>)(lpVtbl[1]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayDeviceInterop*, uint>)(lpVtbl[1]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDisplayDeviceInterop*, uint>)(lpVtbl[2]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayDeviceInterop*, uint>)(lpVtbl[2]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayDeviceInterop.xml' path='doc/member[@name="IDisplayDeviceInterop.CreateSharedHandle"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
     [VtblIndex(3)]
     public HRESULT CreateSharedHandle(IInspectable* pObject, [NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pSecurityAttributes, [NativeTypeName("DWORD")] uint Access, HSTRING Name, HANDLE* pHandle)
     {
-        return ((delegate* unmanaged<IDisplayDeviceInterop*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int>)(lpVtbl[3]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), pObject, pSecurityAttributes, Access, Name, pHandle);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayDeviceInterop*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int>)(lpVtbl[3]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), pObject, pSecurityAttributes, Access, Name, pHandle);
     }
 
     /// <include file='IDisplayDeviceInterop.xml' path='doc/member[@name="IDisplayDeviceInterop.OpenSharedHandle"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
     [VtblIndex(4)]
     public HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj)
     {
-        return ((delegate* unmanaged<IDisplayDeviceInterop*, HANDLE, Guid, void**, int>)(lpVtbl[4]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayDeviceInterop*, HANDLE, Guid, void**, int>)(lpVtbl[4]))((IDisplayDeviceInterop*)Unsafe.AsPointer(ref this), NTHandle, riid, ppvObj);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInspectable *, const SECURITY_ATTRIBUTES *, DWORD, HSTRING, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int> CreateSharedHandle;
 
         [NativeTypeName("HRESULT (HANDLE, IID, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE, Guid, void**, int> OpenSharedHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, Guid, void**, int> OpenSharedHandle;
     }
 }

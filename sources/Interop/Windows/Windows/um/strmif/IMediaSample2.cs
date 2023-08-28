@@ -25,7 +25,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaSample2*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaSample2*, uint>)(lpVtbl[1]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, uint>)(lpVtbl[1]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaSample2*, uint>)(lpVtbl[2]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, uint>)(lpVtbl[2]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.GetPointer" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetPointer(byte** ppBuffer)
     {
-        return ((delegate* unmanaged<IMediaSample2*, byte**, int>)(lpVtbl[3]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, byte**, int>)(lpVtbl[3]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppBuffer);
     }
 
     /// <inheritdoc cref="IMediaSample.GetSize" />
@@ -60,7 +60,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [return: NativeTypeName("long")]
     public int GetSize()
     {
-        return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[4]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int>)(lpVtbl[4]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.GetTime" />
@@ -68,7 +68,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd)
     {
-        return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[5]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, long*, long*, int>)(lpVtbl[5]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
     /// <inheritdoc cref="IMediaSample.SetTime" />
@@ -76,7 +76,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT SetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd)
     {
-        return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[6]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, long*, long*, int>)(lpVtbl[6]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
     /// <inheritdoc cref="IMediaSample.IsSyncPoint" />
@@ -84,7 +84,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT IsSyncPoint()
     {
-        return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[7]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int>)(lpVtbl[7]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.SetSyncPoint" />
@@ -92,7 +92,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT SetSyncPoint(BOOL bIsSyncPoint)
     {
-        return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[8]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsSyncPoint);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, BOOL, int>)(lpVtbl[8]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsSyncPoint);
     }
 
     /// <inheritdoc cref="IMediaSample.IsPreroll" />
@@ -100,7 +100,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT IsPreroll()
     {
-        return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[9]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int>)(lpVtbl[9]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.SetPreroll" />
@@ -108,7 +108,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT SetPreroll(BOOL bIsPreroll)
     {
-        return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[10]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsPreroll);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, BOOL, int>)(lpVtbl[10]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsPreroll);
     }
 
     /// <inheritdoc cref="IMediaSample.GetActualDataLength" />
@@ -117,7 +117,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [return: NativeTypeName("long")]
     public int GetActualDataLength()
     {
-        return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[11]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int>)(lpVtbl[11]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.SetActualDataLength" />
@@ -125,7 +125,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT SetActualDataLength([NativeTypeName("long")] int __MIDL__IMediaSample0000)
     {
-        return ((delegate* unmanaged<IMediaSample2*, int, int>)(lpVtbl[12]))((IMediaSample2*)Unsafe.AsPointer(ref this), __MIDL__IMediaSample0000);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int, int>)(lpVtbl[12]))((IMediaSample2*)Unsafe.AsPointer(ref this), __MIDL__IMediaSample0000);
     }
 
     /// <inheritdoc cref="IMediaSample.GetMediaType" />
@@ -133,7 +133,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetMediaType(AM_MEDIA_TYPE** ppMediaType)
     {
-        return ((delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE**, int>)(lpVtbl[13]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, AM_MEDIA_TYPE**, int>)(lpVtbl[13]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppMediaType);
     }
 
     /// <inheritdoc cref="IMediaSample.SetMediaType" />
@@ -141,7 +141,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT SetMediaType(AM_MEDIA_TYPE* pMediaType)
     {
-        return ((delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE*, int>)(lpVtbl[14]))((IMediaSample2*)Unsafe.AsPointer(ref this), pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, AM_MEDIA_TYPE*, int>)(lpVtbl[14]))((IMediaSample2*)Unsafe.AsPointer(ref this), pMediaType);
     }
 
     /// <inheritdoc cref="IMediaSample.IsDiscontinuity" />
@@ -149,7 +149,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT IsDiscontinuity()
     {
-        return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[15]))((IMediaSample2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, int>)(lpVtbl[15]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMediaSample.SetDiscontinuity" />
@@ -157,7 +157,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT SetDiscontinuity(BOOL bDiscontinuity)
     {
-        return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[16]))((IMediaSample2*)Unsafe.AsPointer(ref this), bDiscontinuity);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, BOOL, int>)(lpVtbl[16]))((IMediaSample2*)Unsafe.AsPointer(ref this), bDiscontinuity);
     }
 
     /// <inheritdoc cref="IMediaSample.GetMediaTime" />
@@ -165,7 +165,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT GetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
     {
-        return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[17]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, long*, long*, int>)(lpVtbl[17]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
     /// <inheritdoc cref="IMediaSample.SetMediaTime" />
@@ -173,7 +173,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
     {
-        return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[18]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, long*, long*, int>)(lpVtbl[18]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
     /// <include file='IMediaSample2.xml' path='doc/member[@name="IMediaSample2.GetProperties"]/*' />
@@ -181,7 +181,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT GetProperties([NativeTypeName("DWORD")] uint cbProperties, byte* pbProperties)
     {
-        return ((delegate* unmanaged<IMediaSample2*, uint, byte*, int>)(lpVtbl[19]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, uint, byte*, int>)(lpVtbl[19]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
     }
 
     /// <include file='IMediaSample2.xml' path='doc/member[@name="IMediaSample2.SetProperties"]/*' />
@@ -189,7 +189,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
     [VtblIndex(20)]
     public HRESULT SetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("const BYTE *")] byte* pbProperties)
     {
-        return ((delegate* unmanaged<IMediaSample2*, uint, byte*, int>)(lpVtbl[20]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSample2*, uint, byte*, int>)(lpVtbl[20]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
     }
 
     public interface Interface : IMediaSample.Interface
@@ -205,66 +205,66 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int> GetPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int> GetPointer;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetSize;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> GetTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> GetTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> SetTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> SetTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsSyncPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsSyncPoint;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetSyncPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetSyncPoint;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsPreroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsPreroll;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetPreroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetPreroll;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetActualDataLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetActualDataLength;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetActualDataLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetActualDataLength;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE**, int> GetMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_MEDIA_TYPE**, int> GetMediaType;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> SetMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_MEDIA_TYPE*, int> SetMediaType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDiscontinuity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDiscontinuity;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetDiscontinuity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetDiscontinuity;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> GetMediaTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> GetMediaTime;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> SetMediaTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> SetMediaTime;
 
         [NativeTypeName("HRESULT (DWORD, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, int> GetProperties;
 
         [NativeTypeName("HRESULT (DWORD, const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, int> SetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, int> SetProperties;
     }
 }

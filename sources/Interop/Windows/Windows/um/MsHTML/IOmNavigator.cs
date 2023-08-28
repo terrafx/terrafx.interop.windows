@@ -25,7 +25,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOmNavigator*, Guid*, void**, int>)(lpVtbl[0]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, Guid*, void**, int>)(lpVtbl[0]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[1]))((IOmNavigator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, uint>)(lpVtbl[1]))((IOmNavigator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[2]))((IOmNavigator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, uint>)(lpVtbl[2]))((IOmNavigator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IOmNavigator*, uint*, int>)(lpVtbl[3]))((IOmNavigator*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, uint*, int>)(lpVtbl[3]))((IOmNavigator*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IOmNavigator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IOmNavigator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IOmNavigator*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IOmNavigator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IOmNavigator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appCodeName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_appCodeName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appName"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_appName([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appVersion"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_appVersion([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userAgent"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_userAgent([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.javaEnabled"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
     {
-        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[11]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, short*, int>)(lpVtbl[11]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.taintEnabled"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
     {
-        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[12]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, short*, int>)(lpVtbl[12]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_mimeTypes"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int>)(lpVtbl[13]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, IHTMLMimeTypesCollection**, int>)(lpVtbl[13]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_plugins"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_plugins(IHTMLPluginsCollection** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int>)(lpVtbl[14]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, IHTMLPluginsCollection**, int>)(lpVtbl[14]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_cookieEnabled"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[15]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, short*, int>)(lpVtbl[15]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_opsProfile"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_opsProfile(IHTMLOpsProfile** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[16]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[16]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.toString"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT toString([NativeTypeName("BSTR *")] char** @string)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_cpuClass"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT get_cpuClass([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_systemLanguage"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_browserLanguage"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(20)]
     public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userLanguage"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT get_userLanguage([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_platform"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(22)]
     public HRESULT get_platform([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appMinorVersion"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(23)]
     public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] char** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, char**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, char**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_connectionSpeed"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, int*, int>)(lpVtbl[24]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, int*, int>)(lpVtbl[24]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_onLine"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[25]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, short*, int>)(lpVtbl[25]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userProfile"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT get_userProfile(IHTMLOpsProfile** p)
     {
-        return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[26]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[26]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -305,84 +305,84 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_appCodeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_appCodeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_appName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_appName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_appVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_appVersion;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_userAgent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_userAgent;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> javaEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> javaEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> taintEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> taintEnabled;
 
         [NativeTypeName("HRESULT (IHTMLMimeTypesCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
 
         [NativeTypeName("HRESULT (IHTMLPluginsCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLPluginsCollection**, int> get_plugins;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLPluginsCollection**, int> get_plugins;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_cookieEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_cookieEnabled;
 
         [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLOpsProfile**, int> get_opsProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLOpsProfile**, int> get_opsProfile;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> toString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> toString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_cpuClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_cpuClass;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_systemLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_browserLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_browserLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_userLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_userLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_platform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_platform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_appMinorVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_appMinorVersion;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_connectionSpeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_connectionSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_onLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_onLine;
 
         [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLOpsProfile**, int> get_userProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLOpsProfile**, int> get_userProfile;
     }
 }

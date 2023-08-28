@@ -28,7 +28,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, Guid*, void**, int>)(lpVtbl[0]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, Guid*, void**, int>)(lpVtbl[0]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint>)(lpVtbl[1]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint>)(lpVtbl[1]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint>)(lpVtbl[2]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint>)(lpVtbl[2]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.DoesSupportIndexing"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(3)]
     public HRESULT DoesSupportIndexing(BOOL* pfIndexingSupported)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, BOOL*, int>)(lpVtbl[3]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pfIndexingSupported);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, BOOL*, int>)(lpVtbl[3]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pfIndexingSupported);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.SetIndexing"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(4)]
     public HRESULT SetIndexing(WICJpegIndexingOptions options, uint horizontalIntervalSize)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, WICJpegIndexingOptions, uint, int>)(lpVtbl[4]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), options, horizontalIntervalSize);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, WICJpegIndexingOptions, uint, int>)(lpVtbl[4]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), options, horizontalIntervalSize);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.ClearIndexing"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(5)]
     public HRESULT ClearIndexing()
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, int>)(lpVtbl[5]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, int>)(lpVtbl[5]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.GetAcHuffmanTable"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(6)]
     public HRESULT GetAcHuffmanTable(uint scanIndex, uint tableIndex, DXGI_JPEG_AC_HUFFMAN_TABLE* pAcHuffmanTable)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int>)(lpVtbl[6]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pAcHuffmanTable);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int>)(lpVtbl[6]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pAcHuffmanTable);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.GetDcHuffmanTable"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(7)]
     public HRESULT GetDcHuffmanTable(uint scanIndex, uint tableIndex, DXGI_JPEG_DC_HUFFMAN_TABLE* pDcHuffmanTable)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int>)(lpVtbl[7]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pDcHuffmanTable);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int>)(lpVtbl[7]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pDcHuffmanTable);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.GetQuantizationTable"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(8)]
     public HRESULT GetQuantizationTable(uint scanIndex, uint tableIndex, DXGI_JPEG_QUANTIZATION_TABLE* pQuantizationTable)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int>)(lpVtbl[8]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pQuantizationTable);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int>)(lpVtbl[8]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, tableIndex, pQuantizationTable);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.GetFrameHeader"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(9)]
     public HRESULT GetFrameHeader(WICJpegFrameHeader* pFrameHeader)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)(lpVtbl[9]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pFrameHeader);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, WICJpegFrameHeader*, int>)(lpVtbl[9]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), pFrameHeader);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.GetScanHeader"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(10)]
     public HRESULT GetScanHeader(uint scanIndex, WICJpegScanHeader* pScanHeader)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)(lpVtbl[10]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, pScanHeader);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int>)(lpVtbl[10]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, pScanHeader);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.CopyScan"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(11)]
     public HRESULT CopyScan(uint scanIndex, uint scanOffset, uint cbScanData, byte* pbScanData, uint* pcbScanDataActual)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, uint, byte*, uint*, int>)(lpVtbl[11]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, scanOffset, cbScanData, pbScanData, pcbScanDataActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, uint, uint, byte*, uint*, int>)(lpVtbl[11]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), scanIndex, scanOffset, cbScanData, pbScanData, pcbScanDataActual);
     }
 
     /// <include file='IWICJpegFrameDecode.xml' path='doc/member[@name="IWICJpegFrameDecode.CopyMinimalStream"]/*' />
@@ -126,7 +126,7 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
     [VtblIndex(12)]
     public HRESULT CopyMinimalStream(uint streamOffset, uint cbStreamData, byte* pbStreamData, uint* pcbStreamDataActual)
     {
-        return ((delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, byte*, uint*, int>)(lpVtbl[12]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), streamOffset, cbStreamData, pbStreamData, pcbStreamDataActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICJpegFrameDecode*, uint, uint, byte*, uint*, int>)(lpVtbl[12]))((IWICJpegFrameDecode*)Unsafe.AsPointer(ref this), streamOffset, cbStreamData, pbStreamData, pcbStreamDataActual);
     }
 
     public interface Interface : IUnknown.Interface
@@ -166,42 +166,42 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportIndexing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> DoesSupportIndexing;
 
         [NativeTypeName("HRESULT (WICJpegIndexingOptions, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICJpegIndexingOptions, uint, int> SetIndexing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICJpegIndexingOptions, uint, int> SetIndexing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearIndexing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearIndexing;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_AC_HUFFMAN_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int> GetAcHuffmanTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int> GetAcHuffmanTable;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_DC_HUFFMAN_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int> GetDcHuffmanTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int> GetDcHuffmanTable;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_QUANTIZATION_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int> GetQuantizationTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int> GetQuantizationTable;
 
         [NativeTypeName("HRESULT (WICJpegFrameHeader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICJpegFrameHeader*, int> GetFrameHeader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICJpegFrameHeader*, int> GetFrameHeader;
 
         [NativeTypeName("HRESULT (UINT, WICJpegScanHeader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, WICJpegScanHeader*, int> GetScanHeader;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, WICJpegScanHeader*, int> GetScanHeader;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, byte*, uint*, int> CopyScan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, byte*, uint*, int> CopyScan;
 
         [NativeTypeName("HRESULT (UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> CopyMinimalStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint*, int> CopyMinimalStream;
     }
 }

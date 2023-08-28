@@ -25,7 +25,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, Guid*, void**, int>)(lpVtbl[0]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, Guid*, void**, int>)(lpVtbl[0]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, uint>)(lpVtbl[1]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, uint>)(lpVtbl[1]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, uint>)(lpVtbl[2]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, uint>)(lpVtbl[2]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.CountModes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(3)]
     public HRESULT CountModes([NativeTypeName("long *")] int* pModes)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int*, int>)(lpVtbl[3]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pModes);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int*, int>)(lpVtbl[3]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pModes);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetModeInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetModeInfo([NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight, [NativeTypeName("long *")] int* pDepth)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int*, int*, int*, int>)(lpVtbl[4]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode, pWidth, pHeight, pDepth);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int*, int*, int*, int>)(lpVtbl[4]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode, pWidth, pHeight, pDepth);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetCurrentMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetCurrentMode([NativeTypeName("long *")] int* pMode)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int*, int>)(lpVtbl[5]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pMode);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int*, int>)(lpVtbl[5]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pMode);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.IsModeAvailable"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(6)]
     public HRESULT IsModeAvailable([NativeTypeName("long")] int Mode)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int>)(lpVtbl[6]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int>)(lpVtbl[6]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.IsModeEnabled"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(7)]
     public HRESULT IsModeEnabled([NativeTypeName("long")] int Mode)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int>)(lpVtbl[7]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int>)(lpVtbl[7]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetEnabled"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(8)]
     public HRESULT SetEnabled([NativeTypeName("long")] int Mode, [NativeTypeName("long")] int bEnabled)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int, int>)(lpVtbl[8]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode, bEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int, int>)(lpVtbl[8]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Mode, bEnabled);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetClipFactor"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(9)]
     public HRESULT GetClipFactor([NativeTypeName("long *")] int* pClipFactor)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int*, int>)(lpVtbl[9]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pClipFactor);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int*, int>)(lpVtbl[9]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pClipFactor);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetClipFactor"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(10)]
     public HRESULT SetClipFactor([NativeTypeName("long")] int ClipFactor)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int>)(lpVtbl[10]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), ClipFactor);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int>)(lpVtbl[10]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), ClipFactor);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetMessageDrain"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(11)]
     public HRESULT SetMessageDrain(HWND hwnd)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, HWND, int>)(lpVtbl[11]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, HWND, int>)(lpVtbl[11]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetMessageDrain"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(12)]
     public HRESULT GetMessageDrain(HWND* hwnd)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, HWND*, int>)(lpVtbl[12]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, HWND*, int>)(lpVtbl[12]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetMonitor"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(13)]
     public HRESULT SetMonitor([NativeTypeName("long")] int Monitor)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int>)(lpVtbl[13]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Monitor);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int>)(lpVtbl[13]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Monitor);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetMonitor"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(14)]
     public HRESULT GetMonitor([NativeTypeName("long *")] int* Monitor)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int*, int>)(lpVtbl[14]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Monitor);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int*, int>)(lpVtbl[14]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Monitor);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.HideOnDeactivate"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(15)]
     public HRESULT HideOnDeactivate([NativeTypeName("long")] int Hide)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int, int>)(lpVtbl[15]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Hide);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int, int>)(lpVtbl[15]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), Hide);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.IsHideOnDeactivate"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(16)]
     public HRESULT IsHideOnDeactivate()
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int>)(lpVtbl[16]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int>)(lpVtbl[16]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetCaption"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(17)]
     public HRESULT SetCaption([NativeTypeName("BSTR")] char* strCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, char*, int>)(lpVtbl[17]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), strCaption);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, char*, int>)(lpVtbl[17]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), strCaption);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.GetCaption"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(18)]
     public HRESULT GetCaption([NativeTypeName("BSTR *")] char** pstrCaption)
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, char**, int>)(lpVtbl[18]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pstrCaption);
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, char**, int>)(lpVtbl[18]))((IFullScreenVideo*)Unsafe.AsPointer(ref this), pstrCaption);
     }
 
     /// <include file='IFullScreenVideo.xml' path='doc/member[@name="IFullScreenVideo.SetDefault"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
     [VtblIndex(19)]
     public HRESULT SetDefault()
     {
-        return ((delegate* unmanaged<IFullScreenVideo*, int>)(lpVtbl[19]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFullScreenVideo*, int>)(lpVtbl[19]))((IFullScreenVideo*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -240,63 +240,63 @@ public unsafe partial struct IFullScreenVideo : IFullScreenVideo.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> CountModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> CountModes;
 
         [NativeTypeName("HRESULT (long, long *, long *, long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int*, int*, int> GetModeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int*, int*, int> GetModeInfo;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetCurrentMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetCurrentMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> IsModeAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> IsModeAvailable;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> IsModeEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> IsModeEnabled;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetEnabled;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetClipFactor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetClipFactor;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetClipFactor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetClipFactor;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> SetMessageDrain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> SetMessageDrain;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetMessageDrain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetMessageDrain;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetMonitor;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> HideOnDeactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> HideOnDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsHideOnDeactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsHideOnDeactivate;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetCaption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetCaption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetCaption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetCaption;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetDefault;
     }
 }

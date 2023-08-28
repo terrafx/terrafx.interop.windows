@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, uint>)(lpVtbl[1]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, uint>)(lpVtbl[1]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, uint>)(lpVtbl[2]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, uint>)(lpVtbl[2]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.CanPlayType"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [VtblIndex(3)]
     public HRESULT CanPlayType(BOOL AudioOnly, [NativeTypeName("BSTR")] char* MimeType, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), AudioOnly, MimeType, pAnswer);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[3]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), AudioOnly, MimeType, pAnswer);
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.BeginCreateObject"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [VtblIndex(4)]
     public HRESULT BeginCreateObject([NativeTypeName("BSTR")] char* bstrURL, IMFByteStream* pByteStream, MF_OBJECT_TYPE type, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), bstrURL, pByteStream, type, ppIUnknownCancelCookie, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), bstrURL, pByteStream, type, ppIUnknownCancelCookie, pCallback, punkState);
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.CancelObjectCreation"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [VtblIndex(5)]
     public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, IUnknown*, int>)(lpVtbl[5]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, IUnknown*, int>)(lpVtbl[5]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), pIUnknownCancelCookie);
     }
 
     /// <include file='IMFMediaEngineExtension.xml' path='doc/member[@name="IMFMediaEngineExtension.EndCreateObject"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
     [VtblIndex(6)]
     public HRESULT EndCreateObject(IMFAsyncResult* pResult, IUnknown** ppObject)
     {
-        return ((delegate* unmanaged<IMFMediaEngineExtension*, IMFAsyncResult*, IUnknown**, int>)(lpVtbl[6]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), pResult, ppObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaEngineExtension*, IMFAsyncResult*, IUnknown**, int>)(lpVtbl[6]))((IMFMediaEngineExtension*)Unsafe.AsPointer(ref this), pResult, ppObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IMFMediaEngineExtension : IMFMediaEngineExtension.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, char*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("HRESULT (BSTR, IMFByteStream *, MF_OBJECT_TYPE, IUnknown **, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IMFByteStream*, MF_OBJECT_TYPE, IUnknown**, IMFAsyncCallback*, IUnknown*, int> BeginCreateObject;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> CancelObjectCreation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> CancelObjectCreation;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IUnknown**, int> EndCreateObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, IUnknown**, int> EndCreateObject;
     }
 }

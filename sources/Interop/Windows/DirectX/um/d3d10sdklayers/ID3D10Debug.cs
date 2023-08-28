@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10Debug*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Debug*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint>)(lpVtbl[1]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint>)(lpVtbl[1]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint>)(lpVtbl[2]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint>)(lpVtbl[2]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.SetFeatureMask"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetFeatureMask(uint Mask)
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint, int>)(lpVtbl[3]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Mask);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint, int>)(lpVtbl[3]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Mask);
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.GetFeatureMask"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(4)]
     public uint GetFeatureMask()
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint>)(lpVtbl[4]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint>)(lpVtbl[4]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.SetPresentPerRenderOpDelay"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetPresentPerRenderOpDelay(uint Milliseconds)
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint, int>)(lpVtbl[5]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Milliseconds);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint, int>)(lpVtbl[5]))((ID3D10Debug*)Unsafe.AsPointer(ref this), Milliseconds);
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.GetPresentPerRenderOpDelay"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(6)]
     public uint GetPresentPerRenderOpDelay()
     {
-        return ((delegate* unmanaged<ID3D10Debug*, uint>)(lpVtbl[6]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, uint>)(lpVtbl[6]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.SetSwapChain"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetSwapChain(IDXGISwapChain* pSwapChain)
     {
-        return ((delegate* unmanaged<ID3D10Debug*, IDXGISwapChain*, int>)(lpVtbl[7]))((ID3D10Debug*)Unsafe.AsPointer(ref this), pSwapChain);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, IDXGISwapChain*, int>)(lpVtbl[7]))((ID3D10Debug*)Unsafe.AsPointer(ref this), pSwapChain);
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.GetSwapChain"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetSwapChain(IDXGISwapChain** ppSwapChain)
     {
-        return ((delegate* unmanaged<ID3D10Debug*, IDXGISwapChain**, int>)(lpVtbl[8]))((ID3D10Debug*)Unsafe.AsPointer(ref this), ppSwapChain);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, IDXGISwapChain**, int>)(lpVtbl[8]))((ID3D10Debug*)Unsafe.AsPointer(ref this), ppSwapChain);
     }
 
     /// <include file='ID3D10Debug.xml' path='doc/member[@name="ID3D10Debug.Validate"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT Validate()
     {
-        return ((delegate* unmanaged<ID3D10Debug*, int>)(lpVtbl[9]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Debug*, int>)(lpVtbl[9]))((ID3D10Debug*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -131,33 +131,33 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFeatureMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFeatureMask;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFeatureMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFeatureMask;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetPresentPerRenderOpDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetPresentPerRenderOpDelay;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetPresentPerRenderOpDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetPresentPerRenderOpDelay;
 
         [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISwapChain*, int> SetSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISwapChain*, int> SetSwapChain;
 
         [NativeTypeName("HRESULT (IDXGISwapChain **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISwapChain**, int> GetSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISwapChain**, int> GetSwapChain;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Validate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Validate;
     }
 }

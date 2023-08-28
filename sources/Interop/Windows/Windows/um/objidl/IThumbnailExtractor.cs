@@ -25,7 +25,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IThumbnailExtractor*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailExtractor*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IThumbnailExtractor*, uint>)(lpVtbl[1]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailExtractor*, uint>)(lpVtbl[1]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IThumbnailExtractor*, uint>)(lpVtbl[2]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailExtractor*, uint>)(lpVtbl[2]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor.ExtractThumbnail"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     [VtblIndex(3)]
     public HRESULT ExtractThumbnail(IStorage* pStg, [NativeTypeName("ULONG")] uint ulLength, [NativeTypeName("ULONG")] uint ulHeight, [NativeTypeName("ULONG *")] uint* pulOutputLength, [NativeTypeName("ULONG *")] uint* pulOutputHeight, HBITMAP* phOutputBitmap)
     {
-        return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int>)(lpVtbl[3]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int>)(lpVtbl[3]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg, ulLength, ulHeight, pulOutputLength, pulOutputHeight, phOutputBitmap);
     }
 
     /// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor.OnFileUpdated"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
     [VtblIndex(4)]
     public HRESULT OnFileUpdated(IStorage* pStg)
     {
-        return ((delegate* unmanaged<IThumbnailExtractor*, IStorage*, int>)(lpVtbl[4]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg);
+        return ((delegate* unmanaged[MemberFunction]<IThumbnailExtractor*, IStorage*, int>)(lpVtbl[4]))((IThumbnailExtractor*)Unsafe.AsPointer(ref this), pStg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStorage *, ULONG, ULONG, ULONG *, ULONG *, HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int> ExtractThumbnail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int> ExtractThumbnail;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, int> OnFileUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, int> OnFileUpdated;
     }
 }

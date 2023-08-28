@@ -25,7 +25,7 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBlockingLock*, Guid*, void**, int>)(lpVtbl[0]))((IBlockingLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBlockingLock*, Guid*, void**, int>)(lpVtbl[0]))((IBlockingLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBlockingLock*, uint>)(lpVtbl[1]))((IBlockingLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBlockingLock*, uint>)(lpVtbl[1]))((IBlockingLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBlockingLock*, uint>)(lpVtbl[2]))((IBlockingLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBlockingLock*, uint>)(lpVtbl[2]))((IBlockingLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBlockingLock.xml' path='doc/member[@name="IBlockingLock.Lock"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT Lock([NativeTypeName("DWORD")] uint dwTimeout)
     {
-        return ((delegate* unmanaged<IBlockingLock*, uint, int>)(lpVtbl[3]))((IBlockingLock*)Unsafe.AsPointer(ref this), dwTimeout);
+        return ((delegate* unmanaged[MemberFunction]<IBlockingLock*, uint, int>)(lpVtbl[3]))((IBlockingLock*)Unsafe.AsPointer(ref this), dwTimeout);
     }
 
     /// <include file='IBlockingLock.xml' path='doc/member[@name="IBlockingLock.Unlock"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Unlock()
     {
-        return ((delegate* unmanaged<IBlockingLock*, int>)(lpVtbl[4]))((IBlockingLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBlockingLock*, int>)(lpVtbl[4]))((IBlockingLock*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IBlockingLock : IBlockingLock.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Lock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Lock;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unlock;
     }
 }

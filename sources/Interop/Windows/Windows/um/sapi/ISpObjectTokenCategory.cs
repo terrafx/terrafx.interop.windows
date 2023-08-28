@@ -25,7 +25,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpDataKey.SetData" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(3)]
     public HRESULT SetData([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("ULONG")] uint cbData, [NativeTypeName("const BYTE *")] byte* pData)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, uint, byte*, int>)(lpVtbl[3]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, cbData, pData);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, uint, byte*, int>)(lpVtbl[3]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, cbData, pData);
     }
 
     /// <inheritdoc cref="ISpDataKey.GetData" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(4)]
     public HRESULT GetData([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("ULONG *")] uint* pcbData, byte* pData)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, uint*, byte*, int>)(lpVtbl[4]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pcbData, pData);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, uint*, byte*, int>)(lpVtbl[4]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pcbData, pData);
     }
 
     /// <inheritdoc cref="ISpDataKey.SetStringValue" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(5)]
     public HRESULT SetStringValue([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("LPCWSTR")] char* pszValue)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, char*, int>)(lpVtbl[5]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pszValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, char*, int>)(lpVtbl[5]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pszValue);
     }
 
     /// <inheritdoc cref="ISpDataKey.GetStringValue" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(6)]
     public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("LPWSTR *")] char** ppszValue)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, char**, int>)(lpVtbl[6]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, ppszValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, char**, int>)(lpVtbl[6]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, ppszValue);
     }
 
     /// <inheritdoc cref="ISpDataKey.SetDWORD" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(7)]
     public HRESULT SetDWORD([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("DWORD")] uint dwValue)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, uint, int>)(lpVtbl[7]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, dwValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, uint, int>)(lpVtbl[7]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, dwValue);
     }
 
     /// <inheritdoc cref="ISpDataKey.GetDWORD" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(8)]
     public HRESULT GetDWORD([NativeTypeName("LPCWSTR")] char* pszValueName, [NativeTypeName("DWORD *")] uint* pdwValue)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, uint*, int>)(lpVtbl[8]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pdwValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, uint*, int>)(lpVtbl[8]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pdwValue);
     }
 
     /// <inheritdoc cref="ISpDataKey.OpenKey" />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(9)]
     public HRESULT OpenKey([NativeTypeName("LPCWSTR")] char* pszSubKeyName, ISpDataKey** ppSubKey)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, ISpDataKey**, int>)(lpVtbl[9]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKeyName, ppSubKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, ISpDataKey**, int>)(lpVtbl[9]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKeyName, ppSubKey);
     }
 
     /// <inheritdoc cref="ISpDataKey.CreateKey" />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(10)]
     public HRESULT CreateKey([NativeTypeName("LPCWSTR")] char* pszSubKey, ISpDataKey** ppSubKey)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, ISpDataKey**, int>)(lpVtbl[10]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey, ppSubKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, ISpDataKey**, int>)(lpVtbl[10]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey, ppSubKey);
     }
 
     /// <inheritdoc cref="ISpDataKey.DeleteKey" />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(11)]
     public HRESULT DeleteKey([NativeTypeName("LPCWSTR")] char* pszSubKey)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, int>)(lpVtbl[11]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, int>)(lpVtbl[11]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey);
     }
 
     /// <inheritdoc cref="ISpDataKey.DeleteValue" />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(12)]
     public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] char* pszValueName)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, int>)(lpVtbl[12]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, int>)(lpVtbl[12]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName);
     }
 
     /// <inheritdoc cref="ISpDataKey.EnumKeys" />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(13)]
     public HRESULT EnumKeys([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] char** ppszSubKeyName)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, uint, char**, int>)(lpVtbl[13]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszSubKeyName);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, uint, char**, int>)(lpVtbl[13]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszSubKeyName);
     }
 
     /// <inheritdoc cref="ISpDataKey.EnumValues" />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(14)]
     public HRESULT EnumValues([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] char** ppszValueName)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, uint, char**, int>)(lpVtbl[14]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszValueName);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, uint, char**, int>)(lpVtbl[14]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszValueName);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.SetId"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(15)]
     public HRESULT SetId([NativeTypeName("LPCWSTR")] char* pszCategoryId, BOOL fCreateIfNotExist)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, BOOL, int>)(lpVtbl[15]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszCategoryId, fCreateIfNotExist);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, BOOL, int>)(lpVtbl[15]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszCategoryId, fCreateIfNotExist);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetId"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(16)]
     public HRESULT GetId([NativeTypeName("LPWSTR *")] char** ppszCoMemCategoryId)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char**, int>)(lpVtbl[16]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemCategoryId);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char**, int>)(lpVtbl[16]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemCategoryId);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetDataKey"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(17)]
     public HRESULT GetDataKey(SPDATAKEYLOCATION spdkl, ISpDataKey** ppDataKey)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, SPDATAKEYLOCATION, ISpDataKey**, int>)(lpVtbl[17]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), spdkl, ppDataKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, SPDATAKEYLOCATION, ISpDataKey**, int>)(lpVtbl[17]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), spdkl, ppDataKey);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.EnumTokens"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(18)]
     public HRESULT EnumTokens([NativeTypeName("LPCWSTR")] char* pzsReqAttribs, [NativeTypeName("LPCWSTR")] char* pszOptAttribs, IEnumSpObjectTokens** ppEnum)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, char*, IEnumSpObjectTokens**, int>)(lpVtbl[18]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pzsReqAttribs, pszOptAttribs, ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, char*, IEnumSpObjectTokens**, int>)(lpVtbl[18]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pzsReqAttribs, pszOptAttribs, ppEnum);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.SetDefaultTokenId"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(19)]
     public HRESULT SetDefaultTokenId([NativeTypeName("LPCWSTR")] char* pszTokenId)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char*, int>)(lpVtbl[19]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszTokenId);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char*, int>)(lpVtbl[19]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszTokenId);
     }
 
     /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetDefaultTokenId"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
     [VtblIndex(20)]
     public HRESULT GetDefaultTokenId([NativeTypeName("LPWSTR *")] char** ppszCoMemTokenId)
     {
-        return ((delegate* unmanaged<ISpObjectTokenCategory*, char**, int>)(lpVtbl[20]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemTokenId);
+        return ((delegate* unmanaged[MemberFunction]<ISpObjectTokenCategory*, char**, int>)(lpVtbl[20]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemTokenId);
     }
 
     public interface Interface : ISpDataKey.Interface
@@ -215,66 +215,66 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG, const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, byte*, int> SetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, byte*, int> SetData;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, byte*, int> GetData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, byte*, int> GetData;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, int> SetStringValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetStringValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, int> GetStringValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, int> SetDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> SetDWORD;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, int> GetDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, int> GetDWORD;
 
         [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ISpDataKey**, int> OpenKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ISpDataKey**, int> OpenKey;
 
         [NativeTypeName("HRESULT (LPCWSTR, ISpDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, ISpDataKey**, int> CreateKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ISpDataKey**, int> CreateKey;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> DeleteKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DeleteKey;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> DeleteValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DeleteValue;
 
         [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> EnumKeys;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> EnumKeys;
 
         [NativeTypeName("HRESULT (ULONG, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> EnumValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> EnumValues;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL, int> SetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL, int> SetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetId;
 
         [NativeTypeName("HRESULT (SPDATAKEYLOCATION, ISpDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPDATAKEYLOCATION, ISpDataKey**, int> GetDataKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPDATAKEYLOCATION, ISpDataKey**, int> GetDataKey;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IEnumSpObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, IEnumSpObjectTokens**, int> EnumTokens;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, IEnumSpObjectTokens**, int> EnumTokens;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetDefaultTokenId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetDefaultTokenId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDefaultTokenId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDefaultTokenId;
     }
 }

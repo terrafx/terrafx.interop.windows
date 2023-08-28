@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtensionLiveSeekableRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[1]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[1]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[2]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[2]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange.SetLiveSeekableRange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
     [VtblIndex(3)]
     public HRESULT SetLiveSeekableRange(double start, double end)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, double, double, int>)(lpVtbl[3]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), start, end);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtensionLiveSeekableRange*, double, double, int>)(lpVtbl[3]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), start, end);
     }
 
     /// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange.ClearLiveSeekableRange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
     [VtblIndex(4)]
     public HRESULT ClearLiveSeekableRange()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, int>)(lpVtbl[4]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtensionLiveSeekableRange*, int>)(lpVtbl[4]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> SetLiveSeekableRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> SetLiveSeekableRange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearLiveSeekableRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearLiveSeekableRange;
     }
 }

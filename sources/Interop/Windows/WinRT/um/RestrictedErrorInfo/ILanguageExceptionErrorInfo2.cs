@@ -28,7 +28,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, Guid*, void**, int>)(lpVtbl[0]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[1]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[1]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[2]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, uint>)(lpVtbl[2]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ILanguageExceptionErrorInfo.GetLanguageException" />
@@ -54,7 +54,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [VtblIndex(3)]
     public HRESULT GetLanguageException(IUnknown** languageException)
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, IUnknown**, int>)(lpVtbl[3]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
     }
 
     /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.GetPreviousLanguageExceptionErrorInfo"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [VtblIndex(4)]
     public HRESULT GetPreviousLanguageExceptionErrorInfo(ILanguageExceptionErrorInfo2** previousLanguageExceptionErrorInfo)
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[4]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), previousLanguageExceptionErrorInfo);
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[4]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), previousLanguageExceptionErrorInfo);
     }
 
     /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.CapturePropagationContext"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [VtblIndex(5)]
     public HRESULT CapturePropagationContext(IUnknown* languageException)
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown*, int>)(lpVtbl[5]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, IUnknown*, int>)(lpVtbl[5]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), languageException);
     }
 
     /// <include file='ILanguageExceptionErrorInfo2.xml' path='doc/member[@name="ILanguageExceptionErrorInfo2.GetPropagationContextHead"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
     [VtblIndex(6)]
     public HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead)
     {
-        return ((delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[6]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), propagatedLanguageExceptionErrorInfoHead);
+        return ((delegate* unmanaged[MemberFunction]<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int>)(lpVtbl[6]))((ILanguageExceptionErrorInfo2*)Unsafe.AsPointer(ref this), propagatedLanguageExceptionErrorInfoHead);
     }
 
     public interface Interface : ILanguageExceptionErrorInfo.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetLanguageException;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetLanguageException;
 
         [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPreviousLanguageExceptionErrorInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPreviousLanguageExceptionErrorInfo;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> CapturePropagationContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> CapturePropagationContext;
 
         [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPropagationContextHead;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPropagationContextHead;
     }
 }

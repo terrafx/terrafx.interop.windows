@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, uint>)(lpVtbl[1]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, uint>)(lpVtbl[1]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, uint>)(lpVtbl[2]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, uint>)(lpVtbl[2]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaBuffer.xml' path='doc/member[@name="IMFMediaBuffer.Lock"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Lock(byte** ppbBuffer, [NativeTypeName("DWORD *")] uint* pcbMaxLength, [NativeTypeName("DWORD *")] uint* pcbCurrentLength)
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, byte**, uint*, uint*, int>)(lpVtbl[3]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), ppbBuffer, pcbMaxLength, pcbCurrentLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, byte**, uint*, uint*, int>)(lpVtbl[3]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), ppbBuffer, pcbMaxLength, pcbCurrentLength);
     }
 
     /// <include file='IMFMediaBuffer.xml' path='doc/member[@name="IMFMediaBuffer.Unlock"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Unlock()
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, int>)(lpVtbl[4]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, int>)(lpVtbl[4]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaBuffer.xml' path='doc/member[@name="IMFMediaBuffer.GetCurrentLength"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetCurrentLength([NativeTypeName("DWORD *")] uint* pcbCurrentLength)
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, uint*, int>)(lpVtbl[5]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), pcbCurrentLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, uint*, int>)(lpVtbl[5]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), pcbCurrentLength);
     }
 
     /// <include file='IMFMediaBuffer.xml' path='doc/member[@name="IMFMediaBuffer.SetCurrentLength"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT SetCurrentLength([NativeTypeName("DWORD")] uint cbCurrentLength)
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, uint, int>)(lpVtbl[6]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), cbCurrentLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, uint, int>)(lpVtbl[6]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), cbCurrentLength);
     }
 
     /// <include file='IMFMediaBuffer.xml' path='doc/member[@name="IMFMediaBuffer.GetMaxLength"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength)
     {
-        return ((delegate* unmanaged<IMFMediaBuffer*, uint*, int>)(lpVtbl[7]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaBuffer*, uint*, int>)(lpVtbl[7]))((IMFMediaBuffer*)Unsafe.AsPointer(ref this), pcbMaxLength);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, uint*, int> Lock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, uint*, int> Lock;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unlock;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCurrentLength;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCurrentLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCurrentLength;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaxLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaxLength;
     }
 }

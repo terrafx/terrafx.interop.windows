@@ -26,7 +26,7 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectDrawGammaControl*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawGammaControl*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectDrawGammaControl*, uint>)(lpVtbl[1]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawGammaControl*, uint>)(lpVtbl[1]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectDrawGammaControl*, uint>)(lpVtbl[2]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawGammaControl*, uint>)(lpVtbl[2]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawGammaControl.xml' path='doc/member[@name="IDirectDrawGammaControl.GetGammaRamp"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
     [VtblIndex(3)]
     public HRESULT GetGammaRamp([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDGAMMARAMP")] DDGAMMARAMP* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int>)(lpVtbl[3]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int>)(lpVtbl[3]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectDrawGammaControl.xml' path='doc/member[@name="IDirectDrawGammaControl.SetGammaRamp"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
     [VtblIndex(4)]
     public HRESULT SetGammaRamp([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDGAMMARAMP")] DDGAMMARAMP* param1)
     {
-        return ((delegate* unmanaged<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int>)(lpVtbl[4]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int>)(lpVtbl[4]))((IDirectDrawGammaControl*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPDDGAMMARAMP) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DDGAMMARAMP*, int> GetGammaRamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DDGAMMARAMP*, int> GetGammaRamp;
 
         [NativeTypeName("HRESULT (DWORD, LPDDGAMMARAMP) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DDGAMMARAMP*, int> SetGammaRamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DDGAMMARAMP*, int> SetGammaRamp;
     }
 }

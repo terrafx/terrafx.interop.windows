@@ -25,7 +25,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, uint>)(lpVtbl[1]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, uint>)(lpVtbl[1]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, uint>)(lpVtbl[2]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, uint>)(lpVtbl[2]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_crc"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(3)]
     public HRESULT get_crc([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, uint*, int>)(lpVtbl[3]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, uint*, int>)(lpVtbl[3]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_length"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(4)]
     public HRESULT get_length([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, ulong*, int>)(lpVtbl[4]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, ulong*, int>)(lpVtbl[4]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_filename"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(5)]
     public HRESULT get_filename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[5]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, char**, int>)(lpVtbl[5]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_objectFilename"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(6)]
     public HRESULT get_objectFilename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[6]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, char**, int>)(lpVtbl[6]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_virtualFilename"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(7)]
     public HRESULT get_virtualFilename([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, char**, int>)(lpVtbl[7]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, char**, int>)(lpVtbl[7]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_sourceCompression"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(8)]
     public HRESULT get_sourceCompression([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, uint*, int>)(lpVtbl[8]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, uint*, int>)(lpVtbl[8]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInjectedSource.xml' path='doc/member[@name="IDiaInjectedSource.get_source"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
     [VtblIndex(9)]
     public HRESULT get_source([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaInjectedSource*, uint, uint*, byte*, int>)(lpVtbl[9]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInjectedSource*, uint, uint*, byte*, int>)(lpVtbl[9]))((IDiaInjectedSource*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_crc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_crc;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_length;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_filename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_filename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_objectFilename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_objectFilename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_virtualFilename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_virtualFilename;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_sourceCompression;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_sourceCompression;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_source;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, byte*, int> get_source;
     }
 }

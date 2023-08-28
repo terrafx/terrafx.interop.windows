@@ -25,7 +25,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, Guid*, void**, int>)(lpVtbl[0]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, Guid*, void**, int>)(lpVtbl[0]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, uint>)(lpVtbl[1]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, uint>)(lpVtbl[1]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, uint>)(lpVtbl[2]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, uint>)(lpVtbl[2]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, uint*, int>)(lpVtbl[3]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, uint*, int>)(lpVtbl[3]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.startPrint"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(7)]
     public HRESULT startPrint()
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int>)(lpVtbl[7]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, int>)(lpVtbl[7]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.drawPreviewPage"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(8)]
     public HRESULT drawPreviewPage(IDispatch* pElemDisp, [NativeTypeName("long")] int nPage)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, IDispatch*, int, int>)(lpVtbl[8]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), pElemDisp, nPage);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, IDispatch*, int, int>)(lpVtbl[8]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), pElemDisp, nPage);
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.setPageCount"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(9)]
     public HRESULT setPageCount([NativeTypeName("long")] int nPage)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int, int>)(lpVtbl[9]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), nPage);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, int, int>)(lpVtbl[9]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), nPage);
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.invalidatePreview"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(10)]
     public HRESULT invalidatePreview()
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int>)(lpVtbl[10]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, int>)(lpVtbl[10]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.getPrintTaskOptionValue"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(11)]
     public HRESULT getPrintTaskOptionValue([NativeTypeName("BSTR")] char* bstrKey, VARIANT* pvarin)
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, char*, VARIANT*, int>)(lpVtbl[11]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), bstrKey, pvarin);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, char*, VARIANT*, int>)(lpVtbl[11]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this), bstrKey, pvarin);
     }
 
     /// <include file='IPrintManagerTemplatePrinter.xml' path='doc/member[@name="IPrintManagerTemplatePrinter.endPrint"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
     [VtblIndex(12)]
     public HRESULT endPrint()
     {
-        return ((delegate* unmanaged<IPrintManagerTemplatePrinter*, int>)(lpVtbl[12]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintManagerTemplatePrinter*, int>)(lpVtbl[12]))((IPrintManagerTemplatePrinter*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDispatch.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct IPrintManagerTemplatePrinter : IPrintManagerTemplat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> startPrint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> startPrint;
 
         [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch*, int, int> drawPreviewPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch*, int, int> drawPreviewPage;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> setPageCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> setPageCount;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> invalidatePreview;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> invalidatePreview;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, int> getPrintTaskOptionValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> getPrintTaskOptionValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> endPrint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> endPrint;
     }
 }

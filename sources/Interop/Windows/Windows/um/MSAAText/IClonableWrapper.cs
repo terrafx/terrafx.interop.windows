@@ -25,7 +25,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[0]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[0]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IClonableWrapper*, uint>)(lpVtbl[1]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClonableWrapper*, uint>)(lpVtbl[1]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IClonableWrapper*, uint>)(lpVtbl[2]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClonableWrapper*, uint>)(lpVtbl[2]))((IClonableWrapper*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IClonableWrapper.xml' path='doc/member[@name="IClonableWrapper.CloneNewWrapper"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INat
     [VtblIndex(3)]
     public HRESULT CloneNewWrapper([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[3]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IClonableWrapper*, Guid*, void**, int>)(lpVtbl[3]))((IClonableWrapper*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> CloneNewWrapper;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> CloneNewWrapper;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, uint>)(lpVtbl[1]))((IWICBitmapLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, uint>)(lpVtbl[1]))((IWICBitmapLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, uint>)(lpVtbl[2]))((IWICBitmapLock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, uint>)(lpVtbl[2]))((IWICBitmapLock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICBitmapLock.xml' path='doc/member[@name="IWICBitmapLock.GetSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
     /// <include file='IWICBitmapLock.xml' path='doc/member[@name="IWICBitmapLock.GetStride"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetStride(uint* pcbStride)
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, uint*, int>)(lpVtbl[4]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbStride);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, uint*, int>)(lpVtbl[4]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbStride);
     }
 
     /// <include file='IWICBitmapLock.xml' path='doc/member[@name="IWICBitmapLock.GetDataPointer"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetDataPointer(uint* pcbBufferSize, [NativeTypeName("WICInProcPointer *")] byte** ppbData)
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, uint*, byte**, int>)(lpVtbl[5]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbBufferSize, ppbData);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, uint*, byte**, int>)(lpVtbl[5]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pcbBufferSize, ppbData);
     }
 
     /// <include file='IWICBitmapLock.xml' path='doc/member[@name="IWICBitmapLock.GetPixelFormat"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
     {
-        return ((delegate* unmanaged<IWICBitmapLock*, Guid*, int>)(lpVtbl[6]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pPixelFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapLock*, Guid*, int>)(lpVtbl[6]))((IWICBitmapLock*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStride;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStride;
 
         [NativeTypeName("HRESULT (UINT *, WICInProcPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, byte**, int> GetDataPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> GetDataPointer;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetPixelFormat;
     }
 }

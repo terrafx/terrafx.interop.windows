@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint>)(lpVtbl[1]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint>)(lpVtbl[1]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint>)(lpVtbl[2]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint>)(lpVtbl[2]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFamilyCount" />
@@ -53,7 +53,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [return: NativeTypeName("UINT32")]
     public uint GetFontFamilyCount()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint>)(lpVtbl[3]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint>)(lpVtbl[3]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFamily" />
@@ -61,7 +61,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(4)]
     public HRESULT GetFontFamily([NativeTypeName("UINT32")] uint index, IDWriteFontFamily** fontFamily)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily**, int>)(lpVtbl[4]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint, IDWriteFontFamily**, int>)(lpVtbl[4]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.FindFamilyName" />
@@ -69,7 +69,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(5)]
     public HRESULT FindFamilyName([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("UINT32 *")] uint* index, BOOL* exists)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, char*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), familyName, index, exists);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, char*, uint*, BOOL*, int>)(lpVtbl[5]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), familyName, index, exists);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection.GetFontFromFontFace" />
@@ -77,7 +77,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(6)]
     public HRESULT GetFontFromFontFace(IDWriteFontFace* fontFace, IDWriteFont** font)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontFace*, IDWriteFont**, int>)(lpVtbl[6]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontFace, font);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, IDWriteFontFace*, IDWriteFont**, int>)(lpVtbl[6]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontFace, font);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection1.GetFontSet" />
@@ -85,7 +85,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(7)]
     public HRESULT GetFontSet(IDWriteFontSet** fontSet)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontSet**, int>)(lpVtbl[7]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontSet);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, IDWriteFontSet**, int>)(lpVtbl[7]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontSet);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection1.GetFontFamily" />
@@ -93,7 +93,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(8)]
     public HRESULT GetFontFamily([NativeTypeName("UINT32")] uint index, IDWriteFontFamily1** fontFamily)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily1**, int>)(lpVtbl[8]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint, IDWriteFontFamily1**, int>)(lpVtbl[8]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection2.GetFontFamily" />
@@ -101,7 +101,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(9)]
     public HRESULT GetFontFamily([NativeTypeName("UINT32")] uint index, IDWriteFontFamily2** fontFamily)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily2**, int>)(lpVtbl[9]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, uint, IDWriteFontFamily2**, int>)(lpVtbl[9]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), index, fontFamily);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection2.GetMatchingFonts" />
@@ -109,7 +109,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(10)]
     public HRESULT GetMatchingFonts([NativeTypeName("const WCHAR *")] char* familyName, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontList2** fontList)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int>)(lpVtbl[10]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), familyName, fontAxisValues, fontAxisValueCount, fontList);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int>)(lpVtbl[10]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), familyName, fontAxisValues, fontAxisValueCount, fontList);
     }
 
     /// <inheritdoc cref="IDWriteFontCollection2.GetFontFamilyModel" />
@@ -117,7 +117,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(11)]
     public DWRITE_FONT_FAMILY_MODEL GetFontFamilyModel()
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, DWRITE_FONT_FAMILY_MODEL>)(lpVtbl[11]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, DWRITE_FONT_FAMILY_MODEL>)(lpVtbl[11]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteFontCollection2.GetFontSet" />
@@ -125,7 +125,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(12)]
     public HRESULT GetFontSet(IDWriteFontSet1** fontSet)
     {
-        return ((delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontSet1**, int>)(lpVtbl[12]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontSet);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, IDWriteFontSet1**, int>)(lpVtbl[12]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this), fontSet);
     }
 
     /// <include file='IDWriteFontCollection3.xml' path='doc/member[@name="IDWriteFontCollection3.GetExpirationEvent"]/*' />
@@ -133,7 +133,7 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
     [VtblIndex(13)]
     public HANDLE GetExpirationEvent()
     {
-        return ((HANDLE)(((delegate* unmanaged<IDWriteFontCollection3*, void*>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IDWriteFontCollection3*, void*>)(lpVtbl[13]))((IDWriteFontCollection3*)Unsafe.AsPointer(ref this))));
     }
 
     public interface Interface : IDWriteFontCollection2.Interface
@@ -146,45 +146,45 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFontFamilyCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFontFamilyCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint*, BOOL*, int> FindFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, BOOL*, int> FindFamilyName;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;
 
         [NativeTypeName("HRESULT (IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontSet**, int> GetFontSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontSet**, int> GetFontSet;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily1**, int> GetFontFamily1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteFontFamily1**, int> GetFontFamily1;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily2**, int> GetFontFamily2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteFontFamily2**, int> GetFontFamily2;
 
         [NativeTypeName("HRESULT (const WCHAR *, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontList2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
 
         [NativeTypeName("DWRITE_FONT_FAMILY_MODEL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
 
         [NativeTypeName("HRESULT (IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontSet1**, int> GetFontSet1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontSet1**, int> GetFontSet1;
 
         [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetExpirationEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetExpirationEvent;
     }
 }

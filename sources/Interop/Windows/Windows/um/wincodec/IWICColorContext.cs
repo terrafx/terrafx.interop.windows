@@ -25,7 +25,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICColorContext*, Guid*, void**, int>)(lpVtbl[0]))((IWICColorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, Guid*, void**, int>)(lpVtbl[0]))((IWICColorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICColorContext*, uint>)(lpVtbl[1]))((IWICColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, uint>)(lpVtbl[1]))((IWICColorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICColorContext*, uint>)(lpVtbl[2]))((IWICColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, uint>)(lpVtbl[2]))((IWICColorContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromFilename"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(3)]
     public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] char* wzFilename)
     {
-        return ((delegate* unmanaged<IWICColorContext*, char*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, char*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromMemory"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(4)]
     public HRESULT InitializeFromMemory([NativeTypeName("const BYTE *")] byte* pbBuffer, uint cbBufferSize)
     {
-        return ((delegate* unmanaged<IWICColorContext*, byte*, uint, int>)(lpVtbl[4]))((IWICColorContext*)Unsafe.AsPointer(ref this), pbBuffer, cbBufferSize);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, byte*, uint, int>)(lpVtbl[4]))((IWICColorContext*)Unsafe.AsPointer(ref this), pbBuffer, cbBufferSize);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromExifColorSpace"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(5)]
     public HRESULT InitializeFromExifColorSpace(uint value)
     {
-        return ((delegate* unmanaged<IWICColorContext*, uint, int>)(lpVtbl[5]))((IWICColorContext*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, uint, int>)(lpVtbl[5]))((IWICColorContext*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetType"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetType(WICColorContextType* pType)
     {
-        return ((delegate* unmanaged<IWICColorContext*, WICColorContextType*, int>)(lpVtbl[6]))((IWICColorContext*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, WICColorContextType*, int>)(lpVtbl[6]))((IWICColorContext*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetProfileBytes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetProfileBytes(uint cbBuffer, byte* pbBuffer, uint* pcbActual)
     {
-        return ((delegate* unmanaged<IWICColorContext*, uint, byte*, uint*, int>)(lpVtbl[7]))((IWICColorContext*)Unsafe.AsPointer(ref this), cbBuffer, pbBuffer, pcbActual);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, uint, byte*, uint*, int>)(lpVtbl[7]))((IWICColorContext*)Unsafe.AsPointer(ref this), cbBuffer, pbBuffer, pcbActual);
     }
 
     /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetExifColorSpace"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetExifColorSpace(uint* pValue)
     {
-        return ((delegate* unmanaged<IWICColorContext*, uint*, int>)(lpVtbl[8]))((IWICColorContext*)Unsafe.AsPointer(ref this), pValue);
+        return ((delegate* unmanaged[MemberFunction]<IWICColorContext*, uint*, int>)(lpVtbl[8]))((IWICColorContext*)Unsafe.AsPointer(ref this), pValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> InitializeFromFilename;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> InitializeFromFilename;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> InitializeFromMemory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> InitializeFromMemory;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> InitializeFromExifColorSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> InitializeFromExifColorSpace;
 
         [NativeTypeName("HRESULT (WICColorContextType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, WICColorContextType*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, WICColorContextType*, int> GetType;
 
         [NativeTypeName("HRESULT (UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, uint*, int> GetProfileBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, uint*, int> GetProfileBytes;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetExifColorSpace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetExifColorSpace;
     }
 }

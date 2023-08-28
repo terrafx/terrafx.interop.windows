@@ -25,7 +25,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, Guid*, void**, int>)(lpVtbl[0]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder2*, Guid*, void**, int>)(lpVtbl[0]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, uint>)(lpVtbl[1]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder2*, uint>)(lpVtbl[1]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, uint>)(lpVtbl[2]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder2*, uint>)(lpVtbl[2]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpGrammarBuilder2.xml' path='doc/member[@name="ISpGrammarBuilder2.AddTextSubset"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     [VtblIndex(3)]
     public HRESULT AddTextSubset(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] char* psz, SPMATCHINGMODE eMatchMode)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int>)(lpVtbl[3]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, eMatchMode);
     }
 
     /// <include file='ISpGrammarBuilder2.xml' path='doc/member[@name="ISpGrammarBuilder2.SetPhoneticAlphabet"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
     [VtblIndex(4)]
     public HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet)
     {
-        return ((delegate* unmanaged<ISpGrammarBuilder2*, PHONETICALPHABET, int>)(lpVtbl[4]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), phoneticALphabet);
+        return ((delegate* unmanaged[MemberFunction]<ISpGrammarBuilder2*, PHONETICALPHABET, int>)(lpVtbl[4]))((ISpGrammarBuilder2*)Unsafe.AsPointer(ref this), phoneticALphabet);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, SPMATCHINGMODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int> AddTextSubset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, char*, SPMATCHINGMODE, int> AddTextSubset;
 
         [NativeTypeName("HRESULT (PHONETICALPHABET) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PHONETICALPHABET, int> SetPhoneticAlphabet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PHONETICALPHABET, int> SetPhoneticAlphabet;
     }
 }

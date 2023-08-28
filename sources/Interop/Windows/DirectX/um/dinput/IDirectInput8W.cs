@@ -26,7 +26,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, Guid*, void**, int>)(lpVtbl[0]))((IDirectInput8W*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, Guid*, void**, int>)(lpVtbl[0]))((IDirectInput8W*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectInput8W*, uint>)(lpVtbl[1]))((IDirectInput8W*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, uint>)(lpVtbl[1]))((IDirectInput8W*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectInput8W*, uint>)(lpVtbl[2]))((IDirectInput8W*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, uint>)(lpVtbl[2]))((IDirectInput8W*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.CreateDevice"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT CreateDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPDIRECTINPUTDEVICE8W *")] IDirectInputDevice8W** param1, [NativeTypeName("LPUNKNOWN")] IUnknown* param2)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, Guid*, IDirectInputDevice8W**, IUnknown*, int>)(lpVtbl[3]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, Guid*, IDirectInputDevice8W**, IUnknown*, int>)(lpVtbl[3]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.EnumDevices"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT EnumDevices([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDIENUMDEVICESCALLBACKW")] delegate* unmanaged<DIDEVICEINSTANCE*, void*, BOOL> param1, [NativeTypeName("LPVOID")] void* param2, [NativeTypeName("DWORD")] uint param3)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, uint, delegate* unmanaged<DIDEVICEINSTANCE*, void*, BOOL>, void*, uint, int>)(lpVtbl[4]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, uint, delegate* unmanaged<DIDEVICEINSTANCE*, void*, BOOL>, void*, uint, int>)(lpVtbl[4]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.GetDeviceStatus"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetDeviceStatus([NativeTypeName("const GUID &")] Guid* param0)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, Guid*, int>)(lpVtbl[5]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, Guid*, int>)(lpVtbl[5]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.RunControlPanel"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT RunControlPanel(HWND param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, HWND, uint, int>)(lpVtbl[6]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, HWND, uint, int>)(lpVtbl[6]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.Initialize"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT Initialize(HINSTANCE param0, [NativeTypeName("DWORD")] uint param1)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, HINSTANCE, uint, int>)(lpVtbl[7]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, HINSTANCE, uint, int>)(lpVtbl[7]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.FindDevice"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT FindDevice([NativeTypeName("const GUID &")] Guid* param0, [NativeTypeName("LPCWSTR")] char* param1, [NativeTypeName("LPGUID")] Guid* param2)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, Guid*, char*, Guid*, int>)(lpVtbl[8]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, Guid*, char*, Guid*, int>)(lpVtbl[8]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.EnumDevicesBySemantics"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT EnumDevicesBySemantics([NativeTypeName("LPCWSTR")] char* param0, [NativeTypeName("LPDIACTIONFORMATW")] DIACTIONFORMATW* param1, [NativeTypeName("LPDIENUMDEVICESBYSEMANTICSCBW")] delegate* unmanaged<DIDEVICEINSTANCE*, IDirectInputDevice8W*, uint, uint, void*, BOOL> param2, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("DWORD")] uint param4)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, char*, DIACTIONFORMATW*, delegate* unmanaged<DIDEVICEINSTANCE*, IDirectInputDevice8W*, uint, uint, void*, BOOL>, void*, uint, int>)(lpVtbl[9]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, char*, DIACTIONFORMATW*, delegate* unmanaged<DIDEVICEINSTANCE*, IDirectInputDevice8W*, uint, uint, void*, BOOL>, void*, uint, int>)(lpVtbl[9]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3, param4);
     }
 
     /// <include file='IDirectInput8W.xml' path='doc/member[@name="IDirectInput8W.ConfigureDevices"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT ConfigureDevices([NativeTypeName("LPDICONFIGUREDEVICESCALLBACK")] delegate* unmanaged<IUnknown*, void*, BOOL> param0, [NativeTypeName("LPDICONFIGUREDEVICESPARAMSW")] DICONFIGUREDEVICESPARAMSW* param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3)
     {
-        return ((delegate* unmanaged<IDirectInput8W*, delegate* unmanaged<IUnknown*, void*, BOOL>, DICONFIGUREDEVICESPARAMSW*, uint, void*, int>)(lpVtbl[10]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
+        return ((delegate* unmanaged[MemberFunction]<IDirectInput8W*, delegate* unmanaged<IUnknown*, void*, BOOL>, DICONFIGUREDEVICESPARAMSW*, uint, void*, int>)(lpVtbl[10]))((IDirectInput8W*)Unsafe.AsPointer(ref this), param0, param1, param2, param3);
     }
 
     public interface Interface : IUnknown.Interface
@@ -133,36 +133,36 @@ public unsafe partial struct IDirectInput8W : IDirectInput8W.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, LPDIRECTINPUTDEVICE8W *, LPUNKNOWN) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IDirectInputDevice8W**, IUnknown*, int> CreateDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IDirectInputDevice8W**, IUnknown*, int> CreateDevice;
 
         [NativeTypeName("HRESULT (DWORD, LPDIENUMDEVICESCALLBACKW, LPVOID, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, delegate* unmanaged<DIDEVICEINSTANCE*, void*, BOOL>, void*, uint, int> EnumDevices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, delegate* unmanaged<DIDEVICEINSTANCE*, void*, BOOL>, void*, uint, int> EnumDevices;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetDeviceStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetDeviceStatus;
 
         [NativeTypeName("HRESULT (HWND, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, int> RunControlPanel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, int> RunControlPanel;
 
         [NativeTypeName("HRESULT (HINSTANCE, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HINSTANCE, uint, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HINSTANCE, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR, LPGUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char*, Guid*, int> FindDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, Guid*, int> FindDevice;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPDIACTIONFORMATW, LPDIENUMDEVICESBYSEMANTICSCBW, LPVOID, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, DIACTIONFORMATW*, delegate* unmanaged<DIDEVICEINSTANCE*, IDirectInputDevice8W*, uint, uint, void*, BOOL>, void*, uint, int> EnumDevicesBySemantics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, DIACTIONFORMATW*, delegate* unmanaged<DIDEVICEINSTANCE*, IDirectInputDevice8W*, uint, uint, void*, BOOL>, void*, uint, int> EnumDevicesBySemantics;
 
         [NativeTypeName("HRESULT (LPDICONFIGUREDEVICESCALLBACK, LPDICONFIGUREDEVICESPARAMSW, DWORD, LPVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, delegate* unmanaged<IUnknown*, void*, BOOL>, DICONFIGUREDEVICESPARAMSW*, uint, void*, int> ConfigureDevices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, delegate* unmanaged<IUnknown*, void*, BOOL>, DICONFIGUREDEVICESPARAMSW*, uint, void*, int> ConfigureDevices;
     }
 }

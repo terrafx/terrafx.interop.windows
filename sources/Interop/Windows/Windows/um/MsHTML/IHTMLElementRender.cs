@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementRender*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, uint>)(lpVtbl[1]))((IHTMLElementRender*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementRender*, uint>)(lpVtbl[1]))((IHTMLElementRender*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, uint>)(lpVtbl[2]))((IHTMLElementRender*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementRender*, uint>)(lpVtbl[2]))((IHTMLElementRender*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLElementRender.xml' path='doc/member[@name="IHTMLElementRender.DrawToDC"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     [VtblIndex(3)]
     public HRESULT DrawToDC(HDC hDC)
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, HDC, int>)(lpVtbl[3]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), hDC);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementRender*, HDC, int>)(lpVtbl[3]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), hDC);
     }
 
     /// <include file='IHTMLElementRender.xml' path='doc/member[@name="IHTMLElementRender.SetDocumentPrinter"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
     [VtblIndex(4)]
     public HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] char* bstrPrinterName, HDC hDC)
     {
-        return ((delegate* unmanaged<IHTMLElementRender*, char*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementRender*, char*, HDC, int>)(lpVtbl[4]))((IHTMLElementRender*)Unsafe.AsPointer(ref this), bstrPrinterName, hDC);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, int> DrawToDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, int> DrawToDC;
 
         [NativeTypeName("HRESULT (BSTR, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, HDC, int> SetDocumentPrinter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HDC, int> SetDocumentPrinter;
     }
 }

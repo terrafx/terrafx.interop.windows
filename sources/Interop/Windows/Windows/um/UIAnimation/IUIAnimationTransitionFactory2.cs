@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[1]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[1]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[2]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[2]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTransitionFactory2.xml' path='doc/member[@name="IUIAnimationTransitionFactory2.CreateTransition"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
     [VtblIndex(3)]
     public HRESULT CreateTransition(IUIAnimationInterpolator2* interpolator, IUIAnimationTransition2** transition)
     {
-        return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), interpolator, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTransitionFactory2*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), interpolator, transition);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationInterpolator2 *, IUIAnimationTransition2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int> CreateTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int> CreateTransition;
     }
 }

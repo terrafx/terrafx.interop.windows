@@ -25,7 +25,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, uint>)(lpVtbl[1]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, uint>)(lpVtbl[1]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, uint>)(lpVtbl[2]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, uint>)(lpVtbl[2]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnDisplayNameChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(3)]
     public HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] char* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[3]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewDisplayName, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[3]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewDisplayName, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnIconPathChanged"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(4)]
     public HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] char* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[4]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewIconPath, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, char*, Guid*, int>)(lpVtbl[4]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewIconPath, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnSimpleVolumeChanged"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(5)]
     public HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int>)(lpVtbl[5]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewVolume, NewMute, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, float, BOOL, Guid*, int>)(lpVtbl[5]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewVolume, NewMute, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnChannelVolumeChanged"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(6)]
     public HRESULT OnChannelVolumeChanged([NativeTypeName("DWORD")] uint ChannelCount, [NativeTypeName("float[]")] float* NewChannelVolumeArray, [NativeTypeName("DWORD")] uint ChangedChannel, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, uint, float*, uint, Guid*, int>)(lpVtbl[6]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, uint, float*, uint, Guid*, int>)(lpVtbl[6]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnGroupingParamChanged"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(7)]
     public HRESULT OnGroupingParamChanged([NativeTypeName("LPCGUID")] Guid* NewGroupingParam, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, Guid*, Guid*, int>)(lpVtbl[7]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewGroupingParam, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, Guid*, Guid*, int>)(lpVtbl[7]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewGroupingParam, EventContext);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnStateChanged"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(8)]
     public HRESULT OnStateChanged(AudioSessionState NewState)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionState, int>)(lpVtbl[8]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewState);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, AudioSessionState, int>)(lpVtbl[8]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewState);
     }
 
     /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnSessionDisconnected"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
     [VtblIndex(9)]
     public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason)
     {
-        return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int>)(lpVtbl[9]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), DisconnectReason);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSessionEvents*, AudioSessionDisconnectReason, int>)(lpVtbl[9]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), DisconnectReason);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, Guid*, int> OnDisplayNameChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, int> OnDisplayNameChanged;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, Guid*, int> OnIconPathChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, Guid*, int> OnIconPathChanged;
 
         [NativeTypeName("HRESULT (float, BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
 
         [NativeTypeName("HRESULT (DWORD, float *, DWORD, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
 
         [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> OnGroupingParamChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, int> OnGroupingParamChanged;
 
         [NativeTypeName("HRESULT (AudioSessionState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AudioSessionState, int> OnStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AudioSessionState, int> OnStateChanged;
 
         [NativeTypeName("HRESULT (AudioSessionDisconnectReason) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
     }
 }

@@ -24,7 +24,7 @@ public unsafe partial struct ID3D11FunctionParameterReflection : ID3D11FunctionP
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D11_PARAMETER_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D11FunctionParameterReflection*, D3D11_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D11FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11FunctionParameterReflection*, D3D11_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D11FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     public interface Interface
@@ -37,6 +37,6 @@ public unsafe partial struct ID3D11FunctionParameterReflection : ID3D11FunctionP
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D11_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D11_PARAMETER_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D11_PARAMETER_DESC*, int> GetDesc;
     }
 }

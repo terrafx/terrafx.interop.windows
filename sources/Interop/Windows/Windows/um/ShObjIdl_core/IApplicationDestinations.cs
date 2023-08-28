@@ -25,7 +25,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, uint>)(lpVtbl[1]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, uint>)(lpVtbl[1]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, uint>)(lpVtbl[2]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, uint>)(lpVtbl[2]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.SetAppID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [VtblIndex(3)]
     public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, char*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, char*, int>)(lpVtbl[3]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.RemoveDestination"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [VtblIndex(4)]
     public HRESULT RemoveDestination(IUnknown* punk)
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, IUnknown*, int>)(lpVtbl[4]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, IUnknown*, int>)(lpVtbl[4]))((IApplicationDestinations*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='IApplicationDestinations.xml' path='doc/member[@name="IApplicationDestinations.RemoveAllDestinations"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
     [VtblIndex(5)]
     public HRESULT RemoveAllDestinations()
     {
-        return ((delegate* unmanaged<IApplicationDestinations*, int>)(lpVtbl[5]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDestinations*, int>)(lpVtbl[5]))((IApplicationDestinations*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IApplicationDestinations : IApplicationDestinations
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> RemoveDestination;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> RemoveDestination;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllDestinations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllDestinations;
     }
 }

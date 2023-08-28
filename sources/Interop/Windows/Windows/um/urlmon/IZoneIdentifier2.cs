@@ -25,7 +25,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, Guid*, void**, int>)(lpVtbl[0]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, Guid*, void**, int>)(lpVtbl[0]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint>)(lpVtbl[1]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint>)(lpVtbl[1]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint>)(lpVtbl[2]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint>)(lpVtbl[2]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IZoneIdentifier.GetId" />
@@ -51,7 +51,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetId([NativeTypeName("DWORD *")] uint* pdwZone)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint*, int>)(lpVtbl[3]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), pdwZone);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint*, int>)(lpVtbl[3]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), pdwZone);
     }
 
     /// <inheritdoc cref="IZoneIdentifier.SetId" />
@@ -59,7 +59,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetId([NativeTypeName("DWORD")] uint dwZone)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint, int>)(lpVtbl[4]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), dwZone);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint, int>)(lpVtbl[4]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), dwZone);
     }
 
     /// <inheritdoc cref="IZoneIdentifier.Remove" />
@@ -67,7 +67,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(5)]
     public HRESULT Remove()
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, int>)(lpVtbl[5]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, int>)(lpVtbl[5]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.GetLastWriterPackageFamilyName"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetLastWriterPackageFamilyName([NativeTypeName("LPWSTR *")] char** packageFamilyName)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, char**, int>)(lpVtbl[6]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, char**, int>)(lpVtbl[6]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.SetLastWriterPackageFamilyName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(7)]
     public HRESULT SetLastWriterPackageFamilyName([NativeTypeName("LPCWSTR")] char* packageFamilyName)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, char*, int>)(lpVtbl[7]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, char*, int>)(lpVtbl[7]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), packageFamilyName);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.RemoveLastWriterPackageFamilyName"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(8)]
     public HRESULT RemoveLastWriterPackageFamilyName()
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, int>)(lpVtbl[8]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, int>)(lpVtbl[8]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.GetAppZoneId"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(9)]
     public HRESULT GetAppZoneId([NativeTypeName("DWORD *")] uint* zone)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint*, int>)(lpVtbl[9]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint*, int>)(lpVtbl[9]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.SetAppZoneId"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(10)]
     public HRESULT SetAppZoneId([NativeTypeName("DWORD")] uint zone)
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, uint, int>)(lpVtbl[10]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, uint, int>)(lpVtbl[10]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this), zone);
     }
 
     /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.RemoveAppZoneId"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
     [VtblIndex(11)]
     public HRESULT RemoveAppZoneId()
     {
-        return ((delegate* unmanaged<IZoneIdentifier2*, int>)(lpVtbl[11]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IZoneIdentifier2*, int>)(lpVtbl[11]))((IZoneIdentifier2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IZoneIdentifier.Interface
@@ -143,39 +143,39 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetId;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetId;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Remove;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetLastWriterPackageFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetLastWriterPackageFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveLastWriterPackageFamilyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAppZoneId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAppZoneId;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetAppZoneId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetAppZoneId;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAppZoneId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAppZoneId;
     }
 }

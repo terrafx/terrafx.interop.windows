@@ -25,7 +25,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfUIElement*, uint>)(lpVtbl[1]))((ITfUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, uint>)(lpVtbl[1]))((ITfUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfUIElement*, uint>)(lpVtbl[2]))((ITfUIElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, uint>)(lpVtbl[2]))((ITfUIElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetDescription"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDescription)
     {
-        return ((delegate* unmanaged<ITfUIElement*, char**, int>)(lpVtbl[3]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, char**, int>)(lpVtbl[3]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetGUID"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfUIElement*, Guid*, int>)(lpVtbl[4]))((ITfUIElement*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, Guid*, int>)(lpVtbl[4]))((ITfUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.Show"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
     {
-        return ((delegate* unmanaged<ITfUIElement*, BOOL, int>)(lpVtbl[5]))((ITfUIElement*)Unsafe.AsPointer(ref this), bShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, BOOL, int>)(lpVtbl[5]))((ITfUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
     /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.IsShown"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
     {
-        return ((delegate* unmanaged<ITfUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsShown;
     }
 }

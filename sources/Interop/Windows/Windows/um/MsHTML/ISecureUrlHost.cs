@@ -25,7 +25,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISecureUrlHost*, Guid*, void**, int>)(lpVtbl[0]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISecureUrlHost*, Guid*, void**, int>)(lpVtbl[0]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISecureUrlHost*, uint>)(lpVtbl[1]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISecureUrlHost*, uint>)(lpVtbl[1]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISecureUrlHost*, uint>)(lpVtbl[2]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISecureUrlHost*, uint>)(lpVtbl[2]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISecureUrlHost.xml' path='doc/member[@name="ISecureUrlHost.ValidateSecureUrl"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] char* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ISecureUrlHost*, BOOL*, char*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ISecureUrlHost*, BOOL*, char*, uint, int>)(lpVtbl[3]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), pfAllow, pchUrlInQuestion, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *, OLECHAR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, char*, uint, int> ValidateSecureUrl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, char*, uint, int> ValidateSecureUrl;
     }
 }

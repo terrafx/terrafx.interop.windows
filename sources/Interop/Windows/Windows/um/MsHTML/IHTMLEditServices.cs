@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[1]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, uint>)(lpVtbl[1]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[2]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, uint>)(lpVtbl[2]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.AddDesigner"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(3)]
     public HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.RemoveDesigner"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(4)]
     public HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.GetSelectionServices"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.MoveToSelectionAnchor"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(6)]
     public HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIStartAnchor);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIStartAnchor);
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.MoveToSelectionEnd"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(7)]
     public HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIEndAnchor);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIEndAnchor);
     }
 
     /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.SelectRange"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
     [VtblIndex(8)]
     public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
     {
-        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLEditDesigner*, int> AddDesigner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLEditDesigner*, int> AddDesigner;
 
         [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLEditDesigner*, int> RemoveDesigner;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLEditDesigner*, int> RemoveDesigner;
 
         [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveToSelectionAnchor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, int> MoveToSelectionAnchor;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveToSelectionEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, int> MoveToSelectionEnd;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
     }
 }

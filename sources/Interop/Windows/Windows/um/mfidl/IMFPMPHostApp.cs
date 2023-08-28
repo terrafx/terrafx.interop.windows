@@ -27,7 +27,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, uint>)(lpVtbl[1]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, uint>)(lpVtbl[1]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, uint>)(lpVtbl[2]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, uint>)(lpVtbl[2]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.LockProcess"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT LockProcess()
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, int>)(lpVtbl[3]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.UnlockProcess"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT UnlockProcess()
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, int>)(lpVtbl[4]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, int>)(lpVtbl[4]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMPHostApp.xml' path='doc/member[@name="IMFPMPHostApp.ActivateClassById"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] char* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMFPMPHostApp*, char*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), id, pStream, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPHostApp*, char*, IStream*, Guid*, void**, int>)(lpVtbl[5]))((IMFPMPHostApp*)Unsafe.AsPointer(ref this), id, pStream, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> LockProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> LockProcess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnlockProcess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnlockProcess;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IStream*, Guid*, void**, int> ActivateClassById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, Guid*, void**, int> ActivateClassById;
     }
 }

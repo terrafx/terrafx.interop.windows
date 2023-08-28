@@ -25,7 +25,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, uint>)(lpVtbl[1]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, uint>)(lpVtbl[1]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, uint>)(lpVtbl[2]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, uint>)(lpVtbl[2]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.get__NewEnum"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.get_Count"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, int*, int>)(lpVtbl[4]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, int*, int>)(lpVtbl[4]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.Item"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(5)]
     public HRESULT Item(VARIANT index, IDiaEnumDebugStreamData** stream)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, VARIANT, IDiaEnumDebugStreamData**, int>)(lpVtbl[5]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), index, stream);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, VARIANT, IDiaEnumDebugStreamData**, int>)(lpVtbl[5]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), index, stream);
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.Next"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaEnumDebugStreamData** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, uint, IDiaEnumDebugStreamData**, uint*, int>)(lpVtbl[6]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, uint, IDiaEnumDebugStreamData**, uint*, int>)(lpVtbl[6]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.Skip"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, uint, int>)(lpVtbl[7]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, uint, int>)(lpVtbl[7]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.Reset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(8)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, int>)(lpVtbl[8]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, int>)(lpVtbl[8]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaEnumDebugStreams.xml' path='doc/member[@name="IDiaEnumDebugStreams.Clone"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumDebugStreams** ppenum)
     {
-        return ((delegate* unmanaged<IDiaEnumDebugStreams*, IDiaEnumDebugStreams**, int>)(lpVtbl[9]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaEnumDebugStreams*, IDiaEnumDebugStreams**, int>)(lpVtbl[9]))((IDiaEnumDebugStreams*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IDiaEnumDebugStreams : IDiaEnumDebugStreams.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, IDiaEnumDebugStreamData**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, IDiaEnumDebugStreamData**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaEnumDebugStreamData **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDiaEnumDebugStreamData**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDiaEnumDebugStreamData**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumDebugStreams **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumDebugStreams**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumDebugStreams**, int> Clone;
     }
 }

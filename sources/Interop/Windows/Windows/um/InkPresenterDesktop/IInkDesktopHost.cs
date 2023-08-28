@@ -27,7 +27,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int>)(lpVtbl[0]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, Guid*, void**, int>)(lpVtbl[0]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, uint>)(lpVtbl[1]))((IInkDesktopHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, uint>)(lpVtbl[1]))((IInkDesktopHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, uint>)(lpVtbl[2]))((IInkDesktopHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, uint>)(lpVtbl[2]))((IInkDesktopHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInkDesktopHost.xml' path='doc/member[@name="IInkDesktopHost.QueueWorkItem"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [VtblIndex(3)]
     public HRESULT QueueWorkItem(IInkHostWorkItem* workItem)
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), workItem);
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), workItem);
     }
 
     /// <include file='IInkDesktopHost.xml' path='doc/member[@name="IInkDesktopHost.CreateInkPresenter"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [VtblIndex(4)]
     public HRESULT CreateInkPresenter([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int>)(lpVtbl[4]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, Guid*, void**, int>)(lpVtbl[4]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IInkDesktopHost.xml' path='doc/member[@name="IInkDesktopHost.CreateAndInitializeInkPresenter"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
     [VtblIndex(5)]
     public HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int>)(lpVtbl[5]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), rootVisual, width, height, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int>)(lpVtbl[5]))((IInkDesktopHost*)Unsafe.AsPointer(ref this), rootVisual, width, height, riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInkHostWorkItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInkHostWorkItem*, int> QueueWorkItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInkHostWorkItem*, int> QueueWorkItem;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> CreateInkPresenter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> CreateInkPresenter;
 
         [NativeTypeName("HRESULT (IUnknown *, float, float, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, float, float, Guid*, void**, int> CreateAndInitializeInkPresenter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, float, float, Guid*, void**, int> CreateAndInitializeInkPresenter;
     }
 }

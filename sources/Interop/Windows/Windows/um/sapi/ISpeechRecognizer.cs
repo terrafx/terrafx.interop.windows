@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, uint>)(lpVtbl[1]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, uint>)(lpVtbl[1]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, uint>)(lpVtbl[2]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, uint>)(lpVtbl[2]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, uint*, int>)(lpVtbl[3]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, uint*, int>)(lpVtbl[3]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_Recognizer"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(7)]
     public HRESULT putref_Recognizer(ISpeechObjectToken* Recognizer)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[7]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[7]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Recognizer"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_Recognizer(ISpeechObjectToken** Recognizer)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[8]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[8]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Recognizer);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.put_AllowAudioInputFormatChangesOnNextSet"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(9)]
     public HRESULT put_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL")] short Allow)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, short, int>)(lpVtbl[9]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, short, int>)(lpVtbl[9]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AllowAudioInputFormatChangesOnNextSet"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_AllowAudioInputFormatChangesOnNextSet([NativeTypeName("VARIANT_BOOL *")] short* Allow)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, short*, int>)(lpVtbl[10]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, short*, int>)(lpVtbl[10]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Allow);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_AudioInput"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(11)]
     public HRESULT putref_AudioInput(ISpeechObjectToken* AudioInput = null)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[11]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[11]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AudioInput"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(12)]
     public HRESULT get_AudioInput(ISpeechObjectToken** AudioInput)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[12]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[12]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInput);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_AudioInputStream"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(13)]
     public HRESULT putref_AudioInputStream(ISpeechBaseStream* AudioInputStream = null)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechBaseStream*, int>)(lpVtbl[13]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechBaseStream*, int>)(lpVtbl[13]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_AudioInputStream"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(14)]
     public HRESULT get_AudioInputStream(ISpeechBaseStream** AudioInputStream)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechBaseStream**, int>)(lpVtbl[14]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechBaseStream**, int>)(lpVtbl[14]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), AudioInputStream);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_IsShared"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(15)]
     public HRESULT get_IsShared([NativeTypeName("VARIANT_BOOL *")] short* Shared)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, short*, int>)(lpVtbl[15]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Shared);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, short*, int>)(lpVtbl[15]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Shared);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.put_State"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(16)]
     public HRESULT put_State(SpeechRecognizerState State)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, SpeechRecognizerState, int>)(lpVtbl[16]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, SpeechRecognizerState, int>)(lpVtbl[16]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_State"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_State(SpeechRecognizerState* State)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, SpeechRecognizerState*, int>)(lpVtbl[17]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, SpeechRecognizerState*, int>)(lpVtbl[17]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Status"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(18)]
     public HRESULT get_Status(ISpeechRecognizerStatus** Status)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechRecognizerStatus**, int>)(lpVtbl[18]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Status);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechRecognizerStatus**, int>)(lpVtbl[18]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Status);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.putref_Profile"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(19)]
     public HRESULT putref_Profile(ISpeechObjectToken* Profile = null)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[19]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken*, int>)(lpVtbl[19]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Profile"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(20)]
     public HRESULT get_Profile(ISpeechObjectToken** Profile)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[20]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechObjectToken**, int>)(lpVtbl[20]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Profile);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.EmulateRecognition"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(21)]
     public HRESULT EmulateRecognition(VARIANT TextElements, VARIANT* ElementDisplayAttributes = null, [NativeTypeName("long")] int LanguageId = 0)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, VARIANT, VARIANT*, int, int>)(lpVtbl[21]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TextElements, ElementDisplayAttributes, LanguageId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, VARIANT, VARIANT*, int, int>)(lpVtbl[21]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TextElements, ElementDisplayAttributes, LanguageId);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.CreateRecoContext"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(22)]
     public HRESULT CreateRecoContext(ISpeechRecoContext** NewContext)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, ISpeechRecoContext**, int>)(lpVtbl[22]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), NewContext);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ISpeechRecoContext**, int>)(lpVtbl[22]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), NewContext);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetFormat"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(23)]
     public HRESULT GetFormat(SpeechFormatType Type, ISpeechAudioFormat** Format)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, SpeechFormatType, ISpeechAudioFormat**, int>)(lpVtbl[23]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Type, Format);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, SpeechFormatType, ISpeechAudioFormat**, int>)(lpVtbl[23]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Type, Format);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyNumber"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(24)]
     public HRESULT SetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long")] int Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, int, short*, int>)(lpVtbl[24]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, int, short*, int>)(lpVtbl[24]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyNumber"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(25)]
     public HRESULT GetPropertyNumber([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("long *")] int* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, int*, short*, int>)(lpVtbl[25]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, int*, short*, int>)(lpVtbl[25]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.SetPropertyString"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(26)]
     public HRESULT SetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("const BSTR")] char* Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, short*, int>)(lpVtbl[26]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, char*, short*, int>)(lpVtbl[26]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetPropertyString"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(27)]
     public HRESULT GetPropertyString([NativeTypeName("const BSTR")] char* Name, [NativeTypeName("BSTR *")] char** Value, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char**, short*, int>)(lpVtbl[27]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, char**, short*, int>)(lpVtbl[27]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), Name, Value, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.IsUISupported"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(28)]
     public HRESULT IsUISupported([NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData, [NativeTypeName("VARIANT_BOOL *")] short* Supported)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, VARIANT*, short*, int>)(lpVtbl[28]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TypeOfUI, ExtraData, Supported);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, VARIANT*, short*, int>)(lpVtbl[28]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), TypeOfUI, ExtraData, Supported);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.DisplayUI"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(29)]
     public HRESULT DisplayUI([NativeTypeName("long")] int hWndParent, [NativeTypeName("BSTR")] char* Title, [NativeTypeName("const BSTR")] char* TypeOfUI, [NativeTypeName("const VARIANT *")] VARIANT* ExtraData = null)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, int, char*, char*, VARIANT*, int>)(lpVtbl[29]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, int, char*, char*, VARIANT*, int>)(lpVtbl[29]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), hWndParent, Title, TypeOfUI, ExtraData);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetRecognizers"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(30)]
     public HRESULT GetRecognizers([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[30]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[30]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetAudioInputs"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(31)]
     public HRESULT GetAudioInputs([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[31]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[31]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.GetProfiles"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     [VtblIndex(32)]
     public HRESULT GetProfiles([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** ObjectTokens)
     {
-        return ((delegate* unmanaged<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[32]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[32]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, ObjectTokens);
     }
 
     public interface Interface : IDispatch.Interface
@@ -371,102 +371,102 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken*, int> putref_Recognizer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken*, int> putref_Recognizer;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken**, int> get_Recognizer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken**, int> get_Recognizer;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_AllowAudioInputFormatChangesOnNextSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_AllowAudioInputFormatChangesOnNextSet;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_AllowAudioInputFormatChangesOnNextSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_AllowAudioInputFormatChangesOnNextSet;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken*, int> putref_AudioInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken*, int> putref_AudioInput;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken**, int> get_AudioInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken**, int> get_AudioInput;
 
         [NativeTypeName("HRESULT (ISpeechBaseStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechBaseStream*, int> putref_AudioInputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechBaseStream*, int> putref_AudioInputStream;
 
         [NativeTypeName("HRESULT (ISpeechBaseStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechBaseStream**, int> get_AudioInputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechBaseStream**, int> get_AudioInputStream;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_IsShared;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_IsShared;
 
         [NativeTypeName("HRESULT (SpeechRecognizerState) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechRecognizerState, int> put_State;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechRecognizerState, int> put_State;
 
         [NativeTypeName("HRESULT (SpeechRecognizerState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechRecognizerState*, int> get_State;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechRecognizerState*, int> get_State;
 
         [NativeTypeName("HRESULT (ISpeechRecognizerStatus **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechRecognizerStatus**, int> get_Status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecognizerStatus**, int> get_Status;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken*, int> putref_Profile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken*, int> putref_Profile;
 
         [NativeTypeName("HRESULT (ISpeechObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechObjectToken**, int> get_Profile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechObjectToken**, int> get_Profile;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, VARIANT*, int, int> EmulateRecognition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, VARIANT*, int, int> EmulateRecognition;
 
         [NativeTypeName("HRESULT (ISpeechRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpeechRecoContext**, int> CreateRecoContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecoContext**, int> CreateRecoContext;
 
         [NativeTypeName("HRESULT (SpeechFormatType, ISpeechAudioFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechFormatType, ISpeechAudioFormat**, int> GetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechFormatType, ISpeechAudioFormat**, int> GetFormat;
 
         [NativeTypeName("HRESULT (const BSTR, long, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int, short*, int> SetPropertyNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, short*, int> SetPropertyNumber;
 
         [NativeTypeName("HRESULT (const BSTR, long *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int*, short*, int> GetPropertyNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, short*, int> GetPropertyNumber;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, short*, int> SetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, short*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (const BSTR, BSTR *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, short*, int> GetPropertyString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, short*, int> GetPropertyString;
 
         [NativeTypeName("HRESULT (const BSTR, const VARIANT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, VARIANT*, short*, int> IsUISupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, short*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (long, BSTR, const BSTR, const VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, char*, char*, VARIANT*, int> DisplayUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char*, char*, VARIANT*, int> DisplayUI;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetRecognizers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetRecognizers;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetAudioInputs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetAudioInputs;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ISpeechObjectTokens**, int> GetProfiles;
     }
 }

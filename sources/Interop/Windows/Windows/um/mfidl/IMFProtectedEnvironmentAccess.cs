@@ -27,7 +27,7 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFProtectedEnvironmentAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint>)(lpVtbl[1]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFProtectedEnvironmentAccess*, uint>)(lpVtbl[1]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint>)(lpVtbl[2]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFProtectedEnvironmentAccess*, uint>)(lpVtbl[2]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFProtectedEnvironmentAccess.xml' path='doc/member[@name="IMFProtectedEnvironmentAccess.Call"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
     [VtblIndex(3)]
     public HRESULT Call([NativeTypeName("UINT32")] uint inputLength, [NativeTypeName("const BYTE *")] byte* input, [NativeTypeName("UINT32")] uint outputLength, byte* output)
     {
-        return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint, byte*, uint, byte*, int>)(lpVtbl[3]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), inputLength, input, outputLength, output);
+        return ((delegate* unmanaged[MemberFunction]<IMFProtectedEnvironmentAccess*, uint, byte*, uint, byte*, int>)(lpVtbl[3]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), inputLength, input, outputLength, output);
     }
 
     /// <include file='IMFProtectedEnvironmentAccess.xml' path='doc/member[@name="IMFProtectedEnvironmentAccess.ReadGRL"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
     [VtblIndex(4)]
     public HRESULT ReadGRL([NativeTypeName("UINT32 *")] uint* outputLength, byte** output)
     {
-        return ((delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int>)(lpVtbl[4]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), outputLength, output);
+        return ((delegate* unmanaged[MemberFunction]<IMFProtectedEnvironmentAccess*, uint*, byte**, int>)(lpVtbl[4]))((IMFProtectedEnvironmentAccess*)Unsafe.AsPointer(ref this), outputLength, output);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, const BYTE *, UINT32, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, uint, byte*, int> Call;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, uint, byte*, int> Call;
 
         [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, byte**, int> ReadGRL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> ReadGRL;
     }
 }

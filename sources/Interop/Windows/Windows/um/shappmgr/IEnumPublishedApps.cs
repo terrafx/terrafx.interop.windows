@@ -25,7 +25,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[1]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPublishedApps*, uint>)(lpVtbl[1]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[2]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPublishedApps*, uint>)(lpVtbl[2]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
     [VtblIndex(3)]
     public HRESULT Next(IPublishedApp** pia)
     {
-        return ((delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
+        return ((delegate* unmanaged[MemberFunction]<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
     }
 
     /// <include file='IEnumPublishedApps.xml' path='doc/member[@name="IEnumPublishedApps.Reset"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
     [VtblIndex(4)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPublishedApp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPublishedApp**, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPublishedApp**, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
     }
 }

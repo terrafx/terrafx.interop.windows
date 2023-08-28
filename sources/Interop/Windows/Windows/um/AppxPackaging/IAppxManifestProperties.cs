@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestProperties*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, uint>)(lpVtbl[1]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestProperties*, uint>)(lpVtbl[1]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, uint>)(lpVtbl[2]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestProperties*, uint>)(lpVtbl[2]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestProperties.xml' path='doc/member[@name="IAppxManifestProperties.GetBoolValue"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     [VtblIndex(3)]
     public HRESULT GetBoolValue([NativeTypeName("LPCWSTR")] char* name, BOOL* value)
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, char*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestProperties*, char*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IAppxManifestProperties.xml' path='doc/member[@name="IAppxManifestProperties.GetStringValue"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
     [VtblIndex(4)]
     public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("LPWSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IAppxManifestProperties*, char*, char**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestProperties*, char*, char**, int>)(lpVtbl[4]))((IAppxManifestProperties*)Unsafe.AsPointer(ref this), name, value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IAppxManifestProperties : IAppxManifestProperties.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, BOOL*, int> GetBoolValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, int> GetBoolValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char**, int> GetStringValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> GetStringValue;
     }
 }

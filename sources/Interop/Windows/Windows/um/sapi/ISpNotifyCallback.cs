@@ -17,7 +17,7 @@ public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
     [VtblIndex(0)]
     public HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[0]))((ISpNotifyCallback*)Unsafe.AsPointer(ref this), wParam, lParam);
     }
 
     public interface Interface
@@ -30,6 +30,6 @@ public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, int> NotifyCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WPARAM, LPARAM, int> NotifyCallback;
     }
 }

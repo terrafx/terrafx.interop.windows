@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrScheduleWizardUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISyncMgrUIOperation.Run" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     [VtblIndex(3)]
     public HRESULT Run(HWND hwndOwner)
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrScheduleWizardUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
     /// <include file='ISyncMgrScheduleWizardUIOperation.xml' path='doc/member[@name="ISyncMgrScheduleWizardUIOperation.InitWizard"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
     [VtblIndex(4)]
     public HRESULT InitWizard([NativeTypeName("LPCWSTR")] char* pszHandlerID)
     {
-        return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, char*, int>)(lpVtbl[4]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), pszHandlerID);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrScheduleWizardUIOperation*, char*, int>)(lpVtbl[4]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), pszHandlerID);
     }
 
     public interface Interface : ISyncMgrUIOperation.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> Run;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> InitWizard;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> InitWizard;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithAppUserModelID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, uint>)(lpVtbl[1]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithAppUserModelID*, uint>)(lpVtbl[1]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, uint>)(lpVtbl[2]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithAppUserModelID*, uint>)(lpVtbl[2]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.SetAppID"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     [VtblIndex(3)]
     public HRESULT SetAppID([NativeTypeName("LPCWSTR")] char* pszAppID)
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, char*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithAppUserModelID*, char*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
     /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.GetAppID"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
     [VtblIndex(4)]
     public HRESULT GetAppID([NativeTypeName("LPWSTR *")] char** ppszAppID)
     {
-        return ((delegate* unmanaged<IObjectWithAppUserModelID*, char**, int>)(lpVtbl[4]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), ppszAppID);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithAppUserModelID*, char**, int>)(lpVtbl[4]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), ppszAppID);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> SetAppID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetAppID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> GetAppID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetAppID;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBinding*, Guid*, void**, int>)(lpVtbl[0]))((IBinding*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, Guid*, void**, int>)(lpVtbl[0]))((IBinding*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBinding*, uint>)(lpVtbl[1]))((IBinding*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, uint>)(lpVtbl[1]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBinding*, uint>)(lpVtbl[2]))((IBinding*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, uint>)(lpVtbl[2]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Abort"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Abort()
     {
-        return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[3]))((IBinding*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, int>)(lpVtbl[3]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Suspend"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Suspend()
     {
-        return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[4]))((IBinding*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, int>)(lpVtbl[4]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Resume"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[5]))((IBinding*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, int>)(lpVtbl[5]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.SetPriority"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetPriority([NativeTypeName("LONG")] int nPriority)
     {
-        return ((delegate* unmanaged<IBinding*, int, int>)(lpVtbl[6]))((IBinding*)Unsafe.AsPointer(ref this), nPriority);
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, int, int>)(lpVtbl[6]))((IBinding*)Unsafe.AsPointer(ref this), nPriority);
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.GetPriority"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
     {
-        return ((delegate* unmanaged<IBinding*, int*, int>)(lpVtbl[7]))((IBinding*)Unsafe.AsPointer(ref this), pnPriority);
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, int*, int>)(lpVtbl[7]))((IBinding*)Unsafe.AsPointer(ref this), pnPriority);
     }
 
     /// <include file='IBinding.xml' path='doc/member[@name="IBinding.GetBindResult"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] char** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)
     {
-        return ((delegate* unmanaged<IBinding*, Guid*, uint*, char**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IBinding*, Guid*, uint*, char**, uint*, int>)(lpVtbl[8]))((IBinding*)Unsafe.AsPointer(ref this), pclsidProtocol, pdwResult, pszResult, pdwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IBinding : IBinding.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abort;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Suspend;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetPriority;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetPriority;
 
         [NativeTypeName("HRESULT (CLSID *, DWORD *, LPOLESTR *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, char**, uint*, int> GetBindResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, char**, uint*, int> GetBindResult;
     }
 }

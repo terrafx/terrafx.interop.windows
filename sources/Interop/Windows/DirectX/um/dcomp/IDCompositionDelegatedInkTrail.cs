@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[1]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[1]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[2]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, uint>)(lpVtbl[2]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.AddTrailPoints"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [VtblIndex(3)]
     public HRESULT AddTrailPoints([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, uint* generationId)
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[3]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, generationId);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[3]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, generationId);
     }
 
     /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.AddTrailPointsWithPrediction"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [VtblIndex(4)]
     public HRESULT AddTrailPointsWithPrediction([NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* inkPoints, uint inkPointsCount, [NativeTypeName("const DCompositionInkTrailPoint *")] DCompositionInkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[4]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, predictedInkPoints, predictedInkPointsCount, generationId);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int>)(lpVtbl[4]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), inkPoints, inkPointsCount, predictedInkPoints, predictedInkPointsCount, generationId);
     }
 
     /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.RemoveTrailPoints"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [VtblIndex(5)]
     public HRESULT RemoveTrailPoints(uint generationId)
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, uint, int>)(lpVtbl[5]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), generationId);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, uint, int>)(lpVtbl[5]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), generationId);
     }
 
     /// <include file='IDCompositionDelegatedInkTrail.xml' path='doc/member[@name="IDCompositionDelegatedInkTrail.StartNewTrail"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
     [VtblIndex(6)]
     public HRESULT StartNewTrail([NativeTypeName("const D2D1_COLOR_F &")] DXGI_RGBA* color)
     {
-        return ((delegate* unmanaged<IDCompositionDelegatedInkTrail*, DXGI_RGBA*, int>)(lpVtbl[6]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), color);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionDelegatedInkTrail*, DXGI_RGBA*, int>)(lpVtbl[6]))((IDCompositionDelegatedInkTrail*)Unsafe.AsPointer(ref this), color);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IDCompositionDelegatedInkTrail : IDCompositionDeleg
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const DCompositionInkTrailPoint *, UINT, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPoints;
 
         [NativeTypeName("HRESULT (const DCompositionInkTrailPoint *, UINT, const DCompositionInkTrailPoint *, UINT, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPointsWithPrediction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DCompositionInkTrailPoint*, uint, DCompositionInkTrailPoint*, uint, uint*, int> AddTrailPointsWithPrediction;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveTrailPoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveTrailPoints;
 
         [NativeTypeName("HRESULT (const D2D1_COLOR_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_RGBA*, int> StartNewTrail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_RGBA*, int> StartNewTrail;
     }
 }

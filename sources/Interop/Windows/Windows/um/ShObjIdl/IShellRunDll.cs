@@ -25,7 +25,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellRunDll*, Guid*, void**, int>)(lpVtbl[0]))((IShellRunDll*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellRunDll*, Guid*, void**, int>)(lpVtbl[0]))((IShellRunDll*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellRunDll*, uint>)(lpVtbl[1]))((IShellRunDll*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellRunDll*, uint>)(lpVtbl[1]))((IShellRunDll*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellRunDll*, uint>)(lpVtbl[2]))((IShellRunDll*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellRunDll*, uint>)(lpVtbl[2]))((IShellRunDll*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellRunDll.xml' path='doc/member[@name="IShellRunDll.Run"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Run([NativeTypeName("LPCWSTR")] char* pszArgs)
     {
-        return ((delegate* unmanaged<IShellRunDll*, char*, int>)(lpVtbl[3]))((IShellRunDll*)Unsafe.AsPointer(ref this), pszArgs);
+        return ((delegate* unmanaged[MemberFunction]<IShellRunDll*, char*, int>)(lpVtbl[3]))((IShellRunDll*)Unsafe.AsPointer(ref this), pszArgs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> Run;
     }
 }

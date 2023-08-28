@@ -25,7 +25,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, uint>)(lpVtbl[1]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, uint>)(lpVtbl[1]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, uint>)(lpVtbl[2]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, uint>)(lpVtbl[2]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.Present"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [VtblIndex(3)]
     public HRESULT Present(uint uBuffer, RECT* pDirty)
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, uint, RECT*, int>)(lpVtbl[3]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), uBuffer, pDirty);
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, uint, RECT*, int>)(lpVtbl[3]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), uBuffer, pDirty);
     }
 
     /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.GetBuffer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetBuffer(uint backBufferIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppBuffer)
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, uint, Guid*, void**, int>)(lpVtbl[4]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), backBufferIndex, riid, ppBuffer);
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, uint, Guid*, void**, int>)(lpVtbl[4]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), backBufferIndex, riid, ppBuffer);
     }
 
     /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.IsCurrent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
     [VtblIndex(5)]
     public HRESULT IsCurrent(BOOL* pIsCurrent)
     {
-        return ((delegate* unmanaged<ISurfacePresenter*, BOOL*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
+        return ((delegate* unmanaged[MemberFunction]<ISurfacePresenter*, BOOL*, int>)(lpVtbl[5]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), pIsCurrent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, RECT*, int> Present;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, RECT*, int> Present;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> GetBuffer;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsCurrent;
     }
 }

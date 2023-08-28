@@ -25,7 +25,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint>)(lpVtbl[1]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint>)(lpVtbl[1]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint>)(lpVtbl[2]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint>)(lpVtbl[2]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, uint cNumModels, uint iModelPosition)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, char*, uint, uint, int>)(lpVtbl[3]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, cNumModels, iModelPosition);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, char*, uint, uint, int>)(lpVtbl[3]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, cNumModels, iModelPosition);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetNumChannels"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(4)]
     public HRESULT GetNumChannels(uint* pNumChannels)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint*, int>)(lpVtbl[4]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pNumChannels);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint*, int>)(lpVtbl[4]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pNumChannels);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.DeviceToColorimetricColors"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(5)]
     public HRESULT DeviceToColorimetricColors(uint cColors, uint cChannels, [NativeTypeName("const FLOAT *")] float* pDeviceValues, XYZColorF* pXYZColors)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, uint, float*, XYZColorF*, int>)(lpVtbl[5]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pDeviceValues, pXYZColors);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, uint, float*, XYZColorF*, int>)(lpVtbl[5]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pDeviceValues, pXYZColors);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.ColorimetricToDeviceColors"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(6)]
     public HRESULT ColorimetricToDeviceColors(uint cColors, uint cChannels, [NativeTypeName("const XYZColorF *")] XYZColorF* pXYZColors, float* pDeviceValues)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, uint, XYZColorF*, float*, int>)(lpVtbl[6]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pXYZColors, pDeviceValues);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, uint, XYZColorF*, float*, int>)(lpVtbl[6]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pXYZColors, pDeviceValues);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.ColorimetricToDeviceColorsWithBlack"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(7)]
     public HRESULT ColorimetricToDeviceColorsWithBlack(uint cColors, uint cChannels, [NativeTypeName("const XYZColorF *")] XYZColorF* pXYZColors, [NativeTypeName("const BlackInformation *")] BlackInformation* pBlackInformation, float* pDeviceValues)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, uint, XYZColorF*, BlackInformation*, float*, int>)(lpVtbl[7]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pXYZColors, pBlackInformation, pDeviceValues);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, uint, XYZColorF*, BlackInformation*, float*, int>)(lpVtbl[7]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, cChannels, pXYZColors, pBlackInformation, pDeviceValues);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.SetTransformDeviceModelInfo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(8)]
     public HRESULT SetTransformDeviceModelInfo(uint iModelPosition, IDeviceModelPlugIn* pIDeviceModelOther)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, IDeviceModelPlugIn*, int>)(lpVtbl[8]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), iModelPosition, pIDeviceModelOther);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, IDeviceModelPlugIn*, int>)(lpVtbl[8]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), iModelPosition, pIDeviceModelOther);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetPrimarySamples"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(9)]
     public HRESULT GetPrimarySamples(PrimaryXYZColors* pPrimaryColor)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, PrimaryXYZColors*, int>)(lpVtbl[9]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pPrimaryColor);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, PrimaryXYZColors*, int>)(lpVtbl[9]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pPrimaryColor);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetGamutBoundaryMeshSize"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(10)]
     public HRESULT GetGamutBoundaryMeshSize(uint* pNumVertices, uint* pNumTriangles)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint*, uint*, int>)(lpVtbl[10]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pNumVertices, pNumTriangles);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint*, uint*, int>)(lpVtbl[10]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pNumVertices, pNumTriangles);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetGamutBoundaryMesh"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(11)]
     public HRESULT GetGamutBoundaryMesh(uint cChannels, uint cVertices, uint cTriangles, float* pVertices, GamutShellTriangle* pTriangles)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, uint, uint, float*, GamutShellTriangle*, int>)(lpVtbl[11]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cChannels, cVertices, cTriangles, pVertices, pTriangles);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, uint, uint, float*, GamutShellTriangle*, int>)(lpVtbl[11]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cChannels, cVertices, cTriangles, pVertices, pTriangles);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetNeutralAxisSize"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(12)]
     public HRESULT GetNeutralAxisSize(uint* pcColors)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint*, int>)(lpVtbl[12]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pcColors);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint*, int>)(lpVtbl[12]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), pcColors);
     }
 
     /// <include file='IDeviceModelPlugIn.xml' path='doc/member[@name="IDeviceModelPlugIn.GetNeutralAxis"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
     [VtblIndex(13)]
     public HRESULT GetNeutralAxis(uint cColors, XYZColorF* pXYZColors)
     {
-        return ((delegate* unmanaged<IDeviceModelPlugIn*, uint, XYZColorF*, int>)(lpVtbl[13]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, pXYZColors);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceModelPlugIn*, uint, XYZColorF*, int>)(lpVtbl[13]))((IDeviceModelPlugIn*)Unsafe.AsPointer(ref this), cColors, pXYZColors);
     }
 
     public interface Interface : IUnknown.Interface
@@ -174,45 +174,45 @@ public unsafe partial struct IDeviceModelPlugIn : IDeviceModelPlugIn.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, uint, uint, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNumChannels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNumChannels;
 
         [NativeTypeName("HRESULT (UINT, UINT, const FLOAT *, XYZColorF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, float*, XYZColorF*, int> DeviceToColorimetricColors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, float*, XYZColorF*, int> DeviceToColorimetricColors;
 
         [NativeTypeName("HRESULT (UINT, UINT, const XYZColorF *, FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, XYZColorF*, float*, int> ColorimetricToDeviceColors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, XYZColorF*, float*, int> ColorimetricToDeviceColors;
 
         [NativeTypeName("HRESULT (UINT, UINT, const XYZColorF *, const BlackInformation *, FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, XYZColorF*, BlackInformation*, float*, int> ColorimetricToDeviceColorsWithBlack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, XYZColorF*, BlackInformation*, float*, int> ColorimetricToDeviceColorsWithBlack;
 
         [NativeTypeName("HRESULT (UINT, IDeviceModelPlugIn *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDeviceModelPlugIn*, int> SetTransformDeviceModelInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDeviceModelPlugIn*, int> SetTransformDeviceModelInfo;
 
         [NativeTypeName("HRESULT (PrimaryXYZColors *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PrimaryXYZColors*, int> GetPrimarySamples;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PrimaryXYZColors*, int> GetPrimarySamples;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetGamutBoundaryMeshSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetGamutBoundaryMeshSize;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, FLOAT *, GamutShellTriangle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, float*, GamutShellTriangle*, int> GetGamutBoundaryMesh;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, float*, GamutShellTriangle*, int> GetGamutBoundaryMesh;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetNeutralAxisSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetNeutralAxisSize;
 
         [NativeTypeName("HRESULT (UINT, XYZColorF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, XYZColorF*, int> GetNeutralAxis;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, XYZColorF*, int> GetNeutralAxis;
     }
 }

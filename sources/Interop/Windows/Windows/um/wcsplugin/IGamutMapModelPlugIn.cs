@@ -25,7 +25,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, Guid*, void**, int>)(lpVtbl[0]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGamutMapModelPlugIn*, Guid*, void**, int>)(lpVtbl[0]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, uint>)(lpVtbl[1]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGamutMapModelPlugIn*, uint>)(lpVtbl[1]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, uint>)(lpVtbl[2]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGamutMapModelPlugIn*, uint>)(lpVtbl[2]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("BSTR")] char* bstrXml, IDeviceModelPlugIn* pSrcPlugIn, IDeviceModelPlugIn* pDestPlugIn, GamutBoundaryDescription* pSrcGBD, GamutBoundaryDescription* pDestGBD)
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int>)(lpVtbl[3]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, pSrcPlugIn, pDestPlugIn, pSrcGBD, pDestGBD);
+        return ((delegate* unmanaged[MemberFunction]<IGamutMapModelPlugIn*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int>)(lpVtbl[3]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), bstrXml, pSrcPlugIn, pDestPlugIn, pSrcGBD, pDestGBD);
     }
 
     /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn.SourceToDestinationAppearanceColors"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
     [VtblIndex(4)]
     public HRESULT SourceToDestinationAppearanceColors(uint cColors, [NativeTypeName("const JChColorF *")] JChColorF* pInputColors, JChColorF* pOutputColors)
     {
-        return ((delegate* unmanaged<IGamutMapModelPlugIn*, uint, JChColorF*, JChColorF*, int>)(lpVtbl[4]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), cColors, pInputColors, pOutputColors);
+        return ((delegate* unmanaged[MemberFunction]<IGamutMapModelPlugIn*, uint, JChColorF*, JChColorF*, int>)(lpVtbl[4]))((IGamutMapModelPlugIn*)Unsafe.AsPointer(ref this), cColors, pInputColors, pOutputColors);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, IDeviceModelPlugIn *, IDeviceModelPlugIn *, GamutBoundaryDescription *, GamutBoundaryDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IDeviceModelPlugIn*, IDeviceModelPlugIn*, GamutBoundaryDescription*, GamutBoundaryDescription*, int> Initialize;
 
         [NativeTypeName("HRESULT (UINT, const JChColorF *, JChColorF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, JChColorF*, JChColorF*, int> SourceToDestinationAppearanceColors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, JChColorF*, JChColorF*, int> SourceToDestinationAppearanceColors;
     }
 }

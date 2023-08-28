@@ -25,7 +25,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, void**, int>)(lpVtbl[0]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, void**, int>)(lpVtbl[0]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, uint>)(lpVtbl[1]))((IKnownFolderManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, uint>)(lpVtbl[1]))((IKnownFolderManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, uint>)(lpVtbl[2]))((IKnownFolderManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, uint>)(lpVtbl[2]))((IKnownFolderManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FolderIdFromCsidl"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(3)]
     public HRESULT FolderIdFromCsidl(int nCsidl, [NativeTypeName("KNOWNFOLDERID *")] Guid* pfid)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, int, Guid*, int>)(lpVtbl[3]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), nCsidl, pfid);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, int, Guid*, int>)(lpVtbl[3]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), nCsidl, pfid);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FolderIdToCsidl"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(4)]
     public HRESULT FolderIdToCsidl([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, int* pnCsidl)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, int*, int>)(lpVtbl[4]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, pnCsidl);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, int*, int>)(lpVtbl[4]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, pnCsidl);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.GetFolderIds"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(5)]
     public HRESULT GetFolderIds([NativeTypeName("KNOWNFOLDERID **")] Guid** ppKFId, uint* pCount)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid**, uint*, int>)(lpVtbl[5]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), ppKFId, pCount);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid**, uint*, int>)(lpVtbl[5]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), ppKFId, pCount);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.GetFolder"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(6)]
     public HRESULT GetFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, IKnownFolder**, int>)(lpVtbl[6]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, ppkf);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, IKnownFolder**, int>)(lpVtbl[6]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.GetFolderByName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(7)]
     public HRESULT GetFolderByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, char*, IKnownFolder**, int>)(lpVtbl[7]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszCanonicalName, ppkf);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, char*, IKnownFolder**, int>)(lpVtbl[7]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszCanonicalName, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.RegisterFolder"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(8)]
     public HRESULT RegisterFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, [NativeTypeName("const KNOWNFOLDER_DEFINITION *")] KNOWNFOLDER_DEFINITION* pKFD)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, KNOWNFOLDER_DEFINITION*, int>)(lpVtbl[8]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, pKFD);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, KNOWNFOLDER_DEFINITION*, int>)(lpVtbl[8]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, pKFD);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.UnregisterFolder"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(9)]
     public HRESULT UnregisterFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, int>)(lpVtbl[9]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, int>)(lpVtbl[9]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FindFolderFromPath"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(10)]
     public HRESULT FindFolderFromPath([NativeTypeName("LPCWSTR")] char* pszPath, FFFP_MODE mode, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, char*, FFFP_MODE, IKnownFolder**, int>)(lpVtbl[10]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszPath, mode, ppkf);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, char*, FFFP_MODE, IKnownFolder**, int>)(lpVtbl[10]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pszPath, mode, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.FindFolderFromIDList"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(11)]
     public HRESULT FindFolderFromIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IKnownFolder** ppkf)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, ITEMIDLIST*, IKnownFolder**, int>)(lpVtbl[11]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pidl, ppkf);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, ITEMIDLIST*, IKnownFolder**, int>)(lpVtbl[11]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), pidl, ppkf);
     }
 
     /// <include file='IKnownFolderManager.xml' path='doc/member[@name="IKnownFolderManager.Redirect"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
     [VtblIndex(12)]
     public HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] char* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] char** ppszError)
     {
-        return ((delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, char*, uint, Guid*, char**, int>)(lpVtbl[12]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFolderManager*, Guid*, HWND, uint, char*, uint, Guid*, char**, int>)(lpVtbl[12]))((IKnownFolderManager*)Unsafe.AsPointer(ref this), rfid, hwnd, flags, pszTargetPath, cFolders, pExclusion, ppszError);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int, KNOWNFOLDERID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, int> FolderIdFromCsidl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, int> FolderIdFromCsidl;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int*, int> FolderIdToCsidl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int*, int> FolderIdToCsidl;
 
         [NativeTypeName("HRESULT (KNOWNFOLDERID **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid**, uint*, int> GetFolderIds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid**, uint*, int> GetFolderIds;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IKnownFolder**, int> GetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IKnownFolder**, int> GetFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, IKnownFolder**, int> GetFolderByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IKnownFolder**, int> GetFolderByName;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, const KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> UnregisterFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> UnregisterFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, FFFP_MODE, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, HWND, KF_REDIRECT_FLAGS, LPCWSTR, UINT, const KNOWNFOLDERID *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, HWND, uint, char*, uint, Guid*, char**, int> Redirect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, HWND, uint, char*, uint, Guid*, char**, int> Redirect;
     }
 }

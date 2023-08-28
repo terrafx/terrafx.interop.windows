@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, uint>)(lpVtbl[1]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, uint>)(lpVtbl[1]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, uint>)(lpVtbl[2]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, uint>)(lpVtbl[2]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1TransformNode.GetInputCount" />
@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [return: NativeTypeName("UINT32")]
     public uint GetInputCount()
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, uint>)(lpVtbl[3]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, uint>)(lpVtbl[3]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Transform.MapOutputRectToInputRects" />
@@ -61,7 +61,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(4)]
     public HRESULT MapOutputRectToInputRects([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* inputRects, [NativeTypeName("UINT32")] uint inputRectsCount)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, RECT*, RECT*, uint, int>)(lpVtbl[4]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), outputRect, inputRects, inputRectsCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, RECT*, RECT*, uint, int>)(lpVtbl[4]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), outputRect, inputRects, inputRectsCount);
     }
 
     /// <inheritdoc cref="ID2D1Transform.MapInputRectsToOutputRect" />
@@ -69,7 +69,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(5)]
     public HRESULT MapInputRectsToOutputRect([NativeTypeName("const D2D1_RECT_L *")] RECT* inputRects, [NativeTypeName("const D2D1_RECT_L *")] RECT* inputOpaqueSubRects, [NativeTypeName("UINT32")] uint inputRectCount, [NativeTypeName("D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* outputOpaqueSubRect)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, RECT*, RECT*, uint, RECT*, RECT*, int>)(lpVtbl[5]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, RECT*, RECT*, uint, RECT*, RECT*, int>)(lpVtbl[5]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), inputRects, inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
     }
 
     /// <inheritdoc cref="ID2D1Transform.MapInvalidRect" />
@@ -77,7 +77,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(6)]
     public HRESULT MapInvalidRect([NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("D2D1_RECT_L")] RECT invalidInputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* invalidOutputRect)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, uint, RECT, RECT*, int>)(lpVtbl[6]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), inputIndex, invalidInputRect, invalidOutputRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, uint, RECT, RECT*, int>)(lpVtbl[6]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), inputIndex, invalidInputRect, invalidOutputRect);
     }
 
     /// <include file='ID2D1SourceTransform.xml' path='doc/member[@name="ID2D1SourceTransform.SetRenderInfo"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(7)]
     public HRESULT SetRenderInfo(ID2D1RenderInfo* renderInfo)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, ID2D1RenderInfo*, int>)(lpVtbl[7]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), renderInfo);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, ID2D1RenderInfo*, int>)(lpVtbl[7]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), renderInfo);
     }
 
     /// <include file='ID2D1SourceTransform.xml' path='doc/member[@name="ID2D1SourceTransform.Draw"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
     [VtblIndex(8)]
     public HRESULT Draw(ID2D1Bitmap1* target, [NativeTypeName("const D2D1_RECT_L *")] RECT* drawRect, [NativeTypeName("D2D1_POINT_2U")] D2D_POINT_2U targetOrigin)
     {
-        return ((delegate* unmanaged<ID2D1SourceTransform*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int>)(lpVtbl[8]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), target, drawRect, targetOrigin);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SourceTransform*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int>)(lpVtbl[8]))((ID2D1SourceTransform*)Unsafe.AsPointer(ref this), target, drawRect, targetOrigin);
     }
 
     public interface Interface : ID2D1Transform.Interface
@@ -109,30 +109,30 @@ public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetInputCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_L *, D2D1_RECT_L *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, uint, int> MapOutputRectToInputRects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, uint, int> MapOutputRectToInputRects;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_L *, const D2D1_RECT_L *, UINT32, D2D1_RECT_L *, D2D1_RECT_L *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, uint, RECT*, RECT*, int> MapInputRectsToOutputRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, uint, RECT*, RECT*, int> MapInputRectsToOutputRect;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_RECT_L, D2D1_RECT_L *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, RECT, RECT*, int> MapInvalidRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, RECT, RECT*, int> MapInvalidRect;
 
         [NativeTypeName("HRESULT (ID2D1RenderInfo *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1RenderInfo*, int> SetRenderInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1RenderInfo*, int> SetRenderInfo;
 
         [NativeTypeName("HRESULT (ID2D1Bitmap1 *, const D2D1_RECT_L *, D2D1_POINT_2U) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Bitmap1*, RECT*, D2D_POINT_2U, int> Draw;
     }
 }

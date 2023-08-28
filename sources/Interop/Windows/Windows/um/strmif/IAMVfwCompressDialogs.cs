@@ -25,7 +25,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, uint>)(lpVtbl[1]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, uint>)(lpVtbl[1]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, uint>)(lpVtbl[2]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, uint>)(lpVtbl[2]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.ShowDialog"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [VtblIndex(3)]
     public HRESULT ShowDialog(int iDialog, HWND hwnd)
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, int, HWND, int>)(lpVtbl[3]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, int, HWND, int>)(lpVtbl[3]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
     }
 
     /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.GetState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [VtblIndex(4)]
     public HRESULT GetState([NativeTypeName("LPVOID")] void* pState, int* pcbState)
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, void*, int*, int>)(lpVtbl[4]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, pcbState);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, void*, int*, int>)(lpVtbl[4]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, pcbState);
     }
 
     /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.SetState"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [VtblIndex(5)]
     public HRESULT SetState([NativeTypeName("LPVOID")] void* pState, int cbState)
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, void*, int, int>)(lpVtbl[5]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, cbState);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, void*, int, int>)(lpVtbl[5]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, cbState);
     }
 
     /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.SendDriverMessage"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
     [VtblIndex(6)]
     public HRESULT SendDriverMessage(int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2)
     {
-        return ((delegate* unmanaged<IAMVfwCompressDialogs*, int, int, int, int>)(lpVtbl[6]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), uMsg, dw1, dw2);
+        return ((delegate* unmanaged[MemberFunction]<IAMVfwCompressDialogs*, int, int, int, int>)(lpVtbl[6]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), uMsg, dw1, dw2);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, HWND, int> ShowDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, HWND, int> ShowDialog;
 
         [NativeTypeName("HRESULT (LPVOID, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int*, int> GetState;
 
         [NativeTypeName("HRESULT (LPVOID, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int, int> SetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int, int> SetState;
 
         [NativeTypeName("HRESULT (int, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int, int> SendDriverMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int, int> SendDriverMessage;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[1]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[1]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[2]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, uint>)(lpVtbl[2]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrix"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(4)]
     public HRESULT SetMatrix([NativeTypeName("const D2D1_MATRIX_5X4_F &")] D2D_MATRIX_5X4_F* matrix)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, D2D_MATRIX_5X4_F*, int>)(lpVtbl[4]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), matrix);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, D2D_MATRIX_5X4_F*, int>)(lpVtbl[4]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), matrix);
     }
 
     /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrixElement"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(5)]
     public HRESULT SetMatrixElement(int row, int column, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, int, int, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, int, int, IDCompositionAnimation*, int>)(lpVtbl[5]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, animation);
     }
 
     /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetMatrixElement"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(6)]
     public HRESULT SetMatrixElement(int row, int column, float value)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, int, int, float, int>)(lpVtbl[6]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, int, int, float, int>)(lpVtbl[6]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), row, column, value);
     }
 
     /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetAlphaMode"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(7)]
     public HRESULT SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)(lpVtbl[7]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)(lpVtbl[7]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IDCompositionColorMatrixEffect.xml' path='doc/member[@name="IDCompositionColorMatrixEffect.SetClampOutput"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
     [VtblIndex(8)]
     public HRESULT SetClampOutput(BOOL clamp)
     {
-        return ((delegate* unmanaged<IDCompositionColorMatrixEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), clamp);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionColorMatrixEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionColorMatrixEffect*)Unsafe.AsPointer(ref this), clamp);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -117,30 +117,30 @@ public unsafe partial struct IDCompositionColorMatrixEffect : IDCompositionColor
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_5X4_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D_MATRIX_5X4_F*, int> SetMatrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D_MATRIX_5X4_F*, int> SetMatrix;
 
         [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
 
         [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, float, int> SetMatrixElement1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, float, int> SetMatrixElement1;
 
         [NativeTypeName("HRESULT (D2D1_COLORMATRIX_ALPHA_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_COLORMATRIX_ALPHA_MODE, int> SetAlphaMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_COLORMATRIX_ALPHA_MODE, int> SetAlphaMode;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetClampOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetClampOutput;
     }
 }

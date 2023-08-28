@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint*, int>)(lpVtbl[3]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, uint*, int>)(lpVtbl[3]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Id"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(7)]
     public HRESULT get_Id([NativeTypeName("BSTR *")] char** Id)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[7]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[7]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.put_Default"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(8)]
     public HRESULT put_Default([NativeTypeName("const BSTR")] char* TokenId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, int>)(lpVtbl[8]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, char*, int>)(lpVtbl[8]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Default"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(9)]
     public HRESULT get_Default([NativeTypeName("BSTR *")] char** TokenId)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[9]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, char**, int>)(lpVtbl[9]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.SetId"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(10)]
     public HRESULT SetId([NativeTypeName("const BSTR")] char* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, short, int>)(lpVtbl[10]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id, CreateIfNotExist);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, char*, short, int>)(lpVtbl[10]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id, CreateIfNotExist);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.GetDataKey"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(11)]
     public HRESULT GetDataKey(SpeechDataKeyLocation Location, ISpeechDataKey** DataKey)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, SpeechDataKeyLocation, ISpeechDataKey**, int>)(lpVtbl[11]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Location, DataKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, SpeechDataKeyLocation, ISpeechDataKey**, int>)(lpVtbl[11]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Location, DataKey);
     }
 
     /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.EnumerateTokens"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
     [VtblIndex(12)]
     public HRESULT EnumerateTokens([NativeTypeName("BSTR")] char* RequiredAttributes, [NativeTypeName("BSTR")] char* OptionalAttributes, ISpeechObjectTokens** Tokens)
     {
-        return ((delegate* unmanaged<ISpeechObjectTokenCategory*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[12]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, Tokens);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechObjectTokenCategory*, char*, char*, ISpeechObjectTokens**, int>)(lpVtbl[12]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), RequiredAttributes, OptionalAttributes, Tokens);
     }
 
     public interface Interface : IDispatch.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Id;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Id;
 
         [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, int> put_Default;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_Default;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char**, int> get_Default;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Default;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, short, int> SetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, int> SetId;
 
         [NativeTypeName("HRESULT (SpeechDataKeyLocation, ISpeechDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpeechDataKeyLocation, ISpeechDataKey**, int> GetDataKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechDataKeyLocation, ISpeechDataKey**, int> GetDataKey;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, ISpeechObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, char*, ISpeechObjectTokens**, int> EnumerateTokens;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, ISpeechObjectTokens**, int> EnumerateTokens;
     }
 }

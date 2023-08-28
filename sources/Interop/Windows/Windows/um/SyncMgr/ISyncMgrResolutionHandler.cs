@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint>)(lpVtbl[1]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, uint>)(lpVtbl[1]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint>)(lpVtbl[2]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, uint>)(lpVtbl[2]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.QueryAbilities"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(3)]
     public HRESULT QueryAbilities([NativeTypeName("SYNCMGR_RESOLUTION_ABILITIES_FLAGS *")] uint* pdwAbilities)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint*, int>)(lpVtbl[3]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pdwAbilities);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, uint*, int>)(lpVtbl[3]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pdwAbilities);
     }
 
     /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepOther"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(4)]
     public HRESULT KeepOther(IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[4]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), psiOther, pFeedback);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[4]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), psiOther, pFeedback);
     }
 
     /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepRecent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(5)]
     public HRESULT KeepRecent(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[5]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[5]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
     }
 
     /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.RemoveFromSyncSet"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(6)]
     public HRESULT RemoveFromSyncSet(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[6]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[6]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
     }
 
     /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepItems"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
     [VtblIndex(7)]
     public HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
     {
-        return ((delegate* unmanaged<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[7]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pArray, pFeedback);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[7]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pArray, pFeedback);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_ABILITIES_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> QueryAbilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> QueryAbilities;
 
         [NativeTypeName("HRESULT (IShellItem *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepOther;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepOther;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepRecent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepRecent;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> RemoveFromSyncSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> RemoveFromSyncSet;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictResolutionItems *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepItems;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldState"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(3)]
     public HRESULT SetFieldState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_STATE, int>)(lpVtbl[3]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfs);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_STATE, int>)(lpVtbl[3]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfs);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldInteractiveState"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(4)]
     public HRESULT SetFieldInteractiveState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int>)(lpVtbl[4]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfis);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int>)(lpVtbl[4]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfis);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldString"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(5)]
     public HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* psz)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[5]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, psz);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[5]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, psz);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldCheckbox"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(6)]
     public HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] char* pszLabel)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, BOOL, char*, int>)(lpVtbl[6]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, bChecked, pszLabel);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, BOOL, char*, int>)(lpVtbl[6]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, bChecked, pszLabel);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldBitmap"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(7)]
     public HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, HBITMAP hbmp)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, HBITMAP, int>)(lpVtbl[7]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, hbmp);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, HBITMAP, int>)(lpVtbl[7]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, hbmp);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldComboBoxSelectedItem"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(8)]
     public HRESULT SetFieldComboBoxSelectedItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwSelectedItem)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[8]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwSelectedItem);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[8]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwSelectedItem);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.DeleteFieldComboBoxItem"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(9)]
     public HRESULT DeleteFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[9]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwItem);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[9]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwItem);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.AppendFieldComboBoxItem"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(10)]
     public HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] char* pszItem)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[10]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, pszItem);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, char*, int>)(lpVtbl[10]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, pszItem);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldSubmitButton"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(11)]
     public HRESULT SetFieldSubmitButton(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwAdjacentTo)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[11]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwAdjacentTo);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[11]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwAdjacentTo);
     }
 
     /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.OnCreatingWindow"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
     [VtblIndex(12)]
     public HRESULT OnCreatingWindow(HWND* phwndOwner)
     {
-        return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, HWND*, int>)(lpVtbl[12]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), phwndOwner);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderCredentialEvents*, HWND*, int>)(lpVtbl[12]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), phwndOwner);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, CREDENTIAL_PROVIDER_FIELD_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_STATE, int> SetFieldState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_STATE, int> SetFieldState;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int> SetFieldInteractiveState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int> SetFieldInteractiveState;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, char*, int> SetFieldString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, char*, int> SetFieldString;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, BOOL, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, BOOL, char*, int> SetFieldCheckbox;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, BOOL, char*, int> SetFieldCheckbox;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, HBITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, HBITMAP, int> SetFieldBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, HBITMAP, int> SetFieldBitmap;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, uint, int> SetFieldComboBoxSelectedItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, uint, int> SetFieldComboBoxSelectedItem;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, uint, int> DeleteFieldComboBoxItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, uint, int> DeleteFieldComboBoxItem;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, char*, int> AppendFieldComboBoxItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, char*, int> AppendFieldComboBoxItem;
 
         [NativeTypeName("HRESULT (ICredentialProviderCredential *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICredentialProviderCredential*, uint, uint, int> SetFieldSubmitButton;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICredentialProviderCredential*, uint, uint, int> SetFieldSubmitButton;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> OnCreatingWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> OnCreatingWindow;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, uint>)(lpVtbl[1]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, uint>)(lpVtbl[1]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, uint>)(lpVtbl[2]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, uint>)(lpVtbl[2]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContextKeyEventSink.xml' path='doc/member[@name="ITfContextKeyEventSink.OnKeyDown"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [VtblIndex(3)]
     public HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[3]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[3]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfContextKeyEventSink.xml' path='doc/member[@name="ITfContextKeyEventSink.OnKeyUp"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [VtblIndex(4)]
     public HRESULT OnKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfContextKeyEventSink.xml' path='doc/member[@name="ITfContextKeyEventSink.OnTestKeyDown"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [VtblIndex(5)]
     public HRESULT OnTestKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfContextKeyEventSink.xml' path='doc/member[@name="ITfContextKeyEventSink.OnTestKeyUp"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
     [VtblIndex(6)]
     public HRESULT OnTestKeyUp(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextKeyEventSink*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfContextKeyEventSink*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ITfContextKeyEventSink : ITfContextKeyEventSink.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
     }
 }

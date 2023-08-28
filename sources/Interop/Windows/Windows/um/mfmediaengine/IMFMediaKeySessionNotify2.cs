@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[1]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, uint>)(lpVtbl[2]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyMessage" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(3)]
     public void KeyMessage([NativeTypeName("BSTR")] char* destinationURL, [NativeTypeName("const BYTE *")] byte* message, [NativeTypeName("DWORD")] uint cb)
     {
-        ((delegate* unmanaged<IMFMediaKeySessionNotify2*, char*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
+        ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, char*, byte*, uint, void>)(lpVtbl[3]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), destinationURL, message, cb);
     }
 
     /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyAdded" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(4)]
     public void KeyAdded()
     {
-        ((delegate* unmanaged<IMFMediaKeySessionNotify2*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, void>)(lpVtbl[4]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFMediaKeySessionNotify.KeyError" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(5)]
     public void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode)
     {
-        ((delegate* unmanaged<IMFMediaKeySessionNotify2*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), code, systemCode);
+        ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, ushort, uint, void>)(lpVtbl[5]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), code, systemCode);
     }
 
     /// <include file='IMFMediaKeySessionNotify2.xml' path='doc/member[@name="IMFMediaKeySessionNotify2.KeyMessage2"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(6)]
     public void KeyMessage2(MF_MEDIAKEYSESSION_MESSAGETYPE eMessageType, [NativeTypeName("BSTR")] char* destinationURL, [NativeTypeName("const BYTE *")] byte* pbMessage, [NativeTypeName("DWORD")] uint cbMessage)
     {
-        ((delegate* unmanaged<IMFMediaKeySessionNotify2*, MF_MEDIAKEYSESSION_MESSAGETYPE, char*, byte*, uint, void>)(lpVtbl[6]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), eMessageType, destinationURL, pbMessage, cbMessage);
+        ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, MF_MEDIAKEYSESSION_MESSAGETYPE, char*, byte*, uint, void>)(lpVtbl[6]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this), eMessageType, destinationURL, pbMessage, cbMessage);
     }
 
     /// <include file='IMFMediaKeySessionNotify2.xml' path='doc/member[@name="IMFMediaKeySessionNotify2.KeyStatusChange"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
     [VtblIndex(7)]
     public void KeyStatusChange()
     {
-        ((delegate* unmanaged<IMFMediaKeySessionNotify2*, void>)(lpVtbl[7]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IMFMediaKeySessionNotify2*, void>)(lpVtbl[7]))((IMFMediaKeySessionNotify2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFMediaKeySessionNotify.Interface
@@ -99,27 +99,27 @@ public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotif
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, char*, byte*, uint, void> KeyMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte*, uint, void> KeyMessage;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> KeyAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> KeyAdded;
 
         [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, uint, void> KeyError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, uint, void> KeyError;
 
         [NativeTypeName("void (MF_MEDIAKEYSESSION_MESSAGETYPE, BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, char*, byte*, uint, void> KeyMessage2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, char*, byte*, uint, void> KeyMessage2;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> KeyStatusChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> KeyStatusChange;
     }
 }

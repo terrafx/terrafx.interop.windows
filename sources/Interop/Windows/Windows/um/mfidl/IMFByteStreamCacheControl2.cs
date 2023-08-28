@@ -27,7 +27,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, uint>)(lpVtbl[1]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, uint>)(lpVtbl[1]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, uint>)(lpVtbl[2]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, uint>)(lpVtbl[2]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFByteStreamCacheControl.StopBackgroundTransfer" />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [VtblIndex(3)]
     public HRESULT StopBackgroundTransfer()
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, int>)(lpVtbl[3]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStreamCacheControl2.xml' path='doc/member[@name="IMFByteStreamCacheControl2.GetByteRanges"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [VtblIndex(4)]
     public HRESULT GetByteRanges([NativeTypeName("DWORD *")] uint* pcRanges, MF_BYTE_STREAM_CACHE_RANGE** ppRanges)
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int>)(lpVtbl[4]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pcRanges, ppRanges);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int>)(lpVtbl[4]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pcRanges, ppRanges);
     }
 
     /// <include file='IMFByteStreamCacheControl2.xml' path='doc/member[@name="IMFByteStreamCacheControl2.SetCacheLimit"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [VtblIndex(5)]
     public HRESULT SetCacheLimit([NativeTypeName("QWORD")] ulong qwBytes)
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, ulong, int>)(lpVtbl[5]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), qwBytes);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, ulong, int>)(lpVtbl[5]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), qwBytes);
     }
 
     /// <include file='IMFByteStreamCacheControl2.xml' path='doc/member[@name="IMFByteStreamCacheControl2.IsBackgroundTransferActive"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
     [VtblIndex(6)]
     public HRESULT IsBackgroundTransferActive(BOOL* pfActive)
     {
-        return ((delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStreamCacheControl2*, BOOL*, int>)(lpVtbl[6]))((IMFByteStreamCacheControl2*)Unsafe.AsPointer(ref this), pfActive);
     }
 
     public interface Interface : IMFByteStreamCacheControl.Interface
@@ -96,24 +96,24 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopBackgroundTransfer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopBackgroundTransfer;
 
         [NativeTypeName("HRESULT (DWORD *, MF_BYTE_STREAM_CACHE_RANGE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int> GetByteRanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int> GetByteRanges;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> SetCacheLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> SetCacheLimit;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsBackgroundTransferActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsBackgroundTransferActive;
     }
 }

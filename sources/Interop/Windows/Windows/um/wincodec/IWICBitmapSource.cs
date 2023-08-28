@@ -25,7 +25,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, uint>)(lpVtbl[1]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, uint>)(lpVtbl[1]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, uint>)(lpVtbl[2]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, uint>)(lpVtbl[2]))((IWICBitmapSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
     /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetPixelFormat"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, Guid*, int>)(lpVtbl[4]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pPixelFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, Guid*, int>)(lpVtbl[4]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
     /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.GetResolution"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetResolution(double* pDpiX, double* pDpiY)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, double*, double*, int>)(lpVtbl[5]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, double*, double*, int>)(lpVtbl[5]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
     }
 
     /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.CopyPalette"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(6)]
     public HRESULT CopyPalette(IWICPalette* pIPalette)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pIPalette);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
     /// <include file='IWICBitmapSource.xml' path='doc/member[@name="IWICBitmapSource.CopyPixels"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
     [VtblIndex(7)]
     public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
-        return ((delegate* unmanaged<IWICBitmapSource*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapSource*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmapSource*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IWICBitmapSource : IWICBitmapSource.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, double*, int> GetResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, double*, int> GetResolution;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICPalette*, int> CopyPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICPalette*, int> CopyPalette;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
     }
 }

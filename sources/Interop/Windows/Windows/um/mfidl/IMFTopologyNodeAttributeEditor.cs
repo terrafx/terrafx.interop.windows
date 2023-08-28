@@ -25,7 +25,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTopologyNodeAttributeEditor.xml' path='doc/member[@name="IMFTopologyNodeAttributeEditor.UpdateNodeAttributes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
     [VtblIndex(3)]
     public HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)
     {
-        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int>)(lpVtbl[3]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), TopoId, cUpdates, pUpdates);
+        return ((delegate* unmanaged[MemberFunction]<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int>)(lpVtbl[3]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), TopoId, cUpdates, pUpdates);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TOPOID, DWORD, MFTOPONODE_ATTRIBUTE_UPDATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
     }
 }

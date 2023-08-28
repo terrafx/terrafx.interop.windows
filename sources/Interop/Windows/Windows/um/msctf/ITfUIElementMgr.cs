@@ -25,7 +25,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, uint>)(lpVtbl[1]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, uint>)(lpVtbl[1]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, uint>)(lpVtbl[2]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, uint>)(lpVtbl[2]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.BeginUIElement"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(3)]
     public HRESULT BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
     }
 
     /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.UpdateUIElement"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(4)]
     public HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[4]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, uint, int>)(lpVtbl[4]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
     }
 
     /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.EndUIElement"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(5)]
     public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[5]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, uint, int>)(lpVtbl[5]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
     }
 
     /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.GetUIElement"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int>)(lpVtbl[6]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIELementId, ppElement);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, uint, ITfUIElement**, int>)(lpVtbl[6]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIELementId, ppElement);
     }
 
     /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.EnumUIElements"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
     [VtblIndex(7)]
     public HRESULT EnumUIElements(IEnumTfUIElements** ppEnum)
     {
-        return ((delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int>)(lpVtbl[7]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfUIElementMgr*, IEnumTfUIElements**, int>)(lpVtbl[7]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfUIElement *, BOOL *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfUIElement*, BOOL*, uint*, int> BeginUIElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfUIElement*, BOOL*, uint*, int> BeginUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UpdateUIElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UpdateUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> EndUIElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> EndUIElement;
 
         [NativeTypeName("HRESULT (DWORD, ITfUIElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfUIElement**, int> GetUIElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfUIElement**, int> GetUIElement;
 
         [NativeTypeName("HRESULT (IEnumTfUIElements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfUIElements**, int> EnumUIElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfUIElements**, int> EnumUIElements;
     }
 }

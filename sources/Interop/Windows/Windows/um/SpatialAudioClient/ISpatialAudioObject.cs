@@ -25,7 +25,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, uint>)(lpVtbl[1]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, uint>)(lpVtbl[1]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, uint>)(lpVtbl[2]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, uint>)(lpVtbl[2]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpatialAudioObjectBase.GetBuffer" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(3)]
     public HRESULT GetBuffer(byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), buffer, bufferLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
     /// <inheritdoc cref="ISpatialAudioObjectBase.SetEndOfStream" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(4)]
     public HRESULT SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, uint, int>)(lpVtbl[4]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), frameCount);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, uint, int>)(lpVtbl[4]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), frameCount);
     }
 
     /// <inheritdoc cref="ISpatialAudioObjectBase.IsActive" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(5)]
     public HRESULT IsActive(BOOL* isActive)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), isActive);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), isActive);
     }
 
     /// <inheritdoc cref="ISpatialAudioObjectBase.GetAudioObjectType" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(6)]
     public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), audioObjectType);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), audioObjectType);
     }
 
     /// <include file='ISpatialAudioObject.xml' path='doc/member[@name="ISpatialAudioObject.SetPosition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(7)]
     public HRESULT SetPosition(float x, float y, float z)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), x, y, z);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), x, y, z);
     }
 
     /// <include file='ISpatialAudioObject.xml' path='doc/member[@name="ISpatialAudioObject.SetVolume"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
     [VtblIndex(8)]
     public HRESULT SetVolume(float volume)
     {
-        return ((delegate* unmanaged<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioObject*, float, int>)(lpVtbl[8]))((ISpatialAudioObject*)Unsafe.AsPointer(ref this), volume);
     }
 
     public interface Interface : ISpatialAudioObjectBase.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetEndOfStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetEndOfStream;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsActive;
 
         [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AudioObjectType*, int> GetAudioObjectType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AudioObjectType*, int> GetAudioObjectType;
 
         [NativeTypeName("HRESULT (float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, float, int> SetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, float, int> SetPosition;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> SetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> SetVolume;
     }
 }

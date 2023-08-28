@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint>)(lpVtbl[1]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint>)(lpVtbl[1]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint>)(lpVtbl[2]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint>)(lpVtbl[2]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.GetEvent" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.BeginGetEvent" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.EndGetEvent" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pResult, ppEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.QueueEvent" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(6)]
     public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSession*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSession*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.SetTopology"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetTopology([NativeTypeName("DWORD")] uint dwSetTopologyFlags, IMFTopology* pTopology)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint, IMFTopology*, int>)(lpVtbl[7]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwSetTopologyFlags, pTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint, IMFTopology*, int>)(lpVtbl[7]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwSetTopologyFlags, pTopology);
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.ClearTopologies"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(8)]
     public HRESULT ClearTopologies()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[8]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, int>)(lpVtbl[8]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Start"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(9)]
     public HRESULT Start([NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pguidTimeFormat, pvarStartPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pguidTimeFormat, pvarStartPosition);
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Pause"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(10)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[10]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, int>)(lpVtbl[10]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Stop"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(11)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[11]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, int>)(lpVtbl[11]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Close"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(12)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[12]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, int>)(lpVtbl[12]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Shutdown"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(13)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[13]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, int>)(lpVtbl[13]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetClock"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(14)]
     public HRESULT GetClock(IMFClock** ppClock)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, IMFClock**, int>)(lpVtbl[14]))((IMFMediaSession*)Unsafe.AsPointer(ref this), ppClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, IMFClock**, int>)(lpVtbl[14]))((IMFMediaSession*)Unsafe.AsPointer(ref this), ppClock);
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetSessionCapabilities"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(15)]
     public HRESULT GetSessionCapabilities([NativeTypeName("DWORD *")] uint* pdwCaps)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint*, int>)(lpVtbl[15]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pdwCaps);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint*, int>)(lpVtbl[15]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pdwCaps);
     }
 
     /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetFullTopology"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
     [VtblIndex(16)]
     public HRESULT GetFullTopology([NativeTypeName("DWORD")] uint dwGetFullTopologyFlags, [NativeTypeName("TOPOID")] ulong TopoId, IMFTopology** ppFullTopology)
     {
-        return ((delegate* unmanaged<IMFMediaSession*, uint, ulong, IMFTopology**, int>)(lpVtbl[16]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwGetFullTopologyFlags, TopoId, ppFullTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSession*, uint, ulong, IMFTopology**, int>)(lpVtbl[16]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwGetFullTopologyFlags, TopoId, ppFullTopology);
     }
 
     public interface Interface : IMFMediaEventGenerator.Interface
@@ -195,54 +195,54 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent**, int> GetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaEvent**, int> GetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
 
         [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
 
         [NativeTypeName("HRESULT (DWORD, IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFTopology*, int> SetTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFTopology*, int> SetTopology;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ClearTopologies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearTopologies;
 
         [NativeTypeName("HRESULT (const GUID *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IMFClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFClock**, int> GetClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFClock**, int> GetClock;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSessionCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSessionCapabilities;
 
         [NativeTypeName("HRESULT (DWORD, TOPOID, IMFTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ulong, IMFTopology**, int> GetFullTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ulong, IMFTopology**, int> GetFullTopology;
     }
 }

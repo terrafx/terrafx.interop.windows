@@ -25,7 +25,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, Guid*, void**, int>)(lpVtbl[0]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint>)(lpVtbl[1]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint>)(lpVtbl[1]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint>)(lpVtbl[2]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint>)(lpVtbl[2]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadMultiple"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(3)]
     public HRESULT ReadMultiple([NativeTypeName("ULONG")] uint cpspec, [NativeTypeName("const PROPSPEC *")] PROPSPEC* rgpspec, PROPVARIANT* rgvar)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgvar);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int>)(lpVtbl[3]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpspec, rgpspec, rgvar);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadPropertyNames"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(4)]
     public HRESULT ReadPropertyNames([NativeTypeName("ULONG")] uint cpropid, [NativeTypeName("const PROPID *")] uint* rgpropid, [NativeTypeName("BSTR *")] char** rglpwstrName)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, uint*, char**, int>)(lpVtbl[4]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), cpropid, rgpropid, rglpwstrName);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.Enum"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(5)]
     public HRESULT Enum(IEnumSTATPROPSTG** ppenum)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[5]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, IEnumSTATPROPSTG**, int>)(lpVtbl[5]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadDWORD"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(6)]
     public HRESULT ReadDWORD([NativeTypeName("PROPID")] uint id, [NativeTypeName("DWORD *")] uint* pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, int>)(lpVtbl[6]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, uint*, int>)(lpVtbl[6]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadLONG"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(7)]
     public HRESULT ReadLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("LONG *")] int* pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[7]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, int*, int>)(lpVtbl[7]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadBOOL"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(8)]
     public HRESULT ReadBOOL([NativeTypeName("PROPID")] uint id, BOOL* pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, BOOL*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, BOOL*, int>)(lpVtbl[8]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadULONGLONG"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(9)]
     public HRESULT ReadULONGLONG([NativeTypeName("PROPID")] uint id, [NativeTypeName("ULONGLONG *")] ulong* pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, ulong*, int>)(lpVtbl[9]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, ulong*, int>)(lpVtbl[9]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     /// <include file='IDiaPropertyStorage.xml' path='doc/member[@name="IDiaPropertyStorage.ReadBSTR"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
     [VtblIndex(10)]
     public HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] char** pValue)
     {
-        return ((delegate* unmanaged<IDiaPropertyStorage*, uint, char**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDiaPropertyStorage*, uint, char**, int>)(lpVtbl[10]))((IDiaPropertyStorage*)Unsafe.AsPointer(ref this), id, pValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -141,36 +141,36 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, char**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSTATPROPSTG**, int> Enum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSTATPROPSTG**, int> Enum;
 
         [NativeTypeName("HRESULT (PROPID, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> ReadDWORD;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> ReadDWORD;
 
         [NativeTypeName("HRESULT (PROPID, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int*, int> ReadLONG;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int*, int> ReadLONG;
 
         [NativeTypeName("HRESULT (PROPID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, int> ReadBOOL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, int> ReadBOOL;
 
         [NativeTypeName("HRESULT (PROPID, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ulong*, int> ReadULONGLONG;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ulong*, int> ReadULONGLONG;
 
         [NativeTypeName("HRESULT (PROPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, char**, int> ReadBSTR;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, int> ReadBSTR;
     }
 }

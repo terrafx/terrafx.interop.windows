@@ -25,7 +25,7 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMGraphBuilderCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMGraphBuilderCallback*, Guid*, void**, int>)(lpVtbl[0]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMGraphBuilderCallback*, uint>)(lpVtbl[1]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMGraphBuilderCallback*, uint>)(lpVtbl[1]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMGraphBuilderCallback*, uint>)(lpVtbl[2]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMGraphBuilderCallback*, uint>)(lpVtbl[2]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMGraphBuilderCallback.xml' path='doc/member[@name="IAMGraphBuilderCallback.SelectedFilter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
     [VtblIndex(3)]
     public HRESULT SelectedFilter(IMoniker* pMon)
     {
-        return ((delegate* unmanaged<IAMGraphBuilderCallback*, IMoniker*, int>)(lpVtbl[3]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pMon);
+        return ((delegate* unmanaged[MemberFunction]<IAMGraphBuilderCallback*, IMoniker*, int>)(lpVtbl[3]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pMon);
     }
 
     /// <include file='IAMGraphBuilderCallback.xml' path='doc/member[@name="IAMGraphBuilderCallback.CreatedFilter"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
     [VtblIndex(4)]
     public HRESULT CreatedFilter(IBaseFilter* pFil)
     {
-        return ((delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int>)(lpVtbl[4]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pFil);
+        return ((delegate* unmanaged[MemberFunction]<IAMGraphBuilderCallback*, IBaseFilter*, int>)(lpVtbl[4]))((IAMGraphBuilderCallback*)Unsafe.AsPointer(ref this), pFil);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, int> SelectedFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, int> SelectedFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, int> CreatedFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, int> CreatedFilter;
     }
 }

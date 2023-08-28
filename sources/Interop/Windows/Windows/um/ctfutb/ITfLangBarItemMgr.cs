@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint>)(lpVtbl[1]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint>)(lpVtbl[1]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint>)(lpVtbl[2]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint>)(lpVtbl[2]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.EnumItems"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(3)]
     public HRESULT EnumItems(IEnumTfLangBarItems** ppEnum)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, IEnumTfLangBarItems**, int>)(lpVtbl[3]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.GetItem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetItem([NativeTypeName("const GUID &")] Guid* rguid, ITfLangBarItem** ppItem)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, Guid*, ITfLangBarItem**, int>)(lpVtbl[4]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), rguid, ppItem);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, Guid*, ITfLangBarItem**, int>)(lpVtbl[4]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), rguid, ppItem);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.AddItem"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(5)]
     public HRESULT AddItem(ITfLangBarItem* punk)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[5]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[5]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.RemoveItem"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(6)]
     public HRESULT RemoveItem(ITfLangBarItem* punk)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[6]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, ITfLangBarItem*, int>)(lpVtbl[6]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.AdviseItemSink"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(7)]
     public HRESULT AdviseItemSink(ITfLangBarItemSink* punk, [NativeTypeName("DWORD *")] uint* pdwCookie, [NativeTypeName("const GUID &")] Guid* rguidItem)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, ITfLangBarItemSink*, uint*, Guid*, int>)(lpVtbl[7]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk, pdwCookie, rguidItem);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, ITfLangBarItemSink*, uint*, Guid*, int>)(lpVtbl[7]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), punk, pdwCookie, rguidItem);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.UnadviseItemSink"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(8)]
     public HRESULT UnadviseItemSink([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, int>)(lpVtbl[8]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, int>)(lpVtbl[8]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.GetItemFloatingRect"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, RECT*, int>)(lpVtbl[9]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, Guid*, RECT*, int>)(lpVtbl[9]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.GetItemsStatus"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(10)]
     public HRESULT GetItemsStatus([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const GUID *")] Guid* prgguid, [NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, Guid*, uint*, int>)(lpVtbl[10]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, prgguid, pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, Guid*, uint*, int>)(lpVtbl[10]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, prgguid, pdwStatus);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.GetItemNum"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(11)]
     public HRESULT GetItemNum([NativeTypeName("ULONG *")] uint* pulCount)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), pulCount);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint*, int>)(lpVtbl[11]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), pulCount);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.GetItems"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(12)]
     public HRESULT GetItems([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItem** ppItem, TF_LANGBARITEMINFO* pInfo, [NativeTypeName("DWORD *")] uint* pdwStatus, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int>)(lpVtbl[12]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppItem, pInfo, pdwStatus, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int>)(lpVtbl[12]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppItem, pInfo, pdwStatus, pcFetched);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.AdviseItemsSink"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(13)]
     public HRESULT AdviseItemsSink([NativeTypeName("ULONG")] uint ulCount, ITfLangBarItemSink** ppunk, [NativeTypeName("const GUID *")] Guid* pguidItem, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, ITfLangBarItemSink**, Guid*, uint*, int>)(lpVtbl[13]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppunk, pguidItem, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, ITfLangBarItemSink**, Guid*, uint*, int>)(lpVtbl[13]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, ppunk, pguidItem, pdwCookie);
     }
 
     /// <include file='ITfLangBarItemMgr.xml' path='doc/member[@name="ITfLangBarItemMgr.UnadviseItemsSink"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
     [VtblIndex(14)]
     public HRESULT UnadviseItemsSink([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<ITfLangBarItemMgr*, uint, uint*, int>)(lpVtbl[14]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemMgr*, uint, uint*, int>)(lpVtbl[14]))((ITfLangBarItemMgr*)Unsafe.AsPointer(ref this), ulCount, pdwCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -185,48 +185,48 @@ public unsafe partial struct ITfLangBarItemMgr : ITfLangBarItemMgr.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfLangBarItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfLangBarItems**, int> EnumItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfLangBarItems**, int> EnumItems;
 
         [NativeTypeName("HRESULT (const GUID &, ITfLangBarItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ITfLangBarItem**, int> GetItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ITfLangBarItem**, int> GetItem;
 
         [NativeTypeName("HRESULT (ITfLangBarItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfLangBarItem*, int> AddItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfLangBarItem*, int> AddItem;
 
         [NativeTypeName("HRESULT (ITfLangBarItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfLangBarItem*, int> RemoveItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfLangBarItem*, int> RemoveItem;
 
         [NativeTypeName("HRESULT (ITfLangBarItemSink *, DWORD *, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfLangBarItemSink*, uint*, Guid*, int> AdviseItemSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfLangBarItemSink*, uint*, Guid*, int> AdviseItemSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnadviseItemSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnadviseItemSink;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, RECT*, int> GetItemFloatingRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, RECT*, int> GetItemFloatingRect;
 
         [NativeTypeName("HRESULT (ULONG, const GUID *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> GetItemsStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, uint*, int> GetItemsStatus;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetItemNum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetItemNum;
 
         [NativeTypeName("HRESULT (ULONG, ITfLangBarItem **, TF_LANGBARITEMINFO *, DWORD *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int> GetItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfLangBarItem**, TF_LANGBARITEMINFO*, uint*, uint*, int> GetItems;
 
         [NativeTypeName("HRESULT (ULONG, ITfLangBarItemSink **, const GUID *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfLangBarItemSink**, Guid*, uint*, int> AdviseItemsSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfLangBarItemSink**, Guid*, uint*, int> AdviseItemsSink;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> UnadviseItemsSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> UnadviseItemsSink;
     }
 }

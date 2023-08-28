@@ -25,7 +25,7 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMonikerProp*, Guid*, void**, int>)(lpVtbl[0]))((IMonikerProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMonikerProp*, Guid*, void**, int>)(lpVtbl[0]))((IMonikerProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMonikerProp*, uint>)(lpVtbl[1]))((IMonikerProp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMonikerProp*, uint>)(lpVtbl[1]))((IMonikerProp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMonikerProp*, uint>)(lpVtbl[2]))((IMonikerProp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMonikerProp*, uint>)(lpVtbl[2]))((IMonikerProp*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMonikerProp.xml' path='doc/member[@name="IMonikerProp.PutProperty"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT PutProperty(MONIKERPROPERTY mkp, [NativeTypeName("LPCWSTR")] char* val)
     {
-        return ((delegate* unmanaged<IMonikerProp*, MONIKERPROPERTY, char*, int>)(lpVtbl[3]))((IMonikerProp*)Unsafe.AsPointer(ref this), mkp, val);
+        return ((delegate* unmanaged[MemberFunction]<IMonikerProp*, MONIKERPROPERTY, char*, int>)(lpVtbl[3]))((IMonikerProp*)Unsafe.AsPointer(ref this), mkp, val);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MONIKERPROPERTY, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MONIKERPROPERTY, char*, int> PutProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MONIKERPROPERTY, char*, int> PutProperty;
     }
 }

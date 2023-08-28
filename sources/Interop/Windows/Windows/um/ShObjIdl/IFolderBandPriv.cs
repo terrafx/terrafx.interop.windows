@@ -25,7 +25,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, Guid*, void**, int>)(lpVtbl[0]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, Guid*, void**, int>)(lpVtbl[0]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, uint>)(lpVtbl[1]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, uint>)(lpVtbl[1]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, uint>)(lpVtbl[2]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, uint>)(lpVtbl[2]))((IFolderBandPriv*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetCascade"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetCascade(BOOL fCascade)
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, BOOL, int>)(lpVtbl[3]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fCascade);
     }
 
     /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetAccelerators"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetAccelerators(BOOL fAccelerators)
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, BOOL, int>)(lpVtbl[4]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fAccelerators);
     }
 
     /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetNoIcons"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetNoIcons(BOOL fNoIcons)
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, BOOL, int>)(lpVtbl[5]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoIcons);
     }
 
     /// <include file='IFolderBandPriv.xml' path='doc/member[@name="IFolderBandPriv.SetNoText"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
     [VtblIndex(6)]
     public HRESULT SetNoText(BOOL fNoText)
     {
-        return ((delegate* unmanaged<IFolderBandPriv*, BOOL, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
+        return ((delegate* unmanaged[MemberFunction]<IFolderBandPriv*, BOOL, int>)(lpVtbl[6]))((IFolderBandPriv*)Unsafe.AsPointer(ref this), fNoText);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetCascade;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetCascade;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetAccelerators;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetAccelerators;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetNoIcons;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetNoIcons;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetNoText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetNoText;
     }
 }
