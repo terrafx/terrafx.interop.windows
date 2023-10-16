@@ -18,7 +18,7 @@ public partial struct D3D12_RASTERIZER_DESC
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x03, 0x00, 0x00, 0x00,
                 0x03, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00,
@@ -30,7 +30,7 @@ public partial struct D3D12_RASTERIZER_DESC
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00,
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_RASTERIZER_DESC>());
             return ref Unsafe.As<byte, D3D12_RASTERIZER_DESC>(ref MemoryMarshal.GetReference(data));

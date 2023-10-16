@@ -17,13 +17,13 @@ public partial struct D3D12_DEPTH_STENCILOP_DESC1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x01, 0x00, 0x00, 0x00,
                 0x01, 0x00, 0x00, 0x00,
                 0x01, 0x00, 0x00, 0x00,
                 0x08, 0x00, 0x00, 0x00,
                 0xFF, 0xFF, 0x00, 0x00,
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_DEPTH_STENCILOP_DESC1>());
             return ref Unsafe.As<byte, D3D12_DEPTH_STENCILOP_DESC1>(ref MemoryMarshal.GetReference(data));

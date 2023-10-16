@@ -19,12 +19,12 @@ public static unsafe partial class DirectX
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x80, 0x3F,
                 0x00, 0x00, 0x80, 0x3F,
                 0x00, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == (Unsafe.SizeOf<X3DAUDIO_DISTANCE_CURVE_POINT>() * 2));
             return MemoryMarshal.CreateReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT>(ref Unsafe.As<byte, X3DAUDIO_DISTANCE_CURVE_POINT>(ref MemoryMarshal.GetReference(data)), 2);
@@ -37,7 +37,7 @@ public static unsafe partial class DirectX
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDB, 0x0F, 0xC9, 0x3F,
                 0xDB, 0x0F, 0x49, 0x40,
                 0x00, 0x00, 0x80, 0x3F,
@@ -46,7 +46,7 @@ public static unsafe partial class DirectX
                 0x00, 0x00, 0x80, 0x3E,
                 0x7D, 0x3F, 0x35, 0x3F,
                 0x00, 0x00, 0x80, 0x3F
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<X3DAUDIO_CONE>());
             return ref Unsafe.As<byte, X3DAUDIO_CONE>(ref MemoryMarshal.GetReference(data));

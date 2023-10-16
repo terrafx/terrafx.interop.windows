@@ -18,7 +18,7 @@ public static partial class FORMAT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x2D, 0xAB, 0xD4, 0xAE,
                 0x26, 0x73,
                 0xCB, 0x43,
@@ -30,7 +30,7 @@ public static partial class FORMAT
                 0xB9,
                 0xC4,
                 0x3D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

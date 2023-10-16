@@ -18,7 +18,7 @@ public static partial class DXGI
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x8C, 0xA9, 0x59, 0xCF,
                 0x50, 0xA9,
                 0x26, 0x43,
@@ -30,7 +30,7 @@ public static partial class DXGI
                 0x7B,
                 0xFD,
                 0x95
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

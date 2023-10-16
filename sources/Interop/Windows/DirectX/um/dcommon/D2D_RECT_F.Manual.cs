@@ -16,12 +16,12 @@ public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0xFF, 0xFF, 0x7F, 0xFF,
-                    0xFF, 0xFF, 0x7F, 0xFF,
-                    0xFF, 0xFF, 0x7F, 0x7F,
-                    0xFF, 0xFF, 0x7F, 0x7F,
-                };
+            ReadOnlySpan<byte> data = [
+                0xFF, 0xFF, 0x7F, 0xFF,
+                0xFF, 0xFF, 0x7F, 0xFF,
+                0xFF, 0xFF, 0x7F, 0x7F,
+                0xFF, 0xFF, 0x7F, 0x7F,
+            ];
 
             return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
         }

@@ -19,7 +19,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC3, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -31,7 +31,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -42,7 +42,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC2, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -54,7 +54,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -65,7 +65,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC4, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -77,7 +77,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -88,7 +88,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC5, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -100,7 +100,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -111,7 +111,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC6, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -123,7 +123,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -134,7 +134,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC7, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -146,7 +146,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -157,7 +157,7 @@ public static partial class IID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xCB, 0xC9, 0xEA, 0x79,
                 0xF9, 0xBA,
                 0xCE, 0x11,
@@ -169,7 +169,7 @@ public static partial class IID
                 0x4B,
                 0xA9,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

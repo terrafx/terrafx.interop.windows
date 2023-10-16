@@ -19,7 +19,7 @@ public static partial class CLSID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x91, 0x56, 0xE6, 0x84,
                 0x02, 0x86,
                 0x84, 0x4A,
@@ -31,7 +31,7 @@ public static partial class CLSID
                 0xCD,
                 0x4B,
                 0x74
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

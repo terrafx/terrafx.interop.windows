@@ -18,7 +18,7 @@ public static partial class DXGI
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x83, 0xE2, 0x8A, 0xE4,
                 0x80, 0xDA,
                 0x0B, 0x49,
@@ -30,7 +30,7 @@ public static partial class DXGI
                 0xCF,
                 0xDA,
                 0x08
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class DXGI
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xFC, 0xD7, 0xCD, 0x35,
                 0xB2, 0x13,
                 0x1D, 0x42,
@@ -55,7 +55,7 @@ public static partial class DXGI
                 0x28,
                 0x7D,
                 0x64
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class DXGI
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA4, 0xDA, 0xCD, 0x25,
                 0xC6, 0xB1,
                 0xE1, 0x47,
@@ -80,7 +80,7 @@ public static partial class DXGI
                 0x5A,
                 0x2E,
                 0x2A
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class DXGI
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x01, 0x6E, 0xCD, 0x06,
                 0x19, 0x42,
                 0xBD, 0x4E,
@@ -105,7 +105,7 @@ public static partial class DXGI
                 0x36,
                 0x0C,
                 0x62
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

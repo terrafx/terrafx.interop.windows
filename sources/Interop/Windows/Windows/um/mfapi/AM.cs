@@ -18,7 +18,7 @@ public static partial class AM
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD2, 0x2A, 0xE4, 0xE2,
                 0x2C, 0x13,
                 0x1E, 0x49,
@@ -30,7 +30,7 @@ public static partial class AM
                 0xCA,
                 0x18,
                 0x1F
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

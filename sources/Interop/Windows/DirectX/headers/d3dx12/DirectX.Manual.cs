@@ -26,10 +26,10 @@ public static unsafe partial class DirectX
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x01, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00
-            };
+            ];
 
             return ref Unsafe.As<byte, DXGI_SAMPLE_DESC>(ref MemoryMarshal.GetReference(data));
         }

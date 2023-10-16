@@ -18,7 +18,7 @@ public static partial class GUID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x9D, 0xFF, 0xA8, 0xF6,
                 0x14, 0x9E,
                 0xC9, 0x41,
@@ -30,7 +30,7 @@ public static partial class GUID
                 0x3C,
                 0xE1,
                 0x20
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class GUID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3C, 0xE5, 0x71, 0xEF,
                 0xF4, 0x52,
                 0xC5, 0x43,
@@ -55,7 +55,7 @@ public static partial class GUID
                 0x16,
                 0xA6,
                 0x1E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

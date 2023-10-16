@@ -16,7 +16,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x08, 0x88, 0xB6, 0x61,
                 0xEE, 0x8E,
                 0xD1, 0x4F,
@@ -28,7 +28,7 @@ public static partial class CLSID
                 0x8D,
                 0xB0,
                 0x56
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -39,7 +39,7 @@ public static partial class CLSID
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAB, 0xC8, 0x65, 0x71,
                 0x88, 0xAF,
                 0xBD, 0x42,
@@ -51,7 +51,7 @@ public static partial class CLSID
                 0x28,
                 0x5A,
                 0x02
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

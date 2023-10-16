@@ -18,7 +18,7 @@ public static partial class Windows
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3E, 0x41, 0xA3, 0xFE,
                 0x05, 0x7E,
                 0x11, 0x49,
@@ -30,7 +30,7 @@ public static partial class Windows
                 0xF1,
                 0xC2,
                 0x94
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class Windows
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5E, 0xE9, 0xA1, 0x68,
                 0xEA, 0x13,
                 0xE1, 0x41,
@@ -55,7 +55,7 @@ public static partial class Windows
                 0xA4,
                 0x90,
                 0xB0
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

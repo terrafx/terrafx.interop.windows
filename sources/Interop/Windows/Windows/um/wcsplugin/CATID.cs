@@ -18,7 +18,7 @@ public static partial class CATID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE0, 0x02, 0xB4, 0xA0,
                 0x40, 0x82,
                 0x5F, 0x40,
@@ -30,7 +30,7 @@ public static partial class CATID
                 0xF2,
                 0xF0,
                 0xDD
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

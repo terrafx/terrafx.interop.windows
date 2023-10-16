@@ -18,7 +18,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6E, 0x6F, 0x0F, 0x43,
                 0xBF, 0xB6,
                 0xC1, 0x4F,
@@ -30,7 +30,7 @@ public static partial class MFTranscodeContainerType
                 0xEE,
                 0x2A,
                 0xFB
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5D, 0xD0, 0x6C, 0xDC,
                 0xD0, 0xB9,
                 0xEF, 0x40,
@@ -55,7 +55,7 @@ public static partial class MFTranscodeContainerType
                 0x1A,
                 0xB2,
                 0x8A
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x12, 0xB9, 0x38, 0xE4,
                 0xF1, 0x83,
                 0xE6, 0x4D,
@@ -80,7 +80,7 @@ public static partial class MFTranscodeContainerType
                 0xDD,
                 0x24,
                 0xD1
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA3, 0x4A, 0x34, 0x31,
                 0xA9, 0x05,
                 0xB5, 0x42,
@@ -105,7 +105,7 @@ public static partial class MFTranscodeContainerType
                 0x57,
                 0xF7,
                 0x5E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x67, 0x01, 0xC5, 0x34,
                 0x72, 0x44,
                 0x34, 0x4F,
@@ -130,7 +130,7 @@ public static partial class MFTranscodeContainerType
                 0xCF,
                 0x03,
                 0x7D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC3, 0x91, 0x8D, 0x6D,
                 0x91, 0x8C,
                 0xD1, 0x4E,
@@ -155,7 +155,7 @@ public static partial class MFTranscodeContainerType
                 0x5B,
                 0x44,
                 0xD0
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x7D, 0xD2, 0x2F, 0x13,
                 0x02, 0x0F,
                 0xDE, 0x43,
@@ -180,7 +180,7 @@ public static partial class MFTranscodeContainerType
                 0xB3,
                 0x83,
                 0x4E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF9, 0xDB, 0xC2, 0xBF,
                 0xB4, 0x7B,
                 0x8F, 0x4F,
@@ -205,7 +205,7 @@ public static partial class MFTranscodeContainerType
                 0x4B,
                 0xA8,
                 0x82
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3C, 0x45, 0xC3, 0x64,
                 0x26, 0x0F,
                 0x41, 0x47,
@@ -230,7 +230,7 @@ public static partial class MFTranscodeContainerType
                 0xBB,
                 0x93,
                 0x5B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAF, 0xE8, 0xDF, 0x7E,
                 0x2F, 0x40,
                 0x76, 0x4D,
@@ -255,7 +255,7 @@ public static partial class MFTranscodeContainerType
                 0x57,
                 0xD0,
                 0xF1
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF1, 0x76, 0xA8, 0x9B,
                 0x9F, 0x41,
                 0x77, 0x4B,
@@ -280,7 +280,7 @@ public static partial class MFTranscodeContainerType
                 0x9D,
                 0x40,
                 0x04
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class MFTranscodeContainerType
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD3, 0x5A, 0x5D, 0x02,
                 0x1A, 0x62,
                 0x5B, 0x47,
@@ -305,7 +305,7 @@ public static partial class MFTranscodeContainerType
                 0x24,
                 0xF0,
                 0x79
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
