@@ -42,9 +42,7 @@
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
     <Company>TerraFX</Company>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
-    <EnableAotAnalyzer>true</EnableAotAnalyzer>
-    <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
-    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <IsAotCompatible>true</IsAotCompatible>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
