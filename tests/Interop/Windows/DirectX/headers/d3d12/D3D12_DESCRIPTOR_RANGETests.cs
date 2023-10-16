@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D12_DESCRIPTOR_RANGE" /> struct.</summary>
 public static unsafe partial class D3D12_DESCRIPTOR_RANGETests
 {
-    /// <summary>Validates that the <see cref="D3D12_DESCRIPTOR_RANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_DESCRIPTOR_RANGE>(), Is.EqualTo(sizeof(D3D12_DESCRIPTOR_RANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_DESCRIPTOR_RANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_DESCRIPTOR_RANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_DESCRIPTOR_RANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D12_DESCRIPTOR_RANGE), Is.EqualTo(20));
-    }
 }

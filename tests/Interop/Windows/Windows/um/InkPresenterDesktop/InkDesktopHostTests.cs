@@ -19,25 +19,4 @@ public static unsafe partial class InkDesktopHostTests
     {
         Assert.That(typeof(InkDesktopHost).GUID, Is.EqualTo(CLSID_InkDesktopHost));
     }
-
-    /// <summary>Validates that the <see cref="InkDesktopHost" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<InkDesktopHost>(), Is.EqualTo(sizeof(InkDesktopHost)));
-    }
-
-    /// <summary>Validates that the <see cref="InkDesktopHost" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(InkDesktopHost).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="InkDesktopHost" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(InkDesktopHost), Is.EqualTo(1));
-    }
 }

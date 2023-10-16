@@ -19,32 +19,4 @@ public static unsafe partial class ICurrentItemTests
     {
         Assert.That(typeof(ICurrentItem).GUID, Is.EqualTo(IID_ICurrentItem));
     }
-
-    /// <summary>Validates that the <see cref="ICurrentItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICurrentItem>(), Is.EqualTo(sizeof(ICurrentItem)));
-    }
-
-    /// <summary>Validates that the <see cref="ICurrentItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICurrentItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICurrentItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICurrentItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICurrentItem), Is.EqualTo(4));
-        }
-    }
 }

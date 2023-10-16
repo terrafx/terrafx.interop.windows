@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PSINJECTDATA" /> struct.</summary>
 public static unsafe partial class PSINJECTDATATests
 {
-    /// <summary>Validates that the <see cref="PSINJECTDATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PSINJECTDATA>(), Is.EqualTo(sizeof(PSINJECTDATA)));
-    }
-
-    /// <summary>Validates that the <see cref="PSINJECTDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PSINJECTDATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PSINJECTDATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PSINJECTDATA), Is.EqualTo(8));
-    }
 }

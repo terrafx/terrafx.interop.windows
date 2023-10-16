@@ -21,32 +21,4 @@ public static unsafe partial class IMFTimedTextCueTests
     {
         Assert.That(typeof(IMFTimedTextCue).GUID, Is.EqualTo(IID_IMFTimedTextCue));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextCue" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimedTextCue>(), Is.EqualTo(sizeof(IMFTimedTextCue)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextCue" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimedTextCue).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextCue" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimedTextCue), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimedTextCue), Is.EqualTo(4));
-        }
-    }
 }

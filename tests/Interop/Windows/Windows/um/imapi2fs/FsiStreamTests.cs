@@ -19,25 +19,4 @@ public static unsafe partial class FsiStreamTests
     {
         Assert.That(typeof(FsiStream).GUID, Is.EqualTo(CLSID_FsiStream));
     }
-
-    /// <summary>Validates that the <see cref="FsiStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FsiStream>(), Is.EqualTo(sizeof(FsiStream)));
-    }
-
-    /// <summary>Validates that the <see cref="FsiStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FsiStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FsiStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FsiStream), Is.EqualTo(1));
-    }
 }

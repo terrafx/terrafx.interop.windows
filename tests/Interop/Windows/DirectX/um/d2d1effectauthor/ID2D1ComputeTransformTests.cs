@@ -19,32 +19,4 @@ public static unsafe partial class ID2D1ComputeTransformTests
     {
         Assert.That(typeof(ID2D1ComputeTransform).GUID, Is.EqualTo(IID_ID2D1ComputeTransform));
     }
-
-    /// <summary>Validates that the <see cref="ID2D1ComputeTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID2D1ComputeTransform>(), Is.EqualTo(sizeof(ID2D1ComputeTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1ComputeTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID2D1ComputeTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1ComputeTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID2D1ComputeTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID2D1ComputeTransform), Is.EqualTo(4));
-        }
-    }
 }

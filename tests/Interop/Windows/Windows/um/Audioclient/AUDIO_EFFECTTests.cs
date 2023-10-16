@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.22621.0")]
 public static unsafe partial class AUDIO_EFFECTTests
 {
-    /// <summary>Validates that the <see cref="AUDIO_EFFECT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AUDIO_EFFECT>(), Is.EqualTo(sizeof(AUDIO_EFFECT)));
-    }
-
-    /// <summary>Validates that the <see cref="AUDIO_EFFECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AUDIO_EFFECT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AUDIO_EFFECT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AUDIO_EFFECT), Is.EqualTo(24));
-    }
 }

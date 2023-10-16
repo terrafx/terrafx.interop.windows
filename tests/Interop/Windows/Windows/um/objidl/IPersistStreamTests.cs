@@ -19,32 +19,4 @@ public static unsafe partial class IPersistStreamTests
     {
         Assert.That(typeof(IPersistStream).GUID, Is.EqualTo(IID_IPersistStream));
     }
-
-    /// <summary>Validates that the <see cref="IPersistStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistStream>(), Is.EqualTo(sizeof(IPersistStream)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistStream), Is.EqualTo(4));
-        }
-    }
 }

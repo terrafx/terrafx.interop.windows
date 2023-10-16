@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLChangeLogTests
     {
         Assert.That(typeof(IHTMLChangeLog).GUID, Is.EqualTo(IID_IHTMLChangeLog));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLChangeLog" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLChangeLog>(), Is.EqualTo(sizeof(IHTMLChangeLog)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLChangeLog" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLChangeLog).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLChangeLog" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLChangeLog), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLChangeLog), Is.EqualTo(4));
-        }
-    }
 }

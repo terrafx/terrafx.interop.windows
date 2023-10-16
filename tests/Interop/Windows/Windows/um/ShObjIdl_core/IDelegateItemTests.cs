@@ -19,32 +19,4 @@ public static unsafe partial class IDelegateItemTests
     {
         Assert.That(typeof(IDelegateItem).GUID, Is.EqualTo(IID_IDelegateItem));
     }
-
-    /// <summary>Validates that the <see cref="IDelegateItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDelegateItem>(), Is.EqualTo(sizeof(IDelegateItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IDelegateItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDelegateItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDelegateItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDelegateItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDelegateItem), Is.EqualTo(4));
-        }
-    }
 }

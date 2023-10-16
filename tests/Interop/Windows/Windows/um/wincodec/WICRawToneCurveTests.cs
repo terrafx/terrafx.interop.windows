@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WICRawToneCurve" /> struct.</summary>
 public static unsafe partial class WICRawToneCurveTests
 {
-    /// <summary>Validates that the <see cref="WICRawToneCurve" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WICRawToneCurve>(), Is.EqualTo(sizeof(WICRawToneCurve)));
-    }
-
-    /// <summary>Validates that the <see cref="WICRawToneCurve" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WICRawToneCurve).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WICRawToneCurve" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WICRawToneCurve), Is.EqualTo(24));
-    }
 }

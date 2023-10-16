@@ -21,32 +21,4 @@ public static unsafe partial class IAudioClientDuckingControlTests
     {
         Assert.That(typeof(IAudioClientDuckingControl).GUID, Is.EqualTo(IID_IAudioClientDuckingControl));
     }
-
-    /// <summary>Validates that the <see cref="IAudioClientDuckingControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioClientDuckingControl>(), Is.EqualTo(sizeof(IAudioClientDuckingControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioClientDuckingControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioClientDuckingControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioClientDuckingControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioClientDuckingControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioClientDuckingControl), Is.EqualTo(4));
-        }
-    }
 }

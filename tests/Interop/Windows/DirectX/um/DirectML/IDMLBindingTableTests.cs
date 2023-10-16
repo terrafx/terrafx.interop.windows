@@ -19,32 +19,4 @@ public static unsafe partial class IDMLBindingTableTests
     {
         Assert.That(typeof(IDMLBindingTable).GUID, Is.EqualTo(IID_IDMLBindingTable));
     }
-
-    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMLBindingTable>(), Is.EqualTo(sizeof(IDMLBindingTable)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMLBindingTable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMLBindingTable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMLBindingTable), Is.EqualTo(4));
-        }
-    }
 }

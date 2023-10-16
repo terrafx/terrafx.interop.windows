@@ -19,32 +19,4 @@ public static unsafe partial class IDiaEnumInputAssemblyFilesTests
     {
         Assert.That(typeof(IDiaEnumInputAssemblyFiles).GUID, Is.EqualTo(IID_IDiaEnumInputAssemblyFiles));
     }
-
-    /// <summary>Validates that the <see cref="IDiaEnumInputAssemblyFiles" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaEnumInputAssemblyFiles>(), Is.EqualTo(sizeof(IDiaEnumInputAssemblyFiles)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumInputAssemblyFiles" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaEnumInputAssemblyFiles).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaEnumInputAssemblyFiles" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaEnumInputAssemblyFiles), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaEnumInputAssemblyFiles), Is.EqualTo(4));
-        }
-    }
 }

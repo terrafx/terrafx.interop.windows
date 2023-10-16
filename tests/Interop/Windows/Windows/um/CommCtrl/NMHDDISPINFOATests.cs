@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NMHDDISPINFOA" /> struct.</summary>
 public static unsafe partial class NMHDDISPINFOATests
 {
-    /// <summary>Validates that the <see cref="NMHDDISPINFOA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NMHDDISPINFOA>(), Is.EqualTo(sizeof(NMHDDISPINFOA)));
-    }
-
-    /// <summary>Validates that the <see cref="NMHDDISPINFOA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NMHDDISPINFOA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NMHDDISPINFOA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(NMHDDISPINFOA), Is.EqualTo(56));
-        }
-        else
-        {
-            Assert.That(sizeof(NMHDDISPINFOA), Is.EqualTo(36));
-        }
-    }
 }

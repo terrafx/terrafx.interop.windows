@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIDEVICEINSTANCE_DX3" /> struct.</summary>
 public static unsafe partial class DIDEVICEINSTANCE_DX3Tests
 {
-    /// <summary>Validates that the <see cref="DIDEVICEINSTANCE_DX3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIDEVICEINSTANCE_DX3>(), Is.EqualTo(sizeof(DIDEVICEINSTANCE_DX3)));
-    }
-
-    /// <summary>Validates that the <see cref="DIDEVICEINSTANCE_DX3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIDEVICEINSTANCE_DX3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIDEVICEINSTANCE_DX3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIDEVICEINSTANCE_DX3), Is.EqualTo(1080));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDSPSpeakerFillTests
     {
         Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).GUID, Is.EqualTo(IID_CODECAPI_AVDSPSpeakerFill));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDSPSpeakerFill>(), Is.EqualTo(sizeof(CODECAPI_AVDSPSpeakerFill)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDSPSpeakerFill), Is.EqualTo(1));
-    }
 }

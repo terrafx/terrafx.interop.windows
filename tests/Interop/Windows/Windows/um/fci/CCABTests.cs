@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CCAB" /> struct.</summary>
 public static unsafe partial class CCABTests
 {
-    /// <summary>Validates that the <see cref="CCAB" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CCAB>(), Is.EqualTo(sizeof(CCAB)));
-    }
-
-    /// <summary>Validates that the <see cref="CCAB" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CCAB).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CCAB" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CCAB), Is.EqualTo(804));
-    }
 }

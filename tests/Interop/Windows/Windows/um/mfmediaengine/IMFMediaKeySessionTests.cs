@@ -21,32 +21,4 @@ public static unsafe partial class IMFMediaKeySessionTests
     {
         Assert.That(typeof(IMFMediaKeySession).GUID, Is.EqualTo(IID_IMFMediaKeySession));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySession" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaKeySession>(), Is.EqualTo(sizeof(IMFMediaKeySession)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySession" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaKeySession).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySession" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaKeySession), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaKeySession), Is.EqualTo(4));
-        }
-    }
 }

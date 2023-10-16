@@ -19,25 +19,4 @@ public static unsafe partial class AppxEncryptionFactoryTests
     {
         Assert.That(typeof(AppxEncryptionFactory).GUID, Is.EqualTo(IID_AppxEncryptionFactory));
     }
-
-    /// <summary>Validates that the <see cref="AppxEncryptionFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AppxEncryptionFactory>(), Is.EqualTo(sizeof(AppxEncryptionFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="AppxEncryptionFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AppxEncryptionFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AppxEncryptionFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AppxEncryptionFactory), Is.EqualTo(1));
-    }
 }

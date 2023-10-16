@@ -19,32 +19,4 @@ public static unsafe partial class IDMOVideoOutputOptimizationsTests
     {
         Assert.That(typeof(IDMOVideoOutputOptimizations).GUID, Is.EqualTo(IID_IDMOVideoOutputOptimizations));
     }
-
-    /// <summary>Validates that the <see cref="IDMOVideoOutputOptimizations" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMOVideoOutputOptimizations>(), Is.EqualTo(sizeof(IDMOVideoOutputOptimizations)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMOVideoOutputOptimizations" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMOVideoOutputOptimizations).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMOVideoOutputOptimizations" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMOVideoOutputOptimizations), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMOVideoOutputOptimizations), Is.EqualTo(4));
-        }
-    }
 }

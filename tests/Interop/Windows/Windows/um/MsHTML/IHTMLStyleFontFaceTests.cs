@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLStyleFontFaceTests
     {
         Assert.That(typeof(IHTMLStyleFontFace).GUID, Is.EqualTo(IID_IHTMLStyleFontFace));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLStyleFontFace>(), Is.EqualTo(sizeof(IHTMLStyleFontFace)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLStyleFontFace).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(4));
-        }
-    }
 }

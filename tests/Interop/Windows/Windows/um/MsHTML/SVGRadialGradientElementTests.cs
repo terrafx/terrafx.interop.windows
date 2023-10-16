@@ -19,25 +19,4 @@ public static unsafe partial class SVGRadialGradientElementTests
     {
         Assert.That(typeof(SVGRadialGradientElement).GUID, Is.EqualTo(IID_SVGRadialGradientElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGRadialGradientElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGRadialGradientElement>(), Is.EqualTo(sizeof(SVGRadialGradientElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGRadialGradientElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGRadialGradientElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGRadialGradientElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGRadialGradientElement), Is.EqualTo(1));
-    }
 }

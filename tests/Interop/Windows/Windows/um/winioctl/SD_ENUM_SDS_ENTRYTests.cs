@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SD_ENUM_SDS_ENTRY" /> struct.</summary>
 public static unsafe partial class SD_ENUM_SDS_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="SD_ENUM_SDS_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SD_ENUM_SDS_ENTRY>(), Is.EqualTo(sizeof(SD_ENUM_SDS_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="SD_ENUM_SDS_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SD_ENUM_SDS_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SD_ENUM_SDS_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SD_ENUM_SDS_ENTRY), Is.EqualTo(24));
-    }
 }

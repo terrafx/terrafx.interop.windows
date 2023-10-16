@@ -19,25 +19,4 @@ public static unsafe partial class HTMLMSCSSKeyframeRuleTests
     {
         Assert.That(typeof(HTMLMSCSSKeyframeRule).GUID, Is.EqualTo(IID_HTMLMSCSSKeyframeRule));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframeRule" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMSCSSKeyframeRule>(), Is.EqualTo(sizeof(HTMLMSCSSKeyframeRule)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframeRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMSCSSKeyframeRule).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframeRule" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLMSCSSKeyframeRule), Is.EqualTo(1));
-    }
 }

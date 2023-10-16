@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct.</summary>
 public static unsafe partial class WS_XML_WRITER_TEXT_ENCODINGTests
 {
-    /// <summary>Validates that the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WS_XML_WRITER_TEXT_ENCODING>(), Is.EqualTo(sizeof(WS_XML_WRITER_TEXT_ENCODING)));
-    }
-
-    /// <summary>Validates that the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WS_XML_WRITER_TEXT_ENCODING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WS_XML_WRITER_TEXT_ENCODING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WS_XML_WRITER_TEXT_ENCODING), Is.EqualTo(8));
-    }
 }

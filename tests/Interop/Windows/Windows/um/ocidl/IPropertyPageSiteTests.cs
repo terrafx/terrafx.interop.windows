@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyPageSiteTests
     {
         Assert.That(typeof(IPropertyPageSite).GUID, Is.EqualTo(IID_IPropertyPageSite));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyPageSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyPageSite>(), Is.EqualTo(sizeof(IPropertyPageSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyPageSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyPageSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyPageSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyPageSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyPageSite), Is.EqualTo(4));
-        }
-    }
 }

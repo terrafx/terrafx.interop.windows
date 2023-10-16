@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="HueSaturationLightnessParams" /> struct.</summary>
 public static unsafe partial class HueSaturationLightnessParamsTests
 {
-    /// <summary>Validates that the <see cref="HueSaturationLightnessParams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HueSaturationLightnessParams>(), Is.EqualTo(sizeof(HueSaturationLightnessParams)));
-    }
-
-    /// <summary>Validates that the <see cref="HueSaturationLightnessParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HueSaturationLightnessParams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HueSaturationLightnessParams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HueSaturationLightnessParams), Is.EqualTo(12));
-    }
 }

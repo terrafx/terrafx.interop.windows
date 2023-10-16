@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILE_LAYOUT_INFO_ENTRY" /> struct.</summary>
 public static unsafe partial class FILE_LAYOUT_INFO_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="FILE_LAYOUT_INFO_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_LAYOUT_INFO_ENTRY>(), Is.EqualTo(sizeof(FILE_LAYOUT_INFO_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_LAYOUT_INFO_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_LAYOUT_INFO_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_LAYOUT_INFO_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_LAYOUT_INFO_ENTRY), Is.EqualTo(64));
-    }
 }

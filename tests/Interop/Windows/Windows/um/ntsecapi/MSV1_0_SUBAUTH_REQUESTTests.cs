@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MSV1_0_SUBAUTH_REQUEST" /> struct.</summary>
 public static unsafe partial class MSV1_0_SUBAUTH_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="MSV1_0_SUBAUTH_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MSV1_0_SUBAUTH_REQUEST>(), Is.EqualTo(sizeof(MSV1_0_SUBAUTH_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="MSV1_0_SUBAUTH_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MSV1_0_SUBAUTH_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MSV1_0_SUBAUTH_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(MSV1_0_SUBAUTH_REQUEST), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(MSV1_0_SUBAUTH_REQUEST), Is.EqualTo(16));
-        }
-    }
 }

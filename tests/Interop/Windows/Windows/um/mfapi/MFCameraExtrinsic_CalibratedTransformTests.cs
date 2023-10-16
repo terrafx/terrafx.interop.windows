@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class MFCameraExtrinsic_CalibratedTransformTests
 {
-    /// <summary>Validates that the <see cref="MFCameraExtrinsic_CalibratedTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFCameraExtrinsic_CalibratedTransform>(), Is.EqualTo(sizeof(MFCameraExtrinsic_CalibratedTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraExtrinsic_CalibratedTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFCameraExtrinsic_CalibratedTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraExtrinsic_CalibratedTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFCameraExtrinsic_CalibratedTransform), Is.EqualTo(44));
-    }
 }

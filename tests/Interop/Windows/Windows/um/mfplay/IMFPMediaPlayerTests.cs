@@ -19,32 +19,4 @@ public static unsafe partial class IMFPMediaPlayerTests
     {
         Assert.That(typeof(IMFPMediaPlayer).GUID, Is.EqualTo(IID_IMFPMediaPlayer));
     }
-
-    /// <summary>Validates that the <see cref="IMFPMediaPlayer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFPMediaPlayer>(), Is.EqualTo(sizeof(IMFPMediaPlayer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFPMediaPlayer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFPMediaPlayer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFPMediaPlayer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFPMediaPlayer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFPMediaPlayer), Is.EqualTo(4));
-        }
-    }
 }

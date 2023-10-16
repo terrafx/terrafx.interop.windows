@@ -19,32 +19,4 @@ public static unsafe partial class ITfPropertyStoreTests
     {
         Assert.That(typeof(ITfPropertyStore).GUID, Is.EqualTo(IID_ITfPropertyStore));
     }
-
-    /// <summary>Validates that the <see cref="ITfPropertyStore" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfPropertyStore>(), Is.EqualTo(sizeof(ITfPropertyStore)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfPropertyStore" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfPropertyStore).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfPropertyStore" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfPropertyStore), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfPropertyStore), Is.EqualTo(4));
-        }
-    }
 }

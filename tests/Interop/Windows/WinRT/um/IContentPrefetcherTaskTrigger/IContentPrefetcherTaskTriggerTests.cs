@@ -21,32 +21,4 @@ public static unsafe partial class IContentPrefetcherTaskTriggerTests
     {
         Assert.That(typeof(IContentPrefetcherTaskTrigger).GUID, Is.EqualTo(IID_IContentPrefetcherTaskTrigger));
     }
-
-    /// <summary>Validates that the <see cref="IContentPrefetcherTaskTrigger" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IContentPrefetcherTaskTrigger>(), Is.EqualTo(sizeof(IContentPrefetcherTaskTrigger)));
-    }
-
-    /// <summary>Validates that the <see cref="IContentPrefetcherTaskTrigger" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IContentPrefetcherTaskTrigger).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IContentPrefetcherTaskTrigger" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IContentPrefetcherTaskTrigger), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IContentPrefetcherTaskTrigger), Is.EqualTo(4));
-        }
-    }
 }

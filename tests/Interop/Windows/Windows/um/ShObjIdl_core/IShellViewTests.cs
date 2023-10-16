@@ -19,32 +19,4 @@ public static unsafe partial class IShellViewTests
     {
         Assert.That(typeof(IShellView).GUID, Is.EqualTo(IID_IShellView));
     }
-
-    /// <summary>Validates that the <see cref="IShellView" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellView>(), Is.EqualTo(sizeof(IShellView)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellView" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellView).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellView" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellView), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellView), Is.EqualTo(4));
-        }
-    }
 }

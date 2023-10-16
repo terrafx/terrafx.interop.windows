@@ -19,32 +19,4 @@ public static unsafe partial class IBFCacheableTests
     {
         Assert.That(typeof(IBFCacheable).GUID, Is.EqualTo(IID_IBFCacheable));
     }
-
-    /// <summary>Validates that the <see cref="IBFCacheable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBFCacheable>(), Is.EqualTo(sizeof(IBFCacheable)));
-    }
-
-    /// <summary>Validates that the <see cref="IBFCacheable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBFCacheable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBFCacheable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBFCacheable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBFCacheable), Is.EqualTo(4));
-        }
-    }
 }

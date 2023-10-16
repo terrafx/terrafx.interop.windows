@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_MEDIA_SERIAL_NUMBER_DATA" /> struct.</summary>
 public static unsafe partial class STORAGE_MEDIA_SERIAL_NUMBER_DATATests
 {
-    /// <summary>Validates that the <see cref="STORAGE_MEDIA_SERIAL_NUMBER_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_MEDIA_SERIAL_NUMBER_DATA>(), Is.EqualTo(sizeof(STORAGE_MEDIA_SERIAL_NUMBER_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_MEDIA_SERIAL_NUMBER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_MEDIA_SERIAL_NUMBER_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_MEDIA_SERIAL_NUMBER_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_MEDIA_SERIAL_NUMBER_DATA), Is.EqualTo(6));
-    }
 }

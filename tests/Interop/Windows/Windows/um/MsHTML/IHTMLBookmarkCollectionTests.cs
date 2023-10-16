@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLBookmarkCollectionTests
     {
         Assert.That(typeof(IHTMLBookmarkCollection).GUID, Is.EqualTo(IID_IHTMLBookmarkCollection));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLBookmarkCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLBookmarkCollection>(), Is.EqualTo(sizeof(IHTMLBookmarkCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLBookmarkCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLBookmarkCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLBookmarkCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLBookmarkCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLBookmarkCollection), Is.EqualTo(4));
-        }
-    }
 }

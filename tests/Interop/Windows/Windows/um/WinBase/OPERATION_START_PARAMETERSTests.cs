@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class OPERATION_START_PARAMETERSTests
 {
-    /// <summary>Validates that the <see cref="OPERATION_START_PARAMETERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OPERATION_START_PARAMETERS>(), Is.EqualTo(sizeof(OPERATION_START_PARAMETERS)));
-    }
-
-    /// <summary>Validates that the <see cref="OPERATION_START_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OPERATION_START_PARAMETERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OPERATION_START_PARAMETERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OPERATION_START_PARAMETERS), Is.EqualTo(12));
-    }
 }

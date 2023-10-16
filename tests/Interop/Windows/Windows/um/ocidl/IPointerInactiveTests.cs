@@ -19,32 +19,4 @@ public static unsafe partial class IPointerInactiveTests
     {
         Assert.That(typeof(IPointerInactive).GUID, Is.EqualTo(IID_IPointerInactive));
     }
-
-    /// <summary>Validates that the <see cref="IPointerInactive" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPointerInactive>(), Is.EqualTo(sizeof(IPointerInactive)));
-    }
-
-    /// <summary>Validates that the <see cref="IPointerInactive" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPointerInactive).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPointerInactive" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPointerInactive), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPointerInactive), Is.EqualTo(4));
-        }
-    }
 }

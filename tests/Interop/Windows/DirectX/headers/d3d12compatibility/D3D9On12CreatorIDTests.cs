@@ -19,32 +19,4 @@ public static unsafe partial class D3D9On12CreatorIDTests
     {
         Assert.That(typeof(D3D9On12CreatorID).GUID, Is.EqualTo(IID_D3D9On12CreatorID));
     }
-
-    /// <summary>Validates that the <see cref="D3D9On12CreatorID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D9On12CreatorID>(), Is.EqualTo(sizeof(D3D9On12CreatorID)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D9On12CreatorID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D9On12CreatorID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D9On12CreatorID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(D3D9On12CreatorID), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(D3D9On12CreatorID), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAMVideoControlTests
     {
         Assert.That(typeof(IAMVideoControl).GUID, Is.EqualTo(IID_IAMVideoControl));
     }
-
-    /// <summary>Validates that the <see cref="IAMVideoControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMVideoControl>(), Is.EqualTo(sizeof(IAMVideoControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMVideoControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMVideoControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMVideoControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMVideoControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMVideoControl), Is.EqualTo(4));
-        }
-    }
 }

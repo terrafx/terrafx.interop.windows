@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="TintParams" /> struct.</summary>
 public static unsafe partial class TintParamsTests
 {
-    /// <summary>Validates that the <see cref="TintParams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TintParams>(), Is.EqualTo(sizeof(TintParams)));
-    }
-
-    /// <summary>Validates that the <see cref="TintParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TintParams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TintParams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TintParams), Is.EqualTo(8));
-    }
 }

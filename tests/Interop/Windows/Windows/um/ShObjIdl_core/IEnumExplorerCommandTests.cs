@@ -19,32 +19,4 @@ public static unsafe partial class IEnumExplorerCommandTests
     {
         Assert.That(typeof(IEnumExplorerCommand).GUID, Is.EqualTo(IID_IEnumExplorerCommand));
     }
-
-    /// <summary>Validates that the <see cref="IEnumExplorerCommand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumExplorerCommand>(), Is.EqualTo(sizeof(IEnumExplorerCommand)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumExplorerCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumExplorerCommand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumExplorerCommand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumExplorerCommand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumExplorerCommand), Is.EqualTo(4));
-        }
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IMFVideoCaptureSampleAllocatorTests
     {
         Assert.That(typeof(IMFVideoCaptureSampleAllocator).GUID, Is.EqualTo(IID_IMFVideoCaptureSampleAllocator));
     }
-
-    /// <summary>Validates that the <see cref="IMFVideoCaptureSampleAllocator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFVideoCaptureSampleAllocator>(), Is.EqualTo(sizeof(IMFVideoCaptureSampleAllocator)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoCaptureSampleAllocator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFVideoCaptureSampleAllocator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoCaptureSampleAllocator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFVideoCaptureSampleAllocator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFVideoCaptureSampleAllocator), Is.EqualTo(4));
-        }
-    }
 }

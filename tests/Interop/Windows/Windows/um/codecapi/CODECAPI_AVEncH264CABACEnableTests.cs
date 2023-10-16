@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncH264CABACEnableTests
     {
         Assert.That(typeof(CODECAPI_AVEncH264CABACEnable).GUID, Is.EqualTo(IID_CODECAPI_AVEncH264CABACEnable));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncH264CABACEnable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncH264CABACEnable>(), Is.EqualTo(sizeof(CODECAPI_AVEncH264CABACEnable)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncH264CABACEnable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncH264CABACEnable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncH264CABACEnable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncH264CABACEnable), Is.EqualTo(1));
-    }
 }

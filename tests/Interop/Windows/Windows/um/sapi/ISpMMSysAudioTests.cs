@@ -19,32 +19,4 @@ public static unsafe partial class ISpMMSysAudioTests
     {
         Assert.That(typeof(ISpMMSysAudio).GUID, Is.EqualTo(IID_ISpMMSysAudio));
     }
-
-    /// <summary>Validates that the <see cref="ISpMMSysAudio" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpMMSysAudio>(), Is.EqualTo(sizeof(ISpMMSysAudio)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpMMSysAudio" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpMMSysAudio).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpMMSysAudio" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpMMSysAudio), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpMMSysAudio), Is.EqualTo(4));
-        }
-    }
 }

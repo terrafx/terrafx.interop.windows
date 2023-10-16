@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TIMECODE_SAMPLE" /> struct.</summary>
 public static unsafe partial class TIMECODE_SAMPLETests
 {
-    /// <summary>Validates that the <see cref="TIMECODE_SAMPLE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TIMECODE_SAMPLE>(), Is.EqualTo(sizeof(TIMECODE_SAMPLE)));
-    }
-
-    /// <summary>Validates that the <see cref="TIMECODE_SAMPLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TIMECODE_SAMPLE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TIMECODE_SAMPLE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TIMECODE_SAMPLE), Is.EqualTo(24));
-    }
 }

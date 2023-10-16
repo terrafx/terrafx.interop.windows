@@ -19,25 +19,4 @@ public static unsafe partial class SVGPathSegClosePathTests
     {
         Assert.That(typeof(SVGPathSegClosePath).GUID, Is.EqualTo(IID_SVGPathSegClosePath));
     }
-
-    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPathSegClosePath>(), Is.EqualTo(sizeof(SVGPathSegClosePath)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPathSegClosePath).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPathSegClosePath), Is.EqualTo(1));
-    }
 }

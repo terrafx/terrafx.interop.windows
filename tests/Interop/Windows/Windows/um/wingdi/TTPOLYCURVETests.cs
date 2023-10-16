@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TTPOLYCURVE" /> struct.</summary>
 public static unsafe partial class TTPOLYCURVETests
 {
-    /// <summary>Validates that the <see cref="TTPOLYCURVE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TTPOLYCURVE>(), Is.EqualTo(sizeof(TTPOLYCURVE)));
-    }
-
-    /// <summary>Validates that the <see cref="TTPOLYCURVE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TTPOLYCURVE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TTPOLYCURVE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TTPOLYCURVE), Is.EqualTo(12));
-    }
 }

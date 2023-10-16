@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationViewportEventHandlerTests
     {
         Assert.That(typeof(IDirectManipulationViewportEventHandler).GUID, Is.EqualTo(IID_IDirectManipulationViewportEventHandler));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationViewportEventHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationViewportEventHandler>(), Is.EqualTo(sizeof(IDirectManipulationViewportEventHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationViewportEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationViewportEventHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationViewportEventHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationViewportEventHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationViewportEventHandler), Is.EqualTo(4));
-        }
-    }
 }

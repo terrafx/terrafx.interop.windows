@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct.</summary>
 public static unsafe partial class FSCTL_QUERY_REGION_INFO_INPUTTests
 {
-    /// <summary>Validates that the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FSCTL_QUERY_REGION_INFO_INPUT>(), Is.EqualTo(sizeof(FSCTL_QUERY_REGION_INFO_INPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FSCTL_QUERY_REGION_INFO_INPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FSCTL_QUERY_REGION_INFO_INPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FSCTL_QUERY_REGION_INFO_INPUT), Is.EqualTo(32));
-    }
 }

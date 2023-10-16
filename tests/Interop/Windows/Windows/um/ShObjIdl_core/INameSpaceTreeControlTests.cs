@@ -19,32 +19,4 @@ public static unsafe partial class INameSpaceTreeControlTests
     {
         Assert.That(typeof(INameSpaceTreeControl).GUID, Is.EqualTo(IID_INameSpaceTreeControl));
     }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INameSpaceTreeControl>(), Is.EqualTo(sizeof(INameSpaceTreeControl)));
-    }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INameSpaceTreeControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INameSpaceTreeControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(INameSpaceTreeControl), Is.EqualTo(4));
-        }
-    }
 }

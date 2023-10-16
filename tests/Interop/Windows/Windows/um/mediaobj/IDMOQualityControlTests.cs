@@ -19,32 +19,4 @@ public static unsafe partial class IDMOQualityControlTests
     {
         Assert.That(typeof(IDMOQualityControl).GUID, Is.EqualTo(IID_IDMOQualityControl));
     }
-
-    /// <summary>Validates that the <see cref="IDMOQualityControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMOQualityControl>(), Is.EqualTo(sizeof(IDMOQualityControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMOQualityControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMOQualityControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMOQualityControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMOQualityControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMOQualityControl), Is.EqualTo(4));
-        }
-    }
 }

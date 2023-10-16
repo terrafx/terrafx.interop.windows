@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="userHGLOBAL" /> struct.</summary>
 public static unsafe partial class userHGLOBALTests
 {
-    /// <summary>Validates that the <see cref="userHGLOBAL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<userHGLOBAL>(), Is.EqualTo(sizeof(userHGLOBAL)));
-    }
-
-    /// <summary>Validates that the <see cref="userHGLOBAL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(userHGLOBAL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="userHGLOBAL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(userHGLOBAL), Is.EqualTo(16));
-    }
 }

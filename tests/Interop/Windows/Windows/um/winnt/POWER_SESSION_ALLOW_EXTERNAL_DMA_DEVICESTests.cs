@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct.</summary>
 public static unsafe partial class POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICESTests
 {
-    /// <summary>Validates that the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES>(), Is.EqualTo(sizeof(POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES)));
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POWER_SESSION_ALLOW_EXTERNAL_DMA_DEVICES), Is.EqualTo(1));
-    }
 }

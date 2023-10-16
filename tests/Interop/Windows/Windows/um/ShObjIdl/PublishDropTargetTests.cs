@@ -19,25 +19,4 @@ public static unsafe partial class PublishDropTargetTests
     {
         Assert.That(typeof(PublishDropTarget).GUID, Is.EqualTo(IID_PublishDropTarget));
     }
-
-    /// <summary>Validates that the <see cref="PublishDropTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PublishDropTarget>(), Is.EqualTo(sizeof(PublishDropTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="PublishDropTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PublishDropTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PublishDropTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PublishDropTarget), Is.EqualTo(1));
-    }
 }

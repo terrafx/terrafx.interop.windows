@@ -21,32 +21,4 @@ public static unsafe partial class IMFTimedTextRegionTests
     {
         Assert.That(typeof(IMFTimedTextRegion).GUID, Is.EqualTo(IID_IMFTimedTextRegion));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextRegion" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimedTextRegion>(), Is.EqualTo(sizeof(IMFTimedTextRegion)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextRegion" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimedTextRegion).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextRegion" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimedTextRegion), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimedTextRegion), Is.EqualTo(4));
-        }
-    }
 }

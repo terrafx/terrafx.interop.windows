@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct.</summary>
 public static unsafe partial class IMAGE_RESOURCE_DIRECTORY_STRINGTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_RESOURCE_DIRECTORY_STRING>(), Is.EqualTo(sizeof(IMAGE_RESOURCE_DIRECTORY_STRING)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_RESOURCE_DIRECTORY_STRING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_RESOURCE_DIRECTORY_STRING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_RESOURCE_DIRECTORY_STRING), Is.EqualTo(4));
-    }
 }

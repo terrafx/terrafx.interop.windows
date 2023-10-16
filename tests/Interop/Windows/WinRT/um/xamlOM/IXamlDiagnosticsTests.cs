@@ -21,32 +21,4 @@ public static unsafe partial class IXamlDiagnosticsTests
     {
         Assert.That(typeof(IXamlDiagnostics).GUID, Is.EqualTo(IID_IXamlDiagnostics));
     }
-
-    /// <summary>Validates that the <see cref="IXamlDiagnostics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXamlDiagnostics>(), Is.EqualTo(sizeof(IXamlDiagnostics)));
-    }
-
-    /// <summary>Validates that the <see cref="IXamlDiagnostics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXamlDiagnostics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXamlDiagnostics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXamlDiagnostics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXamlDiagnostics), Is.EqualTo(4));
-        }
-    }
 }

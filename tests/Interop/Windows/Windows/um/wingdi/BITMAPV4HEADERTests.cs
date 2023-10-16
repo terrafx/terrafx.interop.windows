@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BITMAPV4HEADER" /> struct.</summary>
 public static unsafe partial class BITMAPV4HEADERTests
 {
-    /// <summary>Validates that the <see cref="BITMAPV4HEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BITMAPV4HEADER>(), Is.EqualTo(sizeof(BITMAPV4HEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="BITMAPV4HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BITMAPV4HEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BITMAPV4HEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BITMAPV4HEADER), Is.EqualTo(108));
-    }
 }

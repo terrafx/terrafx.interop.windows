@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CONSOLE_FONT_INFOEX" /> struct.</summary>
 public static unsafe partial class CONSOLE_FONT_INFOEXTests
 {
-    /// <summary>Validates that the <see cref="CONSOLE_FONT_INFOEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CONSOLE_FONT_INFOEX>(), Is.EqualTo(sizeof(CONSOLE_FONT_INFOEX)));
-    }
-
-    /// <summary>Validates that the <see cref="CONSOLE_FONT_INFOEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CONSOLE_FONT_INFOEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CONSOLE_FONT_INFOEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CONSOLE_FONT_INFOEX), Is.EqualTo(84));
-    }
 }

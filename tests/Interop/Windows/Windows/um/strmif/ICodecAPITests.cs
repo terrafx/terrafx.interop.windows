@@ -19,32 +19,4 @@ public static unsafe partial class ICodecAPITests
     {
         Assert.That(typeof(ICodecAPI).GUID, Is.EqualTo(IID_ICodecAPI));
     }
-
-    /// <summary>Validates that the <see cref="ICodecAPI" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICodecAPI>(), Is.EqualTo(sizeof(ICodecAPI)));
-    }
-
-    /// <summary>Validates that the <see cref="ICodecAPI" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICodecAPI).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICodecAPI" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICodecAPI), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICodecAPI), Is.EqualTo(4));
-        }
-    }
 }

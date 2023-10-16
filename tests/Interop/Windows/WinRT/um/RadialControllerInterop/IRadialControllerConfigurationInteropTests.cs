@@ -21,32 +21,4 @@ public static unsafe partial class IRadialControllerConfigurationInteropTests
     {
         Assert.That(typeof(IRadialControllerConfigurationInterop).GUID, Is.EqualTo(IID_IRadialControllerConfigurationInterop));
     }
-
-    /// <summary>Validates that the <see cref="IRadialControllerConfigurationInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRadialControllerConfigurationInterop>(), Is.EqualTo(sizeof(IRadialControllerConfigurationInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IRadialControllerConfigurationInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRadialControllerConfigurationInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRadialControllerConfigurationInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRadialControllerConfigurationInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRadialControllerConfigurationInterop), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class DispDOMFocusEventTests
     {
         Assert.That(typeof(DispDOMFocusEvent).GUID, Is.EqualTo(IID_DispDOMFocusEvent));
     }
-
-    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispDOMFocusEvent>(), Is.EqualTo(sizeof(DispDOMFocusEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispDOMFocusEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(4));
-        }
-    }
 }

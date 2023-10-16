@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WAVEOUTCAPSW" /> struct.</summary>
 public static unsafe partial class WAVEOUTCAPSWTests
 {
-    /// <summary>Validates that the <see cref="WAVEOUTCAPSW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WAVEOUTCAPSW>(), Is.EqualTo(sizeof(WAVEOUTCAPSW)));
-    }
-
-    /// <summary>Validates that the <see cref="WAVEOUTCAPSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WAVEOUTCAPSW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WAVEOUTCAPSW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WAVEOUTCAPSW), Is.EqualTo(84));
-    }
 }

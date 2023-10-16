@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DWRITE_TRIMMING" /> struct.</summary>
 public static unsafe partial class DWRITE_TRIMMINGTests
 {
-    /// <summary>Validates that the <see cref="DWRITE_TRIMMING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_TRIMMING>(), Is.EqualTo(sizeof(DWRITE_TRIMMING)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TRIMMING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_TRIMMING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TRIMMING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DWRITE_TRIMMING), Is.EqualTo(12));
-    }
 }

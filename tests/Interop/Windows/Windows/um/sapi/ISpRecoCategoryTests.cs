@@ -19,32 +19,4 @@ public static unsafe partial class ISpRecoCategoryTests
     {
         Assert.That(typeof(ISpRecoCategory).GUID, Is.EqualTo(IID_ISpRecoCategory));
     }
-
-    /// <summary>Validates that the <see cref="ISpRecoCategory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpRecoCategory>(), Is.EqualTo(sizeof(ISpRecoCategory)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpRecoCategory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoCategory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpRecoCategory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpRecoCategory), Is.EqualTo(4));
-        }
-    }
 }

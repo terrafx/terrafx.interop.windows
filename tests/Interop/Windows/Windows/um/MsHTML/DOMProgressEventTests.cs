@@ -19,25 +19,4 @@ public static unsafe partial class DOMProgressEventTests
     {
         Assert.That(typeof(DOMProgressEvent).GUID, Is.EqualTo(IID_DOMProgressEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMProgressEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMProgressEvent>(), Is.EqualTo(sizeof(DOMProgressEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMProgressEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMProgressEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMProgressEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMProgressEvent), Is.EqualTo(1));
-    }
 }

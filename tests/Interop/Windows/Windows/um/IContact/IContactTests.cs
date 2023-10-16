@@ -19,32 +19,4 @@ public static unsafe partial class IContactTests
     {
         Assert.That(typeof(IContact).GUID, Is.EqualTo(IID_IContact));
     }
-
-    /// <summary>Validates that the <see cref="IContact" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IContact>(), Is.EqualTo(sizeof(IContact)));
-    }
-
-    /// <summary>Validates that the <see cref="IContact" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IContact).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IContact" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IContact), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IContact), Is.EqualTo(4));
-        }
-    }
 }

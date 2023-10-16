@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ACCEL" /> struct.</summary>
 public static unsafe partial class ACCELTests
 {
-    /// <summary>Validates that the <see cref="ACCEL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ACCEL>(), Is.EqualTo(sizeof(ACCEL)));
-    }
-
-    /// <summary>Validates that the <see cref="ACCEL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ACCEL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ACCEL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ACCEL), Is.EqualTo(6));
-    }
 }

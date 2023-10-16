@@ -19,32 +19,4 @@ public static unsafe partial class IDxcAssemblerTests
     {
         Assert.That(typeof(IDxcAssembler).GUID, Is.EqualTo(IID_IDxcAssembler));
     }
-
-    /// <summary>Validates that the <see cref="IDxcAssembler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDxcAssembler>(), Is.EqualTo(sizeof(IDxcAssembler)));
-    }
-
-    /// <summary>Validates that the <see cref="IDxcAssembler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDxcAssembler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDxcAssembler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDxcAssembler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDxcAssembler), Is.EqualTo(4));
-        }
-    }
 }

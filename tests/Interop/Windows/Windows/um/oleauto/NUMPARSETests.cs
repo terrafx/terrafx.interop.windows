@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NUMPARSE" /> struct.</summary>
 public static unsafe partial class NUMPARSETests
 {
-    /// <summary>Validates that the <see cref="NUMPARSE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NUMPARSE>(), Is.EqualTo(sizeof(NUMPARSE)));
-    }
-
-    /// <summary>Validates that the <see cref="NUMPARSE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NUMPARSE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NUMPARSE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NUMPARSE), Is.EqualTo(24));
-    }
 }

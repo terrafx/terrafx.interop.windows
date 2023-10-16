@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PROTOCOLDATA" /> struct.</summary>
 public static unsafe partial class PROTOCOLDATATests
 {
-    /// <summary>Validates that the <see cref="PROTOCOLDATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PROTOCOLDATA>(), Is.EqualTo(sizeof(PROTOCOLDATA)));
-    }
-
-    /// <summary>Validates that the <see cref="PROTOCOLDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PROTOCOLDATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PROTOCOLDATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(PROTOCOLDATA), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(PROTOCOLDATA), Is.EqualTo(16));
-        }
-    }
 }

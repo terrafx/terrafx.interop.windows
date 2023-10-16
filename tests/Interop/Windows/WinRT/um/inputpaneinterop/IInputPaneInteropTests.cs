@@ -21,32 +21,4 @@ public static unsafe partial class IInputPaneInteropTests
     {
         Assert.That(typeof(IInputPaneInterop).GUID, Is.EqualTo(IID_IInputPaneInterop));
     }
-
-    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInputPaneInterop>(), Is.EqualTo(sizeof(IInputPaneInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInputPaneInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EV_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
 public static unsafe partial class EV_EXTRA_CERT_CHAIN_POLICY_STATUSTests
 {
-    /// <summary>Validates that the <see cref="EV_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EV_EXTRA_CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(EV_EXTRA_CERT_CHAIN_POLICY_STATUS)));
-    }
-
-    /// <summary>Validates that the <see cref="EV_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EV_EXTRA_CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EV_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EV_EXTRA_CERT_CHAIN_POLICY_STATUS), Is.EqualTo(12));
-    }
 }

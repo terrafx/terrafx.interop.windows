@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLFontNamesCollectionTests
     {
         Assert.That(typeof(IHTMLFontNamesCollection).GUID, Is.EqualTo(IID_IHTMLFontNamesCollection));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLFontNamesCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLFontNamesCollection>(), Is.EqualTo(sizeof(IHTMLFontNamesCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLFontNamesCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLFontNamesCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLFontNamesCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLFontNamesCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLFontNamesCollection), Is.EqualTo(4));
-        }
-    }
 }

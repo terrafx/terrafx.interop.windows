@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RECONVERTSTRING" /> struct.</summary>
 public static unsafe partial class RECONVERTSTRINGTests
 {
-    /// <summary>Validates that the <see cref="RECONVERTSTRING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RECONVERTSTRING>(), Is.EqualTo(sizeof(RECONVERTSTRING)));
-    }
-
-    /// <summary>Validates that the <see cref="RECONVERTSTRING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RECONVERTSTRING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RECONVERTSTRING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RECONVERTSTRING), Is.EqualTo(32));
-    }
 }

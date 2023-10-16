@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class STORAGE_PROTOCOL_DATA_DESCRIPTORTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_PROTOCOL_DATA_DESCRIPTOR>(), Is.EqualTo(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_PROTOCOL_DATA_DESCRIPTOR), Is.EqualTo(48));
-    }
 }

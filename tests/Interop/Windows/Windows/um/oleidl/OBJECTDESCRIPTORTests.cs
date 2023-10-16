@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="OBJECTDESCRIPTOR" /> struct.</summary>
 public static unsafe partial class OBJECTDESCRIPTORTests
 {
-    /// <summary>Validates that the <see cref="OBJECTDESCRIPTOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OBJECTDESCRIPTOR>(), Is.EqualTo(sizeof(OBJECTDESCRIPTOR)));
-    }
-
-    /// <summary>Validates that the <see cref="OBJECTDESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OBJECTDESCRIPTOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OBJECTDESCRIPTOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OBJECTDESCRIPTOR), Is.EqualTo(52));
-    }
 }

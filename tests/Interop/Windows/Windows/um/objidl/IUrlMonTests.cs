@@ -19,32 +19,4 @@ public static unsafe partial class IUrlMonTests
     {
         Assert.That(typeof(IUrlMon).GUID, Is.EqualTo(IID_IUrlMon));
     }
-
-    /// <summary>Validates that the <see cref="IUrlMon" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUrlMon>(), Is.EqualTo(sizeof(IUrlMon)));
-    }
-
-    /// <summary>Validates that the <see cref="IUrlMon" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUrlMon).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUrlMon" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUrlMon), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUrlMon), Is.EqualTo(4));
-        }
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IAppxBlockMapFilesEnumeratorTests
     {
         Assert.That(typeof(IAppxBlockMapFilesEnumerator).GUID, Is.EqualTo(IID_IAppxBlockMapFilesEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapFilesEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBlockMapFilesEnumerator>(), Is.EqualTo(sizeof(IAppxBlockMapFilesEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapFilesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBlockMapFilesEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBlockMapFilesEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBlockMapFilesEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBlockMapFilesEnumerator), Is.EqualTo(4));
-        }
-    }
 }

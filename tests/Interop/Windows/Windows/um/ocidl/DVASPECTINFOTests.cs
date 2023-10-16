@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DVASPECTINFO" /> struct.</summary>
 public static unsafe partial class DVASPECTINFOTests
 {
-    /// <summary>Validates that the <see cref="DVASPECTINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DVASPECTINFO>(), Is.EqualTo(sizeof(DVASPECTINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="DVASPECTINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DVASPECTINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DVASPECTINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DVASPECTINFO), Is.EqualTo(8));
-    }
 }

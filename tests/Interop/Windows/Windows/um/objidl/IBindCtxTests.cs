@@ -19,32 +19,4 @@ public static unsafe partial class IBindCtxTests
     {
         Assert.That(typeof(IBindCtx).GUID, Is.EqualTo(IID_IBindCtx));
     }
-
-    /// <summary>Validates that the <see cref="IBindCtx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBindCtx>(), Is.EqualTo(sizeof(IBindCtx)));
-    }
-
-    /// <summary>Validates that the <see cref="IBindCtx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBindCtx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBindCtx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBindCtx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBindCtx), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IDirectDraw4Tests
     {
         Assert.That(typeof(IDirectDraw4).GUID, Is.EqualTo(IID_IDirectDraw4));
     }
-
-    /// <summary>Validates that the <see cref="IDirectDraw4" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectDraw4>(), Is.EqualTo(sizeof(IDirectDraw4)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectDraw4" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectDraw4).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectDraw4" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectDraw4), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectDraw4), Is.EqualTo(4));
-        }
-    }
 }

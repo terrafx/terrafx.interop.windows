@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct.</summary>
 public static unsafe partial class PROCESS_LEAP_SECOND_INFOTests
 {
-    /// <summary>Validates that the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PROCESS_LEAP_SECOND_INFO>(), Is.EqualTo(sizeof(PROCESS_LEAP_SECOND_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PROCESS_LEAP_SECOND_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PROCESS_LEAP_SECOND_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PROCESS_LEAP_SECOND_INFO), Is.EqualTo(8));
-    }
 }

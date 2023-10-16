@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RECTL" /> struct.</summary>
 public static unsafe partial class RECTLTests
 {
-    /// <summary>Validates that the <see cref="RECTL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RECTL>(), Is.EqualTo(sizeof(RECTL)));
-    }
-
-    /// <summary>Validates that the <see cref="RECTL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RECTL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RECTL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RECTL), Is.EqualTo(16));
-    }
 }

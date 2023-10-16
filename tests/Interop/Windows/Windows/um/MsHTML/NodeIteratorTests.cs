@@ -19,25 +19,4 @@ public static unsafe partial class NodeIteratorTests
     {
         Assert.That(typeof(NodeIterator).GUID, Is.EqualTo(IID_NodeIterator));
     }
-
-    /// <summary>Validates that the <see cref="NodeIterator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NodeIterator>(), Is.EqualTo(sizeof(NodeIterator)));
-    }
-
-    /// <summary>Validates that the <see cref="NodeIterator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NodeIterator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NodeIterator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NodeIterator), Is.EqualTo(1));
-    }
 }

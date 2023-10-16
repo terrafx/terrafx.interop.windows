@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_QUERY_S4U2PROXY_CACHE_REQUEST" /> struct.</summary>
 public static unsafe partial class KERB_QUERY_S4U2PROXY_CACHE_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="KERB_QUERY_S4U2PROXY_CACHE_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_QUERY_S4U2PROXY_CACHE_REQUEST>(), Is.EqualTo(sizeof(KERB_QUERY_S4U2PROXY_CACHE_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_QUERY_S4U2PROXY_CACHE_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_QUERY_S4U2PROXY_CACHE_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_QUERY_S4U2PROXY_CACHE_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERB_QUERY_S4U2PROXY_CACHE_REQUEST), Is.EqualTo(16));
-    }
 }

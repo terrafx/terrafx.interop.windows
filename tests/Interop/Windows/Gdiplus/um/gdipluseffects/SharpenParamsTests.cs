@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="SharpenParams" /> struct.</summary>
 public static unsafe partial class SharpenParamsTests
 {
-    /// <summary>Validates that the <see cref="SharpenParams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SharpenParams>(), Is.EqualTo(sizeof(SharpenParams)));
-    }
-
-    /// <summary>Validates that the <see cref="SharpenParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SharpenParams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SharpenParams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SharpenParams), Is.EqualTo(8));
-    }
 }

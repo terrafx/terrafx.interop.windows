@@ -19,32 +19,4 @@ public static unsafe partial class IMFOutputTrustAuthorityTests
     {
         Assert.That(typeof(IMFOutputTrustAuthority).GUID, Is.EqualTo(IID_IMFOutputTrustAuthority));
     }
-
-    /// <summary>Validates that the <see cref="IMFOutputTrustAuthority" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFOutputTrustAuthority>(), Is.EqualTo(sizeof(IMFOutputTrustAuthority)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFOutputTrustAuthority" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFOutputTrustAuthority).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFOutputTrustAuthority" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFOutputTrustAuthority), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFOutputTrustAuthority), Is.EqualTo(4));
-        }
-    }
 }

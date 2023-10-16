@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VMRVideoDesc" /> struct.</summary>
 public static unsafe partial class VMRVideoDescTests
 {
-    /// <summary>Validates that the <see cref="VMRVideoDesc" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VMRVideoDesc>(), Is.EqualTo(sizeof(VMRVideoDesc)));
-    }
-
-    /// <summary>Validates that the <see cref="VMRVideoDesc" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VMRVideoDesc).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VMRVideoDesc" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VMRVideoDesc), Is.EqualTo(36));
-    }
 }

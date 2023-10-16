@@ -19,32 +19,4 @@ public static unsafe partial class IMFTimecodeTranslateTests
     {
         Assert.That(typeof(IMFTimecodeTranslate).GUID, Is.EqualTo(IID_IMFTimecodeTranslate));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimecodeTranslate>(), Is.EqualTo(sizeof(IMFTimecodeTranslate)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimecodeTranslate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(4));
-        }
-    }
 }

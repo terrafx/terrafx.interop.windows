@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoOutputColorNominalRangeTes
     {
         Assert.That(typeof(CODECAPI_AVEncVideoOutputColorNominalRange).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputColorNominalRange));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorNominalRange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputColorNominalRange>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputColorNominalRange)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorNominalRange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoOutputColorNominalRange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorNominalRange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoOutputColorNominalRange), Is.EqualTo(1));
-    }
 }

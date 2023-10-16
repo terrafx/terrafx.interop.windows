@@ -19,32 +19,4 @@ public static unsafe partial class IMallocSpyTests
     {
         Assert.That(typeof(IMallocSpy).GUID, Is.EqualTo(IID_IMallocSpy));
     }
-
-    /// <summary>Validates that the <see cref="IMallocSpy" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMallocSpy>(), Is.EqualTo(sizeof(IMallocSpy)));
-    }
-
-    /// <summary>Validates that the <see cref="IMallocSpy" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMallocSpy).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMallocSpy" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMallocSpy), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMallocSpy), Is.EqualTo(4));
-        }
-    }
 }

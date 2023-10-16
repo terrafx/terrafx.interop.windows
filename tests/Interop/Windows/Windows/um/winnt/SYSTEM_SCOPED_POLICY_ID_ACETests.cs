@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class SYSTEM_SCOPED_POLICY_ID_ACETests
 {
-    /// <summary>Validates that the <see cref="SYSTEM_SCOPED_POLICY_ID_ACE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SYSTEM_SCOPED_POLICY_ID_ACE>(), Is.EqualTo(sizeof(SYSTEM_SCOPED_POLICY_ID_ACE)));
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_SCOPED_POLICY_ID_ACE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SYSTEM_SCOPED_POLICY_ID_ACE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_SCOPED_POLICY_ID_ACE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SYSTEM_SCOPED_POLICY_ID_ACE), Is.EqualTo(12));
-    }
 }

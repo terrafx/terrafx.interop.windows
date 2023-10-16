@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteFontResourceTests
     {
         Assert.That(typeof(IDWriteFontResource).GUID, Is.EqualTo(IID_IDWriteFontResource));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteFontResource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteFontResource>(), Is.EqualTo(sizeof(IDWriteFontResource)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontResource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteFontResource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontResource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteFontResource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteFontResource), Is.EqualTo(4));
-        }
-    }
 }

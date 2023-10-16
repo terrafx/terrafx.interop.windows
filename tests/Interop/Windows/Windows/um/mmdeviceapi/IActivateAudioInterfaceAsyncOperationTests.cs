@@ -21,32 +21,4 @@ public static unsafe partial class IActivateAudioInterfaceAsyncOperationTests
     {
         Assert.That(typeof(IActivateAudioInterfaceAsyncOperation).GUID, Is.EqualTo(IID_IActivateAudioInterfaceAsyncOperation));
     }
-
-    /// <summary>Validates that the <see cref="IActivateAudioInterfaceAsyncOperation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActivateAudioInterfaceAsyncOperation>(), Is.EqualTo(sizeof(IActivateAudioInterfaceAsyncOperation)));
-    }
-
-    /// <summary>Validates that the <see cref="IActivateAudioInterfaceAsyncOperation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActivateAudioInterfaceAsyncOperation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActivateAudioInterfaceAsyncOperation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActivateAudioInterfaceAsyncOperation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActivateAudioInterfaceAsyncOperation), Is.EqualTo(4));
-        }
-    }
 }

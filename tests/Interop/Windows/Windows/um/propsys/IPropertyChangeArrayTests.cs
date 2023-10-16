@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyChangeArrayTests
     {
         Assert.That(typeof(IPropertyChangeArray).GUID, Is.EqualTo(IID_IPropertyChangeArray));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyChangeArray" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyChangeArray>(), Is.EqualTo(sizeof(IPropertyChangeArray)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyChangeArray" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyChangeArray).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyChangeArray" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyChangeArray), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyChangeArray), Is.EqualTo(4));
-        }
-    }
 }

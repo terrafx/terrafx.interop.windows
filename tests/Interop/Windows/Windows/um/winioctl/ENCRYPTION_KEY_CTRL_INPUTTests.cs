@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct.</summary>
 public static unsafe partial class ENCRYPTION_KEY_CTRL_INPUTTests
 {
-    /// <summary>Validates that the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENCRYPTION_KEY_CTRL_INPUT>(), Is.EqualTo(sizeof(ENCRYPTION_KEY_CTRL_INPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENCRYPTION_KEY_CTRL_INPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENCRYPTION_KEY_CTRL_INPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENCRYPTION_KEY_CTRL_INPUT), Is.EqualTo(32));
-    }
 }

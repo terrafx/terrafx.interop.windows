@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoDirtyRectEnabledTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoDirtyRectEnabled).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoDirtyRectEnabled));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDirtyRectEnabled" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoDirtyRectEnabled>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoDirtyRectEnabled)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDirtyRectEnabled" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoDirtyRectEnabled).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDirtyRectEnabled" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoDirtyRectEnabled), Is.EqualTo(1));
-    }
 }

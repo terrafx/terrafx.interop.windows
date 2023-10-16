@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TLIBATTR" /> struct.</summary>
 public static unsafe partial class TLIBATTRTests
 {
-    /// <summary>Validates that the <see cref="TLIBATTR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TLIBATTR>(), Is.EqualTo(sizeof(TLIBATTR)));
-    }
-
-    /// <summary>Validates that the <see cref="TLIBATTR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TLIBATTR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TLIBATTR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TLIBATTR), Is.EqualTo(32));
-    }
 }

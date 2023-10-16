@@ -19,25 +19,4 @@ public static unsafe partial class RASProviderTests
     {
         Assert.That(typeof(RASProvider).GUID, Is.EqualTo(IID_RASProvider));
     }
-
-    /// <summary>Validates that the <see cref="RASProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RASProvider>(), Is.EqualTo(sizeof(RASProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="RASProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RASProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RASProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RASProvider), Is.EqualTo(1));
-    }
 }

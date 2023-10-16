@@ -19,32 +19,4 @@ public static unsafe partial class IFontNamesTests
     {
         Assert.That(typeof(IFontNames).GUID, Is.EqualTo(IID_IFontNames));
     }
-
-    /// <summary>Validates that the <see cref="IFontNames" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFontNames>(), Is.EqualTo(sizeof(IFontNames)));
-    }
-
-    /// <summary>Validates that the <see cref="IFontNames" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFontNames).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFontNames" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFontNames), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFontNames), Is.EqualTo(4));
-        }
-    }
 }

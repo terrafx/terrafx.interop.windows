@@ -19,32 +19,4 @@ public static unsafe partial class IWbemQualifierSetTests
     {
         Assert.That(typeof(IWbemQualifierSet).GUID, Is.EqualTo(IID_IWbemQualifierSet));
     }
-
-    /// <summary>Validates that the <see cref="IWbemQualifierSet" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemQualifierSet>(), Is.EqualTo(sizeof(IWbemQualifierSet)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemQualifierSet" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemQualifierSet).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemQualifierSet" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemQualifierSet), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemQualifierSet), Is.EqualTo(4));
-        }
-    }
 }

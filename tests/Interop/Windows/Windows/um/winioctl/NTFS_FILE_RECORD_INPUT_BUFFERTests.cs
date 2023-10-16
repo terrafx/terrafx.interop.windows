@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NTFS_FILE_RECORD_INPUT_BUFFER" /> struct.</summary>
 public static unsafe partial class NTFS_FILE_RECORD_INPUT_BUFFERTests
 {
-    /// <summary>Validates that the <see cref="NTFS_FILE_RECORD_INPUT_BUFFER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NTFS_FILE_RECORD_INPUT_BUFFER>(), Is.EqualTo(sizeof(NTFS_FILE_RECORD_INPUT_BUFFER)));
-    }
-
-    /// <summary>Validates that the <see cref="NTFS_FILE_RECORD_INPUT_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NTFS_FILE_RECORD_INPUT_BUFFER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NTFS_FILE_RECORD_INPUT_BUFFER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NTFS_FILE_RECORD_INPUT_BUFFER), Is.EqualTo(8));
-    }
 }

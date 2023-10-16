@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PUBLICKEYSTRUC" /> struct.</summary>
 public static unsafe partial class PUBLICKEYSTRUCTests
 {
-    /// <summary>Validates that the <see cref="PUBLICKEYSTRUC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PUBLICKEYSTRUC>(), Is.EqualTo(sizeof(PUBLICKEYSTRUC)));
-    }
-
-    /// <summary>Validates that the <see cref="PUBLICKEYSTRUC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PUBLICKEYSTRUC).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PUBLICKEYSTRUC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PUBLICKEYSTRUC), Is.EqualTo(8));
-    }
 }

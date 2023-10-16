@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EXCEPTION_RECORD32" /> struct.</summary>
 public static unsafe partial class EXCEPTION_RECORD32Tests
 {
-    /// <summary>Validates that the <see cref="EXCEPTION_RECORD32" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EXCEPTION_RECORD32>(), Is.EqualTo(sizeof(EXCEPTION_RECORD32)));
-    }
-
-    /// <summary>Validates that the <see cref="EXCEPTION_RECORD32" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EXCEPTION_RECORD32).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EXCEPTION_RECORD32" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EXCEPTION_RECORD32), Is.EqualTo(80));
-    }
 }

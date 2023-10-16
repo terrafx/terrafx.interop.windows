@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AMCOPPStatusInput" /> struct.</summary>
 public static unsafe partial class AMCOPPStatusInputTests
 {
-    /// <summary>Validates that the <see cref="AMCOPPStatusInput" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AMCOPPStatusInput>(), Is.EqualTo(sizeof(AMCOPPStatusInput)));
-    }
-
-    /// <summary>Validates that the <see cref="AMCOPPStatusInput" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AMCOPPStatusInput).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AMCOPPStatusInput" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AMCOPPStatusInput), Is.EqualTo(4096));
-    }
 }

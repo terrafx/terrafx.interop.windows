@@ -19,32 +19,4 @@ public static unsafe partial class IBPCSatelliteTunerTests
     {
         Assert.That(typeof(IBPCSatelliteTuner).GUID, Is.EqualTo(IID_IBPCSatelliteTuner));
     }
-
-    /// <summary>Validates that the <see cref="IBPCSatelliteTuner" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBPCSatelliteTuner>(), Is.EqualTo(sizeof(IBPCSatelliteTuner)));
-    }
-
-    /// <summary>Validates that the <see cref="IBPCSatelliteTuner" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBPCSatelliteTuner).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBPCSatelliteTuner" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBPCSatelliteTuner), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBPCSatelliteTuner), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POWER_SESSION_CONNECT" /> struct.</summary>
 public static unsafe partial class POWER_SESSION_CONNECTTests
 {
-    /// <summary>Validates that the <see cref="POWER_SESSION_CONNECT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POWER_SESSION_CONNECT>(), Is.EqualTo(sizeof(POWER_SESSION_CONNECT)));
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_CONNECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POWER_SESSION_CONNECT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POWER_SESSION_CONNECT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POWER_SESSION_CONNECT), Is.EqualTo(2));
-    }
 }

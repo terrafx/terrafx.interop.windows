@@ -19,32 +19,4 @@ public static unsafe partial class IVMRImagePresenterTests
     {
         Assert.That(typeof(IVMRImagePresenter).GUID, Is.EqualTo(IID_IVMRImagePresenter));
     }
-
-    /// <summary>Validates that the <see cref="IVMRImagePresenter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVMRImagePresenter>(), Is.EqualTo(sizeof(IVMRImagePresenter)));
-    }
-
-    /// <summary>Validates that the <see cref="IVMRImagePresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVMRImagePresenter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVMRImagePresenter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVMRImagePresenter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVMRImagePresenter), Is.EqualTo(4));
-        }
-    }
 }

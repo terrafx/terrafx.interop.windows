@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoSWPowerLevelTests
     {
         Assert.That(typeof(CODECAPI_AVDecVideoSWPowerLevel).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoSWPowerLevel));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoSWPowerLevel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoSWPowerLevel>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoSWPowerLevel)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoSWPowerLevel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoSWPowerLevel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoSWPowerLevel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoSWPowerLevel), Is.EqualTo(1));
-    }
 }

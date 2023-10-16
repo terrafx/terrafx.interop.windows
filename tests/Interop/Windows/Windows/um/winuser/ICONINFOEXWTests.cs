@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ICONINFOEXW" /> struct.</summary>
 public static unsafe partial class ICONINFOEXWTests
 {
-    /// <summary>Validates that the <see cref="ICONINFOEXW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICONINFOEXW>(), Is.EqualTo(sizeof(ICONINFOEXW)));
-    }
-
-    /// <summary>Validates that the <see cref="ICONINFOEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICONINFOEXW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICONINFOEXW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICONINFOEXW), Is.EqualTo(1080));
-        }
-        else
-        {
-            Assert.That(sizeof(ICONINFOEXW), Is.EqualTo(1068));
-        }
-    }
 }

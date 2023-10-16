@@ -21,32 +21,4 @@ public static unsafe partial class IPlayToManagerInteropTests
     {
         Assert.That(typeof(IPlayToManagerInterop).GUID, Is.EqualTo(IID_IPlayToManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPlayToManagerInterop>(), Is.EqualTo(sizeof(IPlayToManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPlayToManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

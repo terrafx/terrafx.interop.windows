@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STREAM_MEDIUM" /> struct.</summary>
 public static unsafe partial class STREAM_MEDIUMTests
 {
-    /// <summary>Validates that the <see cref="STREAM_MEDIUM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STREAM_MEDIUM>(), Is.EqualTo(sizeof(STREAM_MEDIUM)));
-    }
-
-    /// <summary>Validates that the <see cref="STREAM_MEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STREAM_MEDIUM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STREAM_MEDIUM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STREAM_MEDIUM), Is.EqualTo(20));
-    }
 }

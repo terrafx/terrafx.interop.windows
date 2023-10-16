@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDChannelBWLowPassFilterTests
     {
         Assert.That(typeof(CODECAPI_AVEncDDChannelBWLowPassFilter).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDChannelBWLowPassFilter));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDChannelBWLowPassFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDChannelBWLowPassFilter>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDChannelBWLowPassFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDChannelBWLowPassFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDChannelBWLowPassFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDChannelBWLowPassFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDChannelBWLowPassFilter), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct.</summary>
 public static unsafe partial class D3D12_VIEW_INSTANCE_LOCATIONTests
 {
-    /// <summary>Validates that the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_VIEW_INSTANCE_LOCATION>(), Is.EqualTo(sizeof(D3D12_VIEW_INSTANCE_LOCATION)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_VIEW_INSTANCE_LOCATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_VIEW_INSTANCE_LOCATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D12_VIEW_INSTANCE_LOCATION), Is.EqualTo(8));
-    }
 }

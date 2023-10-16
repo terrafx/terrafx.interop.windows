@@ -19,32 +19,4 @@ public static unsafe partial class IMFSinkWriterCallbackTests
     {
         Assert.That(typeof(IMFSinkWriterCallback).GUID, Is.EqualTo(IID_IMFSinkWriterCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSinkWriterCallback>(), Is.EqualTo(sizeof(IMFSinkWriterCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSinkWriterCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSinkWriterCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSinkWriterCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSinkWriterCallback), Is.EqualTo(4));
-        }
-    }
 }

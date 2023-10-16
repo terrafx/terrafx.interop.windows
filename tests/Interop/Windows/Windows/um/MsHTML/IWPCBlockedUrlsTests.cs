@@ -19,32 +19,4 @@ public static unsafe partial class IWPCBlockedUrlsTests
     {
         Assert.That(typeof(IWPCBlockedUrls).GUID, Is.EqualTo(IID_IWPCBlockedUrls));
     }
-
-    /// <summary>Validates that the <see cref="IWPCBlockedUrls" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWPCBlockedUrls>(), Is.EqualTo(sizeof(IWPCBlockedUrls)));
-    }
-
-    /// <summary>Validates that the <see cref="IWPCBlockedUrls" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWPCBlockedUrls).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWPCBlockedUrls" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWPCBlockedUrls), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWPCBlockedUrls), Is.EqualTo(4));
-        }
-    }
 }

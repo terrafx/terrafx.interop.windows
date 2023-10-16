@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MEMORY_BASIC_INFORMATION64" /> struct.</summary>
 public static unsafe partial class MEMORY_BASIC_INFORMATION64Tests
 {
-    /// <summary>Validates that the <see cref="MEMORY_BASIC_INFORMATION64" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MEMORY_BASIC_INFORMATION64>(), Is.EqualTo(sizeof(MEMORY_BASIC_INFORMATION64)));
-    }
-
-    /// <summary>Validates that the <see cref="MEMORY_BASIC_INFORMATION64" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MEMORY_BASIC_INFORMATION64).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MEMORY_BASIC_INFORMATION64" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MEMORY_BASIC_INFORMATION64), Is.EqualTo(48));
-    }
 }

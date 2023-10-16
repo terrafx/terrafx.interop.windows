@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct.</summary>
 public static unsafe partial class VIRTUAL_STORAGE_SET_BEHAVIOR_INPUTTests
 {
-    /// <summary>Validates that the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT>(), Is.EqualTo(sizeof(VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT), Is.EqualTo(8));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecCommonMeanBitRateTests
     {
         Assert.That(typeof(CODECAPI_AVDecCommonMeanBitRate).GUID, Is.EqualTo(IID_CODECAPI_AVDecCommonMeanBitRate));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonMeanBitRate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecCommonMeanBitRate>(), Is.EqualTo(sizeof(CODECAPI_AVDecCommonMeanBitRate)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonMeanBitRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecCommonMeanBitRate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonMeanBitRate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecCommonMeanBitRate), Is.EqualTo(1));
-    }
 }

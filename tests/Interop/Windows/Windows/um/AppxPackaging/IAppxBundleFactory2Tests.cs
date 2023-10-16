@@ -19,32 +19,4 @@ public static unsafe partial class IAppxBundleFactory2Tests
     {
         Assert.That(typeof(IAppxBundleFactory2).GUID, Is.EqualTo(IID_IAppxBundleFactory2));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBundleFactory2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBundleFactory2>(), Is.EqualTo(sizeof(IAppxBundleFactory2)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleFactory2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBundleFactory2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleFactory2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBundleFactory2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBundleFactory2), Is.EqualTo(4));
-        }
-    }
 }

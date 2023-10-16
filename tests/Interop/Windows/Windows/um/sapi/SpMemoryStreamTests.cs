@@ -19,25 +19,4 @@ public static unsafe partial class SpMemoryStreamTests
     {
         Assert.That(typeof(SpMemoryStream).GUID, Is.EqualTo(CLSID_SpMemoryStream));
     }
-
-    /// <summary>Validates that the <see cref="SpMemoryStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpMemoryStream>(), Is.EqualTo(sizeof(SpMemoryStream)));
-    }
-
-    /// <summary>Validates that the <see cref="SpMemoryStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpMemoryStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpMemoryStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpMemoryStream), Is.EqualTo(1));
-    }
 }

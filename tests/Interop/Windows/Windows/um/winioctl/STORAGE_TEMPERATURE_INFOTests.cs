@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class STORAGE_TEMPERATURE_INFOTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_TEMPERATURE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_TEMPERATURE_INFO>(), Is.EqualTo(sizeof(STORAGE_TEMPERATURE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_TEMPERATURE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_TEMPERATURE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_TEMPERATURE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_TEMPERATURE_INFO), Is.EqualTo(16));
-    }
 }

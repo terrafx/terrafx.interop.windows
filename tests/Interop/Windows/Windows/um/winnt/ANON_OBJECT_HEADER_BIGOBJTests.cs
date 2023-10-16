@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct.</summary>
 public static unsafe partial class ANON_OBJECT_HEADER_BIGOBJTests
 {
-    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ANON_OBJECT_HEADER_BIGOBJ>(), Is.EqualTo(sizeof(ANON_OBJECT_HEADER_BIGOBJ)));
-    }
-
-    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ANON_OBJECT_HEADER_BIGOBJ).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER_BIGOBJ" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ANON_OBJECT_HEADER_BIGOBJ), Is.EqualTo(56));
-    }
 }

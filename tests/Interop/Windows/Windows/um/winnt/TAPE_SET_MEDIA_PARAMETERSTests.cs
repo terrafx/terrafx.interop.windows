@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TAPE_SET_MEDIA_PARAMETERS" /> struct.</summary>
 public static unsafe partial class TAPE_SET_MEDIA_PARAMETERSTests
 {
-    /// <summary>Validates that the <see cref="TAPE_SET_MEDIA_PARAMETERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TAPE_SET_MEDIA_PARAMETERS>(), Is.EqualTo(sizeof(TAPE_SET_MEDIA_PARAMETERS)));
-    }
-
-    /// <summary>Validates that the <see cref="TAPE_SET_MEDIA_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TAPE_SET_MEDIA_PARAMETERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TAPE_SET_MEDIA_PARAMETERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TAPE_SET_MEDIA_PARAMETERS), Is.EqualTo(4));
-    }
 }

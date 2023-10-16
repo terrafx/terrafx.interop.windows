@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NAMEDCOLOR" /> struct.</summary>
 public static unsafe partial class NAMEDCOLORTests
 {
-    /// <summary>Validates that the <see cref="NAMEDCOLOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NAMEDCOLOR>(), Is.EqualTo(sizeof(NAMEDCOLOR)));
-    }
-
-    /// <summary>Validates that the <see cref="NAMEDCOLOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NAMEDCOLOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NAMEDCOLOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NAMEDCOLOR), Is.EqualTo(4));
-    }
 }

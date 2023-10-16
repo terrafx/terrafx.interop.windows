@@ -19,32 +19,4 @@ public static unsafe partial class IElementBehaviorSiteTests
     {
         Assert.That(typeof(IElementBehaviorSite).GUID, Is.EqualTo(IID_IElementBehaviorSite));
     }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementBehaviorSite>(), Is.EqualTo(sizeof(IElementBehaviorSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementBehaviorSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementBehaviorSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementBehaviorSite), Is.EqualTo(4));
-        }
-    }
 }

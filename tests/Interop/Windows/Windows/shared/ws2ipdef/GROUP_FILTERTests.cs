@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GROUP_FILTER" /> struct.</summary>
 public static unsafe partial class GROUP_FILTERTests
 {
-    /// <summary>Validates that the <see cref="GROUP_FILTER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GROUP_FILTER>(), Is.EqualTo(sizeof(GROUP_FILTER)));
-    }
-
-    /// <summary>Validates that the <see cref="GROUP_FILTER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GROUP_FILTER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GROUP_FILTER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GROUP_FILTER), Is.EqualTo(272));
-    }
 }

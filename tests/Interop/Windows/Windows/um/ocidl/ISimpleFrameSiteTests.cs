@@ -19,32 +19,4 @@ public static unsafe partial class ISimpleFrameSiteTests
     {
         Assert.That(typeof(ISimpleFrameSite).GUID, Is.EqualTo(IID_ISimpleFrameSite));
     }
-
-    /// <summary>Validates that the <see cref="ISimpleFrameSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISimpleFrameSite>(), Is.EqualTo(sizeof(ISimpleFrameSite)));
-    }
-
-    /// <summary>Validates that the <see cref="ISimpleFrameSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISimpleFrameSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISimpleFrameSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISimpleFrameSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISimpleFrameSite), Is.EqualTo(4));
-        }
-    }
 }

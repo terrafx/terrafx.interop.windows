@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FS_BPIO_RESULTS" /> struct.</summary>
 public static unsafe partial class FS_BPIO_RESULTSTests
 {
-    /// <summary>Validates that the <see cref="FS_BPIO_RESULTS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FS_BPIO_RESULTS>(), Is.EqualTo(sizeof(FS_BPIO_RESULTS)));
-    }
-
-    /// <summary>Validates that the <see cref="FS_BPIO_RESULTS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FS_BPIO_RESULTS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FS_BPIO_RESULTS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FS_BPIO_RESULTS), Is.EqualTo(328));
-    }
 }

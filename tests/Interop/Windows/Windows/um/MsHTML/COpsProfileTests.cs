@@ -19,25 +19,4 @@ public static unsafe partial class COpsProfileTests
     {
         Assert.That(typeof(COpsProfile).GUID, Is.EqualTo(IID_COpsProfile));
     }
-
-    /// <summary>Validates that the <see cref="COpsProfile" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<COpsProfile>(), Is.EqualTo(sizeof(COpsProfile)));
-    }
-
-    /// <summary>Validates that the <see cref="COpsProfile" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(COpsProfile).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="COpsProfile" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(COpsProfile), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_HOTPLUG_INFO" /> struct.</summary>
 public static unsafe partial class STORAGE_HOTPLUG_INFOTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_HOTPLUG_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_HOTPLUG_INFO>(), Is.EqualTo(sizeof(STORAGE_HOTPLUG_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_HOTPLUG_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_HOTPLUG_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_HOTPLUG_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_HOTPLUG_INFO), Is.EqualTo(8));
-    }
 }

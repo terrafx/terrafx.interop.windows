@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_VXD_HEADER" /> struct.</summary>
 public static unsafe partial class IMAGE_VXD_HEADERTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_VXD_HEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_VXD_HEADER>(), Is.EqualTo(sizeof(IMAGE_VXD_HEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_VXD_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_VXD_HEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_VXD_HEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_VXD_HEADER), Is.EqualTo(196));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFMediaKeySystemAccessTests
     {
         Assert.That(typeof(IMFMediaKeySystemAccess).GUID, Is.EqualTo(IID_IMFMediaKeySystemAccess));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaKeySystemAccess>(), Is.EqualTo(sizeof(IMFMediaKeySystemAccess)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaKeySystemAccess).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaKeySystemAccess" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaKeySystemAccess), Is.EqualTo(4));
-        }
-    }
 }

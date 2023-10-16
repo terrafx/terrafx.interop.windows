@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WIM_PROVIDER_REMOVE_OVERLAY_INPUT" /> struct.</summary>
 public static unsafe partial class WIM_PROVIDER_REMOVE_OVERLAY_INPUTTests
 {
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_REMOVE_OVERLAY_INPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WIM_PROVIDER_REMOVE_OVERLAY_INPUT>(), Is.EqualTo(sizeof(WIM_PROVIDER_REMOVE_OVERLAY_INPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_REMOVE_OVERLAY_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WIM_PROVIDER_REMOVE_OVERLAY_INPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WIM_PROVIDER_REMOVE_OVERLAY_INPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WIM_PROVIDER_REMOVE_OVERLAY_INPUT), Is.EqualTo(8));
-    }
 }

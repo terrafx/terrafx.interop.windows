@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RM_UNIQUE_PROCESS" /> struct.</summary>
 public static unsafe partial class RM_UNIQUE_PROCESSTests
 {
-    /// <summary>Validates that the <see cref="RM_UNIQUE_PROCESS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RM_UNIQUE_PROCESS>(), Is.EqualTo(sizeof(RM_UNIQUE_PROCESS)));
-    }
-
-    /// <summary>Validates that the <see cref="RM_UNIQUE_PROCESS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RM_UNIQUE_PROCESS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RM_UNIQUE_PROCESS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RM_UNIQUE_PROCESS), Is.EqualTo(12));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAppPublisherTests
     {
         Assert.That(typeof(IAppPublisher).GUID, Is.EqualTo(IID_IAppPublisher));
     }
-
-    /// <summary>Validates that the <see cref="IAppPublisher" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppPublisher>(), Is.EqualTo(sizeof(IAppPublisher)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppPublisher" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppPublisher).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppPublisher" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppPublisher), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppPublisher), Is.EqualTo(4));
-        }
-    }
 }

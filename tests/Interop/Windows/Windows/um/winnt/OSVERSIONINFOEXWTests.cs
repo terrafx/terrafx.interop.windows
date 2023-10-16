@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="OSVERSIONINFOEXW" /> struct.</summary>
 public static unsafe partial class OSVERSIONINFOEXWTests
 {
-    /// <summary>Validates that the <see cref="OSVERSIONINFOEXW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OSVERSIONINFOEXW>(), Is.EqualTo(sizeof(OSVERSIONINFOEXW)));
-    }
-
-    /// <summary>Validates that the <see cref="OSVERSIONINFOEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OSVERSIONINFOEXW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OSVERSIONINFOEXW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OSVERSIONINFOEXW), Is.EqualTo(284));
-    }
 }

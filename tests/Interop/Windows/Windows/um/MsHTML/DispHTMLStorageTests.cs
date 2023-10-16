@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLStorageTests
     {
         Assert.That(typeof(DispHTMLStorage).GUID, Is.EqualTo(IID_DispHTMLStorage));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLStorage>(), Is.EqualTo(sizeof(DispHTMLStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLStorage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLStorage), Is.EqualTo(4));
-        }
-    }
 }

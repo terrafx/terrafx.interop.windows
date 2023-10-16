@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_UDPROW" /> struct.</summary>
 public static unsafe partial class MIB_UDPROWTests
 {
-    /// <summary>Validates that the <see cref="MIB_UDPROW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_UDPROW>(), Is.EqualTo(sizeof(MIB_UDPROW)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_UDPROW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_UDPROW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_UDPROW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_UDPROW), Is.EqualTo(8));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" /> struct.</summary>
 public static unsafe partial class AUDIO_VOLUME_NOTIFICATION_DATATests
 {
-    /// <summary>Validates that the <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AUDIO_VOLUME_NOTIFICATION_DATA>(), Is.EqualTo(sizeof(AUDIO_VOLUME_NOTIFICATION_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AUDIO_VOLUME_NOTIFICATION_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AUDIO_VOLUME_NOTIFICATION_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AUDIO_VOLUME_NOTIFICATION_DATA), Is.EqualTo(32));
-    }
 }

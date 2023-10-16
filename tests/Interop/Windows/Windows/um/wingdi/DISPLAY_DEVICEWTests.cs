@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DISPLAY_DEVICEW" /> struct.</summary>
 public static unsafe partial class DISPLAY_DEVICEWTests
 {
-    /// <summary>Validates that the <see cref="DISPLAY_DEVICEW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISPLAY_DEVICEW>(), Is.EqualTo(sizeof(DISPLAY_DEVICEW)));
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAY_DEVICEW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISPLAY_DEVICEW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAY_DEVICEW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISPLAY_DEVICEW), Is.EqualTo(840));
-    }
 }

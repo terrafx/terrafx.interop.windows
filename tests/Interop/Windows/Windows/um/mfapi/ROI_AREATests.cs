@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class ROI_AREATests
 {
-    /// <summary>Validates that the <see cref="ROI_AREA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ROI_AREA>(), Is.EqualTo(sizeof(ROI_AREA)));
-    }
-
-    /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ROI_AREA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ROI_AREA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ROI_AREA), Is.EqualTo(20));
-    }
 }

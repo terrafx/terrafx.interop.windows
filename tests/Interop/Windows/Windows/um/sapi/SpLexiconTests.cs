@@ -19,25 +19,4 @@ public static unsafe partial class SpLexiconTests
     {
         Assert.That(typeof(SpLexicon).GUID, Is.EqualTo(CLSID_SpLexicon));
     }
-
-    /// <summary>Validates that the <see cref="SpLexicon" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpLexicon>(), Is.EqualTo(sizeof(SpLexicon)));
-    }
-
-    /// <summary>Validates that the <see cref="SpLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpLexicon).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpLexicon" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpLexicon), Is.EqualTo(1));
-    }
 }

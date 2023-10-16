@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_COUNTERS" /> struct.</summary>
 public static unsafe partial class STORAGE_COUNTERSTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_COUNTERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_COUNTERS>(), Is.EqualTo(sizeof(STORAGE_COUNTERS)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_COUNTERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_COUNTERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_COUNTERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_COUNTERS), Is.EqualTo(32));
-    }
 }

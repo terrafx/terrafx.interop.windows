@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SOCKADDR_STORAGE_XP" /> struct.</summary>
 public static unsafe partial class SOCKADDR_STORAGE_XPTests
 {
-    /// <summary>Validates that the <see cref="SOCKADDR_STORAGE_XP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SOCKADDR_STORAGE_XP>(), Is.EqualTo(sizeof(SOCKADDR_STORAGE_XP)));
-    }
-
-    /// <summary>Validates that the <see cref="SOCKADDR_STORAGE_XP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SOCKADDR_STORAGE_XP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SOCKADDR_STORAGE_XP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SOCKADDR_STORAGE_XP), Is.EqualTo(128));
-    }
 }

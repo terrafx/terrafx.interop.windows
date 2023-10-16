@@ -19,32 +19,4 @@ public static unsafe partial class IDiaInjectedSourceTests
     {
         Assert.That(typeof(IDiaInjectedSource).GUID, Is.EqualTo(IID_IDiaInjectedSource));
     }
-
-    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaInjectedSource>(), Is.EqualTo(sizeof(IDiaInjectedSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaInjectedSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaInjectedSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaInjectedSource), Is.EqualTo(4));
-        }
-    }
 }

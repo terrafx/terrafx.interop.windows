@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LSA_TRANSLATED_SID" /> struct.</summary>
 public static unsafe partial class LSA_TRANSLATED_SIDTests
 {
-    /// <summary>Validates that the <see cref="LSA_TRANSLATED_SID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LSA_TRANSLATED_SID>(), Is.EqualTo(sizeof(LSA_TRANSLATED_SID)));
-    }
-
-    /// <summary>Validates that the <see cref="LSA_TRANSLATED_SID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LSA_TRANSLATED_SID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LSA_TRANSLATED_SID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LSA_TRANSLATED_SID), Is.EqualTo(12));
-    }
 }

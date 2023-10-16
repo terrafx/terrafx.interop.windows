@@ -19,32 +19,4 @@ public static unsafe partial class IOleControlSiteTests
     {
         Assert.That(typeof(IOleControlSite).GUID, Is.EqualTo(IID_IOleControlSite));
     }
-
-    /// <summary>Validates that the <see cref="IOleControlSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOleControlSite>(), Is.EqualTo(sizeof(IOleControlSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOleControlSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOleControlSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOleControlSite), Is.EqualTo(4));
-        }
-    }
 }

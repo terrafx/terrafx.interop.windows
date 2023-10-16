@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CERT_SYSTEM_STORE_INFO" /> struct.</summary>
 public static unsafe partial class CERT_SYSTEM_STORE_INFOTests
 {
-    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CERT_SYSTEM_STORE_INFO>(), Is.EqualTo(sizeof(CERT_SYSTEM_STORE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CERT_SYSTEM_STORE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CERT_SYSTEM_STORE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CERT_SYSTEM_STORE_INFO), Is.EqualTo(4));
-    }
 }

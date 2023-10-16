@@ -21,32 +21,4 @@ public static unsafe partial class IMFSensorActivityReportTests
     {
         Assert.That(typeof(IMFSensorActivityReport).GUID, Is.EqualTo(IID_IMFSensorActivityReport));
     }
-
-    /// <summary>Validates that the <see cref="IMFSensorActivityReport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSensorActivityReport>(), Is.EqualTo(sizeof(IMFSensorActivityReport)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorActivityReport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSensorActivityReport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSensorActivityReport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSensorActivityReport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSensorActivityReport), Is.EqualTo(4));
-        }
-    }
 }

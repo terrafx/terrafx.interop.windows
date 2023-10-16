@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT>(), Is.EqualTo(sizeof(D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT), Is.EqualTo(72));
-        }
-        else
-        {
-            Assert.That(sizeof(D3D11_AUTHENTICATED_QUERY_CRYPTO_SESSION_OUTPUT), Is.EqualTo(56));
-        }
-    }
 }

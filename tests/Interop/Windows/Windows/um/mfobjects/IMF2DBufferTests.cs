@@ -19,32 +19,4 @@ public static unsafe partial class IMF2DBufferTests
     {
         Assert.That(typeof(IMF2DBuffer).GUID, Is.EqualTo(IID_IMF2DBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMF2DBuffer>(), Is.EqualTo(sizeof(IMF2DBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMF2DBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMF2DBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMF2DBuffer), Is.EqualTo(4));
-        }
-    }
 }

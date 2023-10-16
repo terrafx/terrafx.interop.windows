@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FIXED" /> struct.</summary>
 public static unsafe partial class FIXEDTests
 {
-    /// <summary>Validates that the <see cref="FIXED" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FIXED>(), Is.EqualTo(sizeof(FIXED)));
-    }
-
-    /// <summary>Validates that the <see cref="FIXED" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FIXED).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FIXED" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FIXED), Is.EqualTo(4));
-    }
 }

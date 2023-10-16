@@ -19,32 +19,4 @@ public static unsafe partial class IMLOperatorAttributesTests
     {
         Assert.That(typeof(IMLOperatorAttributes).GUID, Is.EqualTo(IID_IMLOperatorAttributes));
     }
-
-    /// <summary>Validates that the <see cref="IMLOperatorAttributes" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMLOperatorAttributes>(), Is.EqualTo(sizeof(IMLOperatorAttributes)));
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMLOperatorAttributes).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorAttributes" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMLOperatorAttributes), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMLOperatorAttributes), Is.EqualTo(4));
-        }
-    }
 }

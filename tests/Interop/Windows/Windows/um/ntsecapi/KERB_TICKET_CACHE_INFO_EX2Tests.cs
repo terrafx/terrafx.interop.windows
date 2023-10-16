@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_TICKET_CACHE_INFO_EX2" /> struct.</summary>
 public static unsafe partial class KERB_TICKET_CACHE_INFO_EX2Tests
 {
-    /// <summary>Validates that the <see cref="KERB_TICKET_CACHE_INFO_EX2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_TICKET_CACHE_INFO_EX2>(), Is.EqualTo(sizeof(KERB_TICKET_CACHE_INFO_EX2)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_TICKET_CACHE_INFO_EX2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_TICKET_CACHE_INFO_EX2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_TICKET_CACHE_INFO_EX2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(KERB_TICKET_CACHE_INFO_EX2), Is.EqualTo(104));
-        }
-        else
-        {
-            Assert.That(sizeof(KERB_TICKET_CACHE_INFO_EX2), Is.EqualTo(72));
-        }
-    }
 }

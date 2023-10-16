@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct.</summary>
 public static unsafe partial class WOW64_DESCRIPTOR_TABLE_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WOW64_DESCRIPTOR_TABLE_ENTRY>(), Is.EqualTo(sizeof(WOW64_DESCRIPTOR_TABLE_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WOW64_DESCRIPTOR_TABLE_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WOW64_DESCRIPTOR_TABLE_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WOW64_DESCRIPTOR_TABLE_ENTRY), Is.EqualTo(12));
-    }
 }

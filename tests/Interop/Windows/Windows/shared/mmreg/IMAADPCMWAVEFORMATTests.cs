@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAADPCMWAVEFORMAT" /> struct.</summary>
 public static unsafe partial class IMAADPCMWAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="IMAADPCMWAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(IMAADPCMWAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAADPCMWAVEFORMAT), Is.EqualTo(20));
-    }
 }

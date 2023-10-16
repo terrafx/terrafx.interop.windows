@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CHANGER_PRODUCT_DATA" /> struct.</summary>
 public static unsafe partial class CHANGER_PRODUCT_DATATests
 {
-    /// <summary>Validates that the <see cref="CHANGER_PRODUCT_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CHANGER_PRODUCT_DATA>(), Is.EqualTo(sizeof(CHANGER_PRODUCT_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="CHANGER_PRODUCT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CHANGER_PRODUCT_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CHANGER_PRODUCT_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CHANGER_PRODUCT_DATA), Is.EqualTo(61));
-    }
 }

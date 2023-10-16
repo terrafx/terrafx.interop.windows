@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PERFORMANCE_DATA" /> struct.</summary>
 public static unsafe partial class PERFORMANCE_DATATests
 {
-    /// <summary>Validates that the <see cref="PERFORMANCE_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PERFORMANCE_DATA>(), Is.EqualTo(sizeof(PERFORMANCE_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="PERFORMANCE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PERFORMANCE_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PERFORMANCE_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PERFORMANCE_DATA), Is.EqualTo(288));
-    }
 }

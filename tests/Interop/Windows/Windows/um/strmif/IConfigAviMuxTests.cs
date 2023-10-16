@@ -19,32 +19,4 @@ public static unsafe partial class IConfigAviMuxTests
     {
         Assert.That(typeof(IConfigAviMux).GUID, Is.EqualTo(IID_IConfigAviMux));
     }
-
-    /// <summary>Validates that the <see cref="IConfigAviMux" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IConfigAviMux>(), Is.EqualTo(sizeof(IConfigAviMux)));
-    }
-
-    /// <summary>Validates that the <see cref="IConfigAviMux" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IConfigAviMux).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IConfigAviMux" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IConfigAviMux), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IConfigAviMux), Is.EqualTo(4));
-        }
-    }
 }

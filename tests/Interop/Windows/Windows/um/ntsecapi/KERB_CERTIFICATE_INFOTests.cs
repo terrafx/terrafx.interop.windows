@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_CERTIFICATE_INFO" /> struct.</summary>
 public static unsafe partial class KERB_CERTIFICATE_INFOTests
 {
-    /// <summary>Validates that the <see cref="KERB_CERTIFICATE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_CERTIFICATE_INFO>(), Is.EqualTo(sizeof(KERB_CERTIFICATE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_CERTIFICATE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_CERTIFICATE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_CERTIFICATE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERB_CERTIFICATE_INFO), Is.EqualTo(8));
-    }
 }

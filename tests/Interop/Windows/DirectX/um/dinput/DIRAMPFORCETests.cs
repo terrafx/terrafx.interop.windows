@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIRAMPFORCE" /> struct.</summary>
 public static unsafe partial class DIRAMPFORCETests
 {
-    /// <summary>Validates that the <see cref="DIRAMPFORCE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIRAMPFORCE>(), Is.EqualTo(sizeof(DIRAMPFORCE)));
-    }
-
-    /// <summary>Validates that the <see cref="DIRAMPFORCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIRAMPFORCE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIRAMPFORCE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIRAMPFORCE), Is.EqualTo(8));
-    }
 }

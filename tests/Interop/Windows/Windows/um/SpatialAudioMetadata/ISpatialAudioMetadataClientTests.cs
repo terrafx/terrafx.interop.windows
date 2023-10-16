@@ -21,32 +21,4 @@ public static unsafe partial class ISpatialAudioMetadataClientTests
     {
         Assert.That(typeof(ISpatialAudioMetadataClient).GUID, Is.EqualTo(IID_ISpatialAudioMetadataClient));
     }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataClient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpatialAudioMetadataClient>(), Is.EqualTo(sizeof(ISpatialAudioMetadataClient)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataClient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpatialAudioMetadataClient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioMetadataClient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpatialAudioMetadataClient), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpatialAudioMetadataClient), Is.EqualTo(4));
-        }
-    }
 }

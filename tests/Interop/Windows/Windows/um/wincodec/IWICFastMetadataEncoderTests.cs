@@ -19,32 +19,4 @@ public static unsafe partial class IWICFastMetadataEncoderTests
     {
         Assert.That(typeof(IWICFastMetadataEncoder).GUID, Is.EqualTo(IID_IWICFastMetadataEncoder));
     }
-
-    /// <summary>Validates that the <see cref="IWICFastMetadataEncoder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICFastMetadataEncoder>(), Is.EqualTo(sizeof(IWICFastMetadataEncoder)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICFastMetadataEncoder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICFastMetadataEncoder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICFastMetadataEncoder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICFastMetadataEncoder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICFastMetadataEncoder), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FIND_BY_SID_OUTPUT" /> struct.</summary>
 public static unsafe partial class FIND_BY_SID_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="FIND_BY_SID_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FIND_BY_SID_OUTPUT>(), Is.EqualTo(sizeof(FIND_BY_SID_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="FIND_BY_SID_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FIND_BY_SID_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FIND_BY_SID_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FIND_BY_SID_OUTPUT), Is.EqualTo(16));
-    }
 }

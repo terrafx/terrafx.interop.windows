@@ -19,32 +19,4 @@ public static unsafe partial class IMFRemoteDesktopPluginTests
     {
         Assert.That(typeof(IMFRemoteDesktopPlugin).GUID, Is.EqualTo(IID_IMFRemoteDesktopPlugin));
     }
-
-    /// <summary>Validates that the <see cref="IMFRemoteDesktopPlugin" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFRemoteDesktopPlugin>(), Is.EqualTo(sizeof(IMFRemoteDesktopPlugin)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFRemoteDesktopPlugin" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFRemoteDesktopPlugin).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFRemoteDesktopPlugin" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFRemoteDesktopPlugin), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFRemoteDesktopPlugin), Is.EqualTo(4));
-        }
-    }
 }

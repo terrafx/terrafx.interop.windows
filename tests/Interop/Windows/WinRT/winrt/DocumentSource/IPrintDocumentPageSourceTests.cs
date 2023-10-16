@@ -19,32 +19,4 @@ public static unsafe partial class IPrintDocumentPageSourceTests
     {
         Assert.That(typeof(IPrintDocumentPageSource).GUID, Is.EqualTo(IID_IPrintDocumentPageSource));
     }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPageSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrintDocumentPageSource>(), Is.EqualTo(sizeof(IPrintDocumentPageSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPageSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrintDocumentPageSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPageSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrintDocumentPageSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrintDocumentPageSource), Is.EqualTo(4));
-        }
-    }
 }

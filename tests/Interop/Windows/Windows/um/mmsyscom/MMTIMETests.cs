@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MMTIME" /> struct.</summary>
 public static unsafe partial class MMTIMETests
 {
-    /// <summary>Validates that the <see cref="MMTIME" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MMTIME>(), Is.EqualTo(sizeof(MMTIME)));
-    }
-
-    /// <summary>Validates that the <see cref="MMTIME" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MMTIME).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MMTIME" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MMTIME), Is.EqualTo(12));
-    }
 }

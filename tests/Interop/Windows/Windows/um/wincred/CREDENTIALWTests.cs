@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CREDENTIALW" /> struct.</summary>
 public static unsafe partial class CREDENTIALWTests
 {
-    /// <summary>Validates that the <see cref="CREDENTIALW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CREDENTIALW>(), Is.EqualTo(sizeof(CREDENTIALW)));
-    }
-
-    /// <summary>Validates that the <see cref="CREDENTIALW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CREDENTIALW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CREDENTIALW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CREDENTIALW), Is.EqualTo(80));
-        }
-        else
-        {
-            Assert.That(sizeof(CREDENTIALW), Is.EqualTo(52));
-        }
-    }
 }

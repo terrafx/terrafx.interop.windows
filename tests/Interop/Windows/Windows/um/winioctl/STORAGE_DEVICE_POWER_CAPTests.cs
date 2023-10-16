@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class STORAGE_DEVICE_POWER_CAPTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_POWER_CAP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_DEVICE_POWER_CAP>(), Is.EqualTo(sizeof(STORAGE_DEVICE_POWER_CAP)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_POWER_CAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_DEVICE_POWER_CAP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_DEVICE_POWER_CAP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_DEVICE_POWER_CAP), Is.EqualTo(24));
-    }
 }

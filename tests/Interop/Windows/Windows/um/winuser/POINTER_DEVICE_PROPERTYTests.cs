@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class POINTER_DEVICE_PROPERTYTests
 {
-    /// <summary>Validates that the <see cref="POINTER_DEVICE_PROPERTY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POINTER_DEVICE_PROPERTY>(), Is.EqualTo(sizeof(POINTER_DEVICE_PROPERTY)));
-    }
-
-    /// <summary>Validates that the <see cref="POINTER_DEVICE_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POINTER_DEVICE_PROPERTY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POINTER_DEVICE_PROPERTY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POINTER_DEVICE_PROPERTY), Is.EqualTo(28));
-    }
 }

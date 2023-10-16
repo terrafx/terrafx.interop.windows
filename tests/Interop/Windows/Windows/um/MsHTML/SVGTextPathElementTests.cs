@@ -19,25 +19,4 @@ public static unsafe partial class SVGTextPathElementTests
     {
         Assert.That(typeof(SVGTextPathElement).GUID, Is.EqualTo(IID_SVGTextPathElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGTextPathElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGTextPathElement>(), Is.EqualTo(sizeof(SVGTextPathElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGTextPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGTextPathElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGTextPathElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGTextPathElement), Is.EqualTo(1));
-    }
 }

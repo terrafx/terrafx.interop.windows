@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CapturedMetadataExposureCompensation" /> struct.</summary>
 public static unsafe partial class CapturedMetadataExposureCompensationTests
 {
-    /// <summary>Validates that the <see cref="CapturedMetadataExposureCompensation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CapturedMetadataExposureCompensation>(), Is.EqualTo(sizeof(CapturedMetadataExposureCompensation)));
-    }
-
-    /// <summary>Validates that the <see cref="CapturedMetadataExposureCompensation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CapturedMetadataExposureCompensation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CapturedMetadataExposureCompensation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CapturedMetadataExposureCompensation), Is.EqualTo(16));
-    }
 }

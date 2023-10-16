@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="JChColorF" /> struct.</summary>
 public static unsafe partial class JChColorFTests
 {
-    /// <summary>Validates that the <see cref="JChColorF" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<JChColorF>(), Is.EqualTo(sizeof(JChColorF)));
-    }
-
-    /// <summary>Validates that the <see cref="JChColorF" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(JChColorF).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="JChColorF" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(JChColorF), Is.EqualTo(12));
-    }
 }

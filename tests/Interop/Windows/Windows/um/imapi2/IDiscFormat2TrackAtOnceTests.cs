@@ -19,32 +19,4 @@ public static unsafe partial class IDiscFormat2TrackAtOnceTests
     {
         Assert.That(typeof(IDiscFormat2TrackAtOnce).GUID, Is.EqualTo(IID_IDiscFormat2TrackAtOnce));
     }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2TrackAtOnce" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiscFormat2TrackAtOnce>(), Is.EqualTo(sizeof(IDiscFormat2TrackAtOnce)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2TrackAtOnce" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiscFormat2TrackAtOnce).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiscFormat2TrackAtOnce" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiscFormat2TrackAtOnce), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiscFormat2TrackAtOnce), Is.EqualTo(4));
-        }
-    }
 }

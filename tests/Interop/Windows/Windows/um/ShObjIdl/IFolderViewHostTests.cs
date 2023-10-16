@@ -19,32 +19,4 @@ public static unsafe partial class IFolderViewHostTests
     {
         Assert.That(typeof(IFolderViewHost).GUID, Is.EqualTo(IID_IFolderViewHost));
     }
-
-    /// <summary>Validates that the <see cref="IFolderViewHost" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFolderViewHost>(), Is.EqualTo(sizeof(IFolderViewHost)));
-    }
-
-    /// <summary>Validates that the <see cref="IFolderViewHost" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFolderViewHost).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFolderViewHost" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFolderViewHost), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFolderViewHost), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DROPFILES" /> struct.</summary>
 public static unsafe partial class DROPFILESTests
 {
-    /// <summary>Validates that the <see cref="DROPFILES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DROPFILES>(), Is.EqualTo(sizeof(DROPFILES)));
-    }
-
-    /// <summary>Validates that the <see cref="DROPFILES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DROPFILES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DROPFILES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DROPFILES), Is.EqualTo(20));
-    }
 }

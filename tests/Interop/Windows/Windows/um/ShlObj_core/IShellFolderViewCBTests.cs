@@ -19,32 +19,4 @@ public static unsafe partial class IShellFolderViewCBTests
     {
         Assert.That(typeof(IShellFolderViewCB).GUID, Is.EqualTo(IID_IShellFolderViewCB));
     }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewCB" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellFolderViewCB>(), Is.EqualTo(sizeof(IShellFolderViewCB)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewCB" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellFolderViewCB).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewCB" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellFolderViewCB), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellFolderViewCB), Is.EqualTo(4));
-        }
-    }
 }

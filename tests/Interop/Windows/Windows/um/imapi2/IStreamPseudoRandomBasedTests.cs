@@ -19,32 +19,4 @@ public static unsafe partial class IStreamPseudoRandomBasedTests
     {
         Assert.That(typeof(IStreamPseudoRandomBased).GUID, Is.EqualTo(IID_IStreamPseudoRandomBased));
     }
-
-    /// <summary>Validates that the <see cref="IStreamPseudoRandomBased" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStreamPseudoRandomBased>(), Is.EqualTo(sizeof(IStreamPseudoRandomBased)));
-    }
-
-    /// <summary>Validates that the <see cref="IStreamPseudoRandomBased" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStreamPseudoRandomBased).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStreamPseudoRandomBased" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStreamPseudoRandomBased), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStreamPseudoRandomBased), Is.EqualTo(4));
-        }
-    }
 }

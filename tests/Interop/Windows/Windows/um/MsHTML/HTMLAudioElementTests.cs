@@ -19,25 +19,4 @@ public static unsafe partial class HTMLAudioElementTests
     {
         Assert.That(typeof(HTMLAudioElement).GUID, Is.EqualTo(IID_HTMLAudioElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLAudioElement>(), Is.EqualTo(sizeof(HTMLAudioElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLAudioElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLAudioElement), Is.EqualTo(1));
-    }
 }

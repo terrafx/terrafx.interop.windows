@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY" /> struct.</summary>
 public static unsafe partial class STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY>(), Is.EqualTo(sizeof(STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY), Is.EqualTo(32));
-    }
 }

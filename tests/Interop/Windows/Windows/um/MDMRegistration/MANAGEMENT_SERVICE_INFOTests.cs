@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class MANAGEMENT_SERVICE_INFOTests
 {
-    /// <summary>Validates that the <see cref="MANAGEMENT_SERVICE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MANAGEMENT_SERVICE_INFO>(), Is.EqualTo(sizeof(MANAGEMENT_SERVICE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="MANAGEMENT_SERVICE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MANAGEMENT_SERVICE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MANAGEMENT_SERVICE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(MANAGEMENT_SERVICE_INFO), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(MANAGEMENT_SERVICE_INFO), Is.EqualTo(8));
-        }
-    }
 }

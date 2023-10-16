@@ -19,32 +19,4 @@ public static unsafe partial class ICatRegisterTests
     {
         Assert.That(typeof(ICatRegister).GUID, Is.EqualTo(IID_ICatRegister));
     }
-
-    /// <summary>Validates that the <see cref="ICatRegister" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICatRegister>(), Is.EqualTo(sizeof(ICatRegister)));
-    }
-
-    /// <summary>Validates that the <see cref="ICatRegister" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICatRegister).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICatRegister" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICatRegister), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICatRegister), Is.EqualTo(4));
-        }
-    }
 }

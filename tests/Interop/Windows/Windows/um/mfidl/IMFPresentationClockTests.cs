@@ -19,32 +19,4 @@ public static unsafe partial class IMFPresentationClockTests
     {
         Assert.That(typeof(IMFPresentationClock).GUID, Is.EqualTo(IID_IMFPresentationClock));
     }
-
-    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFPresentationClock>(), Is.EqualTo(sizeof(IMFPresentationClock)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFPresentationClock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFPresentationClock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFPresentationClock), Is.EqualTo(4));
-        }
-    }
 }

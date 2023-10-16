@@ -19,32 +19,4 @@ public static unsafe partial class IMarkupTextFragsTests
     {
         Assert.That(typeof(IMarkupTextFrags).GUID, Is.EqualTo(IID_IMarkupTextFrags));
     }
-
-    /// <summary>Validates that the <see cref="IMarkupTextFrags" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMarkupTextFrags>(), Is.EqualTo(sizeof(IMarkupTextFrags)));
-    }
-
-    /// <summary>Validates that the <see cref="IMarkupTextFrags" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMarkupTextFrags).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMarkupTextFrags" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMarkupTextFrags), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMarkupTextFrags), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLPainterOverlayTests
     {
         Assert.That(typeof(IHTMLPainterOverlay).GUID, Is.EqualTo(IID_IHTMLPainterOverlay));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterOverlay" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLPainterOverlay>(), Is.EqualTo(sizeof(IHTMLPainterOverlay)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterOverlay" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLPainterOverlay).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterOverlay" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLPainterOverlay), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLPainterOverlay), Is.EqualTo(4));
-        }
-    }
 }

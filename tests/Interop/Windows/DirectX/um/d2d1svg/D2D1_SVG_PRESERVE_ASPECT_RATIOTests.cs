@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct.</summary>
 public static unsafe partial class D2D1_SVG_PRESERVE_ASPECT_RATIOTests
 {
-    /// <summary>Validates that the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D2D1_SVG_PRESERVE_ASPECT_RATIO>(), Is.EqualTo(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO)));
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D2D1_SVG_PRESERVE_ASPECT_RATIO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_SVG_PRESERVE_ASPECT_RATIO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D2D1_SVG_PRESERVE_ASPECT_RATIO), Is.EqualTo(12));
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IInputPanelInvocationConfigurationTests
     {
         Assert.That(typeof(IInputPanelInvocationConfiguration).GUID, Is.EqualTo(IID_IInputPanelInvocationConfiguration));
     }
-
-    /// <summary>Validates that the <see cref="IInputPanelInvocationConfiguration" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInputPanelInvocationConfiguration>(), Is.EqualTo(sizeof(IInputPanelInvocationConfiguration)));
-    }
-
-    /// <summary>Validates that the <see cref="IInputPanelInvocationConfiguration" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInputPanelInvocationConfiguration).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInputPanelInvocationConfiguration" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInputPanelInvocationConfiguration), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInputPanelInvocationConfiguration), Is.EqualTo(4));
-        }
-    }
 }

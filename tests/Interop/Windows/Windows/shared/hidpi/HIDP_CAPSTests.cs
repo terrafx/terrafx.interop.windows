@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HIDP_CAPS" /> struct.</summary>
 public static unsafe partial class HIDP_CAPSTests
 {
-    /// <summary>Validates that the <see cref="HIDP_CAPS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HIDP_CAPS>(), Is.EqualTo(sizeof(HIDP_CAPS)));
-    }
-
-    /// <summary>Validates that the <see cref="HIDP_CAPS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HIDP_CAPS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HIDP_CAPS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HIDP_CAPS), Is.EqualTo(64));
-    }
 }

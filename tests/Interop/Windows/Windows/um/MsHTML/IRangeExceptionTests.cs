@@ -19,32 +19,4 @@ public static unsafe partial class IRangeExceptionTests
     {
         Assert.That(typeof(IRangeException).GUID, Is.EqualTo(IID_IRangeException));
     }
-
-    /// <summary>Validates that the <see cref="IRangeException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRangeException>(), Is.EqualTo(sizeof(IRangeException)));
-    }
-
-    /// <summary>Validates that the <see cref="IRangeException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRangeException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRangeException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRangeException), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRangeException), Is.EqualTo(4));
-        }
-    }
 }

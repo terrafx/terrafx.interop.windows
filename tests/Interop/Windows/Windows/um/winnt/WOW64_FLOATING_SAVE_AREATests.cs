@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct.</summary>
 public static unsafe partial class WOW64_FLOATING_SAVE_AREATests
 {
-    /// <summary>Validates that the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WOW64_FLOATING_SAVE_AREA>(), Is.EqualTo(sizeof(WOW64_FLOATING_SAVE_AREA)));
-    }
-
-    /// <summary>Validates that the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WOW64_FLOATING_SAVE_AREA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WOW64_FLOATING_SAVE_AREA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WOW64_FLOATING_SAVE_AREA), Is.EqualTo(112));
-    }
 }

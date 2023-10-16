@@ -19,32 +19,4 @@ public static unsafe partial class ISyncMgrResolutionHandlerTests
     {
         Assert.That(typeof(ISyncMgrResolutionHandler).GUID, Is.EqualTo(IID_ISyncMgrResolutionHandler));
     }
-
-    /// <summary>Validates that the <see cref="ISyncMgrResolutionHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISyncMgrResolutionHandler>(), Is.EqualTo(sizeof(ISyncMgrResolutionHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrResolutionHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISyncMgrResolutionHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrResolutionHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISyncMgrResolutionHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISyncMgrResolutionHandler), Is.EqualTo(4));
-        }
-    }
 }

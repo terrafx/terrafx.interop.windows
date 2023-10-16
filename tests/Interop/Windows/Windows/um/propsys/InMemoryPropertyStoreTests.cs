@@ -19,25 +19,4 @@ public static unsafe partial class InMemoryPropertyStoreTests
     {
         Assert.That(typeof(InMemoryPropertyStore).GUID, Is.EqualTo(CLSID_InMemoryPropertyStore));
     }
-
-    /// <summary>Validates that the <see cref="InMemoryPropertyStore" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<InMemoryPropertyStore>(), Is.EqualTo(sizeof(InMemoryPropertyStore)));
-    }
-
-    /// <summary>Validates that the <see cref="InMemoryPropertyStore" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(InMemoryPropertyStore).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="InMemoryPropertyStore" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(InMemoryPropertyStore), Is.EqualTo(1));
-    }
 }

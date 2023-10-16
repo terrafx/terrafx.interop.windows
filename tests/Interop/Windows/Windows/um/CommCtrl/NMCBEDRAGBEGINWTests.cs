@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NMCBEDRAGBEGINW" /> struct.</summary>
 public static unsafe partial class NMCBEDRAGBEGINWTests
 {
-    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NMCBEDRAGBEGINW>(), Is.EqualTo(sizeof(NMCBEDRAGBEGINW)));
-    }
-
-    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NMCBEDRAGBEGINW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NMCBEDRAGBEGINW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(NMCBEDRAGBEGINW), Is.EqualTo(552));
-        }
-        else
-        {
-            Assert.That(sizeof(NMCBEDRAGBEGINW), Is.EqualTo(536));
-        }
-    }
 }

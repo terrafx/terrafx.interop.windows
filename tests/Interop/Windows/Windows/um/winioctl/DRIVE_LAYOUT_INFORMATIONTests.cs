@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DRIVE_LAYOUT_INFORMATION" /> struct.</summary>
 public static unsafe partial class DRIVE_LAYOUT_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="DRIVE_LAYOUT_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DRIVE_LAYOUT_INFORMATION>(), Is.EqualTo(sizeof(DRIVE_LAYOUT_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="DRIVE_LAYOUT_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DRIVE_LAYOUT_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DRIVE_LAYOUT_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DRIVE_LAYOUT_INFORMATION), Is.EqualTo(40));
-    }
 }

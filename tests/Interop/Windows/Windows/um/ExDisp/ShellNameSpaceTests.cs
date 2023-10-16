@@ -19,25 +19,4 @@ public static unsafe partial class ShellNameSpaceTests
     {
         Assert.That(typeof(ShellNameSpace).GUID, Is.EqualTo(IID_ShellNameSpace));
     }
-
-    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellNameSpace>(), Is.EqualTo(sizeof(ShellNameSpace)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellNameSpace).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellNameSpace), Is.EqualTo(1));
-    }
 }

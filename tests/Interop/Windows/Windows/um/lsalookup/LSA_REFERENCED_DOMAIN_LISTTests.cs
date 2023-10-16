@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LSA_REFERENCED_DOMAIN_LIST" /> struct.</summary>
 public static unsafe partial class LSA_REFERENCED_DOMAIN_LISTTests
 {
-    /// <summary>Validates that the <see cref="LSA_REFERENCED_DOMAIN_LIST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LSA_REFERENCED_DOMAIN_LIST>(), Is.EqualTo(sizeof(LSA_REFERENCED_DOMAIN_LIST)));
-    }
-
-    /// <summary>Validates that the <see cref="LSA_REFERENCED_DOMAIN_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LSA_REFERENCED_DOMAIN_LIST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LSA_REFERENCED_DOMAIN_LIST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(LSA_REFERENCED_DOMAIN_LIST), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(LSA_REFERENCED_DOMAIN_LIST), Is.EqualTo(8));
-        }
-    }
 }

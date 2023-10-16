@@ -19,32 +19,4 @@ public static unsafe partial class IDragDropManagerInteropTests
     {
         Assert.That(typeof(IDragDropManagerInterop).GUID, Is.EqualTo(IID_IDragDropManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IDragDropManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDragDropManagerInterop>(), Is.EqualTo(sizeof(IDragDropManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IDragDropManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDragDropManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDragDropManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDragDropManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDragDropManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

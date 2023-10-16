@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLWindowProxyTests
     {
         Assert.That(typeof(DispHTMLWindowProxy).GUID, Is.EqualTo(IID_DispHTMLWindowProxy));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLWindowProxy" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLWindowProxy>(), Is.EqualTo(sizeof(DispHTMLWindowProxy)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLWindowProxy" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLWindowProxy).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLWindowProxy" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLWindowProxy), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLWindowProxy), Is.EqualTo(4));
-        }
-    }
 }

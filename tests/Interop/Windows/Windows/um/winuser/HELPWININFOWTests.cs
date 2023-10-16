@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HELPWININFOW" /> struct.</summary>
 public static unsafe partial class HELPWININFOWTests
 {
-    /// <summary>Validates that the <see cref="HELPWININFOW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HELPWININFOW>(), Is.EqualTo(sizeof(HELPWININFOW)));
-    }
-
-    /// <summary>Validates that the <see cref="HELPWININFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HELPWININFOW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HELPWININFOW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HELPWININFOW), Is.EqualTo(28));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechPhoneConverterTests
     {
         Assert.That(typeof(ISpeechPhoneConverter).GUID, Is.EqualTo(IID_ISpeechPhoneConverter));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechPhoneConverter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechPhoneConverter>(), Is.EqualTo(sizeof(ISpeechPhoneConverter)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechPhoneConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechPhoneConverter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechPhoneConverter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechPhoneConverter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechPhoneConverter), Is.EqualTo(4));
-        }
-    }
 }

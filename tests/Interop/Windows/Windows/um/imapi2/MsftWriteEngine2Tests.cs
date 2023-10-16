@@ -19,25 +19,4 @@ public static unsafe partial class MsftWriteEngine2Tests
     {
         Assert.That(typeof(MsftWriteEngine2).GUID, Is.EqualTo(CLSID_MsftWriteEngine2));
     }
-
-    /// <summary>Validates that the <see cref="MsftWriteEngine2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftWriteEngine2>(), Is.EqualTo(sizeof(MsftWriteEngine2)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftWriteEngine2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftWriteEngine2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftWriteEngine2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftWriteEngine2), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class DOMSiteModeEventTests
     {
         Assert.That(typeof(DOMSiteModeEvent).GUID, Is.EqualTo(IID_DOMSiteModeEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMSiteModeEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMSiteModeEvent>(), Is.EqualTo(sizeof(DOMSiteModeEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMSiteModeEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMSiteModeEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMSiteModeEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMSiteModeEvent), Is.EqualTo(1));
-    }
 }

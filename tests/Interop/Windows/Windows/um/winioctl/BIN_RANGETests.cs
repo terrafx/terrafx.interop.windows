@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BIN_RANGE" /> struct.</summary>
 public static unsafe partial class BIN_RANGETests
 {
-    /// <summary>Validates that the <see cref="BIN_RANGE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BIN_RANGE>(), Is.EqualTo(sizeof(BIN_RANGE)));
-    }
-
-    /// <summary>Validates that the <see cref="BIN_RANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BIN_RANGE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BIN_RANGE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BIN_RANGE), Is.EqualTo(16));
-    }
 }

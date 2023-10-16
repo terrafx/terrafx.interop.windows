@@ -19,32 +19,4 @@ public static unsafe partial class ID3D11ModuleInstanceTests
     {
         Assert.That(typeof(ID3D11ModuleInstance).GUID, Is.EqualTo(IID_ID3D11ModuleInstance));
     }
-
-    /// <summary>Validates that the <see cref="ID3D11ModuleInstance" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D11ModuleInstance>(), Is.EqualTo(sizeof(ID3D11ModuleInstance)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D11ModuleInstance" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D11ModuleInstance).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D11ModuleInstance" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D11ModuleInstance), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D11ModuleInstance), Is.EqualTo(4));
-        }
-    }
 }

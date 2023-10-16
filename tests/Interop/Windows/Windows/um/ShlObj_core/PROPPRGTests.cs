@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PROPPRG" /> struct.</summary>
 public static unsafe partial class PROPPRGTests
 {
-    /// <summary>Validates that the <see cref="PROPPRG" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PROPPRG>(), Is.EqualTo(sizeof(PROPPRG)));
-    }
-
-    /// <summary>Validates that the <see cref="PROPPRG" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PROPPRG).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PROPPRG" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PROPPRG), Is.EqualTo(658));
-    }
 }

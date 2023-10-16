@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ACTRL_ACCESS_ENTRYW" /> struct.</summary>
 public static unsafe partial class ACTRL_ACCESS_ENTRYWTests
 {
-    /// <summary>Validates that the <see cref="ACTRL_ACCESS_ENTRYW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ACTRL_ACCESS_ENTRYW>(), Is.EqualTo(sizeof(ACTRL_ACCESS_ENTRYW)));
-    }
-
-    /// <summary>Validates that the <see cref="ACTRL_ACCESS_ENTRYW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ACTRL_ACCESS_ENTRYW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ACTRL_ACCESS_ENTRYW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ACTRL_ACCESS_ENTRYW), Is.EqualTo(56));
-        }
-        else
-        {
-            Assert.That(sizeof(ACTRL_ACCESS_ENTRYW), Is.EqualTo(40));
-        }
-    }
 }

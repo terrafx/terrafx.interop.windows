@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PANOSE" /> struct.</summary>
 public static unsafe partial class PANOSETests
 {
-    /// <summary>Validates that the <see cref="PANOSE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PANOSE>(), Is.EqualTo(sizeof(PANOSE)));
-    }
-
-    /// <summary>Validates that the <see cref="PANOSE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PANOSE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PANOSE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PANOSE), Is.EqualTo(10));
-    }
 }

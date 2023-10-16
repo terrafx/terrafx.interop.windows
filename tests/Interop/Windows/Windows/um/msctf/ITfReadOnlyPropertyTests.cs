@@ -19,32 +19,4 @@ public static unsafe partial class ITfReadOnlyPropertyTests
     {
         Assert.That(typeof(ITfReadOnlyProperty).GUID, Is.EqualTo(IID_ITfReadOnlyProperty));
     }
-
-    /// <summary>Validates that the <see cref="ITfReadOnlyProperty" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfReadOnlyProperty>(), Is.EqualTo(sizeof(ITfReadOnlyProperty)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfReadOnlyProperty" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfReadOnlyProperty).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfReadOnlyProperty" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfReadOnlyProperty), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfReadOnlyProperty), Is.EqualTo(4));
-        }
-    }
 }

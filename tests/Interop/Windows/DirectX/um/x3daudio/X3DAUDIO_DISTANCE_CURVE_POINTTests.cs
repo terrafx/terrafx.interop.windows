@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct.</summary>
 public static unsafe partial class X3DAUDIO_DISTANCE_CURVE_POINTTests
 {
-    /// <summary>Validates that the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<X3DAUDIO_DISTANCE_CURVE_POINT>(), Is.EqualTo(sizeof(X3DAUDIO_DISTANCE_CURVE_POINT)));
-    }
-
-    /// <summary>Validates that the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(X3DAUDIO_DISTANCE_CURVE_POINT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(X3DAUDIO_DISTANCE_CURVE_POINT), Is.EqualTo(8));
-    }
 }

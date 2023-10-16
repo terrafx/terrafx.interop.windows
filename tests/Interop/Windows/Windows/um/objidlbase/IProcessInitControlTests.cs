@@ -19,32 +19,4 @@ public static unsafe partial class IProcessInitControlTests
     {
         Assert.That(typeof(IProcessInitControl).GUID, Is.EqualTo(IID_IProcessInitControl));
     }
-
-    /// <summary>Validates that the <see cref="IProcessInitControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProcessInitControl>(), Is.EqualTo(sizeof(IProcessInitControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IProcessInitControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProcessInitControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProcessInitControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProcessInitControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProcessInitControl), Is.EqualTo(4));
-        }
-    }
 }

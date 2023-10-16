@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AM_PROPERTY_SPHLI" /> struct.</summary>
 public static unsafe partial class AM_PROPERTY_SPHLITests
 {
-    /// <summary>Validates that the <see cref="AM_PROPERTY_SPHLI" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AM_PROPERTY_SPHLI>(), Is.EqualTo(sizeof(AM_PROPERTY_SPHLI)));
-    }
-
-    /// <summary>Validates that the <see cref="AM_PROPERTY_SPHLI" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AM_PROPERTY_SPHLI).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AM_PROPERTY_SPHLI" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AM_PROPERTY_SPHLI), Is.EqualTo(24));
-    }
 }

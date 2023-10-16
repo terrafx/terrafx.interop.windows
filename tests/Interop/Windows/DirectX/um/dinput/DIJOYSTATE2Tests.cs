@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DIJOYSTATE2" /> struct.</summary>
 public static unsafe partial class DIJOYSTATE2Tests
 {
-    /// <summary>Validates that the <see cref="DIJOYSTATE2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DIJOYSTATE2>(), Is.EqualTo(sizeof(DIJOYSTATE2)));
-    }
-
-    /// <summary>Validates that the <see cref="DIJOYSTATE2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DIJOYSTATE2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DIJOYSTATE2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DIJOYSTATE2), Is.EqualTo(272));
-    }
 }

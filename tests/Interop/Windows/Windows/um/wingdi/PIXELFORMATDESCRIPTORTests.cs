@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PIXELFORMATDESCRIPTOR" /> struct.</summary>
 public static unsafe partial class PIXELFORMATDESCRIPTORTests
 {
-    /// <summary>Validates that the <see cref="PIXELFORMATDESCRIPTOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PIXELFORMATDESCRIPTOR>(), Is.EqualTo(sizeof(PIXELFORMATDESCRIPTOR)));
-    }
-
-    /// <summary>Validates that the <see cref="PIXELFORMATDESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PIXELFORMATDESCRIPTOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PIXELFORMATDESCRIPTOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PIXELFORMATDESCRIPTOR), Is.EqualTo(40));
-    }
 }

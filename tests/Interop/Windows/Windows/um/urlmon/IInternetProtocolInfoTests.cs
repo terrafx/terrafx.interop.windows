@@ -19,32 +19,4 @@ public static unsafe partial class IInternetProtocolInfoTests
     {
         Assert.That(typeof(IInternetProtocolInfo).GUID, Is.EqualTo(IID_IInternetProtocolInfo));
     }
-
-    /// <summary>Validates that the <see cref="IInternetProtocolInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetProtocolInfo>(), Is.EqualTo(sizeof(IInternetProtocolInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetProtocolInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetProtocolInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetProtocolInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetProtocolInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetProtocolInfo), Is.EqualTo(4));
-        }
-    }
 }

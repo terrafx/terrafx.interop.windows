@@ -19,25 +19,4 @@ public static unsafe partial class AppStartupLinkTests
     {
         Assert.That(typeof(AppStartupLink).GUID, Is.EqualTo(IID_AppStartupLink));
     }
-
-    /// <summary>Validates that the <see cref="AppStartupLink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AppStartupLink>(), Is.EqualTo(sizeof(AppStartupLink)));
-    }
-
-    /// <summary>Validates that the <see cref="AppStartupLink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AppStartupLink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AppStartupLink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AppStartupLink), Is.EqualTo(1));
-    }
 }

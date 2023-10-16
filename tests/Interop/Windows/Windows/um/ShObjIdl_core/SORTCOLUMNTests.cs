@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SORTCOLUMN" /> struct.</summary>
 public static unsafe partial class SORTCOLUMNTests
 {
-    /// <summary>Validates that the <see cref="SORTCOLUMN" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SORTCOLUMN>(), Is.EqualTo(sizeof(SORTCOLUMN)));
-    }
-
-    /// <summary>Validates that the <see cref="SORTCOLUMN" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SORTCOLUMN).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SORTCOLUMN" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SORTCOLUMN), Is.EqualTo(24));
-    }
 }

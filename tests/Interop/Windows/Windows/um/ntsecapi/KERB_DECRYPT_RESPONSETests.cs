@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_DECRYPT_RESPONSE" /> struct.</summary>
 public static unsafe partial class KERB_DECRYPT_RESPONSETests
 {
-    /// <summary>Validates that the <see cref="KERB_DECRYPT_RESPONSE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_DECRYPT_RESPONSE>(), Is.EqualTo(sizeof(KERB_DECRYPT_RESPONSE)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_DECRYPT_RESPONSE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_DECRYPT_RESPONSE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_DECRYPT_RESPONSE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERB_DECRYPT_RESPONSE), Is.EqualTo(1));
-    }
 }

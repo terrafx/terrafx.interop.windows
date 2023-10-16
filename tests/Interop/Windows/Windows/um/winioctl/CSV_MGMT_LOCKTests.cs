@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_MGMT_LOCK" /> struct.</summary>
 public static unsafe partial class CSV_MGMT_LOCKTests
 {
-    /// <summary>Validates that the <see cref="CSV_MGMT_LOCK" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_MGMT_LOCK>(), Is.EqualTo(sizeof(CSV_MGMT_LOCK)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_MGMT_LOCK" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_MGMT_LOCK).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_MGMT_LOCK" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_MGMT_LOCK), Is.EqualTo(4));
-    }
 }

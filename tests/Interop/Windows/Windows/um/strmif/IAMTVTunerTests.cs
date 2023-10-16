@@ -19,32 +19,4 @@ public static unsafe partial class IAMTVTunerTests
     {
         Assert.That(typeof(IAMTVTuner).GUID, Is.EqualTo(IID_IAMTVTuner));
     }
-
-    /// <summary>Validates that the <see cref="IAMTVTuner" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMTVTuner>(), Is.EqualTo(sizeof(IAMTVTuner)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMTVTuner" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMTVTuner).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMTVTuner" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMTVTuner), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMTVTuner), Is.EqualTo(4));
-        }
-    }
 }

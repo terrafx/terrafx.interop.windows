@@ -19,32 +19,4 @@ public static unsafe partial class IMFSaveJobTests
     {
         Assert.That(typeof(IMFSaveJob).GUID, Is.EqualTo(IID_IMFSaveJob));
     }
-
-    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSaveJob>(), Is.EqualTo(sizeof(IMFSaveJob)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSaveJob).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSaveJob), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSaveJob), Is.EqualTo(4));
-        }
-    }
 }

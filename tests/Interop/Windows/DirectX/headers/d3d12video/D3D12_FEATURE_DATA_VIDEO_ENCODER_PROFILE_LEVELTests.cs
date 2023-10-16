@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL" /> struct.</summary>
 public static unsafe partial class D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVELTests
 {
-    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL>(), Is.EqualTo(sizeof(D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL), Is.EqualTo(64));
-        }
-        else
-        {
-            Assert.That(sizeof(D3D12_FEATURE_DATA_VIDEO_ENCODER_PROFILE_LEVEL), Is.EqualTo(36));
-        }
-    }
 }

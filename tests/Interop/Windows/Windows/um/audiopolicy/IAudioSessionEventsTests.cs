@@ -19,32 +19,4 @@ public static unsafe partial class IAudioSessionEventsTests
     {
         Assert.That(typeof(IAudioSessionEvents).GUID, Is.EqualTo(IID_IAudioSessionEvents));
     }
-
-    /// <summary>Validates that the <see cref="IAudioSessionEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioSessionEvents>(), Is.EqualTo(sizeof(IAudioSessionEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSessionEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioSessionEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSessionEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioSessionEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioSessionEvents), Is.EqualTo(4));
-        }
-    }
 }

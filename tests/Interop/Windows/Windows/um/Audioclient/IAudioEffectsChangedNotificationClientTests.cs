@@ -21,32 +21,4 @@ public static unsafe partial class IAudioEffectsChangedNotificationClientTests
     {
         Assert.That(typeof(IAudioEffectsChangedNotificationClient).GUID, Is.EqualTo(IID_IAudioEffectsChangedNotificationClient));
     }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsChangedNotificationClient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioEffectsChangedNotificationClient>(), Is.EqualTo(sizeof(IAudioEffectsChangedNotificationClient)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsChangedNotificationClient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioEffectsChangedNotificationClient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsChangedNotificationClient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioEffectsChangedNotificationClient), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioEffectsChangedNotificationClient), Is.EqualTo(4));
-        }
-    }
 }

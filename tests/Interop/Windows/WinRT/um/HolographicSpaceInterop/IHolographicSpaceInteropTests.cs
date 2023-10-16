@@ -21,32 +21,4 @@ public static unsafe partial class IHolographicSpaceInteropTests
     {
         Assert.That(typeof(IHolographicSpaceInterop).GUID, Is.EqualTo(IID_IHolographicSpaceInterop));
     }
-
-    /// <summary>Validates that the <see cref="IHolographicSpaceInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHolographicSpaceInterop>(), Is.EqualTo(sizeof(IHolographicSpaceInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicSpaceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHolographicSpaceInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicSpaceInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHolographicSpaceInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHolographicSpaceInterop), Is.EqualTo(4));
-        }
-    }
 }

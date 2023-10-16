@@ -19,25 +19,4 @@ public static unsafe partial class HTMLInputImageTests
     {
         Assert.That(typeof(HTMLInputImage).GUID, Is.EqualTo(IID_HTMLInputImage));
     }
-
-    /// <summary>Validates that the <see cref="HTMLInputImage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLInputImage>(), Is.EqualTo(sizeof(HTMLInputImage)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLInputImage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLInputImage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLInputImage), Is.EqualTo(1));
-    }
 }

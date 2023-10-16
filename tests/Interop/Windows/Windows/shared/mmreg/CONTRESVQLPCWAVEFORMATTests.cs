@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct.</summary>
 public static unsafe partial class CONTRESVQLPCWAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CONTRESVQLPCWAVEFORMAT>(), Is.EqualTo(sizeof(CONTRESVQLPCWAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CONTRESVQLPCWAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CONTRESVQLPCWAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CONTRESVQLPCWAVEFORMAT), Is.EqualTo(20));
-    }
 }

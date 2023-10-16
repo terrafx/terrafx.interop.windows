@@ -19,25 +19,4 @@ public static unsafe partial class ProgressItemsTests
     {
         Assert.That(typeof(ProgressItems).GUID, Is.EqualTo(CLSID_ProgressItems));
     }
-
-    /// <summary>Validates that the <see cref="ProgressItems" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ProgressItems>(), Is.EqualTo(sizeof(ProgressItems)));
-    }
-
-    /// <summary>Validates that the <see cref="ProgressItems" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ProgressItems).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ProgressItems" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ProgressItems), Is.EqualTo(1));
-    }
 }

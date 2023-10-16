@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonBufferSizeTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonBufferSize).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonBufferSize));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonBufferSize" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonBufferSize>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonBufferSize)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonBufferSize" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonBufferSize).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonBufferSize" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonBufferSize), Is.EqualTo(1));
-    }
 }

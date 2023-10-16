@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class PSS_ALLOCATORTests
 {
-    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PSS_ALLOCATOR>(), Is.EqualTo(sizeof(PSS_ALLOCATOR)));
-    }
-
-    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PSS_ALLOCATOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(12));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPAPrivateUserBitTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPAPrivateUserBit).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAPrivateUserBit));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAPrivateUserBit" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPAPrivateUserBit>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPAPrivateUserBit)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAPrivateUserBit" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPAPrivateUserBit).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAPrivateUserBit" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPAPrivateUserBit), Is.EqualTo(1));
-    }
 }

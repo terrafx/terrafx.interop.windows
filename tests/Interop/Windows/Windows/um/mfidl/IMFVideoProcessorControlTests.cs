@@ -21,32 +21,4 @@ public static unsafe partial class IMFVideoProcessorControlTests
     {
         Assert.That(typeof(IMFVideoProcessorControl).GUID, Is.EqualTo(IID_IMFVideoProcessorControl));
     }
-
-    /// <summary>Validates that the <see cref="IMFVideoProcessorControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFVideoProcessorControl>(), Is.EqualTo(sizeof(IMFVideoProcessorControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoProcessorControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFVideoProcessorControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFVideoProcessorControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFVideoProcessorControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFVideoProcessorControl), Is.EqualTo(4));
-        }
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationDragDropEventHandlerTests
     {
         Assert.That(typeof(IDirectManipulationDragDropEventHandler).GUID, Is.EqualTo(IID_IDirectManipulationDragDropEventHandler));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDragDropEventHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationDragDropEventHandler>(), Is.EqualTo(sizeof(IDirectManipulationDragDropEventHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDragDropEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationDragDropEventHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationDragDropEventHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationDragDropEventHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationDragDropEventHandler), Is.EqualTo(4));
-        }
-    }
 }

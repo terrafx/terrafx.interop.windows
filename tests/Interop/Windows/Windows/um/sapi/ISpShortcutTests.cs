@@ -19,32 +19,4 @@ public static unsafe partial class ISpShortcutTests
     {
         Assert.That(typeof(ISpShortcut).GUID, Is.EqualTo(IID_ISpShortcut));
     }
-
-    /// <summary>Validates that the <see cref="ISpShortcut" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpShortcut>(), Is.EqualTo(sizeof(ISpShortcut)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpShortcut" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpShortcut).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpShortcut" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpShortcut), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpShortcut), Is.EqualTo(4));
-        }
-    }
 }

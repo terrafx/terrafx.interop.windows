@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteTextFormat3Tests
     {
         Assert.That(typeof(IDWriteTextFormat3).GUID, Is.EqualTo(IID_IDWriteTextFormat3));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteTextFormat3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteTextFormat3>(), Is.EqualTo(sizeof(IDWriteTextFormat3)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTextFormat3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteTextFormat3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTextFormat3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteTextFormat3), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteTextFormat3), Is.EqualTo(4));
-        }
-    }
 }

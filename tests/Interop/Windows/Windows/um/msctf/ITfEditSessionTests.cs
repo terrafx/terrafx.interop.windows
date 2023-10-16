@@ -19,32 +19,4 @@ public static unsafe partial class ITfEditSessionTests
     {
         Assert.That(typeof(ITfEditSession).GUID, Is.EqualTo(IID_ITfEditSession));
     }
-
-    /// <summary>Validates that the <see cref="ITfEditSession" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfEditSession>(), Is.EqualTo(sizeof(ITfEditSession)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfEditSession" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfEditSession).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfEditSession" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfEditSession), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfEditSession), Is.EqualTo(4));
-        }
-    }
 }

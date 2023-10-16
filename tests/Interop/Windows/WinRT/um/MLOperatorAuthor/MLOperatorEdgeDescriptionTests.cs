@@ -11,24 +11,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref="MLOperatorEdgeDescription" /> struct.</summary>
 public static unsafe partial class MLOperatorEdgeDescriptionTests
 {
-    /// <summary>Validates that the <see cref="MLOperatorEdgeDescription" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MLOperatorEdgeDescription>(), Is.EqualTo(sizeof(MLOperatorEdgeDescription)));
-    }
-
-    /// <summary>Validates that the <see cref="MLOperatorEdgeDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MLOperatorEdgeDescription).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MLOperatorEdgeDescription" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MLOperatorEdgeDescription), Is.EqualTo(16));
-    }
 }

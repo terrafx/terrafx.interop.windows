@@ -19,32 +19,4 @@ public static unsafe partial class IHtmlDlgSafeHelperTests
     {
         Assert.That(typeof(IHtmlDlgSafeHelper).GUID, Is.EqualTo(IID_IHtmlDlgSafeHelper));
     }
-
-    /// <summary>Validates that the <see cref="IHtmlDlgSafeHelper" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHtmlDlgSafeHelper>(), Is.EqualTo(sizeof(IHtmlDlgSafeHelper)));
-    }
-
-    /// <summary>Validates that the <see cref="IHtmlDlgSafeHelper" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHtmlDlgSafeHelper).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHtmlDlgSafeHelper" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHtmlDlgSafeHelper), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHtmlDlgSafeHelper), Is.EqualTo(4));
-        }
-    }
 }

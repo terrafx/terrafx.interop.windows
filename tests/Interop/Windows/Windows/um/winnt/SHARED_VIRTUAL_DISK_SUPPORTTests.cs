@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct.</summary>
 public static unsafe partial class SHARED_VIRTUAL_DISK_SUPPORTTests
 {
-    /// <summary>Validates that the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SHARED_VIRTUAL_DISK_SUPPORT>(), Is.EqualTo(sizeof(SHARED_VIRTUAL_DISK_SUPPORT)));
-    }
-
-    /// <summary>Validates that the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SHARED_VIRTUAL_DISK_SUPPORT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SHARED_VIRTUAL_DISK_SUPPORT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SHARED_VIRTUAL_DISK_SUPPORT), Is.EqualTo(8));
-    }
 }

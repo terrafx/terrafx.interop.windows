@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_QUERY_VOLUME_ID" /> struct.</summary>
 public static unsafe partial class CSV_QUERY_VOLUME_IDTests
 {
-    /// <summary>Validates that the <see cref="CSV_QUERY_VOLUME_ID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_QUERY_VOLUME_ID>(), Is.EqualTo(sizeof(CSV_QUERY_VOLUME_ID)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_VOLUME_ID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_QUERY_VOLUME_ID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_VOLUME_ID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_QUERY_VOLUME_ID), Is.EqualTo(16));
-    }
 }

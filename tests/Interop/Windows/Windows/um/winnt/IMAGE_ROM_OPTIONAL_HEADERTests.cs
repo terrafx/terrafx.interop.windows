@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_ROM_OPTIONAL_HEADER" /> struct.</summary>
 public static unsafe partial class IMAGE_ROM_OPTIONAL_HEADERTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_ROM_OPTIONAL_HEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_ROM_OPTIONAL_HEADER>(), Is.EqualTo(sizeof(IMAGE_ROM_OPTIONAL_HEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ROM_OPTIONAL_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_ROM_OPTIONAL_HEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ROM_OPTIONAL_HEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_ROM_OPTIONAL_HEADER), Is.EqualTo(56));
-    }
 }

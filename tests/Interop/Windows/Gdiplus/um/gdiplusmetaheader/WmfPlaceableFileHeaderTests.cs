@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="WmfPlaceableFileHeader" /> struct.</summary>
 public static unsafe partial class WmfPlaceableFileHeaderTests
 {
-    /// <summary>Validates that the <see cref="WmfPlaceableFileHeader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WmfPlaceableFileHeader>(), Is.EqualTo(sizeof(WmfPlaceableFileHeader)));
-    }
-
-    /// <summary>Validates that the <see cref="WmfPlaceableFileHeader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WmfPlaceableFileHeader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WmfPlaceableFileHeader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WmfPlaceableFileHeader), Is.EqualTo(22));
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IDXGISwapChain2Tests
     {
         Assert.That(typeof(IDXGISwapChain2).GUID, Is.EqualTo(IID_IDXGISwapChain2));
     }
-
-    /// <summary>Validates that the <see cref="IDXGISwapChain2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGISwapChain2>(), Is.EqualTo(sizeof(IDXGISwapChain2)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGISwapChain2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGISwapChain2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGISwapChain2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGISwapChain2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGISwapChain2), Is.EqualTo(4));
-        }
-    }
 }

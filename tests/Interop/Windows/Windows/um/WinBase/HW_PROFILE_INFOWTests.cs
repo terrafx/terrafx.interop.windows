@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HW_PROFILE_INFOW" /> struct.</summary>
 public static unsafe partial class HW_PROFILE_INFOWTests
 {
-    /// <summary>Validates that the <see cref="HW_PROFILE_INFOW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HW_PROFILE_INFOW>(), Is.EqualTo(sizeof(HW_PROFILE_INFOW)));
-    }
-
-    /// <summary>Validates that the <see cref="HW_PROFILE_INFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HW_PROFILE_INFOW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HW_PROFILE_INFOW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HW_PROFILE_INFOW), Is.EqualTo(244));
-    }
 }

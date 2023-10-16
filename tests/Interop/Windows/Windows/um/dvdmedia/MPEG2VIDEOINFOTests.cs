@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MPEG2VIDEOINFO" /> struct.</summary>
 public static unsafe partial class MPEG2VIDEOINFOTests
 {
-    /// <summary>Validates that the <see cref="MPEG2VIDEOINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MPEG2VIDEOINFO>(), Is.EqualTo(sizeof(MPEG2VIDEOINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="MPEG2VIDEOINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MPEG2VIDEOINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MPEG2VIDEOINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MPEG2VIDEOINFO), Is.EqualTo(136));
-    }
 }

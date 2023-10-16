@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TA_CUBIC_BEZIER" /> struct.</summary>
 public static unsafe partial class TA_CUBIC_BEZIERTests
 {
-    /// <summary>Validates that the <see cref="TA_CUBIC_BEZIER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TA_CUBIC_BEZIER>(), Is.EqualTo(sizeof(TA_CUBIC_BEZIER)));
-    }
-
-    /// <summary>Validates that the <see cref="TA_CUBIC_BEZIER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TA_CUBIC_BEZIER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TA_CUBIC_BEZIER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TA_CUBIC_BEZIER), Is.EqualTo(20));
-    }
 }

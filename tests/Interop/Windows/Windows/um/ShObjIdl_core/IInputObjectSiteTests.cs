@@ -19,32 +19,4 @@ public static unsafe partial class IInputObjectSiteTests
     {
         Assert.That(typeof(IInputObjectSite).GUID, Is.EqualTo(IID_IInputObjectSite));
     }
-
-    /// <summary>Validates that the <see cref="IInputObjectSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInputObjectSite>(), Is.EqualTo(sizeof(IInputObjectSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IInputObjectSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInputObjectSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInputObjectSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInputObjectSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInputObjectSite), Is.EqualTo(4));
-        }
-    }
 }

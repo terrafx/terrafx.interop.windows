@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_MCAST_LIMIT_ROW" /> struct.</summary>
 public static unsafe partial class MIB_MCAST_LIMIT_ROWTests
 {
-    /// <summary>Validates that the <see cref="MIB_MCAST_LIMIT_ROW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_MCAST_LIMIT_ROW>(), Is.EqualTo(sizeof(MIB_MCAST_LIMIT_ROW)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_MCAST_LIMIT_ROW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_MCAST_LIMIT_ROW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_MCAST_LIMIT_ROW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_MCAST_LIMIT_ROW), Is.EqualTo(8));
-    }
 }

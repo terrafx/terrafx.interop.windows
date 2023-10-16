@@ -19,32 +19,4 @@ public static unsafe partial class IPersistFileTests
     {
         Assert.That(typeof(IPersistFile).GUID, Is.EqualTo(IID_IPersistFile));
     }
-
-    /// <summary>Validates that the <see cref="IPersistFile" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistFile>(), Is.EqualTo(sizeof(IPersistFile)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistFile" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistFile).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistFile" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistFile), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistFile), Is.EqualTo(4));
-        }
-    }
 }

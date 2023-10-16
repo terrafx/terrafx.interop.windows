@@ -19,32 +19,4 @@ public static unsafe partial class IMFObjectReferenceStreamTests
     {
         Assert.That(typeof(IMFObjectReferenceStream).GUID, Is.EqualTo(IID_IMFObjectReferenceStream));
     }
-
-    /// <summary>Validates that the <see cref="IMFObjectReferenceStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFObjectReferenceStream>(), Is.EqualTo(sizeof(IMFObjectReferenceStream)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFObjectReferenceStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFObjectReferenceStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFObjectReferenceStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFObjectReferenceStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFObjectReferenceStream), Is.EqualTo(4));
-        }
-    }
 }

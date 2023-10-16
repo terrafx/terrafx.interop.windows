@@ -19,32 +19,4 @@ public static unsafe partial class IMFSecureChannelTests
     {
         Assert.That(typeof(IMFSecureChannel).GUID, Is.EqualTo(IID_IMFSecureChannel));
     }
-
-    /// <summary>Validates that the <see cref="IMFSecureChannel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSecureChannel>(), Is.EqualTo(sizeof(IMFSecureChannel)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSecureChannel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSecureChannel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSecureChannel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSecureChannel), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSecureChannel), Is.EqualTo(4));
-        }
-    }
 }

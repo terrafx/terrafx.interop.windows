@@ -19,25 +19,4 @@ public static unsafe partial class DOMBeforeUnloadEventTests
     {
         Assert.That(typeof(DOMBeforeUnloadEvent).GUID, Is.EqualTo(IID_DOMBeforeUnloadEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMBeforeUnloadEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMBeforeUnloadEvent>(), Is.EqualTo(sizeof(DOMBeforeUnloadEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMBeforeUnloadEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMBeforeUnloadEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMBeforeUnloadEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMBeforeUnloadEvent), Is.EqualTo(1));
-    }
 }

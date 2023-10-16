@@ -19,32 +19,4 @@ public static unsafe partial class IXAudio2ExtensionTests
     {
         Assert.That(typeof(IXAudio2Extension).GUID, Is.EqualTo(IID_IXAudio2Extension));
     }
-
-    /// <summary>Validates that the <see cref="IXAudio2Extension" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXAudio2Extension>(), Is.EqualTo(sizeof(IXAudio2Extension)));
-    }
-
-    /// <summary>Validates that the <see cref="IXAudio2Extension" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXAudio2Extension).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXAudio2Extension" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXAudio2Extension), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXAudio2Extension), Is.EqualTo(4));
-        }
-    }
 }

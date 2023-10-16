@@ -21,32 +21,4 @@ public static unsafe partial class IAppxEncryptedBundleWriterTests
     {
         Assert.That(typeof(IAppxEncryptedBundleWriter).GUID, Is.EqualTo(IID_IAppxEncryptedBundleWriter));
     }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptedBundleWriter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxEncryptedBundleWriter>(), Is.EqualTo(sizeof(IAppxEncryptedBundleWriter)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptedBundleWriter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxEncryptedBundleWriter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxEncryptedBundleWriter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxEncryptedBundleWriter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxEncryptedBundleWriter), Is.EqualTo(4));
-        }
-    }
 }

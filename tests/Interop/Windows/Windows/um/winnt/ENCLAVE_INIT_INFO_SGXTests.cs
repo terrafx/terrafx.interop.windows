@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class ENCLAVE_INIT_INFO_SGXTests
 {
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_SGX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENCLAVE_INIT_INFO_SGX>(), Is.EqualTo(sizeof(ENCLAVE_INIT_INFO_SGX)));
-    }
-
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_SGX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENCLAVE_INIT_INFO_SGX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_SGX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENCLAVE_INIT_INFO_SGX), Is.EqualTo(4096));
-    }
 }

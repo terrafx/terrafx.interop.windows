@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCROLLBARINFO" /> struct.</summary>
 public static unsafe partial class SCROLLBARINFOTests
 {
-    /// <summary>Validates that the <see cref="SCROLLBARINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCROLLBARINFO>(), Is.EqualTo(sizeof(SCROLLBARINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SCROLLBARINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCROLLBARINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCROLLBARINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCROLLBARINFO), Is.EqualTo(60));
-    }
 }

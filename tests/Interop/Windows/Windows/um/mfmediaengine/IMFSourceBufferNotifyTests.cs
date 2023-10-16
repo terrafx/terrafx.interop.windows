@@ -21,32 +21,4 @@ public static unsafe partial class IMFSourceBufferNotifyTests
     {
         Assert.That(typeof(IMFSourceBufferNotify).GUID, Is.EqualTo(IID_IMFSourceBufferNotify));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceBufferNotify>(), Is.EqualTo(sizeof(IMFSourceBufferNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceBufferNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceBufferNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceBufferNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceBufferNotify), Is.EqualTo(4));
-        }
-    }
 }

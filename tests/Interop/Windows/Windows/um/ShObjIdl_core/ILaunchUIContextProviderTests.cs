@@ -19,32 +19,4 @@ public static unsafe partial class ILaunchUIContextProviderTests
     {
         Assert.That(typeof(ILaunchUIContextProvider).GUID, Is.EqualTo(IID_ILaunchUIContextProvider));
     }
-
-    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILaunchUIContextProvider>(), Is.EqualTo(sizeof(ILaunchUIContextProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILaunchUIContextProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(4));
-        }
-    }
 }

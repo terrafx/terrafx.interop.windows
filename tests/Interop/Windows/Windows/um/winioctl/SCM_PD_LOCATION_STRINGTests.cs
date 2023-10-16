@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_PD_LOCATION_STRING" /> struct.</summary>
 public static unsafe partial class SCM_PD_LOCATION_STRINGTests
 {
-    /// <summary>Validates that the <see cref="SCM_PD_LOCATION_STRING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_PD_LOCATION_STRING>(), Is.EqualTo(sizeof(SCM_PD_LOCATION_STRING)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_LOCATION_STRING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_PD_LOCATION_STRING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_LOCATION_STRING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_PD_LOCATION_STRING), Is.EqualTo(12));
-    }
 }

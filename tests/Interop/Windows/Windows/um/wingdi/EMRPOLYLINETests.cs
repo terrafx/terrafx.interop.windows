@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRPOLYLINE" /> struct.</summary>
 public static unsafe partial class EMRPOLYLINETests
 {
-    /// <summary>Validates that the <see cref="EMRPOLYLINE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRPOLYLINE>(), Is.EqualTo(sizeof(EMRPOLYLINE)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRPOLYLINE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRPOLYLINE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRPOLYLINE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRPOLYLINE), Is.EqualTo(36));
-    }
 }

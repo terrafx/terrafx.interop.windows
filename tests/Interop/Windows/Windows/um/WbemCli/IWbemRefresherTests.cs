@@ -19,32 +19,4 @@ public static unsafe partial class IWbemRefresherTests
     {
         Assert.That(typeof(IWbemRefresher).GUID, Is.EqualTo(IID_IWbemRefresher));
     }
-
-    /// <summary>Validates that the <see cref="IWbemRefresher" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemRefresher>(), Is.EqualTo(sizeof(IWbemRefresher)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemRefresher" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemRefresher).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemRefresher" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemRefresher), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemRefresher), Is.EqualTo(4));
-        }
-    }
 }

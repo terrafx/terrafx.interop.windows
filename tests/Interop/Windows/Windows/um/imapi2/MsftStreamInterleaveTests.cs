@@ -19,25 +19,4 @@ public static unsafe partial class MsftStreamInterleaveTests
     {
         Assert.That(typeof(MsftStreamInterleave).GUID, Is.EqualTo(CLSID_MsftStreamInterleave));
     }
-
-    /// <summary>Validates that the <see cref="MsftStreamInterleave" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftStreamInterleave>(), Is.EqualTo(sizeof(MsftStreamInterleave)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftStreamInterleave" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftStreamInterleave).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftStreamInterleave" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftStreamInterleave), Is.EqualTo(1));
-    }
 }

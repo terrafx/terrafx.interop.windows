@@ -19,32 +19,4 @@ public static unsafe partial class IAccServerDocMgrTests
     {
         Assert.That(typeof(IAccServerDocMgr).GUID, Is.EqualTo(IID_IAccServerDocMgr));
     }
-
-    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAccServerDocMgr>(), Is.EqualTo(sizeof(IAccServerDocMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAccServerDocMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(4));
-        }
-    }
 }

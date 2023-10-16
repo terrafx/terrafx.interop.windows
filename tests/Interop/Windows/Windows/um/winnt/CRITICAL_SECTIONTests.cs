@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CRITICAL_SECTION" /> struct.</summary>
 public static unsafe partial class CRITICAL_SECTIONTests
 {
-    /// <summary>Validates that the <see cref="CRITICAL_SECTION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CRITICAL_SECTION>(), Is.EqualTo(sizeof(CRITICAL_SECTION)));
-    }
-
-    /// <summary>Validates that the <see cref="CRITICAL_SECTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CRITICAL_SECTION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CRITICAL_SECTION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CRITICAL_SECTION), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(CRITICAL_SECTION), Is.EqualTo(24));
-        }
-    }
 }

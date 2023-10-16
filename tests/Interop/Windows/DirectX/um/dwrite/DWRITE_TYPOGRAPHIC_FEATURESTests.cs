@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DWRITE_TYPOGRAPHIC_FEATURES" /> struct.</summary>
 public static unsafe partial class DWRITE_TYPOGRAPHIC_FEATURESTests
 {
-    /// <summary>Validates that the <see cref="DWRITE_TYPOGRAPHIC_FEATURES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_TYPOGRAPHIC_FEATURES>(), Is.EqualTo(sizeof(DWRITE_TYPOGRAPHIC_FEATURES)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TYPOGRAPHIC_FEATURES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_TYPOGRAPHIC_FEATURES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TYPOGRAPHIC_FEATURES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DWRITE_TYPOGRAPHIC_FEATURES), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(DWRITE_TYPOGRAPHIC_FEATURES), Is.EqualTo(8));
-        }
-    }
 }

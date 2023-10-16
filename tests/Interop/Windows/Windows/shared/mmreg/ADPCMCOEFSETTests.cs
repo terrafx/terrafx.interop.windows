@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ADPCMCOEFSET" /> struct.</summary>
 public static unsafe partial class ADPCMCOEFSETTests
 {
-    /// <summary>Validates that the <see cref="ADPCMCOEFSET" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ADPCMCOEFSET>(), Is.EqualTo(sizeof(ADPCMCOEFSET)));
-    }
-
-    /// <summary>Validates that the <see cref="ADPCMCOEFSET" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ADPCMCOEFSET).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ADPCMCOEFSET" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ADPCMCOEFSET), Is.EqualTo(4));
-    }
 }

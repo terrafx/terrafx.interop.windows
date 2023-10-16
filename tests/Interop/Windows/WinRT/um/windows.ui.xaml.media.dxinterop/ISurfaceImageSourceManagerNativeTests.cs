@@ -21,32 +21,4 @@ public static unsafe partial class ISurfaceImageSourceManagerNativeTests
     {
         Assert.That(typeof(ISurfaceImageSourceManagerNative).GUID, Is.EqualTo(IID_ISurfaceImageSourceManagerNative));
     }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISurfaceImageSourceManagerNative>(), Is.EqualTo(sizeof(ISurfaceImageSourceManagerNative)));
-    }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISurfaceImageSourceManagerNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISurfaceImageSourceManagerNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISurfaceImageSourceManagerNative), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IActiveIMMAppTests
     {
         Assert.That(typeof(IActiveIMMApp).GUID, Is.EqualTo(IID_IActiveIMMApp));
     }
-
-    /// <summary>Validates that the <see cref="IActiveIMMApp" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActiveIMMApp>(), Is.EqualTo(sizeof(IActiveIMMApp)));
-    }
-
-    /// <summary>Validates that the <see cref="IActiveIMMApp" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActiveIMMApp).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActiveIMMApp" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActiveIMMApp), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActiveIMMApp), Is.EqualTo(4));
-        }
-    }
 }

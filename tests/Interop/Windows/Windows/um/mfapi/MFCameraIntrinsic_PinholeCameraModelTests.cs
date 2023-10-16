@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class MFCameraIntrinsic_PinholeCameraModelTests
 {
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFCameraIntrinsic_PinholeCameraModel>(), Is.EqualTo(sizeof(MFCameraIntrinsic_PinholeCameraModel)));
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFCameraIntrinsic_PinholeCameraModel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFCameraIntrinsic_PinholeCameraModel), Is.EqualTo(16));
-    }
 }

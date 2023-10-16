@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DEVICE_DATA_SET_REPAIR_PARAMETERSTests
 {
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVICE_DATA_SET_REPAIR_PARAMETERS>(), Is.EqualTo(sizeof(DEVICE_DATA_SET_REPAIR_PARAMETERS)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVICE_DATA_SET_REPAIR_PARAMETERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_REPAIR_PARAMETERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEVICE_DATA_SET_REPAIR_PARAMETERS), Is.EqualTo(12));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IPersistSerializedPropStorageTests
     {
         Assert.That(typeof(IPersistSerializedPropStorage).GUID, Is.EqualTo(IID_IPersistSerializedPropStorage));
     }
-
-    /// <summary>Validates that the <see cref="IPersistSerializedPropStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistSerializedPropStorage>(), Is.EqualTo(sizeof(IPersistSerializedPropStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistSerializedPropStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistSerializedPropStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistSerializedPropStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistSerializedPropStorage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistSerializedPropStorage), Is.EqualTo(4));
-        }
-    }
 }

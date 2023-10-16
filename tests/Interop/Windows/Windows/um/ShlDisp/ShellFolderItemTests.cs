@@ -19,25 +19,4 @@ public static unsafe partial class ShellFolderItemTests
     {
         Assert.That(typeof(ShellFolderItem).GUID, Is.EqualTo(IID_ShellFolderItem));
     }
-
-    /// <summary>Validates that the <see cref="ShellFolderItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellFolderItem>(), Is.EqualTo(sizeof(ShellFolderItem)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellFolderItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellFolderItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellFolderItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellFolderItem), Is.EqualTo(1));
-    }
 }

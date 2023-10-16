@@ -19,32 +19,4 @@ public static unsafe partial class IActivationFactoryTests
     {
         Assert.That(typeof(IActivationFactory).GUID, Is.EqualTo(IID_IActivationFactory));
     }
-
-    /// <summary>Validates that the <see cref="IActivationFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActivationFactory>(), Is.EqualTo(sizeof(IActivationFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IActivationFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActivationFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActivationFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActivationFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActivationFactory), Is.EqualTo(4));
-        }
-    }
 }

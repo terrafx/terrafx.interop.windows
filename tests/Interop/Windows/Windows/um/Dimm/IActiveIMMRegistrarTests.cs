@@ -19,32 +19,4 @@ public static unsafe partial class IActiveIMMRegistrarTests
     {
         Assert.That(typeof(IActiveIMMRegistrar).GUID, Is.EqualTo(IID_IActiveIMMRegistrar));
     }
-
-    /// <summary>Validates that the <see cref="IActiveIMMRegistrar" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActiveIMMRegistrar>(), Is.EqualTo(sizeof(IActiveIMMRegistrar)));
-    }
-
-    /// <summary>Validates that the <see cref="IActiveIMMRegistrar" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActiveIMMRegistrar).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActiveIMMRegistrar" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActiveIMMRegistrar), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActiveIMMRegistrar), Is.EqualTo(4));
-        }
-    }
 }

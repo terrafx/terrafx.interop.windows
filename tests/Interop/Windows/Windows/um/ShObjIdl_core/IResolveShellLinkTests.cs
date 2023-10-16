@@ -19,32 +19,4 @@ public static unsafe partial class IResolveShellLinkTests
     {
         Assert.That(typeof(IResolveShellLink).GUID, Is.EqualTo(IID_IResolveShellLink));
     }
-
-    /// <summary>Validates that the <see cref="IResolveShellLink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IResolveShellLink>(), Is.EqualTo(sizeof(IResolveShellLink)));
-    }
-
-    /// <summary>Validates that the <see cref="IResolveShellLink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IResolveShellLink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IResolveShellLink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IResolveShellLink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IResolveShellLink), Is.EqualTo(4));
-        }
-    }
 }

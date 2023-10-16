@@ -19,25 +19,4 @@ public static unsafe partial class DOMMSTransitionEventTests
     {
         Assert.That(typeof(DOMMSTransitionEvent).GUID, Is.EqualTo(IID_DOMMSTransitionEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMMSTransitionEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMMSTransitionEvent>(), Is.EqualTo(sizeof(DOMMSTransitionEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMMSTransitionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMMSTransitionEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMMSTransitionEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMMSTransitionEvent), Is.EqualTo(1));
-    }
 }

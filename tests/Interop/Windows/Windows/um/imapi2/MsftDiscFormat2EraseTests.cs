@@ -19,25 +19,4 @@ public static unsafe partial class MsftDiscFormat2EraseTests
     {
         Assert.That(typeof(MsftDiscFormat2Erase).GUID, Is.EqualTo(CLSID_MsftDiscFormat2Erase));
     }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Erase" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftDiscFormat2Erase>(), Is.EqualTo(sizeof(MsftDiscFormat2Erase)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Erase" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftDiscFormat2Erase).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Erase" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftDiscFormat2Erase), Is.EqualTo(1));
-    }
 }

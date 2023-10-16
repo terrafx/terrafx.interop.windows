@@ -19,32 +19,4 @@ public static unsafe partial class IObjectProviderTests
     {
         Assert.That(typeof(IObjectProvider).GUID, Is.EqualTo(IID_IObjectProvider));
     }
-
-    /// <summary>Validates that the <see cref="IObjectProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectProvider>(), Is.EqualTo(sizeof(IObjectProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectProvider), Is.EqualTo(4));
-        }
-    }
 }

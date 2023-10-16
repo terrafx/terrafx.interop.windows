@@ -19,32 +19,4 @@ public static unsafe partial class IInternetSecurityManagerTests
     {
         Assert.That(typeof(IInternetSecurityManager).GUID, Is.EqualTo(IID_IInternetSecurityManager));
     }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetSecurityManager>(), Is.EqualTo(sizeof(IInternetSecurityManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetSecurityManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSecurityManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetSecurityManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetSecurityManager), Is.EqualTo(4));
-        }
-    }
 }

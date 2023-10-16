@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRFORMAT" /> struct.</summary>
 public static unsafe partial class EMRFORMATTests
 {
-    /// <summary>Validates that the <see cref="EMRFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRFORMAT>(), Is.EqualTo(sizeof(EMRFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRFORMAT), Is.EqualTo(16));
-    }
 }

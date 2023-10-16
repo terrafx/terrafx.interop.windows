@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D2D1_SVG_LENGTH" /> struct.</summary>
 public static unsafe partial class D2D1_SVG_LENGTHTests
 {
-    /// <summary>Validates that the <see cref="D2D1_SVG_LENGTH" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D2D1_SVG_LENGTH>(), Is.EqualTo(sizeof(D2D1_SVG_LENGTH)));
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_SVG_LENGTH" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D2D1_SVG_LENGTH).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D2D1_SVG_LENGTH" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D2D1_SVG_LENGTH), Is.EqualTo(8));
-    }
 }

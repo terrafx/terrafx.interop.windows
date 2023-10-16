@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct.</summary>
 public static unsafe partial class DEVICE_STORAGE_RANGE_ATTRIBUTESTests
 {
-    /// <summary>Validates that the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVICE_STORAGE_RANGE_ATTRIBUTES>(), Is.EqualTo(sizeof(DEVICE_STORAGE_RANGE_ATTRIBUTES)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVICE_STORAGE_RANGE_ATTRIBUTES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVICE_STORAGE_RANGE_ATTRIBUTES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEVICE_STORAGE_RANGE_ATTRIBUTES), Is.EqualTo(16));
-    }
 }

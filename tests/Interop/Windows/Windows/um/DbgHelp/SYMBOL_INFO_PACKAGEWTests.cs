@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SYMBOL_INFO_PACKAGEW" /> struct.</summary>
 public static unsafe partial class SYMBOL_INFO_PACKAGEWTests
 {
-    /// <summary>Validates that the <see cref="SYMBOL_INFO_PACKAGEW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SYMBOL_INFO_PACKAGEW>(), Is.EqualTo(sizeof(SYMBOL_INFO_PACKAGEW)));
-    }
-
-    /// <summary>Validates that the <see cref="SYMBOL_INFO_PACKAGEW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SYMBOL_INFO_PACKAGEW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SYMBOL_INFO_PACKAGEW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SYMBOL_INFO_PACKAGEW), Is.EqualTo(4096));
-    }
 }

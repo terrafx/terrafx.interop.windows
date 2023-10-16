@@ -13,24 +13,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 [SupportedOSPlatform("windows10.0.14393.0")]
 public static unsafe partial class BitmapDescriptionTests
 {
-    /// <summary>Validates that the <see cref="BitmapDescription" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BitmapDescription>(), Is.EqualTo(sizeof(BitmapDescription)));
-    }
-
-    /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BitmapDescription).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BitmapDescription" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BitmapDescription), Is.EqualTo(16));
-    }
 }

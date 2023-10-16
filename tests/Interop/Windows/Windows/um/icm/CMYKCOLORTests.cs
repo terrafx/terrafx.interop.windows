@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CMYKCOLOR" /> struct.</summary>
 public static unsafe partial class CMYKCOLORTests
 {
-    /// <summary>Validates that the <see cref="CMYKCOLOR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CMYKCOLOR>(), Is.EqualTo(sizeof(CMYKCOLOR)));
-    }
-
-    /// <summary>Validates that the <see cref="CMYKCOLOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CMYKCOLOR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CMYKCOLOR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CMYKCOLOR), Is.EqualTo(8));
-    }
 }

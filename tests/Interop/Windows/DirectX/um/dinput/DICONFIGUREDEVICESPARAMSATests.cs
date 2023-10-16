@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DICONFIGUREDEVICESPARAMSA" /> struct.</summary>
 public static unsafe partial class DICONFIGUREDEVICESPARAMSATests
 {
-    /// <summary>Validates that the <see cref="DICONFIGUREDEVICESPARAMSA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DICONFIGUREDEVICESPARAMSA>(), Is.EqualTo(sizeof(DICONFIGUREDEVICESPARAMSA)));
-    }
-
-    /// <summary>Validates that the <see cref="DICONFIGUREDEVICESPARAMSA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DICONFIGUREDEVICESPARAMSA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DICONFIGUREDEVICESPARAMSA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DICONFIGUREDEVICESPARAMSA), Is.EqualTo(88));
-        }
-        else
-        {
-            Assert.That(sizeof(DICONFIGUREDEVICESPARAMSA), Is.EqualTo(64));
-        }
-    }
 }

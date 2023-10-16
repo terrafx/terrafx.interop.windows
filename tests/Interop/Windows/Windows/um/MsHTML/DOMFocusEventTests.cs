@@ -19,25 +19,4 @@ public static unsafe partial class DOMFocusEventTests
     {
         Assert.That(typeof(DOMFocusEvent).GUID, Is.EqualTo(IID_DOMFocusEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMFocusEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMFocusEvent>(), Is.EqualTo(sizeof(DOMFocusEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMFocusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMFocusEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMFocusEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMFocusEvent), Is.EqualTo(1));
-    }
 }

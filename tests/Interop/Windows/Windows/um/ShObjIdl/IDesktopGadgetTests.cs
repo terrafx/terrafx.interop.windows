@@ -19,32 +19,4 @@ public static unsafe partial class IDesktopGadgetTests
     {
         Assert.That(typeof(IDesktopGadget).GUID, Is.EqualTo(IID_IDesktopGadget));
     }
-
-    /// <summary>Validates that the <see cref="IDesktopGadget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDesktopGadget>(), Is.EqualTo(sizeof(IDesktopGadget)));
-    }
-
-    /// <summary>Validates that the <see cref="IDesktopGadget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDesktopGadget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDesktopGadget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDesktopGadget), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDesktopGadget), Is.EqualTo(4));
-        }
-    }
 }

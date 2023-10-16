@@ -19,32 +19,4 @@ public static unsafe partial class IMLOperatorTensorShapeDescriptionTests
     {
         Assert.That(typeof(IMLOperatorTensorShapeDescription).GUID, Is.EqualTo(IID_IMLOperatorTensorShapeDescription));
     }
-
-    /// <summary>Validates that the <see cref="IMLOperatorTensorShapeDescription" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMLOperatorTensorShapeDescription>(), Is.EqualTo(sizeof(IMLOperatorTensorShapeDescription)));
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorTensorShapeDescription" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMLOperatorTensorShapeDescription).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMLOperatorTensorShapeDescription" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMLOperatorTensorShapeDescription), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMLOperatorTensorShapeDescription), Is.EqualTo(4));
-        }
-    }
 }

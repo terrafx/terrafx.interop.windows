@@ -21,32 +21,4 @@ public static unsafe partial class IDWriteFactory2Tests
     {
         Assert.That(typeof(IDWriteFactory2).GUID, Is.EqualTo(IID_IDWriteFactory2));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteFactory2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteFactory2>(), Is.EqualTo(sizeof(IDWriteFactory2)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFactory2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteFactory2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFactory2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteFactory2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteFactory2), Is.EqualTo(4));
-        }
-    }
 }

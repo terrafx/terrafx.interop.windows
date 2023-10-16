@@ -19,32 +19,4 @@ public static unsafe partial class ITfCompositionSinkTests
     {
         Assert.That(typeof(ITfCompositionSink).GUID, Is.EqualTo(IID_ITfCompositionSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfCompositionSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfCompositionSink>(), Is.EqualTo(sizeof(ITfCompositionSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompositionSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfCompositionSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompositionSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfCompositionSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfCompositionSink), Is.EqualTo(4));
-        }
-    }
 }

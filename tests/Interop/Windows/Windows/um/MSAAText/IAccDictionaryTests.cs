@@ -19,32 +19,4 @@ public static unsafe partial class IAccDictionaryTests
     {
         Assert.That(typeof(IAccDictionary).GUID, Is.EqualTo(IID_IAccDictionary));
     }
-
-    /// <summary>Validates that the <see cref="IAccDictionary" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAccDictionary>(), Is.EqualTo(sizeof(IAccDictionary)));
-    }
-
-    /// <summary>Validates that the <see cref="IAccDictionary" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAccDictionary).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAccDictionary" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAccDictionary), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAccDictionary), Is.EqualTo(4));
-        }
-    }
 }

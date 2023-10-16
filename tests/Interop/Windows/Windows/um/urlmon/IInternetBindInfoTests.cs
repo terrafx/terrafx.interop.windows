@@ -19,32 +19,4 @@ public static unsafe partial class IInternetBindInfoTests
     {
         Assert.That(typeof(IInternetBindInfo).GUID, Is.EqualTo(IID_IInternetBindInfo));
     }
-
-    /// <summary>Validates that the <see cref="IInternetBindInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetBindInfo>(), Is.EqualTo(sizeof(IInternetBindInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetBindInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetBindInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetBindInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetBindInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetBindInfo), Is.EqualTo(4));
-        }
-    }
 }

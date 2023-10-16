@@ -19,32 +19,4 @@ public static unsafe partial class ISVGPathSegLinetoVerticalAbsTests
     {
         Assert.That(typeof(ISVGPathSegLinetoVerticalAbs).GUID, Is.EqualTo(IID_ISVGPathSegLinetoVerticalAbs));
     }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegLinetoVerticalAbs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGPathSegLinetoVerticalAbs>(), Is.EqualTo(sizeof(ISVGPathSegLinetoVerticalAbs)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegLinetoVerticalAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGPathSegLinetoVerticalAbs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGPathSegLinetoVerticalAbs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGPathSegLinetoVerticalAbs), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGPathSegLinetoVerticalAbs), Is.EqualTo(4));
-        }
-    }
 }

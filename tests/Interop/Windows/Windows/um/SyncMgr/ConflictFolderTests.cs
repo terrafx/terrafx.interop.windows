@@ -19,25 +19,4 @@ public static unsafe partial class ConflictFolderTests
     {
         Assert.That(typeof(ConflictFolder).GUID, Is.EqualTo(IID_ConflictFolder));
     }
-
-    /// <summary>Validates that the <see cref="ConflictFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ConflictFolder>(), Is.EqualTo(sizeof(ConflictFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="ConflictFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ConflictFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ConflictFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ConflictFolder), Is.EqualTo(1));
-    }
 }

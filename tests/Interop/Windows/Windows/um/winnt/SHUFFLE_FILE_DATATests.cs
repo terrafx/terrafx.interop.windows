@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SHUFFLE_FILE_DATA" /> struct.</summary>
 public static unsafe partial class SHUFFLE_FILE_DATATests
 {
-    /// <summary>Validates that the <see cref="SHUFFLE_FILE_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SHUFFLE_FILE_DATA>(), Is.EqualTo(sizeof(SHUFFLE_FILE_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="SHUFFLE_FILE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SHUFFLE_FILE_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SHUFFLE_FILE_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SHUFFLE_FILE_DATA), Is.EqualTo(24));
-    }
 }

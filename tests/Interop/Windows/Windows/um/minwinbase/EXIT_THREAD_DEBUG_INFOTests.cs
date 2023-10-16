@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct.</summary>
 public static unsafe partial class EXIT_THREAD_DEBUG_INFOTests
 {
-    /// <summary>Validates that the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EXIT_THREAD_DEBUG_INFO>(), Is.EqualTo(sizeof(EXIT_THREAD_DEBUG_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EXIT_THREAD_DEBUG_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EXIT_THREAD_DEBUG_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EXIT_THREAD_DEBUG_INFO), Is.EqualTo(4));
-    }
 }

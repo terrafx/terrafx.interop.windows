@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class DCOMPOSITION_FRAME_STATISTICSTests
 {
-    /// <summary>Validates that the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DCOMPOSITION_FRAME_STATISTICS>(), Is.EqualTo(sizeof(DCOMPOSITION_FRAME_STATISTICS)));
-    }
-
-    /// <summary>Validates that the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DCOMPOSITION_FRAME_STATISTICS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DCOMPOSITION_FRAME_STATISTICS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DCOMPOSITION_FRAME_STATISTICS), Is.EqualTo(40));
-    }
 }

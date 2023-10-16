@@ -19,32 +19,4 @@ public static unsafe partial class IShellMenuCallbackTests
     {
         Assert.That(typeof(IShellMenuCallback).GUID, Is.EqualTo(IID_IShellMenuCallback));
     }
-
-    /// <summary>Validates that the <see cref="IShellMenuCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellMenuCallback>(), Is.EqualTo(sizeof(IShellMenuCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellMenuCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellMenuCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellMenuCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellMenuCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellMenuCallback), Is.EqualTo(4));
-        }
-    }
 }

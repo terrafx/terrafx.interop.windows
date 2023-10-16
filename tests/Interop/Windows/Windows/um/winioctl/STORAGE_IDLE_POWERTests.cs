@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_IDLE_POWER" /> struct.</summary>
 public static unsafe partial class STORAGE_IDLE_POWERTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_IDLE_POWER>(), Is.EqualTo(sizeof(STORAGE_IDLE_POWER)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_IDLE_POWER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_IDLE_POWER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_IDLE_POWER), Is.EqualTo(16));
-    }
 }

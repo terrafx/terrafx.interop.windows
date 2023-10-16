@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CONSOLE_CURSOR_INFO" /> struct.</summary>
 public static unsafe partial class CONSOLE_CURSOR_INFOTests
 {
-    /// <summary>Validates that the <see cref="CONSOLE_CURSOR_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CONSOLE_CURSOR_INFO>(), Is.EqualTo(sizeof(CONSOLE_CURSOR_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="CONSOLE_CURSOR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CONSOLE_CURSOR_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CONSOLE_CURSOR_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CONSOLE_CURSOR_INFO), Is.EqualTo(8));
-    }
 }

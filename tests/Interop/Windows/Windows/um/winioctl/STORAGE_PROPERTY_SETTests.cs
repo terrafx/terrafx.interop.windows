@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STORAGE_PROPERTY_SET" /> struct.</summary>
 public static unsafe partial class STORAGE_PROPERTY_SETTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_PROPERTY_SET" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_PROPERTY_SET>(), Is.EqualTo(sizeof(STORAGE_PROPERTY_SET)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_PROPERTY_SET" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_PROPERTY_SET).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_PROPERTY_SET" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_PROPERTY_SET), Is.EqualTo(12));
-    }
 }

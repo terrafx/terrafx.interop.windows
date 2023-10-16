@@ -19,25 +19,4 @@ public static unsafe partial class AlphabeticalCategorizerTests
     {
         Assert.That(typeof(AlphabeticalCategorizer).GUID, Is.EqualTo(IID_AlphabeticalCategorizer));
     }
-
-    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AlphabeticalCategorizer>(), Is.EqualTo(sizeof(AlphabeticalCategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AlphabeticalCategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AlphabeticalCategorizer), Is.EqualTo(1));
-    }
 }

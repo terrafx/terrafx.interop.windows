@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLCSSNamespaceRuleTests
     {
         Assert.That(typeof(DispHTMLCSSNamespaceRule).GUID, Is.EqualTo(IID_DispHTMLCSSNamespaceRule));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLCSSNamespaceRule" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLCSSNamespaceRule>(), Is.EqualTo(sizeof(DispHTMLCSSNamespaceRule)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLCSSNamespaceRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLCSSNamespaceRule).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLCSSNamespaceRule" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLCSSNamespaceRule), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLCSSNamespaceRule), Is.EqualTo(4));
-        }
-    }
 }

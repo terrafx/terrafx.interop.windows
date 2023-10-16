@@ -19,32 +19,4 @@ public static unsafe partial class ITfInputProcessorProfileMgrTests
     {
         Assert.That(typeof(ITfInputProcessorProfileMgr).GUID, Is.EqualTo(IID_ITfInputProcessorProfileMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfInputProcessorProfileMgr>(), Is.EqualTo(sizeof(ITfInputProcessorProfileMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfInputProcessorProfileMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfInputProcessorProfileMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfInputProcessorProfileMgr), Is.EqualTo(4));
-        }
-    }
 }

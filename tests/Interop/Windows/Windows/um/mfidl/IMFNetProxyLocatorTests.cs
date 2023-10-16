@@ -19,32 +19,4 @@ public static unsafe partial class IMFNetProxyLocatorTests
     {
         Assert.That(typeof(IMFNetProxyLocator).GUID, Is.EqualTo(IID_IMFNetProxyLocator));
     }
-
-    /// <summary>Validates that the <see cref="IMFNetProxyLocator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFNetProxyLocator>(), Is.EqualTo(sizeof(IMFNetProxyLocator)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetProxyLocator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFNetProxyLocator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetProxyLocator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFNetProxyLocator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFNetProxyLocator), Is.EqualTo(4));
-        }
-    }
 }

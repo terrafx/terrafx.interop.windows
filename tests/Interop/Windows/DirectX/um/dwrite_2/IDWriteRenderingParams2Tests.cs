@@ -21,32 +21,4 @@ public static unsafe partial class IDWriteRenderingParams2Tests
     {
         Assert.That(typeof(IDWriteRenderingParams2).GUID, Is.EqualTo(IID_IDWriteRenderingParams2));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteRenderingParams2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteRenderingParams2>(), Is.EqualTo(sizeof(IDWriteRenderingParams2)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteRenderingParams2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteRenderingParams2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteRenderingParams2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteRenderingParams2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteRenderingParams2), Is.EqualTo(4));
-        }
-    }
 }

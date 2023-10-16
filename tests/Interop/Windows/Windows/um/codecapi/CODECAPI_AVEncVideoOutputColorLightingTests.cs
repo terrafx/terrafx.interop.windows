@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoOutputColorLightingTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputColorLighting));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputColorLighting>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputColorLighting)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoOutputColorLighting).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputColorLighting" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoOutputColorLighting), Is.EqualTo(1));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IWebAuthenticationCoreManagerInteropTests
     {
         Assert.That(typeof(IWebAuthenticationCoreManagerInterop).GUID, Is.EqualTo(IID_IWebAuthenticationCoreManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IWebAuthenticationCoreManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWebAuthenticationCoreManagerInterop>(), Is.EqualTo(sizeof(IWebAuthenticationCoreManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IWebAuthenticationCoreManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWebAuthenticationCoreManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWebAuthenticationCoreManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWebAuthenticationCoreManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWebAuthenticationCoreManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

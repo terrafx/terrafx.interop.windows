@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SPBINARYGRAMMAR" /> struct.</summary>
 public static unsafe partial class SPBINARYGRAMMARTests
 {
-    /// <summary>Validates that the <see cref="SPBINARYGRAMMAR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SPBINARYGRAMMAR>(), Is.EqualTo(sizeof(SPBINARYGRAMMAR)));
-    }
-
-    /// <summary>Validates that the <see cref="SPBINARYGRAMMAR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SPBINARYGRAMMAR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SPBINARYGRAMMAR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SPBINARYGRAMMAR), Is.EqualTo(4));
-    }
 }

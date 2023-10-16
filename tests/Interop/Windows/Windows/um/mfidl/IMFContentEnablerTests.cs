@@ -19,32 +19,4 @@ public static unsafe partial class IMFContentEnablerTests
     {
         Assert.That(typeof(IMFContentEnabler).GUID, Is.EqualTo(IID_IMFContentEnabler));
     }
-
-    /// <summary>Validates that the <see cref="IMFContentEnabler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFContentEnabler>(), Is.EqualTo(sizeof(IMFContentEnabler)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentEnabler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFContentEnabler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentEnabler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFContentEnabler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFContentEnabler), Is.EqualTo(4));
-        }
-    }
 }

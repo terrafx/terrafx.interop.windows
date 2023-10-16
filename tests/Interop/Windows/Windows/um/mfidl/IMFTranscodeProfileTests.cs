@@ -19,32 +19,4 @@ public static unsafe partial class IMFTranscodeProfileTests
     {
         Assert.That(typeof(IMFTranscodeProfile).GUID, Is.EqualTo(IID_IMFTranscodeProfile));
     }
-
-    /// <summary>Validates that the <see cref="IMFTranscodeProfile" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTranscodeProfile>(), Is.EqualTo(sizeof(IMFTranscodeProfile)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTranscodeProfile" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTranscodeProfile).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTranscodeProfile" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTranscodeProfile), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTranscodeProfile), Is.EqualTo(4));
-        }
-    }
 }

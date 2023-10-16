@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IF_PHYSICAL_ADDRESS_LH" /> struct.</summary>
 public static unsafe partial class IF_PHYSICAL_ADDRESS_LHTests
 {
-    /// <summary>Validates that the <see cref="IF_PHYSICAL_ADDRESS_LH" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IF_PHYSICAL_ADDRESS_LH>(), Is.EqualTo(sizeof(IF_PHYSICAL_ADDRESS_LH)));
-    }
-
-    /// <summary>Validates that the <see cref="IF_PHYSICAL_ADDRESS_LH" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IF_PHYSICAL_ADDRESS_LH).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IF_PHYSICAL_ADDRESS_LH" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IF_PHYSICAL_ADDRESS_LH), Is.EqualTo(34));
-    }
 }

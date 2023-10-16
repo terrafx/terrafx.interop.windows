@@ -19,32 +19,4 @@ public static unsafe partial class IWICDevelopRawNotificationCallbackTests
     {
         Assert.That(typeof(IWICDevelopRawNotificationCallback).GUID, Is.EqualTo(IID_IWICDevelopRawNotificationCallback));
     }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRawNotificationCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICDevelopRawNotificationCallback>(), Is.EqualTo(sizeof(IWICDevelopRawNotificationCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRawNotificationCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICDevelopRawNotificationCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICDevelopRawNotificationCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICDevelopRawNotificationCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICDevelopRawNotificationCallback), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IBindCallbackRedirectTests
     {
         Assert.That(typeof(IBindCallbackRedirect).GUID, Is.EqualTo(IID_IBindCallbackRedirect));
     }
-
-    /// <summary>Validates that the <see cref="IBindCallbackRedirect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBindCallbackRedirect>(), Is.EqualTo(sizeof(IBindCallbackRedirect)));
-    }
-
-    /// <summary>Validates that the <see cref="IBindCallbackRedirect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBindCallbackRedirect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBindCallbackRedirect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBindCallbackRedirect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBindCallbackRedirect), Is.EqualTo(4));
-        }
-    }
 }

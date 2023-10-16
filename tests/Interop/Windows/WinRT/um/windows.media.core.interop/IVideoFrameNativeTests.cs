@@ -19,32 +19,4 @@ public static unsafe partial class IVideoFrameNativeTests
     {
         Assert.That(typeof(IVideoFrameNative).GUID, Is.EqualTo(IID_IVideoFrameNative));
     }
-
-    /// <summary>Validates that the <see cref="IVideoFrameNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVideoFrameNative>(), Is.EqualTo(sizeof(IVideoFrameNative)));
-    }
-
-    /// <summary>Validates that the <see cref="IVideoFrameNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVideoFrameNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVideoFrameNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVideoFrameNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVideoFrameNative), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class NetworkConnectionsTests
     {
         Assert.That(typeof(NetworkConnections).GUID, Is.EqualTo(IID_NetworkConnections));
     }
-
-    /// <summary>Validates that the <see cref="NetworkConnections" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NetworkConnections>(), Is.EqualTo(sizeof(NetworkConnections)));
-    }
-
-    /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NetworkConnections).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NetworkConnections), Is.EqualTo(1));
-    }
 }

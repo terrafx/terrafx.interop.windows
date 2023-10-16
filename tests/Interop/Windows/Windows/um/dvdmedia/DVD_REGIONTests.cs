@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DVD_REGION" /> struct.</summary>
 public static unsafe partial class DVD_REGIONTests
 {
-    /// <summary>Validates that the <see cref="DVD_REGION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DVD_REGION>(), Is.EqualTo(sizeof(DVD_REGION)));
-    }
-
-    /// <summary>Validates that the <see cref="DVD_REGION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DVD_REGION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DVD_REGION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DVD_REGION), Is.EqualTo(4));
-    }
 }

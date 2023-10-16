@@ -19,32 +19,4 @@ public static unsafe partial class IAttachmentExecuteTests
     {
         Assert.That(typeof(IAttachmentExecute).GUID, Is.EqualTo(IID_IAttachmentExecute));
     }
-
-    /// <summary>Validates that the <see cref="IAttachmentExecute" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAttachmentExecute>(), Is.EqualTo(sizeof(IAttachmentExecute)));
-    }
-
-    /// <summary>Validates that the <see cref="IAttachmentExecute" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAttachmentExecute).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAttachmentExecute" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAttachmentExecute), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAttachmentExecute), Is.EqualTo(4));
-        }
-    }
 }

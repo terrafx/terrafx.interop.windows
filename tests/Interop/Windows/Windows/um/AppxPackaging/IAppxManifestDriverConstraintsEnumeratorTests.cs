@@ -19,32 +19,4 @@ public static unsafe partial class IAppxManifestDriverConstraintsEnumeratorTests
     {
         Assert.That(typeof(IAppxManifestDriverConstraintsEnumerator).GUID, Is.EqualTo(IID_IAppxManifestDriverConstraintsEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDriverConstraintsEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestDriverConstraintsEnumerator>(), Is.EqualTo(sizeof(IAppxManifestDriverConstraintsEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDriverConstraintsEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestDriverConstraintsEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestDriverConstraintsEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestDriverConstraintsEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestDriverConstraintsEnumerator), Is.EqualTo(4));
-        }
-    }
 }

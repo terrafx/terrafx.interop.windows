@@ -21,32 +21,4 @@ public static unsafe partial class INotificationActivationCallbackTests
     {
         Assert.That(typeof(INotificationActivationCallback).GUID, Is.EqualTo(IID_INotificationActivationCallback));
     }
-
-    /// <summary>Validates that the <see cref="INotificationActivationCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INotificationActivationCallback>(), Is.EqualTo(sizeof(INotificationActivationCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="INotificationActivationCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INotificationActivationCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INotificationActivationCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INotificationActivationCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(INotificationActivationCallback), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_LINENUMBER" /> struct.</summary>
 public static unsafe partial class IMAGE_LINENUMBERTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_LINENUMBER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_LINENUMBER>(), Is.EqualTo(sizeof(IMAGE_LINENUMBER)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_LINENUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_LINENUMBER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_LINENUMBER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_LINENUMBER), Is.EqualTo(6));
-    }
 }

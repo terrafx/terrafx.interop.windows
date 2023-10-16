@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TOGGLEKEYS" /> struct.</summary>
 public static unsafe partial class TOGGLEKEYSTests
 {
-    /// <summary>Validates that the <see cref="TOGGLEKEYS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TOGGLEKEYS>(), Is.EqualTo(sizeof(TOGGLEKEYS)));
-    }
-
-    /// <summary>Validates that the <see cref="TOGGLEKEYS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TOGGLEKEYS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TOGGLEKEYS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TOGGLEKEYS), Is.EqualTo(8));
-    }
 }

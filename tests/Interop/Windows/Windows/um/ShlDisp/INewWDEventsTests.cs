@@ -19,32 +19,4 @@ public static unsafe partial class INewWDEventsTests
     {
         Assert.That(typeof(INewWDEvents).GUID, Is.EqualTo(IID_INewWDEvents));
     }
-
-    /// <summary>Validates that the <see cref="INewWDEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INewWDEvents>(), Is.EqualTo(sizeof(INewWDEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="INewWDEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INewWDEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INewWDEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INewWDEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(INewWDEvents), Is.EqualTo(4));
-        }
-    }
 }

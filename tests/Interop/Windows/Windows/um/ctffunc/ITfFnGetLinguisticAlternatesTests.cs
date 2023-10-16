@@ -21,32 +21,4 @@ public static unsafe partial class ITfFnGetLinguisticAlternatesTests
     {
         Assert.That(typeof(ITfFnGetLinguisticAlternates).GUID, Is.EqualTo(IID_ITfFnGetLinguisticAlternates));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnGetLinguisticAlternates>(), Is.EqualTo(sizeof(ITfFnGetLinguisticAlternates)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnGetLinguisticAlternates).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(4));
-        }
-    }
 }

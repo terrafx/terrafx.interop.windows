@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DDCOLORCONTROL" /> struct.</summary>
 public static unsafe partial class DDCOLORCONTROLTests
 {
-    /// <summary>Validates that the <see cref="DDCOLORCONTROL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DDCOLORCONTROL>(), Is.EqualTo(sizeof(DDCOLORCONTROL)));
-    }
-
-    /// <summary>Validates that the <see cref="DDCOLORCONTROL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DDCOLORCONTROL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DDCOLORCONTROL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DDCOLORCONTROL), Is.EqualTo(40));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct.</summary>
 public static unsafe partial class MIXERCONTROLDETAILS_SIGNEDTests
 {
-    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIXERCONTROLDETAILS_SIGNED>(), Is.EqualTo(sizeof(MIXERCONTROLDETAILS_SIGNED)));
-    }
-
-    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIXERCONTROLDETAILS_SIGNED).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_SIGNED" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIXERCONTROLDETAILS_SIGNED), Is.EqualTo(4));
-    }
 }

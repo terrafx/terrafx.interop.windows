@@ -19,32 +19,4 @@ public static unsafe partial class ISpStreamFormatTests
     {
         Assert.That(typeof(ISpStreamFormat).GUID, Is.EqualTo(IID_ISpStreamFormat));
     }
-
-    /// <summary>Validates that the <see cref="ISpStreamFormat" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpStreamFormat>(), Is.EqualTo(sizeof(ISpStreamFormat)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpStreamFormat" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpStreamFormat).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpStreamFormat" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpStreamFormat), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpStreamFormat), Is.EqualTo(4));
-        }
-    }
 }

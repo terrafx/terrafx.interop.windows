@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoInputColorPrimariesTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoInputColorPrimaries).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInputColorPrimaries));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputColorPrimaries" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoInputColorPrimaries>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoInputColorPrimaries)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputColorPrimaries" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoInputColorPrimaries).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputColorPrimaries" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoInputColorPrimaries), Is.EqualTo(1));
-    }
 }

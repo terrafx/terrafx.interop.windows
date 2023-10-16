@@ -19,32 +19,4 @@ public static unsafe partial class DispDOMDocumentTypeTests
     {
         Assert.That(typeof(DispDOMDocumentType).GUID, Is.EqualTo(IID_DispDOMDocumentType));
     }
-
-    /// <summary>Validates that the <see cref="DispDOMDocumentType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispDOMDocumentType>(), Is.EqualTo(sizeof(DispDOMDocumentType)));
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMDocumentType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispDOMDocumentType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMDocumentType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispDOMDocumentType), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispDOMDocumentType), Is.EqualTo(4));
-        }
-    }
 }

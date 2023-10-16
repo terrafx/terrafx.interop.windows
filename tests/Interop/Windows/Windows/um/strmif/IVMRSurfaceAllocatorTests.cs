@@ -19,32 +19,4 @@ public static unsafe partial class IVMRSurfaceAllocatorTests
     {
         Assert.That(typeof(IVMRSurfaceAllocator).GUID, Is.EqualTo(IID_IVMRSurfaceAllocator));
     }
-
-    /// <summary>Validates that the <see cref="IVMRSurfaceAllocator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVMRSurfaceAllocator>(), Is.EqualTo(sizeof(IVMRSurfaceAllocator)));
-    }
-
-    /// <summary>Validates that the <see cref="IVMRSurfaceAllocator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVMRSurfaceAllocator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVMRSurfaceAllocator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVMRSurfaceAllocator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVMRSurfaceAllocator), Is.EqualTo(4));
-        }
-    }
 }

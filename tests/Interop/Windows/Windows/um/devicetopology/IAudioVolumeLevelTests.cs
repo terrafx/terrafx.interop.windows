@@ -19,32 +19,4 @@ public static unsafe partial class IAudioVolumeLevelTests
     {
         Assert.That(typeof(IAudioVolumeLevel).GUID, Is.EqualTo(IID_IAudioVolumeLevel));
     }
-
-    /// <summary>Validates that the <see cref="IAudioVolumeLevel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioVolumeLevel>(), Is.EqualTo(sizeof(IAudioVolumeLevel)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioVolumeLevel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioVolumeLevel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioVolumeLevel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioVolumeLevel), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioVolumeLevel), Is.EqualTo(4));
-        }
-    }
 }

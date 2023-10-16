@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POLICY_DOMAIN_KERBEROS_TICKET_INFO" /> struct.</summary>
 public static unsafe partial class POLICY_DOMAIN_KERBEROS_TICKET_INFOTests
 {
-    /// <summary>Validates that the <see cref="POLICY_DOMAIN_KERBEROS_TICKET_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POLICY_DOMAIN_KERBEROS_TICKET_INFO>(), Is.EqualTo(sizeof(POLICY_DOMAIN_KERBEROS_TICKET_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="POLICY_DOMAIN_KERBEROS_TICKET_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POLICY_DOMAIN_KERBEROS_TICKET_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POLICY_DOMAIN_KERBEROS_TICKET_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POLICY_DOMAIN_KERBEROS_TICKET_INFO), Is.EqualTo(48));
-    }
 }

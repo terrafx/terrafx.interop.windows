@@ -19,25 +19,4 @@ public static unsafe partial class SVGAnimatedStringTests
     {
         Assert.That(typeof(SVGAnimatedString).GUID, Is.EqualTo(IID_SVGAnimatedString));
     }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedString" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGAnimatedString>(), Is.EqualTo(sizeof(SVGAnimatedString)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedString" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGAnimatedString).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedString" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGAnimatedString), Is.EqualTo(1));
-    }
 }

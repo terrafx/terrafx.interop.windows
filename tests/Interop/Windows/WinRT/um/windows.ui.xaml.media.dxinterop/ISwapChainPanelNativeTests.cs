@@ -21,32 +21,4 @@ public static unsafe partial class ISwapChainPanelNativeTests
     {
         Assert.That(typeof(ISwapChainPanelNative).GUID, Is.EqualTo(IID_ISwapChainPanelNative));
     }
-
-    /// <summary>Validates that the <see cref="ISwapChainPanelNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISwapChainPanelNative>(), Is.EqualTo(sizeof(ISwapChainPanelNative)));
-    }
-
-    /// <summary>Validates that the <see cref="ISwapChainPanelNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISwapChainPanelNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISwapChainPanelNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISwapChainPanelNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISwapChainPanelNative), Is.EqualTo(4));
-        }
-    }
 }

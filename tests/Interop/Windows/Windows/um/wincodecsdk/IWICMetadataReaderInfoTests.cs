@@ -19,32 +19,4 @@ public static unsafe partial class IWICMetadataReaderInfoTests
     {
         Assert.That(typeof(IWICMetadataReaderInfo).GUID, Is.EqualTo(IID_IWICMetadataReaderInfo));
     }
-
-    /// <summary>Validates that the <see cref="IWICMetadataReaderInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICMetadataReaderInfo>(), Is.EqualTo(sizeof(IWICMetadataReaderInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICMetadataReaderInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICMetadataReaderInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICMetadataReaderInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICMetadataReaderInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICMetadataReaderInfo), Is.EqualTo(4));
-        }
-    }
 }

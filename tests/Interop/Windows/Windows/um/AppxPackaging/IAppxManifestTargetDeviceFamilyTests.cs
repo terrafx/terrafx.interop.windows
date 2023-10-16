@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestTargetDeviceFamilyTests
     {
         Assert.That(typeof(IAppxManifestTargetDeviceFamily).GUID, Is.EqualTo(IID_IAppxManifestTargetDeviceFamily));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestTargetDeviceFamily" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestTargetDeviceFamily>(), Is.EqualTo(sizeof(IAppxManifestTargetDeviceFamily)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestTargetDeviceFamily" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestTargetDeviceFamily).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestTargetDeviceFamily" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestTargetDeviceFamily), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestTargetDeviceFamily), Is.EqualTo(4));
-        }
-    }
 }

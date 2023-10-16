@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestOptionalPackageInfoTests
     {
         Assert.That(typeof(IAppxManifestOptionalPackageInfo).GUID, Is.EqualTo(IID_IAppxManifestOptionalPackageInfo));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestOptionalPackageInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestOptionalPackageInfo>(), Is.EqualTo(sizeof(IAppxManifestOptionalPackageInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestOptionalPackageInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestOptionalPackageInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestOptionalPackageInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestOptionalPackageInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestOptionalPackageInfo), Is.EqualTo(4));
-        }
-    }
 }

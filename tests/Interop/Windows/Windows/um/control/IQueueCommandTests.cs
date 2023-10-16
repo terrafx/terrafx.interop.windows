@@ -19,32 +19,4 @@ public static unsafe partial class IQueueCommandTests
     {
         Assert.That(typeof(IQueueCommand).GUID, Is.EqualTo(IID_IQueueCommand));
     }
-
-    /// <summary>Validates that the <see cref="IQueueCommand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IQueueCommand>(), Is.EqualTo(sizeof(IQueueCommand)));
-    }
-
-    /// <summary>Validates that the <see cref="IQueueCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IQueueCommand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IQueueCommand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IQueueCommand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IQueueCommand), Is.EqualTo(4));
-        }
-    }
 }

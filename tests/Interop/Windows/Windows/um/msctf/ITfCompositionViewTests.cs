@@ -19,32 +19,4 @@ public static unsafe partial class ITfCompositionViewTests
     {
         Assert.That(typeof(ITfCompositionView).GUID, Is.EqualTo(IID_ITfCompositionView));
     }
-
-    /// <summary>Validates that the <see cref="ITfCompositionView" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfCompositionView>(), Is.EqualTo(sizeof(ITfCompositionView)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompositionView" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfCompositionView).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompositionView" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfCompositionView), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfCompositionView), Is.EqualTo(4));
-        }
-    }
 }

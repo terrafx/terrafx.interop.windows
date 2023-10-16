@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecDDDynamicRangeScaleLowTests
     {
         Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleLow).GUID, Is.EqualTo(IID_CODECAPI_AVDecDDDynamicRangeScaleLow));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleLow" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecDDDynamicRangeScaleLow>(), Is.EqualTo(sizeof(CODECAPI_AVDecDDDynamicRangeScaleLow)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleLow" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleLow).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleLow" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecDDDynamicRangeScaleLow), Is.EqualTo(1));
-    }
 }

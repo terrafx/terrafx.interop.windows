@@ -19,32 +19,4 @@ public static unsafe partial class ID3DBlobTests
     {
         Assert.That(typeof(ID3DBlob).GUID, Is.EqualTo(IID_ID3D10Blob));
     }
-
-    /// <summary>Validates that the <see cref="ID3DBlob" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3DBlob>(), Is.EqualTo(sizeof(ID3DBlob)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3DBlob" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3DBlob).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3DBlob" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3DBlob), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3DBlob), Is.EqualTo(4));
-        }
-    }
 }

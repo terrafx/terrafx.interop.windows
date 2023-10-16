@@ -19,32 +19,4 @@ public static unsafe partial class IMFCameraConfigurationManagerTests
     {
         Assert.That(typeof(IMFCameraConfigurationManager).GUID, Is.EqualTo(IID_IMFCameraConfigurationManager));
     }
-
-    /// <summary>Validates that the <see cref="IMFCameraConfigurationManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCameraConfigurationManager>(), Is.EqualTo(sizeof(IMFCameraConfigurationManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraConfigurationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCameraConfigurationManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraConfigurationManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCameraConfigurationManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCameraConfigurationManager), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAddrExclusionControlTests
     {
         Assert.That(typeof(IAddrExclusionControl).GUID, Is.EqualTo(IID_IAddrExclusionControl));
     }
-
-    /// <summary>Validates that the <see cref="IAddrExclusionControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAddrExclusionControl>(), Is.EqualTo(sizeof(IAddrExclusionControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAddrExclusionControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAddrExclusionControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAddrExclusionControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAddrExclusionControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAddrExclusionControl), Is.EqualTo(4));
-        }
-    }
 }

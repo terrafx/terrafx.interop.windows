@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DEVICEDUMP_STRUCTURE_VERSION" /> struct.</summary>
 public static unsafe partial class DEVICEDUMP_STRUCTURE_VERSIONTests
 {
-    /// <summary>Validates that the <see cref="DEVICEDUMP_STRUCTURE_VERSION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DEVICEDUMP_STRUCTURE_VERSION>(), Is.EqualTo(sizeof(DEVICEDUMP_STRUCTURE_VERSION)));
-    }
-
-    /// <summary>Validates that the <see cref="DEVICEDUMP_STRUCTURE_VERSION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DEVICEDUMP_STRUCTURE_VERSION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DEVICEDUMP_STRUCTURE_VERSION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DEVICEDUMP_STRUCTURE_VERSION), Is.EqualTo(12));
-    }
 }

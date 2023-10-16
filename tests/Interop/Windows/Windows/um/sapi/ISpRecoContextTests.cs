@@ -19,32 +19,4 @@ public static unsafe partial class ISpRecoContextTests
     {
         Assert.That(typeof(ISpRecoContext).GUID, Is.EqualTo(IID_ISpRecoContext));
     }
-
-    /// <summary>Validates that the <see cref="ISpRecoContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpRecoContext>(), Is.EqualTo(sizeof(ISpRecoContext)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpRecoContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpRecoContext), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpRecoContext), Is.EqualTo(4));
-        }
-    }
 }

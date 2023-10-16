@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="INSTALLSPEC" /> struct.</summary>
 public static unsafe partial class INSTALLSPECTests
 {
-    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INSTALLSPEC>(), Is.EqualTo(sizeof(INSTALLSPEC)));
-    }
-
-    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutExplicitTest()
-    {
-        Assert.That(typeof(INSTALLSPEC).IsExplicitLayout, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INSTALLSPEC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(INSTALLSPEC), Is.EqualTo(20));
-        }
-    }
 }

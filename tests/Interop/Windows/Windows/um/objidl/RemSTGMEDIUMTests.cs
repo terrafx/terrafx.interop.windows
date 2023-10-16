@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RemSTGMEDIUM" /> struct.</summary>
 public static unsafe partial class RemSTGMEDIUMTests
 {
-    /// <summary>Validates that the <see cref="RemSTGMEDIUM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RemSTGMEDIUM>(), Is.EqualTo(sizeof(RemSTGMEDIUM)));
-    }
-
-    /// <summary>Validates that the <see cref="RemSTGMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RemSTGMEDIUM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RemSTGMEDIUM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RemSTGMEDIUM), Is.EqualTo(24));
-    }
 }

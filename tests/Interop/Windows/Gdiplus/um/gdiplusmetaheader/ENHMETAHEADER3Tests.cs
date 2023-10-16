@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="ENHMETAHEADER3" /> struct.</summary>
 public static unsafe partial class ENHMETAHEADER3Tests
 {
-    /// <summary>Validates that the <see cref="ENHMETAHEADER3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENHMETAHEADER3>(), Is.EqualTo(sizeof(ENHMETAHEADER3)));
-    }
-
-    /// <summary>Validates that the <see cref="ENHMETAHEADER3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENHMETAHEADER3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENHMETAHEADER3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENHMETAHEADER3), Is.EqualTo(88));
-    }
 }

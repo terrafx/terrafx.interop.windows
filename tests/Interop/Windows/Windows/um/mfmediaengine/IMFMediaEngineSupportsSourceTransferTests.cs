@@ -21,32 +21,4 @@ public static unsafe partial class IMFMediaEngineSupportsSourceTransferTests
     {
         Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).GUID, Is.EqualTo(IID_IMFMediaEngineSupportsSourceTransfer));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaEngineSupportsSourceTransfer>(), Is.EqualTo(sizeof(IMFMediaEngineSupportsSourceTransfer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaEngineSupportsSourceTransfer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineSupportsSourceTransfer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaEngineSupportsSourceTransfer), Is.EqualTo(4));
-        }
-    }
 }

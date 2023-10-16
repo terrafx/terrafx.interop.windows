@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="METARECORD" /> struct.</summary>
 public static unsafe partial class METARECORDTests
 {
-    /// <summary>Validates that the <see cref="METARECORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<METARECORD>(), Is.EqualTo(sizeof(METARECORD)));
-    }
-
-    /// <summary>Validates that the <see cref="METARECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(METARECORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="METARECORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(METARECORD), Is.EqualTo(8));
-    }
 }

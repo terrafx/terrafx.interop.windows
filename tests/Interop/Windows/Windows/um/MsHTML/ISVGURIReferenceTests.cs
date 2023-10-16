@@ -19,32 +19,4 @@ public static unsafe partial class ISVGURIReferenceTests
     {
         Assert.That(typeof(ISVGURIReference).GUID, Is.EqualTo(IID_ISVGURIReference));
     }
-
-    /// <summary>Validates that the <see cref="ISVGURIReference" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGURIReference>(), Is.EqualTo(sizeof(ISVGURIReference)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGURIReference" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGURIReference).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGURIReference" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGURIReference), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGURIReference), Is.EqualTo(4));
-        }
-    }
 }

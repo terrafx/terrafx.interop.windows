@@ -19,32 +19,4 @@ public static unsafe partial class IAMResourceControlTests
     {
         Assert.That(typeof(IAMResourceControl).GUID, Is.EqualTo(IID_IAMResourceControl));
     }
-
-    /// <summary>Validates that the <see cref="IAMResourceControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMResourceControl>(), Is.EqualTo(sizeof(IAMResourceControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMResourceControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMResourceControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMResourceControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMResourceControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMResourceControl), Is.EqualTo(4));
-        }
-    }
 }

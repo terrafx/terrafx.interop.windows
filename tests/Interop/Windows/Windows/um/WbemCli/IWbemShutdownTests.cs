@@ -19,32 +19,4 @@ public static unsafe partial class IWbemShutdownTests
     {
         Assert.That(typeof(IWbemShutdown).GUID, Is.EqualTo(IID_IWbemShutdown));
     }
-
-    /// <summary>Validates that the <see cref="IWbemShutdown" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemShutdown>(), Is.EqualTo(sizeof(IWbemShutdown)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemShutdown" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemShutdown).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemShutdown" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemShutdown), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemShutdown), Is.EqualTo(4));
-        }
-    }
 }

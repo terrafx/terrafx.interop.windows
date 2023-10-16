@@ -19,32 +19,4 @@ public static unsafe partial class DispSVGTextPositioningElementTests
     {
         Assert.That(typeof(DispSVGTextPositioningElement).GUID, Is.EqualTo(IID_DispSVGTextPositioningElement));
     }
-
-    /// <summary>Validates that the <see cref="DispSVGTextPositioningElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispSVGTextPositioningElement>(), Is.EqualTo(sizeof(DispSVGTextPositioningElement)));
-    }
-
-    /// <summary>Validates that the <see cref="DispSVGTextPositioningElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispSVGTextPositioningElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispSVGTextPositioningElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispSVGTextPositioningElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispSVGTextPositioningElement), Is.EqualTo(4));
-        }
-    }
 }

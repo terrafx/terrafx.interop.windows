@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_REGION" /> struct.</summary>
 public static unsafe partial class SCM_REGIONTests
 {
-    /// <summary>Validates that the <see cref="SCM_REGION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_REGION>(), Is.EqualTo(sizeof(SCM_REGION)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_REGION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_REGION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_REGION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_REGION), Is.EqualTo(96));
-    }
 }

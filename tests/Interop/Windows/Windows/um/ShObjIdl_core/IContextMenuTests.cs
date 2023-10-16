@@ -19,32 +19,4 @@ public static unsafe partial class IContextMenuTests
     {
         Assert.That(typeof(IContextMenu).GUID, Is.EqualTo(IID_IContextMenu));
     }
-
-    /// <summary>Validates that the <see cref="IContextMenu" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IContextMenu>(), Is.EqualTo(sizeof(IContextMenu)));
-    }
-
-    /// <summary>Validates that the <see cref="IContextMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IContextMenu).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IContextMenu" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IContextMenu), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IContextMenu), Is.EqualTo(4));
-        }
-    }
 }

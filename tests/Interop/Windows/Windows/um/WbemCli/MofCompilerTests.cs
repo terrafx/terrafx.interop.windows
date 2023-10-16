@@ -19,25 +19,4 @@ public static unsafe partial class MofCompilerTests
     {
         Assert.That(typeof(MofCompiler).GUID, Is.EqualTo(IID_MofCompiler));
     }
-
-    /// <summary>Validates that the <see cref="MofCompiler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MofCompiler>(), Is.EqualTo(sizeof(MofCompiler)));
-    }
-
-    /// <summary>Validates that the <see cref="MofCompiler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MofCompiler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MofCompiler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MofCompiler), Is.EqualTo(1));
-    }
 }

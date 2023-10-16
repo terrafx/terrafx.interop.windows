@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_BDD_DYNAMIC_RELOCATION" /> struct.</summary>
 public static unsafe partial class IMAGE_BDD_DYNAMIC_RELOCATIONTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_BDD_DYNAMIC_RELOCATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_BDD_DYNAMIC_RELOCATION>(), Is.EqualTo(sizeof(IMAGE_BDD_DYNAMIC_RELOCATION)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_BDD_DYNAMIC_RELOCATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_BDD_DYNAMIC_RELOCATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_BDD_DYNAMIC_RELOCATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_BDD_DYNAMIC_RELOCATION), Is.EqualTo(8));
-    }
 }

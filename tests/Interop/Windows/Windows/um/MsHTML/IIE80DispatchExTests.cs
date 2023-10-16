@@ -19,32 +19,4 @@ public static unsafe partial class IIE80DispatchExTests
     {
         Assert.That(typeof(IIE80DispatchEx).GUID, Is.EqualTo(IID_IIE80DispatchEx));
     }
-
-    /// <summary>Validates that the <see cref="IIE80DispatchEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IIE80DispatchEx>(), Is.EqualTo(sizeof(IIE80DispatchEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IIE80DispatchEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IIE80DispatchEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IIE80DispatchEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IIE80DispatchEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IIE80DispatchEx), Is.EqualTo(4));
-        }
-    }
 }

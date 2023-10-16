@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KDHELP" /> struct.</summary>
 public static unsafe partial class KDHELPTests
 {
-    /// <summary>Validates that the <see cref="KDHELP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KDHELP>(), Is.EqualTo(sizeof(KDHELP)));
-    }
-
-    /// <summary>Validates that the <see cref="KDHELP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KDHELP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KDHELP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KDHELP), Is.EqualTo(64));
-    }
 }

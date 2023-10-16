@@ -19,32 +19,4 @@ public static unsafe partial class IThumbnailExtractorTests
     {
         Assert.That(typeof(IThumbnailExtractor).GUID, Is.EqualTo(IID_IThumbnailExtractor));
     }
-
-    /// <summary>Validates that the <see cref="IThumbnailExtractor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IThumbnailExtractor>(), Is.EqualTo(sizeof(IThumbnailExtractor)));
-    }
-
-    /// <summary>Validates that the <see cref="IThumbnailExtractor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IThumbnailExtractor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IThumbnailExtractor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IThumbnailExtractor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IThumbnailExtractor), Is.EqualTo(4));
-        }
-    }
 }

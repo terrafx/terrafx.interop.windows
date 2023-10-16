@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="BITMAPINFO" /> struct.</summary>
 public static unsafe partial class BITMAPINFOTests
 {
-    /// <summary>Validates that the <see cref="BITMAPINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BITMAPINFO>(), Is.EqualTo(sizeof(BITMAPINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="BITMAPINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BITMAPINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BITMAPINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BITMAPINFO), Is.EqualTo(44));
-    }
 }

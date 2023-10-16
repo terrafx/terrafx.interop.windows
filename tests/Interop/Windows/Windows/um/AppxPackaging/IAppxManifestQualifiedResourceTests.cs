@@ -19,32 +19,4 @@ public static unsafe partial class IAppxManifestQualifiedResourceTests
     {
         Assert.That(typeof(IAppxManifestQualifiedResource).GUID, Is.EqualTo(IID_IAppxManifestQualifiedResource));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestQualifiedResource>(), Is.EqualTo(sizeof(IAppxManifestQualifiedResource)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestQualifiedResource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(4));
-        }
-    }
 }

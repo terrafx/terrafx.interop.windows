@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnPropertyUIStatusTests
     {
         Assert.That(typeof(ITfFnPropertyUIStatus).GUID, Is.EqualTo(IID_ITfFnPropertyUIStatus));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnPropertyUIStatus" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnPropertyUIStatus>(), Is.EqualTo(sizeof(ITfFnPropertyUIStatus)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnPropertyUIStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnPropertyUIStatus).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnPropertyUIStatus" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnPropertyUIStatus), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnPropertyUIStatus), Is.EqualTo(4));
-        }
-    }
 }

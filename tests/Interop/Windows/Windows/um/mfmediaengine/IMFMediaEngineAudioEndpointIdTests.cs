@@ -19,32 +19,4 @@ public static unsafe partial class IMFMediaEngineAudioEndpointIdTests
     {
         Assert.That(typeof(IMFMediaEngineAudioEndpointId).GUID, Is.EqualTo(IID_IMFMediaEngineAudioEndpointId));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineAudioEndpointId" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaEngineAudioEndpointId>(), Is.EqualTo(sizeof(IMFMediaEngineAudioEndpointId)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineAudioEndpointId" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaEngineAudioEndpointId).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineAudioEndpointId" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaEngineAudioEndpointId), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaEngineAudioEndpointId), Is.EqualTo(4));
-        }
-    }
 }

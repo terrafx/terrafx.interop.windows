@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionGaussianBlurEffectTests
     {
         Assert.That(typeof(IDCompositionGaussianBlurEffect).GUID, Is.EqualTo(IID_IDCompositionGaussianBlurEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionGaussianBlurEffect>(), Is.EqualTo(sizeof(IDCompositionGaussianBlurEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionGaussianBlurEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionGaussianBlurEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionGaussianBlurEffect), Is.EqualTo(4));
-        }
-    }
 }

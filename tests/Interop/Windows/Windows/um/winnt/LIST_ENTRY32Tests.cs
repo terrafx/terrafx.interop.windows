@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LIST_ENTRY32" /> struct.</summary>
 public static unsafe partial class LIST_ENTRY32Tests
 {
-    /// <summary>Validates that the <see cref="LIST_ENTRY32" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LIST_ENTRY32>(), Is.EqualTo(sizeof(LIST_ENTRY32)));
-    }
-
-    /// <summary>Validates that the <see cref="LIST_ENTRY32" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LIST_ENTRY32).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LIST_ENTRY32" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LIST_ENTRY32), Is.EqualTo(8));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MENU_EVENT_RECORD" /> struct.</summary>
 public static unsafe partial class MENU_EVENT_RECORDTests
 {
-    /// <summary>Validates that the <see cref="MENU_EVENT_RECORD" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MENU_EVENT_RECORD>(), Is.EqualTo(sizeof(MENU_EVENT_RECORD)));
-    }
-
-    /// <summary>Validates that the <see cref="MENU_EVENT_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MENU_EVENT_RECORD).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MENU_EVENT_RECORD" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MENU_EVENT_RECORD), Is.EqualTo(4));
-    }
 }

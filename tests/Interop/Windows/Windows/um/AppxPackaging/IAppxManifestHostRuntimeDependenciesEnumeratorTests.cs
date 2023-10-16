@@ -19,32 +19,4 @@ public static unsafe partial class IAppxManifestHostRuntimeDependenciesEnumerato
     {
         Assert.That(typeof(IAppxManifestHostRuntimeDependenciesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestHostRuntimeDependenciesEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependenciesEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestHostRuntimeDependenciesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestHostRuntimeDependenciesEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependenciesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestHostRuntimeDependenciesEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestHostRuntimeDependenciesEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestHostRuntimeDependenciesEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestHostRuntimeDependenciesEnumerator), Is.EqualTo(4));
-        }
-    }
 }

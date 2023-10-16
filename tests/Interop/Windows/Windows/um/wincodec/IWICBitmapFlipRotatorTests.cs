@@ -19,32 +19,4 @@ public static unsafe partial class IWICBitmapFlipRotatorTests
     {
         Assert.That(typeof(IWICBitmapFlipRotator).GUID, Is.EqualTo(IID_IWICBitmapFlipRotator));
     }
-
-    /// <summary>Validates that the <see cref="IWICBitmapFlipRotator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICBitmapFlipRotator>(), Is.EqualTo(sizeof(IWICBitmapFlipRotator)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapFlipRotator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICBitmapFlipRotator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapFlipRotator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICBitmapFlipRotator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICBitmapFlipRotator), Is.EqualTo(4));
-        }
-    }
 }

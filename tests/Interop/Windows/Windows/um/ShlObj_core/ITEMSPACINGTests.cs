@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ITEMSPACING" /> struct.</summary>
 public static unsafe partial class ITEMSPACINGTests
 {
-    /// <summary>Validates that the <see cref="ITEMSPACING" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITEMSPACING>(), Is.EqualTo(sizeof(ITEMSPACING)));
-    }
-
-    /// <summary>Validates that the <see cref="ITEMSPACING" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITEMSPACING).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITEMSPACING" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ITEMSPACING), Is.EqualTo(16));
-    }
 }

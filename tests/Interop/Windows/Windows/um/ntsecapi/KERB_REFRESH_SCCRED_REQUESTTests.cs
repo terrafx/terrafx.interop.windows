@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERB_REFRESH_SCCRED_REQUEST" /> struct.</summary>
 public static unsafe partial class KERB_REFRESH_SCCRED_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="KERB_REFRESH_SCCRED_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERB_REFRESH_SCCRED_REQUEST>(), Is.EqualTo(sizeof(KERB_REFRESH_SCCRED_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="KERB_REFRESH_SCCRED_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERB_REFRESH_SCCRED_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERB_REFRESH_SCCRED_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(KERB_REFRESH_SCCRED_REQUEST), Is.EqualTo(40));
-        }
-        else
-        {
-            Assert.That(sizeof(KERB_REFRESH_SCCRED_REQUEST), Is.EqualTo(24));
-        }
-    }
 }

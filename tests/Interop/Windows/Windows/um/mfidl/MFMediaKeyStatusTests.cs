@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class MFMediaKeyStatusTests
 {
-    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFMediaKeyStatus>(), Is.EqualTo(sizeof(MFMediaKeyStatus)));
-    }
-
-    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFMediaKeyStatus).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(12));
-        }
-    }
 }

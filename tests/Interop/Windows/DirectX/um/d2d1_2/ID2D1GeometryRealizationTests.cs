@@ -21,32 +21,4 @@ public static unsafe partial class ID2D1GeometryRealizationTests
     {
         Assert.That(typeof(ID2D1GeometryRealization).GUID, Is.EqualTo(IID_ID2D1GeometryRealization));
     }
-
-    /// <summary>Validates that the <see cref="ID2D1GeometryRealization" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID2D1GeometryRealization>(), Is.EqualTo(sizeof(ID2D1GeometryRealization)));
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1GeometryRealization" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID2D1GeometryRealization).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1GeometryRealization" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID2D1GeometryRealization), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID2D1GeometryRealization), Is.EqualTo(4));
-        }
-    }
 }

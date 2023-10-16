@@ -19,25 +19,4 @@ public static unsafe partial class FileSearchBandTests
     {
         Assert.That(typeof(FileSearchBand).GUID, Is.EqualTo(IID_FileSearchBand));
     }
-
-    /// <summary>Validates that the <see cref="FileSearchBand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FileSearchBand>(), Is.EqualTo(sizeof(FileSearchBand)));
-    }
-
-    /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FileSearchBand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FileSearchBand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FileSearchBand), Is.EqualTo(1));
-    }
 }

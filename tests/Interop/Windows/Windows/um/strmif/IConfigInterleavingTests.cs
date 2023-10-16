@@ -19,32 +19,4 @@ public static unsafe partial class IConfigInterleavingTests
     {
         Assert.That(typeof(IConfigInterleaving).GUID, Is.EqualTo(IID_IConfigInterleaving));
     }
-
-    /// <summary>Validates that the <see cref="IConfigInterleaving" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IConfigInterleaving>(), Is.EqualTo(sizeof(IConfigInterleaving)));
-    }
-
-    /// <summary>Validates that the <see cref="IConfigInterleaving" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IConfigInterleaving).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IConfigInterleaving" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IConfigInterleaving), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IConfigInterleaving), Is.EqualTo(4));
-        }
-    }
 }

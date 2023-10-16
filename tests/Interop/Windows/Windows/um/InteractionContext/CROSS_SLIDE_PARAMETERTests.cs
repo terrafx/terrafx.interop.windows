@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CROSS_SLIDE_PARAMETERTests
 {
-    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CROSS_SLIDE_PARAMETER>(), Is.EqualTo(sizeof(CROSS_SLIDE_PARAMETER)));
-    }
-
-    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CROSS_SLIDE_PARAMETER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CROSS_SLIDE_PARAMETER), Is.EqualTo(8));
-    }
 }

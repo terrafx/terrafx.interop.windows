@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINHTTP_PROXY_SETTINGS_PARAM" /> struct.</summary>
 public static unsafe partial class WINHTTP_PROXY_SETTINGS_PARAMTests
 {
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_SETTINGS_PARAM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINHTTP_PROXY_SETTINGS_PARAM>(), Is.EqualTo(sizeof(WINHTTP_PROXY_SETTINGS_PARAM)));
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_SETTINGS_PARAM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINHTTP_PROXY_SETTINGS_PARAM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_PROXY_SETTINGS_PARAM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(WINHTTP_PROXY_SETTINGS_PARAM), Is.EqualTo(24));
-        }
-        else
-        {
-            Assert.That(sizeof(WINHTTP_PROXY_SETTINGS_PARAM), Is.EqualTo(16));
-        }
-    }
 }

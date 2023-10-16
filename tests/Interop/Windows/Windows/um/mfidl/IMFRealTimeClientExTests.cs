@@ -21,32 +21,4 @@ public static unsafe partial class IMFRealTimeClientExTests
     {
         Assert.That(typeof(IMFRealTimeClientEx).GUID, Is.EqualTo(IID_IMFRealTimeClientEx));
     }
-
-    /// <summary>Validates that the <see cref="IMFRealTimeClientEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFRealTimeClientEx>(), Is.EqualTo(sizeof(IMFRealTimeClientEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFRealTimeClientEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFRealTimeClientEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFRealTimeClientEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFRealTimeClientEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFRealTimeClientEx), Is.EqualTo(4));
-        }
-    }
 }

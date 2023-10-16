@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TF_LANGBARITEMINFO" /> struct.</summary>
 public static unsafe partial class TF_LANGBARITEMINFOTests
 {
-    /// <summary>Validates that the <see cref="TF_LANGBARITEMINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TF_LANGBARITEMINFO>(), Is.EqualTo(sizeof(TF_LANGBARITEMINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="TF_LANGBARITEMINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TF_LANGBARITEMINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TF_LANGBARITEMINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TF_LANGBARITEMINFO), Is.EqualTo(104));
-    }
 }

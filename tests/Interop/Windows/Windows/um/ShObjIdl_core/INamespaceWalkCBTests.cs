@@ -19,32 +19,4 @@ public static unsafe partial class INamespaceWalkCBTests
     {
         Assert.That(typeof(INamespaceWalkCB).GUID, Is.EqualTo(IID_INamespaceWalkCB));
     }
-
-    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INamespaceWalkCB>(), Is.EqualTo(sizeof(INamespaceWalkCB)));
-    }
-
-    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INamespaceWalkCB).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(4));
-        }
-    }
 }

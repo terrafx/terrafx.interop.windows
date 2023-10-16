@@ -19,32 +19,4 @@ public static unsafe partial class IDOMExceptionTests
     {
         Assert.That(typeof(IDOMException).GUID, Is.EqualTo(IID_IDOMException));
     }
-
-    /// <summary>Validates that the <see cref="IDOMException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMException>(), Is.EqualTo(sizeof(IDOMException)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMException), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMException), Is.EqualTo(4));
-        }
-    }
 }

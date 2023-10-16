@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDistanceDecay" /> struct.</summary>
 public static unsafe partial class SpatialAudioHrtfDistanceDecayTests
 {
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDistanceDecay" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpatialAudioHrtfDistanceDecay>(), Is.EqualTo(sizeof(SpatialAudioHrtfDistanceDecay)));
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDistanceDecay" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpatialAudioHrtfDistanceDecay).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDistanceDecay" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpatialAudioHrtfDistanceDecay), Is.EqualTo(20));
-    }
 }

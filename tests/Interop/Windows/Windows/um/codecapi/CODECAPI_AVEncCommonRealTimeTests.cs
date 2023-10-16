@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonRealTimeTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonRealTime).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonRealTime));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRealTime" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonRealTime>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonRealTime)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRealTime" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonRealTime).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRealTime" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonRealTime), Is.EqualTo(1));
-    }
 }

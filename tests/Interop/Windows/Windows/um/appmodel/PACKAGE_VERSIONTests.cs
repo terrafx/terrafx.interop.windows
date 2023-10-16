@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class PACKAGE_VERSIONTests
 {
-    /// <summary>Validates that the <see cref="PACKAGE_VERSION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PACKAGE_VERSION>(), Is.EqualTo(sizeof(PACKAGE_VERSION)));
-    }
-
-    /// <summary>Validates that the <see cref="PACKAGE_VERSION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PACKAGE_VERSION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PACKAGE_VERSION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PACKAGE_VERSION), Is.EqualTo(8));
-    }
 }

@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CMINVOKECOMMANDINFOEX" /> struct.</summary>
 public static unsafe partial class CMINVOKECOMMANDINFOEXTests
 {
-    /// <summary>Validates that the <see cref="CMINVOKECOMMANDINFOEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CMINVOKECOMMANDINFOEX>(), Is.EqualTo(sizeof(CMINVOKECOMMANDINFOEX)));
-    }
-
-    /// <summary>Validates that the <see cref="CMINVOKECOMMANDINFOEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CMINVOKECOMMANDINFOEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CMINVOKECOMMANDINFOEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CMINVOKECOMMANDINFOEX), Is.EqualTo(104));
-        }
-        else
-        {
-            Assert.That(sizeof(CMINVOKECOMMANDINFOEX), Is.EqualTo(64));
-        }
-    }
 }

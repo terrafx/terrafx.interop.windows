@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechGrammarRulesTests
     {
         Assert.That(typeof(ISpeechGrammarRules).GUID, Is.EqualTo(IID_ISpeechGrammarRules));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechGrammarRules" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechGrammarRules>(), Is.EqualTo(sizeof(ISpeechGrammarRules)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechGrammarRules" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechGrammarRules).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechGrammarRules" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechGrammarRules), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechGrammarRules), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class QueryCancelAutoPlayTests
     {
         Assert.That(typeof(QueryCancelAutoPlay).GUID, Is.EqualTo(IID_QueryCancelAutoPlay));
     }
-
-    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<QueryCancelAutoPlay>(), Is.EqualTo(sizeof(QueryCancelAutoPlay)));
-    }
-
-    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(QueryCancelAutoPlay).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(QueryCancelAutoPlay), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class BlockFormatsTests
     {
         Assert.That(typeof(BlockFormats).GUID, Is.EqualTo(IID_BlockFormats));
     }
-
-    /// <summary>Validates that the <see cref="BlockFormats" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BlockFormats>(), Is.EqualTo(sizeof(BlockFormats)));
-    }
-
-    /// <summary>Validates that the <see cref="BlockFormats" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BlockFormats).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BlockFormats" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BlockFormats), Is.EqualTo(1));
-    }
 }

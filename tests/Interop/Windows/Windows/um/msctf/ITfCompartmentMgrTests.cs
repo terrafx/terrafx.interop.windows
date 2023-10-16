@@ -19,32 +19,4 @@ public static unsafe partial class ITfCompartmentMgrTests
     {
         Assert.That(typeof(ITfCompartmentMgr).GUID, Is.EqualTo(IID_ITfCompartmentMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfCompartmentMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfCompartmentMgr>(), Is.EqualTo(sizeof(ITfCompartmentMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompartmentMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfCompartmentMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfCompartmentMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfCompartmentMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfCompartmentMgr), Is.EqualTo(4));
-        }
-    }
 }

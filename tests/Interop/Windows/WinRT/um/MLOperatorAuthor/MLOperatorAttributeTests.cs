@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.WinRT.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.WinRT.UnitTests;
 /// <summary>Provides validation of the <see cref="MLOperatorAttribute" /> struct.</summary>
 public static unsafe partial class MLOperatorAttributeTests
 {
-    /// <summary>Validates that the <see cref="MLOperatorAttribute" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MLOperatorAttribute>(), Is.EqualTo(sizeof(MLOperatorAttribute)));
-    }
-
-    /// <summary>Validates that the <see cref="MLOperatorAttribute" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MLOperatorAttribute).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MLOperatorAttribute" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(MLOperatorAttribute), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(MLOperatorAttribute), Is.EqualTo(12));
-        }
-    }
 }

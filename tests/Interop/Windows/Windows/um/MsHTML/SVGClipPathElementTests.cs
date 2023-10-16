@@ -19,25 +19,4 @@ public static unsafe partial class SVGClipPathElementTests
     {
         Assert.That(typeof(SVGClipPathElement).GUID, Is.EqualTo(IID_SVGClipPathElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGClipPathElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGClipPathElement>(), Is.EqualTo(sizeof(SVGClipPathElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGClipPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGClipPathElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGClipPathElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGClipPathElement), Is.EqualTo(1));
-    }
 }

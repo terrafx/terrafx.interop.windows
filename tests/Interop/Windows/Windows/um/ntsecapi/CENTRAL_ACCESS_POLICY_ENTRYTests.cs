@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CENTRAL_ACCESS_POLICY_ENTRY" /> struct.</summary>
 public static unsafe partial class CENTRAL_ACCESS_POLICY_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="CENTRAL_ACCESS_POLICY_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CENTRAL_ACCESS_POLICY_ENTRY>(), Is.EqualTo(sizeof(CENTRAL_ACCESS_POLICY_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="CENTRAL_ACCESS_POLICY_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CENTRAL_ACCESS_POLICY_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CENTRAL_ACCESS_POLICY_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CENTRAL_ACCESS_POLICY_ENTRY), Is.EqualTo(104));
-        }
-        else
-        {
-            Assert.That(sizeof(CENTRAL_ACCESS_POLICY_ENTRY), Is.EqualTo(52));
-        }
-    }
 }

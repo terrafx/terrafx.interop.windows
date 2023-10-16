@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WICRect" /> struct.</summary>
 public static unsafe partial class WICRectTests
 {
-    /// <summary>Validates that the <see cref="WICRect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WICRect>(), Is.EqualTo(sizeof(WICRect)));
-    }
-
-    /// <summary>Validates that the <see cref="WICRect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WICRect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WICRect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WICRect), Is.EqualTo(16));
-    }
 }

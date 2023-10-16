@@ -19,32 +19,4 @@ public static unsafe partial class IDOMNodeIteratorTests
     {
         Assert.That(typeof(IDOMNodeIterator).GUID, Is.EqualTo(IID_IDOMNodeIterator));
     }
-
-    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDOMNodeIterator>(), Is.EqualTo(sizeof(IDOMNodeIterator)));
-    }
-
-    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDOMNodeIterator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDOMNodeIterator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDOMNodeIterator), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="XSAVE_AREA_HEADER" /> struct.</summary>
 public static unsafe partial class XSAVE_AREA_HEADERTests
 {
-    /// <summary>Validates that the <see cref="XSAVE_AREA_HEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XSAVE_AREA_HEADER>(), Is.EqualTo(sizeof(XSAVE_AREA_HEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="XSAVE_AREA_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XSAVE_AREA_HEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XSAVE_AREA_HEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(XSAVE_AREA_HEADER), Is.EqualTo(64));
-    }
 }

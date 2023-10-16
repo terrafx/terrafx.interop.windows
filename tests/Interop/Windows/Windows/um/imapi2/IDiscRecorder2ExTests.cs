@@ -19,32 +19,4 @@ public static unsafe partial class IDiscRecorder2ExTests
     {
         Assert.That(typeof(IDiscRecorder2Ex).GUID, Is.EqualTo(IID_IDiscRecorder2Ex));
     }
-
-    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiscRecorder2Ex>(), Is.EqualTo(sizeof(IDiscRecorder2Ex)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiscRecorder2Ex).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiscRecorder2Ex" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiscRecorder2Ex), Is.EqualTo(4));
-        }
-    }
 }

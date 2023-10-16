@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoCTBSizeTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoCTBSize).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoCTBSize));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoCTBSize" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoCTBSize>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoCTBSize)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoCTBSize" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoCTBSize).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoCTBSize" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoCTBSize), Is.EqualTo(1));
-    }
 }

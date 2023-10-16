@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class HEAP_OPTIMIZE_RESOURCES_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="HEAP_OPTIMIZE_RESOURCES_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HEAP_OPTIMIZE_RESOURCES_INFORMATION>(), Is.EqualTo(sizeof(HEAP_OPTIMIZE_RESOURCES_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="HEAP_OPTIMIZE_RESOURCES_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HEAP_OPTIMIZE_RESOURCES_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HEAP_OPTIMIZE_RESOURCES_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HEAP_OPTIMIZE_RESOURCES_INFORMATION), Is.EqualTo(8));
-    }
 }

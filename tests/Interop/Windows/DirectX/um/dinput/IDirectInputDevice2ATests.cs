@@ -19,32 +19,4 @@ public static unsafe partial class IDirectInputDevice2ATests
     {
         Assert.That(typeof(IDirectInputDevice2A).GUID, Is.EqualTo(IID_IDirectInputDevice2A));
     }
-
-    /// <summary>Validates that the <see cref="IDirectInputDevice2A" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectInputDevice2A>(), Is.EqualTo(sizeof(IDirectInputDevice2A)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectInputDevice2A" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectInputDevice2A).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectInputDevice2A" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectInputDevice2A), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectInputDevice2A), Is.EqualTo(4));
-        }
-    }
 }

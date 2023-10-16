@@ -19,32 +19,4 @@ public static unsafe partial class IWICBitmapCodecProgressNotificationTests
     {
         Assert.That(typeof(IWICBitmapCodecProgressNotification).GUID, Is.EqualTo(IID_IWICBitmapCodecProgressNotification));
     }
-
-    /// <summary>Validates that the <see cref="IWICBitmapCodecProgressNotification" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICBitmapCodecProgressNotification>(), Is.EqualTo(sizeof(IWICBitmapCodecProgressNotification)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapCodecProgressNotification" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICBitmapCodecProgressNotification).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapCodecProgressNotification" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICBitmapCodecProgressNotification), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICBitmapCodecProgressNotification), Is.EqualTo(4));
-        }
-    }
 }

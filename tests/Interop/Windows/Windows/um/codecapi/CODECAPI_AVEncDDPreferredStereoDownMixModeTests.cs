@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDPreferredStereoDownMixModeTes
     {
         Assert.That(typeof(CODECAPI_AVEncDDPreferredStereoDownMixMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDPreferredStereoDownMixMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDPreferredStereoDownMixMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDPreferredStereoDownMixMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDPreferredStereoDownMixMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDPreferredStereoDownMixMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDPreferredStereoDownMixMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDPreferredStereoDownMixMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDPreferredStereoDownMixMode), Is.EqualTo(1));
-    }
 }

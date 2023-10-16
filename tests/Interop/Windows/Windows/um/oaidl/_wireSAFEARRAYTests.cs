@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="_wireSAFEARRAY" /> struct.</summary>
 public static unsafe partial class _wireSAFEARRAYTests
 {
-    /// <summary>Validates that the <see cref="_wireSAFEARRAY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<_wireSAFEARRAY>(), Is.EqualTo(sizeof(_wireSAFEARRAY)));
-    }
-
-    /// <summary>Validates that the <see cref="_wireSAFEARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(_wireSAFEARRAY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="_wireSAFEARRAY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(_wireSAFEARRAY), Is.EqualTo(64));
-        }
-        else
-        {
-            Assert.That(sizeof(_wireSAFEARRAY), Is.EqualTo(48));
-        }
-    }
 }

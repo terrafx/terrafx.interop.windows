@@ -19,32 +19,4 @@ public static unsafe partial class IContinueCallbackTests
     {
         Assert.That(typeof(IContinueCallback).GUID, Is.EqualTo(IID_IContinueCallback));
     }
-
-    /// <summary>Validates that the <see cref="IContinueCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IContinueCallback>(), Is.EqualTo(sizeof(IContinueCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IContinueCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IContinueCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IContinueCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IContinueCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IContinueCallback), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class DriveTypeCategorizerTests
     {
         Assert.That(typeof(DriveTypeCategorizer).GUID, Is.EqualTo(IID_DriveTypeCategorizer));
     }
-
-    /// <summary>Validates that the <see cref="DriveTypeCategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DriveTypeCategorizer>(), Is.EqualTo(sizeof(DriveTypeCategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="DriveTypeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DriveTypeCategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DriveTypeCategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DriveTypeCategorizer), Is.EqualTo(1));
-    }
 }

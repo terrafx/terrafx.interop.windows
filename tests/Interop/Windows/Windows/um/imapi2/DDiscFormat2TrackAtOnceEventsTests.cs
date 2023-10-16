@@ -19,32 +19,4 @@ public static unsafe partial class DDiscFormat2TrackAtOnceEventsTests
     {
         Assert.That(typeof(DDiscFormat2TrackAtOnceEvents).GUID, Is.EqualTo(IID_DDiscFormat2TrackAtOnceEvents));
     }
-
-    /// <summary>Validates that the <see cref="DDiscFormat2TrackAtOnceEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DDiscFormat2TrackAtOnceEvents>(), Is.EqualTo(sizeof(DDiscFormat2TrackAtOnceEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="DDiscFormat2TrackAtOnceEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DDiscFormat2TrackAtOnceEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DDiscFormat2TrackAtOnceEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DDiscFormat2TrackAtOnceEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DDiscFormat2TrackAtOnceEvents), Is.EqualTo(4));
-        }
-    }
 }

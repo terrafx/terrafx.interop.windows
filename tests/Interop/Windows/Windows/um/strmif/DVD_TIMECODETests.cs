@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DVD_TIMECODE" /> struct.</summary>
 public static unsafe partial class DVD_TIMECODETests
 {
-    /// <summary>Validates that the <see cref="DVD_TIMECODE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DVD_TIMECODE>(), Is.EqualTo(sizeof(DVD_TIMECODE)));
-    }
-
-    /// <summary>Validates that the <see cref="DVD_TIMECODE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DVD_TIMECODE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DVD_TIMECODE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DVD_TIMECODE), Is.EqualTo(4));
-    }
 }

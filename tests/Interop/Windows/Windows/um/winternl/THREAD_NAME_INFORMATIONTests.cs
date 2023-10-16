@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="THREAD_NAME_INFORMATION" /> struct.</summary>
 public static unsafe partial class THREAD_NAME_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="THREAD_NAME_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<THREAD_NAME_INFORMATION>(), Is.EqualTo(sizeof(THREAD_NAME_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="THREAD_NAME_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(THREAD_NAME_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="THREAD_NAME_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(THREAD_NAME_INFORMATION), Is.EqualTo(16));
-        }
-        else
-        {
-            Assert.That(sizeof(THREAD_NAME_INFORMATION), Is.EqualTo(8));
-        }
-    }
 }

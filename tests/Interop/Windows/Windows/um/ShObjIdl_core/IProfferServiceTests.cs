@@ -19,32 +19,4 @@ public static unsafe partial class IProfferServiceTests
     {
         Assert.That(typeof(IProfferService).GUID, Is.EqualTo(IID_IProfferService));
     }
-
-    /// <summary>Validates that the <see cref="IProfferService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProfferService>(), Is.EqualTo(sizeof(IProfferService)));
-    }
-
-    /// <summary>Validates that the <see cref="IProfferService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProfferService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProfferService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProfferService), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProfferService), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ICastingSourceInfoTests
     {
         Assert.That(typeof(ICastingSourceInfo).GUID, Is.EqualTo(IID_ICastingSourceInfo));
     }
-
-    /// <summary>Validates that the <see cref="ICastingSourceInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICastingSourceInfo>(), Is.EqualTo(sizeof(ICastingSourceInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="ICastingSourceInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICastingSourceInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICastingSourceInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICastingSourceInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICastingSourceInfo), Is.EqualTo(4));
-        }
-    }
 }

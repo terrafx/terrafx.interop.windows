@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="RGNDATAHEADER" /> struct.</summary>
 public static unsafe partial class RGNDATAHEADERTests
 {
-    /// <summary>Validates that the <see cref="RGNDATAHEADER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RGNDATAHEADER>(), Is.EqualTo(sizeof(RGNDATAHEADER)));
-    }
-
-    /// <summary>Validates that the <see cref="RGNDATAHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RGNDATAHEADER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RGNDATAHEADER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RGNDATAHEADER), Is.EqualTo(32));
-    }
 }

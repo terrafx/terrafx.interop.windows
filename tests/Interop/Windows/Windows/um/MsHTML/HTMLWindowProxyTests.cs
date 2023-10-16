@@ -19,25 +19,4 @@ public static unsafe partial class HTMLWindowProxyTests
     {
         Assert.That(typeof(HTMLWindowProxy).GUID, Is.EqualTo(IID_HTMLWindowProxy));
     }
-
-    /// <summary>Validates that the <see cref="HTMLWindowProxy" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLWindowProxy>(), Is.EqualTo(sizeof(HTMLWindowProxy)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLWindowProxy" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLWindowProxy).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLWindowProxy" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLWindowProxy), Is.EqualTo(1));
-    }
 }

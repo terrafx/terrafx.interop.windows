@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> struct.</summary>
 public static unsafe partial class FILE_IO_PRIORITY_HINT_INFOTests
 {
-    /// <summary>Validates that the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILE_IO_PRIORITY_HINT_INFO>(), Is.EqualTo(sizeof(FILE_IO_PRIORITY_HINT_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILE_IO_PRIORITY_HINT_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILE_IO_PRIORITY_HINT_INFO), Is.EqualTo(4));
-    }
 }

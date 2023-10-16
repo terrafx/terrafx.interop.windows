@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLFontElementTests
     {
         Assert.That(typeof(IHTMLFontElement).GUID, Is.EqualTo(IID_IHTMLFontElement));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLFontElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLFontElement>(), Is.EqualTo(sizeof(IHTMLFontElement)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLFontElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLFontElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLFontElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLFontElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLFontElement), Is.EqualTo(4));
-        }
-    }
 }

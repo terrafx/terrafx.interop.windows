@@ -19,32 +19,4 @@ public static unsafe partial class ISynchronizeEventTests
     {
         Assert.That(typeof(ISynchronizeEvent).GUID, Is.EqualTo(IID_ISynchronizeEvent));
     }
-
-    /// <summary>Validates that the <see cref="ISynchronizeEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISynchronizeEvent>(), Is.EqualTo(sizeof(ISynchronizeEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="ISynchronizeEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISynchronizeEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISynchronizeEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISynchronizeEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISynchronizeEvent), Is.EqualTo(4));
-        }
-    }
 }

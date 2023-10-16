@@ -19,25 +19,4 @@ public static unsafe partial class OpenControlPanelTests
     {
         Assert.That(typeof(OpenControlPanel).GUID, Is.EqualTo(IID_OpenControlPanel));
     }
-
-    /// <summary>Validates that the <see cref="OpenControlPanel" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OpenControlPanel>(), Is.EqualTo(sizeof(OpenControlPanel)));
-    }
-
-    /// <summary>Validates that the <see cref="OpenControlPanel" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OpenControlPanel).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OpenControlPanel" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OpenControlPanel), Is.EqualTo(1));
-    }
 }

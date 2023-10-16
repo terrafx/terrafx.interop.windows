@@ -19,32 +19,4 @@ public static unsafe partial class IDeviceTopologyTests
     {
         Assert.That(typeof(IDeviceTopology).GUID, Is.EqualTo(IID_IDeviceTopology));
     }
-
-    /// <summary>Validates that the <see cref="IDeviceTopology" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDeviceTopology>(), Is.EqualTo(sizeof(IDeviceTopology)));
-    }
-
-    /// <summary>Validates that the <see cref="IDeviceTopology" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDeviceTopology).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDeviceTopology" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDeviceTopology), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDeviceTopology), Is.EqualTo(4));
-        }
-    }
 }

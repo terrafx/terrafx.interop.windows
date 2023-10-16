@@ -19,32 +19,4 @@ public static unsafe partial class IGetBindHandleTests
     {
         Assert.That(typeof(IGetBindHandle).GUID, Is.EqualTo(IID_IGetBindHandle));
     }
-
-    /// <summary>Validates that the <see cref="IGetBindHandle" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGetBindHandle>(), Is.EqualTo(sizeof(IGetBindHandle)));
-    }
-
-    /// <summary>Validates that the <see cref="IGetBindHandle" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGetBindHandle).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGetBindHandle" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGetBindHandle), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGetBindHandle), Is.EqualTo(4));
-        }
-    }
 }

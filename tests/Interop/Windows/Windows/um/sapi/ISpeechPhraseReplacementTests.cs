@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechPhraseReplacementTests
     {
         Assert.That(typeof(ISpeechPhraseReplacement).GUID, Is.EqualTo(IID_ISpeechPhraseReplacement));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechPhraseReplacement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechPhraseReplacement>(), Is.EqualTo(sizeof(ISpeechPhraseReplacement)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechPhraseReplacement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechPhraseReplacement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechPhraseReplacement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechPhraseReplacement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechPhraseReplacement), Is.EqualTo(4));
-        }
-    }
 }

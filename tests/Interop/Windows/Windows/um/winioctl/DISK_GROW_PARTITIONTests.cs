@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DISK_GROW_PARTITION" /> struct.</summary>
 public static unsafe partial class DISK_GROW_PARTITIONTests
 {
-    /// <summary>Validates that the <see cref="DISK_GROW_PARTITION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISK_GROW_PARTITION>(), Is.EqualTo(sizeof(DISK_GROW_PARTITION)));
-    }
-
-    /// <summary>Validates that the <see cref="DISK_GROW_PARTITION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISK_GROW_PARTITION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISK_GROW_PARTITION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISK_GROW_PARTITION), Is.EqualTo(16));
-    }
 }

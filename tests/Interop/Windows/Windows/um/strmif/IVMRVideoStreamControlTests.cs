@@ -19,32 +19,4 @@ public static unsafe partial class IVMRVideoStreamControlTests
     {
         Assert.That(typeof(IVMRVideoStreamControl).GUID, Is.EqualTo(IID_IVMRVideoStreamControl));
     }
-
-    /// <summary>Validates that the <see cref="IVMRVideoStreamControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVMRVideoStreamControl>(), Is.EqualTo(sizeof(IVMRVideoStreamControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IVMRVideoStreamControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVMRVideoStreamControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVMRVideoStreamControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVMRVideoStreamControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVMRVideoStreamControl), Is.EqualTo(4));
-        }
-    }
 }

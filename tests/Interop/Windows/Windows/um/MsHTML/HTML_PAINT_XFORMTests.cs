@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HTML_PAINT_XFORM" /> struct.</summary>
 public static unsafe partial class HTML_PAINT_XFORMTests
 {
-    /// <summary>Validates that the <see cref="HTML_PAINT_XFORM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTML_PAINT_XFORM>(), Is.EqualTo(sizeof(HTML_PAINT_XFORM)));
-    }
-
-    /// <summary>Validates that the <see cref="HTML_PAINT_XFORM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTML_PAINT_XFORM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTML_PAINT_XFORM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTML_PAINT_XFORM), Is.EqualTo(24));
-    }
 }

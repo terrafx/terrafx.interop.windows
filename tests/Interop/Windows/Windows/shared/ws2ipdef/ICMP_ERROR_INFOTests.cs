@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public static unsafe partial class ICMP_ERROR_INFOTests
 {
-    /// <summary>Validates that the <see cref="ICMP_ERROR_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICMP_ERROR_INFO>(), Is.EqualTo(sizeof(ICMP_ERROR_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="ICMP_ERROR_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICMP_ERROR_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICMP_ERROR_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ICMP_ERROR_INFO), Is.EqualTo(36));
-    }
 }

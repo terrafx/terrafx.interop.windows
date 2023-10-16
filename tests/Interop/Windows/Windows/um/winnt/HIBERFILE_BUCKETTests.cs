@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HIBERFILE_BUCKET" /> struct.</summary>
 public static unsafe partial class HIBERFILE_BUCKETTests
 {
-    /// <summary>Validates that the <see cref="HIBERFILE_BUCKET" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HIBERFILE_BUCKET>(), Is.EqualTo(sizeof(HIBERFILE_BUCKET)));
-    }
-
-    /// <summary>Validates that the <see cref="HIBERFILE_BUCKET" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HIBERFILE_BUCKET).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HIBERFILE_BUCKET" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HIBERFILE_BUCKET), Is.EqualTo(24));
-    }
 }

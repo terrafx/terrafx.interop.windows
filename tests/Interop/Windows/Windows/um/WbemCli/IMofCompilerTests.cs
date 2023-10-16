@@ -19,32 +19,4 @@ public static unsafe partial class IMofCompilerTests
     {
         Assert.That(typeof(IMofCompiler).GUID, Is.EqualTo(IID_IMofCompiler));
     }
-
-    /// <summary>Validates that the <see cref="IMofCompiler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMofCompiler>(), Is.EqualTo(sizeof(IMofCompiler)));
-    }
-
-    /// <summary>Validates that the <see cref="IMofCompiler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMofCompiler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMofCompiler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMofCompiler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMofCompiler), Is.EqualTo(4));
-        }
-    }
 }

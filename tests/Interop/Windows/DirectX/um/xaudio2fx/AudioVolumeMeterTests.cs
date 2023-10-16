@@ -19,25 +19,4 @@ public static unsafe partial class AudioVolumeMeterTests
     {
         Assert.That(typeof(AudioVolumeMeter).GUID, Is.EqualTo(CLSID_AudioVolumeMeter));
     }
-
-    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AudioVolumeMeter>(), Is.EqualTo(sizeof(AudioVolumeMeter)));
-    }
-
-    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AudioVolumeMeter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AudioVolumeMeter), Is.EqualTo(1));
-    }
 }

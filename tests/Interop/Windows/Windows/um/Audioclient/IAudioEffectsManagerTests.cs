@@ -21,32 +21,4 @@ public static unsafe partial class IAudioEffectsManagerTests
     {
         Assert.That(typeof(IAudioEffectsManager).GUID, Is.EqualTo(IID_IAudioEffectsManager));
     }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioEffectsManager>(), Is.EqualTo(sizeof(IAudioEffectsManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioEffectsManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioEffectsManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioEffectsManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioEffectsManager), Is.EqualTo(4));
-        }
-    }
 }

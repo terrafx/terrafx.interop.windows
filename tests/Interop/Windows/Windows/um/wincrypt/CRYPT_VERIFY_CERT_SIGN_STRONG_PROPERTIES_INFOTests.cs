@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFOTests
 {
-    /// <summary>Validates that the <see cref="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO>(), Is.EqualTo(sizeof(CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(CRYPT_VERIFY_CERT_SIGN_STRONG_PROPERTIES_INFO), Is.EqualTo(16));
-        }
-    }
 }

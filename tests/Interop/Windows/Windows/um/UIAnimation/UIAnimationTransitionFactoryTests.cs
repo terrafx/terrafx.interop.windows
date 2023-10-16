@@ -19,25 +19,4 @@ public static unsafe partial class UIAnimationTransitionFactoryTests
     {
         Assert.That(typeof(UIAnimationTransitionFactory).GUID, Is.EqualTo(CLSID_UIAnimationTransitionFactory));
     }
-
-    /// <summary>Validates that the <see cref="UIAnimationTransitionFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<UIAnimationTransitionFactory>(), Is.EqualTo(sizeof(UIAnimationTransitionFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationTransitionFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(UIAnimationTransitionFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationTransitionFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(UIAnimationTransitionFactory), Is.EqualTo(1));
-    }
 }

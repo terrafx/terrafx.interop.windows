@@ -21,32 +21,4 @@ public static unsafe partial class ID3D12Device5Tests
     {
         Assert.That(typeof(ID3D12Device5).GUID, Is.EqualTo(IID_ID3D12Device5));
     }
-
-    /// <summary>Validates that the <see cref="ID3D12Device5" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D12Device5>(), Is.EqualTo(sizeof(ID3D12Device5)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12Device5" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D12Device5).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D12Device5" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D12Device5), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D12Device5), Is.EqualTo(4));
-        }
-    }
 }

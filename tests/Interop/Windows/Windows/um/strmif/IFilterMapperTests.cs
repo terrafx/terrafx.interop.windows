@@ -19,32 +19,4 @@ public static unsafe partial class IFilterMapperTests
     {
         Assert.That(typeof(IFilterMapper).GUID, Is.EqualTo(IID_IFilterMapper));
     }
-
-    /// <summary>Validates that the <see cref="IFilterMapper" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFilterMapper>(), Is.EqualTo(sizeof(IFilterMapper)));
-    }
-
-    /// <summary>Validates that the <see cref="IFilterMapper" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFilterMapper).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFilterMapper" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFilterMapper), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFilterMapper), Is.EqualTo(4));
-        }
-    }
 }

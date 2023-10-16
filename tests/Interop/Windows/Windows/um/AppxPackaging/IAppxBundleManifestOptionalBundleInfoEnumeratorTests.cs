@@ -21,32 +21,4 @@ public static unsafe partial class IAppxBundleManifestOptionalBundleInfoEnumerat
     {
         Assert.That(typeof(IAppxBundleManifestOptionalBundleInfoEnumerator).GUID, Is.EqualTo(IID_IAppxBundleManifestOptionalBundleInfoEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestOptionalBundleInfoEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBundleManifestOptionalBundleInfoEnumerator>(), Is.EqualTo(sizeof(IAppxBundleManifestOptionalBundleInfoEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestOptionalBundleInfoEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBundleManifestOptionalBundleInfoEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestOptionalBundleInfoEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBundleManifestOptionalBundleInfoEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBundleManifestOptionalBundleInfoEnumerator), Is.EqualTo(4));
-        }
-    }
 }

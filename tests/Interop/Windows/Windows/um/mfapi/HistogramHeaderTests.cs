@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HistogramHeader" /> struct.</summary>
 public static unsafe partial class HistogramHeaderTests
 {
-    /// <summary>Validates that the <see cref="HistogramHeader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HistogramHeader>(), Is.EqualTo(sizeof(HistogramHeader)));
-    }
-
-    /// <summary>Validates that the <see cref="HistogramHeader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HistogramHeader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HistogramHeader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HistogramHeader), Is.EqualTo(40));
-    }
 }

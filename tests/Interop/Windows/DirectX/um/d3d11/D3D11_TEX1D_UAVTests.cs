@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="D3D11_TEX1D_UAV" /> struct.</summary>
 public static unsafe partial class D3D11_TEX1D_UAVTests
 {
-    /// <summary>Validates that the <see cref="D3D11_TEX1D_UAV" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<D3D11_TEX1D_UAV>(), Is.EqualTo(sizeof(D3D11_TEX1D_UAV)));
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_TEX1D_UAV" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(D3D11_TEX1D_UAV).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="D3D11_TEX1D_UAV" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(D3D11_TEX1D_UAV), Is.EqualTo(4));
-    }
 }

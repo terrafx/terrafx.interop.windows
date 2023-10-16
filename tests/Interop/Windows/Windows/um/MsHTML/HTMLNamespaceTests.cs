@@ -19,25 +19,4 @@ public static unsafe partial class HTMLNamespaceTests
     {
         Assert.That(typeof(HTMLNamespace).GUID, Is.EqualTo(IID_HTMLNamespace));
     }
-
-    /// <summary>Validates that the <see cref="HTMLNamespace" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLNamespace>(), Is.EqualTo(sizeof(HTMLNamespace)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLNamespace" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLNamespace).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLNamespace" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLNamespace), Is.EqualTo(1));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IInitializeNetworkFolderTests
     {
         Assert.That(typeof(IInitializeNetworkFolder).GUID, Is.EqualTo(IID_IInitializeNetworkFolder));
     }
-
-    /// <summary>Validates that the <see cref="IInitializeNetworkFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInitializeNetworkFolder>(), Is.EqualTo(sizeof(IInitializeNetworkFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeNetworkFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInitializeNetworkFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInitializeNetworkFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInitializeNetworkFolder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInitializeNetworkFolder), Is.EqualTo(4));
-        }
-    }
 }

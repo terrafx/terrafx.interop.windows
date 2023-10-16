@@ -19,25 +19,4 @@ public static unsafe partial class SyncMgrScheduleWizardTests
     {
         Assert.That(typeof(SyncMgrScheduleWizard).GUID, Is.EqualTo(IID_SyncMgrScheduleWizard));
     }
-
-    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SyncMgrScheduleWizard>(), Is.EqualTo(sizeof(SyncMgrScheduleWizard)));
-    }
-
-    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SyncMgrScheduleWizard).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SyncMgrScheduleWizard" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SyncMgrScheduleWizard), Is.EqualTo(1));
-    }
 }

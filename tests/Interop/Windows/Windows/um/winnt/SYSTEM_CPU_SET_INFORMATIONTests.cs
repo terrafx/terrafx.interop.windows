@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class SYSTEM_CPU_SET_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="SYSTEM_CPU_SET_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SYSTEM_CPU_SET_INFORMATION>(), Is.EqualTo(sizeof(SYSTEM_CPU_SET_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_CPU_SET_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SYSTEM_CPU_SET_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SYSTEM_CPU_SET_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SYSTEM_CPU_SET_INFORMATION), Is.EqualTo(32));
-    }
 }

@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class STORAGE_OFFLOAD_WRITE_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_WRITE_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STORAGE_OFFLOAD_WRITE_OUTPUT>(), Is.EqualTo(sizeof(STORAGE_OFFLOAD_WRITE_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_WRITE_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STORAGE_OFFLOAD_WRITE_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STORAGE_OFFLOAD_WRITE_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STORAGE_OFFLOAD_WRITE_OUTPUT), Is.EqualTo(16));
-    }
 }

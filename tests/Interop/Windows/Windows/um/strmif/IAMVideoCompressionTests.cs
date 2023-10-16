@@ -19,32 +19,4 @@ public static unsafe partial class IAMVideoCompressionTests
     {
         Assert.That(typeof(IAMVideoCompression).GUID, Is.EqualTo(IID_IAMVideoCompression));
     }
-
-    /// <summary>Validates that the <see cref="IAMVideoCompression" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMVideoCompression>(), Is.EqualTo(sizeof(IAMVideoCompression)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMVideoCompression" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMVideoCompression).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMVideoCompression" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMVideoCompression), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMVideoCompression), Is.EqualTo(4));
-        }
-    }
 }

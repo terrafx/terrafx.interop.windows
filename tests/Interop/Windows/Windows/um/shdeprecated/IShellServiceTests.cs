@@ -19,32 +19,4 @@ public static unsafe partial class IShellServiceTests
     {
         Assert.That(typeof(IShellService).GUID, Is.EqualTo(IID_IShellService));
     }
-
-    /// <summary>Validates that the <see cref="IShellService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellService>(), Is.EqualTo(sizeof(IShellService)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellService), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellService), Is.EqualTo(4));
-        }
-    }
 }

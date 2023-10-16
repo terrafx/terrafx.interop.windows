@@ -19,32 +19,4 @@ public static unsafe partial class IShellLinkDataListTests
     {
         Assert.That(typeof(IShellLinkDataList).GUID, Is.EqualTo(IID_IShellLinkDataList));
     }
-
-    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellLinkDataList>(), Is.EqualTo(sizeof(IShellLinkDataList)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellLinkDataList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellLinkDataList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellLinkDataList), Is.EqualTo(4));
-        }
-    }
 }

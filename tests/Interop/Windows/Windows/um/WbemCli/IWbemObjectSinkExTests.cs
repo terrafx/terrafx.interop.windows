@@ -19,32 +19,4 @@ public static unsafe partial class IWbemObjectSinkExTests
     {
         Assert.That(typeof(IWbemObjectSinkEx).GUID, Is.EqualTo(IID_IWbemObjectSinkEx));
     }
-
-    /// <summary>Validates that the <see cref="IWbemObjectSinkEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemObjectSinkEx>(), Is.EqualTo(sizeof(IWbemObjectSinkEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemObjectSinkEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemObjectSinkEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemObjectSinkEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemObjectSinkEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemObjectSinkEx), Is.EqualTo(4));
-        }
-    }
 }

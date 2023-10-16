@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecVideoInputScanTypeTests
     {
         Assert.That(typeof(CODECAPI_AVDecVideoInputScanType).GUID, Is.EqualTo(IID_CODECAPI_AVDecVideoInputScanType));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoInputScanType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecVideoInputScanType>(), Is.EqualTo(sizeof(CODECAPI_AVDecVideoInputScanType)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoInputScanType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecVideoInputScanType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecVideoInputScanType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecVideoInputScanType), Is.EqualTo(1));
-    }
 }

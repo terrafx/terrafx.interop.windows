@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteTextAnalysisSourceTests
     {
         Assert.That(typeof(IDWriteTextAnalysisSource).GUID, Is.EqualTo(IID_IDWriteTextAnalysisSource));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteTextAnalysisSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteTextAnalysisSource>(), Is.EqualTo(sizeof(IDWriteTextAnalysisSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTextAnalysisSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteTextAnalysisSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTextAnalysisSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteTextAnalysisSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteTextAnalysisSource), Is.EqualTo(4));
-        }
-    }
 }

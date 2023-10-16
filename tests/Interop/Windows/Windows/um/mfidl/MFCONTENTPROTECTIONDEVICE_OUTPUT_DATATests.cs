@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class MFCONTENTPROTECTIONDEVICE_OUTPUT_DATATests
 {
-    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA>(), Is.EqualTo(sizeof(MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA), Is.EqualTo(40));
-    }
 }

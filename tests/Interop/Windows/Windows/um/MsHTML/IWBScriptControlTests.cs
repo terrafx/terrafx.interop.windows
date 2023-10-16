@@ -19,32 +19,4 @@ public static unsafe partial class IWBScriptControlTests
     {
         Assert.That(typeof(IWBScriptControl).GUID, Is.EqualTo(IID_IWBScriptControl));
     }
-
-    /// <summary>Validates that the <see cref="IWBScriptControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWBScriptControl>(), Is.EqualTo(sizeof(IWBScriptControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IWBScriptControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWBScriptControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWBScriptControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWBScriptControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWBScriptControl), Is.EqualTo(4));
-        }
-    }
 }

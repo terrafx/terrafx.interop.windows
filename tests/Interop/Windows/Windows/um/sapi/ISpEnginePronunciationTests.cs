@@ -19,32 +19,4 @@ public static unsafe partial class ISpEnginePronunciationTests
     {
         Assert.That(typeof(ISpEnginePronunciation).GUID, Is.EqualTo(IID_ISpEnginePronunciation));
     }
-
-    /// <summary>Validates that the <see cref="ISpEnginePronunciation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpEnginePronunciation>(), Is.EqualTo(sizeof(ISpEnginePronunciation)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpEnginePronunciation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpEnginePronunciation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpEnginePronunciation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpEnginePronunciation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpEnginePronunciation), Is.EqualTo(4));
-        }
-    }
 }

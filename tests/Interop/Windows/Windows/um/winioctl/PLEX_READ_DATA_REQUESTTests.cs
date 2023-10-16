@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PLEX_READ_DATA_REQUEST" /> struct.</summary>
 public static unsafe partial class PLEX_READ_DATA_REQUESTTests
 {
-    /// <summary>Validates that the <see cref="PLEX_READ_DATA_REQUEST" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PLEX_READ_DATA_REQUEST>(), Is.EqualTo(sizeof(PLEX_READ_DATA_REQUEST)));
-    }
-
-    /// <summary>Validates that the <see cref="PLEX_READ_DATA_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PLEX_READ_DATA_REQUEST).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PLEX_READ_DATA_REQUEST" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PLEX_READ_DATA_REQUEST), Is.EqualTo(16));
-    }
 }

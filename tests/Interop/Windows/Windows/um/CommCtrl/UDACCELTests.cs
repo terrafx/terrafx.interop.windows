@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="UDACCEL" /> struct.</summary>
 public static unsafe partial class UDACCELTests
 {
-    /// <summary>Validates that the <see cref="UDACCEL" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<UDACCEL>(), Is.EqualTo(sizeof(UDACCEL)));
-    }
-
-    /// <summary>Validates that the <see cref="UDACCEL" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(UDACCEL).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="UDACCEL" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(UDACCEL), Is.EqualTo(8));
-    }
 }

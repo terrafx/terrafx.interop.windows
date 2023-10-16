@@ -11,24 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DXGI_MODE_DESC" /> struct.</summary>
 public static unsafe partial class DXGI_MODE_DESCTests
 {
-    /// <summary>Validates that the <see cref="DXGI_MODE_DESC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DXGI_MODE_DESC>(), Is.EqualTo(sizeof(DXGI_MODE_DESC)));
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_MODE_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DXGI_MODE_DESC).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DXGI_MODE_DESC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DXGI_MODE_DESC), Is.EqualTo(28));
-    }
 }

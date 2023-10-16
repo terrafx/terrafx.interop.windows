@@ -19,32 +19,4 @@ public static unsafe partial class ITranscodeImageTests
     {
         Assert.That(typeof(ITranscodeImage).GUID, Is.EqualTo(IID_ITranscodeImage));
     }
-
-    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITranscodeImage>(), Is.EqualTo(sizeof(ITranscodeImage)));
-    }
-
-    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITranscodeImage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITranscodeImage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITranscodeImage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITranscodeImage), Is.EqualTo(4));
-        }
-    }
 }

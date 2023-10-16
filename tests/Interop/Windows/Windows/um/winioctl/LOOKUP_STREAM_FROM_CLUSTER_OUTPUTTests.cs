@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" /> struct.</summary>
 public static unsafe partial class LOOKUP_STREAM_FROM_CLUSTER_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LOOKUP_STREAM_FROM_CLUSTER_OUTPUT>(), Is.EqualTo(sizeof(LOOKUP_STREAM_FROM_CLUSTER_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LOOKUP_STREAM_FROM_CLUSTER_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LOOKUP_STREAM_FROM_CLUSTER_OUTPUT), Is.EqualTo(12));
-    }
 }

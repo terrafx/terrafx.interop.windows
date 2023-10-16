@@ -21,32 +21,4 @@ public static unsafe partial class IWICPlanarBitmapFrameEncodeTests
     {
         Assert.That(typeof(IWICPlanarBitmapFrameEncode).GUID, Is.EqualTo(IID_IWICPlanarBitmapFrameEncode));
     }
-
-    /// <summary>Validates that the <see cref="IWICPlanarBitmapFrameEncode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICPlanarBitmapFrameEncode>(), Is.EqualTo(sizeof(IWICPlanarBitmapFrameEncode)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICPlanarBitmapFrameEncode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICPlanarBitmapFrameEncode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICPlanarBitmapFrameEncode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICPlanarBitmapFrameEncode), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICPlanarBitmapFrameEncode), Is.EqualTo(4));
-        }
-    }
 }

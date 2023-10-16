@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LOGFONTA" /> struct.</summary>
 public static unsafe partial class LOGFONTATests
 {
-    /// <summary>Validates that the <see cref="LOGFONTA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LOGFONTA>(), Is.EqualTo(sizeof(LOGFONTA)));
-    }
-
-    /// <summary>Validates that the <see cref="LOGFONTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LOGFONTA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LOGFONTA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LOGFONTA), Is.EqualTo(60));
-    }
 }

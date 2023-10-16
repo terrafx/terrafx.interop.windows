@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TRUESPEECHWAVEFORMAT" /> struct.</summary>
 public static unsafe partial class TRUESPEECHWAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="TRUESPEECHWAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TRUESPEECHWAVEFORMAT>(), Is.EqualTo(sizeof(TRUESPEECHWAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="TRUESPEECHWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TRUESPEECHWAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TRUESPEECHWAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TRUESPEECHWAVEFORMAT), Is.EqualTo(50));
-    }
 }

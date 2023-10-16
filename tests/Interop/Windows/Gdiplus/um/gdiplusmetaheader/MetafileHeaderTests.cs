@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="MetafileHeader" /> struct.</summary>
 public static unsafe partial class MetafileHeaderTests
 {
-    /// <summary>Validates that the <see cref="MetafileHeader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MetafileHeader>(), Is.EqualTo(sizeof(MetafileHeader)));
-    }
-
-    /// <summary>Validates that the <see cref="MetafileHeader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MetafileHeader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MetafileHeader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MetafileHeader), Is.EqualTo(140));
-    }
 }

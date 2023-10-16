@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TA_TIMINGFUNCTION" /> struct.</summary>
 public static unsafe partial class TA_TIMINGFUNCTIONTests
 {
-    /// <summary>Validates that the <see cref="TA_TIMINGFUNCTION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TA_TIMINGFUNCTION>(), Is.EqualTo(sizeof(TA_TIMINGFUNCTION)));
-    }
-
-    /// <summary>Validates that the <see cref="TA_TIMINGFUNCTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TA_TIMINGFUNCTION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TA_TIMINGFUNCTION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TA_TIMINGFUNCTION), Is.EqualTo(4));
-    }
 }

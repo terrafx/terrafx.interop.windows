@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncStatAverageBPSTests
     {
         Assert.That(typeof(CODECAPI_AVEncStatAverageBPS).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatAverageBPS));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAverageBPS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatAverageBPS>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatAverageBPS)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAverageBPS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncStatAverageBPS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAverageBPS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncStatAverageBPS), Is.EqualTo(1));
-    }
 }

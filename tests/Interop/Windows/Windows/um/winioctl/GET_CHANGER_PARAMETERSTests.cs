@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="GET_CHANGER_PARAMETERS" /> struct.</summary>
 public static unsafe partial class GET_CHANGER_PARAMETERSTests
 {
-    /// <summary>Validates that the <see cref="GET_CHANGER_PARAMETERS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GET_CHANGER_PARAMETERS>(), Is.EqualTo(sizeof(GET_CHANGER_PARAMETERS)));
-    }
-
-    /// <summary>Validates that the <see cref="GET_CHANGER_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GET_CHANGER_PARAMETERS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GET_CHANGER_PARAMETERS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GET_CHANGER_PARAMETERS), Is.EqualTo(60));
-    }
 }

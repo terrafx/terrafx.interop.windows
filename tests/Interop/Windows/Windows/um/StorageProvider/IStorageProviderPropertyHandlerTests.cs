@@ -19,32 +19,4 @@ public static unsafe partial class IStorageProviderPropertyHandlerTests
     {
         Assert.That(typeof(IStorageProviderPropertyHandler).GUID, Is.EqualTo(IID_IStorageProviderPropertyHandler));
     }
-
-    /// <summary>Validates that the <see cref="IStorageProviderPropertyHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStorageProviderPropertyHandler>(), Is.EqualTo(sizeof(IStorageProviderPropertyHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IStorageProviderPropertyHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStorageProviderPropertyHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStorageProviderPropertyHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStorageProviderPropertyHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStorageProviderPropertyHandler), Is.EqualTo(4));
-        }
-    }
 }

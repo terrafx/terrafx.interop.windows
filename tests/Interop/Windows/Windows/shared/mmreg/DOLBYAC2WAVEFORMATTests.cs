@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DOLBYAC2WAVEFORMAT" /> struct.</summary>
 public static unsafe partial class DOLBYAC2WAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="DOLBYAC2WAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOLBYAC2WAVEFORMAT>(), Is.EqualTo(sizeof(DOLBYAC2WAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="DOLBYAC2WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOLBYAC2WAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOLBYAC2WAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOLBYAC2WAVEFORMAT), Is.EqualTo(20));
-    }
 }

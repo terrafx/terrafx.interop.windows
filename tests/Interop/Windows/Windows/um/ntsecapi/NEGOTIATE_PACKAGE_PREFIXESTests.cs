@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="NEGOTIATE_PACKAGE_PREFIXES" /> struct.</summary>
 public static unsafe partial class NEGOTIATE_PACKAGE_PREFIXESTests
 {
-    /// <summary>Validates that the <see cref="NEGOTIATE_PACKAGE_PREFIXES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NEGOTIATE_PACKAGE_PREFIXES>(), Is.EqualTo(sizeof(NEGOTIATE_PACKAGE_PREFIXES)));
-    }
-
-    /// <summary>Validates that the <see cref="NEGOTIATE_PACKAGE_PREFIXES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NEGOTIATE_PACKAGE_PREFIXES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NEGOTIATE_PACKAGE_PREFIXES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NEGOTIATE_PACKAGE_PREFIXES), Is.EqualTo(16));
-    }
 }

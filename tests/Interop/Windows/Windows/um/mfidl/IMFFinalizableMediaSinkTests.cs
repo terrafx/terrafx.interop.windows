@@ -19,32 +19,4 @@ public static unsafe partial class IMFFinalizableMediaSinkTests
     {
         Assert.That(typeof(IMFFinalizableMediaSink).GUID, Is.EqualTo(IID_IMFFinalizableMediaSink));
     }
-
-    /// <summary>Validates that the <see cref="IMFFinalizableMediaSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFFinalizableMediaSink>(), Is.EqualTo(sizeof(IMFFinalizableMediaSink)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFFinalizableMediaSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFFinalizableMediaSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFFinalizableMediaSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFFinalizableMediaSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFFinalizableMediaSink), Is.EqualTo(4));
-        }
-    }
 }

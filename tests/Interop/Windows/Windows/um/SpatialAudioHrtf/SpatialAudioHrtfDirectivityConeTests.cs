@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDirectivityCone" /> struct.</summary>
 public static unsafe partial class SpatialAudioHrtfDirectivityConeTests
 {
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCone" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpatialAudioHrtfDirectivityCone>(), Is.EqualTo(sizeof(SpatialAudioHrtfDirectivityCone)));
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCone" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpatialAudioHrtfDirectivityCone).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCone" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpatialAudioHrtfDirectivityCone), Is.EqualTo(16));
-    }
 }

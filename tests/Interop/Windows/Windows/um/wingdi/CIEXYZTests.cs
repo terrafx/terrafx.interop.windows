@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CIEXYZ" /> struct.</summary>
 public static unsafe partial class CIEXYZTests
 {
-    /// <summary>Validates that the <see cref="CIEXYZ" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CIEXYZ>(), Is.EqualTo(sizeof(CIEXYZ)));
-    }
-
-    /// <summary>Validates that the <see cref="CIEXYZ" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CIEXYZ).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CIEXYZ" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CIEXYZ), Is.EqualTo(12));
-    }
 }

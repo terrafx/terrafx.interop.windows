@@ -19,25 +19,4 @@ public static unsafe partial class DirectManipulationManagerTests
     {
         Assert.That(typeof(DirectManipulationManager).GUID, Is.EqualTo(CLSID_DirectManipulationManager));
     }
-
-    /// <summary>Validates that the <see cref="DirectManipulationManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DirectManipulationManager>(), Is.EqualTo(sizeof(DirectManipulationManager)));
-    }
-
-    /// <summary>Validates that the <see cref="DirectManipulationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DirectManipulationManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DirectManipulationManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DirectManipulationManager), Is.EqualTo(1));
-    }
 }

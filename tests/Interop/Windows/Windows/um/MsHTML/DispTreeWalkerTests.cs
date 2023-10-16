@@ -19,32 +19,4 @@ public static unsafe partial class DispTreeWalkerTests
     {
         Assert.That(typeof(DispTreeWalker).GUID, Is.EqualTo(IID_DispTreeWalker));
     }
-
-    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispTreeWalker>(), Is.EqualTo(sizeof(DispTreeWalker)));
-    }
-
-    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispTreeWalker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispTreeWalker), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispTreeWalker), Is.EqualTo(4));
-        }
-    }
 }

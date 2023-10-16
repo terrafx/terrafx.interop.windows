@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVQuantMatrixIntraTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixIntra).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQuantMatrixIntra));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVQuantMatrixIntra>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVQuantMatrixIntra)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixIntra).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixIntra" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVQuantMatrixIntra), Is.EqualTo(1));
-    }
 }

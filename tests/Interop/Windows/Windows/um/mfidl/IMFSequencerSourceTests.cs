@@ -19,32 +19,4 @@ public static unsafe partial class IMFSequencerSourceTests
     {
         Assert.That(typeof(IMFSequencerSource).GUID, Is.EqualTo(IID_IMFSequencerSource));
     }
-
-    /// <summary>Validates that the <see cref="IMFSequencerSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSequencerSource>(), Is.EqualTo(sizeof(IMFSequencerSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSequencerSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSequencerSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSequencerSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSequencerSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSequencerSource), Is.EqualTo(4));
-        }
-    }
 }

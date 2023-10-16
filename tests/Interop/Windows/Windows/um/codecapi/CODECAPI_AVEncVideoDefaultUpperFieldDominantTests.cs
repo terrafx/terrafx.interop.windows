@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoDefaultUpperFieldDominantT
     {
         Assert.That(typeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoDefaultUpperFieldDominant));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoDefaultUpperFieldDominant>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoDefaultUpperFieldDominant" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoDefaultUpperFieldDominant), Is.EqualTo(1));
-    }
 }

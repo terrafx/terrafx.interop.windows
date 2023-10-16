@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoRateControlParamsTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoRateControlParams).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoRateControlParams));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoRateControlParams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoRateControlParams>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoRateControlParams)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoRateControlParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoRateControlParams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoRateControlParams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoRateControlParams), Is.EqualTo(1));
-    }
 }

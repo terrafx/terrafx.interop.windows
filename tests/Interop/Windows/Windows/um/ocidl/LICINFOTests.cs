@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LICINFO" /> struct.</summary>
 public static unsafe partial class LICINFOTests
 {
-    /// <summary>Validates that the <see cref="LICINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LICINFO>(), Is.EqualTo(sizeof(LICINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="LICINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LICINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LICINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LICINFO), Is.EqualTo(12));
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationInteractionEventHandlerTes
     {
         Assert.That(typeof(IDirectManipulationInteractionEventHandler).GUID, Is.EqualTo(IID_IDirectManipulationInteractionEventHandler));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationInteractionEventHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationInteractionEventHandler>(), Is.EqualTo(sizeof(IDirectManipulationInteractionEventHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationInteractionEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationInteractionEventHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationInteractionEventHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationInteractionEventHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationInteractionEventHandler), Is.EqualTo(4));
-        }
-    }
 }

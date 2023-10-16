@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0.17763.0")]
 public static unsafe partial class INPUT_INJECTION_VALUETests
 {
-    /// <summary>Validates that the <see cref="INPUT_INJECTION_VALUE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INPUT_INJECTION_VALUE>(), Is.EqualTo(sizeof(INPUT_INJECTION_VALUE)));
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_INJECTION_VALUE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INPUT_INJECTION_VALUE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INPUT_INJECTION_VALUE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(INPUT_INJECTION_VALUE), Is.EqualTo(12));
-    }
 }

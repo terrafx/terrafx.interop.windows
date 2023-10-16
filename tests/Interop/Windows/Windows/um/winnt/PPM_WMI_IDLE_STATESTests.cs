@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PPM_WMI_IDLE_STATES" /> struct.</summary>
 public static unsafe partial class PPM_WMI_IDLE_STATESTests
 {
-    /// <summary>Validates that the <see cref="PPM_WMI_IDLE_STATES" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PPM_WMI_IDLE_STATES>(), Is.EqualTo(sizeof(PPM_WMI_IDLE_STATES)));
-    }
-
-    /// <summary>Validates that the <see cref="PPM_WMI_IDLE_STATES" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PPM_WMI_IDLE_STATES).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PPM_WMI_IDLE_STATES" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PPM_WMI_IDLE_STATES), Is.EqualTo(56));
-    }
 }

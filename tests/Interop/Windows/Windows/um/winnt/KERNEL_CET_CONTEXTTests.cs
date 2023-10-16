@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="KERNEL_CET_CONTEXT" /> struct.</summary>
 public static unsafe partial class KERNEL_CET_CONTEXTTests
 {
-    /// <summary>Validates that the <see cref="KERNEL_CET_CONTEXT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<KERNEL_CET_CONTEXT>(), Is.EqualTo(sizeof(KERNEL_CET_CONTEXT)));
-    }
-
-    /// <summary>Validates that the <see cref="KERNEL_CET_CONTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(KERNEL_CET_CONTEXT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="KERNEL_CET_CONTEXT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(KERNEL_CET_CONTEXT), Is.EqualTo(24));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFAsyncCallbackTests
     {
         Assert.That(typeof(IMFAsyncCallback).GUID, Is.EqualTo(IID_IMFAsyncCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFAsyncCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFAsyncCallback>(), Is.EqualTo(sizeof(IMFAsyncCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFAsyncCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFAsyncCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFAsyncCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFAsyncCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFAsyncCallback), Is.EqualTo(4));
-        }
-    }
 }

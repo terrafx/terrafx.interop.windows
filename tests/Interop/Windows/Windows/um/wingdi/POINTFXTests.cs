@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="POINTFX" /> struct.</summary>
 public static unsafe partial class POINTFXTests
 {
-    /// <summary>Validates that the <see cref="POINTFX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<POINTFX>(), Is.EqualTo(sizeof(POINTFX)));
-    }
-
-    /// <summary>Validates that the <see cref="POINTFX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(POINTFX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="POINTFX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(POINTFX), Is.EqualTo(8));
-    }
 }

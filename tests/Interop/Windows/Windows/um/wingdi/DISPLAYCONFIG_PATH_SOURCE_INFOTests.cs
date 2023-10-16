@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_PATH_SOURCE_INFO" /> struct.</summary>
 public static unsafe partial class DISPLAYCONFIG_PATH_SOURCE_INFOTests
 {
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_PATH_SOURCE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISPLAYCONFIG_PATH_SOURCE_INFO>(), Is.EqualTo(sizeof(DISPLAYCONFIG_PATH_SOURCE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_PATH_SOURCE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISPLAYCONFIG_PATH_SOURCE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_PATH_SOURCE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISPLAYCONFIG_PATH_SOURCE_INFO), Is.EqualTo(20));
-    }
 }

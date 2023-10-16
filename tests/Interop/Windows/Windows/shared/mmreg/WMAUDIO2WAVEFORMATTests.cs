@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WMAUDIO2WAVEFORMAT" /> struct.</summary>
 public static unsafe partial class WMAUDIO2WAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="WMAUDIO2WAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WMAUDIO2WAVEFORMAT>(), Is.EqualTo(sizeof(WMAUDIO2WAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="WMAUDIO2WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WMAUDIO2WAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WMAUDIO2WAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WMAUDIO2WAVEFORMAT), Is.EqualTo(28));
-    }
 }

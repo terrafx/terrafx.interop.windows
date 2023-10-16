@@ -19,32 +19,4 @@ public static unsafe partial class IOleInPlaceFrameTests
     {
         Assert.That(typeof(IOleInPlaceFrame).GUID, Is.EqualTo(IID_IOleInPlaceFrame));
     }
-
-    /// <summary>Validates that the <see cref="IOleInPlaceFrame" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOleInPlaceFrame>(), Is.EqualTo(sizeof(IOleInPlaceFrame)));
-    }
-
-    /// <summary>Validates that the <see cref="IOleInPlaceFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOleInPlaceFrame).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOleInPlaceFrame" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOleInPlaceFrame), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOleInPlaceFrame), Is.EqualTo(4));
-        }
-    }
 }

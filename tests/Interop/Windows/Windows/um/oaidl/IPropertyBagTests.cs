@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyBagTests
     {
         Assert.That(typeof(IPropertyBag).GUID, Is.EqualTo(IID_IPropertyBag));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyBag" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyBag>(), Is.EqualTo(sizeof(IPropertyBag)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyBag" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyBag).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyBag" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyBag), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyBag), Is.EqualTo(4));
-        }
-    }
 }

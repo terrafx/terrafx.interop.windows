@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EMRSCALEVIEWPORTEXTEX" /> struct.</summary>
 public static unsafe partial class EMRSCALEVIEWPORTEXTEXTests
 {
-    /// <summary>Validates that the <see cref="EMRSCALEVIEWPORTEXTEX" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EMRSCALEVIEWPORTEXTEX>(), Is.EqualTo(sizeof(EMRSCALEVIEWPORTEXTEX)));
-    }
-
-    /// <summary>Validates that the <see cref="EMRSCALEVIEWPORTEXTEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EMRSCALEVIEWPORTEXTEX).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EMRSCALEVIEWPORTEXTEX" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EMRSCALEVIEWPORTEXTEX), Is.EqualTo(24));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAMCameraControlTests
     {
         Assert.That(typeof(IAMCameraControl).GUID, Is.EqualTo(IID_IAMCameraControl));
     }
-
-    /// <summary>Validates that the <see cref="IAMCameraControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMCameraControl>(), Is.EqualTo(sizeof(IAMCameraControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMCameraControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMCameraControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMCameraControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMCameraControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMCameraControl), Is.EqualTo(4));
-        }
-    }
 }

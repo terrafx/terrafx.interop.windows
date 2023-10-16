@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class WICDdsParametersTests
 {
-    /// <summary>Validates that the <see cref="WICDdsParameters" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WICDdsParameters>(), Is.EqualTo(sizeof(WICDdsParameters)));
-    }
-
-    /// <summary>Validates that the <see cref="WICDdsParameters" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WICDdsParameters).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WICDdsParameters" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WICDdsParameters), Is.EqualTo(32));
-    }
 }

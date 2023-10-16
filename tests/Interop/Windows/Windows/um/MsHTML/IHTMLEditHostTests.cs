@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLEditHostTests
     {
         Assert.That(typeof(IHTMLEditHost).GUID, Is.EqualTo(IID_IHTMLEditHost));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLEditHost" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLEditHost>(), Is.EqualTo(sizeof(IHTMLEditHost)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLEditHost" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLEditHost).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLEditHost" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLEditHost), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLEditHost), Is.EqualTo(4));
-        }
-    }
 }

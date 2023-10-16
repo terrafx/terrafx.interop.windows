@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class DISPLAYCONFIG_TARGET_BASE_TYPETests
 {
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_TARGET_BASE_TYPE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DISPLAYCONFIG_TARGET_BASE_TYPE>(), Is.EqualTo(sizeof(DISPLAYCONFIG_TARGET_BASE_TYPE)));
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_TARGET_BASE_TYPE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DISPLAYCONFIG_TARGET_BASE_TYPE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DISPLAYCONFIG_TARGET_BASE_TYPE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DISPLAYCONFIG_TARGET_BASE_TYPE), Is.EqualTo(24));
-    }
 }

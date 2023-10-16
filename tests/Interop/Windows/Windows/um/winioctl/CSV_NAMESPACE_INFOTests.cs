@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_NAMESPACE_INFO" /> struct.</summary>
 public static unsafe partial class CSV_NAMESPACE_INFOTests
 {
-    /// <summary>Validates that the <see cref="CSV_NAMESPACE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_NAMESPACE_INFO>(), Is.EqualTo(sizeof(CSV_NAMESPACE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_NAMESPACE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_NAMESPACE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_NAMESPACE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_NAMESPACE_INFO), Is.EqualTo(24));
-    }
 }

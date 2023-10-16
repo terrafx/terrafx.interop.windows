@@ -19,32 +19,4 @@ public static unsafe partial class IXMLDOMParseErrorTests
     {
         Assert.That(typeof(IXMLDOMParseError).GUID, Is.EqualTo(IID_IXMLDOMParseError));
     }
-
-    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXMLDOMParseError>(), Is.EqualTo(sizeof(IXMLDOMParseError)));
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXMLDOMParseError).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(4));
-        }
-    }
 }

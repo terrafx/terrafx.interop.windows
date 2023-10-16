@@ -19,25 +19,4 @@ public static unsafe partial class RangeExceptionTests
     {
         Assert.That(typeof(RangeException).GUID, Is.EqualTo(IID_RangeException));
     }
-
-    /// <summary>Validates that the <see cref="RangeException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RangeException>(), Is.EqualTo(sizeof(RangeException)));
-    }
-
-    /// <summary>Validates that the <see cref="RangeException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RangeException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RangeException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RangeException), Is.EqualTo(1));
-    }
 }

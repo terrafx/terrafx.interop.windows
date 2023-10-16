@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="BlurParams" /> struct.</summary>
 public static unsafe partial class BlurParamsTests
 {
-    /// <summary>Validates that the <see cref="BlurParams" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<BlurParams>(), Is.EqualTo(sizeof(BlurParams)));
-    }
-
-    /// <summary>Validates that the <see cref="BlurParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(BlurParams).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="BlurParams" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(BlurParams), Is.EqualTo(8));
-    }
 }

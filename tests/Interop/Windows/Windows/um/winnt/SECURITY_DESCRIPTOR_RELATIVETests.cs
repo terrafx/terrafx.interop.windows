@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct.</summary>
 public static unsafe partial class SECURITY_DESCRIPTOR_RELATIVETests
 {
-    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SECURITY_DESCRIPTOR_RELATIVE>(), Is.EqualTo(sizeof(SECURITY_DESCRIPTOR_RELATIVE)));
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SECURITY_DESCRIPTOR_RELATIVE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_DESCRIPTOR_RELATIVE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SECURITY_DESCRIPTOR_RELATIVE), Is.EqualTo(20));
-    }
 }

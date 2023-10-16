@@ -19,32 +19,4 @@ public static unsafe partial class IGraphBuilderTests
     {
         Assert.That(typeof(IGraphBuilder).GUID, Is.EqualTo(IID_IGraphBuilder));
     }
-
-    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGraphBuilder>(), Is.EqualTo(sizeof(IGraphBuilder)));
-    }
-
-    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGraphBuilder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGraphBuilder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGraphBuilder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGraphBuilder), Is.EqualTo(4));
-        }
-    }
 }

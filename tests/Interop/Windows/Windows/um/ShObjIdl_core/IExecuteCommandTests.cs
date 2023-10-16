@@ -19,32 +19,4 @@ public static unsafe partial class IExecuteCommandTests
     {
         Assert.That(typeof(IExecuteCommand).GUID, Is.EqualTo(IID_IExecuteCommand));
     }
-
-    /// <summary>Validates that the <see cref="IExecuteCommand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IExecuteCommand>(), Is.EqualTo(sizeof(IExecuteCommand)));
-    }
-
-    /// <summary>Validates that the <see cref="IExecuteCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IExecuteCommand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IExecuteCommand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IExecuteCommand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IExecuteCommand), Is.EqualTo(4));
-        }
-    }
 }

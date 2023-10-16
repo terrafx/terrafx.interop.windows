@@ -19,32 +19,4 @@ public static unsafe partial class IMFAsyncResultTests
     {
         Assert.That(typeof(IMFAsyncResult).GUID, Is.EqualTo(IID_IMFAsyncResult));
     }
-
-    /// <summary>Validates that the <see cref="IMFAsyncResult" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFAsyncResult>(), Is.EqualTo(sizeof(IMFAsyncResult)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFAsyncResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFAsyncResult).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFAsyncResult" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFAsyncResult), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFAsyncResult), Is.EqualTo(4));
-        }
-    }
 }

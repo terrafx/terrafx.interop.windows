@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.DirectX.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 /// <summary>Provides validation of the <see cref="DML_BINDING_TABLE_DESC" /> struct.</summary>
 public static unsafe partial class DML_BINDING_TABLE_DESCTests
 {
-    /// <summary>Validates that the <see cref="DML_BINDING_TABLE_DESC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DML_BINDING_TABLE_DESC>(), Is.EqualTo(sizeof(DML_BINDING_TABLE_DESC)));
-    }
-
-    /// <summary>Validates that the <see cref="DML_BINDING_TABLE_DESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DML_BINDING_TABLE_DESC).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DML_BINDING_TABLE_DESC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DML_BINDING_TABLE_DESC), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(DML_BINDING_TABLE_DESC), Is.EqualTo(24));
-        }
-    }
 }

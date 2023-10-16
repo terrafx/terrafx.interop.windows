@@ -19,32 +19,4 @@ public static unsafe partial class IEnumResourcesTests
     {
         Assert.That(typeof(IEnumResources).GUID, Is.EqualTo(IID_IEnumResources));
     }
-
-    /// <summary>Validates that the <see cref="IEnumResources" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumResources>(), Is.EqualTo(sizeof(IEnumResources)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumResources" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumResources).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumResources" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumResources), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumResources), Is.EqualTo(4));
-        }
-    }
 }

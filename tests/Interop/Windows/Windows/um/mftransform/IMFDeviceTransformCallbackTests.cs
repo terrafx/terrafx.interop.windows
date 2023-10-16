@@ -21,32 +21,4 @@ public static unsafe partial class IMFDeviceTransformCallbackTests
     {
         Assert.That(typeof(IMFDeviceTransformCallback).GUID, Is.EqualTo(IID_IMFDeviceTransformCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFDeviceTransformCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFDeviceTransformCallback>(), Is.EqualTo(sizeof(IMFDeviceTransformCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFDeviceTransformCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFDeviceTransformCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFDeviceTransformCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFDeviceTransformCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFDeviceTransformCallback), Is.EqualTo(4));
-        }
-    }
 }

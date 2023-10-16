@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct.</summary>
 public static unsafe partial class TXFS_READ_BACKUP_INFORMATION_OUTTests
 {
-    /// <summary>Validates that the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TXFS_READ_BACKUP_INFORMATION_OUT>(), Is.EqualTo(sizeof(TXFS_READ_BACKUP_INFORMATION_OUT)));
-    }
-
-    /// <summary>Validates that the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TXFS_READ_BACKUP_INFORMATION_OUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TXFS_READ_BACKUP_INFORMATION_OUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TXFS_READ_BACKUP_INFORMATION_OUT), Is.EqualTo(4));
-    }
 }

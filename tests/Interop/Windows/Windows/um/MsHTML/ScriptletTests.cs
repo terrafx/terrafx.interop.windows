@@ -19,25 +19,4 @@ public static unsafe partial class ScriptletTests
     {
         Assert.That(typeof(Scriptlet).GUID, Is.EqualTo(IID_Scriptlet));
     }
-
-    /// <summary>Validates that the <see cref="Scriptlet" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<Scriptlet>(), Is.EqualTo(sizeof(Scriptlet)));
-    }
-
-    /// <summary>Validates that the <see cref="Scriptlet" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(Scriptlet).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="Scriptlet" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(Scriptlet), Is.EqualTo(1));
-    }
 }

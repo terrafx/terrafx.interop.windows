@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Gdiplus.UnitTests;
 /// <summary>Provides validation of the <see cref="GpRect" /> struct.</summary>
 public static unsafe partial class GpRectTests
 {
-    /// <summary>Validates that the <see cref="GpRect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GpRect>(), Is.EqualTo(sizeof(GpRect)));
-    }
-
-    /// <summary>Validates that the <see cref="GpRect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GpRect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GpRect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GpRect), Is.EqualTo(16));
-    }
 }

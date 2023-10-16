@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SECURITY_QUALITY_OF_SERVICE" /> struct.</summary>
 public static unsafe partial class SECURITY_QUALITY_OF_SERVICETests
 {
-    /// <summary>Validates that the <see cref="SECURITY_QUALITY_OF_SERVICE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SECURITY_QUALITY_OF_SERVICE>(), Is.EqualTo(sizeof(SECURITY_QUALITY_OF_SERVICE)));
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_QUALITY_OF_SERVICE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SECURITY_QUALITY_OF_SERVICE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SECURITY_QUALITY_OF_SERVICE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SECURITY_QUALITY_OF_SERVICE), Is.EqualTo(12));
-    }
 }

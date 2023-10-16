@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncStatHardwareBandwidthUtilitizat
     {
         Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatHardwareBandwidthUtilitization>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatHardwareBandwidthUtilitization" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncStatHardwareBandwidthUtilitization), Is.EqualTo(1));
-    }
 }

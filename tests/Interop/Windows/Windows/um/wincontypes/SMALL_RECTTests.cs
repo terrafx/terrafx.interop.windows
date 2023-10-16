@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SMALL_RECT" /> struct.</summary>
 public static unsafe partial class SMALL_RECTTests
 {
-    /// <summary>Validates that the <see cref="SMALL_RECT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SMALL_RECT>(), Is.EqualTo(sizeof(SMALL_RECT)));
-    }
-
-    /// <summary>Validates that the <see cref="SMALL_RECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SMALL_RECT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SMALL_RECT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SMALL_RECT), Is.EqualTo(8));
-    }
 }

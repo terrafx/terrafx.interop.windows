@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_PD_PASSTHROUGH_OUTPUT" /> struct.</summary>
 public static unsafe partial class SCM_PD_PASSTHROUGH_OUTPUTTests
 {
-    /// <summary>Validates that the <see cref="SCM_PD_PASSTHROUGH_OUTPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_PD_PASSTHROUGH_OUTPUT>(), Is.EqualTo(sizeof(SCM_PD_PASSTHROUGH_OUTPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_PASSTHROUGH_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_PD_PASSTHROUGH_OUTPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_PASSTHROUGH_OUTPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_PD_PASSTHROUGH_OUTPUT), Is.EqualTo(32));
-    }
 }

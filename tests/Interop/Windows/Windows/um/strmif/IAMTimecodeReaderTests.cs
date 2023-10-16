@@ -19,32 +19,4 @@ public static unsafe partial class IAMTimecodeReaderTests
     {
         Assert.That(typeof(IAMTimecodeReader).GUID, Is.EqualTo(IID_IAMTimecodeReader));
     }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMTimecodeReader>(), Is.EqualTo(sizeof(IAMTimecodeReader)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMTimecodeReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMTimecodeReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMTimecodeReader), Is.EqualTo(4));
-        }
-    }
 }

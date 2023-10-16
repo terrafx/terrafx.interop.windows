@@ -19,32 +19,4 @@ public static unsafe partial class INameSpaceTreeControlCustomDrawTests
     {
         Assert.That(typeof(INameSpaceTreeControlCustomDraw).GUID, Is.EqualTo(IID_INameSpaceTreeControlCustomDraw));
     }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<INameSpaceTreeControlCustomDraw>(), Is.EqualTo(sizeof(INameSpaceTreeControlCustomDraw)));
-    }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(INameSpaceTreeControlCustomDraw).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="INameSpaceTreeControlCustomDraw" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(INameSpaceTreeControlCustomDraw), Is.EqualTo(4));
-        }
-    }
 }

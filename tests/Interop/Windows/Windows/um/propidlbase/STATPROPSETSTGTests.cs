@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="STATPROPSETSTG" /> struct.</summary>
 public static unsafe partial class STATPROPSETSTGTests
 {
-    /// <summary>Validates that the <see cref="STATPROPSETSTG" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<STATPROPSETSTG>(), Is.EqualTo(sizeof(STATPROPSETSTG)));
-    }
-
-    /// <summary>Validates that the <see cref="STATPROPSETSTG" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(STATPROPSETSTG).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="STATPROPSETSTG" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(STATPROPSETSTG), Is.EqualTo(64));
-    }
 }

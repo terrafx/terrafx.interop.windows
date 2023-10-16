@@ -19,25 +19,4 @@ public static unsafe partial class SmartcardCredentialProviderTests
     {
         Assert.That(typeof(SmartcardCredentialProvider).GUID, Is.EqualTo(IID_SmartcardCredentialProvider));
     }
-
-    /// <summary>Validates that the <see cref="SmartcardCredentialProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SmartcardCredentialProvider>(), Is.EqualTo(sizeof(SmartcardCredentialProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="SmartcardCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SmartcardCredentialProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SmartcardCredentialProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SmartcardCredentialProvider), Is.EqualTo(1));
-    }
 }

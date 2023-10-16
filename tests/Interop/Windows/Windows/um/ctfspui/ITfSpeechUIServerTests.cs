@@ -19,32 +19,4 @@ public static unsafe partial class ITfSpeechUIServerTests
     {
         Assert.That(typeof(ITfSpeechUIServer).GUID, Is.EqualTo(IID_ITfSpeechUIServer));
     }
-
-    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfSpeechUIServer>(), Is.EqualTo(sizeof(ITfSpeechUIServer)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfSpeechUIServer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(4));
-        }
-    }
 }

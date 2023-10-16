@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -14,31 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class DWRITE_COLOR_GLYPH_RUNTests
 {
-    /// <summary>Validates that the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_COLOR_GLYPH_RUN>(), Is.EqualTo(sizeof(DWRITE_COLOR_GLYPH_RUN)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_COLOR_GLYPH_RUN).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DWRITE_COLOR_GLYPH_RUN), Is.EqualTo(88));
-        }
-        else
-        {
-            Assert.That(sizeof(DWRITE_COLOR_GLYPH_RUN), Is.EqualTo(64));
-        }
-    }
 }

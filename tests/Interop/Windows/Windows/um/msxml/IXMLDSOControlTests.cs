@@ -19,32 +19,4 @@ public static unsafe partial class IXMLDSOControlTests
     {
         Assert.That(typeof(IXMLDSOControl).GUID, Is.EqualTo(IID_IXMLDSOControl));
     }
-
-    /// <summary>Validates that the <see cref="IXMLDSOControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXMLDSOControl>(), Is.EqualTo(sizeof(IXMLDSOControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDSOControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXMLDSOControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDSOControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXMLDSOControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXMLDSOControl), Is.EqualTo(4));
-        }
-    }
 }

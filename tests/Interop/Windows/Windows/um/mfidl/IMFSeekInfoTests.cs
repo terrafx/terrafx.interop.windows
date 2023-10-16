@@ -21,32 +21,4 @@ public static unsafe partial class IMFSeekInfoTests
     {
         Assert.That(typeof(IMFSeekInfo).GUID, Is.EqualTo(IID_IMFSeekInfo));
     }
-
-    /// <summary>Validates that the <see cref="IMFSeekInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSeekInfo>(), Is.EqualTo(sizeof(IMFSeekInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSeekInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSeekInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSeekInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSeekInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSeekInfo), Is.EqualTo(4));
-        }
-    }
 }

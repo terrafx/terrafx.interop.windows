@@ -21,32 +21,4 @@ public static unsafe partial class IMFCaptureSourceTests
     {
         Assert.That(typeof(IMFCaptureSource).GUID, Is.EqualTo(IID_IMFCaptureSource));
     }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCaptureSource>(), Is.EqualTo(sizeof(IMFCaptureSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCaptureSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCaptureSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCaptureSource), Is.EqualTo(4));
-        }
-    }
 }

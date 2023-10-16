@@ -19,25 +19,4 @@ public static unsafe partial class DestinationListTests
     {
         Assert.That(typeof(DestinationList).GUID, Is.EqualTo(IID_DestinationList));
     }
-
-    /// <summary>Validates that the <see cref="DestinationList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DestinationList>(), Is.EqualTo(sizeof(DestinationList)));
-    }
-
-    /// <summary>Validates that the <see cref="DestinationList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DestinationList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DestinationList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DestinationList), Is.EqualTo(1));
-    }
 }

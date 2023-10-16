@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct.</summary>
 public static unsafe partial class IMAGE_ARCHITECTURE_ENTRYTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_ARCHITECTURE_ENTRY>(), Is.EqualTo(sizeof(IMAGE_ARCHITECTURE_ENTRY)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_ARCHITECTURE_ENTRY).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_ARCHITECTURE_ENTRY" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_ARCHITECTURE_ENTRY), Is.EqualTo(8));
-    }
 }

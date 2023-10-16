@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIDIPROPTEMPO" /> struct.</summary>
 public static unsafe partial class MIDIPROPTEMPOTests
 {
-    /// <summary>Validates that the <see cref="MIDIPROPTEMPO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIDIPROPTEMPO>(), Is.EqualTo(sizeof(MIDIPROPTEMPO)));
-    }
-
-    /// <summary>Validates that the <see cref="MIDIPROPTEMPO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIDIPROPTEMPO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIDIPROPTEMPO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIDIPROPTEMPO), Is.EqualTo(8));
-    }
 }

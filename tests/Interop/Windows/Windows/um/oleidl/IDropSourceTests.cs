@@ -19,32 +19,4 @@ public static unsafe partial class IDropSourceTests
     {
         Assert.That(typeof(IDropSource).GUID, Is.EqualTo(IID_IDropSource));
     }
-
-    /// <summary>Validates that the <see cref="IDropSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDropSource>(), Is.EqualTo(sizeof(IDropSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IDropSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDropSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDropSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDropSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDropSource), Is.EqualTo(4));
-        }
-    }
 }

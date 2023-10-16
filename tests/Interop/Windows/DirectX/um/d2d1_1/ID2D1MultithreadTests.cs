@@ -19,32 +19,4 @@ public static unsafe partial class ID2D1MultithreadTests
     {
         Assert.That(typeof(ID2D1Multithread).GUID, Is.EqualTo(IID_ID2D1Multithread));
     }
-
-    /// <summary>Validates that the <see cref="ID2D1Multithread" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID2D1Multithread>(), Is.EqualTo(sizeof(ID2D1Multithread)));
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1Multithread" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID2D1Multithread).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1Multithread" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID2D1Multithread), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID2D1Multithread), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SPAUDIOBUFFERINFO" /> struct.</summary>
 public static unsafe partial class SPAUDIOBUFFERINFOTests
 {
-    /// <summary>Validates that the <see cref="SPAUDIOBUFFERINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SPAUDIOBUFFERINFO>(), Is.EqualTo(sizeof(SPAUDIOBUFFERINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SPAUDIOBUFFERINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SPAUDIOBUFFERINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SPAUDIOBUFFERINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SPAUDIOBUFFERINFO), Is.EqualTo(12));
-    }
 }

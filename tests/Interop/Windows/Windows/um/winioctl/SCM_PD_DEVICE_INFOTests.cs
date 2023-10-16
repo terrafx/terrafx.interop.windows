@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SCM_PD_DEVICE_INFO" /> struct.</summary>
 public static unsafe partial class SCM_PD_DEVICE_INFOTests
 {
-    /// <summary>Validates that the <see cref="SCM_PD_DEVICE_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SCM_PD_DEVICE_INFO>(), Is.EqualTo(sizeof(SCM_PD_DEVICE_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_DEVICE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SCM_PD_DEVICE_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SCM_PD_DEVICE_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SCM_PD_DEVICE_INFO), Is.EqualTo(120));
-    }
 }

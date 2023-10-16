@@ -19,32 +19,4 @@ public static unsafe partial class ICoreInputInteropTests
     {
         Assert.That(typeof(ICoreInputInterop).GUID, Is.EqualTo(IID_ICoreInputInterop));
     }
-
-    /// <summary>Validates that the <see cref="ICoreInputInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICoreInputInterop>(), Is.EqualTo(sizeof(ICoreInputInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ICoreInputInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICoreInputInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICoreInputInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICoreInputInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICoreInputInterop), Is.EqualTo(4));
-        }
-    }
 }

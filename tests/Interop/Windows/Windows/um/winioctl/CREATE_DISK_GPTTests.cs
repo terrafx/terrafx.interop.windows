@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CREATE_DISK_GPT" /> struct.</summary>
 public static unsafe partial class CREATE_DISK_GPTTests
 {
-    /// <summary>Validates that the <see cref="CREATE_DISK_GPT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CREATE_DISK_GPT>(), Is.EqualTo(sizeof(CREATE_DISK_GPT)));
-    }
-
-    /// <summary>Validates that the <see cref="CREATE_DISK_GPT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CREATE_DISK_GPT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CREATE_DISK_GPT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CREATE_DISK_GPT), Is.EqualTo(20));
-    }
 }

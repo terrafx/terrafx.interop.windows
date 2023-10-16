@@ -19,32 +19,4 @@ public static unsafe partial class IInternetSessionTests
     {
         Assert.That(typeof(IInternetSession).GUID, Is.EqualTo(IID_IInternetSession));
     }
-
-    /// <summary>Validates that the <see cref="IInternetSession" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetSession>(), Is.EqualTo(sizeof(IInternetSession)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSession" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetSession).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetSession" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetSession), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetSession), Is.EqualTo(4));
-        }
-    }
 }

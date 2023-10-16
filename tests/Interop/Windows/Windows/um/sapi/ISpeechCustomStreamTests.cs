@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechCustomStreamTests
     {
         Assert.That(typeof(ISpeechCustomStream).GUID, Is.EqualTo(IID_ISpeechCustomStream));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechCustomStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechCustomStream>(), Is.EqualTo(sizeof(ISpeechCustomStream)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechCustomStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechCustomStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechCustomStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechCustomStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechCustomStream), Is.EqualTo(4));
-        }
-    }
 }

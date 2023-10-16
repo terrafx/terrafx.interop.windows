@@ -21,32 +21,4 @@ public static unsafe partial class IDirectManipulationFrameInfoProviderTests
     {
         Assert.That(typeof(IDirectManipulationFrameInfoProvider).GUID, Is.EqualTo(IID_IDirectManipulationFrameInfoProvider));
     }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationFrameInfoProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectManipulationFrameInfoProvider>(), Is.EqualTo(sizeof(IDirectManipulationFrameInfoProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationFrameInfoProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectManipulationFrameInfoProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectManipulationFrameInfoProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectManipulationFrameInfoProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectManipulationFrameInfoProvider), Is.EqualTo(4));
-        }
-    }
 }

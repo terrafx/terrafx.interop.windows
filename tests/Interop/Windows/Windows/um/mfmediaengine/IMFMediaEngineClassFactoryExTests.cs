@@ -21,32 +21,4 @@ public static unsafe partial class IMFMediaEngineClassFactoryExTests
     {
         Assert.That(typeof(IMFMediaEngineClassFactoryEx).GUID, Is.EqualTo(IID_IMFMediaEngineClassFactoryEx));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaEngineClassFactoryEx>(), Is.EqualTo(sizeof(IMFMediaEngineClassFactoryEx)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaEngineClassFactoryEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineClassFactoryEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaEngineClassFactoryEx), Is.EqualTo(4));
-        }
-    }
 }

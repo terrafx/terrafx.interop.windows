@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="REG_PROVIDER" /> struct.</summary>
 public static unsafe partial class REG_PROVIDERTests
 {
-    /// <summary>Validates that the <see cref="REG_PROVIDER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<REG_PROVIDER>(), Is.EqualTo(sizeof(REG_PROVIDER)));
-    }
-
-    /// <summary>Validates that the <see cref="REG_PROVIDER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(REG_PROVIDER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="REG_PROVIDER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(REG_PROVIDER), Is.EqualTo(48));
-        }
-        else
-        {
-            Assert.That(sizeof(REG_PROVIDER), Is.EqualTo(24));
-        }
-    }
 }

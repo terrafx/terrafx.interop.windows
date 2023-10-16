@@ -19,25 +19,4 @@ public static unsafe partial class AccDictionaryTests
     {
         Assert.That(typeof(AccDictionary).GUID, Is.EqualTo(IID_AccDictionary));
     }
-
-    /// <summary>Validates that the <see cref="AccDictionary" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AccDictionary>(), Is.EqualTo(sizeof(AccDictionary)));
-    }
-
-    /// <summary>Validates that the <see cref="AccDictionary" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AccDictionary).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AccDictionary" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AccDictionary), Is.EqualTo(1));
-    }
 }

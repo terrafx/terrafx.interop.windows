@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CSV_QUERY_FILE_REVISION_FILE_ID_128" /> struct.</summary>
 public static unsafe partial class CSV_QUERY_FILE_REVISION_FILE_ID_128Tests
 {
-    /// <summary>Validates that the <see cref="CSV_QUERY_FILE_REVISION_FILE_ID_128" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CSV_QUERY_FILE_REVISION_FILE_ID_128>(), Is.EqualTo(sizeof(CSV_QUERY_FILE_REVISION_FILE_ID_128)));
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_FILE_REVISION_FILE_ID_128" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CSV_QUERY_FILE_REVISION_FILE_ID_128).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CSV_QUERY_FILE_REVISION_FILE_ID_128" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CSV_QUERY_FILE_REVISION_FILE_ID_128), Is.EqualTo(40));
-    }
 }

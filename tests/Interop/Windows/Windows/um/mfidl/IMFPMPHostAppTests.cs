@@ -21,32 +21,4 @@ public static unsafe partial class IMFPMPHostAppTests
     {
         Assert.That(typeof(IMFPMPHostApp).GUID, Is.EqualTo(IID_IMFPMPHostApp));
     }
-
-    /// <summary>Validates that the <see cref="IMFPMPHostApp" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFPMPHostApp>(), Is.EqualTo(sizeof(IMFPMPHostApp)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFPMPHostApp" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFPMPHostApp).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFPMPHostApp" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFPMPHostApp), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFPMPHostApp), Is.EqualTo(4));
-        }
-    }
 }

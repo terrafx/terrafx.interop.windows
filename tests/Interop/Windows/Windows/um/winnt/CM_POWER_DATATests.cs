@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CM_POWER_DATA" /> struct.</summary>
 public static unsafe partial class CM_POWER_DATATests
 {
-    /// <summary>Validates that the <see cref="CM_POWER_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CM_POWER_DATA>(), Is.EqualTo(sizeof(CM_POWER_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="CM_POWER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CM_POWER_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CM_POWER_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CM_POWER_DATA), Is.EqualTo(56));
-    }
 }

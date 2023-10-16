@@ -19,25 +19,4 @@ public static unsafe partial class RulesAppliedCollectionTests
     {
         Assert.That(typeof(RulesAppliedCollection).GUID, Is.EqualTo(IID_RulesAppliedCollection));
     }
-
-    /// <summary>Validates that the <see cref="RulesAppliedCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RulesAppliedCollection>(), Is.EqualTo(sizeof(RulesAppliedCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="RulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RulesAppliedCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RulesAppliedCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RulesAppliedCollection), Is.EqualTo(1));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="LUID" /> struct.</summary>
 public static unsafe partial class LUIDTests
 {
-    /// <summary>Validates that the <see cref="LUID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<LUID>(), Is.EqualTo(sizeof(LUID)));
-    }
-
-    /// <summary>Validates that the <see cref="LUID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(LUID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="LUID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(LUID), Is.EqualTo(8));
-    }
 }

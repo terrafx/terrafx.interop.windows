@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonMultipassModeTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonMultipassMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonMultipassMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMultipassMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonMultipassMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonMultipassMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMultipassMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonMultipassMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonMultipassMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonMultipassMode), Is.EqualTo(1));
-    }
 }

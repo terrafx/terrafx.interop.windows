@@ -19,32 +19,4 @@ public static unsafe partial class IGetServiceIdsTests
     {
         Assert.That(typeof(IGetServiceIds).GUID, Is.EqualTo(IID_IGetServiceIds));
     }
-
-    /// <summary>Validates that the <see cref="IGetServiceIds" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGetServiceIds>(), Is.EqualTo(sizeof(IGetServiceIds)));
-    }
-
-    /// <summary>Validates that the <see cref="IGetServiceIds" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGetServiceIds).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGetServiceIds" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGetServiceIds), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGetServiceIds), Is.EqualTo(4));
-        }
-    }
 }

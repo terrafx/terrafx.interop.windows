@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SFVM_HELPTOPIC_DATA" /> struct.</summary>
 public static unsafe partial class SFVM_HELPTOPIC_DATATests
 {
-    /// <summary>Validates that the <see cref="SFVM_HELPTOPIC_DATA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SFVM_HELPTOPIC_DATA>(), Is.EqualTo(sizeof(SFVM_HELPTOPIC_DATA)));
-    }
-
-    /// <summary>Validates that the <see cref="SFVM_HELPTOPIC_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SFVM_HELPTOPIC_DATA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SFVM_HELPTOPIC_DATA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SFVM_HELPTOPIC_DATA), Is.EqualTo(1040));
-    }
 }

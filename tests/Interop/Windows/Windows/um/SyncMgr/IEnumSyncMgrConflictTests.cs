@@ -19,32 +19,4 @@ public static unsafe partial class IEnumSyncMgrConflictTests
     {
         Assert.That(typeof(IEnumSyncMgrConflict).GUID, Is.EqualTo(IID_IEnumSyncMgrConflict));
     }
-
-    /// <summary>Validates that the <see cref="IEnumSyncMgrConflict" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumSyncMgrConflict>(), Is.EqualTo(sizeof(IEnumSyncMgrConflict)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumSyncMgrConflict" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumSyncMgrConflict).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumSyncMgrConflict" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumSyncMgrConflict), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumSyncMgrConflict), Is.EqualTo(4));
-        }
-    }
 }

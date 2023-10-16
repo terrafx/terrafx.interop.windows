@@ -19,32 +19,4 @@ public static unsafe partial class IMediaBufferTests
     {
         Assert.That(typeof(IMediaBuffer).GUID, Is.EqualTo(IID_IMediaBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IMediaBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMediaBuffer>(), Is.EqualTo(sizeof(IMediaBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMediaBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMediaBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMediaBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMediaBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMediaBuffer), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class GenericCredentialProviderTests
     {
         Assert.That(typeof(GenericCredentialProvider).GUID, Is.EqualTo(IID_GenericCredentialProvider));
     }
-
-    /// <summary>Validates that the <see cref="GenericCredentialProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<GenericCredentialProvider>(), Is.EqualTo(sizeof(GenericCredentialProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="GenericCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(GenericCredentialProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="GenericCredentialProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(GenericCredentialProvider), Is.EqualTo(1));
-    }
 }

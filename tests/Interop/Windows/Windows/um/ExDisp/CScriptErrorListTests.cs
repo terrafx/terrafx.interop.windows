@@ -19,25 +19,4 @@ public static unsafe partial class CScriptErrorListTests
     {
         Assert.That(typeof(CScriptErrorList).GUID, Is.EqualTo(IID_CScriptErrorList));
     }
-
-    /// <summary>Validates that the <see cref="CScriptErrorList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CScriptErrorList>(), Is.EqualTo(sizeof(CScriptErrorList)));
-    }
-
-    /// <summary>Validates that the <see cref="CScriptErrorList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CScriptErrorList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CScriptErrorList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CScriptErrorList), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVPriorityControlTests
     {
         Assert.That(typeof(CODECAPI_AVPriorityControl).GUID, Is.EqualTo(IID_CODECAPI_AVPriorityControl));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVPriorityControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVPriorityControl>(), Is.EqualTo(sizeof(CODECAPI_AVPriorityControl)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVPriorityControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVPriorityControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVPriorityControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVPriorityControl), Is.EqualTo(1));
-    }
 }

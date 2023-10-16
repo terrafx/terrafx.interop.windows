@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="VS_FIXEDFILEINFO" /> struct.</summary>
 public static unsafe partial class VS_FIXEDFILEINFOTests
 {
-    /// <summary>Validates that the <see cref="VS_FIXEDFILEINFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VS_FIXEDFILEINFO>(), Is.EqualTo(sizeof(VS_FIXEDFILEINFO)));
-    }
-
-    /// <summary>Validates that the <see cref="VS_FIXEDFILEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VS_FIXEDFILEINFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VS_FIXEDFILEINFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VS_FIXEDFILEINFO), Is.EqualTo(52));
-    }
 }

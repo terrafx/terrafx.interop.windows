@@ -19,32 +19,4 @@ public static unsafe partial class IHlinkBrowseContextTests
     {
         Assert.That(typeof(IHlinkBrowseContext).GUID, Is.EqualTo(IID_IHlinkBrowseContext));
     }
-
-    /// <summary>Validates that the <see cref="IHlinkBrowseContext" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHlinkBrowseContext>(), Is.EqualTo(sizeof(IHlinkBrowseContext)));
-    }
-
-    /// <summary>Validates that the <see cref="IHlinkBrowseContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHlinkBrowseContext).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHlinkBrowseContext" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHlinkBrowseContext), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHlinkBrowseContext), Is.EqualTo(4));
-        }
-    }
 }

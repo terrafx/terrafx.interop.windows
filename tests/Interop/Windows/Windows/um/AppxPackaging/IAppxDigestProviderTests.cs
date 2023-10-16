@@ -19,32 +19,4 @@ public static unsafe partial class IAppxDigestProviderTests
     {
         Assert.That(typeof(IAppxDigestProvider).GUID, Is.EqualTo(IID_IAppxDigestProvider));
     }
-
-    /// <summary>Validates that the <see cref="IAppxDigestProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxDigestProvider>(), Is.EqualTo(sizeof(IAppxDigestProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxDigestProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxDigestProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxDigestProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxDigestProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxDigestProvider), Is.EqualTo(4));
-        }
-    }
 }

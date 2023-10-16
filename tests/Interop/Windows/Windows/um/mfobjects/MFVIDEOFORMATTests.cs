@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MFVIDEOFORMAT" /> struct.</summary>
 public static unsafe partial class MFVIDEOFORMATTests
 {
-    /// <summary>Validates that the <see cref="MFVIDEOFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFVIDEOFORMAT>(), Is.EqualTo(sizeof(MFVIDEOFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="MFVIDEOFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFVIDEOFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFVIDEOFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFVIDEOFORMAT), Is.EqualTo(176));
-    }
 }

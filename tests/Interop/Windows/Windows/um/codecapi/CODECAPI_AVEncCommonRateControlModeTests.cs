@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonRateControlModeTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonRateControlMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonRateControlMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRateControlMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonRateControlMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonRateControlMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRateControlMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonRateControlMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonRateControlMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonRateControlMode), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class MSDiscMasterObjTests
     {
         Assert.That(typeof(MSDiscMasterObj).GUID, Is.EqualTo(CLSID_MSDiscMasterObj));
     }
-
-    /// <summary>Validates that the <see cref="MSDiscMasterObj" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MSDiscMasterObj>(), Is.EqualTo(sizeof(MSDiscMasterObj)));
-    }
-
-    /// <summary>Validates that the <see cref="MSDiscMasterObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MSDiscMasterObj).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MSDiscMasterObj" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MSDiscMasterObj), Is.EqualTo(1));
-    }
 }

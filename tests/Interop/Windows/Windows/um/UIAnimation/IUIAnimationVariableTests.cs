@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationVariableTests
     {
         Assert.That(typeof(IUIAnimationVariable).GUID, Is.EqualTo(IID_IUIAnimationVariable));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationVariable>(), Is.EqualTo(sizeof(IUIAnimationVariable)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationVariable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(4));
-        }
-    }
 }

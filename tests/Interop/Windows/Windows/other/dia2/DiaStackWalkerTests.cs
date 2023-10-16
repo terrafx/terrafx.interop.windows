@@ -19,25 +19,4 @@ public static unsafe partial class DiaStackWalkerTests
     {
         Assert.That(typeof(DiaStackWalker).GUID, Is.EqualTo(CLSID_DiaStackWalker));
     }
-
-    /// <summary>Validates that the <see cref="DiaStackWalker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DiaStackWalker>(), Is.EqualTo(sizeof(DiaStackWalker)));
-    }
-
-    /// <summary>Validates that the <see cref="DiaStackWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DiaStackWalker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DiaStackWalker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DiaStackWalker), Is.EqualTo(1));
-    }
 }

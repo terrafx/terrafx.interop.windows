@@ -19,32 +19,4 @@ public static unsafe partial class IMarkupServices2Tests
     {
         Assert.That(typeof(IMarkupServices2).GUID, Is.EqualTo(IID_IMarkupServices2));
     }
-
-    /// <summary>Validates that the <see cref="IMarkupServices2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMarkupServices2>(), Is.EqualTo(sizeof(IMarkupServices2)));
-    }
-
-    /// <summary>Validates that the <see cref="IMarkupServices2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMarkupServices2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMarkupServices2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMarkupServices2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMarkupServices2), Is.EqualTo(4));
-        }
-    }
 }

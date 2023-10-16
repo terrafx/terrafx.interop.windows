@@ -19,32 +19,4 @@ public static unsafe partial class ITfInputScopeTests
     {
         Assert.That(typeof(ITfInputScope).GUID, Is.EqualTo(IID_ITfInputScope));
     }
-
-    /// <summary>Validates that the <see cref="ITfInputScope" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfInputScope>(), Is.EqualTo(sizeof(ITfInputScope)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputScope" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfInputScope).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputScope" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfInputScope), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfInputScope), Is.EqualTo(4));
-        }
-    }
 }

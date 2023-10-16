@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteGlyphRunAnalysisTests
     {
         Assert.That(typeof(IDWriteGlyphRunAnalysis).GUID, Is.EqualTo(IID_IDWriteGlyphRunAnalysis));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteGlyphRunAnalysis" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteGlyphRunAnalysis>(), Is.EqualTo(sizeof(IDWriteGlyphRunAnalysis)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteGlyphRunAnalysis" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteGlyphRunAnalysis).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteGlyphRunAnalysis" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteGlyphRunAnalysis), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteGlyphRunAnalysis), Is.EqualTo(4));
-        }
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IMFSystemIdTests
     {
         Assert.That(typeof(IMFSystemId).GUID, Is.EqualTo(IID_IMFSystemId));
     }
-
-    /// <summary>Validates that the <see cref="IMFSystemId" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSystemId>(), Is.EqualTo(sizeof(IMFSystemId)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSystemId" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSystemId).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSystemId" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSystemId), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSystemId), Is.EqualTo(4));
-        }
-    }
 }

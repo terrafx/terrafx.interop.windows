@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WS_XML_GUID_TEXT" /> struct.</summary>
 public static unsafe partial class WS_XML_GUID_TEXTTests
 {
-    /// <summary>Validates that the <see cref="WS_XML_GUID_TEXT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WS_XML_GUID_TEXT>(), Is.EqualTo(sizeof(WS_XML_GUID_TEXT)));
-    }
-
-    /// <summary>Validates that the <see cref="WS_XML_GUID_TEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WS_XML_GUID_TEXT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WS_XML_GUID_TEXT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WS_XML_GUID_TEXT), Is.EqualTo(20));
-    }
 }

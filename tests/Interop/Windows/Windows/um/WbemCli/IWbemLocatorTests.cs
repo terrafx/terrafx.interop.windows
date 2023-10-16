@@ -19,32 +19,4 @@ public static unsafe partial class IWbemLocatorTests
     {
         Assert.That(typeof(IWbemLocator).GUID, Is.EqualTo(IID_IWbemLocator));
     }
-
-    /// <summary>Validates that the <see cref="IWbemLocator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemLocator>(), Is.EqualTo(sizeof(IWbemLocator)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemLocator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemLocator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemLocator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemLocator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemLocator), Is.EqualTo(4));
-        }
-    }
 }

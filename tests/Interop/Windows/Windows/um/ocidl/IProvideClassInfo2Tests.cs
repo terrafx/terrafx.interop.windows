@@ -19,32 +19,4 @@ public static unsafe partial class IProvideClassInfo2Tests
     {
         Assert.That(typeof(IProvideClassInfo2).GUID, Is.EqualTo(IID_IProvideClassInfo2));
     }
-
-    /// <summary>Validates that the <see cref="IProvideClassInfo2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProvideClassInfo2>(), Is.EqualTo(sizeof(IProvideClassInfo2)));
-    }
-
-    /// <summary>Validates that the <see cref="IProvideClassInfo2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProvideClassInfo2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProvideClassInfo2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProvideClassInfo2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProvideClassInfo2), Is.EqualTo(4));
-        }
-    }
 }

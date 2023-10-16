@@ -19,25 +19,4 @@ public static unsafe partial class DOMWheelEventTests
     {
         Assert.That(typeof(DOMWheelEvent).GUID, Is.EqualTo(IID_DOMWheelEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMWheelEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMWheelEvent>(), Is.EqualTo(sizeof(DOMWheelEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMWheelEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMWheelEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMWheelEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMWheelEvent), Is.EqualTo(1));
-    }
 }

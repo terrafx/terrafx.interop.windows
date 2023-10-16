@@ -21,32 +21,4 @@ public static unsafe partial class IHolographicQuadLayerInteropTests
     {
         Assert.That(typeof(IHolographicQuadLayerInterop).GUID, Is.EqualTo(IID_IHolographicQuadLayerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IHolographicQuadLayerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHolographicQuadLayerInterop>(), Is.EqualTo(sizeof(IHolographicQuadLayerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicQuadLayerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHolographicQuadLayerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicQuadLayerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHolographicQuadLayerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHolographicQuadLayerInterop), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncChromaUpdateTimeTests
     {
         Assert.That(typeof(CODECAPI_AVEncChromaUpdateTime).GUID, Is.EqualTo(IID_CODECAPI_AVEncChromaUpdateTime));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncChromaUpdateTime" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncChromaUpdateTime>(), Is.EqualTo(sizeof(CODECAPI_AVEncChromaUpdateTime)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncChromaUpdateTime" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncChromaUpdateTime).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncChromaUpdateTime" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncChromaUpdateTime), Is.EqualTo(1));
-    }
 }

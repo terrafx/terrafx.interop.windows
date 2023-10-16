@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA" /> struct.</summary>
 public static unsafe partial class CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARATests
 {
-    /// <summary>Validates that the <see cref="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA>(), Is.EqualTo(sizeof(CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA)));
-    }
-
-    /// <summary>Validates that the <see cref="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CMSG_CTRL_DEL_SIGNER_UNAUTH_ATTR_PARA), Is.EqualTo(12));
-    }
 }

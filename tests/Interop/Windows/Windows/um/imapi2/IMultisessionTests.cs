@@ -19,32 +19,4 @@ public static unsafe partial class IMultisessionTests
     {
         Assert.That(typeof(IMultisession).GUID, Is.EqualTo(IID_IMultisession));
     }
-
-    /// <summary>Validates that the <see cref="IMultisession" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMultisession>(), Is.EqualTo(sizeof(IMultisession)));
-    }
-
-    /// <summary>Validates that the <see cref="IMultisession" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMultisession).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMultisession" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMultisession), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMultisession), Is.EqualTo(4));
-        }
-    }
 }

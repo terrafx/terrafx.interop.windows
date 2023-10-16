@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MIB_IPMCAST_SCOPE" /> struct.</summary>
 public static unsafe partial class MIB_IPMCAST_SCOPETests
 {
-    /// <summary>Validates that the <see cref="MIB_IPMCAST_SCOPE" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MIB_IPMCAST_SCOPE>(), Is.EqualTo(sizeof(MIB_IPMCAST_SCOPE)));
-    }
-
-    /// <summary>Validates that the <see cref="MIB_IPMCAST_SCOPE" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MIB_IPMCAST_SCOPE).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MIB_IPMCAST_SCOPE" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MIB_IPMCAST_SCOPE), Is.EqualTo(524));
-    }
 }

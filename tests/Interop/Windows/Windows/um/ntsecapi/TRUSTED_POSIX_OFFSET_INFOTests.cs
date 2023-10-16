@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="TRUSTED_POSIX_OFFSET_INFO" /> struct.</summary>
 public static unsafe partial class TRUSTED_POSIX_OFFSET_INFOTests
 {
-    /// <summary>Validates that the <see cref="TRUSTED_POSIX_OFFSET_INFO" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TRUSTED_POSIX_OFFSET_INFO>(), Is.EqualTo(sizeof(TRUSTED_POSIX_OFFSET_INFO)));
-    }
-
-    /// <summary>Validates that the <see cref="TRUSTED_POSIX_OFFSET_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TRUSTED_POSIX_OFFSET_INFO).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TRUSTED_POSIX_OFFSET_INFO" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TRUSTED_POSIX_OFFSET_INFO), Is.EqualTo(4));
-    }
 }

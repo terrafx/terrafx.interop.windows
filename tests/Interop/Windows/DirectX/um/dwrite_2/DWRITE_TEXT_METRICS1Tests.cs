@@ -13,24 +13,4 @@ namespace TerraFX.Interop.DirectX.UnitTests;
 [SupportedOSPlatform("windows6.3")]
 public static unsafe partial class DWRITE_TEXT_METRICS1Tests
 {
-    /// <summary>Validates that the <see cref="DWRITE_TEXT_METRICS1" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DWRITE_TEXT_METRICS1>(), Is.EqualTo(sizeof(DWRITE_TEXT_METRICS1)));
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TEXT_METRICS1" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DWRITE_TEXT_METRICS1).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DWRITE_TEXT_METRICS1" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DWRITE_TEXT_METRICS1), Is.EqualTo(40));
-    }
 }

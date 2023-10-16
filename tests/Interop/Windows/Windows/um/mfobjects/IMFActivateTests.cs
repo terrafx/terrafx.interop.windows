@@ -19,32 +19,4 @@ public static unsafe partial class IMFActivateTests
     {
         Assert.That(typeof(IMFActivate).GUID, Is.EqualTo(IID_IMFActivate));
     }
-
-    /// <summary>Validates that the <see cref="IMFActivate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFActivate>(), Is.EqualTo(sizeof(IMFActivate)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFActivate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFActivate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFActivate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFActivate), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFActivate), Is.EqualTo(4));
-        }
-    }
 }

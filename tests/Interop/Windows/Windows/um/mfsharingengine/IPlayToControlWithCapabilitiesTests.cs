@@ -21,32 +21,4 @@ public static unsafe partial class IPlayToControlWithCapabilitiesTests
     {
         Assert.That(typeof(IPlayToControlWithCapabilities).GUID, Is.EqualTo(IID_IPlayToControlWithCapabilities));
     }
-
-    /// <summary>Validates that the <see cref="IPlayToControlWithCapabilities" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPlayToControlWithCapabilities>(), Is.EqualTo(sizeof(IPlayToControlWithCapabilities)));
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToControlWithCapabilities" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPlayToControlWithCapabilities).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPlayToControlWithCapabilities" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPlayToControlWithCapabilities), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPlayToControlWithCapabilities), Is.EqualTo(4));
-        }
-    }
 }

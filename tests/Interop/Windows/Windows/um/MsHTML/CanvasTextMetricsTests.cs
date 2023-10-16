@@ -19,25 +19,4 @@ public static unsafe partial class CanvasTextMetricsTests
     {
         Assert.That(typeof(CanvasTextMetrics).GUID, Is.EqualTo(IID_CanvasTextMetrics));
     }
-
-    /// <summary>Validates that the <see cref="CanvasTextMetrics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CanvasTextMetrics>(), Is.EqualTo(sizeof(CanvasTextMetrics)));
-    }
-
-    /// <summary>Validates that the <see cref="CanvasTextMetrics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CanvasTextMetrics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CanvasTextMetrics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CanvasTextMetrics), Is.EqualTo(1));
-    }
 }

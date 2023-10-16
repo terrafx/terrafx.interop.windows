@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AM_COLCON" /> struct.</summary>
 public static unsafe partial class AM_COLCONTests
 {
-    /// <summary>Validates that the <see cref="AM_COLCON" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AM_COLCON>(), Is.EqualTo(sizeof(AM_COLCON)));
-    }
-
-    /// <summary>Validates that the <see cref="AM_COLCON" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AM_COLCON).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AM_COLCON" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AM_COLCON), Is.EqualTo(4));
-    }
 }

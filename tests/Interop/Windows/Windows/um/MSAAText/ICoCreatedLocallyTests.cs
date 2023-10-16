@@ -19,32 +19,4 @@ public static unsafe partial class ICoCreatedLocallyTests
     {
         Assert.That(typeof(ICoCreatedLocally).GUID, Is.EqualTo(IID_ICoCreatedLocally));
     }
-
-    /// <summary>Validates that the <see cref="ICoCreatedLocally" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICoCreatedLocally>(), Is.EqualTo(sizeof(ICoCreatedLocally)));
-    }
-
-    /// <summary>Validates that the <see cref="ICoCreatedLocally" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICoCreatedLocally).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICoCreatedLocally" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICoCreatedLocally), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICoCreatedLocally), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class AudioReverbTests
     {
         Assert.That(typeof(AudioReverb).GUID, Is.EqualTo(CLSID_AudioReverb));
     }
-
-    /// <summary>Validates that the <see cref="AudioReverb" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AudioReverb>(), Is.EqualTo(sizeof(AudioReverb)));
-    }
-
-    /// <summary>Validates that the <see cref="AudioReverb" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AudioReverb).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AudioReverb" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AudioReverb), Is.EqualTo(1));
-    }
 }

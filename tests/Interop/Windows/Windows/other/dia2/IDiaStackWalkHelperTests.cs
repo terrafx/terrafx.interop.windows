@@ -19,32 +19,4 @@ public static unsafe partial class IDiaStackWalkHelperTests
     {
         Assert.That(typeof(IDiaStackWalkHelper).GUID, Is.EqualTo(IID_IDiaStackWalkHelper));
     }
-
-    /// <summary>Validates that the <see cref="IDiaStackWalkHelper" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaStackWalkHelper>(), Is.EqualTo(sizeof(IDiaStackWalkHelper)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaStackWalkHelper" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaStackWalkHelper).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaStackWalkHelper" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaStackWalkHelper), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaStackWalkHelper), Is.EqualTo(4));
-        }
-    }
 }

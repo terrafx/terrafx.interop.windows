@@ -19,32 +19,4 @@ public static unsafe partial class IAccountsSettingsPaneInteropTests
     {
         Assert.That(typeof(IAccountsSettingsPaneInterop).GUID, Is.EqualTo(IID_IAccountsSettingsPaneInterop));
     }
-
-    /// <summary>Validates that the <see cref="IAccountsSettingsPaneInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAccountsSettingsPaneInterop>(), Is.EqualTo(sizeof(IAccountsSettingsPaneInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IAccountsSettingsPaneInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAccountsSettingsPaneInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAccountsSettingsPaneInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAccountsSettingsPaneInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAccountsSettingsPaneInterop), Is.EqualTo(4));
-        }
-    }
 }

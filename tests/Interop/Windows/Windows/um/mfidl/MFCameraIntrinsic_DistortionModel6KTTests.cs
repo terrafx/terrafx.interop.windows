@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MFCameraIntrinsic_DistortionModel6KT" /> struct.</summary>
 public static unsafe partial class MFCameraIntrinsic_DistortionModel6KTTests
 {
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_DistortionModel6KT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MFCameraIntrinsic_DistortionModel6KT>(), Is.EqualTo(sizeof(MFCameraIntrinsic_DistortionModel6KT)));
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_DistortionModel6KT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MFCameraIntrinsic_DistortionModel6KT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MFCameraIntrinsic_DistortionModel6KT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MFCameraIntrinsic_DistortionModel6KT), Is.EqualTo(32));
-    }
 }

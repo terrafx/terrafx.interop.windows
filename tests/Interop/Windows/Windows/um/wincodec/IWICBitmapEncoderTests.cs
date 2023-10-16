@@ -19,32 +19,4 @@ public static unsafe partial class IWICBitmapEncoderTests
     {
         Assert.That(typeof(IWICBitmapEncoder).GUID, Is.EqualTo(IID_IWICBitmapEncoder));
     }
-
-    /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICBitmapEncoder>(), Is.EqualTo(sizeof(IWICBitmapEncoder)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICBitmapEncoder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICBitmapEncoder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICBitmapEncoder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICBitmapEncoder), Is.EqualTo(4));
-        }
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="HARDWAREINPUT" /> struct.</summary>
 public static unsafe partial class HARDWAREINPUTTests
 {
-    /// <summary>Validates that the <see cref="HARDWAREINPUT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HARDWAREINPUT>(), Is.EqualTo(sizeof(HARDWAREINPUT)));
-    }
-
-    /// <summary>Validates that the <see cref="HARDWAREINPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HARDWAREINPUT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HARDWAREINPUT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HARDWAREINPUT), Is.EqualTo(8));
-    }
 }

@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINHTTP_MATCH_CONNECTION_GUID" /> struct.</summary>
 public static unsafe partial class WINHTTP_MATCH_CONNECTION_GUIDTests
 {
-    /// <summary>Validates that the <see cref="WINHTTP_MATCH_CONNECTION_GUID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINHTTP_MATCH_CONNECTION_GUID>(), Is.EqualTo(sizeof(WINHTTP_MATCH_CONNECTION_GUID)));
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_MATCH_CONNECTION_GUID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINHTTP_MATCH_CONNECTION_GUID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINHTTP_MATCH_CONNECTION_GUID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WINHTTP_MATCH_CONNECTION_GUID), Is.EqualTo(24));
-    }
 }

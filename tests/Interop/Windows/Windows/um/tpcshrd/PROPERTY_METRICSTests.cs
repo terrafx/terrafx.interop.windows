@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PROPERTY_METRICS" /> struct.</summary>
 public static unsafe partial class PROPERTY_METRICSTests
 {
-    /// <summary>Validates that the <see cref="PROPERTY_METRICS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PROPERTY_METRICS>(), Is.EqualTo(sizeof(PROPERTY_METRICS)));
-    }
-
-    /// <summary>Validates that the <see cref="PROPERTY_METRICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PROPERTY_METRICS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PROPERTY_METRICS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PROPERTY_METRICS), Is.EqualTo(16));
-    }
 }

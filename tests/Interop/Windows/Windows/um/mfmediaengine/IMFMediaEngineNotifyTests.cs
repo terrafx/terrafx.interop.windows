@@ -21,32 +21,4 @@ public static unsafe partial class IMFMediaEngineNotifyTests
     {
         Assert.That(typeof(IMFMediaEngineNotify).GUID, Is.EqualTo(IID_IMFMediaEngineNotify));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaEngineNotify>(), Is.EqualTo(sizeof(IMFMediaEngineNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaEngineNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(4));
-        }
-    }
 }

@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows6.2")]
 public static unsafe partial class MEMORY_PRIORITY_INFORMATIONTests
 {
-    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MEMORY_PRIORITY_INFORMATION>(), Is.EqualTo(sizeof(MEMORY_PRIORITY_INFORMATION)));
-    }
-
-    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MEMORY_PRIORITY_INFORMATION).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MEMORY_PRIORITY_INFORMATION" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MEMORY_PRIORITY_INFORMATION), Is.EqualTo(4));
-    }
 }

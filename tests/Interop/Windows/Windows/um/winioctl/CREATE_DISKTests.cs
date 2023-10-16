@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CREATE_DISK" /> struct.</summary>
 public static unsafe partial class CREATE_DISKTests
 {
-    /// <summary>Validates that the <see cref="CREATE_DISK" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CREATE_DISK>(), Is.EqualTo(sizeof(CREATE_DISK)));
-    }
-
-    /// <summary>Validates that the <see cref="CREATE_DISK" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CREATE_DISK).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CREATE_DISK" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CREATE_DISK), Is.EqualTo(24));
-    }
 }

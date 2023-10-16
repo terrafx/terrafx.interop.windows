@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct.</summary>
 public static unsafe partial class CREATIVEFASTSPEECH10WAVEFORMATTests
 {
-    /// <summary>Validates that the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CREATIVEFASTSPEECH10WAVEFORMAT>(), Is.EqualTo(sizeof(CREATIVEFASTSPEECH10WAVEFORMAT)));
-    }
-
-    /// <summary>Validates that the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CREATIVEFASTSPEECH10WAVEFORMAT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CREATIVEFASTSPEECH10WAVEFORMAT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CREATIVEFASTSPEECH10WAVEFORMAT), Is.EqualTo(20));
-    }
 }

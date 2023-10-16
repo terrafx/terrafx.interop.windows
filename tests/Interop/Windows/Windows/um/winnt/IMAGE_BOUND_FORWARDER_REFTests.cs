@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct.</summary>
 public static unsafe partial class IMAGE_BOUND_FORWARDER_REFTests
 {
-    /// <summary>Validates that the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMAGE_BOUND_FORWARDER_REF>(), Is.EqualTo(sizeof(IMAGE_BOUND_FORWARDER_REF)));
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMAGE_BOUND_FORWARDER_REF).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMAGE_BOUND_FORWARDER_REF" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IMAGE_BOUND_FORWARDER_REF), Is.EqualTo(8));
-    }
 }

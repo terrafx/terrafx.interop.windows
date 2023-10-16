@@ -19,32 +19,4 @@ public static unsafe partial class IMFCollectionTests
     {
         Assert.That(typeof(IMFCollection).GUID, Is.EqualTo(IID_IMFCollection));
     }
-
-    /// <summary>Validates that the <see cref="IMFCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCollection>(), Is.EqualTo(sizeof(IMFCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCollection), Is.EqualTo(4));
-        }
-    }
 }

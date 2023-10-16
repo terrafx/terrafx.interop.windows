@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IP_ADAPTER_ANYCAST_ADDRESS_XP" /> struct.</summary>
 public static unsafe partial class IP_ADAPTER_ANYCAST_ADDRESS_XPTests
 {
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ANYCAST_ADDRESS_XP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IP_ADAPTER_ANYCAST_ADDRESS_XP>(), Is.EqualTo(sizeof(IP_ADAPTER_ANYCAST_ADDRESS_XP)));
-    }
-
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ANYCAST_ADDRESS_XP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IP_ADAPTER_ANYCAST_ADDRESS_XP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ANYCAST_ADDRESS_XP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IP_ADAPTER_ANYCAST_ADDRESS_XP), Is.EqualTo(32));
-        }
-        else
-        {
-            Assert.That(sizeof(IP_ADAPTER_ANYCAST_ADDRESS_XP), Is.EqualTo(24));
-        }
-    }
 }

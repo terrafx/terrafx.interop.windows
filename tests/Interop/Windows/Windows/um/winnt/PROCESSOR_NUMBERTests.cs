@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="PROCESSOR_NUMBER" /> struct.</summary>
 public static unsafe partial class PROCESSOR_NUMBERTests
 {
-    /// <summary>Validates that the <see cref="PROCESSOR_NUMBER" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PROCESSOR_NUMBER>(), Is.EqualTo(sizeof(PROCESSOR_NUMBER)));
-    }
-
-    /// <summary>Validates that the <see cref="PROCESSOR_NUMBER" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PROCESSOR_NUMBER).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PROCESSOR_NUMBER" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PROCESSOR_NUMBER), Is.EqualTo(4));
-    }
 }

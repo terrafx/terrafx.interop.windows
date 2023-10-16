@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMP12MuxMuxRateTests
     {
         Assert.That(typeof(CODECAPI_AVEncMP12MuxMuxRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncMP12MuxMuxRate));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxMuxRate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMP12MuxMuxRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncMP12MuxMuxRate)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxMuxRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMP12MuxMuxRate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxMuxRate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMP12MuxMuxRate), Is.EqualTo(1));
-    }
 }

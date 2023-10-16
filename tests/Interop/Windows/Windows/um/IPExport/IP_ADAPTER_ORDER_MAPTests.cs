@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="IP_ADAPTER_ORDER_MAP" /> struct.</summary>
 public static unsafe partial class IP_ADAPTER_ORDER_MAPTests
 {
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ORDER_MAP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IP_ADAPTER_ORDER_MAP>(), Is.EqualTo(sizeof(IP_ADAPTER_ORDER_MAP)));
-    }
-
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ORDER_MAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IP_ADAPTER_ORDER_MAP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IP_ADAPTER_ORDER_MAP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(IP_ADAPTER_ORDER_MAP), Is.EqualTo(8));
-    }
 }

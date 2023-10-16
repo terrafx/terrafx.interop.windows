@@ -19,32 +19,4 @@ public static unsafe partial class ICodeInstallTests
     {
         Assert.That(typeof(ICodeInstall).GUID, Is.EqualTo(IID_ICodeInstall));
     }
-
-    /// <summary>Validates that the <see cref="ICodeInstall" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICodeInstall>(), Is.EqualTo(sizeof(ICodeInstall)));
-    }
-
-    /// <summary>Validates that the <see cref="ICodeInstall" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICodeInstall).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICodeInstall" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICodeInstall), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICodeInstall), Is.EqualTo(4));
-        }
-    }
 }

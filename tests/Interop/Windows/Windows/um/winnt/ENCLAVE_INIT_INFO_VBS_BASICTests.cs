@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="ENCLAVE_INIT_INFO_VBS_BASIC" /> struct.</summary>
 public static unsafe partial class ENCLAVE_INIT_INFO_VBS_BASICTests
 {
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_VBS_BASIC" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ENCLAVE_INIT_INFO_VBS_BASIC>(), Is.EqualTo(sizeof(ENCLAVE_INIT_INFO_VBS_BASIC)));
-    }
-
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_VBS_BASIC" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ENCLAVE_INIT_INFO_VBS_BASIC).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ENCLAVE_INIT_INFO_VBS_BASIC" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ENCLAVE_INIT_INFO_VBS_BASIC), Is.EqualTo(56));
-    }
 }

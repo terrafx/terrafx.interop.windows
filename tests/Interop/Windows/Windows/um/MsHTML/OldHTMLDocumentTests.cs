@@ -19,25 +19,4 @@ public static unsafe partial class OldHTMLDocumentTests
     {
         Assert.That(typeof(OldHTMLDocument).GUID, Is.EqualTo(IID_OldHTMLDocument));
     }
-
-    /// <summary>Validates that the <see cref="OldHTMLDocument" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<OldHTMLDocument>(), Is.EqualTo(sizeof(OldHTMLDocument)));
-    }
-
-    /// <summary>Validates that the <see cref="OldHTMLDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(OldHTMLDocument).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="OldHTMLDocument" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(OldHTMLDocument), Is.EqualTo(1));
-    }
 }

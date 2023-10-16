@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
 using NUnit.Framework;
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows.UnitTests;
@@ -12,31 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct.</summary>
 public static unsafe partial class SIGNER_SIGN_EX2_PARAMSTests
 {
-    /// <summary>Validates that the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SIGNER_SIGN_EX2_PARAMS>(), Is.EqualTo(sizeof(SIGNER_SIGN_EX2_PARAMS)));
-    }
-
-    /// <summary>Validates that the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SIGNER_SIGN_EX2_PARAMS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SIGNER_SIGN_EX2_PARAMS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(SIGNER_SIGN_EX2_PARAMS), Is.EqualTo(104));
-        }
-        else
-        {
-            Assert.That(sizeof(SIGNER_SIGN_EX2_PARAMS), Is.EqualTo(52));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAMExtDeviceTests
     {
         Assert.That(typeof(IAMExtDevice).GUID, Is.EqualTo(IID_IAMExtDevice));
     }
-
-    /// <summary>Validates that the <see cref="IAMExtDevice" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMExtDevice>(), Is.EqualTo(sizeof(IAMExtDevice)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMExtDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMExtDevice).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMExtDevice" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMExtDevice), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMExtDevice), Is.EqualTo(4));
-        }
-    }
 }

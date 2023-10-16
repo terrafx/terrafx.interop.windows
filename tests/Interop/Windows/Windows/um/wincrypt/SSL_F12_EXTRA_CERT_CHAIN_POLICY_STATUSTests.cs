@@ -13,24 +13,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 [SupportedOSPlatform("windows10.0")]
 public static unsafe partial class SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUSTests
 {
-    /// <summary>Validates that the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS)));
-    }
-
-    /// <summary>Validates that the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SSL_F12_EXTRA_CERT_CHAIN_POLICY_STATUS), Is.EqualTo(528));
-    }
 }

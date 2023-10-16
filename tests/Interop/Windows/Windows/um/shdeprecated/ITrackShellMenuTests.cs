@@ -19,32 +19,4 @@ public static unsafe partial class ITrackShellMenuTests
     {
         Assert.That(typeof(ITrackShellMenu).GUID, Is.EqualTo(IID_ITrackShellMenu));
     }
-
-    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITrackShellMenu>(), Is.EqualTo(sizeof(ITrackShellMenu)));
-    }
-
-    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITrackShellMenu).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITrackShellMenu" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITrackShellMenu), Is.EqualTo(4));
-        }
-    }
 }

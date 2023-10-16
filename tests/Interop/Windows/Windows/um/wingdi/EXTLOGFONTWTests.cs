@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="EXTLOGFONTW" /> struct.</summary>
 public static unsafe partial class EXTLOGFONTWTests
 {
-    /// <summary>Validates that the <see cref="EXTLOGFONTW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EXTLOGFONTW>(), Is.EqualTo(sizeof(EXTLOGFONTW)));
-    }
-
-    /// <summary>Validates that the <see cref="EXTLOGFONTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EXTLOGFONTW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EXTLOGFONTW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EXTLOGFONTW), Is.EqualTo(320));
-    }
 }

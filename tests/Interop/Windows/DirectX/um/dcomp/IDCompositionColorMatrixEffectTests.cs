@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionColorMatrixEffectTests
     {
         Assert.That(typeof(IDCompositionColorMatrixEffect).GUID, Is.EqualTo(IID_IDCompositionColorMatrixEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionColorMatrixEffect>(), Is.EqualTo(sizeof(IDCompositionColorMatrixEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionColorMatrixEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionColorMatrixEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionColorMatrixEffect), Is.EqualTo(4));
-        }
-    }
 }

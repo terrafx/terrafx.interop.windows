@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FILESYSTEM_STATISTICS" /> struct.</summary>
 public static unsafe partial class FILESYSTEM_STATISTICSTests
 {
-    /// <summary>Validates that the <see cref="FILESYSTEM_STATISTICS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FILESYSTEM_STATISTICS>(), Is.EqualTo(sizeof(FILESYSTEM_STATISTICS)));
-    }
-
-    /// <summary>Validates that the <see cref="FILESYSTEM_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FILESYSTEM_STATISTICS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FILESYSTEM_STATISTICS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FILESYSTEM_STATISTICS), Is.EqualTo(56));
-    }
 }

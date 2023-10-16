@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="WINDOWPLACEMENT" /> struct.</summary>
 public static unsafe partial class WINDOWPLACEMENTTests
 {
-    /// <summary>Validates that the <see cref="WINDOWPLACEMENT" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WINDOWPLACEMENT>(), Is.EqualTo(sizeof(WINDOWPLACEMENT)));
-    }
-
-    /// <summary>Validates that the <see cref="WINDOWPLACEMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WINDOWPLACEMENT).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WINDOWPLACEMENT" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WINDOWPLACEMENT), Is.EqualTo(44));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IIdentityNameTests
     {
         Assert.That(typeof(IIdentityName).GUID, Is.EqualTo(IID_IIdentityName));
     }
-
-    /// <summary>Validates that the <see cref="IIdentityName" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IIdentityName>(), Is.EqualTo(sizeof(IIdentityName)));
-    }
-
-    /// <summary>Validates that the <see cref="IIdentityName" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IIdentityName).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IIdentityName" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IIdentityName), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IIdentityName), Is.EqualTo(4));
-        }
-    }
 }

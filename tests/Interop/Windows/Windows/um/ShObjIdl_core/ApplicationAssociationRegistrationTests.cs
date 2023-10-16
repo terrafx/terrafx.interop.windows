@@ -19,25 +19,4 @@ public static unsafe partial class ApplicationAssociationRegistrationTests
     {
         Assert.That(typeof(ApplicationAssociationRegistration).GUID, Is.EqualTo(IID_ApplicationAssociationRegistration));
     }
-
-    /// <summary>Validates that the <see cref="ApplicationAssociationRegistration" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ApplicationAssociationRegistration>(), Is.EqualTo(sizeof(ApplicationAssociationRegistration)));
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationAssociationRegistration" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ApplicationAssociationRegistration).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationAssociationRegistration" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ApplicationAssociationRegistration), Is.EqualTo(1));
-    }
 }

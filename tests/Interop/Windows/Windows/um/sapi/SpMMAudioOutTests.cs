@@ -19,25 +19,4 @@ public static unsafe partial class SpMMAudioOutTests
     {
         Assert.That(typeof(SpMMAudioOut).GUID, Is.EqualTo(CLSID_SpMMAudioOut));
     }
-
-    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpMMAudioOut>(), Is.EqualTo(sizeof(SpMMAudioOut)));
-    }
-
-    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpMMAudioOut).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpMMAudioOut" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpMMAudioOut), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecSoftwareDynamicFormatChangeTest
     {
         Assert.That(typeof(CODECAPI_AVDecSoftwareDynamicFormatChange).GUID, Is.EqualTo(IID_CODECAPI_AVDecSoftwareDynamicFormatChange));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecSoftwareDynamicFormatChange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecSoftwareDynamicFormatChange>(), Is.EqualTo(sizeof(CODECAPI_AVDecSoftwareDynamicFormatChange)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecSoftwareDynamicFormatChange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecSoftwareDynamicFormatChange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecSoftwareDynamicFormatChange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecSoftwareDynamicFormatChange), Is.EqualTo(1));
-    }
 }

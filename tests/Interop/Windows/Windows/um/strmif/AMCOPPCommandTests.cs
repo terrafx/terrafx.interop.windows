@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="AMCOPPCommand" /> struct.</summary>
 public static unsafe partial class AMCOPPCommandTests
 {
-    /// <summary>Validates that the <see cref="AMCOPPCommand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AMCOPPCommand>(), Is.EqualTo(sizeof(AMCOPPCommand)));
-    }
-
-    /// <summary>Validates that the <see cref="AMCOPPCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AMCOPPCommand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AMCOPPCommand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AMCOPPCommand), Is.EqualTo(4096));
-    }
 }

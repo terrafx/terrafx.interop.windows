@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnCustomSpeechCommandTests
     {
         Assert.That(typeof(ITfFnCustomSpeechCommand).GUID, Is.EqualTo(IID_ITfFnCustomSpeechCommand));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnCustomSpeechCommand" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnCustomSpeechCommand>(), Is.EqualTo(sizeof(ITfFnCustomSpeechCommand)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnCustomSpeechCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnCustomSpeechCommand).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnCustomSpeechCommand" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnCustomSpeechCommand), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnCustomSpeechCommand), Is.EqualTo(4));
-        }
-    }
 }

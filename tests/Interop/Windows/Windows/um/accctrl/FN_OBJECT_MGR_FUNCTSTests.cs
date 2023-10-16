@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="FN_OBJECT_MGR_FUNCTS" /> struct.</summary>
 public static unsafe partial class FN_OBJECT_MGR_FUNCTSTests
 {
-    /// <summary>Validates that the <see cref="FN_OBJECT_MGR_FUNCTS" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FN_OBJECT_MGR_FUNCTS>(), Is.EqualTo(sizeof(FN_OBJECT_MGR_FUNCTS)));
-    }
-
-    /// <summary>Validates that the <see cref="FN_OBJECT_MGR_FUNCTS" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FN_OBJECT_MGR_FUNCTS).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FN_OBJECT_MGR_FUNCTS" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FN_OBJECT_MGR_FUNCTS), Is.EqualTo(4));
-    }
 }

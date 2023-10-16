@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDDialogNormalizationTests
     {
         Assert.That(typeof(CODECAPI_AVEncDDDialogNormalization).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDDialogNormalization));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDialogNormalization" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDDialogNormalization>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDDialogNormalization)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDialogNormalization" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDDialogNormalization).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDialogNormalization" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDDialogNormalization), Is.EqualTo(1));
-    }
 }

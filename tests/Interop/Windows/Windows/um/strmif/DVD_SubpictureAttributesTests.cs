@@ -11,24 +11,4 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="DVD_SubpictureAttributes" /> struct.</summary>
 public static unsafe partial class DVD_SubpictureAttributesTests
 {
-    /// <summary>Validates that the <see cref="DVD_SubpictureAttributes" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DVD_SubpictureAttributes>(), Is.EqualTo(sizeof(DVD_SubpictureAttributes)));
-    }
-
-    /// <summary>Validates that the <see cref="DVD_SubpictureAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DVD_SubpictureAttributes).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DVD_SubpictureAttributes" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DVD_SubpictureAttributes), Is.EqualTo(16));
-    }
 }
